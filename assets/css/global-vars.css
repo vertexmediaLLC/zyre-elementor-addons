@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+:root {
+    /* Color */
+    --zy-primary: #197dff;
+    --zy-primary-2: #0056b3;
+    --zy-primary-3: #00a0ff;
+    --zy-paragraph: #3c414b;
+    --zy-supporting: #19418C;
+    --zy-hue1: #BEE6F5;
+    --zy-hue2: #E6EBF2;
+    --zy-hue3: #F5F8FC;
+    --zy-dark-gray: #3C414B;
+    --zy-gray: #8C919B;
+    --zy-black: #000000;
+    --zy-white: #ffffff;
+	--zy-gold: #ffbe46;
+    --zy-true: #19CD55;
+    --zy-false: #FA4119;
+    --zy-link: #00A0FF;
+
+    /* Hover */
+    --zy-primary-hover-bg: #006ef0;
+
+    /* Shadow */
+    --zy-soft-shadow: 6px 8px 13px rgba(0,0,0,0.1);
+    --zy-medium-shadow: 3px 5px 7px rgba(0,0,0,0.1);
+    --zy-hard-shadow: 1.5px 1.5px 1px rgba(0,0,0,0.06);
+    --zy-hover-shadow: 4px 5px 8px rgba(0,0,0,0.15);
+
+    /* Transitions */
+    --zy-transition-duration: 0.3s;
+    --zy-transition-property: all;
+    --zy-transition: var(--zy-transition-property) var(--zy-transition-duration);
+}

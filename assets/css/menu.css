@@ -1,0 +1,66 @@
+.zyre-nav-menu ul.menu,
+.zyre-nav-menu ul.sub-menu {
+    padding: 0;
+	margin: 0;
+    list-style: none;
+}
+
+.zyre-nav-menu ul.menu li {
+	position: relative;
+	display: flex;
+	align-self: stretch;
+	align-content: center;
+	align-items: center;
+	transition: var(--zy-transition);
+}
+
+.zyre-nav-menu ul.menu li a {
+    color: #000;
+	display: block;
+    text-decoration: none;
+    transition: var(--zy-transition);
+}
+
+.zyre-nav-menu ul.menu > li:hover > a,
+.zyre-nav-menu ul.menu > li:hover > .submenu-indicator i,
+.zyre-nav-menu ul.sub-menu > li:hover > a,
+.zyre-nav-menu ul.sub-menu > li:hover > .submenu-indicator i {
+	color: var(--zy-primary);
+}
+
+.zyre-nav-menu ul.menu > li:hover > .submenu-indicator svg,
+.zyre-nav-menu ul.sub-menu > li:hover > .submenu-indicator svg {
+	fill: var(--zy-primary);
+}
+
+.zyre-nav-menu ul.menu li .menu-item-description {
+	font-size: 0.9em;
+	display: block;
+}
+
+.zyre-nav-menu ul.menu li .submenu-indicator {
+	font-size: 0.8em;
+}
+
+.zyre-nav-menu ul.sub-menu > li {
+	justify-content: space-between;
+}
+
+.zyre-nav-menu ul.sub-menu li:not(:last-child) {
+	border-bottom: 1px solid var(--zy-hue2);
+}
+
+.zyre-nav-menu ul.sub-menu > li > a {
+	flex-grow: 1;
+}
+
+/* Hamburger */
+.zyre-nav-menu .zyre-menu-toggler {
+    fill: #fff;
+	background-color: var(--zy-gray);
+	border-radius: 3px;
+}
+
+.zyre-nav-menu .zyre-menu-toggler.zy-icon-hide {
+	display: none;
+}

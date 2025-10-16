@@ -1,0 +1,12 @@
+.zyre-addon-button .zyre-button {
+    width: 260px;
+	height: 60px;
+}
+
+.zyre-addon-button:not(.zyre-button-style-five) .zyre-button {
+    overflow: hidden;
+}
+
+.zyre-addon-button.elementor-align-justify .zyre-button {
+    width: 100%;
+}

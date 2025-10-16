@@ -1,0 +1,22 @@
+.zyre-addon-archive-posts a {
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-archive-posts .zyre-archive-post-meta-item {
+	line-height: 1;
+}
+
+.zyre-addon-archive-posts .zyre-archive-post-meta-item-icon {
+	vertical-align: middle;
+}
+
+.zyre-addon-archive-posts .zyre-archive-post-thumbnail__link {
+	display: block;
+}
+
+.zyre-addon-archive-posts .zyre-archive-post-meta-item,
+.zyre-addon-archive-posts .zyre-archive-post-meta-item-icon,
+.zyre-addon-archive-posts .zyre-archive-post-readmore,
+.zyre-addon-archive-posts .zyre-archive-post-pagination .page-numbers {
+	display: inline-block;
+}

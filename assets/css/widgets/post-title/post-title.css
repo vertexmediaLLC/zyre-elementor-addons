@@ -1,0 +1,8 @@
+.zyre-addon-post-title .zyre-post-title {
+    transition: var(--zy-transition);
+}
+
+.zyre-addon-post-title .zyre-post-title-separator-prefix,
+.zyre-addon-post-title .zyre-post-title-separator-suffix {
+    border: 1px solid #ddd;
+}

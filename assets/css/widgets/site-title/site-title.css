@@ -1,0 +1,11 @@
+.zyre-addon-site-title .zyre-site-title-link,
+.zyre-addon-site-title .zyre-site-title,
+.zyre-addon-site-title .zyre-site-title-prefix,
+.zyre-addon-site-title .zyre-site-title-suffix,
+.zyre-addon-site-title .zyre-site-title-icon i {
+    transition: color 0.2s;
+}
+
+.zyre-addon-site-title .zyre-site-title-icon svg {
+    transition: fill 0.2s;
+}

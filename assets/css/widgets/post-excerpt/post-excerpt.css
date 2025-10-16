@@ -1,0 +1,5 @@
+.zyre-addon-post-excerpt .zyre-post-read-more-link,
+.zyre-addon-post-excerpt .zyre-post-read-more-icon i,
+.zyre-addon-post-excerpt .zyre-post-read-more-icon svg {
+	transition: var(--zy-transition);
+}

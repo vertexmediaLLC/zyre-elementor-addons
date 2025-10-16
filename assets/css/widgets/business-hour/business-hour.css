@@ -1,0 +1,46 @@
+.zyre-addon-business-hour .zyre-business-hour-item > *,
+.zyre-addon-business-hour .zyre-business-hour-header > * {
+	align-self: stretch;
+    align-content: center;
+}
+
+.zyre-addon-business-hour .zyre-business-hour-items {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.zyre-business-hour-times-dir-column .zyre-business-hour-time,
+.zyre-business-hour-times-dir-column .zyre-business-hour-time-text {
+	width: 100%;
+}
+
+.zyre-addon-business-hour:not(.zyre-business-hour-item-dir-column) .zyre-business-hour-day,
+.zyre-addon-business-hour.zyre-business-hour-item-dir-column .zyre-business-hour-times,
+.zyre-addon-business-hour .zyre-business-hour-item:has(.zyre-business-hour-day-task) > * {
+	flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+	.zyre-addon-business-hour:not(.zyre-business-hour-item-dir-tablet-column) .zyre-business-hour-day,
+	.zyre-addon-business-hour.zyre-business-hour-item-dir-tablet-column .zyre-business-hour-times {
+		flex-grow: 1;
+	}
+}
+
+@media (max-width: 767px) {
+	.zyre-addon-business-hour:not(.zyre-business-hour-item-dir-mobile-column) .zyre-business-hour-day,
+	.zyre-addon-business-hour.zyre-business-hour-item-dir-mobile-column .zyre-business-hour-times {
+		flex-grow: 1;
+	}
+}
+
+.zyre-addon-business-hour .zyre-business-hour-item:has(.zyre-business-hour-day-task) > * {
+	flex-basis: 0;
+}
+
+.zyre-addon-business-hour .zyre-business-hour-day-task + .zyre-business-hour-times {
+	justify-content: flex-end;
+}
+
+.zyre-addon-business-hour .zyre-business-hour-time .zyre-business-hour-dayoff-text {
+	color: #FA4119;
+}

@@ -1,0 +1,20 @@
+.zyre-addon-social-icon:not(.elementor-grid-0):not(.elementor-grid-tablet-0):not(.elementor-grid-mobile-0) .elementor-grid {
+    display: inline-grid;
+}
+
+.zyre-addon-social-icon .zyre-social-icon {
+	margin-bottom: var(--grid-row-gap);
+	transition: background var(--zy-transition-duration);
+}
+
+.zyre-addon-social-icon .zyre-social-icon i,
+.zyre-addon-social-icon .zyre-social-icon svg {
+	flex-shrink: 0;
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-social-icon .zyre-social-icon-label {
+	font-size: 0.875em;
+	word-spacing: normal;
+	transition: color var(--zy-transition-duration), border-color var(--zy-transition-duration);
+}

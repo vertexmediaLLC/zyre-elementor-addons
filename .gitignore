@@ -1,0 +1,25 @@
+# Allow tracking the .gitignore file
+# !.gitignore
+
+# Ignore git-related files
+.git
+# .gitignore
+
+# Ignore Node and Composer dependencies
+node_modules/
+vendor/composer/
+vendor/autoload.php
+
+# Ignore build and config files
+.php-cs-fixer.dist.php
+composer.lock
+**/package-lock.json
+phpcs.xml.dist
+readme.md
+src/
+
+# Ignore OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

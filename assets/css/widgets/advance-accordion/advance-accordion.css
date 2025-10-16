@@ -1,0 +1,28 @@
+.zyre-addon-advance-accordion .zyre-advance-accordion-section:not(.active) .zyre-accordion-contents,
+.zyre-addon-advance-accordion .zyre-advance-accordion-section .toggle-icon-opened,
+.zyre-addon-advance-accordion .zyre-advance-accordion-section.active .toggle-icon-closed {
+	display: none;
+}
+
+.zyre-addon-advance-accordion .zyre-advance-accordion-section.active .toggle-icon-opened {
+	display: block;
+}
+
+.zyre-addon-advance-accordion .zyre-accordion-content-description ul,
+.zyre-addon-advance-accordion .zyre-accordion-content-description ol {
+	padding-inline-start: 30px;
+}
+
+.zyre-addon-advance-accordion .zyre-accordion-content-description > ul,
+.zyre-addon-advance-accordion .zyre-accordion-content-description > ol {
+	margin-block-end: 1em;
+}
+
+.zyre-addon-advance-accordion .zyre-accordion-content-description > p:last-child {
+	margin-bottom: 0;
+}
+
+.zyre-addon-advance-accordion .zyre-accordion-toggle,
+.zyre-addon-advance-accordion .zyre-accordion-toggle * {
+	transition: var(--zy-transition);
+}

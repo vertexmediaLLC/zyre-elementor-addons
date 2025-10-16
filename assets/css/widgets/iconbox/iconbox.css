@@ -1,0 +1,63 @@
+.zyre-addon-iconbox {
+    --zyre-iconbox-media-offset-x: 0;
+    --zyre-iconbox-media-offset-y: 0;
+}
+    
+.zyre-addon-iconbox .elementor-widget-container {
+    display: flex;
+	flex-direction:column;
+	text-align:center;
+    position: relative;
+    overflow: hidden;
+}
+
+.zyre-addon-iconbox .elementor-widget-container::before,
+.zyre-addon-iconbox .zyre-iconbox-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: opacity var(--zy-transition-duration) !important;
+    opacity: 0;
+}
+
+.zyre-addon-iconbox .elementor-widget-container:hover::before,
+.zyre-addon-iconbox:not(.zyre-addon-iconbox-hover-yes) .zyre-iconbox-icon:hover::before,
+.zyre-addon-iconbox.zyre-addon-iconbox-hover-yes .elementor-widget-container:hover .zyre-iconbox-icon::before {
+    opacity: 1;
+}
+
+.zyre-addon-iconbox .zyre-iconbox-media {
+    transition: background var(--zy-transition-duration);
+}
+
+.zyre-addon-iconbox .zyre-iconbox-icon i,
+.zyre-addon-iconbox .zyre-iconbox-icon svg,
+.zyre-addon-iconbox .zyre-iconbox-icon img {
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+
+.zyre-addon-iconbox .zyre-iconbox-titles > * {
+    margin: 0;
+}
+
+.zyre-addon-iconbox .zyre-iconbox-title, 
+.zyre-addon-iconbox .zyre-iconbox-subtitle, 
+.zyre-addon-iconbox .zyre-iconbox-description, 
+.zyre-addon-iconbox .zyre-addon-iconbox .zyre-button, 
+.zyre-addon-iconbox .zyre-iconbox-icon i {
+    transition: color var(--zy-transition-duration);
+}
+
+.zyre-addon-iconbox .zyre-iconbox-icon svg {
+    transition: fill var(--zy-transition-duration);
+}
+
+.zyre-addon-iconbox .zyre-button {
+    overflow: hidden;
+}

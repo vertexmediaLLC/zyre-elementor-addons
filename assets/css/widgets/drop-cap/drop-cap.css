@@ -1,0 +1,9 @@
+
+.zyre-drop-cap-yes .zyre-dropcap::first-letter {
+    float: left;
+    line-height: 0.8;
+}
+
+body.rtl .zyre-drop-cap-yes .zyre-dropcap::first-letter {
+    float: right;
+}

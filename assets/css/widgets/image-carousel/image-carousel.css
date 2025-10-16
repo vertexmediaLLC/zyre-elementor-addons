@@ -1,0 +1,46 @@
+.zyre-addon-image-carousel .zyre-carousel-wrapper {
+	--icon-size: 24px;
+}
+
+.zyre-addon-image-carousel .zyre-carousel-wrapper:not(.swiper-initialized) {
+	opacity: 0;
+}
+
+.zyre-image-carousel-arrows-position-outside .zyre-carousel-wrapper {
+	width: calc(100% - var(--icon-size) * 2);
+}
+
+.zyre-carousel-content-overlay-yes .zyre-carousel-image {
+	height: 100%;
+}
+
+.zyre-addon-image-carousel .swiper .zyre-swiper-button, 
+.zyre-addon-image-carousel .swiper ~ .zyre-swiper-button {
+    font-size: var(--icon-size);
+    color: rgba(238, 238, 238, 0.9);
+}
+
+.zyre-addon-image-carousel .swiper .zyre-swiper-button:not(.swiper-button-disabled), 
+.zyre-addon-image-carousel .swiper ~ .zyre-swiper-button:not(.swiper-button-disabled) {
+	cursor: pointer;
+}
+
+.zyre-addon-image-carousel .swiper .zyre-swiper-button,
+.zyre-addon-image-carousel .swiper .zyre-swiper-button *,
+.zyre-addon-image-carousel .swiper .swiper-pagination-bullet {
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-image-carousel .swiper .swiper-pagination-horizontal {
+	display: flex;
+	justify-content: center;
+}
+
+.zyre-carousel-content-overlay-yes .zyre-carousel-content {
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,34 @@
+.zyre-addon-logo-carousel .zyre-carousel-wrapper {
+	--icon-size: 24px;
+}
+
+.zyre-addon-logo-carousel .zyre-carousel-wrapper:not(.swiper-initialized) {
+	opacity: 0;
+}
+
+.zyre-logo-carousel-arrows-position-outside .zyre-carousel-wrapper {
+	width: calc(100% - var(--icon-size) * 2);
+}
+
+.zyre-addon-logo-carousel .swiper .zyre-swiper-button, 
+.zyre-addon-logo-carousel .swiper ~ .zyre-swiper-button {
+    font-size: var(--icon-size);
+    color: rgba(238, 238, 238, 0.9);
+}
+
+.zyre-addon-logo-carousel .swiper .zyre-swiper-button:not(.swiper-button-disabled), 
+.zyre-addon-logo-carousel .swiper ~ .zyre-swiper-button:not(.swiper-button-disabled) {
+	cursor: pointer;
+}
+
+.zyre-addon-logo-carousel .swiper .zyre-swiper-button,
+.zyre-addon-logo-carousel .swiper .zyre-swiper-button *,
+.zyre-addon-logo-carousel .swiper .swiper-pagination-bullet,
+.zyre-addon-logo-carousel .swiper .zyre-carousel-image {
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-logo-carousel .swiper .swiper-pagination-horizontal {
+	display: flex;
+	justify-content: center;
+}

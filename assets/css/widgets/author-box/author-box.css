@@ -1,0 +1,13 @@
+.zyre-addon-author-box .zyre-author-box {
+	--info-width: auto;
+}
+
+.zyre-addon-author-box .zyre-author-info {
+	width: var(--info-width);
+}
+
+.zyre-addon-author-box .zyre-author-img,
+.zyre-addon-author-box .zyre-author-name,
+.zyre-addon-author-box .zyre-author-post-link {
+	transition: var(--zy-transition);	
+}

@@ -1,0 +1,19 @@
+.zyre-dual-button--layout-block .zyre-dual-button-wrapper {
+	width: 260px;
+}
+
+.zyre-addon-dual-button .zyre-button {
+    width: 260px;
+	height: 60px;
+}
+
+.zyre-addon-dual-button .zyre-button-connector {
+	--translate-x: 0;
+	--translate-y: 0;
+	transform: translate(var(--translate-x), var(--translate-y));
+}
+
+.zyre-addon-dual-button .zyre-button-connector::before,
+.zyre-addon-dual-button .zyre-button-connector::after {
+	content: "";
+}

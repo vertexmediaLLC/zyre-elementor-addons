@@ -1,0 +1,135 @@
+.zyre-addon-featured-banner .zyre-ft-banner {
+	--image-transition-duration: 1000ms;
+	--overlay-transition-duration: 500ms;
+	--content-transition-duration: 300ms;
+}
+
+.zyre-ftb--skin-cover .zyre-ft-banner {
+	display: block;
+}
+
+.zyre-ftb--skin-classic .zyre-ft-banner {
+	flex-wrap: wrap;
+	--bg-wrapper-min-width: 100%;
+	--bg-wrapper-width: 100%;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-bg-wrapper {
+	min-width: var(--bg-wrapper-min-width);
+	width: var(--bg-wrapper-width);
+}
+
+.zyre-ftb--skin-classic .zyre-ftb-bg-wrapper {
+	min-height: 200px;
+	position: relative;
+}
+
+.zyre-ftb--skin-cover .zyre-ftb-bg-wrapper {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-bg {
+	transition: all var(--image-transition-duration);
+}
+
+.zyre-addon-featured-banner .zyre-ftb-bg-overlay {
+	transition: all var(--overlay-transition-duration);
+}
+
+.zyre-addon-featured-banner .zyre-ftb-content-wrapper {
+	transition: all var(--content-transition-duration);
+}
+
+.zyre-ftb--skin-classic .zyre-ftb-content-wrapper {
+	width: 100%;
+}
+
+.zyre-ftb--skin-cover .zyre-ftb-content-wrapper {
+	min-height: 280px;
+}
+
+.zyre-ftb--valign-top .zyre-ftb-content-wrapper:not(.zyre-ftb-content-media--below) {
+	align-content: flex-start;
+	align-items: flex-start;
+}
+
+.zyre-ftb--valign-top .zyre-ftb-content-wrapper.zyre-ftb-content-media--below {
+	justify-content: flex-end;
+}
+
+.zyre-ftb--valign-middle .zyre-ftb-content-wrapper:not(.zyre-ftb-content-media--below) {
+	align-content: center;
+	align-items: center;
+}
+
+.zyre-ftb--valign-middle .zyre-ftb-content-wrapper.zyre-ftb-content-media--below {
+	justify-content: center;
+}
+
+.zyre-ftb--valign-bottom .zyre-ftb-content-wrapper:not(.zyre-ftb-content-media--below) {
+	align-content: flex-end;
+	align-items: flex-end;
+}
+
+.zyre-ftb--valign-bottom .zyre-ftb-content-wrapper.zyre-ftb-content-media--below {
+	justify-content: flex-start;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-content-wrapper>*,
+.zyre-addon-featured-banner .zyre-ftb-content>* {
+	width: 100%;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-content-media--left .zyre-ftb-media,
+.zyre-addon-featured-banner .zyre-ftb-content-media--right .zyre-ftb-media {
+	width: auto;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-icon,
+.zyre-addon-featured-banner .zyre-ftb-image img {
+	transition: border-color var(--content-transition-duration);
+}
+
+.zyre-addon-featured-banner .zyre-ftb-image img {
+	object-fit: cover;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-icon {
+	transition: color var(--content-transition-duration);
+}
+
+.zyre-addon-featured-banner .zyre-ftb-icon svg {
+	transition: fill var(--content-transition-duration);
+}
+
+.zyre-addon-featured-banner .zyre-ftb-content-button--left .zyre-ftb-buttons,
+.zyre-addon-featured-banner .zyre-ftb-content-button--right .zyre-ftb-buttons {
+	width: auto;
+	flex-shrink: 0;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-content-elements>* {
+	margin: 0;
+}
+
+.zyre-addon-featured-banner .zyre-ftb-content-elements * {
+	transition: color var(--content-transition-duration), border-color var(--content-transition-duration);
+}
+
+.zyre-addon-featured-banner .zyre-button {
+	transition: all var(--content-transition-duration) !important;
+}
+
+.zyre-addon-featured-banner .zyre-button svg {
+	transition: all var(--content-transition-duration);
+}
+
+.zyre-addon-featured-banner .zyre-button-connector {
+	--translate-x: 0;
+	--translate-y: 0;
+	transform: translate(var(--translate-x), var(--translate-y));
+}

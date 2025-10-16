@@ -1,0 +1,40 @@
+.zyre-addon-advance-heading:not(.zyre-advance-heading--layout-inline) .zyre-advance-heading-title {
+    flex-direction: column;
+}
+
+.zyre-addon-advance-heading:not(.zyre-advance-heading--layout-inline) .zyre-advance-heading-title > * {
+	width: 100%;
+	justify-content: center;
+}
+
+.zyre-addon-advance-heading .zyre-advance-heading-title-prefix {
+	--translateX: 0;
+	--translateY: 0;
+	transform: translate(var(--translateX), var(--translateY));
+}
+
+.zyre-addon-advance-heading .zyre-advance-heading-title-text {
+	--translateX: 0;
+	--translateY: 0;
+	transform: translate(var(--translateX), var(--translateY));
+}
+
+.zyre-addon-advance-heading .zyre-advance-heading-title-suffix {
+	--translateX: 0;
+	--translateY: 0;
+	transform: translate(var(--translateX), var(--translateY));
+}
+
+.zyre-advance-heading-one .zyre-advance-heading-title-prefix.pen {
+	color: var(--zy-black) !important;
+}
+
+.zyre-addon-advance-heading .zyre-advance-heading-title-prefix.has--separator-left::before,
+.zyre-addon-advance-heading .zyre-advance-heading-title-prefix.has--separator-right::after,
+.zyre-addon-advance-heading .zyre-advance-heading-title-text.has--separator-left::before,
+.zyre-addon-advance-heading .zyre-advance-heading-title-text.has--separator-right::after,
+.zyre-addon-advance-heading .zyre-advance-heading-title-suffix.has--separator-left::before,
+.zyre-addon-advance-heading .zyre-advance-heading-title-suffix.has--separator-right::after {
+	content: "";
+    flex-shrink: 0;
+}

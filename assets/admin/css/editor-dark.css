@@ -1,0 +1,8 @@
+/* Template Library */
+#zyre-TemplateLibrary_filter-tags {
+	background-color: #26292c;
+}
+
+#zyre-TemplateLibrary_filter-tags:before {
+	border-bottom-color: #26292c;
+}

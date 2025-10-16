@@ -1,0 +1,8 @@
+.zyre-addon-post-content .zyre-post-content a {
+    display: inline-block;
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-post-content blockquote p:last-child {
+	margin-bottom: 0;
+}

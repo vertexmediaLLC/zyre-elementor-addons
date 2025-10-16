@@ -1,0 +1,192 @@
+.zyre-addon-list-group .zyre-group-list-items {
+	display: grid;
+    list-style: none;
+	margin: 0;
+}
+
+.zyre-addon-list-group .zyre-group-list-item {
+	--divider-weight: 0px;
+	--divider-style: 'solid';
+	--right: 0px;
+	--bottom: 0px;
+	transition: background var(--zy-transition-duration);
+}
+
+.zyre-addon-list-group .zyre-group-list-item,
+.zyre-addon-list-group .zyre-group-list-item-link {
+    display: flex;
+	align-items: center;
+    position: relative;
+	width: 100%;
+}
+
+.zyre-group-list-divider--yes .zyre-group-list-item::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+}
+
+.zyre-addon-list-group .zyre-group-list-item:not(.zyre-group-list-item--content-bottom) > *,
+.zyre-addon-list-group .zyre-group-list-item:not(.zyre-group-list-item--content-bottom) .zyre-group-list-item-link > * {
+	align-self: stretch;
+	align-items: center;
+}
+
+.zyre-addon-list-group .zyre-group-list-item-content {
+	flex-grow: 1;
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-list-group .zyre-group-list-item--content-bottom .zyre-group-list-item-content,
+.zyre-addon-list-group .zyre-group-list-item--content-bottom .zyre-group-list-items-icon-wrapper {
+	width: 100%;
+}
+
+.zyre-addon-list-group .zyre-group-list-item-title,
+.zyre-addon-list-group .zyre-group-list-item-text {
+	margin: 0;
+	transition: color var(--zy-transition-duration);
+	font-family: inherit;
+}
+
+.zyre-addon-list-group .zyre-group-list-item-type-wrapper,
+.zyre-addon-list-group .zyre-list-items-icon-wrapper,
+.zyre-addon-list-group .zyre-group-list-items-icon-wrapper {
+	display: inline-flex;
+	flex-shrink: 0;
+    text-align: center;
+	transition: background var(--zy-transition-duration);
+}
+
+.zyre-addon-list-group .zyre-group-list-item-num {
+	transition: color var(--zy-transition-duration);
+	font-family: inherit;
+}
+
+.zyre-addon-list-group .zyre-group-list-item-icon i {
+	transition: color var(--zy-transition-duration);
+}
+
+.zyre-addon-list-group .zyre-group-list-item-icon svg {
+	transition: fill var(--zy-transition-duration);
+}
+
+.zyre-addon-list-group .zyre-group-list-items-icon {
+	display: inline-flex;
+	flex-shrink: 0;
+	transition: var(--zy-transition);
+	justify-content: center;
+	align-items: center;
+}
+
+/* Divider */
+@media (min-width: 1025px) {
+	.zyre-group-list-divider--yes.zyre-group-list--col-1 .zyre-group-list-item:not(:last-child)::after {
+		border-top-style: var(--divider-style);
+		border-top-width: var(--divider-weight);
+		width: 100%;
+		bottom: calc(var(--bottom) - calc(var(--divider-weight) / 2));
+		left: 0;
+	}
+
+	.zyre-group-list-divider--yes.zyre-group-list--col-2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col-3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col-4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col-5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col-6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		border-left-style: var(--divider-style);
+		border-left-width: var(--divider-weight);
+		height: 100%;
+		bottom: 0;
+	}
+
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col-2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col-3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col-4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col-5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col-6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		right: calc(var(--right) - calc(var(--divider-weight) / 2));
+	}
+
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col-2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col-3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col-4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col-5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col-6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		left: calc(var(--right) - calc(var(--divider-weight) / 2));
+	}
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+	.zyre-group-list-divider--yes.zyre-group-list--col--tablet1 .zyre-group-list-item:not(:last-child)::after {
+		border-top-style: var(--divider-style);
+		border-top-width: var(--divider-weight);
+		width: 100%;
+		bottom: calc(var(--bottom) - calc(var(--divider-weight) / 2));
+		left: 0;
+	}
+
+	.zyre-group-list-divider--yes.zyre-group-list--col--tablet2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--tablet3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--tablet4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--tablet5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--tablet6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		border-left-style: var(--divider-style);
+		border-left-width: var(--divider-weight);
+		height: 100%;
+		bottom: 0;
+	}
+
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--tablet2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--tablet3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--tablet4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--tablet5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--tablet6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		right: calc(var(--right) - calc(var(--divider-weight) / 2));
+	}
+
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--tablet2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--tablet3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--tablet4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--tablet5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--tablet6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		left: calc(var(--right) - calc(var(--divider-weight) / 2));
+	}
+}
+
+@media (max-width: 767px) {
+	.zyre-group-list-divider--yes.zyre-group-list--col--mobile1 .zyre-group-list-item:not(:last-child)::after {
+		border-top-style: var(--divider-style);
+		border-top-width: var(--divider-weight);
+		width: 100%;
+		bottom: calc(var(--bottom) - calc(var(--divider-weight) / 2));
+		left: 0;
+	}
+
+	.zyre-group-list-divider--yes.zyre-group-list--col--mobile2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--mobile3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--mobile4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--mobile5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	.zyre-group-list-divider--yes.zyre-group-list--col--mobile6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		border-left-style: var(--divider-style);
+		border-left-width: var(--divider-weight);
+		height: 100%;
+		bottom: 0;
+	}
+
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--mobile2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--mobile3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--mobile4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--mobile5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	body:not(.rtl) .zyre-group-list-divider--yes.zyre-group-list--col--mobile6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		right: calc(var(--right) - calc(var(--divider-weight) / 2));
+	}
+
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--mobile2 .zyre-group-list-item:not(:nth-child(2n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--mobile3 .zyre-group-list-item:not(:nth-child(3n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--mobile4 .zyre-group-list-item:not(:nth-child(4n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--mobile5 .zyre-group-list-item:not(:nth-child(5n))::after,
+	body.rtl .zyre-group-list-divider--yes.zyre-group-list--col--mobile6 .zyre-group-list-item:not(:nth-child(6n))::after {
+		left: calc(var(--right) - calc(var(--divider-weight) / 2));
+	}
+}

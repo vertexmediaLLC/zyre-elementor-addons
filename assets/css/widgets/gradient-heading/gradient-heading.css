@@ -1,0 +1,22 @@
+.zyre-addon-gradient-heading .elementor-widget-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.zyre-addon-gradient-heading .elementor-widget-container > * {
+	width: 100%;
+	text-align: center;
+}
+
+.zyre-addon-gradient-heading .zyre-gradient-heading-title {
+    background-clip: text !important;
+}
+
+.zyre-addon-gradient-heading .zyre-gradient-heading-subtitle {
+	background-clip: text !important;
+}
+
+.zyre-addon-gradient-heading .zyre-gradient-heading-title:has(.pen),
+.zyre-addon-gradient-heading .zyre-gradient-heading-subtitle:has(.pen) {
+	color: var(--zy-black) !important;
+}

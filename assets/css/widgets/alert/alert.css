@@ -1,0 +1,139 @@
+.zyre-addon-alert .elementor-widget-container {
+	padding: 15px 20px;
+	border-radius: 5px;
+	box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+	border: 1px solid;
+}
+
+.zyre-alert-info .elementor-widget-container {
+	background: #28a0ff;
+	border-color: #0096F5;
+}
+
+.zyre-alert-success .elementor-widget-container {
+	background: #19cd55;
+	border-color: #00C314;
+}
+
+.zyre-alert-warning .elementor-widget-container {
+	background: #ffd23c;
+	border-color: #FAC800;
+}
+
+.zyre-alert-danger .elementor-widget-container {
+	background: #fa3c28;
+	border-color: #F01E14;
+}
+
+.zyre-addon-alert .zyre-alert-icon {
+	--translateX: 0px;
+	--translateY: 0px;
+	transform: translate(var(--translateX), var(--translateY));
+}
+
+.zyre-alert-info .zyre-alert-icon i,
+.zyre-alert-info .zyre-alert-dismiss {
+	color: #0082EB;
+}
+
+.zyre-alert-info .zyre-alert-icon svg,
+.zyre-alert-info .zyre-alert-dismiss svg {
+	fill: #0082EB;
+}
+
+.zyre-alert-success .zyre-alert-icon i,
+.zyre-alert-success .zyre-alert-dismiss {
+	color: #00B400;
+}
+
+.zyre-alert-success .zyre-alert-icon svg,
+.zyre-alert-success .zyre-alert-dismiss svg {
+	fill: #00B400;
+}
+
+.zyre-alert-warning .zyre-alert-icon i,
+.zyre-alert-warning .zyre-alert-dismiss {
+	color: #E6AF00;
+}
+
+.zyre-alert-warning .zyre-alert-icon svg,
+.zyre-alert-warning .zyre-alert-dismiss svg {
+	fill: #E6AF00;
+}
+
+.zyre-alert-danger .zyre-alert-icon i,
+.zyre-alert-danger .zyre-alert-dismiss {
+	color: #D20000;
+}
+
+.zyre-alert-danger .zyre-alert-icon svg,
+.zyre-alert-danger .zyre-alert-dismiss svg {
+	fill: #D20000;
+}
+
+.zyre-alert-layout-inline .zyre-alert-content {
+	display: flex;
+	gap: 5px;
+}
+
+.zyre-alert-layout-block .zyre-alert-content {
+	flex-grow: 1;
+}
+
+.zyre-alert-info .zyre-alert-title,
+.zyre-alert-success .zyre-alert-title,
+.zyre-alert-danger .zyre-alert-title,
+.zyre-alert-info .zyre-alert-description,
+.zyre-alert-success .zyre-alert-description,
+.zyre-alert-danger .zyre-alert-description {
+	color: white;
+}
+
+.zyre-alert-warning .zyre-alert-title,
+.zyre-alert-warning .zyre-alert-description {
+	color: black;
+}
+
+.zyre-addon-alert .zyre-alert-dismiss {
+	--translateX: 0px;
+	--translateY: 0px;
+	--transition-duration: var(--zy-transition-duration);
+	transition: color var(--transition-duration), background var(--transition-duration);
+	transform: translate(var(--translateX), var(--translateY));
+}
+
+.zyre-addon-alert .zyre-alert-dismiss svg {
+	transition: fill var(--transition-duration);
+}
+
+.zyre-alert-info .zyre-alert-dismiss:hover {
+	color: #94d0ff;
+}
+
+.zyre-alert-info .zyre-alert-dismiss:hover svg {
+	fill: #94d0ff;
+}
+
+.zyre-alert-success .zyre-alert-dismiss:hover {
+	color: #02ee02;
+}
+
+.zyre-alert-success .zyre-alert-dismiss:hover svg {
+	fill: #02ee02;
+}
+
+.zyre-alert-warning .zyre-alert-dismiss:hover {
+	color: #fdc200;
+}
+
+.zyre-alert-warning .zyre-alert-dismiss:hover svg {
+	fill: #fdc200;
+}
+
+.zyre-alert-danger .zyre-alert-dismiss:hover {
+	color: #ff6767;
+}
+
+.zyre-alert-danger .zyre-alert-dismiss:hover svg {
+	fill: #ff6767;
+}

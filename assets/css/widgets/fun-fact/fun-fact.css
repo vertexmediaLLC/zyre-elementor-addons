@@ -1,0 +1,14 @@
+.zyre-addon-fun-fact .zyre-fun-fact-divider {
+    height: 1px;
+    background-color: #ccc;
+}
+
+.zyre-addon-fun-fact .zyre-fun-fact-number-wrap.zyre-fun-fact-number-wrap-gradient {
+	background-clip: text;
+	color: transparent !important;
+}
+
+.zyre-addon-fun-fact .zyre-fun-fact-image img {
+	object-fit: cover;
+	width: 140px;
+}

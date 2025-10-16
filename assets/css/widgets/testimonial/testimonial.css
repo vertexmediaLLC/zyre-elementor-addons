@@ -1,0 +1,57 @@
+.zyre-addon-testimonial {
+	--grid-column-gap: 5px;
+	--grid-row-gap: 0px;
+}
+
+.zyre-addon-testimonial .elementor-widget-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.zyre-addon-testimonial .elementor-widget-container > * {
+	width: 100%;
+}
+
+.zyre-testimonial--image-left .elementor-widget-container .zyre-testimonial-image,
+.zyre-testimonial--image-right .elementor-widget-container .zyre-testimonial-image {
+	width: auto;
+	flex-shrink: 0;
+}
+
+.zyre-addon-testimonial .zyre-testimonial-quote-left {
+	left: 0;
+}
+
+.zyre-addon-testimonial .zyre-testimonial-quote-right {
+	right: 0;
+}
+
+.zyre-addon-testimonial .zyre-testimonial-quote-above {
+	top: 0;
+}
+
+.zyre-addon-testimonial .zyre-testimonial-quote-below {
+	bottom: 0;
+}
+
+/* Rating */
+.zyre-addon-testimonial .zyre-testimonial-rating-stars {
+    color: #cccccc;
+}
+
+.zyre-addon-testimonial .zyre-testimonial-rating-type-number .zyre-testimonial-rating-stars {
+	gap: 5px;
+	background-color: #972626;
+	padding: 5px 10px;
+	border-radius: 20px;
+	color: #fff;
+}
+
+.zyre-addon-testimonial .zyre-testimonial-rating,
+.zyre-addon-testimonial .zyre-testimonial-rated {
+    font-size: 24px;
+}
+
+.zyre-addon-testimonial .zyre-testimonial-rated {
+	color: #ffc800;
+}

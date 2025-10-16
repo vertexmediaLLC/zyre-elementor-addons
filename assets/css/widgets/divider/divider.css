@@ -1,0 +1,16 @@
+.zyre-addon-divider:not(.zyre-divider--vertical) .zyre-divider-separator {
+	width: 100%;
+}
+
+.zyre-divider--vertical .zyre-divider,
+.zyre-divider--vertical .zyre-divider-separator {
+    height: 100%;
+}
+
+.zyre-addon-divider:not(.zyre-divider--element-align-left) .zyre-divider-separator::before,
+.zyre-addon-divider:not(.zyre-divider--element-align-right) .zyre-divider-separator::after {
+    content: "";
+    display: block;
+	width: 100%;
+    flex-grow: 1;
+}

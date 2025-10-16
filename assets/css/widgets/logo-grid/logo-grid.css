@@ -1,0 +1,10 @@
+.zyre-addon-logo-grid .zyre-logo-grid-content {
+	--transition-duration: var(--zy-transition-duration);
+	transition: all var(--transition-duration);
+}
+
+.zyre-addon-logo-grid .zyre-logo-grid-content img {
+	--transition-duration: var(--zy-transition-duration);
+	transition: all var(--transition-duration);
+	object-fit: cover;
+}

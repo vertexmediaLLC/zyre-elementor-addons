@@ -1,0 +1,94 @@
+/* Comments Area */
+.zyre-addon-post-comments #comments .comment .comment-body,
+.zyre-addon-post-comments #comments .pingback .comment-body {
+	display: flex;
+    flex-direction: column;
+	padding-block: 0;
+	padding: 30px 30px 30px 30px;
+	border-block-end: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.zyre-addon-post-comments .comment .comment-body a,
+.zyre-addon-post-comments .pingback .comment-body a {
+	transition: color 0.12s;
+}
+
+body:not(.rtl) .zyre-addon-post-comments #comments .comment .comment-body.has-avatar,
+body:not(.rtl) .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar {
+	padding-left: 60px;
+}
+
+body.rtl .zyre-addon-post-comments #comments .comment .comment-body.has-avatar,
+body.rtl .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar {
+	padding-right: 60px;
+}
+
+.zyre-addon-post-comments #comments .comment-meta {
+    margin-block-end: 15px;
+}
+
+.zyre-addon-post-comments .comment .comment-meta * {
+	transition: color 0.2s;
+}
+
+.zyre-addon-post-comments #comments .comment .avatar,
+.zyre-addon-post-comments #comments .pingback .avatar {
+    border-radius: 50%;
+    left: 0;
+    margin-inline-end: 0;
+    position: absolute;
+}
+
+.zyre-addon-post-comments #comments .children {
+	padding-inline-start: 30px;
+}
+
+/* Pagination */
+.zyre-addon-post-comments .zyre-comments-navigation > * {
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-post-comments .zyre-comments-navigation .page-numbers {
+	display: inline-block;
+	text-align: center;
+}
+
+.zyre-addon-post-comments .zyre-comments-navigation .page-numbers:not(.dots) {
+	padding: 6px 15px;
+}
+
+/* Comment Form */
+.zyre-addon-post-comments .zyre-comment-form-reply-title,
+.zyre-addon-post-comments .zyre-comment-form-notes,
+.zyre-addon-post-comments .logged-in-as,
+.zyre-addon-post-comments .must-log-in {
+	margin: 0;
+}
+
+.zyre-addon-post-comments .zyre-comment-form input[type=email],
+.zyre-addon-post-comments .zyre-comment-form input[type=text],
+.zyre-addon-post-comments .zyre-comment-form input[type=url],
+.zyre-addon-post-comments .zyre-comment-form textarea {
+	outline: none;
+}
+
+.zyre-addon-post-comments .zyre-comment-form-textarea {
+	display: block;
+}
+
+.zyre-addon-post-comments .zyre-comment-form-field-wrap:not(:last-child) {
+    margin-block-end: 15px;
+}
+
+.zyre-addon-post-comments .zyre-comment-form-field-wrap > label {
+	display: inline-block;
+}
+
+.zyre-addon-post-comments .zyre-comment-form-field-wrap:not(.zyre-comment-form-cookies) > label {
+	margin-block-end: 6px;
+}
+
+.zyre-addon-post-comments .zyre-comment-form-cookies > input {
+	vertical-align: middle;
+}

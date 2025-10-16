@@ -1,0 +1,14 @@
+.post .zyre-addon-post-thumbnail .wp-post-image {
+	width: auto;
+}
+
+.zyre-addon-post-thumbnail .zyre-post-thumbnail-inner:hover .zyre-thumbnail-caption-hover {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.zyre-addon-post-thumbnail .zyre-thumbnail-caption-hover {
+	font-size: 14px;
+	transform: translateY(100%);
+    transition: all 0.3s ease-in-out;
+}
