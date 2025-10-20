@@ -16,7 +16,7 @@ composer.lock
 **/package-lock.json
 phpcs.xml.dist
 readme.md
-src/
+/src
 
 # Ignore OS/editor files
 .DS_Store
