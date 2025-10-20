@@ -76,3 +76,15 @@ function zyre_get_credentials( $key = '' ) {
 
 	return $credentials;
 }
+
+/**
+ * @param $suffix. e.g. &t=dashboard
+ */
+function zyre_get_dashboard_link( $suffix = 'dashboard' ) {
+	$params = [
+		'page' => 'zyre-addons',
+		't'    => $suffix,
+	];
+
+	return add_query_arg( $params, admin_url('admin.php') );
+}

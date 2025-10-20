@@ -874,7 +874,7 @@ a.zyre-button-pro:focus {
 	margin-top: 60px;
 }
 
-.zyre-rating-stars svg {
+body.zyre-elementor-addons-dashboard .zyre-rating-stars svg {
 	width: 136px;
 	height: auto;
 }

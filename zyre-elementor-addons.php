@@ -3,11 +3,11 @@
  * Addon elements for Elementor Page Builder.
  *
  * Plugin Name: Zyre Elementor Addons
- * Description: Addon elements for Elementor Page Builder.
- * Plugin URI: https://elementorin.com/zyre-addons
+ * Description: <a href="https://zyreaddons.com/">Zyre Elementor Addons</a> is a powerful Elementor Addons with 56+ free widgets, including Accordion, Business Hour, CTA, Countdown, Flip Box, Carousel, Menu, News Ticker, Post Grid, Subscription Form, Testimonial, & more, along with a robust Theme Builder.
+ * Plugin URI: https://zyreaddons.com/
  * Version: 1.0.0
  * Author: ZyreAddons
- * Author URI: https://zyreaddons.com
+ * Author URI: https://zyreaddons.com/
  * Text Domain: zyre-elementor-addons
  * Domain Path: /languages/
  * Elementor tested up to: 3.32

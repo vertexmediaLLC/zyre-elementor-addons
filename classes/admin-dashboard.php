@@ -284,11 +284,14 @@ class Dashboard {
 				'title' => esc_html__( 'Integrations', 'zyre-elementor-addons' ),
 				'icon' => zyre_get_svg_icon( 'cog' ),
 			],
-			'pro' => [
+		];
+
+		if ( ! zyre_has_pro() ) {
+			$tabs['pro'] = [
 				'title' => esc_html__( 'Get Pro', 'zyre-elementor-addons' ),
 				'icon' => zyre_get_svg_icon( 'star' ),
-			],
-		];
+			];
+		}
 
 		return apply_filters( 'zyreaddons_dashboard_get_tabs', $tabs );
 	}

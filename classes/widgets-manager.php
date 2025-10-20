@@ -1459,7 +1459,15 @@ class Widgets_Manager {
 	 * @return array
 	 */
 	public static function get_pro_widget_map() {
-		return [];
+		return [
+			'mega-menu'  => [
+				'cat'    => 'general',
+				'title'  => __( 'Mega Menu', 'zyre-elementor-addons' ),
+				'icon'   => 'zy-fonticon zy-Mega-menu',
+				'is_pro' => true,
+				'demo'   => 'https://zyreaddons.com/demos/mega-menu/',
+			],
+		];
 	}
 
 	/**

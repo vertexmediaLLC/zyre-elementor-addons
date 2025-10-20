@@ -32,7 +32,7 @@
     opacity: .5;
 }
 
-.elementor-panel #elementor-panel-category-zyre_addons_pro_category .elementor-element>.eicon-lock {
+.elementor-panel .zyre-element--promotion > .elementor-element > .eicon-lock {
     right: auto;
     left: 5px;
 }
