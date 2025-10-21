@@ -48,9 +48,13 @@ class Plugin {
 	public static function instance() {
 		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
-			self::$instance->init();
 		}
+
 		return self::$instance;
+	}
+
+	private function __construct() {
+		add_action( 'init', [ $this, 'load_textdomain' ] );
 	}
 
 	/**
@@ -62,8 +66,6 @@ class Plugin {
 	 * @access public
 	 */
 	public function init() {
-		add_action( 'init', [ $this, 'load_textdomain' ] );
-
 		add_action( 'init', array( $this, 'include_files' ) );
 
 		// Register custom category.
@@ -75,7 +77,7 @@ class Plugin {
 		add_action( 'wp_ajax_zyre_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
 		add_action( 'wp_ajax_nopriv_zyre_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
 
-		$this->appsero_tracking_init();
+		// $this->appsero_tracking_init();
 
 		do_action( 'zyreaddons_loaded' );
 	}
@@ -130,9 +132,31 @@ class Plugin {
 		include_once ZYRE_ADDONS_DIR_PATH . 'classes/assets-cache.php';
 
 		if ( is_admin() ) {
+			// select2
 			include_once ZYRE_ADDONS_DIR_PATH . 'classes/select2-handler.php';
 			add_action( 'wp_ajax_zyre_process_dynamic_select', [ Select2_Handler::class, 'process_select_request' ] );
+
+			// Dashboard
 			include_once ZYRE_ADDONS_DIR_PATH . 'classes/admin-dashboard.php';
+			add_action( 'admin_menu', [ Dashboard::class, 'add_menu' ], 21 );
+			add_action( 'admin_menu', [ Dashboard::class, 'update_menu_items' ], 99 );
+			add_filter( 'submenu_file', [ Dashboard::class, 'update_submenu_file' ] );
+			add_action( 'admin_enqueue_scripts', [ Dashboard::class, 'enqueue_scripts' ] );
+			add_action( 'admin_enqueue_scripts', [ Dashboard::class, 'dequeue_scripts' ], 100 );
+
+			add_action( 'wp_ajax_' . Dashboard::DASHBOARD_NONCE, [ Dashboard::class, 'save_settings' ] );
+			add_action( 'zyreaddons_save_dashboard_settings', [ Dashboard::class, 'save_widgets' ], 1 );
+			add_action( 'zyreaddons_save_dashboard_settings', [ Dashboard::class, 'save_widgets_styles' ] );
+			add_action( 'zyreaddons_save_dashboard_settings', [ Dashboard::class, 'save_credentials' ] );
+
+			add_action( 'in_admin_header', [ Dashboard::class, 'remove_admin_notices' ], PHP_INT_MAX );
+
+			add_filter( 'admin_body_class', [ Dashboard::class, 'add_body_class' ] );
+
+			// Include the Credentials_Manager class if it doesn't exist.
+			if ( ! class_exists( 'ZyreAddons\Elementor\Credentials_Manager' ) ) {
+				include_once ZYRE_ADDONS_DIR_PATH . 'classes/credentials-manager.php';
+			}
 		}
 
 		if ( is_user_logged_in() ) {

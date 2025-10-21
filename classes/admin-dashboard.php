@@ -18,28 +18,6 @@ class Dashboard {
 
 	protected static $menu_slug = '';
 
-	public static function init() {
-		add_action( 'admin_menu', [ __CLASS__, 'add_menu' ], 21 );
-		add_action( 'admin_menu', [ __CLASS__, 'update_menu_items' ], 99 );
-		add_filter( 'submenu_file', [ __CLASS__, 'update_submenu_file' ] );
-		add_action( 'admin_enqueue_scripts', [ __CLASS__, 'enqueue_scripts' ] );
-		add_action( 'admin_enqueue_scripts', [ __CLASS__, 'dequeue_scripts' ], 100 );
-
-		add_action( 'wp_ajax_' . self::DASHBOARD_NONCE, [ __CLASS__, 'save_settings' ] );
-		add_action( 'zyreaddons_save_dashboard_settings', [ __CLASS__, 'save_widgets' ], 1 );
-		add_action( 'zyreaddons_save_dashboard_settings', [ __CLASS__, 'save_widgets_styles' ] );
-		add_action( 'zyreaddons_save_dashboard_settings', [ __CLASS__, 'save_credentials' ] );
-
-		add_action( 'in_admin_header', [ __CLASS__, 'remove_admin_notices' ], PHP_INT_MAX );
-
-		add_filter( 'admin_body_class', [ __CLASS__, 'add_body_class' ] );
-
-		// Include the Credentials_Manager class if it doesn't exist.
-		if ( ! class_exists( 'ZyreAddons\Elementor\Credentials_Manager' ) ) {
-			include_once ZYRE_ADDONS_DIR_PATH . 'classes/credentials-manager.php';
-		}
-	}
-
 	public static function is_page() {
 		return ( isset( $_GET['page'] ) && ( sanitize_text_field( $_GET['page'] ) === self::PAGE_SLUG ) );
 	}
@@ -319,5 +297,3 @@ class Dashboard {
 		return $credentail_map;
 	}
 }
-
-Dashboard::init();

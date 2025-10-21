@@ -275,7 +275,9 @@ class Advance_Heading extends Base {
 				'controls' => [
 					'text_color'      => [],
 					'background'      => [],
-					'background_clip' => [],
+					'background_clip' => [
+						'default' => ( 'title_text' === $prefix ) ? 'inherit' : 'text',
+					],
 					'shadow'          => [],
 					'box_shadow'      => [],
 					'border'          => [],

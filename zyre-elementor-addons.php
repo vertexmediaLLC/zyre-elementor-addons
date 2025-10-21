@@ -86,7 +86,7 @@ function zyre_init() {
 	}
 
 	require ZYRE_ADDONS_DIR_PATH . 'base/plugin-base.php';
-	\ZyreAddons\Elementor\Plugin::instance();
+	\ZyreAddons\Elementor\Plugin::instance()->init();
 }
 
 add_action( 'plugins_loaded', 'zyre_init' );

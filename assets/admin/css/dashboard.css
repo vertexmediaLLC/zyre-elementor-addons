@@ -822,6 +822,10 @@ a.zyre-button-pro:focus {
 	border-bottom: 1px solid #f7f9fb;
 }
 
+.zyre-help-knowledge-logo {
+    font-size: 48px;
+}
+
 .zyre-sidebar-header-heading {
 	font-size: 24px;
 }
