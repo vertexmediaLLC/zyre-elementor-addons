@@ -2121,13 +2121,14 @@ class Call_To_Action extends Base {
 			[
 				'label' => esc_html__( 'Display as', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
+				'default' => $display_default,
 				'options' => [
 					'block' => esc_html__( 'Block', 'zyre-elementor-addons' ),
 					'inline-block' => esc_html__( 'Inline Block', 'zyre-elementor-addons' ),
 					'inline'       => esc_html__( 'Inline', 'zyre-elementor-addons' ),
 					'table' => esc_html__( 'Table', 'zyre-elementor-addons' ),
 				],
-				'default' => $display_default,
+				'render_type' => 'template',
 				'selectors' => [
 					'{{WRAPPER}} .zyre-cta-' . $class_base => 'display: {{VALUE}};',
 				],
@@ -2207,6 +2208,9 @@ class Call_To_Action extends Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
+		// var_dump( $settings );
+		// var_dump( $settings['subtitle_display'] );
+
 		$title_tag = Utils::validate_html_tag( $settings['title_tag'] );
 		$subtitle_tag = Utils::validate_html_tag( $settings['subtitle_tag'] );
 		$description_tag = Utils::validate_html_tag( $settings['description_tag'] );
@@ -2241,15 +2245,27 @@ class Call_To_Action extends Base {
 
 		$this->add_render_attribute( 'content_wrapper', 'class', 'zyre-cta-content-wrapper zy-flex zy-flex-wrap zy-overflow-hidden zy-w-100 zy-relative zy-index-1' );
 		$this->add_render_attribute( 'content', 'class', 'zyre-cta-content zy-flex zy-flex-wrap zy-w-100' );
+		$this->add_render_attribute( 'title_main', 'class', 'zyre-cta-title' );
+		if ( ! empty( $settings['title_display'] ) ) {
+			$this->add_render_attribute( 'title_main', 'class', esc_attr( 'zyre-d-' . $settings['title_display'] ) );
+		}
 		$this->add_render_attribute( 'title', 'class', 'zyre-cta-title-text' );
 		$this->add_render_attribute( 'title_prefix', 'class', 'zyre-cta-title-prefix' );
-		$this->add_render_attribute( 'title_prefix', 'class', esc_attr( 'zyre-d-' . $settings['title_prefix_display'] ) );
+		if ( ! empty( $settings['title_prefix_display'] ) ) {
+			$this->add_render_attribute( 'title_prefix', 'class', esc_attr( 'zyre-d-' . $settings['title_prefix_display'] ) );
+		}
 		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-cta-title-suffix' );
-		$this->add_render_attribute( 'title_suffix', 'class', esc_attr( 'zyre-d-' . $settings['title_suffix_display'] ) );
+		if ( ! empty( $settings['title_suffix_display'] ) ) {
+			$this->add_render_attribute( 'title_suffix', 'class', esc_attr( 'zyre-d-' . $settings['title_suffix_display'] ) );
+	}
 		$this->add_render_attribute( 'subtitle', 'class', 'zyre-cta-subtitle' );
-		$this->add_render_attribute( 'subtitle', 'class', esc_attr( 'zyre-d-' . $settings['subtitle_display'] ) );
+		if ( ! empty( $settings['subtitle_display'] ) ) {
+			$this->add_render_attribute( 'subtitle', 'class', esc_attr( 'zyre-d-' . $settings['subtitle_display'] ) );
+		}
 		$this->add_render_attribute( 'description', 'class', 'zyre-cta-description' );
-		$this->add_render_attribute( 'description', 'class', esc_attr( 'zyre-d-' . $settings['description_display'] ) );
+		if ( ! empty( $settings['description_display'] ) ) {
+			$this->add_render_attribute( 'description', 'class', esc_attr( 'zyre-d-' . $settings['description_display'] ) );
+		}
 		$this->add_render_attribute( 'media_element', 'class', 'zyre-cta-media' );
 
 		if ( ! empty( $settings['media_layout'] ) ) {
@@ -2320,7 +2336,7 @@ class Call_To_Action extends Base {
 								<?php endif; ?>
 
 								<?php if ( ! empty( $settings['title'] ) ) : ?>
-									<<?php Utils::print_validated_html_tag( $title_tag ); ?> class="zyre-cta-title <?php echo esc_attr( 'zyre-d-' . $settings['title_display'] ); ?>">
+									<<?php Utils::print_validated_html_tag( $title_tag ); ?> <?php $this->print_render_attribute_string( 'title_main' ); ?>>
 										<?php if ( ! empty( $settings['title_prefix'] ) ) : ?>
 											<span <?php $this->print_render_attribute_string( 'title_prefix' ); ?>><?php $this->print_unescaped_setting( 'title_prefix' ); ?></span>
 										<?php endif; ?>

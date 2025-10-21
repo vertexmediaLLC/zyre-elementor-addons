@@ -92,6 +92,7 @@
 .zyre-addon .zy-block {display: block;}
 .zyre-addon .zy-inline-block {display: inline-block;}
 .zyre-addon .zy-inline {display: inline;}
+.zyre-addon .zy-table {display: table;}
 .zyre-addon .zy-d-none {display: none;}
 
 /* visibility */
