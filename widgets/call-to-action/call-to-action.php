@@ -2208,9 +2208,6 @@ class Call_To_Action extends Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		// var_dump( $settings );
-		// var_dump( $settings['subtitle_display'] );
-
 		$title_tag = Utils::validate_html_tag( $settings['title_tag'] );
 		$subtitle_tag = Utils::validate_html_tag( $settings['subtitle_tag'] );
 		$description_tag = Utils::validate_html_tag( $settings['description_tag'] );
