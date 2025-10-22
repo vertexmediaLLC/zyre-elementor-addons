@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-15T11:59:44+00:00\n"
+"POT-Creation-Date: 2025-10-22T03:44:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -23,13 +23,14 @@ msgid "Zyre Elementor Addons"
 msgstr ""
 
 #. Plugin URI of the plugin
+#. Author URI of the plugin
 #: zyre-elementor-addons.php
-msgid "https://elementorin.com/zyre-addons"
+msgid "https://zyreaddons.com/"
 msgstr ""
 
 #. Description of the plugin
 #: zyre-elementor-addons.php
-msgid "Addon elements for Elementor Page Builder."
+msgid "<a href=\"https://zyreaddons.com/\">Zyre Elementor Addons</a> is a powerful Elementor Addons with 56+ free widgets, including Accordion, Business Hour, CTA, Countdown, Flip Box, Carousel, Menu, News Ticker, Post Grid, Subscription Form, Testimonial, & more, along with a robust Theme Builder."
 msgstr ""
 
 #. Author of the plugin
@@ -37,13 +38,8 @@ msgstr ""
 msgid "ZyreAddons"
 msgstr ""
 
-#. Author URI of the plugin
-#: zyre-elementor-addons.php
-msgid "https://zyreaddons.com"
-msgstr ""
-
-#: base/plugin-base.php:172
-#: classes/admin-dashboard.php:195
+#: base/plugin-base.php:196
+#: classes/admin-dashboard.php:173
 msgid "Zyre Addons"
 msgstr ""
 
@@ -326,7 +322,7 @@ msgstr ""
 #: widgets/archive-title/archive-title.php:340
 #: widgets/call-to-action/call-to-action.php:1081
 #: widgets/call-to-action/call-to-action.php:1639
-#: widgets/call-to-action/call-to-action.php:2170
+#: widgets/call-to-action/call-to-action.php:2171
 #: widgets/dual-button/dual-button.php:309
 #: widgets/featured-banner/featured-banner.php:1045
 #: widgets/featured-banner/featured-banner.php:1581
@@ -1156,33 +1152,33 @@ msgstr ""
 msgid "HIDE"
 msgstr ""
 
-#: classes/admin-dashboard.php:152
+#: classes/admin-dashboard.php:130
 #: templates/admin/dashboard-home.php:115
 msgid "Save Settings"
 msgstr ""
 
-#: classes/admin-dashboard.php:153
+#: classes/admin-dashboard.php:131
 msgid "Settings Saved"
 msgstr ""
 
-#: classes/admin-dashboard.php:194
+#: classes/admin-dashboard.php:172
 msgid "Zyre Elementor Addons Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:276
+#: classes/admin-dashboard.php:254
 msgid "Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:280
+#: classes/admin-dashboard.php:258
 msgid "Widgets"
 msgstr ""
 
-#: classes/admin-dashboard.php:284
+#: classes/admin-dashboard.php:262
 #: widgets/subscription-form/subscription-form.php:54
 msgid "Integrations"
 msgstr ""
 
-#: classes/admin-dashboard.php:288
+#: classes/admin-dashboard.php:269
 #: templates/admin/dashboard-home.php:54
 #: templates/template-library/templates.php:69
 msgid "Get Pro"
@@ -2017,17 +2013,21 @@ msgstr ""
 msgid "Lottie Animations"
 msgstr ""
 
-#: classes/widgets-manager.php:1552
+#: classes/widgets-manager.php:1467
+msgid "Mega Menu"
+msgstr ""
+
+#: classes/widgets-manager.php:1561
 msgid "(Inactive)"
 msgstr ""
 
 #. translators: 1: style number, 2: style name, 3: additional text
-#: classes/widgets-manager.php:1554
+#: classes/widgets-manager.php:1563
 #, php-format
 msgid "Style %1$d - %2$s %3$s"
 msgstr ""
 
-#: classes/widgets-manager.php:1589
+#: classes/widgets-manager.php:1598
 msgid "Default - No Style"
 msgstr ""
 
@@ -3070,7 +3070,7 @@ msgstr ""
 #: traits/social-trait.php:246
 #: traits/social-trait.php:541
 #: widgets/advance-accordion/advance-accordion.php:422
-#: widgets/advance-heading/advance-heading.php:292
+#: widgets/advance-heading/advance-heading.php:294
 #: widgets/advance-toggle/advance-toggle.php:364
 #: widgets/advance-toggle/advance-toggle.php:462
 #: widgets/advance-toggle/advance-toggle.php:580
@@ -3563,10 +3563,10 @@ msgstr ""
 
 #: traits/list-item-trait.php:46
 #: widgets/advance-heading/advance-heading.php:106
-#: widgets/advance-heading/advance-heading.php:367
+#: widgets/advance-heading/advance-heading.php:369
 #: widgets/alert/alert.php:102
 #: widgets/animated-text/animated-text.php:162
-#: widgets/call-to-action/call-to-action.php:2125
+#: widgets/call-to-action/call-to-action.php:2126
 #: widgets/featured-banner/featured-banner.php:1986
 #: widgets/post-grid/post-grid.php:1273
 #: widgets/testimonial/testimonial.php:998
@@ -3575,10 +3575,10 @@ msgstr ""
 
 #: traits/list-item-trait.php:50
 #: widgets/advance-heading/advance-heading.php:110
-#: widgets/advance-heading/advance-heading.php:371
+#: widgets/advance-heading/advance-heading.php:373
 #: widgets/alert/alert.php:106
 #: widgets/animated-text/animated-text.php:161
-#: widgets/call-to-action/call-to-action.php:2127
+#: widgets/call-to-action/call-to-action.php:2128
 #: widgets/featured-banner/featured-banner.php:1988
 #: widgets/post-grid/post-grid.php:1277
 #: widgets/testimonial/testimonial.php:1000
@@ -4247,23 +4247,23 @@ msgstr ""
 msgid "H6"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:345
+#: widgets/advance-heading/advance-heading.php:347
 msgid "Separators Style"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:395
-#: widgets/advance-heading/advance-heading.php:407
+#: widgets/advance-heading/advance-heading.php:397
+#: widgets/advance-heading/advance-heading.php:409
 #: widgets/divider/divider.php:193
 msgid "Left Separator"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:420
-#: widgets/advance-heading/advance-heading.php:491
+#: widgets/advance-heading/advance-heading.php:422
+#: widgets/advance-heading/advance-heading.php:493
 msgid "Set width, & border type, color for appearance."
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:466
-#: widgets/advance-heading/advance-heading.php:478
+#: widgets/advance-heading/advance-heading.php:468
+#: widgets/advance-heading/advance-heading.php:480
 #: widgets/divider/divider.php:235
 msgid "Right Separator"
 msgstr ""
@@ -6088,13 +6088,13 @@ msgstr ""
 msgid "Display as"
 msgstr ""
 
-#: widgets/call-to-action/call-to-action.php:2126
+#: widgets/call-to-action/call-to-action.php:2127
 #: widgets/featured-banner/featured-banner.php:1987
 #: widgets/testimonial/testimonial.php:999
 msgid "Inline Block"
 msgstr ""
 
-#: widgets/call-to-action/call-to-action.php:2128
+#: widgets/call-to-action/call-to-action.php:2129
 #: widgets/featured-banner/featured-banner.php:1989
 #: widgets/testimonial/testimonial.php:1001
 msgid "Table"
