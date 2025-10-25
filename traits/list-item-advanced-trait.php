@@ -2040,9 +2040,9 @@ trait List_Item_Advanced_Trait {
 		$instance->add_render_attribute( 'item_link', 'class', "zyre-{$class_base}list-item-link" );
 		$instance->add_render_attribute( 'item', 'class', ! empty( $settings['item_layout'] ) ? "zyre-{$class_base}list-item--content-" . esc_attr( $settings['item_layout'] ) : '' );
 
-		$instance->add_render_attribute( 'icon', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-icon" );
-		$instance->add_render_attribute( 'image', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-image" );
-		$instance->add_render_attribute( 'number', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-num" );
+		$instance->add_render_attribute( 'icon', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-icon zy-overflow-hidden" );
+		$instance->add_render_attribute( 'image', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-image zy-overflow-hidden" );
+		$instance->add_render_attribute( 'number', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-num zy-overflow-hidden" );
 		$instance->add_render_attribute( 'item_content', 'class', "zyre-{$class_base}list-item-content" );
 		?>
 
@@ -2093,7 +2093,7 @@ trait List_Item_Advanced_Trait {
 					<?php if ( 'image' === $item['item_type'] ) : ?>
 						<div <?php $instance->print_render_attribute_string( 'image' ); ?>>
 							<?php
-							if ( isset( $image['source'] ) && $image['id'] ) :
+							if ( isset( $image['source'] ) && $image['id'] && isset( $settings['thumbnail_size'] ) ) :
 								echo wp_get_attachment_image(
 									$image['id'],
 									$settings['thumbnail_size'],

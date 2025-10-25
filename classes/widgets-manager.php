@@ -145,7 +145,7 @@ class Widgets_Manager {
 				'is_active' => true,
 				'demo'      => 'https://elementorin.com/zyre-addons/heading',
 				'title'     => esc_html__( 'Heading', 'zyre-elementor-addons' ),
-				'icon'      => 'zy-fonticon zy-Advance-heading',
+				'icon'      => 'zy-fonticon zy-Text-t',
 				'css'       => [ 'heading' ],
 				'styles'    => [
 					'one'   => [

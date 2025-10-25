@@ -13,7 +13,7 @@ class Heading extends Base {
 	}
 
 	public function get_icon() {
-		return 'zy-fonticon zy-Advance-heading';
+		return 'zy-fonticon zy-Text-t';
 	}
 
 	public function get_keywords() {
