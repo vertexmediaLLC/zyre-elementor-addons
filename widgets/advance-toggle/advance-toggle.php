@@ -707,13 +707,13 @@ class Advance_Toggle extends Base {
 					<h4  class="zyre-accordion-toggle zy-flex align-center zy-m-0 zy-c-pointer">
 						<?php if ( isset( $settings['open_icon']['value'] ) && '' !== $settings['open_icon']['value'] ) : ?>
 							<span class="toggle-icon toggle-icon-closed zy-self-center zy-text-center zy-content-center">
-								<?php zyre_render_icon( $settings, 'icon', 'open_icon' ); ?>
+								<?php zyre_render_icon( $settings, 'icon', 'open_icon', [ 'class' => 'zy-mx-auto' ] ); ?>
 							</span>
 						<?php endif; ?>
 
 						<?php if ( isset( $settings['collapse_icon']['value'] ) && '' !== $settings['collapse_icon']['value'] ) : ?>
 							<span class="toggle-icon toggle-icon-opened zy-self-center zy-text-center zy-content-center">
-								<?php zyre_render_icon( $settings, 'icon', 'collapse_icon' ); ?>
+								<?php zyre_render_icon( $settings, 'icon', 'collapse_icon', [ 'class' => 'zy-mx-auto' ] ); ?>
 							</span>
 						<?php endif; ?>
 						<span class="toggle-text zy-grow-1">

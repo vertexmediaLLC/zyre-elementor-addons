@@ -1074,7 +1074,7 @@ class Animated_Text extends Base {
 		$this->start_controls_section(
 			'section_suffix_style',
 			[
-				'label' => esc_html__( 'Suffix Text', 'zyre-elementor-addons' ),
+				'label' => esc_html__( 'After Text', 'zyre-elementor-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'suffix_text!' => '',

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-22T03:44:39+00:00\n"
+"POT-Creation-Date: 2025-11-01T05:37:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -931,56 +931,56 @@ msgstr ""
 msgid "Stretch"
 msgstr ""
 
-#: base/widget-base.php:961
+#: base/widget-base.php:962
 #: widgets/animated-text/animated-text.php:259
 #: widgets/call-to-action/call-to-action.php:2089
 #: widgets/infobox/infobox.php:646
 msgid "Rotate"
 msgstr ""
 
-#: base/widget-base.php:992
+#: base/widget-base.php:993
 #: widgets/image-carousel/image-carousel.php:100
 #: widgets/logo-carousel/logo-carousel.php:109
 #: widgets/news-ticker/news-ticker.php:346
 msgid "Transition Effect"
 msgstr ""
 
-#: base/widget-base.php:996
+#: base/widget-base.php:997
 #: widgets/image-carousel/image-carousel.php:104
 #: widgets/logo-carousel/logo-carousel.php:113
 #: widgets/news-ticker/news-ticker.php:350
 msgid "ease"
 msgstr ""
 
-#: base/widget-base.php:997
+#: base/widget-base.php:998
 #: widgets/image-carousel/image-carousel.php:105
 #: widgets/logo-carousel/logo-carousel.php:114
 #: widgets/news-ticker/news-ticker.php:351
 msgid "linear"
 msgstr ""
 
-#: base/widget-base.php:998
+#: base/widget-base.php:999
 #: widgets/image-carousel/image-carousel.php:106
 #: widgets/logo-carousel/logo-carousel.php:115
 #: widgets/news-ticker/news-ticker.php:352
 msgid "ease-in"
 msgstr ""
 
-#: base/widget-base.php:999
+#: base/widget-base.php:1000
 #: widgets/image-carousel/image-carousel.php:107
 #: widgets/logo-carousel/logo-carousel.php:116
 #: widgets/news-ticker/news-ticker.php:353
 msgid "ease-out"
 msgstr ""
 
-#: base/widget-base.php:1000
+#: base/widget-base.php:1001
 #: widgets/image-carousel/image-carousel.php:108
 #: widgets/logo-carousel/logo-carousel.php:117
 #: widgets/news-ticker/news-ticker.php:354
 msgid "ease-in-out"
 msgstr ""
 
-#: base/widget-base.php:1017
+#: base/widget-base.php:1018
 #: traits/swiper-trait.php:258
 #: widgets/call-to-action/call-to-action.php:850
 #: widgets/call-to-action/call-to-action.php:960
@@ -994,11 +994,11 @@ msgstr ""
 msgid "Transition Duration"
 msgstr ""
 
-#: base/widget-base.php:1040
+#: base/widget-base.php:1041
 msgid "Object Fit"
 msgstr ""
 
-#: base/widget-base.php:1044
+#: base/widget-base.php:1045
 #: widgets/call-to-action/call-to-action.php:99
 #: widgets/call-to-action/call-to-action.php:177
 #: widgets/featured-banner/featured-banner.php:99
@@ -1006,22 +1006,22 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: base/widget-base.php:1045
+#: base/widget-base.php:1046
 #: widgets/call-to-action/call-to-action.php:178
 #: widgets/featured-banner/featured-banner.php:178
 msgid "Contain"
 msgstr ""
 
-#: base/widget-base.php:1046
+#: base/widget-base.php:1047
 #: widgets/animated-text/animated-text.php:500
 msgid "Fill"
 msgstr ""
 
-#: base/widget-base.php:1047
+#: base/widget-base.php:1048
 msgid "Scale Down"
 msgstr ""
 
-#: base/widget-base.php:1048
+#: base/widget-base.php:1049
 #: traits/swiper-trait.php:213
 #: traits/swiper-trait.php:240
 #: widgets/archive-title/archive-title.php:293
@@ -1054,12 +1054,12 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: base/widget-base.php:1064
+#: base/widget-base.php:1065
 #: widgets/image-heading/image-heading.php:561
 msgid "Z-Index"
 msgstr ""
 
-#: base/widget-base.php:1083
+#: base/widget-base.php:1084
 #: widgets/animated-text/animated-text.php:1460
 #: widgets/call-to-action/call-to-action.php:1953
 #: widgets/dual-button/dual-button.php:523
@@ -1070,7 +1070,7 @@ msgstr ""
 msgid "Horizontal Offset"
 msgstr ""
 
-#: base/widget-base.php:1113
+#: base/widget-base.php:1114
 #: widgets/animated-text/animated-text.php:1484
 #: widgets/call-to-action/call-to-action.php:1982
 #: widgets/dual-button/dual-button.php:552
@@ -1080,11 +1080,11 @@ msgstr ""
 msgid "Vertical Offset"
 msgstr ""
 
-#: base/widget-base.php:1141
+#: base/widget-base.php:1142
 msgid "Options"
 msgstr ""
 
-#: base/widget-base.php:1159
+#: base/widget-base.php:1160
 #: classes/widgets-manager.php:1056
 #: traits/list-item-advanced-trait.php:470
 #: widgets/divider/divider.php:15
@@ -1098,7 +1098,7 @@ msgstr ""
 msgid "Divider"
 msgstr ""
 
-#: base/widget-base.php:1160
+#: base/widget-base.php:1161
 #: traits/list-item-advanced-trait.php:473
 #: widgets/archive-posts/archive-posts.php:269
 #: widgets/archive-posts/archive-posts.php:317
@@ -1118,7 +1118,7 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: base/widget-base.php:1161
+#: base/widget-base.php:1162
 #: traits/list-item-advanced-trait.php:472
 #: widgets/archive-posts/archive-posts.php:270
 #: widgets/archive-posts/archive-posts.php:318
@@ -1138,16 +1138,16 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: base/widget-base.php:1182
+#: base/widget-base.php:1183
 msgid "Show Separators"
 msgstr ""
 
-#: base/widget-base.php:1184
+#: base/widget-base.php:1185
 #: widgets/heading/heading.php:596
 msgid "SHOW"
 msgstr ""
 
-#: base/widget-base.php:1185
+#: base/widget-base.php:1186
 #: widgets/heading/heading.php:597
 msgid "HIDE"
 msgstr ""
@@ -4478,6 +4478,7 @@ msgid "Graphics"
 msgstr ""
 
 #: widgets/animated-text/animated-text.php:147
+#: widgets/animated-text/animated-text.php:1077
 #: widgets/archive-title/archive-title.php:557
 #: widgets/page-title/page-title.php:424
 #: widgets/post-title/post-title.php:419
@@ -4766,10 +4767,6 @@ msgstr ""
 
 #: widgets/animated-text/animated-text.php:1020
 msgid "Animation Delay (sec)"
-msgstr ""
-
-#: widgets/animated-text/animated-text.php:1077
-msgid "Suffix Text"
 msgstr ""
 
 #: widgets/animated-text/animated-text.php:1143

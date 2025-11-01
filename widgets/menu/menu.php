@@ -1312,7 +1312,7 @@ class Menu extends Base {
 
 		$left_right = is_rtl() ? 'right' : 'left';
 
-		$css_styles = "{$widget_class} .zyre-nav-menu:not(.initialized){display: none} {$widget_class} .zyre-hamburger-wrapper{display:none}{$widget_class} ul.menu{--flex-grow: 0;display:flex;flex-wrap:wrap;align-items:center;column-gap:20px;row-gap:20px}{$widget_class} ul.menu > li {justify-content: center;flex-grow:var(--flex-grow)}{$widget_class} ul.menu > li > a {padding: 20px 0;}{$widget_class} ul.menu li .submenu-indicator{display:inline-block;vertical-align:middle;margin:auto 0;margin-inline-start:5px;text-align:center;cursor:pointer}{$widget_class} ul.sub-menu{position:absolute;{$left_right}:0;transform:translateY(20px);transition:.3s;visibility:hidden;opacity:0;z-index:9999;background-color:#fff;box-shadow:4px 6px 12px rgba(0,0,0,.1);min-width:260px;top:100%}{$widget_class} ul.sub-menu li .submenu-indicator{padding-left:20px;padding-right:20px;transform:rotate(-90deg)}{$widget_class} ul.menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1}{$widget_class} ul.sub-menu li a{padding:18px 20px}{$widget_class} ul.sub-menu ul.sub-menu{{$left_right}:100%}{$widget_class} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1;top:0;{$left_right}:100%}{$widget_class}";
+		$css_styles = "{$widget_class} .zyre-nav-menu:not(.initialized){display: none} {$widget_class} .zyre-hamburger-wrapper{display:none}{$widget_class} ul.menu{--flex-grow: 0;display:flex;flex-wrap:wrap;align-items:center;column-gap:20px;row-gap:20px}{$widget_class} ul.menu > li {justify-content: center;flex-grow:var(--flex-grow)}{$widget_class} ul.menu > li > a {padding: 20px 0;}{$widget_class} ul.menu li .submenu-indicator{display:inline-block;vertical-align:middle;margin:auto 0;margin-inline-start:5px;text-align:center;cursor:pointer}{$widget_class} ul.sub-menu{position:absolute;{$left_right}:0;transform:translateY(20px);transition:.3s;visibility:hidden;opacity:0;z-index:9999;background-color:#fff;box-shadow:4px 6px 12px rgba(0,0,0,.1);min-width:260px;top:100%}{$widget_class} ul.sub-menu li .submenu-indicator{padding-left:20px;padding-right:20px;transform:rotate(-90deg)}{$widget_class} ul.menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1}{$widget_class} ul.sub-menu li a{padding:18px 20px}{$widget_class} ul.sub-menu ul.sub-menu{{$left_right}:100%}{$widget_class} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1;top:0;{$left_right}:100%}";
 
 		// Remove border from First or Last Child Menu Item
 		if ( ! empty( $settings['menu_item_rm_border'] ) ) {
@@ -1332,8 +1332,10 @@ class Menu extends Base {
 				$breakpoint_values[ $breakpoint_key ] = $breakpoint_instance->get_value();
 			}
 
-			$min_width = $breakpoint_values[ $breakpoint ] + 1;
-			$max_width = $breakpoint_values[ $breakpoint ];
+			$has_breakpoint = array_key_exists( $breakpoint, $breakpoint_values );
+
+			$min_width = $has_breakpoint ? $breakpoint_values[ $breakpoint ] + 1 : '';
+			$max_width = $has_breakpoint ? $breakpoint_values[ $breakpoint ] : '-1';
 
 			if ( ! empty( $min_width ) ) {
 				$css_styles = '@media (min-width: ' . $min_width . 'px) {' . $css_styles . '}';
@@ -1346,7 +1348,12 @@ class Menu extends Base {
 					$css_responsive .= "{$widget_class}.zyre-menu__mobile ul.menu li:" . esc_attr( $settings['mobile_menu_item_rm_border'] ) . '{border: none !important}';
 				}
 
-				$css_styles .= '@media (max-width: ' . $max_width . 'px) {' . $css_responsive . '}';
+				if ( '-1' == $max_width ) {
+					$css_styles = ' @media screen {' . $css_responsive . '}';
+				} else {
+					$css_styles .= ' @media (max-width: ' . $max_width . 'px) {' . $css_responsive . '}';
+				}
+
 				$breakpoint_class = ' breakpoint-' . $max_width;
 			}
 		}

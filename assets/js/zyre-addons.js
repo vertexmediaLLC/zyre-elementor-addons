@@ -258,7 +258,7 @@ function haObserveTarget(target, callback) {
 		var $closeIcon = navMenu.find('.zyre-menu-close-icon');
 		var humBurgerBtn = navMenu.find('.zyre-menu-toggler');
 		var classAttr = navMenu.attr('class');
-		var match = classAttr.match(/breakpoint-(\d+)/);
+		var match = classAttr.match(/breakpoint-(-?\d+)/);
 		var breakpoint = match ? Math.round(match[1]) : null;
 
 		if(navMenu.length) {
@@ -284,29 +284,37 @@ function haObserveTarget(target, callback) {
 			}
 		});
 
-		function burgerClsAdd() {
-			if ( breakpoint && jQuery(window).width() <= breakpoint ) {
-				$scope.addClass('zyre-menu__mobile');
-				var subMenuIndicator = navMenu.find('.submenu-indicator');
-				subMenuIndicator.off('click').on('click', function () {
-					$(this).toggleClass('active');
-					var $parentEl = $(this).parent('li.menu-item-has-children');
-					if ($parentEl) {
-						$parentEl.children('ul.sub-menu').slideToggle();
-					}
-				});
-			}
-			else {
-				$scope.removeClass('zyre-menu__mobile');
-				navMenu.find('ul.menu').removeAttr('style');
-          		navMenu.find('ul.sub-menu').removeAttr('style');
-				$closeIcon.addClass('zy-icon-hide');
-				$openIcon.removeClass('zy-icon-hide');
-			}
+		function childrenToggle() {
+			$scope.addClass('zyre-menu__mobile');
+			var subMenuIndicator = navMenu.find('.submenu-indicator');
+			subMenuIndicator.off('click').on('click', function () {
+				$(this).toggleClass('active');
+				var $parentEl = $(this).parent('li.menu-item-has-children');
+				if ($parentEl) {
+					$parentEl.children('ul.sub-menu').slideToggle();
+				}
+			});
 		}
 
-		burgerClsAdd();
-		$window.on('resize', debounce(burgerClsAdd, 100));
+		if ( '-1' == breakpoint ) {
+			childrenToggle();
+		} else {
+			function burgerClsAdd() {
+				if ( breakpoint && jQuery(window).width() <= breakpoint ) {
+					childrenToggle();
+				}
+				else {
+					$scope.removeClass('zyre-menu__mobile');
+					navMenu.find('ul.menu').removeAttr('style');
+					navMenu.find('ul.sub-menu').css('display', '');
+					$closeIcon.addClass('zy-icon-hide');
+					$openIcon.removeClass('zy-icon-hide');
+				}
+			}
+
+			burgerClsAdd();
+			$window.on('resize', debounce(burgerClsAdd, 100));
+		}
 	};
 
 	// Count Down

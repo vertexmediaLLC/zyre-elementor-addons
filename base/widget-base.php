@@ -957,6 +957,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'rotate':
+						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';
 						$control_args = [
 							'label' => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Rotate', 'zyre-elementor-addons' ),
 							'type' => Controls_Manager::SLIDER,
@@ -977,7 +978,7 @@ abstract class Base extends Widget_Base {
 								],
 							],
 							'selectors' => [
-								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'transform: rotate({{SIZE}}{{UNIT}})',
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => "transform: rotate({{SIZE}}{{UNIT}}){$priority};",
 							],
 						];
 						if ( ! empty( $values['separator'] ) ) {
@@ -1082,7 +1083,7 @@ abstract class Base extends Widget_Base {
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Horizontal Offset', 'zyre-elementor-addons' ),
 							'type'       => Controls_Manager::SLIDER,
-							'size_units' => ! empty( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : [ '%', 'px', 'vw' ],
+							'size_units' => ! empty( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : [ '%', 'px', 'vw', 'custom' ],
 							'range'      => ! empty( $values['range'] ) && is_array( $values['range'] ) ? $values['range'] : [
 								'%'  => [
 									'min' => -100,
