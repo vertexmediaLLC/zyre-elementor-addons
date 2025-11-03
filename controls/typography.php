@@ -39,8 +39,22 @@ class Group_Control_Typography_Extended extends Group_Control_Typography {
 			],
 		];
 
+		// Underline Offset
+		$underline_offset_data = [
+			'label'      => esc_html__( 'Underline Offset', 'zyre-elementor-addons' ),
+			'type'       => \Elementor\Controls_Manager::SLIDER,
+			'size_units' => [ 'px', 'em' ],
+			'selector_value' => 'text-underline-offset: {{SIZE}}{{UNIT}};',
+			'condition' => [
+				'text_decoration' => [ 'underline' ],
+			],
+		];
+
 		// Insert after 'text_decoration' in one line
-		array_splice( $fields, array_search( 'text_decoration', array_keys( $fields ), true ) + 1, 0, [ 'text_decoration_thickness' => $decoration_thickness_data ] );
+		array_splice( $fields, array_search( 'text_decoration', array_keys( $fields ), true ) + 1, 0, [
+			'text_decoration_thickness' => $decoration_thickness_data,
+			'text_underline_offset'     => $underline_offset_data,
+		] );
 
 		return $fields;
 	}

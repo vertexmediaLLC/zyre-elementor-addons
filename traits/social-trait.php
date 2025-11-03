@@ -436,8 +436,13 @@ trait Social_Trait {
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
+				'selectors_dictionary' => [
+					'left'   => 'text-align: left; justify-items: flex-start;',
+					'center' => 'text-align: center; justify-items: center;',
+					'right'  => 'text-align: right; justify-items: flex-end;',
+				],
 				'selectors'   => [
-					'{{WRAPPER}}' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .zyre-social-icon-wrapper' => '{{VALUE}}',
 				],
 				'separator'   => 'before',
 				'render_type' => 'ui',
@@ -625,6 +630,35 @@ trait Social_Trait {
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'selectors' => [
 					'{{WRAPPER}}' => '--grid-row-gap: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'all_social_width',
+			[
+				'label' => esc_html__( 'Item Width', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
+				'range' => [
+					'px' => [
+						'max' => 500,
+					],
+					'%' => [
+						'max' => 100,
+					],
+					'em' => [
+						'max' => 20,
+					],
+					'rem' => [
+						'max' => 20,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .zyre-social-icon-wrapper > .zyre-social-icon' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

@@ -13,17 +13,6 @@ class PreStyles_Manager {
 		add_action( 'wp_ajax_zyre_widget_set_prestyle', [ __CLASS__, 'set_prestyle' ] );
 	}
 
-	protected static function get_prestyles( $style_name ) {
-		$json_file = is_rtl() ? $style_name . '-rtl.json' : $style_name . '.json';
-
-		$style = ZYRE_ADDONS_DIR_PATH . 'assets/pre-styles/' . $style_name . '/' . $json_file;
-		if ( ! is_readable( $style ) ) {
-			return false;
-		}
-
-		return file_get_contents( $style );
-	}
-
 	public static function set_prestyle() {
 		if ( ! check_ajax_referer( self::NONCE, 'security' ) ) {
 			wp_send_json_error( __( 'Invalid prestyle request', 'zyre-elementor-addons' ), 403 );
@@ -36,11 +25,12 @@ class PreStyles_Manager {
 		$widget_name = sanitize_text_field( substr( $_GET['widget'], 5 ) );
 		$widget_id = sanitize_text_field( $_GET['widgetID'] );
 		$post_id = intval( $_GET['post_id'] );
+		$is_pro = isset( $_GET['isPro'] ) ? filter_var( $_GET['isPro'], FILTER_VALIDATE_BOOLEAN ) : false;
 
 		// Check if the reset parameter is set
 		$is_reset = isset( $_GET['reset'] ) && 'true' === $_GET['reset'];
 
-		$styles = self::get_prestyles( $widget_name );
+		$styles = self::get_prestyles( $widget_name, $is_pro);
 		if ( ! $styles ) {
 			wp_send_json_error( __( 'Prestyle not found', 'zyre-elementor-addons' ), 404 );
 		}
@@ -58,6 +48,22 @@ class PreStyles_Manager {
 		// Got the widget prestyle
 		wp_send_json_success( $styles, 200 );
 		exit;
+	}
+
+	protected static function get_prestyles( $widget_name, $is_pro = false ) {
+		$json_file = is_rtl() ? $widget_name . '-rtl.json' : $widget_name . '.json';
+
+		$dir = ZYRE_ADDONS_DIR_PATH;
+		if ( zyre_has_pro() && $is_pro ) {
+			$dir = ZYRE_ADDONS_PRO_DIR_PATH;
+		}
+
+		$style = $dir . 'assets/pre-styles/' . $widget_name . '/' . $json_file;
+		if ( ! is_readable( $style ) ) {
+			return false;
+		}
+
+		return file_get_contents( $style );
 	}
 
 	public static function get_elementor_data( $post_id, $widget_id ) {

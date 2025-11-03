@@ -188,6 +188,71 @@ abstract class Base extends Widget_Base {
 						$this->add_group_control( Group_Control_Typography::get_type(), $control_args );
 						break;
 
+					case 'decoration':
+						$allowed_defaults = [ 'underline', 'overline', 'line-through', 'none' ];
+						$control_args = [
+							'name'      => $control_name,
+							'type'      => Controls_Manager::SELECT,
+							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Text Decoration', 'zyre-elementor-addons' ),
+							'options'   => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
+								''             => esc_html__( 'Default', 'zyre-elementor-addons' ),
+								'underline'    => esc_html_x( 'Underline', 'Typography Control', 'zyre-elementor-addons' ),
+								'overline'     => esc_html_x( 'Overline', 'Typography Control', 'zyre-elementor-addons' ),
+								'line-through' => esc_html_x( 'Line Through', 'Typography Control', 'zyre-elementor-addons' ),
+								'none'         => esc_html__( 'None', 'zyre-elementor-addons' ),
+							],
+							'default'   => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '',
+							'selectors' => [
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'text-decoration: {{VALUE}};',
+							],
+							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
+						];
+						$this->add_control( $control_name, $control_args );
+
+						// Thickness
+						$this->add_control(
+							$control_name . '_thickness',
+							[
+								'label'      => esc_html__( 'Decoration Thickness', 'zyre-elementor-addons' ),
+								'type'       => Controls_Manager::SLIDER,
+								'size_units' => [ 'px', 'em' ],
+								'range'      => [
+									'px' => [
+										'min' => 0,
+										'max' => 10,
+									],
+									'em' => [
+										'min' => 0,
+										'max' => 1,
+										'step' => 0.01,
+									],
+								],
+								'selectors' => [
+									! empty( $values['selector'] ) ? $values['selector'] : $selector => 'text-decoration-thickness: {{SIZE}}{{UNIT}};',
+								],
+								'condition' => [
+									$control_name => [ 'underline', 'overline', 'line-through' ],
+								],
+							]		
+						);
+
+						// Offset
+						$this->add_control(
+							$control_name . '_un_offset',
+							[
+								'label'      => esc_html__( 'Underline Offset', 'zyre-elementor-addons' ),
+								'type'       => Controls_Manager::SLIDER,
+								'size_units' => [ 'px', 'em' ],
+								'selectors' => [
+									! empty( $values['selector'] ) ? $values['selector'] : $selector => 'text-underline-offset: {{SIZE}}{{UNIT}};',
+								],
+								'condition' => [
+									$control_name => [ 'underline' ],
+								],
+							]		
+						);
+						break;
+
 					case 'stroke':
 						$control_args = [
 							'name'           => $control_name,
@@ -529,6 +594,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'width':
+					case 'width_ex':
 					case 'min_width':
 					case 'max_width':
 						$allowed_props = [ 'width', 'min-width', 'max-width', '--width', 'border-width', '--border-width' ];
@@ -1078,13 +1144,15 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'offset_x':
+					case 'offset_hr':
 						$allowed_props = [ '--translateX', '--translate-x', 'left', 'right' ];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : '--translateX';
 						$control_args = [
-							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Horizontal Offset', 'zyre-elementor-addons' ),
-							'type'       => Controls_Manager::SLIDER,
-							'size_units' => ! empty( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : [ '%', 'px', 'vw', 'custom' ],
-							'range'      => ! empty( $values['range'] ) && is_array( $values['range'] ) ? $values['range'] : [
+							'label'       => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Horizontal Offset', 'zyre-elementor-addons' ),
+							'description' => ! empty( $values['description'] ) ? esc_html( $values['description'] ) : '',
+							'type'        => Controls_Manager::SLIDER,
+							'size_units'  => ! empty( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : ['%', 'px', 'vw', 'custom'],
+							'range'       => ! empty( $values['range'] ) && is_array( $values['range'] ) ? $values['range'] : [
 								'%'  => [
 									'min' => -100,
 								],
@@ -1092,11 +1160,11 @@ abstract class Base extends Widget_Base {
 									'min' => -1000,
 									'max' => 1000,
 								],
-								'vw'  => [
+								'vw' => [
 									'min' => -100,
 								],
 							],
-							'selectors'  => [
+							'selectors'   => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => "{$css_property}: {{SIZE}}{{UNIT}};",
 							],
 							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,

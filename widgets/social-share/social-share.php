@@ -624,8 +624,13 @@ class Social_Share extends Base {
 					],
 				],
 				'prefix_class' => 'zyre-social-share%s--align-',
+				'selectors_dictionary' => [
+					'left'   => 'text-align: left; justify-items: flex-start;',
+					'center' => 'text-align: center; justify-items: center;',
+					'right'  => 'text-align: right; justify-items: flex-end;',
+				],
 				'selectors'    => [
-					'{{WRAPPER}}' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .zyre-share-wrapper' => '{{VALUE}}',
 				],
 				'render_type'  => 'ui',
 			]
@@ -822,7 +827,7 @@ class Social_Share extends Base {
 		$this->add_responsive_control(
 			'all_share_width',
 			[
-				'label' => esc_html__( 'Width', 'zyre-elementor-addons' ),
+				'label' => esc_html__( 'Item Width', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
 				'range' => [

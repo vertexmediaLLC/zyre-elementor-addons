@@ -18,7 +18,7 @@ class Toggle extends Base {
 	}
 
 	public function get_keywords() {
-		return [ 'toggle', 'toggle content', 'switch', 'switcher', 'content switcher', 'toggle button' ];
+		return [ 'toggle', 'toggle content', 'switch', 'switcher', 'content switcher', 'toggle button', 'tabs', 'advance tabs' ];
 	}
 
 	public function select_elementor_page( $type ) {

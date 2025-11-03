@@ -300,7 +300,7 @@ function haObserveTarget(target, callback) {
 			childrenToggle();
 		} else {
 			function burgerClsAdd() {
-				if ( breakpoint && jQuery(window).width() <= breakpoint ) {
+				if ( breakpoint && jQuery(window).outerWidth() <= breakpoint ) {
 					childrenToggle();
 				}
 				else {

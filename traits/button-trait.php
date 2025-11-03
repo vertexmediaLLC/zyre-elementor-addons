@@ -237,7 +237,7 @@ trait Button_Trait {
 				'label'        => esc_html__( 'Justify Content', 'zyre-elementor-addons' ),
 				'label_block'  => true,
 				'type'         => Controls_Manager::CHOOSE,
-				'default' => '',
+				'default' => 'center',
 				'options' => [
 					'flex-start' => [
 						'title' => esc_html__( 'Start', 'zyre-elementor-addons' ),

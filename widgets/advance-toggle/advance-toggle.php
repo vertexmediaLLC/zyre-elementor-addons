@@ -704,7 +704,7 @@ class Advance_Toggle extends Base {
 
 					<!-- Toggle Title -->
 					<?php if ( '' !== $accordion['toggle_title'] ) : ?>
-					<h4  class="zyre-accordion-toggle zy-flex align-center zy-m-0 zy-c-pointer">
+					<h4  class="zyre-accordion-toggle zy-flex zy-align-center zy-m-0 zy-c-pointer">
 						<?php if ( isset( $settings['open_icon']['value'] ) && '' !== $settings['open_icon']['value'] ) : ?>
 							<span class="toggle-icon toggle-icon-closed zy-self-center zy-text-center zy-content-center">
 								<?php zyre_render_icon( $settings, 'icon', 'open_icon', [ 'class' => 'zy-mx-auto' ] ); ?>

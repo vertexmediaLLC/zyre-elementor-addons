@@ -398,7 +398,8 @@ class Menu extends Base {
 			[
 				'selector' => '{{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li:hover > a',
 				'controls' => [
-					'color' => [],
+					'color'      => [],
+					'decoration' => [],
 				],
 			]
 		);
@@ -453,7 +454,8 @@ class Menu extends Base {
 			[
 				'selector' => '{{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li.current-menu-item > a, {{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li.current-menu-ancestor > a',
 				'controls' => [
-					'color' => [],
+					'color'      => [],
+					'decoration' => [],
 				],
 			]
 		);
@@ -578,7 +580,7 @@ class Menu extends Base {
 				'controls' => [
 					'offset_x' => [
 						'css_property' => is_rtl() ? 'right' : 'left',
-						'size_units'   => [ '%', 'px' ],
+						'size_units'   => ['%', 'px'],
 						'range'        => [
 							'%'  => [
 								'min' => -500,
@@ -761,7 +763,8 @@ class Menu extends Base {
 			[
 				'selector' => '{{WRAPPER}}:not(.zyre-menu__mobile) ul.sub-menu > li:hover > a',
 				'controls' => [
-					'color' => [],
+					'color'      => [],
+					'decoration' => [],
 				],
 			]
 		);
@@ -816,7 +819,8 @@ class Menu extends Base {
 			[
 				'selector' => '{{WRAPPER}}:not(.zyre-menu__mobile) ul.sub-menu > li.current-menu-item > a, {{WRAPPER}}:not(.zyre-menu__mobile) ul.sub-menu > li.current-menu-ancestor > a',
 				'controls' => [
-					'color' => [],
+					'color'      => [],
+					'decoration' => [],
 				],
 			]
 		);

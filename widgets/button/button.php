@@ -69,7 +69,7 @@ class Button extends Base {
 		$this->set_prestyle_controls();
 
 		$this->add_responsive_control(
-			'button_align',
+			'button_align_x',
 			[
 				'label'        => esc_html__( 'Button Alignment', 'zyre-elementor-addons' ),
 				'type'         => Controls_Manager::CHOOSE,

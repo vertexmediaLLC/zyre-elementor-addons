@@ -235,10 +235,14 @@
 		transparent 100%
 	);
 	background-size: var(--background-size-w) var(--background-size-h);
-	-webkit-animation: zy-fill 30s linear infinite;
-	animation: zy-fill 30s linear infinite;
 	pointer-events: none;
 	z-index: 0;
+	-webkit-animation: zy-fill 30s linear infinite;
+	animation: zy-fill 30s linear infinite;
+}
+
+.zyre-animated-text__paused-yes:hover .zyre-animated-text__fill .zyre-animated-text.zyre-animated-text__has-line::before {
+	animation-play-state: paused;
 }
 
 .zyre-animated-text__tilt {

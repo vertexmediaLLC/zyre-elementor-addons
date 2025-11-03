@@ -1,7 +1,3 @@
-.zyre-addon-social-icon:not(.elementor-grid-0):not(.elementor-grid-tablet-0):not(.elementor-grid-mobile-0) .elementor-grid {
-    display: inline-grid;
-}
-
 .zyre-addon-social-icon .zyre-social-icon {
 	margin-bottom: var(--grid-row-gap);
 	transition: background var(--zy-transition-duration);
