@@ -1,9 +1,10 @@
 .zyre-addon-author-box .zyre-author-box {
-	--info-width: auto;
+	--grid-columns: 10
 }
 
-.zyre-addon-author-box .zyre-author-info {
-	width: var(--info-width);
+.zyre-addon-author-box .zyre-author-box.zy-grid {
+	grid-template-columns: repeat(var(--grid-columns), 1fr);
+	grid-template-rows: auto;
 }
 
 .zyre-addon-author-box .zyre-author-img,

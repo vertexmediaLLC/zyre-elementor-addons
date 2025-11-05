@@ -73,7 +73,9 @@
 }
 
 /* Fix icon rotation based on selected direction */
-#elementor-controls:has(.elementor-control-times_direction input[value="column"]:checked) .elementor-control-times_justify .elementor-choices .eicon-flex {
+#elementor-controls:has(.elementor-control-times_direction input[value="column"]:checked) .elementor-control-times_justify .elementor-choices .eicon-flex,
+#elementor-controls:has(.elementor-control-author_registered_view input[value="block"]:checked) .elementor-control-author_registered_order .elementor-choices .eicon-flex,
+#elementor-controls:has(.elementor-control-author_post_count_view input[value="block"]:checked) .elementor-control-author_post_count_order .elementor-choices .eicon-flex {
 	transform: rotate(calc(var(--rotation-direction) * 90deg));
 }
 

@@ -1402,9 +1402,14 @@ class Widgets_Manager {
 				'css'       => [ 'author-box' ],
 				'styles'    => [
 					'one'   => [
-						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'author-box', 'style-one.png' ),
+						'thumb'     => self::get_widget_thumbnail_url( 'author-box', 'style-one.jpg' ),
+					],
+					'two'   => [
+						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'author-box', 'style-two.png' ),
 					],
 				],
 				'js'        => [],

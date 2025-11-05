@@ -113,6 +113,7 @@
 
 .zyre-addon .zy-align-center {align-items: center;}
 .zyre-addon .zy-align-stretch {align-items: stretch;}
+.zyre-addon .zy-align-start {align-items: start;}
 .zyre-addon .zy-self-center {align-self: center;}
 .zyre-addon .zy-self-start {align-self: flex-start;}
 .zyre-addon .zy-self-end {align-self: flex-end;}
@@ -122,6 +123,7 @@
 .zyre-addon .zy-justify-between {justify-content: space-between;}
 .zyre-addon .zy-justify-center {justify-content: center;}
 .zyre-addon .zy-justify-items-center {justify-items: center;}
+.zyre-addon .zy-justify-items-start {justify-items: start;}
 .zyre-addon .zy-content-center {align-content: center;}
 
 /* Grid Layout */

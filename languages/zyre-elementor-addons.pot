@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-03T09:29:36+00:00\n"
+"POT-Creation-Date: 2025-11-05T05:02:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -55,6 +55,7 @@ msgid "Heading"
 msgstr ""
 
 #: base/widget-base.php:183
+#: widgets/author-box/author-box.php:938
 #: widgets/image-carousel/image-carousel.php:336
 #: widgets/logo-carousel/logo-carousel.php:345
 #: widgets/post-comments/post-comments.php:2130
@@ -288,6 +289,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:1108
 #: widgets/animated-text/animated-text.php:1170
 #: widgets/animated-text/animated-text.php:1218
+#: widgets/author-box/author-box.php:941
 #: widgets/call-to-action/call-to-action.php:1838
 #: widgets/dual-button/dual-button.php:404
 #: widgets/dual-color-heading/dual-color-heading.php:40
@@ -518,6 +520,8 @@ msgstr ""
 #: base/widget-base.php:732
 #: traits/list-item-trait.php:271
 #: widgets/advance-heading/advance-heading.php:123
+#: widgets/author-box/author-box.php:82
+#: widgets/author-box/author-box.php:1039
 #: widgets/flipbox/flipbox.php:731
 #: widgets/flipbox/flipbox.php:877
 #: widgets/post-navigation/post-navigation.php:279
@@ -544,7 +548,10 @@ msgstr ""
 #: widgets/archive-description/archive-description.php:89
 #: widgets/archive-posts/archive-posts.php:751
 #: widgets/archive-title/archive-title.php:90
-#: widgets/author-box/author-box.php:260
+#: widgets/author-box/author-box.php:471
+#: widgets/author-box/author-box.php:777
+#: widgets/author-box/author-box.php:886
+#: widgets/author-box/author-box.php:971
 #: widgets/call-to-action/call-to-action.php:1171
 #: widgets/featured-banner/featured-banner.php:1126
 #: widgets/fun-fact/fun-fact.php:728
@@ -600,8 +607,11 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:755
 #: widgets/archive-posts/archive-posts.php:998
 #: widgets/archive-title/archive-title.php:95
-#: widgets/author-box/author-box.php:91
-#: widgets/author-box/author-box.php:264
+#: widgets/author-box/author-box.php:177
+#: widgets/author-box/author-box.php:475
+#: widgets/author-box/author-box.php:782
+#: widgets/author-box/author-box.php:891
+#: widgets/author-box/author-box.php:976
 #: widgets/business-hour/business-hour.php:100
 #: widgets/business-hour/business-hour.php:153
 #: widgets/business-hour/business-hour.php:606
@@ -708,8 +718,11 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:759
 #: widgets/archive-posts/archive-posts.php:1002
 #: widgets/archive-title/archive-title.php:99
-#: widgets/author-box/author-box.php:138
-#: widgets/author-box/author-box.php:268
+#: widgets/author-box/author-box.php:224
+#: widgets/author-box/author-box.php:479
+#: widgets/author-box/author-box.php:786
+#: widgets/author-box/author-box.php:895
+#: widgets/author-box/author-box.php:980
 #: widgets/business-hour/business-hour.php:610
 #: widgets/business-hour/business-hour.php:820
 #: widgets/business-hour/business-hour.php:896
@@ -805,8 +818,11 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:763
 #: widgets/archive-posts/archive-posts.php:1006
 #: widgets/archive-title/archive-title.php:103
-#: widgets/author-box/author-box.php:95
-#: widgets/author-box/author-box.php:272
+#: widgets/author-box/author-box.php:181
+#: widgets/author-box/author-box.php:483
+#: widgets/author-box/author-box.php:790
+#: widgets/author-box/author-box.php:899
+#: widgets/author-box/author-box.php:984
 #: widgets/business-hour/business-hour.php:101
 #: widgets/business-hour/business-hour.php:154
 #: widgets/business-hour/business-hour.php:614
@@ -889,7 +905,7 @@ msgstr ""
 #: base/widget-base.php:816
 #: traits/list-item-advanced-trait.php:982
 #: widgets/archive-description/archive-description.php:105
-#: widgets/author-box/author-box.php:276
+#: widgets/author-box/author-box.php:487
 #: widgets/menu/menu.php:229
 #: widgets/post-excerpt/post-excerpt.php:99
 #: widgets/team-member/team-member.php:224
@@ -949,6 +965,7 @@ msgstr ""
 #: base/widget-base.php:916
 #: base/widget-base.php:991
 #: widgets/animated-text/animated-text.php:1350
+#: widgets/author-box/author-box.php:97
 msgid "Vertical Align"
 msgstr ""
 
@@ -959,8 +976,9 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:1982
 #: widgets/animated-text/animated-text.php:1355
 #: widgets/archive-posts/archive-posts.php:142
-#: widgets/author-box/author-box.php:99
-#: widgets/author-box/author-box.php:134
+#: widgets/author-box/author-box.php:101
+#: widgets/author-box/author-box.php:185
+#: widgets/author-box/author-box.php:220
 #: widgets/call-to-action/call-to-action.php:770
 #: widgets/featured-banner/featured-banner.php:726
 #: widgets/flipbox/flipbox.php:232
@@ -991,8 +1009,9 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:1580
 #: traits/list-item-advanced-trait.php:1990
 #: widgets/animated-text/animated-text.php:1359
-#: widgets/author-box/author-box.php:103
-#: widgets/author-box/author-box.php:142
+#: widgets/author-box/author-box.php:109
+#: widgets/author-box/author-box.php:189
+#: widgets/author-box/author-box.php:228
 #: widgets/call-to-action/call-to-action.php:778
 #: widgets/featured-banner/featured-banner.php:734
 #: widgets/flipbox/flipbox.php:236
@@ -1443,7 +1462,6 @@ msgstr ""
 #: classes/widgets-manager.php:1272
 #: classes/widgets-manager.php:1320
 #: classes/widgets-manager.php:1373
-#: classes/widgets-manager.php:1405
 msgid "Standard"
 msgstr ""
 
@@ -1603,7 +1621,8 @@ msgstr ""
 #: classes/widgets-manager.php:1341
 #: classes/widgets-manager.php:1357
 #: classes/widgets-manager.php:1389
-#: classes/widgets-manager.php:1421
+#: classes/widgets-manager.php:1405
+#: classes/widgets-manager.php:1426
 msgid "Basic"
 msgstr ""
 
@@ -1627,6 +1646,7 @@ msgstr ""
 #: classes/widgets-manager.php:806
 #: classes/widgets-manager.php:863
 #: classes/widgets-manager.php:1123
+#: classes/widgets-manager.php:1410
 msgid "Advance"
 msgstr ""
 
@@ -1849,7 +1869,7 @@ msgstr ""
 #: classes/widgets-manager.php:1256
 #: classes/widgets-manager.php:1288
 #: classes/widgets-manager.php:1304
-#: classes/widgets-manager.php:1441
+#: classes/widgets-manager.php:1446
 msgid "Style One"
 msgstr ""
 
@@ -2033,31 +2053,31 @@ msgstr ""
 msgid "Author Box"
 msgstr ""
 
-#: classes/widgets-manager.php:1416
+#: classes/widgets-manager.php:1421
 #: widgets/pdf-view/pdf-view.php:14
 #: widgets/pdf-view/pdf-view.php:38
 msgid "PDF View"
 msgstr ""
 
-#: classes/widgets-manager.php:1436
+#: classes/widgets-manager.php:1441
 msgid "Lottie Animations"
 msgstr ""
 
-#: classes/widgets-manager.php:1467
+#: classes/widgets-manager.php:1472
 msgid "Mega Menu"
 msgstr ""
 
-#: classes/widgets-manager.php:1561
+#: classes/widgets-manager.php:1566
 msgid "(Inactive)"
 msgstr ""
 
 #. translators: 1: style number, 2: style name, 3: additional text
-#: classes/widgets-manager.php:1563
+#: classes/widgets-manager.php:1568
 #, php-format
 msgid "Style %1$d - %2$s %3$s"
 msgstr ""
 
-#: classes/widgets-manager.php:1598
+#: classes/widgets-manager.php:1603
 msgid "Default - No Style"
 msgstr ""
 
@@ -2182,7 +2202,6 @@ msgid "Posts"
 msgstr ""
 
 #: modules/theme-builder/conditions-manager.php:288
-#: widgets/author-box/author-box.php:253
 msgid "All Posts"
 msgstr ""
 
@@ -2992,6 +3011,7 @@ msgid "Justify Content"
 msgstr ""
 
 #: traits/button-trait.php:243
+#: widgets/author-box/author-box.php:1056
 #: widgets/business-hour/business-hour.php:816
 #: widgets/business-hour/business-hour.php:892
 #: widgets/business-hour/business-hour.php:929
@@ -3001,6 +3021,7 @@ msgid "Start"
 msgstr ""
 
 #: traits/button-trait.php:251
+#: widgets/author-box/author-box.php:1060
 #: widgets/business-hour/business-hour.php:824
 #: widgets/business-hour/business-hour.php:900
 #: widgets/business-hour/business-hour.php:937
@@ -3029,7 +3050,7 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:1052
 #: widgets/archive-posts/archive-posts.php:1161
 #: widgets/archive-posts/archive-posts.php:1281
-#: widgets/author-box/author-box.php:454
+#: widgets/author-box/author-box.php:843
 #: widgets/call-to-action/call-to-action.php:880
 #: widgets/call-to-action/call-to-action.php:909
 #: widgets/call-to-action/call-to-action.php:1227
@@ -3105,7 +3126,7 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:1074
 #: widgets/archive-posts/archive-posts.php:1182
 #: widgets/archive-posts/archive-posts.php:1302
-#: widgets/author-box/author-box.php:474
+#: widgets/author-box/author-box.php:863
 #: widgets/call-to-action/call-to-action.php:934
 #: widgets/call-to-action/call-to-action.php:1365
 #: widgets/cf7/cf7.php:311
@@ -4064,8 +4085,6 @@ msgstr ""
 #: widgets/advance-toggle/advance-toggle.php:325
 #: widgets/archive-posts/archive-posts.php:910
 #: widgets/archive-posts/archive-posts.php:1120
-#: widgets/author-box/author-box.php:363
-#: widgets/author-box/author-box.php:410
 #: widgets/news-ticker/news-ticker.php:709
 #: widgets/post-grid/post-grid.php:1069
 #: widgets/post-grid/post-grid.php:1191
@@ -4133,7 +4152,7 @@ msgstr ""
 #: widgets/archive-description/archive-description.php:55
 #: widgets/archive-posts/archive-posts.php:218
 #: widgets/archive-title/archive-title.php:58
-#: widgets/author-box/author-box.php:194
+#: widgets/author-box/author-box.php:292
 #: widgets/dual-color-heading/dual-color-heading.php:72
 #: widgets/flipbox/flipbox.php:529
 #: widgets/fun-fact/fun-fact.php:316
@@ -4158,7 +4177,7 @@ msgstr ""
 #: widgets/archive-description/archive-description.php:58
 #: widgets/archive-posts/archive-posts.php:222
 #: widgets/archive-title/archive-title.php:62
-#: widgets/author-box/author-box.php:198
+#: widgets/author-box/author-box.php:296
 #: widgets/dual-color-heading/dual-color-heading.php:76
 #: widgets/flipbox/flipbox.php:530
 #: widgets/fun-fact/fun-fact.php:320
@@ -4183,7 +4202,7 @@ msgstr ""
 #: widgets/archive-description/archive-description.php:61
 #: widgets/archive-posts/archive-posts.php:226
 #: widgets/archive-title/archive-title.php:66
-#: widgets/author-box/author-box.php:202
+#: widgets/author-box/author-box.php:300
 #: widgets/dual-color-heading/dual-color-heading.php:80
 #: widgets/flipbox/flipbox.php:531
 #: widgets/fun-fact/fun-fact.php:324
@@ -4208,7 +4227,7 @@ msgstr ""
 #: widgets/archive-description/archive-description.php:64
 #: widgets/archive-posts/archive-posts.php:230
 #: widgets/archive-title/archive-title.php:70
-#: widgets/author-box/author-box.php:206
+#: widgets/author-box/author-box.php:304
 #: widgets/dual-color-heading/dual-color-heading.php:84
 #: widgets/flipbox/flipbox.php:532
 #: widgets/fun-fact/fun-fact.php:328
@@ -4233,7 +4252,7 @@ msgstr ""
 #: widgets/archive-description/archive-description.php:67
 #: widgets/archive-posts/archive-posts.php:234
 #: widgets/archive-title/archive-title.php:74
-#: widgets/author-box/author-box.php:210
+#: widgets/author-box/author-box.php:308
 #: widgets/dual-color-heading/dual-color-heading.php:88
 #: widgets/flipbox/flipbox.php:533
 #: widgets/fun-fact/fun-fact.php:332
@@ -4258,7 +4277,7 @@ msgstr ""
 #: widgets/archive-description/archive-description.php:70
 #: widgets/archive-posts/archive-posts.php:238
 #: widgets/archive-title/archive-title.php:78
-#: widgets/author-box/author-box.php:214
+#: widgets/author-box/author-box.php:312
 #: widgets/dual-color-heading/dual-color-heading.php:92
 #: widgets/flipbox/flipbox.php:534
 #: widgets/fun-fact/fun-fact.php:336
@@ -4923,6 +4942,8 @@ msgid "Post Meta Switcher"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:277
+#: widgets/author-box/author-box.php:255
+#: widgets/author-box/author-box.php:627
 #: widgets/post-grid/post-grid.php:714
 #: widgets/post-meta/post-meta.php:51
 #: widgets/testimonial/testimonial.php:895
@@ -5370,61 +5391,149 @@ msgstr ""
 msgid "Page Not Found"
 msgstr ""
 
-#: widgets/author-box/author-box.php:49
-msgid "Show Avatar"
+#: widgets/author-box/author-box.php:50
+msgid "Grid Layout"
 msgstr ""
 
-#: widgets/author-box/author-box.php:59
-msgid "Avatar Size"
+#: widgets/author-box/author-box.php:58
+msgid "Enable Grid"
 msgstr ""
 
-#: widgets/author-box/author-box.php:74
-msgid "Enable Avatar Link"
+#: widgets/author-box/author-box.php:67
+msgid "Grid Columns"
 msgstr ""
 
-#: widgets/author-box/author-box.php:87
-msgid "Avatar Direction"
+#: widgets/author-box/author-box.php:105
+#: widgets/call-to-action/call-to-action.php:774
+#: widgets/featured-banner/featured-banner.php:730
+#: widgets/flipbox/flipbox.php:630
+#: widgets/team-member/team-member.php:550
+#: widgets/team-member/team-member.php:612
+#: widgets/testimonial/testimonial.php:498
+#: widgets/testimonial/testimonial.php:854
+msgid "Middle"
 msgstr ""
 
-#: widgets/author-box/author-box.php:130
-msgid "Avatar Position"
-msgstr ""
-
-#: widgets/author-box/author-box.php:166
-msgid "Show Author Name"
-msgstr ""
-
-#: widgets/author-box/author-box.php:176
-msgid "Enable Author Link"
-msgstr ""
-
-#: widgets/author-box/author-box.php:189
-msgid "Author Name Tag"
-msgstr ""
-
-#: widgets/author-box/author-box.php:229
-msgid "Show Short Bio"
-msgstr ""
-
-#: widgets/author-box/author-box.php:238
-msgid "Show Author Post Link"
-msgstr ""
-
-#: widgets/author-box/author-box.php:247
-msgid "Link Text"
-msgstr ""
-
-#: widgets/author-box/author-box.php:309
+#: widgets/author-box/author-box.php:126
+#: widgets/author-box/author-box.php:592
 #: widgets/post-grid/post-grid.php:1573
 msgid "Avatar"
 msgstr ""
 
-#: widgets/author-box/author-box.php:347
-#: widgets/testimonial/testimonial.php:209
-msgid "Author Name"
+#: widgets/author-box/author-box.php:135
+msgid "Show Avatar"
 msgstr ""
 
-#: widgets/author-box/author-box.php:375
+#: widgets/author-box/author-box.php:145
+msgid "Avatar Size"
+msgstr ""
+
+#: widgets/author-box/author-box.php:160
+msgid "Enable Avatar Link"
+msgstr ""
+
+#: widgets/author-box/author-box.php:173
+msgid "Avatar Direction"
+msgstr ""
+
+#: widgets/author-box/author-box.php:216
+msgid "Avatar Position"
+msgstr ""
+
+#: widgets/author-box/author-box.php:264
+msgid "Show Author Name"
+msgstr ""
+
+#: widgets/author-box/author-box.php:274
+msgid "Enable Author Link"
+msgstr ""
+
+#: widgets/author-box/author-box.php:287
+msgid "Author Name Tag"
+msgstr ""
+
+#: widgets/author-box/author-box.php:327
+msgid "Show Username"
+msgstr ""
+
+#: widgets/author-box/author-box.php:339
+#: widgets/team-member/team-member.php:669
+msgid "Bio"
+msgstr ""
+
+#: widgets/author-box/author-box.php:348
+msgid "Show Short Bio"
+msgstr ""
+
+#: widgets/author-box/author-box.php:360
+#: widgets/author-box/author-box.php:734
+msgid "Post Count"
+msgstr ""
+
+#: widgets/author-box/author-box.php:369
+msgid "Show number of posts"
+msgstr ""
+
+#: widgets/author-box/author-box.php:378
+msgid "Post Count Text"
+msgstr ""
+
+#: widgets/author-box/author-box.php:392
+msgid "Posts Link"
+msgstr ""
+
+#: widgets/author-box/author-box.php:401
+msgid "Show Author Post Link"
+msgstr ""
+
+#: widgets/author-box/author-box.php:410
+msgid "Link Text"
+msgstr ""
+
+#: widgets/author-box/author-box.php:416
+msgid "View All"
+msgstr ""
+
+#: widgets/author-box/author-box.php:426
+#: widgets/author-box/author-box.php:924
+msgid "Registered"
+msgstr ""
+
+#: widgets/author-box/author-box.php:435
+msgid "Show Registered Date"
+msgstr ""
+
+#: widgets/author-box/author-box.php:444
+msgid "Registered Label"
+msgstr ""
+
+#: widgets/author-box/author-box.php:445
+msgid "Member since"
+msgstr ""
+
+#: widgets/author-box/author-box.php:456
+#: widgets/post-grid/post-grid.php:519
+#: widgets/post-grid/post-grid.php:728
+msgid "Format Date"
+msgstr ""
+
+#: widgets/author-box/author-box.php:519
+msgid "Grid Row Start"
+msgstr ""
+
+#: widgets/author-box/author-box.php:533
+msgid "Grid Row End"
+msgstr ""
+
+#: widgets/author-box/author-box.php:547
+msgid "Grid Column Start"
+msgstr ""
+
+#: widgets/author-box/author-box.php:561
+msgid "Grid Column End"
+msgstr ""
+
+#: widgets/author-box/author-box.php:664
 #: widgets/image-carousel/image-carousel.php:320
 #: widgets/logo-carousel/logo-carousel.php:329
 #: widgets/post-grid/post-grid.php:1344
@@ -5433,12 +5542,54 @@ msgstr ""
 msgid "Hover Color"
 msgstr ""
 
-#: widgets/author-box/author-box.php:394
+#: widgets/author-box/author-box.php:680
+msgid "Username"
+msgstr ""
+
+#: widgets/author-box/author-box.php:703
 msgid "Author Bio"
 msgstr ""
 
-#: widgets/author-box/author-box.php:426
+#: widgets/author-box/author-box.php:760
+msgid "Count Text Typography"
+msgstr ""
+
+#: widgets/author-box/author-box.php:763
+msgid "Count Text Color"
+msgstr ""
+
+#: widgets/author-box/author-box.php:815
 msgid "Author Posts Link"
+msgstr ""
+
+#: widgets/author-box/author-box.php:954
+#: widgets/post-comments/post-comments.php:1748
+msgid "Label Typography"
+msgstr ""
+
+#: widgets/author-box/author-box.php:957
+#: widgets/post-comments/post-comments.php:1749
+msgid "Label Color"
+msgstr ""
+
+#: widgets/author-box/author-box.php:1013
+#: widgets/social-share/social-share.php:570
+msgid "View"
+msgstr ""
+
+#: widgets/author-box/author-box.php:1017
+msgid "Inline (Horizontal)"
+msgstr ""
+
+#: widgets/author-box/author-box.php:1021
+msgid "Block (Vertical)"
+msgstr ""
+
+#: widgets/author-box/author-box.php:1052
+#: widgets/heading/heading.php:411
+#: widgets/news-ticker/news-ticker.php:183
+#: widgets/post-grid/post-grid.php:279
+msgid "Order"
 msgstr ""
 
 #: widgets/business-hour/business-hour.php:29
@@ -5957,16 +6108,6 @@ msgstr ""
 #: widgets/testimonial/testimonial.php:846
 #: widgets/toggle/toggle.php:754
 msgid "Vertical Position"
-msgstr ""
-
-#: widgets/call-to-action/call-to-action.php:774
-#: widgets/featured-banner/featured-banner.php:730
-#: widgets/flipbox/flipbox.php:630
-#: widgets/team-member/team-member.php:550
-#: widgets/team-member/team-member.php:612
-#: widgets/testimonial/testimonial.php:498
-#: widgets/testimonial/testimonial.php:854
-msgid "Middle"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:807
@@ -6563,12 +6704,6 @@ msgstr ""
 
 #: widgets/heading/heading.php:233
 msgid "Suffix Style"
-msgstr ""
-
-#: widgets/heading/heading.php:411
-#: widgets/news-ticker/news-ticker.php:183
-#: widgets/post-grid/post-grid.php:279
-msgid "Order"
 msgstr ""
 
 #: widgets/heading/heading.php:459
@@ -7553,14 +7688,6 @@ msgstr ""
 msgid "Comment Form - Field Wrap"
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:1748
-msgid "Label Typography"
-msgstr ""
-
-#: widgets/post-comments/post-comments.php:1749
-msgid "Label Color"
-msgstr ""
-
 #: widgets/post-comments/post-comments.php:1755
 msgid "Label Space"
 msgstr ""
@@ -7855,11 +7982,6 @@ msgstr ""
 
 #: widgets/post-grid/post-grid.php:507
 msgid "Show Post Date"
-msgstr ""
-
-#: widgets/post-grid/post-grid.php:519
-#: widgets/post-grid/post-grid.php:728
-msgid "Format Date"
 msgstr ""
 
 #: widgets/post-grid/post-grid.php:531
@@ -8359,10 +8481,6 @@ msgstr ""
 msgid "Current Page"
 msgstr ""
 
-#: widgets/social-share/social-share.php:570
-msgid "View"
-msgstr ""
-
 #: widgets/social-share/social-share.php:573
 msgid "Icon and Text"
 msgstr ""
@@ -8641,10 +8759,6 @@ msgstr ""
 msgid "Top Spacing"
 msgstr ""
 
-#: widgets/team-member/team-member.php:669
-msgid "Bio"
-msgstr ""
-
 #: widgets/team-member/team-member.php:687
 msgid "Social"
 msgstr ""
@@ -8692,6 +8806,10 @@ msgstr ""
 
 #: widgets/testimonial/testimonial.php:197
 msgid "Write something amazing about the zyre addons"
+msgstr ""
+
+#: widgets/testimonial/testimonial.php:209
+msgid "Author Name"
 msgstr ""
 
 #: widgets/testimonial/testimonial.php:213
