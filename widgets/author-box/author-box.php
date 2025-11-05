@@ -62,21 +62,6 @@ class Author_Box extends Base {
 		);
 
 		$this->add_responsive_control(
-			'grid_columns',
-			[
-				'label' => esc_html__( 'Grid Columns', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::NUMBER,
-				'min' => 0,
-				'selectors' => [
-					'{{WRAPPER}} .zyre-author-box' => '--grid-columns: {{VALUE}};',
-				],
-				'condition' => [
-					'enable_grid' => 'yes',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
 			'grid_gap',
 			[
 				'label'      => esc_html__( 'Gap', 'zyre-elementor-addons' ),
@@ -195,10 +180,10 @@ class Author_Box extends Base {
 				'mobile_default'       => 'left',
 				'prefix_class'         => 'zyre-author-box-avatar%s-dir-',
 				'selectors_dictionary' => [
-					'left'   => 'flex-wrap: nowrap;flex-direction: row;--info-width: auto;',
-					'right'  => 'flex-wrap: nowrap;flex-direction: row-reverse;--info-width: auto;',
-					'top'    => 'flex-wrap: wrap;flex-direction: column;--info-width: 100%;',
-					'bottom' => 'flex-wrap: wrap;flex-direction: column-reverse;--info-width: 100%;',
+					'left'   => 'flex-wrap: nowrap;flex-direction: row;',
+					'right'  => 'flex-wrap: nowrap;flex-direction: row-reverse;',
+					'top'    => 'flex-wrap: wrap;flex-direction: column;;',
+					'bottom' => 'flex-wrap: wrap;flex-direction: column-reverse;;',
 				],
 				'selectors'            => [
 					'{{WRAPPER}} .zyre-author-box' => '{{VALUE}};',
@@ -514,12 +499,12 @@ class Author_Box extends Base {
 		}
 
 		$this->add_responsive_control(
-			$prefix . '_gr_rs',
+			$prefix . '_gr_row_s',
 			[
 				'label' => esc_html__( 'Grid Row Start', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => -10,
-				'max' => 10,
+				'min' => -12,
+				'max' => 12,
 				'condition' => $condition_args,
 				'selectors' => [
 					$selector => 'grid-row-start: {{VALUE}};',
@@ -528,12 +513,12 @@ class Author_Box extends Base {
 		);
 
 		$this->add_responsive_control(
-			$prefix . '_gr_re',
+			$prefix . '_gr_row_e',
 			[
 				'label' => esc_html__( 'Grid Row End', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => -10,
-				'max' => 10,
+				'min' => -12,
+				'max' => 12,
 				'condition' => $condition_args,
 				'selectors' => [
 					$selector => 'grid-row-end: {{VALUE}};',
@@ -542,12 +527,12 @@ class Author_Box extends Base {
 		);
 
 		$this->add_responsive_control(
-			$prefix . '_gr_cs',
+			$prefix . '_gr_col_s',
 			[
 				'label' => esc_html__( 'Grid Column Start', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => -10,
-				'max' => 10,
+				'min' => -12,
+				'max' => 12,
 				'condition' => $condition_args,
 				'selectors' => [
 					$selector => 'grid-column-start: {{VALUE}};',
@@ -556,15 +541,15 @@ class Author_Box extends Base {
 		);
 
 		$this->add_responsive_control(
-			$prefix . '_gr_ce',
+			$prefix . '_gr_col_span',
 			[
-				'label' => esc_html__( 'Grid Column End', 'zyre-elementor-addons' ),
+				'label' => esc_html__( 'Grid Column Span', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => -10,
-				'max' => 10,
+				'min' => -12,
+				'max' => 12,
 				'condition' => $condition_args,
 				'selectors' => [
-					$selector => 'grid-column-end: {{VALUE}};',
+					$selector => 'grid-column-start: span {{VALUE}};',
 				],
 			]
 		);
@@ -602,7 +587,9 @@ class Author_Box extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-author-img img',
 				'controls' => [
-					'width'         => [],
+					'width'         => [
+						'selector' => '{{WRAPPER}} .zyre-author-img, {{WRAPPER}} .zyre-author-img img',
+					],
 					'bg_color'      => [],
 					'padding'       => [],
 					'border'        => [],
