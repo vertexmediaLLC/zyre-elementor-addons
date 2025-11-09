@@ -20,7 +20,7 @@
 
         onRender: function () {
             this.constructor.__super__.onRender.apply(this, arguments);
-            // this.addResetButton();
+            this.addResetButton();
         },
 
 		onElementChange: function () {
@@ -31,8 +31,8 @@
             var self = this;
 
             this.ui.select.parent().prev().after(
-                '<button class="zyre-reset-style" title="Reset Current Style">' +
-                '<i class="eicon-undo" aria-hidden="true"></i> Reset' +
+                '<button class="zyre-reset-style" title="Clear the current preset, reload the editor to repeat this action.">' +
+                '<i class="eicon-trash-o" aria-hidden="true"></i> Clear' +
                 '</button>'
             );
 
@@ -47,9 +47,12 @@
 			if (styles[selectedValue]) {
 				var confirmed = window.confirm(zyrePreStyles.resetStyleAlert);
 				if (confirmed) {
-					this.resetStyle(styles[selectedValue]);
+					this.clearStyle(styles[selectedValue]);
 				}
             }
+
+			// var editedElementView = elementor.getPanelView().getCurrentPageView().getOption("editedElementView");
+			// $e.run("document/elements/reset-style", { container: editedElementView.getContainer() });
         },
 
         getElementSettingsModel: function () {
@@ -217,13 +220,49 @@
             this.container.render();
         },
 
+		clearStyle: function (styleData) {
+
+			var styleControl = this.getWidgetName().replace(/^zyre-/, "") + "_style";
+
+			var controls = this.getElementSettingsModel().controls;
+			var defaults = this.getElementSettingsModel().defaults;
+            var updates = {};
+
+            // Prepare the updates object
+            _.each(controls, function (control, controlName) {
+				if (control.type === "repeater") {
+					return; // continue to next iteration
+				}
+				
+                if (styleData.hasOwnProperty(controlName)) {
+					
+					if( typeof styleControl !== 'undefined' && styleControl === controlName ) {
+						return; // continue to next iteration
+					}
+
+                    updates[controlName] = defaults[controlName];
+                }
+            });
+
+            // Update the settings and trigger a preview refresh
+            this.getElementSettingsModel().setExternalChange(updates);
+
+            // Manually trigger a re-render of the widget
+            this.container.render();
+        },
+
 		resetStyle: function (styleData) {
 			
             var defaults = this.getElementSettingsModel().defaults;
+			var controls = this.getElementSettingsModel().controls;
             var updates = {};
 			
             // Prepare the updates object
-            _.each(defaults, function (control, controlName) {
+            _.each(controls, function (control, controlName) {
+				if (control.type === "repeater") {
+					return; // continue to next iteration
+				}
+
                 if (styleData.hasOwnProperty(controlName)) {
                     // If the value is empty, clear the field
                     if (styleData[controlName] === "") {

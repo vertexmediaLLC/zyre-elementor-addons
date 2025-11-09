@@ -476,19 +476,24 @@ class Widgets_Manager {
 				'css'       => [ 'featured-banner' ],
 				'styles'    => [
 					'one'   => [
-						'name'      => esc_html__( 'Overlay', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Banner', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-one.jpg' ),
 					],
 					'two'   => [
-						'name'      => esc_html__( 'Banner', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Overlay Image', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-two.jpg' ),
 					],
-					'three' => [
-						'name'      => esc_html__( 'Banner 2', 'zyre-elementor-addons' ),
+					'three'   => [
+						'name'      => esc_html__( 'Product Banner', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-three.jpg' ),
+					],
+					'four' => [
+						'name'      => esc_html__( 'Product Banner-2', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],

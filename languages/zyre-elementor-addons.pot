@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-05T10:51:47+00:00\n"
+"POT-Creation-Date: 2025-11-09T09:12:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -75,9 +75,9 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:197
 #: widgets/call-to-action/call-to-action.php:1940
 #: widgets/dual-button/dual-button.php:510
-#: widgets/featured-banner/featured-banner.php:175
-#: widgets/featured-banner/featured-banner.php:197
-#: widgets/featured-banner/featured-banner.php:1884
+#: widgets/featured-banner/featured-banner.php:176
+#: widgets/featured-banner/featured-banner.php:198
+#: widgets/featured-banner/featured-banner.php:1886
 #: widgets/image-heading/image-heading.php:345
 #: widgets/news-ticker/news-ticker.php:385
 #: widgets/page-title/page-title.php:44
@@ -122,7 +122,7 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:732
 #: widgets/call-to-action/call-to-action.php:231
 #: widgets/divider/divider.php:46
-#: widgets/featured-banner/featured-banner.php:231
+#: widgets/featured-banner/featured-banner.php:232
 #: widgets/flipbox/flipbox.php:420
 #: widgets/fun-fact/fun-fact.php:49
 #: widgets/infobox/infobox.php:109
@@ -241,7 +241,7 @@ msgstr ""
 #: widgets/divider/divider.php:67
 #: widgets/drop-cap/drop-cap.php:82
 #: widgets/dual-button/dual-button.php:145
-#: widgets/featured-banner/featured-banner.php:615
+#: widgets/featured-banner/featured-banner.php:616
 #: widgets/page-title/page-title.php:156
 #: widgets/page-title/page-title.php:178
 #: widgets/post-excerpt/post-excerpt.php:125
@@ -293,7 +293,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1838
 #: widgets/dual-button/dual-button.php:404
 #: widgets/dual-color-heading/dual-color-heading.php:40
-#: widgets/featured-banner/featured-banner.php:1780
+#: widgets/featured-banner/featured-banner.php:1782
 #: widgets/fun-fact/fun-fact.php:715
 #: widgets/heading/heading.php:742
 #: widgets/image-carousel/image-carousel.php:304
@@ -367,7 +367,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:1529
 #: traits/list-item-advanced-trait.php:1928
 #: traits/social-trait.php:697
-#: widgets/featured-banner/featured-banner.php:823
+#: widgets/featured-banner/featured-banner.php:824
 #: widgets/flipbox/flipbox.php:177
 #: widgets/menu/menu.php:323
 #: widgets/menu/menu.php:688
@@ -422,9 +422,9 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1639
 #: widgets/call-to-action/call-to-action.php:2171
 #: widgets/dual-button/dual-button.php:309
-#: widgets/featured-banner/featured-banner.php:1045
-#: widgets/featured-banner/featured-banner.php:1581
-#: widgets/featured-banner/featured-banner.php:2030
+#: widgets/featured-banner/featured-banner.php:1044
+#: widgets/featured-banner/featured-banner.php:1583
+#: widgets/featured-banner/featured-banner.php:2032
 #: widgets/fun-fact/fun-fact.php:164
 #: widgets/heading/heading.php:767
 #: widgets/iconbox/iconbox.php:213
@@ -455,7 +455,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:1119
 #: widgets/animated-text/animated-text.php:1181
 #: widgets/animated-text/animated-text.php:1229
-#: widgets/featured-banner/featured-banner.php:971
+#: widgets/featured-banner/featured-banner.php:970
 #: widgets/lottie-animation/lottie-animation.php:268
 #: widgets/news-ticker/news-ticker.php:381
 #: widgets/pdf-view/pdf-view.php:158
@@ -476,7 +476,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:1655
 #: widgets/animated-text/animated-text.php:605
 #: widgets/call-to-action/call-to-action.php:736
-#: widgets/featured-banner/featured-banner.php:692
+#: widgets/featured-banner/featured-banner.php:693
 #: widgets/flipbox/flipbox.php:146
 #: widgets/pdf-view/pdf-view.php:183
 #: widgets/post-meta/post-meta.php:733
@@ -553,7 +553,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:873
 #: widgets/author-box/author-box.php:958
 #: widgets/call-to-action/call-to-action.php:1171
-#: widgets/featured-banner/featured-banner.php:1126
+#: widgets/featured-banner/featured-banner.php:1128
 #: widgets/fun-fact/fun-fact.php:728
 #: widgets/infobox/infobox.php:608
 #: widgets/lottie-animation/lottie-animation.php:90
@@ -630,12 +630,12 @@ msgstr ""
 #: widgets/dual-button/dual-button.php:330
 #: widgets/dual-button/dual-button.php:465
 #: widgets/dual-color-heading/dual-color-heading.php:108
-#: widgets/featured-banner/featured-banner.php:114
-#: widgets/featured-banner/featured-banner.php:300
-#: widgets/featured-banner/featured-banner.php:495
-#: widgets/featured-banner/featured-banner.php:1130
-#: widgets/featured-banner/featured-banner.php:1605
-#: widgets/featured-banner/featured-banner.php:1838
+#: widgets/featured-banner/featured-banner.php:115
+#: widgets/featured-banner/featured-banner.php:301
+#: widgets/featured-banner/featured-banner.php:496
+#: widgets/featured-banner/featured-banner.php:1132
+#: widgets/featured-banner/featured-banner.php:1607
+#: widgets/featured-banner/featured-banner.php:1840
 #: widgets/flipbox/flipbox.php:224
 #: widgets/fun-fact/fun-fact.php:128
 #: widgets/fun-fact/fun-fact.php:187
@@ -738,9 +738,9 @@ msgstr ""
 #: widgets/dual-button/dual-button.php:334
 #: widgets/dual-button/dual-button.php:469
 #: widgets/dual-color-heading/dual-color-heading.php:112
-#: widgets/featured-banner/featured-banner.php:1134
-#: widgets/featured-banner/featured-banner.php:1609
-#: widgets/featured-banner/featured-banner.php:1842
+#: widgets/featured-banner/featured-banner.php:1136
+#: widgets/featured-banner/featured-banner.php:1611
+#: widgets/featured-banner/featured-banner.php:1844
 #: widgets/fun-fact/fun-fact.php:191
 #: widgets/fun-fact/fun-fact.php:372
 #: widgets/fun-fact/fun-fact.php:736
@@ -841,12 +841,12 @@ msgstr ""
 #: widgets/dual-button/dual-button.php:338
 #: widgets/dual-button/dual-button.php:473
 #: widgets/dual-color-heading/dual-color-heading.php:116
-#: widgets/featured-banner/featured-banner.php:122
-#: widgets/featured-banner/featured-banner.php:308
-#: widgets/featured-banner/featured-banner.php:499
-#: widgets/featured-banner/featured-banner.php:1138
-#: widgets/featured-banner/featured-banner.php:1613
-#: widgets/featured-banner/featured-banner.php:1846
+#: widgets/featured-banner/featured-banner.php:123
+#: widgets/featured-banner/featured-banner.php:309
+#: widgets/featured-banner/featured-banner.php:500
+#: widgets/featured-banner/featured-banner.php:1140
+#: widgets/featured-banner/featured-banner.php:1615
+#: widgets/featured-banner/featured-banner.php:1848
 #: widgets/flipbox/flipbox.php:228
 #: widgets/fun-fact/fun-fact.php:136
 #: widgets/fun-fact/fun-fact.php:195
@@ -980,7 +980,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:170
 #: widgets/author-box/author-box.php:205
 #: widgets/call-to-action/call-to-action.php:770
-#: widgets/featured-banner/featured-banner.php:726
+#: widgets/featured-banner/featured-banner.php:727
 #: widgets/flipbox/flipbox.php:232
 #: widgets/flipbox/flipbox.php:626
 #: widgets/fun-fact/fun-fact.php:132
@@ -1013,7 +1013,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:174
 #: widgets/author-box/author-box.php:213
 #: widgets/call-to-action/call-to-action.php:778
-#: widgets/featured-banner/featured-banner.php:734
+#: widgets/featured-banner/featured-banner.php:735
 #: widgets/flipbox/flipbox.php:236
 #: widgets/flipbox/flipbox.php:634
 #: widgets/heading/heading.php:526
@@ -1099,9 +1099,9 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:850
 #: widgets/call-to-action/call-to-action.php:960
 #: widgets/call-to-action/call-to-action.php:1501
-#: widgets/featured-banner/featured-banner.php:804
-#: widgets/featured-banner/featured-banner.php:935
-#: widgets/featured-banner/featured-banner.php:1442
+#: widgets/featured-banner/featured-banner.php:805
+#: widgets/featured-banner/featured-banner.php:934
+#: widgets/featured-banner/featured-banner.php:1444
 #: widgets/logo-grid/logo-grid.php:392
 #: widgets/lottie-animation/lottie-animation.php:381
 #: widgets/toggle/toggle.php:826
@@ -1115,14 +1115,14 @@ msgstr ""
 #: base/widget-base.php:1111
 #: widgets/call-to-action/call-to-action.php:99
 #: widgets/call-to-action/call-to-action.php:177
-#: widgets/featured-banner/featured-banner.php:99
-#: widgets/featured-banner/featured-banner.php:177
+#: widgets/featured-banner/featured-banner.php:100
+#: widgets/featured-banner/featured-banner.php:178
 msgid "Cover"
 msgstr ""
 
 #: base/widget-base.php:1112
 #: widgets/call-to-action/call-to-action.php:178
-#: widgets/featured-banner/featured-banner.php:178
+#: widgets/featured-banner/featured-banner.php:179
 msgid "Contain"
 msgstr ""
 
@@ -1144,7 +1144,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:1460
 #: widgets/call-to-action/call-to-action.php:1953
 #: widgets/dual-button/dual-button.php:523
-#: widgets/featured-banner/featured-banner.php:1897
+#: widgets/featured-banner/featured-banner.php:1899
 #: widgets/skill-bar/skill-bar.php:451
 #: widgets/team-member/team-member.php:901
 #: widgets/testimonial/testimonial.php:583
@@ -1155,7 +1155,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:1484
 #: widgets/call-to-action/call-to-action.php:1982
 #: widgets/dual-button/dual-button.php:552
-#: widgets/featured-banner/featured-banner.php:1926
+#: widgets/featured-banner/featured-banner.php:1928
 #: widgets/team-member/team-member.php:928
 #: widgets/testimonial/testimonial.php:616
 msgid "Vertical Offset"
@@ -1166,7 +1166,7 @@ msgid "Options"
 msgstr ""
 
 #: base/widget-base.php:1228
-#: classes/widgets-manager.php:1056
+#: classes/widgets-manager.php:1061
 #: traits/list-item-advanced-trait.php:470
 #: widgets/divider/divider.php:15
 #: widgets/divider/divider.php:69
@@ -1423,7 +1423,9 @@ msgid "Prestyle not found"
 msgstr ""
 
 #: classes/prestyles-manager.php:126
-msgid "This action will reset the current style and may also reset your content. Are you sure you want to proceed?"
+msgid ""
+"This will remove the current preset permanently.\n"
+"Are you sure you want to proceed?"
 msgstr ""
 
 #. translators: %s is the widget URL
@@ -1437,31 +1439,31 @@ msgstr ""
 #: classes/widgets-manager.php:370
 #: classes/widgets-manager.php:391
 #: classes/widgets-manager.php:448
-#: classes/widgets-manager.php:536
-#: classes/widgets-manager.php:567
-#: classes/widgets-manager.php:588
-#: classes/widgets-manager.php:614
-#: classes/widgets-manager.php:635
-#: classes/widgets-manager.php:656
-#: classes/widgets-manager.php:682
-#: classes/widgets-manager.php:713
-#: classes/widgets-manager.php:739
-#: classes/widgets-manager.php:755
-#: classes/widgets-manager.php:776
-#: classes/widgets-manager.php:801
-#: classes/widgets-manager.php:827
-#: classes/widgets-manager.php:853
-#: classes/widgets-manager.php:888
-#: classes/widgets-manager.php:933
-#: classes/widgets-manager.php:984
-#: classes/widgets-manager.php:1035
-#: classes/widgets-manager.php:1061
-#: classes/widgets-manager.php:1118
-#: classes/widgets-manager.php:1139
-#: classes/widgets-manager.php:1240
-#: classes/widgets-manager.php:1272
-#: classes/widgets-manager.php:1320
-#: classes/widgets-manager.php:1373
+#: classes/widgets-manager.php:541
+#: classes/widgets-manager.php:572
+#: classes/widgets-manager.php:593
+#: classes/widgets-manager.php:619
+#: classes/widgets-manager.php:640
+#: classes/widgets-manager.php:661
+#: classes/widgets-manager.php:687
+#: classes/widgets-manager.php:718
+#: classes/widgets-manager.php:744
+#: classes/widgets-manager.php:760
+#: classes/widgets-manager.php:781
+#: classes/widgets-manager.php:806
+#: classes/widgets-manager.php:832
+#: classes/widgets-manager.php:858
+#: classes/widgets-manager.php:893
+#: classes/widgets-manager.php:938
+#: classes/widgets-manager.php:989
+#: classes/widgets-manager.php:1040
+#: classes/widgets-manager.php:1066
+#: classes/widgets-manager.php:1123
+#: classes/widgets-manager.php:1144
+#: classes/widgets-manager.php:1245
+#: classes/widgets-manager.php:1277
+#: classes/widgets-manager.php:1325
+#: classes/widgets-manager.php:1378
 msgid "Standard"
 msgstr ""
 
@@ -1474,12 +1476,12 @@ msgstr ""
 #: classes/widgets-manager.php:365
 #: classes/widgets-manager.php:406
 #: classes/widgets-manager.php:458
-#: classes/widgets-manager.php:598
-#: classes/widgets-manager.php:697
-#: classes/widgets-manager.php:837
-#: classes/widgets-manager.php:1040
-#: classes/widgets-manager.php:1113
-#: classes/widgets-manager.php:1325
+#: classes/widgets-manager.php:603
+#: classes/widgets-manager.php:702
+#: classes/widgets-manager.php:842
+#: classes/widgets-manager.php:1045
+#: classes/widgets-manager.php:1118
+#: classes/widgets-manager.php:1330
 msgid "Simple"
 msgstr ""
 
@@ -1494,14 +1496,14 @@ msgstr ""
 #: classes/widgets-manager.php:282
 #: classes/widgets-manager.php:375
 #: classes/widgets-manager.php:401
-#: classes/widgets-manager.php:515
-#: classes/widgets-manager.php:593
-#: classes/widgets-manager.php:723
-#: classes/widgets-manager.php:760
-#: classes/widgets-manager.php:781
-#: classes/widgets-manager.php:832
-#: classes/widgets-manager.php:1030
-#: classes/widgets-manager.php:1097
+#: classes/widgets-manager.php:520
+#: classes/widgets-manager.php:598
+#: classes/widgets-manager.php:728
+#: classes/widgets-manager.php:765
+#: classes/widgets-manager.php:786
+#: classes/widgets-manager.php:837
+#: classes/widgets-manager.php:1035
+#: classes/widgets-manager.php:1102
 msgid "Modern"
 msgstr ""
 
@@ -1540,7 +1542,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:2048
 #: widgets/dual-color-heading/dual-color-heading.php:248
 #: widgets/dual-color-heading/dual-color-heading.php:274
-#: widgets/featured-banner/featured-banner.php:2057
+#: widgets/featured-banner/featured-banner.php:2059
 #: widgets/flipbox/flipbox.php:885
 #: widgets/flipbox/flipbox.php:926
 #: widgets/gradient-heading/gradient-heading.php:340
@@ -1609,7 +1611,7 @@ msgstr ""
 #: classes/widgets-manager.php:293
 #: widgets/button/button.php:29
 #: widgets/call-to-action/call-to-action.php:457
-#: widgets/featured-banner/featured-banner.php:457
+#: widgets/featured-banner/featured-banner.php:458
 #: widgets/iconbox/iconbox.php:768
 #: widgets/infobox/infobox.php:370
 #: widgets/infobox/infobox.php:824
@@ -1618,11 +1620,11 @@ msgid "Button"
 msgstr ""
 
 #: classes/widgets-manager.php:298
-#: classes/widgets-manager.php:1341
-#: classes/widgets-manager.php:1357
-#: classes/widgets-manager.php:1389
-#: classes/widgets-manager.php:1405
-#: classes/widgets-manager.php:1426
+#: classes/widgets-manager.php:1346
+#: classes/widgets-manager.php:1362
+#: classes/widgets-manager.php:1394
+#: classes/widgets-manager.php:1410
+#: classes/widgets-manager.php:1431
 msgid "Basic"
 msgstr ""
 
@@ -1637,16 +1639,16 @@ msgstr ""
 #: classes/widgets-manager.php:313
 #: classes/widgets-manager.php:396
 #: classes/widgets-manager.php:463
-#: classes/widgets-manager.php:505
-#: classes/widgets-manager.php:541
-#: classes/widgets-manager.php:619
-#: classes/widgets-manager.php:640
-#: classes/widgets-manager.php:677
-#: classes/widgets-manager.php:718
-#: classes/widgets-manager.php:806
-#: classes/widgets-manager.php:863
-#: classes/widgets-manager.php:1123
-#: classes/widgets-manager.php:1410
+#: classes/widgets-manager.php:510
+#: classes/widgets-manager.php:546
+#: classes/widgets-manager.php:624
+#: classes/widgets-manager.php:645
+#: classes/widgets-manager.php:682
+#: classes/widgets-manager.php:723
+#: classes/widgets-manager.php:811
+#: classes/widgets-manager.php:868
+#: classes/widgets-manager.php:1128
+#: classes/widgets-manager.php:1415
 msgid "Advance"
 msgstr ""
 
@@ -1658,16 +1660,16 @@ msgstr ""
 #: classes/widgets-manager.php:453
 #: widgets/call-to-action/call-to-action.php:468
 #: widgets/dual-button/dual-button.php:30
-#: widgets/featured-banner/featured-banner.php:468
+#: widgets/featured-banner/featured-banner.php:469
 msgid "Dual Button"
 msgstr ""
 
 #: classes/widgets-manager.php:334
-#: classes/widgets-manager.php:953
-#: classes/widgets-manager.php:1082
+#: classes/widgets-manager.php:958
+#: classes/widgets-manager.php:1087
 #: widgets/call-to-action/call-to-action.php:528
 #: widgets/dual-button/dual-button.php:79
-#: widgets/featured-banner/featured-banner.php:528
+#: widgets/featured-banner/featured-banner.php:529
 msgid "Primary"
 msgstr ""
 
@@ -1693,13 +1695,13 @@ msgid "Icon Box"
 msgstr ""
 
 #: classes/widgets-manager.php:411
-#: classes/widgets-manager.php:531
-#: classes/widgets-manager.php:687
-#: classes/widgets-manager.php:868
-#: classes/widgets-manager.php:958
-#: classes/widgets-manager.php:979
-#: classes/widgets-manager.php:1092
-#: classes/widgets-manager.php:1144
+#: classes/widgets-manager.php:536
+#: classes/widgets-manager.php:692
+#: classes/widgets-manager.php:873
+#: classes/widgets-manager.php:963
+#: classes/widgets-manager.php:984
+#: classes/widgets-manager.php:1097
+#: classes/widgets-manager.php:1149
 msgid "Minimal"
 msgstr ""
 
@@ -1721,88 +1723,93 @@ msgid "Call to Action "
 msgstr ""
 
 #: classes/widgets-manager.php:474
-#: widgets/featured-banner/featured-banner.php:19
+#: widgets/featured-banner/featured-banner.php:20
 msgid "Featured Banner"
 msgstr ""
 
 #: classes/widgets-manager.php:479
-#: widgets/featured-banner/featured-banner.php:837
-#: widgets/flipbox/flipbox.php:583
-msgid "Overlay"
-msgstr ""
-
-#: classes/widgets-manager.php:484
 msgid "Banner"
 msgstr ""
 
-#: classes/widgets-manager.php:489
-msgid "Banner 2"
+#: classes/widgets-manager.php:484
+#: widgets/image-heading/image-heading.php:201
+#: widgets/image-heading/image-heading.php:293
+#: widgets/image-heading/image-heading.php:733
+msgid "Overlay Image"
 msgstr ""
 
-#: classes/widgets-manager.php:500
+#: classes/widgets-manager.php:489
+msgid "Product Banner"
+msgstr ""
+
+#: classes/widgets-manager.php:494
+msgid "Product Banner-2"
+msgstr ""
+
+#: classes/widgets-manager.php:505
 #: traits/list-item-advanced-trait.php:263
 #: widgets/feature-list/feature-list.php:15
 msgid "Feature List"
 msgstr ""
 
-#: classes/widgets-manager.php:510
+#: classes/widgets-manager.php:515
 msgid "Advance 2"
 msgstr ""
 
-#: classes/widgets-manager.php:526
+#: classes/widgets-manager.php:531
 #: traits/list-item-advanced-trait.php:243
 #: widgets/numeric-list/numeric-list.php:15
 msgid "Numeric List"
 msgstr ""
 
-#: classes/widgets-manager.php:546
-#: classes/widgets-manager.php:572
-#: classes/widgets-manager.php:858
-#: classes/widgets-manager.php:963
+#: classes/widgets-manager.php:551
+#: classes/widgets-manager.php:577
+#: classes/widgets-manager.php:863
+#: classes/widgets-manager.php:968
 msgid "Boxed"
 msgstr ""
 
-#: classes/widgets-manager.php:557
+#: classes/widgets-manager.php:562
 #: traits/list-item-advanced-trait.php:219
 #: widgets/image-list/image-list.php:15
 msgid "Image List"
 msgstr ""
 
-#: classes/widgets-manager.php:562
+#: classes/widgets-manager.php:567
 #: widgets/post-meta/post-meta.php:44
 msgid "Horizontal"
 msgstr ""
 
-#: classes/widgets-manager.php:583
+#: classes/widgets-manager.php:588
 #: widgets/list-group/list-group.php:15
 msgid "List Group"
 msgstr ""
 
-#: classes/widgets-manager.php:609
+#: classes/widgets-manager.php:614
 #: widgets/image-carousel/image-carousel.php:20
 msgid "Image Carousel"
 msgstr ""
 
-#: classes/widgets-manager.php:630
+#: classes/widgets-manager.php:635
 #: widgets/team-member/team-member.php:18
 msgid "Team Member"
 msgstr ""
 
-#: classes/widgets-manager.php:651
+#: classes/widgets-manager.php:656
 #: widgets/testimonial/testimonial.php:14
 msgid "Testimonial"
 msgstr ""
 
-#: classes/widgets-manager.php:661
+#: classes/widgets-manager.php:666
 msgid "With Review"
 msgstr ""
 
-#: classes/widgets-manager.php:672
+#: classes/widgets-manager.php:677
 #: widgets/post-grid/post-grid.php:18
 msgid "Post Grid"
 msgstr ""
 
-#: classes/widgets-manager.php:692
+#: classes/widgets-manager.php:697
 #: widgets/post-grid/post-grid.php:377
 #: widgets/post-grid/post-grid.php:552
 #: widgets/team-member/team-member.php:470
@@ -1810,91 +1817,91 @@ msgstr ""
 msgid "Overflow"
 msgstr ""
 
-#: classes/widgets-manager.php:708
+#: classes/widgets-manager.php:713
 #: widgets/logo-grid/logo-grid.php:15
 msgid "Logo Grid"
 msgstr ""
 
-#: classes/widgets-manager.php:734
+#: classes/widgets-manager.php:739
 #: widgets/logo-carousel/logo-carousel.php:20
 msgid "Logo Carousel"
 msgstr ""
 
-#: classes/widgets-manager.php:750
+#: classes/widgets-manager.php:755
 #: widgets/team-member/team-member.php:714
 msgid "Social Icon"
 msgstr ""
 
-#: classes/widgets-manager.php:771
+#: classes/widgets-manager.php:776
 #: widgets/social-share/social-share.php:15
 msgid "Social Share"
 msgstr ""
 
-#: classes/widgets-manager.php:796
+#: classes/widgets-manager.php:801
 #: widgets/advance-accordion/advance-accordion.php:15
 #: widgets/advance-accordion/advance-accordion.php:68
 msgid "Advance Accordion"
 msgstr ""
 
-#: classes/widgets-manager.php:811
+#: classes/widgets-manager.php:816
 msgid "Smart"
 msgstr ""
 
-#: classes/widgets-manager.php:822
+#: classes/widgets-manager.php:827
 #: widgets/advance-toggle/advance-toggle.php:15
 #: widgets/advance-toggle/advance-toggle.php:68
 msgid "Advance Toggle"
 msgstr ""
 
-#: classes/widgets-manager.php:848
+#: classes/widgets-manager.php:853
 #: widgets/fun-fact/fun-fact.php:14
 msgid "Fun Fact"
 msgstr ""
 
-#: classes/widgets-manager.php:883
+#: classes/widgets-manager.php:888
 #: widgets/alert/alert.php:14
 msgid "Alert"
 msgstr ""
 
-#: classes/widgets-manager.php:903
+#: classes/widgets-manager.php:908
 msgid "Skill Bar"
 msgstr ""
 
-#: classes/widgets-manager.php:908
-#: classes/widgets-manager.php:1160
-#: classes/widgets-manager.php:1176
-#: classes/widgets-manager.php:1192
-#: classes/widgets-manager.php:1208
-#: classes/widgets-manager.php:1224
-#: classes/widgets-manager.php:1256
-#: classes/widgets-manager.php:1288
-#: classes/widgets-manager.php:1304
-#: classes/widgets-manager.php:1446
+#: classes/widgets-manager.php:913
+#: classes/widgets-manager.php:1165
+#: classes/widgets-manager.php:1181
+#: classes/widgets-manager.php:1197
+#: classes/widgets-manager.php:1213
+#: classes/widgets-manager.php:1229
+#: classes/widgets-manager.php:1261
+#: classes/widgets-manager.php:1293
+#: classes/widgets-manager.php:1309
+#: classes/widgets-manager.php:1451
 msgid "Style One"
 msgstr ""
 
-#: classes/widgets-manager.php:913
+#: classes/widgets-manager.php:918
 msgid "Style Two"
 msgstr ""
 
-#: classes/widgets-manager.php:928
+#: classes/widgets-manager.php:933
 #: widgets/countdown/countdown.php:12
 #: widgets/countdown/countdown.php:30
 msgid "Countdown"
 msgstr ""
 
-#: classes/widgets-manager.php:948
+#: classes/widgets-manager.php:953
 #: widgets/business-hour/business-hour.php:14
 msgid "Business Hour"
 msgstr ""
 
-#: classes/widgets-manager.php:974
+#: classes/widgets-manager.php:979
 #: widgets/drop-cap/drop-cap.php:12
 #: widgets/drop-cap/drop-cap.php:107
 msgid "Drop Cap"
 msgstr ""
 
-#: classes/widgets-manager.php:995
+#: classes/widgets-manager.php:1000
 #: widgets/animated-text/animated-text.php:16
 #: widgets/animated-text/animated-text.php:84
 #: widgets/animated-text/animated-text.php:123
@@ -1902,79 +1909,79 @@ msgstr ""
 msgid "Animated Text"
 msgstr ""
 
-#: classes/widgets-manager.php:1000
+#: classes/widgets-manager.php:1005
 msgid "Changing Word"
 msgstr ""
 
-#: classes/widgets-manager.php:1005
+#: classes/widgets-manager.php:1010
 msgid "Changing Color"
 msgstr ""
 
-#: classes/widgets-manager.php:1010
+#: classes/widgets-manager.php:1015
 msgid "Flashing"
 msgstr ""
 
-#: classes/widgets-manager.php:1025
+#: classes/widgets-manager.php:1030
 #: widgets/news-ticker/news-ticker.php:19
 #: widgets/news-ticker/news-ticker.php:63
 msgid "News Ticker"
 msgstr ""
 
-#: classes/widgets-manager.php:1045
+#: classes/widgets-manager.php:1050
 #: widgets/news-ticker/news-ticker.php:75
 msgid "Breaking"
 msgstr ""
 
-#: classes/widgets-manager.php:1066
+#: classes/widgets-manager.php:1071
 #: traits/list-item-advanced-trait.php:488
 #: widgets/post-meta/post-meta.php:671
 #: widgets/post-navigation/post-navigation.php:474
 msgid "Dotted"
 msgstr ""
 
-#: classes/widgets-manager.php:1077
+#: classes/widgets-manager.php:1082
 #: widgets/toggle/toggle.php:13
 msgid "Toggle"
 msgstr ""
 
-#: classes/widgets-manager.php:1087
+#: classes/widgets-manager.php:1092
 msgid "On-Off"
 msgstr ""
 
-#: classes/widgets-manager.php:1108
+#: classes/widgets-manager.php:1113
 #: widgets/subscription-form/subscription-form.php:15
 #: widgets/subscription-form/subscription-form.php:39
 msgid "Subscription Form"
 msgstr ""
 
-#: classes/widgets-manager.php:1134
+#: classes/widgets-manager.php:1139
 #: templates/admin/dashboard-home.php:391
 #: widgets/cf7/cf7.php:12
 #: widgets/cf7/cf7.php:30
 msgid "Contact Form 7"
 msgstr ""
 
-#: classes/widgets-manager.php:1155
+#: classes/widgets-manager.php:1160
 #: widgets/site-title/site-title.php:13
 msgid "Site Title"
 msgstr ""
 
-#: classes/widgets-manager.php:1171
+#: classes/widgets-manager.php:1176
 #: widgets/site-tagline/site-tagline.php:11
 msgid "Site Tagline"
 msgstr ""
 
-#: classes/widgets-manager.php:1187
+#: classes/widgets-manager.php:1192
 #: widgets/site-logo/site-logo.php:13
 msgid "Site Logo"
 msgstr ""
 
-#: classes/widgets-manager.php:1203
+#: classes/widgets-manager.php:1208
 #: widgets/menu/menu.php:168
 msgid "Menu"
 msgstr ""
 
-#: classes/widgets-manager.php:1219
+#: classes/widgets-manager.php:1224
 #: widgets/archive-posts/archive-posts.php:196
 #: widgets/archive-posts/archive-posts.php:895
 #: widgets/news-ticker/news-ticker.php:624
@@ -1982,25 +1989,25 @@ msgstr ""
 msgid "Post Title"
 msgstr ""
 
-#: classes/widgets-manager.php:1235
+#: classes/widgets-manager.php:1240
 #: widgets/page-title/page-title.php:11
 msgid "Page Title"
 msgstr ""
 
-#: classes/widgets-manager.php:1251
+#: classes/widgets-manager.php:1256
 #: widgets/archive-posts/archive-posts.php:632
 #: widgets/archive-posts/archive-posts.php:1104
 #: widgets/post-excerpt/post-excerpt.php:12
 msgid "Post Excerpt"
 msgstr ""
 
-#: classes/widgets-manager.php:1267
+#: classes/widgets-manager.php:1272
 #: widgets/post-content/post-content.php:12
 #: widgets/post-content/post-content.php:30
 msgid "Post Content"
 msgstr ""
 
-#: classes/widgets-manager.php:1283
+#: classes/widgets-manager.php:1288
 #: widgets/archive-posts/archive-posts.php:109
 #: widgets/archive-posts/archive-posts.php:858
 #: widgets/post-thumbnail/post-thumbnail.php:13
@@ -2008,7 +2015,7 @@ msgstr ""
 msgid "Post Thumbnail"
 msgstr ""
 
-#: classes/widgets-manager.php:1299
+#: classes/widgets-manager.php:1304
 #: widgets/archive-posts/archive-posts.php:260
 #: widgets/archive-posts/archive-posts.php:971
 #: widgets/news-ticker/news-ticker.php:693
@@ -2017,67 +2024,67 @@ msgstr ""
 msgid "Post Meta"
 msgstr ""
 
-#: classes/widgets-manager.php:1315
+#: classes/widgets-manager.php:1320
 #: widgets/post-navigation/post-navigation.php:12
 #: widgets/post-navigation/post-navigation.php:30
 msgid "Post Navigation"
 msgstr ""
 
-#: classes/widgets-manager.php:1336
+#: classes/widgets-manager.php:1341
 #: widgets/post-comments/post-comments.php:15
 msgid "Post Comments"
 msgstr ""
 
-#: classes/widgets-manager.php:1352
+#: classes/widgets-manager.php:1357
 #: widgets/archive-title/archive-title.php:11
 #: widgets/archive-title/archive-title.php:29
 #: widgets/archive-title/archive-title.php:820
 msgid "Archive Title"
 msgstr ""
 
-#: classes/widgets-manager.php:1368
+#: classes/widgets-manager.php:1373
 #: widgets/archive-description/archive-description.php:11
 #: widgets/archive-description/archive-description.php:29
 #: widgets/archive-description/archive-description.php:127
 msgid "Archive Description"
 msgstr ""
 
-#: classes/widgets-manager.php:1384
+#: classes/widgets-manager.php:1389
 #: widgets/archive-posts/archive-posts.php:23
 msgid "Archive Posts"
 msgstr ""
 
-#: classes/widgets-manager.php:1400
+#: classes/widgets-manager.php:1405
 #: widgets/author-box/author-box.php:15
 #: widgets/author-box/author-box.php:39
 msgid "Author Box"
 msgstr ""
 
-#: classes/widgets-manager.php:1421
+#: classes/widgets-manager.php:1426
 #: widgets/pdf-view/pdf-view.php:14
 #: widgets/pdf-view/pdf-view.php:38
 msgid "PDF View"
 msgstr ""
 
-#: classes/widgets-manager.php:1441
+#: classes/widgets-manager.php:1446
 msgid "Lottie Animations"
 msgstr ""
 
-#: classes/widgets-manager.php:1472
+#: classes/widgets-manager.php:1477
 msgid "Mega Menu"
 msgstr ""
 
-#: classes/widgets-manager.php:1566
+#: classes/widgets-manager.php:1571
 msgid "(Inactive)"
 msgstr ""
 
 #. translators: 1: style number, 2: style name, 3: additional text
-#: classes/widgets-manager.php:1568
+#: classes/widgets-manager.php:1573
 #, php-format
 msgid "Style %1$d - %2$s %3$s"
 msgstr ""
 
-#: classes/widgets-manager.php:1603
+#: classes/widgets-manager.php:1608
 msgid "Default - No Style"
 msgstr ""
 
@@ -2896,9 +2903,9 @@ msgstr ""
 #: widgets/divider/divider.php:54
 #: widgets/divider/divider.php:101
 #: widgets/dual-button/dual-button.php:146
-#: widgets/featured-banner/featured-banner.php:239
-#: widgets/featured-banner/featured-banner.php:280
-#: widgets/featured-banner/featured-banner.php:616
+#: widgets/featured-banner/featured-banner.php:240
+#: widgets/featured-banner/featured-banner.php:281
+#: widgets/featured-banner/featured-banner.php:617
 #: widgets/flipbox/flipbox.php:428
 #: widgets/flipbox/flipbox.php:472
 #: widgets/flipbox/flipbox.php:716
@@ -3003,7 +3010,7 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:887
 #: widgets/call-to-action/call-to-action.php:1632
 #: widgets/dual-button/dual-button.php:302
-#: widgets/featured-banner/featured-banner.php:1573
+#: widgets/featured-banner/featured-banner.php:1575
 #: widgets/post-comments/post-comments.php:832
 #: widgets/post-comments/post-comments.php:1266
 #: widgets/post-navigation/post-navigation.php:197
@@ -3057,9 +3064,9 @@ msgstr ""
 #: widgets/cf7/cf7.php:172
 #: widgets/cf7/cf7.php:290
 #: widgets/dual-color-heading/dual-color-heading.php:238
-#: widgets/featured-banner/featured-banner.php:855
+#: widgets/featured-banner/featured-banner.php:856
 #: widgets/featured-banner/featured-banner.php:884
-#: widgets/featured-banner/featured-banner.php:1191
+#: widgets/featured-banner/featured-banner.php:1193
 #: widgets/flipbox/flipbox.php:561
 #: widgets/gradient-heading/gradient-heading.php:330
 #: widgets/iconbox/iconbox.php:228
@@ -3132,7 +3139,7 @@ msgstr ""
 #: widgets/cf7/cf7.php:311
 #: widgets/dual-color-heading/dual-color-heading.php:264
 #: widgets/featured-banner/featured-banner.php:909
-#: widgets/featured-banner/featured-banner.php:1319
+#: widgets/featured-banner/featured-banner.php:1321
 #: widgets/gradient-heading/gradient-heading.php:356
 #: widgets/iconbox/iconbox.php:255
 #: widgets/iconbox/iconbox.php:479
@@ -3208,7 +3215,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:111
 #: traits/swiper-trait.php:64
 #: widgets/call-to-action/call-to-action.php:235
-#: widgets/featured-banner/featured-banner.php:235
+#: widgets/featured-banner/featured-banner.php:236
 #: widgets/flipbox/flipbox.php:424
 #: widgets/flipbox/flipbox.php:675
 #: widgets/fun-fact/fun-fact.php:57
@@ -3243,8 +3250,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:674
 #: widgets/call-to-action/call-to-action.php:1543
 #: widgets/feature-list/feature-list.php:101
-#: widgets/featured-banner/featured-banner.php:383
-#: widgets/featured-banner/featured-banner.php:1484
+#: widgets/featured-banner/featured-banner.php:384
+#: widgets/featured-banner/featured-banner.php:1486
 #: widgets/flipbox/flipbox.php:489
 #: widgets/flipbox/flipbox.php:863
 #: widgets/fun-fact/fun-fact.php:300
@@ -3282,7 +3289,7 @@ msgstr ""
 #: widgets/advance-heading/advance-heading.php:65
 #: widgets/call-to-action/call-to-action.php:397
 #: widgets/dual-color-heading/dual-color-heading.php:68
-#: widgets/featured-banner/featured-banner.php:397
+#: widgets/featured-banner/featured-banner.php:398
 #: widgets/flipbox/flipbox.php:525
 #: widgets/fun-fact/fun-fact.php:312
 #: widgets/gradient-heading/gradient-heading.php:75
@@ -3302,8 +3309,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:427
 #: widgets/call-to-action/call-to-action.php:1594
 #: widgets/feature-list/feature-list.php:121
-#: widgets/featured-banner/featured-banner.php:427
-#: widgets/featured-banner/featured-banner.php:1535
+#: widgets/featured-banner/featured-banner.php:428
+#: widgets/featured-banner/featured-banner.php:1537
 #: widgets/flipbox/flipbox.php:507
 #: widgets/flipbox/flipbox.php:911
 #: widgets/heading/heading.php:170
@@ -3474,8 +3481,8 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:684
 #: widgets/call-to-action/call-to-action.php:1306
 #: widgets/call-to-action/call-to-action.php:1444
-#: widgets/featured-banner/featured-banner.php:1260
-#: widgets/featured-banner/featured-banner.php:1385
+#: widgets/featured-banner/featured-banner.php:1262
+#: widgets/featured-banner/featured-banner.php:1387
 #: widgets/post-comments/post-comments.php:1566
 msgid "Title Color"
 msgstr ""
@@ -3483,8 +3490,8 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:696
 #: widgets/call-to-action/call-to-action.php:1334
 #: widgets/call-to-action/call-to-action.php:1472
-#: widgets/featured-banner/featured-banner.php:1288
-#: widgets/featured-banner/featured-banner.php:1413
+#: widgets/featured-banner/featured-banner.php:1290
+#: widgets/featured-banner/featured-banner.php:1415
 #: widgets/menu/menu.php:368
 #: widgets/menu/menu.php:424
 #: widgets/menu/menu.php:480
@@ -3502,7 +3509,7 @@ msgstr ""
 #: widgets/advance-heading/advance-heading.php:101
 #: widgets/call-to-action/call-to-action.php:1625
 #: widgets/dual-button/dual-button.php:297
-#: widgets/featured-banner/featured-banner.php:1566
+#: widgets/featured-banner/featured-banner.php:1568
 msgid "Layout"
 msgstr ""
 
@@ -3578,7 +3585,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:1681
 #: widgets/call-to-action/call-to-action.php:1923
 #: widgets/dual-button/dual-button.php:494
-#: widgets/featured-banner/featured-banner.php:1867
+#: widgets/featured-banner/featured-banner.php:1869
 msgid "Wrapper Width"
 msgstr ""
 
@@ -3614,7 +3621,7 @@ msgstr ""
 #: widgets/alert/alert.php:102
 #: widgets/animated-text/animated-text.php:162
 #: widgets/call-to-action/call-to-action.php:2126
-#: widgets/featured-banner/featured-banner.php:1986
+#: widgets/featured-banner/featured-banner.php:1988
 #: widgets/post-grid/post-grid.php:1273
 #: widgets/testimonial/testimonial.php:998
 msgid "Block"
@@ -3626,7 +3633,7 @@ msgstr ""
 #: widgets/alert/alert.php:106
 #: widgets/animated-text/animated-text.php:161
 #: widgets/call-to-action/call-to-action.php:2128
-#: widgets/featured-banner/featured-banner.php:1988
+#: widgets/featured-banner/featured-banner.php:1990
 #: widgets/post-grid/post-grid.php:1277
 #: widgets/testimonial/testimonial.php:1000
 msgid "Inline"
@@ -3755,7 +3762,7 @@ msgstr ""
 
 #: traits/social-trait.php:405
 #: widgets/call-to-action/call-to-action.php:176
-#: widgets/featured-banner/featured-banner.php:176
+#: widgets/featured-banner/featured-banner.php:177
 #: widgets/news-ticker/news-ticker.php:115
 #: widgets/news-ticker/news-ticker.php:386
 #: widgets/social-share/social-share.php:591
@@ -3804,8 +3811,8 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:69
 #: widgets/call-to-action/call-to-action.php:337
 #: widgets/call-to-action/call-to-action.php:1526
-#: widgets/featured-banner/featured-banner.php:337
-#: widgets/featured-banner/featured-banner.php:1467
+#: widgets/featured-banner/featured-banner.php:338
+#: widgets/featured-banner/featured-banner.php:1469
 #: widgets/image-carousel/image-carousel.php:469
 msgid "Sub Title"
 msgstr ""
@@ -4112,8 +4119,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1560
 #: widgets/dual-color-heading/dual-color-heading.php:48
 #: widgets/dual-color-heading/dual-color-heading.php:194
-#: widgets/featured-banner/featured-banner.php:367
-#: widgets/featured-banner/featured-banner.php:1501
+#: widgets/featured-banner/featured-banner.php:368
+#: widgets/featured-banner/featured-banner.php:1503
 #: widgets/gradient-heading/gradient-heading.php:39
 #: widgets/gradient-heading/gradient-heading.php:223
 msgid "Title Prefix"
@@ -4139,8 +4146,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1577
 #: widgets/dual-color-heading/dual-color-heading.php:58
 #: widgets/dual-color-heading/dual-color-heading.php:211
-#: widgets/featured-banner/featured-banner.php:410
-#: widgets/featured-banner/featured-banner.php:1518
+#: widgets/featured-banner/featured-banner.php:411
+#: widgets/featured-banner/featured-banner.php:1520
 #: widgets/gradient-heading/gradient-heading.php:57
 #: widgets/gradient-heading/gradient-heading.php:241
 #: widgets/image-heading/image-heading.php:112
@@ -4354,7 +4361,7 @@ msgstr ""
 
 #: widgets/alert/alert.php:72
 #: widgets/call-to-action/call-to-action.php:389
-#: widgets/featured-banner/featured-banner.php:389
+#: widgets/featured-banner/featured-banner.php:390
 #: widgets/flipbox/flipbox.php:492
 msgid "Enter your title"
 msgstr ""
@@ -4365,7 +4372,7 @@ msgstr ""
 
 #: widgets/alert/alert.php:86
 #: widgets/call-to-action/call-to-action.php:433
-#: widgets/featured-banner/featured-banner.php:433
+#: widgets/featured-banner/featured-banner.php:434
 #: widgets/flipbox/flipbox.php:510
 msgid "Enter your description"
 msgstr ""
@@ -4397,7 +4404,7 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:43
 #: widgets/call-to-action/call-to-action.php:598
 #: widgets/dual-button/dual-button.php:132
-#: widgets/featured-banner/featured-banner.php:598
+#: widgets/featured-banner/featured-banner.php:599
 #: widgets/fun-fact/fun-fact.php:394
 #: widgets/news-ticker/news-ticker.php:237
 #: widgets/news-ticker/news-ticker.php:249
@@ -4442,8 +4449,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:469
 #: widgets/call-to-action/call-to-action.php:599
 #: widgets/dual-button/dual-button.php:133
-#: widgets/featured-banner/featured-banner.php:469
-#: widgets/featured-banner/featured-banner.php:599
+#: widgets/featured-banner/featured-banner.php:470
+#: widgets/featured-banner/featured-banner.php:600
 #: widgets/fun-fact/fun-fact.php:395
 #: widgets/news-ticker/news-ticker.php:238
 #: widgets/news-ticker/news-ticker.php:250
@@ -4589,7 +4596,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:260
 #: widgets/archive-title/archive-title.php:261
 #: widgets/call-to-action/call-to-action.php:207
-#: widgets/featured-banner/featured-banner.php:207
+#: widgets/featured-banner/featured-banner.php:208
 #: widgets/post-comments/post-comments.php:70
 #: widgets/post-content/post-content.php:44
 #: widgets/post-excerpt/post-excerpt.php:43
@@ -5401,7 +5408,7 @@ msgstr ""
 
 #: widgets/author-box/author-box.php:90
 #: widgets/call-to-action/call-to-action.php:774
-#: widgets/featured-banner/featured-banner.php:730
+#: widgets/featured-banner/featured-banner.php:731
 #: widgets/flipbox/flipbox.php:630
 #: widgets/team-member/team-member.php:550
 #: widgets/team-member/team-member.php:612
@@ -5717,7 +5724,7 @@ msgstr ""
 
 #: widgets/business-hour/business-hour.php:700
 #: widgets/call-to-action/call-to-action.php:815
-#: widgets/featured-banner/featured-banner.php:770
+#: widgets/featured-banner/featured-banner.php:771
 #: widgets/news-ticker/news-ticker.php:333
 msgid "Min Height"
 msgstr ""
@@ -5819,8 +5826,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:54
 #: widgets/call-to-action/call-to-action.php:1124
 #: widgets/drop-cap/drop-cap.php:38
-#: widgets/featured-banner/featured-banner.php:55
-#: widgets/featured-banner/featured-banner.php:1079
+#: widgets/featured-banner/featured-banner.php:56
+#: widgets/featured-banner/featured-banner.php:1081
 #: widgets/fun-fact/fun-fact.php:517
 #: widgets/iconbox/iconbox.php:588
 #: widgets/image-carousel/image-carousel.php:415
@@ -5831,7 +5838,7 @@ msgid "Content"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:75
-#: widgets/featured-banner/featured-banner.php:74
+#: widgets/featured-banner/featured-banner.php:75
 #: widgets/flipbox/flipbox.php:73
 #: widgets/post-comments/post-comments.php:42
 #: widgets/team-member/team-member.php:44
@@ -5841,18 +5848,18 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:88
 #: widgets/call-to-action/call-to-action.php:793
-#: widgets/featured-banner/featured-banner.php:88
-#: widgets/featured-banner/featured-banner.php:749
+#: widgets/featured-banner/featured-banner.php:89
+#: widgets/featured-banner/featured-banner.php:750
 msgid "Main Image"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:95
-#: widgets/featured-banner/featured-banner.php:95
+#: widgets/featured-banner/featured-banner.php:96
 msgid "Skin"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:98
-#: widgets/featured-banner/featured-banner.php:98
+#: widgets/featured-banner/featured-banner.php:99
 msgid "Classic"
 msgstr ""
 
@@ -5866,11 +5873,11 @@ msgstr ""
 #: widgets/divider/divider.php:385
 #: widgets/dual-button/dual-button.php:326
 #: widgets/dual-button/dual-button.php:506
-#: widgets/featured-banner/featured-banner.php:110
-#: widgets/featured-banner/featured-banner.php:296
-#: widgets/featured-banner/featured-banner.php:491
-#: widgets/featured-banner/featured-banner.php:1601
-#: widgets/featured-banner/featured-banner.php:1880
+#: widgets/featured-banner/featured-banner.php:111
+#: widgets/featured-banner/featured-banner.php:297
+#: widgets/featured-banner/featured-banner.php:492
+#: widgets/featured-banner/featured-banner.php:1603
+#: widgets/featured-banner/featured-banner.php:1882
 #: widgets/fun-fact/fun-fact.php:123
 #: widgets/heading/heading.php:618
 #: widgets/image-carousel/image-carousel.php:137
@@ -5886,8 +5893,8 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:118
 #: widgets/call-to-action/call-to-action.php:304
-#: widgets/featured-banner/featured-banner.php:118
-#: widgets/featured-banner/featured-banner.php:304
+#: widgets/featured-banner/featured-banner.php:119
+#: widgets/featured-banner/featured-banner.php:305
 #: widgets/team-member/team-member.php:97
 #: widgets/testimonial/testimonial.php:90
 #: widgets/testimonial/testimonial.php:139
@@ -5897,9 +5904,9 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:126
 #: widgets/call-to-action/call-to-action.php:312
 #: widgets/call-to-action/call-to-action.php:503
-#: widgets/featured-banner/featured-banner.php:126
-#: widgets/featured-banner/featured-banner.php:312
-#: widgets/featured-banner/featured-banner.php:503
+#: widgets/featured-banner/featured-banner.php:127
+#: widgets/featured-banner/featured-banner.php:313
+#: widgets/featured-banner/featured-banner.php:504
 #: widgets/team-member/team-member.php:105
 #: widgets/testimonial/testimonial.php:98
 #: widgets/testimonial/testimonial.php:143
@@ -5908,172 +5915,172 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:149
 #: widgets/call-to-action/call-to-action.php:250
-#: widgets/featured-banner/featured-banner.php:149
-#: widgets/featured-banner/featured-banner.php:250
+#: widgets/featured-banner/featured-banner.php:150
+#: widgets/featured-banner/featured-banner.php:251
 #: widgets/flipbox/flipbox.php:442
 #: widgets/post-thumbnail/post-thumbnail.php:54
 msgid "Choose Image"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:161
-#: widgets/featured-banner/featured-banner.php:161
+#: widgets/featured-banner/featured-banner.php:162
 msgid "Image Resolution"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:172
-#: widgets/featured-banner/featured-banner.php:172
+#: widgets/featured-banner/featured-banner.php:173
 msgid "Background Size"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:193
-#: widgets/featured-banner/featured-banner.php:193
+#: widgets/featured-banner/featured-banner.php:194
 msgid "Background Position"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:198
-#: widgets/featured-banner/featured-banner.php:198
+#: widgets/featured-banner/featured-banner.php:199
 msgid "Center Center"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:199
-#: widgets/featured-banner/featured-banner.php:199
+#: widgets/featured-banner/featured-banner.php:200
 msgid "Center Left"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:200
-#: widgets/featured-banner/featured-banner.php:200
+#: widgets/featured-banner/featured-banner.php:201
 msgid "Center Right"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:201
-#: widgets/featured-banner/featured-banner.php:201
+#: widgets/featured-banner/featured-banner.php:202
 msgid "Top Center"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:202
-#: widgets/featured-banner/featured-banner.php:202
+#: widgets/featured-banner/featured-banner.php:203
 #: widgets/team-member/team-member.php:387
 msgid "Top Left"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:203
-#: widgets/featured-banner/featured-banner.php:203
+#: widgets/featured-banner/featured-banner.php:204
 #: widgets/team-member/team-member.php:388
 msgid "Top Right"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:204
-#: widgets/featured-banner/featured-banner.php:204
+#: widgets/featured-banner/featured-banner.php:205
 msgid "Bottom Center"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:205
-#: widgets/featured-banner/featured-banner.php:205
+#: widgets/featured-banner/featured-banner.php:206
 msgid "Bottom Left"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:206
-#: widgets/featured-banner/featured-banner.php:206
+#: widgets/featured-banner/featured-banner.php:207
 msgid "Bottom Right"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:227
-#: widgets/featured-banner/featured-banner.php:227
+#: widgets/featured-banner/featured-banner.php:228
 msgid "Media Element"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:342
-#: widgets/featured-banner/featured-banner.php:342
+#: widgets/featured-banner/featured-banner.php:343
 msgid "This is sub title"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:343
-#: widgets/featured-banner/featured-banner.php:343
+#: widgets/featured-banner/featured-banner.php:344
 msgid "Enter your sub title"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:352
-#: widgets/featured-banner/featured-banner.php:352
+#: widgets/featured-banner/featured-banner.php:353
 #: widgets/image-heading/image-heading.php:149
 msgid "Subtitle HTML Tag"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:388
-#: widgets/featured-banner/featured-banner.php:388
+#: widgets/featured-banner/featured-banner.php:389
 msgid "This is the main title"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:432
-#: widgets/featured-banner/featured-banner.php:432
+#: widgets/featured-banner/featured-banner.php:433
 msgid "Lorem ipsum dolor sit amet consectetuer adipiscing elitsed diam nonummy lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:442
-#: widgets/featured-banner/featured-banner.php:442
+#: widgets/featured-banner/featured-banner.php:443
 msgid "Description HTML Tag"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:464
-#: widgets/featured-banner/featured-banner.php:464
+#: widgets/featured-banner/featured-banner.php:465
 msgid "Show:"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:467
-#: widgets/featured-banner/featured-banner.php:467
+#: widgets/featured-banner/featured-banner.php:468
 msgid "Single Button"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:480
-#: widgets/featured-banner/featured-banner.php:480
+#: widgets/featured-banner/featured-banner.php:481
 msgid "Click a Tab to view & change its content."
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:539
 #: widgets/dual-button/dual-button.php:87
-#: widgets/featured-banner/featured-banner.php:539
+#: widgets/featured-banner/featured-banner.php:540
 msgid "Get started"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:552
 #: widgets/dual-button/dual-button.php:97
 #: widgets/dual-button/dual-button.php:379
-#: widgets/featured-banner/featured-banner.php:552
+#: widgets/featured-banner/featured-banner.php:553
 msgid "Connector"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:567
 #: widgets/dual-button/dual-button.php:109
-#: widgets/featured-banner/featured-banner.php:567
+#: widgets/featured-banner/featured-banner.php:568
 msgid "Secondary"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:596
 #: widgets/dual-button/dual-button.php:130
-#: widgets/featured-banner/featured-banner.php:596
+#: widgets/featured-banner/featured-banner.php:597
 msgid "Show Connector"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:612
 #: widgets/dual-button/dual-button.php:142
-#: widgets/featured-banner/featured-banner.php:612
+#: widgets/featured-banner/featured-banner.php:613
 msgid "Connector Type"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:630
 #: widgets/dual-button/dual-button.php:158
-#: widgets/featured-banner/featured-banner.php:630
+#: widgets/featured-banner/featured-banner.php:631
 msgid "Connector Text"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:633
 #: widgets/dual-button/dual-button.php:161
-#: widgets/featured-banner/featured-banner.php:633
+#: widgets/featured-banner/featured-banner.php:634
 msgid "OR"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:647
 #: widgets/dual-button/dual-button.php:173
-#: widgets/featured-banner/featured-banner.php:647
+#: widgets/featured-banner/featured-banner.php:648
 msgid "Connector Icon"
 msgstr ""
 
@@ -6083,7 +6090,7 @@ msgid "Ribbon"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:728
-#: widgets/featured-banner/featured-banner.php:684
+#: widgets/featured-banner/featured-banner.php:685
 #: widgets/iconbox/iconbox.php:201
 #: widgets/post-grid/post-grid.php:1018
 msgid "Box"
@@ -6091,8 +6098,8 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:766
 #: widgets/call-to-action/call-to-action.php:1696
-#: widgets/featured-banner/featured-banner.php:722
-#: widgets/featured-banner/featured-banner.php:1638
+#: widgets/featured-banner/featured-banner.php:723
+#: widgets/featured-banner/featured-banner.php:1640
 #: widgets/flipbox/flipbox.php:622
 #: widgets/heading/heading.php:514
 #: widgets/heading/heading.php:698
@@ -6107,21 +6114,19 @@ msgid "Vertical Position"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:807
-#: widgets/featured-banner/featured-banner.php:763
+#: widgets/featured-banner/featured-banner.php:764
 #: widgets/menu/menu.php:544
 #: widgets/news-ticker/news-ticker.php:448
 msgid "Min Width"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:829
-#: widgets/featured-banner/featured-banner.php:783
+#: widgets/featured-banner/featured-banner.php:784
 msgid "Hover Scale"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:887
 #: widgets/call-to-action/call-to-action.php:941
-#: widgets/featured-banner/featured-banner.php:862
-#: widgets/featured-banner/featured-banner.php:916
 msgid "Overlay Color"
 msgstr ""
 
@@ -6131,12 +6136,12 @@ msgid "Blend Mode"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:985
-#: widgets/featured-banner/featured-banner.php:960
+#: widgets/featured-banner/featured-banner.php:959
 msgid "Media"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1014
-#: widgets/featured-banner/featured-banner.php:992
+#: widgets/featured-banner/featured-banner.php:991
 #: widgets/infobox/infobox.php:525
 #: widgets/logo-grid/logo-grid.php:271
 msgid "Image Width"
@@ -6158,82 +6163,82 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1261
 #: widgets/call-to-action/call-to-action.php:1399
-#: widgets/featured-banner/featured-banner.php:1215
-#: widgets/featured-banner/featured-banner.php:1343
+#: widgets/featured-banner/featured-banner.php:1217
+#: widgets/featured-banner/featured-banner.php:1345
 msgid "Media Border Color"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1278
 #: widgets/call-to-action/call-to-action.php:1416
-#: widgets/featured-banner/featured-banner.php:1232
-#: widgets/featured-banner/featured-banner.php:1357
+#: widgets/featured-banner/featured-banner.php:1234
+#: widgets/featured-banner/featured-banner.php:1359
 msgid "Sub Title Color"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1292
 #: widgets/call-to-action/call-to-action.php:1430
-#: widgets/featured-banner/featured-banner.php:1246
-#: widgets/featured-banner/featured-banner.php:1371
+#: widgets/featured-banner/featured-banner.php:1248
+#: widgets/featured-banner/featured-banner.php:1373
 msgid "Title Prefix Color"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1320
 #: widgets/call-to-action/call-to-action.php:1458
-#: widgets/featured-banner/featured-banner.php:1274
-#: widgets/featured-banner/featured-banner.php:1399
+#: widgets/featured-banner/featured-banner.php:1276
+#: widgets/featured-banner/featured-banner.php:1401
 msgid "Title Suffix Color"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1348
 #: widgets/call-to-action/call-to-action.php:1486
-#: widgets/featured-banner/featured-banner.php:1302
-#: widgets/featured-banner/featured-banner.php:1427
+#: widgets/featured-banner/featured-banner.php:1304
+#: widgets/featured-banner/featured-banner.php:1429
 msgid "Button Color"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1611
-#: widgets/featured-banner/featured-banner.php:1552
+#: widgets/featured-banner/featured-banner.php:1554
 msgid "Button General"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1714
 #: widgets/dual-button/dual-button.php:197
-#: widgets/featured-banner/featured-banner.php:1656
+#: widgets/featured-banner/featured-banner.php:1658
 msgid "Primary Button"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1731
 #: widgets/dual-button/dual-button.php:210
-#: widgets/featured-banner/featured-banner.php:1673
+#: widgets/featured-banner/featured-banner.php:1675
 msgid "Primary Button Icon"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1762
 #: widgets/dual-button/dual-button.php:233
-#: widgets/featured-banner/featured-banner.php:1704
+#: widgets/featured-banner/featured-banner.php:1706
 msgid "Secondary Button"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1779
 #: widgets/dual-button/dual-button.php:246
-#: widgets/featured-banner/featured-banner.php:1721
+#: widgets/featured-banner/featured-banner.php:1723
 msgid "Secondary Button Icon"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1811
-#: widgets/featured-banner/featured-banner.php:1753
+#: widgets/featured-banner/featured-banner.php:1755
 msgid "Button Connector"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1890
 #: widgets/dual-button/dual-button.php:461
-#: widgets/featured-banner/featured-banner.php:1834
+#: widgets/featured-banner/featured-banner.php:1836
 msgid "Align"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1941
 #: widgets/dual-button/dual-button.php:511
-#: widgets/featured-banner/featured-banner.php:1885
+#: widgets/featured-banner/featured-banner.php:1887
 #: widgets/image-heading/image-heading.php:346
 #: widgets/post-comments/post-comments.php:712
 msgid "Absolute"
@@ -6249,19 +6254,19 @@ msgid "Distance"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2122
-#: widgets/featured-banner/featured-banner.php:1983
+#: widgets/featured-banner/featured-banner.php:1985
 #: widgets/testimonial/testimonial.php:995
 msgid "Display as"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2127
-#: widgets/featured-banner/featured-banner.php:1987
+#: widgets/featured-banner/featured-banner.php:1989
 #: widgets/testimonial/testimonial.php:999
 msgid "Inline Block"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2129
-#: widgets/featured-banner/featured-banner.php:1989
+#: widgets/featured-banner/featured-banner.php:1991
 #: widgets/testimonial/testimonial.php:1001
 msgid "Table"
 msgstr ""
@@ -6447,7 +6452,12 @@ msgstr ""
 msgid "Image or Icon"
 msgstr ""
 
-#: widgets/featured-banner/featured-banner.php:1173
+#: widgets/featured-banner/featured-banner.php:838
+#: widgets/flipbox/flipbox.php:583
+msgid "Overlay"
+msgstr ""
+
+#: widgets/featured-banner/featured-banner.php:1175
 msgid "Colors"
 msgstr ""
 
@@ -6863,12 +6873,6 @@ msgstr ""
 
 #: widgets/image-heading/image-heading.php:188
 msgid "Enable Overlay Image"
-msgstr ""
-
-#: widgets/image-heading/image-heading.php:201
-#: widgets/image-heading/image-heading.php:293
-#: widgets/image-heading/image-heading.php:733
-msgid "Overlay Image"
 msgstr ""
 
 #: widgets/image-heading/image-heading.php:364

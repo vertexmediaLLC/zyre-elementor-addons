@@ -3,6 +3,7 @@ namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Control_Media;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
@@ -856,14 +857,13 @@ class Featured_Banner extends Base {
 			]
 		);
 
-		$this->add_control(
-			'overlay_color',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
-				'label' => esc_html__( 'Overlay Color', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .zyre-ft-banner .zyre-ftb-bg-overlay' => 'background-color: {{VALUE}}',
-				],
+				'name'     => 'overlay_bg',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .zyre-ft-banner .zyre-ftb-bg-overlay',
 			]
 		);
 
@@ -910,14 +910,13 @@ class Featured_Banner extends Base {
 			]
 		);
 
-		$this->add_control(
-			'overlay_color_hover',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
-				'label' => esc_html__( 'Overlay Color', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .zyre-ft-banner:hover .zyre-ftb-bg-overlay' => 'background-color: {{VALUE}}',
-				],
+				'name'     => 'overlay_bg_hover',
+				'types'    => [ 'classic', 'gradient' ],
+				'exclude'  => [ 'image' ],
+				'selector' => '{{WRAPPER}} .zyre-ft-banner:hover .zyre-ftb-bg-overlay',
 			]
 		);
 
@@ -1059,6 +1058,9 @@ class Featured_Banner extends Base {
 					'border'        => [],
 					'border_radius' => [],
 					'padding'       => [],
+					'margin'        => [
+						'selector' => '{{WRAPPER}} .zyre-ftb-media',
+					],
 					'alignment'     => [
 						'selector' => '{{WRAPPER}} .zyre-ftb-media',
 					],
@@ -2061,6 +2063,9 @@ class Featured_Banner extends Base {
 					'border_radius' => [],
 					'box_shadow'    => [],
 					'padding'       => [],
+					'max_width'     => [
+						'css_property' => 'max-width',
+					],
 				],
 			]
 		);
@@ -2108,9 +2113,9 @@ class Featured_Banner extends Base {
 		$this->add_render_attribute( 'title_prefix', 'class', esc_attr( 'zyre-d-' . $settings['title_prefix_display'] ) );
 		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-ftb-title-suffix' );
 		$this->add_render_attribute( 'title_suffix', 'class', esc_attr( 'zyre-d-' . $settings['title_suffix_display'] ) );
-		$this->add_render_attribute( 'subtitle', 'class', 'zyre-ftb-subtitle' );
+		$this->add_render_attribute( 'subtitle', 'class', 'zyre-ftb-subtitle zy-m-0' );
 		$this->add_render_attribute( 'subtitle', 'class', esc_attr( 'zyre-d-' . $settings['subtitle_display'] ) );
-		$this->add_render_attribute( 'description', 'class', 'zyre-ftb-description' );
+		$this->add_render_attribute( 'description', 'class', 'zyre-ftb-description zy-m-0' );
 		$this->add_render_attribute( 'description', 'class', esc_attr( 'zyre-d-' . $settings['description_display'] ) );
 		$this->add_render_attribute( 'media_element', 'class', 'zyre-ftb-media' );
 
@@ -2182,7 +2187,7 @@ class Featured_Banner extends Base {
 								<?php endif; ?>
 
 								<?php if ( ! empty( $settings['title'] ) ) : ?>
-									<<?php Utils::print_validated_html_tag( $title_tag ); ?> class="zyre-ftb-title <?php echo esc_attr( 'zyre-d-' . $settings['title_display'] ); ?>">
+									<<?php Utils::print_validated_html_tag( $title_tag ); ?> class="zyre-ftb-title zy-m-0 <?php echo esc_attr( 'zyre-d-' . $settings['title_display'] ); ?>">
 										<?php if ( ! empty( $settings['title_prefix'] ) ) : ?>
 											<span <?php $this->print_render_attribute_string( 'title_prefix' ); ?>><?php $this->print_unescaped_setting( 'title_prefix' ); ?></span>
 										<?php endif; ?>

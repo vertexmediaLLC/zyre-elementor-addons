@@ -123,7 +123,7 @@ class PreStyles_Manager {
 			[
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 				'security'  => wp_create_nonce( self::NONCE ),
-				'resetStyleAlert'  => __( 'This action will reset the current style and may also reset your content. Are you sure you want to proceed?', 'zyre-elementor-addons' ),
+				'resetStyleAlert'  => __( "This will remove the current preset permanently.\nAre you sure you want to proceed?", 'zyre-elementor-addons' ),
 			]
 		);
 	}
