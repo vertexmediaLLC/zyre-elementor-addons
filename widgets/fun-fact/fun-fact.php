@@ -838,7 +838,7 @@ class Fun_Fact extends Base {
 		
 		<div class="zyre-fun-fact-wrapper zy-flex zy-gap-3 zy-break-word zy-overflow-break-word zy-text-center">
 			<?php if ( ! empty( $settings['selected_icon']['value'] ) ) : ?>
-				<div class="zyre-fun-fact-media zyre-fun-fact-icon zy-content-center zy-inline-block">
+				<div class="zyre-fun-fact-media zyre-fun-fact-icon zy-content-center zy-justify-items-center zy-inline-block">
 					<?php zyre_render_icon( $settings ); ?>
 				</div>
 			<?php elseif ( isset( $settings['image'] ) && isset( $settings['image']['url'] ) && isset( $settings['image']['id'] ) ) : ?>
