@@ -46,6 +46,7 @@ class Advance_Heading extends Base {
 			[
 				'label'       => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
 				'dynamic'     => [ 'active' => true ],
 			]
 		);
@@ -135,6 +136,37 @@ class Advance_Heading extends Base {
 				],
 				'selectors'  => [
 					'{{WRAPPER}} .zyre-advance-heading-title' => 'gap: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'title_align_x',
+			[
+				'label'                => esc_html__( 'Alignment', 'zyre-elementor-addons' ),
+				'type'                 => Controls_Manager::CHOOSE,
+				'default'              => 'center',
+				'options'              => [
+					'left'   => [
+						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-text-align-center',
+					],
+					'right'  => [
+						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-text-align-right',
+					],
+				],
+				'selectors_dictionary' => [
+					'left'   => 'text-align: left;justify-self: flex-start',
+					'center' => 'text-align: center;justify-self: center',
+					'right'  => 'text-align: right;justify-self: flex-end',
+				],
+				'selectors'            => [
+					'{{WRAPPER}} .zyre-advance-heading-title' => '{{VALUE}}',
 				],
 			]
 		);

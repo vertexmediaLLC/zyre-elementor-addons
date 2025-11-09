@@ -74,6 +74,10 @@ class IconBox extends Base {
 			[
 				'label'       => esc_html__( 'Icon', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::ICONS,
+				'default'     => [
+					'value'   => 'fas fa-home',
+					'library' => 'fa-solid',
+				],
 				'skin'        => 'inline',
 				'label_block' => false,
 				'separator'   => 'before',
@@ -84,6 +88,7 @@ class IconBox extends Base {
 			'title',
 			[
 				'label'       => esc_html__( 'Title', 'zyre-elementor-addons' ),
+				'default'     => esc_html__( 'Icon Box Title', 'zyre-elementor-addons' ),
 				'label_block' => true,
 				'type'        => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Type Icon Box Title', 'zyre-elementor-addons' ),
@@ -134,6 +139,7 @@ class IconBox extends Base {
 			'subtitle',
 			[
 				'label'       => esc_html__( 'Subtitle', 'zyre-elementor-addons' ),
+				'default'     => esc_html__( 'Icon Box Subtitle', 'zyre-elementor-addons' ),
 				'label_block' => true,
 				'type'        => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Type Icon Box Subtitle', 'zyre-elementor-addons' ),
@@ -808,10 +814,10 @@ class IconBox extends Base {
 		$this->add_render_attribute( 'iconbox_icon', 'class', 'zyre-iconbox-icon zy-inline-block zy-relative zy-overflow-hidden zy-content-center zy-justify-items-center' );
 
 		$this->add_inline_editing_attributes( 'title' );
-		$this->add_render_attribute( 'title', 'class', 'zyre-iconbox-title' );
+		$this->add_render_attribute( 'title', 'class', 'zyre-iconbox-title zy-m-0' );
 
 		$this->add_inline_editing_attributes( 'subtitle' );
-		$this->add_render_attribute( 'subtitle', 'class', 'zyre-iconbox-subtitle' );
+		$this->add_render_attribute( 'subtitle', 'class', 'zyre-iconbox-subtitle zy-m-0' );
 
 		$this->add_inline_editing_attributes( 'description' );
 		$this->add_render_attribute( 'description', 'class', 'zyre-iconbox-description zy-m-0' );

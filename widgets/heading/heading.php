@@ -57,6 +57,7 @@ class Heading extends Base {
 			[
 				'label'   => esc_html__( 'Title', 'zyre-elementor-addons' ),
 				'type'    => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Title', 'zyre-elementor-addons' ),
 				'dynamic' => [ 'active' => true ],
 			]
 		);
@@ -117,9 +118,10 @@ class Heading extends Base {
 		$this->add_control(
 			'subtitle',
 			[
-				'label'       => esc_html__( 'Subtitle', 'zyre-elementor-addons' ),
-				'type'        => Controls_Manager::TEXT,
-				'dynamic'     => [ 'active' => true ],
+				'label'   => esc_html__( 'Subtitle', 'zyre-elementor-addons' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Sub Title', 'zyre-elementor-addons' ),
+				'dynamic' => ['active' => true],
 			]
 		);
 
@@ -167,8 +169,9 @@ class Heading extends Base {
 		$this->add_control(
 			'heading_description',
 			[
-				'label'     => esc_html__( 'Description', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::TEXTAREA,
+				'label'       => esc_html__( 'Description', 'zyre-elementor-addons' ),
+				'type'        => Controls_Manager::TEXTAREA,
+				'default'     => esc_html( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore' ),
 				'description' => zyre_get_allowed_html_desc(),
 			]
 		);
@@ -596,7 +599,7 @@ class Heading extends Base {
 				'label_on' => esc_html__( 'SHOW', 'zyre-elementor-addons' ),
 				'label_off' => esc_html__( 'HIDE', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
-				'default' => 'yes',
+				'default' => '',
 			]
 		);
 
@@ -793,7 +796,7 @@ class Heading extends Base {
 		$this->add_inline_editing_attributes( 'heading_description' );
 
 		// Add HTML class
-		$this->add_render_attribute( 'heading_description_wrap', 'class', 'zyre-heading-description zy-inline-flex zy-self-stretch zy-w-100 zy-relative' );
+		$this->add_render_attribute( 'heading_description_wrap', 'class', 'zyre-heading-description zy-inline-flex zy-self-stretch zy-w-100 zy-relative zy-m-0' );
 		$this->add_render_attribute( 'heading_description', 'class', 'zyre-heading-description-text zy-shrink-1' );
 		if ( ! empty( $settings['description_separator_switch'] ) && 'yes' === $settings['description_separator_switch'] ) {
 			$this->add_render_attribute( 'heading_description_wrap', 'class', 'has--separator' );
@@ -801,7 +804,7 @@ class Heading extends Base {
 
 		$this->add_render_attribute( 'heading_title', 'class', 'zyre-heading-title-text' );
 		$this->add_render_attribute( 'heading_suffix', 'class', 'zyre-heading-title-suffix zy-inline-block' );
-		$this->add_render_attribute( 'heading_subtitle', 'class', 'zyre-heading-subtitle zy-inline-flex zy-self-stretch zy-w-100 zy-relative' );
+		$this->add_render_attribute( 'heading_subtitle', 'class', 'zyre-heading-subtitle zy-inline-flex zy-self-stretch zy-w-100 zy-relative zy-m-0' );
 		$this->add_render_attribute( 'subtitle', 'class', 'zyre-heading-subtitle-text zy-shrink-1' );
 		if ( ! empty( $settings['subtitle_separator_switch'] ) && 'yes' === $settings['subtitle_separator_switch'] ) {
 			$this->add_render_attribute( 'heading_subtitle', 'class', 'has--separator' );
@@ -813,7 +816,7 @@ class Heading extends Base {
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_title'] ) ) : ?>
-				<<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); ?> class="zyre-heading-title">
+				<<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); ?> class="zyre-heading-title zy-m-0">
 					<span <?php echo $this->get_render_attribute_string( 'heading_title' ); ?>><?php echo zyre_kses_basic( $settings['heading_title'] ); ?></span>
 					<?php if ( $settings['heading_suffix'] ) : ?>
 					<span <?php echo $this->get_render_attribute_string( 'heading_suffix' ); ?>><?php echo esc_html( $settings['heading_suffix'] ); ?></span>

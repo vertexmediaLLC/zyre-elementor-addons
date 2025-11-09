@@ -37,6 +37,7 @@ class Image_Heading extends Base {
 			'title_text',
 			[
 				'label'       => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
+				'default'     => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [ 'active' => true ],
 				'description' => zyre_get_allowed_html_desc(),
@@ -120,6 +121,7 @@ class Image_Heading extends Base {
 			'text_subtitle',
 			[
 				'label'       => esc_html__( 'Subtitle', 'zyre-elementor-addons' ),
+				'default'     => esc_html__( 'Subtitle', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [ 'active' => true ],
 				'separator'   => 'before',
@@ -586,7 +588,8 @@ class Image_Heading extends Base {
 				'controls' => [
 					'typography' => [],
 					'alignment'  => [
-						'label' => esc_html__( 'Text Alignment', 'zyre-elementor-addons' ),
+						'selector' => 'title_text' === $prefix ? '{{WRAPPER}} .zyre-image-heading-title' : '{{WRAPPER}} .zyre-image-heading-' . $class_base,
+						'label'    => esc_html__( 'Text Alignment', 'zyre-elementor-addons' ),
 					],
 				],
 			]

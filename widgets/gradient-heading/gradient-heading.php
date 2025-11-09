@@ -46,6 +46,7 @@ class Gradient_Heading extends Base {
 			'title_text',
 			[
 				'label'       => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
+				'default'     => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [ 'active' => true ],
 			]
@@ -64,6 +65,7 @@ class Gradient_Heading extends Base {
 			'text_subtitle',
 			[
 				'label'       => esc_html__( 'Subtitle', 'zyre-elementor-addons' ),
+				'default'     => esc_html__( 'Subtitle', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [ 'active' => true ],
 			]
@@ -122,16 +124,18 @@ class Gradient_Heading extends Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'           => 'title_gradient',
-				'types'          => [ 'gradient' ],
-				'exclude'        => [ 'image' ],
+				'types'          => ['gradient'],
+				'exclude'        => ['image'],
 				'fields_options' => [
 					'background' => [
 						'default' => 'gradient',
-						'label'          => esc_html__( 'Set Gradient for Title ', 'zyre-elementor-addons' ),
+						'label'   => esc_html__( 'Set Gradient for Title ', 'zyre-elementor-addons' ),
+					],
+					'color'      => [
+						'default' => '#000000',
 					],
 				],
-
-				'selector' => '{{WRAPPER}} .zyre-gradient-heading-title',
+				'selector'       => '{{WRAPPER}} .zyre-gradient-heading-title',
 			]
 		);
 
@@ -276,6 +280,9 @@ class Gradient_Heading extends Base {
 							'background' => [
 								'default' => 'gradient',
 								'label'   => esc_html__( 'Set Gradient for Subtitle ', 'zyre-elementor-addons' ),
+							],
+							'color'      => [
+								'default' => '#000000',
 							],
 						],
 					],
