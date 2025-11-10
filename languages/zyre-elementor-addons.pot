@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-09T11:12:07+00:00\n"
+"POT-Creation-Date: 2025-11-10T06:13:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -78,7 +78,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:176
 #: widgets/featured-banner/featured-banner.php:198
 #: widgets/featured-banner/featured-banner.php:1886
-#: widgets/image-heading/image-heading.php:347
+#: widgets/image-heading/image-heading.php:386
 #: widgets/news-ticker/news-ticker.php:385
 #: widgets/page-title/page-title.php:44
 #: widgets/post-comments/post-comments.php:711
@@ -651,7 +651,7 @@ msgstr ""
 #: widgets/heading/heading.php:665
 #: widgets/iconbox/iconbox.php:350
 #: widgets/iconbox/iconbox.php:427
-#: widgets/image-heading/image-heading.php:356
+#: widgets/image-heading/image-heading.php:395
 #: widgets/infobox/infobox.php:188
 #: widgets/infobox/infobox.php:577
 #: widgets/infobox/infobox.php:612
@@ -864,7 +864,7 @@ msgstr ""
 #: widgets/heading/heading.php:673
 #: widgets/iconbox/iconbox.php:358
 #: widgets/iconbox/iconbox.php:435
-#: widgets/image-heading/image-heading.php:357
+#: widgets/image-heading/image-heading.php:396
 #: widgets/infobox/infobox.php:196
 #: widgets/infobox/infobox.php:585
 #: widgets/infobox/infobox.php:620
@@ -994,7 +994,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:354
 #: widgets/iconbox/iconbox.php:386
 #: widgets/iconbox/iconbox.php:622
-#: widgets/image-heading/image-heading.php:472
+#: widgets/image-heading/image-heading.php:511
 #: widgets/infobox/infobox.php:192
 #: widgets/infobox/infobox.php:217
 #: widgets/lottie-animation/lottie-animation.php:219
@@ -1025,7 +1025,7 @@ msgstr ""
 #: widgets/heading/heading.php:713
 #: widgets/iconbox/iconbox.php:394
 #: widgets/iconbox/iconbox.php:630
-#: widgets/image-heading/image-heading.php:476
+#: widgets/image-heading/image-heading.php:515
 #: widgets/infobox/infobox.php:225
 #: widgets/lottie-animation/lottie-animation.php:218
 #: widgets/post-comments/post-comments.php:238
@@ -1140,7 +1140,7 @@ msgid "Scale Down"
 msgstr ""
 
 #: base/widget-base.php:1131
-#: widgets/image-heading/image-heading.php:563
+#: widgets/image-heading/image-heading.php:602
 msgid "Z-Index"
 msgstr ""
 
@@ -1554,8 +1554,8 @@ msgstr ""
 #: widgets/heading/heading.php:210
 #: widgets/heading/heading.php:256
 #: widgets/heading/heading.php:459
-#: widgets/image-heading/image-heading.php:614
-#: widgets/image-heading/image-heading.php:640
+#: widgets/image-heading/image-heading.php:653
+#: widgets/image-heading/image-heading.php:679
 #: widgets/pdf-view/pdf-view.php:331
 #: widgets/pdf-view/pdf-view.php:385
 #: widgets/pdf-view/pdf-view.php:407
@@ -1737,8 +1737,8 @@ msgstr ""
 
 #: classes/widgets-manager.php:484
 #: widgets/image-heading/image-heading.php:203
-#: widgets/image-heading/image-heading.php:295
-#: widgets/image-heading/image-heading.php:736
+#: widgets/image-heading/image-heading.php:334
+#: widgets/image-heading/image-heading.php:775
 msgid "Overlay Image"
 msgstr ""
 
@@ -3076,7 +3076,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:234
 #: widgets/iconbox/iconbox.php:459
 #: widgets/image-carousel/image-carousel.php:164
-#: widgets/image-heading/image-heading.php:604
+#: widgets/image-heading/image-heading.php:643
 #: widgets/infobox/infobox.php:412
 #: widgets/logo-carousel/logo-carousel.php:173
 #: widgets/logo-grid/logo-grid.php:343
@@ -3148,7 +3148,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:261
 #: widgets/iconbox/iconbox.php:485
 #: widgets/image-carousel/image-carousel.php:186
-#: widgets/image-heading/image-heading.php:630
+#: widgets/image-heading/image-heading.php:669
 #: widgets/infobox/infobox.php:440
 #: widgets/logo-carousel/logo-carousel.php:195
 #: widgets/logo-grid/logo-grid.php:374
@@ -3627,6 +3627,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:162
 #: widgets/call-to-action/call-to-action.php:2126
 #: widgets/featured-banner/featured-banner.php:1988
+#: widgets/image-heading/image-heading.php:279
 #: widgets/post-grid/post-grid.php:1273
 #: widgets/testimonial/testimonial.php:998
 msgid "Block"
@@ -3639,6 +3640,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:161
 #: widgets/call-to-action/call-to-action.php:2128
 #: widgets/featured-banner/featured-banner.php:1990
+#: widgets/image-heading/image-heading.php:277
 #: widgets/post-grid/post-grid.php:1277
 #: widgets/testimonial/testimonial.php:1000
 msgid "Inline"
@@ -4558,6 +4560,7 @@ msgid "Design"
 msgstr ""
 
 #: widgets/animated-text/animated-text.php:158
+#: widgets/image-heading/image-heading.php:273
 #: widgets/post-thumbnail/post-thumbnail.php:107
 msgid "Display"
 msgstr ""
@@ -5789,7 +5792,7 @@ msgstr ""
 #: widgets/dual-color-heading/dual-color-heading.php:104
 #: widgets/fun-fact/fun-fact.php:364
 #: widgets/heading/heading.php:225
-#: widgets/image-heading/image-heading.php:592
+#: widgets/image-heading/image-heading.php:631
 msgid "Text Alignment"
 msgstr ""
 
@@ -5890,7 +5893,7 @@ msgstr ""
 #: widgets/fun-fact/fun-fact.php:123
 #: widgets/heading/heading.php:621
 #: widgets/image-carousel/image-carousel.php:137
-#: widgets/image-heading/image-heading.php:343
+#: widgets/image-heading/image-heading.php:382
 #: widgets/logo-carousel/logo-carousel.php:146
 #: widgets/post-comments/post-comments.php:708
 #: widgets/post-grid/post-grid.php:432
@@ -6248,7 +6251,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1941
 #: widgets/dual-button/dual-button.php:511
 #: widgets/featured-banner/featured-banner.php:1887
-#: widgets/image-heading/image-heading.php:348
+#: widgets/image-heading/image-heading.php:387
 #: widgets/post-comments/post-comments.php:712
 msgid "Absolute"
 msgstr ""
@@ -6270,6 +6273,7 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2127
 #: widgets/featured-banner/featured-banner.php:1989
+#: widgets/image-heading/image-heading.php:278
 #: widgets/testimonial/testimonial.php:999
 msgid "Inline Block"
 msgstr ""
@@ -6674,7 +6678,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:697
 #: widgets/image-heading/image-heading.php:123
 #: widgets/image-heading/image-heading.php:124
-#: widgets/image-heading/image-heading.php:277
+#: widgets/image-heading/image-heading.php:316
 msgid "Subtitle"
 msgstr ""
 
@@ -6894,20 +6898,24 @@ msgstr ""
 msgid "Enable Overlay Image"
 msgstr ""
 
-#: widgets/image-heading/image-heading.php:366
+#: widgets/image-heading/image-heading.php:290
+msgid "Offset (vertical)"
+msgstr ""
+
+#: widgets/image-heading/image-heading.php:405
 msgid "Horizontal Orientation"
 msgstr ""
 
-#: widgets/image-heading/image-heading.php:389
-#: widgets/image-heading/image-heading.php:427
-#: widgets/image-heading/image-heading.php:489
-#: widgets/image-heading/image-heading.php:526
+#: widgets/image-heading/image-heading.php:428
+#: widgets/image-heading/image-heading.php:466
+#: widgets/image-heading/image-heading.php:528
+#: widgets/image-heading/image-heading.php:565
 #: widgets/news-ticker/news-ticker.php:169
 #: widgets/post-grid/post-grid.php:240
 msgid "Offset"
 msgstr ""
 
-#: widgets/image-heading/image-heading.php:466
+#: widgets/image-heading/image-heading.php:505
 msgid "Vertical Orientation"
 msgstr ""
 

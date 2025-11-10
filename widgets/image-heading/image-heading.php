@@ -267,6 +267,45 @@ class Image_Heading extends Base {
 		// Text Style Controls
 		$this->text_style_controls( 'title_suffix' );
 
+		$this->add_control(
+			'title_suffix_display',
+			[
+				'label'   => esc_html__( 'Display', 'zyre-elementor-addons' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 'inline-block',
+				'options' => [
+					'inline'      => esc_html__( 'Inline', 'zyre-elementor-addons' ),
+					'inline-block'=> esc_html__( 'Inline Block', 'zyre-elementor-addons' ),
+					'block'       => esc_html__( 'Block', 'zyre-elementor-addons' ),
+				],
+				'selectors' => [
+					'{{WRAPPER}} .zyre-image-heading-title-suffix' => 'display: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'title_suffix_offset_y',
+			[
+				'label'      => esc_html__( 'Offset (vertical)', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'custom' ],
+				'range'      => [
+					'px'  => [
+						'min' => -500,
+						'max' => 500,
+					],
+					'%'   => [
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-image-heading-title-suffix' => 'top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 	}
 
