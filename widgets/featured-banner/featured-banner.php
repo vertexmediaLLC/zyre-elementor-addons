@@ -205,8 +205,6 @@ class Featured_Banner extends Base {
 					'bottom center' => esc_html__( 'Bottom Center', 'zyre-elementor-addons' ),
 					'bottom left'   => esc_html__( 'Bottom Left', 'zyre-elementor-addons' ),
 					'bottom right'  => esc_html__( 'Bottom Right', 'zyre-elementor-addons' ),
-					'initial'       => esc_html__( 'Custom', 'zyre-elementor-addons' ),
-
 				],
 				'render_type' => 'template',
 				'selectors'   => [
@@ -774,6 +772,46 @@ class Featured_Banner extends Base {
 							'skin' => 'classic',
 						],
 					],
+					'width'      => [
+						'label'     => esc_html__( 'Width', 'zyre-elementor-addons' ),
+						'selector'  => '{{WRAPPER}} .zyre-ftb-bg',
+						'condition' => [
+							'skin' => 'cover',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'image_bg_align_x',
+			[
+				'label'                => esc_html__( 'Alignment', 'zyre-elementor-addons' ) . ' (ms)',
+				'type'                 => Controls_Manager::CHOOSE,
+				'options'              => [
+					'left'   => [
+						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-text-align-center',
+					],
+					'right'  => [
+						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-text-align-right',
+					],
+				],
+				'selectors_dictionary' => [
+					'left'   => 'margin-left: 0;margin-right: auto;',
+					'center' => 'margin-left: auto;margin-right: auto;',
+					'right'  => 'margin-left: auto;margin-right: 0;',
+				],
+				'selectors'            => [
+					'{{WRAPPER}} .zyre-ftb-bg' => '{{VALUE}}',
+				],
+				'condition'            => [
+					'skin' => 'cover',
 				],
 			]
 		);

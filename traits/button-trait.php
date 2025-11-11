@@ -742,7 +742,7 @@ trait Button_Trait {
 					<?php endif; ?>
 
 					<?php if ( $settings[ $button_text ] ) : ?>
-						<span <?php $instance->print_render_attribute_string( $button_text ); ?>><?php echo esc_html( $settings[ $button_text ] ); ?></span>
+						<span <?php $instance->print_render_attribute_string( $button_text ); ?>><?php echo zyre_kses_basic( $settings[ $button_text ] ); ?></span>
 					<?php endif; ?>
 				</span>
 			</<?php echo esc_attr( $html_tag ); ?>>
