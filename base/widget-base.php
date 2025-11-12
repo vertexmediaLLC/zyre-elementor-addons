@@ -357,7 +357,11 @@ abstract class Base extends Widget_Base {
 						if ( ! empty( $values['separator'] ) ) {
 							$control_args['separator'] = $values['separator'];
 						}
-						$this->add_control( $control_name, $control_args );
+						if ( isset( $values['responsive'] ) && $values['responsive'] === true ) {
+							$this->add_responsive_control( $control_name, $control_args );
+						} else {
+							$this->add_control( $control_name, $control_args );
+						}
 						break;
 
 					case 'color':

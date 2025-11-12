@@ -775,9 +775,6 @@ class Featured_Banner extends Base {
 					'width'      => [
 						'label'     => esc_html__( 'Width', 'zyre-elementor-addons' ),
 						'selector'  => '{{WRAPPER}} .zyre-ftb-bg',
-						'condition' => [
-							'skin' => 'cover',
-						],
 					],
 				],
 			]
@@ -809,9 +806,6 @@ class Featured_Banner extends Base {
 				],
 				'selectors'            => [
 					'{{WRAPPER}} .zyre-ftb-bg' => '{{VALUE}}',
-				],
-				'condition'            => [
-					'skin' => 'cover',
 				],
 			]
 		);
@@ -1195,12 +1189,14 @@ class Featured_Banner extends Base {
 		$this->set_style_controls(
 			'content',
 			[
-				'selector' => '{{WRAPPER}} .zyre-ftb-content-elements',
+				'selector' => '{{WRAPPER}} .zyre-ftb-content-wrapper',
 				'controls' => [
-					'position_y' => [],
-					'padding'    => [
-						'selector' => '{{WRAPPER}} .zyre-ftb-content-wrapper',
+					'position_y'    => [
+						'selector' => '{{WRAPPER}} .zyre-ftb-content-elements',
 					],
+					'padding'       => [],
+					'margin'        => [],
+					'border_radius' => [],
 				],
 			]
 		);
@@ -1237,9 +1233,11 @@ class Featured_Banner extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-ftb-content-wrapper',
 				'controls' => [
-					'bg_color'   => [],
+					'bg_color'   => [
+						'responsive' => true,
+					],
 					'icon_color' => [
-						'selector' => '{{WRAPPER}} .zyre-ft-banner .zyre-ftb-icon',
+						'selector'  => '{{WRAPPER}} .zyre-ft-banner .zyre-ftb-icon',
 						'condition' => [
 							'media_element[value]'  => 'icon',
 							'selected_icon[value]!' => '',
