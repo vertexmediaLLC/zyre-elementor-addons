@@ -2153,7 +2153,7 @@ class Featured_Banner extends Base {
 		$this->add_render_attribute( 'subtitle', 'class', esc_attr( 'zyre-d-' . $settings['subtitle_display'] ) );
 		$this->add_render_attribute( 'description', 'class', 'zyre-ftb-description zy-m-0' );
 		$this->add_render_attribute( 'description', 'class', esc_attr( 'zyre-d-' . $settings['description_display'] ) );
-		$this->add_render_attribute( 'media_element', 'class', 'zyre-ftb-media' );
+		$this->add_render_attribute( 'media_element', 'class', 'zyre-ftb-media zy-shrink-0' );
 
 		if ( ! empty( $settings['media_layout'] ) ) {
 			$this->add_render_attribute( 'content_wrapper', 'class', 'zyre-ftb-content-media--' . $settings['media_layout'] );
