@@ -171,12 +171,12 @@ class Social_Share extends Base {
 			[
 				'label' => esc_html__( 'Network', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
+				'default' => 'facebook-f',
 				'options' => array_reduce( $networks_names, function ( $options, $network_name ) use ( $networks ) {
 					$options[ $network_name ] = $networks[ $network_name ]['title'];
 
 					return $options;
 				}, [] ),
-				'default' => 'facebook',
 			]
 		);
 
