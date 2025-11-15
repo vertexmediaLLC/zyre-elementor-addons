@@ -137,6 +137,7 @@ class Featured_Banner extends Base {
 				'selectors'            => [
 					'{{WRAPPER}} .zyre-ft-banner' => '{{VALUE}}',
 				],
+				'render_type'  => 'template',
 				'prefix_class' => 'zyre-ftb-%s-layout-image-',
 				'condition' => [
 					'skin!' => 'cover',
@@ -178,7 +179,6 @@ class Featured_Banner extends Base {
 					'cover' => esc_html__( 'Cover', 'zyre-elementor-addons' ),
 					'contain' => esc_html__( 'Contain', 'zyre-elementor-addons' ),
 				],
-				'render_type' => 'template',
 				'selectors'  => [
 					'{{WRAPPER}} .zyre-ftb-bg'   => 'background-size: {{VALUE}};',
 				],
@@ -206,11 +206,29 @@ class Featured_Banner extends Base {
 					'bottom left'   => esc_html__( 'Bottom Left', 'zyre-elementor-addons' ),
 					'bottom right'  => esc_html__( 'Bottom Right', 'zyre-elementor-addons' ),
 				],
-				'render_type' => 'template',
 				'selectors'   => [
 					'{{WRAPPER}} .zyre-ftb-bg' => 'background-position: {{VALUE}};',
 				],
 				'condition'   => [
+					'bg_image[url]!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'bg_image_background_attachment',
+			[
+				'label'     => esc_html__( 'Background Attachment', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'scroll',
+				'options'   => [
+					'scroll' => esc_html__( 'Scroll', 'zyre-elementor-addons' ),
+					'fixed'  => esc_html__( 'Fixed', 'zyre-elementor-addons' ),
+				],
+				'selectors' => [
+					'{{WRAPPER}} .zyre-ftb-bg' => 'background-attachment: {{VALUE}};',
+				],
+				'condition' => [
 					'bg_image[url]!' => '',
 				],
 			]
