@@ -644,9 +644,6 @@ class FlipBox extends Base {
 					"{{WRAPPER}} .zyre-flipbox-{$class_base} .zyre-flipbox-layer-overlay" => 'justify-content: {{VALUE}}',
 				],
 				'separator' => 'after',
-				'condition' => [
-					$prefix . '_content_type' => 'custom_content',
-				],
 			]
 		);
 

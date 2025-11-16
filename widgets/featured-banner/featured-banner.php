@@ -791,9 +791,10 @@ class Featured_Banner extends Base {
 						],
 					],
 					'width'      => [
-						'label'     => esc_html__( 'Width', 'zyre-elementor-addons' ),
-						'selector'  => '{{WRAPPER}} .zyre-ftb-bg',
+						'label'    => esc_html__( 'Width', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-ftb-bg',
 					],
+					'margin'     => [],
 				],
 			]
 		);
