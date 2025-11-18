@@ -1,6 +1,7 @@
 .zyre-addon-social-icon .zyre-social-icon {
 	margin-bottom: var(--grid-row-gap);
 	transition: background var(--zy-transition-duration);
+	vertical-align: middle;
 }
 
 .zyre-addon-social-icon .zyre-social-icon i,

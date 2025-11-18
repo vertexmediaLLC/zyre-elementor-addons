@@ -846,9 +846,12 @@ class FlipBox extends Base {
 			[
 				'selector' => "{{WRAPPER}} .zyre-flipbox-{$class_base} .zyre-flipbox-content",
 				'controls' => [
-					'padding' => [
+					'heading'  => [
+						'label'     => esc_html__( 'Content', 'zyre-elementor-addons' ),
 						'separator' => 'before',
 					],
+					'bg_color' => [],
+					'padding'  => [],
 				],
 			],
 		);
@@ -937,14 +940,14 @@ class FlipBox extends Base {
 		?>
 		<div class="zyre-flipbox zy-relative" tabindex="0">
 			<div class="zyre-flipbox-layer zy-absolute zy-w-100 zy-h-100 zy-overflow-hidden zyre-flipbox-front zy-bg-white">
-				<div class="zyre-flipbox-layer-overlay zy-align-stretch zy-color-black zy-flex zy-direction-column zy-justify-center zy-p-6 zy-text-center zy-w-100 zy-h-100">
+				<div class="zyre-flipbox-layer-overlay zy-align-stretch zy-color-black zy-flex zy-direction-column zy-justify-center zy-text-center zy-w-100 zy-h-100">
 					<div class="zyre-flipbox-layer-inner">
 						<?php $this->render_flip_content( 'front', $settings ); ?>
 					</div>
 				</div>
 			</div>
 			<div class="zyre-flipbox-layer zy-absolute zy-w-100 zy-h-100 zy-overflow-hidden zyre-flipbox-back zy-bg-white zy-block">
-				<div class="zyre-flipbox-layer-overlay zy-align-stretch zy-color-black zy-flex zy-direction-column zy-justify-center zy-p-6 zy-text-center zy-w-100 zy-h-100">
+				<div class="zyre-flipbox-layer-overlay zy-align-stretch zy-color-black zy-flex zy-direction-column zy-justify-center zy-text-center zy-w-100 zy-h-100">
 					<div class="zyre-flipbox-layer-inner">
 						<?php $this->render_flip_content( 'back', $settings ); ?>
 						<?php $this->render_button( $this, [ 'id_prefix' => 'back' ] ); ?>
