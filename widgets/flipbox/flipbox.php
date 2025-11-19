@@ -656,11 +656,7 @@ class FlipBox extends Base {
 						'separator' => 'before',
 					],
 					'border_radius' => [],
-					'box_shadow'    => [
-						'condition' => [
-							'flip_effect' => 'flip',
-						],
-					],
+					'box_shadow'    => [],
 				],
 			],
 		);
@@ -946,7 +942,7 @@ class FlipBox extends Base {
 					</div>
 				</div>
 			</div>
-			<div class="zyre-flipbox-layer zy-absolute zy-w-100 zy-h-100 zy-overflow-hidden zyre-flipbox-back zy-bg-white zy-block">
+			<div class="zyre-flipbox-layer zy-absolute zy-w-100 zy-h-100 zy-overflow-hidden zyre-flipbox-back zy-bg-white zy-block zy-index-1">
 				<div class="zyre-flipbox-layer-overlay zy-align-stretch zy-color-black zy-flex zy-direction-column zy-justify-center zy-text-center zy-w-100 zy-h-100">
 					<div class="zyre-flipbox-layer-inner">
 						<?php $this->render_flip_content( 'back', $settings ); ?>

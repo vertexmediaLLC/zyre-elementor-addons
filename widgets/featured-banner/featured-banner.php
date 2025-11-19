@@ -1627,13 +1627,14 @@ class Featured_Banner extends Base {
 						],
 					],
 					'justify_content' => [
-						'label'     => esc_html__( 'Justify Content', 'zyre-elementor-addons' ),
-						'label_block'  => true,
-						'condition' => [
+						'label'       => esc_html__( 'Justify Content', 'zyre-elementor-addons' ),
+						'label_block' => true,
+						'condition'   => [
 							'dual_button_layout' => 'row',
-							'button_layout'      => [ 'below', '' ],
+							'button_layout'      => ['below', ''],
 						],
 					],
+					'align_self_y'    => [],
 					'gap'             => [
 						'label'     => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
 						'default'   => [
@@ -2150,7 +2151,7 @@ class Featured_Banner extends Base {
 			$show_content = false;
 		}
 
-		$this->add_render_attribute( 'wrapper', 'class', 'zyre-ft-banner zy-flex zy-relative' );
+		$this->add_render_attribute( 'wrapper', 'class', 'zyre-ft-banner zy-flex zy-relative zy-h-100' );
 
 		$this->add_render_attribute(
 			'background_image',
