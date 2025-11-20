@@ -809,6 +809,9 @@ class InfoBox extends Base {
 					'alignment'  => [
 						'selector' => '{{WRAPPER}} .zyre-infobox-content .zyre-infobox-' . $class_base,
 					],
+					'max_width'  => [
+						'css_property' => 'max-width',
+					],
 				],
 			]
 		);
