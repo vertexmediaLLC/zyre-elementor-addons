@@ -325,14 +325,86 @@ class Advance_Accordion extends Base {
 						'selector'     => '{{WRAPPER}} .zyre-accordion-tab-content > .zyre-advance-accordion-section:not(:last-child)',
 						'css_property' => 'margin-bottom',
 					],
-					'bg_color'      => [],
 					'padding'       => [],
 					'border'        => [],
 					'border_radius' => [],
-					'box_shadow'    => [],
 				],
 			]
 		);
+
+		// Tabs
+		$this->start_controls_tabs( 'items_normal_tab' );
+
+		// Normal Tab
+		$this->start_controls_tab(
+			'item_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			'item',
+			[
+				'selector' => '{{WRAPPER}} .zyre-advance-accordion-section',
+				'controls' => [
+					'bg_color'   => [],
+					'box_shadow' => [],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Hover Tab
+		$this->start_controls_tab(
+			'item_normal_tab_hover',
+			[
+				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			'item_hover',
+			[
+				'selector' => '{{WRAPPER}} .zyre-advance-accordion-section:not(.active):hover',
+				'controls' => [
+					'bg_color'     => [],
+					'border_color' => [
+						'css_property' => 'border-color',
+					],
+					'box_shadow'   => [],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Active Tab
+		$this->start_controls_tab(
+			'item_normal_tab_active',
+			[
+				'label' => esc_html__( 'Active', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			'item_active',
+			[
+				'selector' => '{{WRAPPER}} .zyre-advance-accordion-section.active',
+				'controls' => [
+					'bg_color'     => [],
+					'border_color' => [
+						'css_property' => 'border-color',
+					],
+					'box_shadow'   => [],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 	}
@@ -405,10 +477,10 @@ class Advance_Accordion extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-accordion-toggle .toggle-icon',
 				'controls' => [
-					'bg_color' => [
+					'bg_color'   => [
 						'label' => esc_html__( 'Icon Background', 'zyre-elementor-addons' ),
 					],
-					'icon_color'    => [],
+					'icon_color' => [],
 				],
 			]
 		);
@@ -426,9 +498,12 @@ class Advance_Accordion extends Base {
 		$this->set_style_controls(
 			'title_hover',
 			[
-				'selector' => '{{WRAPPER}} .zyre-accordion-toggle.active, {{WRAPPER}} .zyre-accordion-toggle:hover',
+				'selector' => '{{WRAPPER}} .zyre-advance-accordion-section:not(.active):hover .zyre-accordion-toggle',
 				'controls' => [
-					'color' => [],
+					'color'        => [],
+					'border_color' => [
+						'css_property' => 'border-color',
+					],
 				],
 			]
 		);
@@ -436,12 +511,56 @@ class Advance_Accordion extends Base {
 		$this->set_style_controls(
 			'title_icon_hover',
 			[
-				'selector' => '{{WRAPPER}} .zyre-accordion-toggle.active > .toggle-icon.open, {{WRAPPER}} .zyre-accordion-toggle:hover .toggle-icon',
+				'selector' => '{{WRAPPER}} .zyre-advance-accordion-section:not(.active):hover .zyre-accordion-toggle .toggle-icon',
 				'controls' => [
-					'bg_color' => [
+					'bg_color'     => [
 						'label' => esc_html__( 'Icon Background', 'zyre-elementor-addons' ),
 					],
-					'icon_color'    => [],
+					'icon_color'   => [],
+					'border_color' => [
+						'label'        => esc_html__( 'Icon Border Color', 'zyre-elementor-addons' ),
+						'css_property' => 'border-color',
+					],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Tab: Active
+		$this->start_controls_tab(
+			'title_active_tab',
+			[
+				'label' => esc_html__( 'Active', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			'title_active',
+			[
+				'selector' => '{{WRAPPER}} .zyre-advance-accordion-section.active .zyre-accordion-toggle',
+				'controls' => [
+					'color'        => [],
+					'border_color' => [
+						'css_property' => 'border-color',
+					],
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'title_icon_active',
+			[
+				'selector' => '{{WRAPPER}} .zyre-advance-accordion-section.active .zyre-accordion-toggle .toggle-icon-opened',
+				'controls' => [
+					'bg_color'     => [
+						'label' => esc_html__( 'Icon Background', 'zyre-elementor-addons' ),
+					],
+					'icon_color'   => [],
+					'border_color' => [
+						'label'        => esc_html__( 'Icon Border Color', 'zyre-elementor-addons' ),
+						'css_property' => 'border-color',
+					],
 				],
 			]
 		);
@@ -470,11 +589,11 @@ class Advance_Accordion extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-accordion-content-description',
 				'controls' => [
-					'bg_color'   => [],
-					'color'      => [],
 					'typography' => [],
-					'margin'     => [],
+					'color'      => [],
+					'bg_color'   => [],
 					'padding'    => [],
+					'margin'     => [],
 					'border'     => [],
 				],
 			]
@@ -533,7 +652,7 @@ class Advance_Accordion extends Base {
 				<div <?php $this->print_render_attribute_string( $item_key ); ?>>
 					<!-- Accordion Title -->
 					<?php if ( '' !== $accordion['accordion_title'] ) : ?>
-					<h4 class="zyre-accordion-toggle zy-flex align-center zy-m-0 zy-transition zy-c-pointer">
+					<h4 class="zyre-accordion-toggle zy-flex zy-align-center zy-m-0 zy-transition zy-c-pointer">
 						<?php if ( isset( $settings['open_icon']['value'] ) && '' !== $settings['open_icon']['value'] ) : ?>
 							<span class="toggle-icon toggle-icon-closed zy-self-center">
 								<?php zyre_render_icon( $settings, 'icon', 'open_icon' ); ?>

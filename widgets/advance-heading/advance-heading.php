@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
 
 defined( 'ABSPATH' ) || die();
 
@@ -48,6 +49,19 @@ class Advance_Heading extends Base {
 				'type'        => Controls_Manager::TEXT,
 				'default'     => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
 				'dynamic'     => [ 'active' => true ],
+			]
+		);
+
+		$this->add_control(
+			'title_text_x',
+			[
+				'label'       => esc_html__( 'Title Text (Extra)', 'zyre-elementor-addons' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => '',
+				'dynamic'     => [ 'active' => true ],
+				'condition'   => [
+					'title_text!' => '',
+				],
 			]
 		);
 
@@ -187,6 +201,7 @@ class Advance_Heading extends Base {
 	protected function register_style_controls() {
 		$this->__title_prefix_style_controls();
 		$this->__title_text_style_controls();
+		$this->__title_text_extra_style_controls();
 		$this->__title_suffix_style_controls();
 	}
 
@@ -227,6 +242,89 @@ class Advance_Heading extends Base {
 
 		// Separator Style Controls
 		$this->separator_style_controls( 'title_text_separator', 'title-text' );
+
+		$this->end_controls_section();
+	}
+
+	protected function __title_text_extra_style_controls() {
+		$this->start_controls_section(
+			'section_title_text_extra_style',
+			[
+				'label'     => esc_html__( 'Title Text (Extra)', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'title_text!'   => '',
+					'title_text_x!' => '',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'     => 'title_text_extra_typo',
+				'selector' => '{{WRAPPER}} .zyre-advance-heading-title-text-extra',
+			]
+		);
+
+		// Tabs
+		$this->start_controls_tabs( 'title_text_extra_colors_tabs' );
+
+		// Tab: Normal
+		$this->start_controls_tab(
+			'title_text_extra_colors_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->add_control(
+			'title_text_extra_color',
+			[
+				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-advance-heading-title-text-extra' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Tab: Hover
+		$this->start_controls_tab(
+			'title_text_extra_colors_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->add_control(
+			'title_text_extra_color_hover',
+			[
+				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-advance-heading-title-text:hover .zyre-advance-heading-title-text-extra' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'title_text_extra_margin',
+			[
+				'label'     => esc_html__( 'Margin', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::DIMENSIONS,
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .zyre-advance-heading-title-text-extra' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 	}
@@ -571,12 +669,12 @@ class Advance_Heading extends Base {
 		$settings = $this->get_settings_for_display();
 
 		// Add inline editing attributes
-		$this->add_inline_editing_attributes( 'title_text' );
 		$this->add_inline_editing_attributes( 'title_prefix' );
 		$this->add_inline_editing_attributes( 'title_suffix', 'none' );
 
 		// Add HTML class
 		$this->add_render_attribute( 'title_text', 'class', 'zyre-advance-heading-title-text zy-relative zy-inline-flex zy-align-center zy-transition' );
+		$this->add_render_attribute( 'title_text_x', 'class', 'zyre-advance-heading-title-text-extra zy-transition' );
 		$this->add_render_attribute( 'title_prefix', 'class', 'zyre-advance-heading-title-prefix zy-relative zy-inline-flex zy-align-center zy-transition' );
 		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-advance-heading-title-suffix zy-relative zy-inline-flex zy-align-center zy-transition' );
 
@@ -615,9 +713,18 @@ class Advance_Heading extends Base {
 				</span>
 			<?php endif; ?>
 	
-			<?php if ( ! empty( $settings['title_text'] ) ) : ?>
+			<?php if ( ! empty( $settings['title_text'] ) ) :
+				if ( empty( $settings['title_text_x'] ) ) {
+					$this->add_inline_editing_attributes( 'title_text' );
+				}
+				?>
 				<span <?php echo $this->get_render_attribute_string( 'title_text' ); ?>>
 					<?php echo esc_html( $settings['title_text'] ); ?>
+					<?php if ( ! empty( $settings['title_text_x'] ) ) : ?>
+						<span <?php echo $this->get_render_attribute_string( 'title_text_x' ); ?>>
+							<?php echo esc_html( $settings['title_text_x'] ); ?>
+						</span>
+					<?php endif; ?>
 				</span>
 			<?php endif; ?>
 	

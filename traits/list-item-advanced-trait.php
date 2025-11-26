@@ -332,8 +332,8 @@ trait List_Item_Advanced_Trait {
 					'label'   => esc_html__( 'Items Icon', 'zyre-elementor-addons' ),
 					'type'    => Controls_Manager::ICONS,
 					'default' => [
-						'value'   => 'fas fa-angle-right',
-						'library' => 'fa-solid',
+						'value'   => is_rtl() ? 'zy-fonticon-b zy-Arrow-left' : 'zy-fonticon-b zy-Arrow-right',
+						'library' => 'zyre-icons-bold',
 					],
 				]
 			);

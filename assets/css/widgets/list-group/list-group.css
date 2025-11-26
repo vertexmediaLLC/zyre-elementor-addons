@@ -30,6 +30,7 @@
 .zyre-addon-list-group .zyre-group-list-item:not(.zyre-group-list-item--content-bottom) .zyre-group-list-item-link > * {
 	align-self: stretch;
 	align-items: center;
+	align-content: center;
 }
 
 .zyre-addon-list-group .zyre-group-list-item-content {

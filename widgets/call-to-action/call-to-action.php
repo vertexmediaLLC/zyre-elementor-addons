@@ -1629,10 +1629,11 @@ class Call_To_Action extends Base {
 						],
 					],
 					'justify_content' => [
-						'label'     => esc_html__( 'Justify Content', 'zyre-elementor-addons' ),
-						'condition' => [
+						'label'       => esc_html__( 'Justify Content', 'zyre-elementor-addons' ),
+						'label_block' => true,
+						'condition'   => [
 							'dual_button_layout' => 'row',
-							'button_layout'      => [ 'below', '' ],
+							'button_layout'      => ['below', ''],
 						],
 					],
 					'gap'             => [
@@ -1694,9 +1695,6 @@ class Call_To_Action extends Base {
 				'controls' => [
 					'position_y' => [
 						'label'     => esc_html__( 'Vertical Position', 'zyre-elementor-addons' ),
-						'condition' => [
-							'button_layout' => [ 'left', 'right' ],
-						],
 					],
 					'padding'    => [],
 				],

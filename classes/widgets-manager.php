@@ -295,27 +295,27 @@ class Widgets_Manager {
 				'css'       => [ 'button' ],
 				'styles'    => [
 					'one'   => [
-						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Primary', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-one.jpg' ),
 					],
 					'two'   => [
-						'name'      => esc_html__( 'Basic Two', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Primary Two', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-two.jpg' ),
 					],
-					'three' => [
-						'name'      => esc_html__( 'Basic 3D', 'zyre-elementor-addons' ),
+					'three'  => [
+						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-three.jpg' ),
 					],
 					'four'  => [
-						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Iconic', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-four.jpg' ),
 					],
-					'five'  => [
-						'name'      => esc_html__( 'Iconic', 'zyre-elementor-addons' ),
+					'five' => [
+						'name'      => esc_html__( '3D', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-five.jpg' ),
 					],
@@ -335,18 +335,18 @@ class Widgets_Manager {
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-one.jpg' ),
 					],
-					'two'   => [
-						'name'      => esc_html__( 'Join Buttons Two', 'zyre-elementor-addons' ),
+					'two' => [
+						'name'      => esc_html__( 'Primary Two', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-two.jpg' ),
 					],
 					'three' => [
-						'name'      => esc_html__( 'Primary Two', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Join Buttons', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-three.jpg' ),
 					],
-					'four' => [
-						'name'      => esc_html__( 'Join Buttons', 'zyre-elementor-addons' ),
+					'four'   => [
+						'name'      => esc_html__( 'Join Buttons Two', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-four.jpg' ),
 					],
@@ -463,6 +463,11 @@ class Widgets_Manager {
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'call-to-action', 'style-four.jpg' ),
+					],
+					'five' => [
+						'name'      => esc_html__( 'Standard-2', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'call-to-action', 'style-five.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -642,7 +647,7 @@ class Widgets_Manager {
 						'thumb'     => self::get_widget_thumbnail_url( 'team-member', 'style-one.jpg' ),
 					],
 					'two'   => [
-						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'team-member', 'style-two.jpg' ),
 					],
