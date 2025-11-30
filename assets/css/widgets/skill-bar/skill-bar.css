@@ -80,3 +80,8 @@ body.rtl .zyre-addon-skill-bar .zyre-progress-number-mark {
     top: 100%;
     transform: translateX(-50%);
 }
+
+body.rtl .zyre-addon-skill-bar .zyre-progress-number-arrow::after {
+	left: 0;
+	transform: translateX(0);
+}

@@ -444,13 +444,19 @@ class Post_Grid extends Base {
 						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-h-align-right',
 					],
+					'bottom' => [
+						'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-v-align-bottom',
+					],
 				],
 				'default'              => 'top',
 				'toggle'               => false,
 				'selectors_dictionary' => [
-					'left'  => 'display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;',
-					'top'   => 'display:block;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;',
-					'right' => 'display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;',
+					'left'  => 'display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;justify-content:space-between;',
+					'top'   => 'display:block;',
+					'right' => 'display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;justify-content:space-between;',
+					'bottom' => 'display:flex;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;justify-content:space-between;',
+
 				],
 				'selectors'            => [
 					'{{WRAPPER}} .zyre-post-grid-item' => '{{VALUE}}',
@@ -1430,10 +1436,8 @@ class Post_Grid extends Base {
 					'padding'       => [],
 					'border'        => [],
 					'border_radius' => [],
-					'space'         => [
-						'label'        => esc_html__( 'Margin Top', 'zyre-elementor-addons' ),
-						'selector'     => '{{WRAPPER}} .zyre-post-readmore',
-						'css_property' => 'margin-top',
+					'margin'        => [
+						'selector' => '{{WRAPPER}} .zyre-post-readmore',
 					],
 				],
 			]
@@ -1963,10 +1967,6 @@ class Post_Grid extends Base {
 			if ( in_array( 'comments', $meta_data ) ) {
 				$this->render_comments( $type );
 			}
-
-			if ( 'footer_meta' === $type ) {
-				$this->render_read_more();
-			}
 			?>
 		</div>
 		<?php
@@ -2045,7 +2045,7 @@ class Post_Grid extends Base {
 			<?php
 			$comments_icon_key = $type . '_comments_icon';
 			if ( '' !== $this->settings[ $comments_icon_key ]['value'] ) : ?>
-				<span class="zyre-post-comments-icon zyre-post-meta-icon zy-mie-1">
+				<span class="zyre-post-comments-icon zyre-post-meta-icon zy-mie-2">
 					<?php zyre_render_icon( $this->settings, 'icon', $comments_icon_key ); ?>
 				</span>
 			<?php endif; ?>
@@ -2174,6 +2174,7 @@ class Post_Grid extends Base {
 				$this->render_excerpt();
 				$this->render_post_body_after();
 				$this->render_meta_data( 'footer_meta' );
+				$this->render_read_more();
 				?>
 			</div>
 		</article>
@@ -2206,9 +2207,11 @@ class Post_Grid extends Base {
 			]
 		);
 
-		printf(
-			'<div class="zyre-post-grid-pagination">%s</div>',
-			wp_kses( $html, zyre_get_allowed_html( 'advanced' ) )
-		);
+		if ( ! empty( $html ) ) {
+			printf(
+				'<div class="zyre-post-grid-pagination">%s</div>',
+				wp_kses( $html, zyre_get_allowed_html( 'advanced' ) )
+			);
+		}
 	}
 }

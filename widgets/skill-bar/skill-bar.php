@@ -499,11 +499,11 @@ class Skill_Bar extends Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'default' => [
-					'top' => '6',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '10',
-					'unit' => 'px',
+					'top'      => '5',
+					'right'    => is_rtl() ? '10' : '0',
+					'bottom'   => '0',
+					'left'     => is_rtl() ? '0' : '10',
+					'unit'     => 'px',
 					'isLinked' => false,
 				],
 				'selectors'  => [

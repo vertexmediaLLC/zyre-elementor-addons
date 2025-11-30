@@ -672,6 +672,11 @@ class Widgets_Manager {
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'testimonial', 'style-two.jpg' ),
 					],
+					'three'   => [
+						'name'      => esc_html__( 'Message', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'testimonial', 'style-three.jpg' ),
+					],
 				],
 				'js'        => [],
 			],
@@ -707,6 +712,11 @@ class Widgets_Manager {
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-five.jpg' ),
+					],
+					'six' => [
+						'name'      => esc_html__( 'Boxed', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-six.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -915,12 +925,12 @@ class Widgets_Manager {
 				'css'       => [ 'skill-bar' ],
 				'styles'    => [
 					'one'   => [
-						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Individuals', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'skill-bar', 'style-one.jpg' ),
 					],
 					'two'   => [
-						'name'      => esc_html__( 'Style Two', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Company', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'skill-bar', 'style-two.jpg' ),
 					],

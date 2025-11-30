@@ -122,7 +122,7 @@ class Testimonial extends Base {
 				'label'     => esc_html__( 'Quote Icon', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => [
-					'value'   => 'fas fa-quote-left',
+					'value'   => 'fas fa-quote-right',
 					'library' => 'fa-solid',
 				],
 				'separator' => 'before',
@@ -200,6 +200,27 @@ class Testimonial extends Base {
 					'active' => true,
 				],
 				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'content_position',
+			[
+				'label'     => esc_html__( 'Content Position', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => [
+					'above' => [
+						'title' => esc_html__( 'Above', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-v-align-top',
+					],
+					'below' => [
+						'title' => esc_html__( 'Below', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-v-align-bottom',
+					],
+				],
+				'condition' => [
+					'content!' => '',
+				],
 			]
 		);
 
@@ -450,8 +471,9 @@ class Testimonial extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-testimonial-image img',
 				'controls' => [
-					'width'  => [],
-					'height' => [],
+					'width'      => [],
+					'height'     => [],
+					'object_fit' => [],
 				],
 			]
 		);
@@ -860,7 +882,7 @@ class Testimonial extends Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .zyre-testimonial-body' => 'align-self: {{VALUE}}',
+					'{{WRAPPER}} .zyre-testimonial-content-body' => 'align-self: {{VALUE}}',
 				],
 				'condition' => [
 					'image[url]!' => '',
@@ -944,6 +966,12 @@ class Testimonial extends Base {
 						'selector'     => '{{WRAPPER}} .zyre-testimonial-logo',
 						'label'        => esc_html__( 'Top Spacing', 'zyre-elementor-addons' ),
 						'css_property' => 'margin-top',
+						'range'        => [
+							'px' => [
+								'min' => -200,
+								'max' => 200,
+							],
+						],
 						'priority'     => true,
 					],
 					'align'   => [
@@ -1030,6 +1058,7 @@ class Testimonial extends Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
+		$content_position = ! empty( $settings['content_position'] ) ? $settings['content_position'] : 'above';
 		$show_icon = ! empty( $settings['quote_icon']['value'] ) ? true : false;
 		$icon_position = ! empty( $settings['quote_icon_position'] ) ? $settings['quote_icon_position'] : 'above';
 		$icon_align = ! empty( $settings['quote_of_align'] ) ? $settings['quote_of_align'] : 'left';
@@ -1067,7 +1096,7 @@ class Testimonial extends Base {
 				$this->add_render_attribute( 'rating_wrapper', 'class', 'zyre-testimonial-rating-type-' . esc_attr( $settings['ratting_type'] ) );
 				?>
 				<div <?php $this->print_render_attribute_string( 'rating_wrapper' ); ?>>
-					<div class="zyre-testimonial-rating-stars zy-relative zy-inline-flex zy-align-center zy-overflow-hidden" role="img" aria-label="<?php /* translators: %s is the rating count */ printf( esc_attr__( 'Rated %s out of 5', 'zyre-elementor-addons' ), $rating_count ); ?>">
+					<div class="zyre-testimonial-rating-stars zy-relative zy-inline-flex zy-align-center zy-overflow-hidden zy-lh-1" role="img" aria-label="<?php /* translators: %s is the rating count */ printf( esc_attr__( 'Rated %s out of 5', 'zyre-elementor-addons' ), $rating_count ); ?>">
 						<?php if ( 'number' === $settings['ratting_type'] ) : ?>
 							<span class="zyre-testimonial-rating-num"><?php echo esc_html( $rating_count ); ?></span>
 							<span class="zyre-testimonial-rating-icon"><i class="fas fa-star" aria-hidden="true"></i></span>
@@ -1080,7 +1109,7 @@ class Testimonial extends Base {
 				<?php
 			endif; ?>
 			
-			<?php if ( ! empty( $settings['content'] ) ) : ?>
+			<?php if ( ! empty( $settings['content'] ) && 'above' === $content_position ) : ?>
 				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo zyre_kses_advanced( $settings['content'] ); ?></p>
 			<?php endif; ?>
 
@@ -1098,6 +1127,10 @@ class Testimonial extends Base {
 					<div <?php $this->print_render_attribute_string( 'designation' ); ?>><?php echo zyre_kses_basic( $settings['designation'] ); ?></div>
 				<?php endif; ?>
 			</div>
+			<?php endif; ?>
+
+			<?php if ( ! empty( $settings['content'] ) && 'below' === $content_position ) : ?>
+				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo zyre_kses_advanced( $settings['content'] ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $settings['logo']['url'] || $settings['logo']['id'] ) : ?>
