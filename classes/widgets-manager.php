@@ -1511,7 +1511,7 @@ class Widgets_Manager {
 				'js'   => [],
 				'libs' => [
 					'js'  => [],
-					'css' => [ 'font-awesome' ],
+					'css' => [ 'font-awesome', 'zyre-icons-bold', 'zyre-icons' ],
 				],
 			],
 		];
