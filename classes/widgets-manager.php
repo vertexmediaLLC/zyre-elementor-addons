@@ -718,6 +718,11 @@ class Widgets_Manager {
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-six.jpg' ),
 					],
+					'seven' => [
+						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-seven.jpg' ),
+					],
 				],
 				'js'        => [],
 			],

@@ -501,6 +501,19 @@ class Post_Grid extends Base {
 		);
 
 		$this->meta_controls();
+
+		$this->add_control(
+			'header_meta_display',
+			[
+				'label'   => esc_html__( 'Display', 'zyre-elementor-addons' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => '',
+				'options' => [
+					''      => esc_html__( 'Before Content Body', 'zyre-elementor-addons' ),
+					'after' => esc_html__( 'After Content Body', 'zyre-elementor-addons' ),
+				],
+			]
+		);
 	}
 
 	/**
@@ -980,6 +993,7 @@ class Post_Grid extends Base {
 		$this->__thumbnail_style();
 		$this->__content_overflow_style();
 		$this->__header_meta_style();
+		$this->__content_wrapper_style();
 		$this->__content_body_style();
 		$this->__date_style();
 		$this->__title_style();
@@ -1138,6 +1152,52 @@ class Post_Grid extends Base {
 		);
 
 		$this->post_meta_style();
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Style - Content Wrapper
+	 */
+	protected function __content_wrapper_style() {
+		$this->start_controls_section(
+			'section_content_style',
+			[
+				'label' => esc_html__( 'Content Wrapper', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->set_style_controls(
+			'content',
+			[
+				'selector' => '{{WRAPPER}} .zyre-post-content',
+				'controls' => [
+					'bg_color'      => [],
+					'border'        => [],
+					'border_radius' => [],
+					'box_shadow'    => [],
+					'padding'       => [],
+					'margin'        => [],
+				],
+			]
+		);
+
+		$this->add_control(
+			'content_position',
+			[
+				'label'     => esc_html__( 'Position', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => '',
+				'options'   => [
+					''         => esc_html__( 'Default', 'zyre-elementor-addons' ),
+					'relative' => esc_html__( 'Relative', 'zyre-elementor-addons' ),
+				],
+				'selectors' => [
+					'{{WRAPPER}} .zyre-post-content' => 'position: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 	}
@@ -2167,12 +2227,17 @@ class Post_Grid extends Base {
 			<?php $this->render_thumbnail(); ?>
 			<div class="zyre-post-content">
 				<?php
-				$this->render_meta_data();
+				if( empty( $this->settings['header_meta_display'] ) ) {
+					$this->render_meta_data( 'header_meta' );
+				}
 				$this->render_post_body_before();
 				$this->render_post_date();
 				$this->render_title();
 				$this->render_excerpt();
 				$this->render_post_body_after();
+				if( isset( $this->settings['header_meta_display'] ) && 'after' === $this->settings['header_meta_display'] ) {
+					$this->render_meta_data( 'header_meta' );
+				}
 				$this->render_meta_data( 'footer_meta' );
 				$this->render_read_more();
 				?>
