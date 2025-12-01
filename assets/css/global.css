@@ -125,6 +125,8 @@
 .zyre-addon .zy-justify-items-center {justify-items: center;}
 .zyre-addon .zy-justify-items-start {justify-items: start;}
 .zyre-addon .zy-content-center {align-content: center;}
+.zyre-addon .zy-content-start {align-content: flex-start;}
+.zyre-addon .zy-content-end {align-content: flex-end;}
 
 /* Grid Layout */
 .zyre-addon .zy-grid {display: grid;}
@@ -211,6 +213,7 @@
 .zyre-addon .zy-outline-0 {outline: 0;}
 .zyre-addon .zy-outline-none {outline: none;}
 .zyre-addon .zy-border-none {border: none;}
+.zyre-addon .zy-border-t-1 {border-top: 1px solid;}
 .zyre-addon .zy-radius-0 {border-radius: 0;}
 .zyre-addon .zy-shadow-none {box-shadow: none;}
 
@@ -248,6 +251,7 @@
 
 /* overflow */
 .zyre-addon .zy-overflow-hidden {overflow: hidden;}
+.zyre-addon .zy-overflow-y-auto {overflow-y: auto;}
 
 /* opacity */
 .zyre-addon .zy-opacity-0 {opacity: 0;}

@@ -373,10 +373,20 @@ class Post_Grid extends Base {
 				'separator'    => 'before',
 				'default'      => 'normal',
 				'options'      => [
-					'normal'   => esc_html__( 'Normal', 'zyre-elementor-addons' ),
-					'overflow' => esc_html__( 'Overflow', 'zyre-elementor-addons' ),
+					'normal' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+					'float'  => esc_html__( 'Float', 'zyre-elementor-addons' ),
 				],
 				'prefix_class' => 'zyre-post-content-display-',
+				'conditions'   => [
+					'relation' => 'and',
+					'terms'    => [
+						[
+							'name'     => 'thumbnail_overlay',
+							'operator' => '==',
+							'value'    => '',
+						],
+					],
+				],
 			]
 		);
 
@@ -404,7 +414,7 @@ class Post_Grid extends Base {
 			[
 				'name'      => 'post_thumbnail_img',
 				'exclude'   => [ 'custom' ],
-				'default'   => 'medium',
+				'default'   => 'medium_large',
 				'condition' => [
 					'show_thumbnail' => 'yes',
 				],
@@ -419,7 +429,7 @@ class Post_Grid extends Base {
 				'label_on'     => esc_html__( ' Yes', 'zyre-elementor-addons' ),
 				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
-				'default'      => 'yes',
+				'default'      => '',
 				'condition' => [
 					'show_thumbnail' => 'yes',
 				],
@@ -483,6 +493,57 @@ class Post_Grid extends Base {
 				],
 			]
 		);
+
+		$this->add_control(
+			'thumbnail_overlay',
+			[
+				'label'       => esc_html__( 'Overlay Contents', 'zyre-elementor-addons' ),
+				'label_block' => true,
+				'type'        => Controls_Manager::SELECT2,
+				'default'     => [],
+				'multiple'    => true,
+				'options'     => [
+					'header_meta' => esc_html__( 'Header Meta', 'zyre-elementor-addons' ),
+					'post_date'   => esc_html__( 'Post Date', 'zyre-elementor-addons' ),
+					'title'       => esc_html__( 'Title', 'zyre-elementor-addons' ),
+					'excerpt'     => esc_html__( 'Excerpt', 'zyre-elementor-addons' ),
+					'footer_meta' => esc_html__( 'Footer Meta', 'zyre-elementor-addons' ),
+					'read_more'   => esc_html__( 'Read More', 'zyre-elementor-addons' ),
+				],
+				'condition'   => [
+					'show_thumbnail' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'_alert_thumbnail_overlay_note',
+			[
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => esc_html__( 'Note: Ensure the selected items are enabled, and disable the Thumbnail Link to prevent link issues.', 'zyre-elementor-addons' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+				'conditions'      => [
+					'relation' => 'and',
+					'terms'    => [
+						[
+							'name'     => 'show_thumbnail',
+							'operator' => '==',
+							'value'    => 'yes',
+						],
+						[
+							'relation' => 'or',
+							'terms'    => [
+								[
+									'name'     => 'thumbnail_overlay',
+									'operator' => '!=',
+									'value'    => '',
+								],
+							],
+						],
+					],
+				],
+			]
+		);
 	}
 
 	/**
@@ -496,24 +557,11 @@ class Post_Grid extends Base {
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Show', 'zyre-elementor-addons' ),
 				'label_off' => esc_html__( 'Hide', 'zyre-elementor-addons' ),
-				'default'   => 'yes',
+				'default'   => '',
 			]
 		);
 
 		$this->meta_controls();
-
-		$this->add_control(
-			'header_meta_display',
-			[
-				'label'   => esc_html__( 'Display', 'zyre-elementor-addons' ),
-				'type'    => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					''      => esc_html__( 'Before Content Body', 'zyre-elementor-addons' ),
-					'after' => esc_html__( 'After Content Body', 'zyre-elementor-addons' ),
-				],
-			]
-		);
 	}
 
 	/**
@@ -567,12 +615,24 @@ class Post_Grid extends Base {
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'normal',
 				'options'      => [
-					'normal'   => esc_html__( 'Normal', 'zyre-elementor-addons' ),
-					'overflow' => esc_html__( 'Overflow', 'zyre-elementor-addons' ),
+					'normal' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+					'float'  => esc_html__( 'Float', 'zyre-elementor-addons' ),
 				],
 				'prefix_class' => 'zyre-post-date-display-',
-				'condition'   => [
-					'show_post_date' => 'yes',
+				'conditions'      => [
+					'relation' => 'and',
+					'terms'    => [
+						[
+							'name'     => 'show_post_date',
+							'operator' => '==',
+							'value'    => 'yes',
+						],
+						[
+							'name'     => 'thumbnail_overlay',
+							'operator' => 'contains',
+							'value'    => 'post_date',
+						],
+					],
 				],
 			]
 		);
@@ -682,7 +742,7 @@ class Post_Grid extends Base {
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Show', 'zyre-elementor-addons' ),
 				'label_off' => esc_html__( 'Hide', 'zyre-elementor-addons' ),
-				'default'   => 'yes',
+				'default'   => '',
 			]
 		);
 
@@ -700,7 +760,7 @@ class Post_Grid extends Base {
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Show', 'zyre-elementor-addons' ),
 				'label_off' => esc_html__( 'Hide', 'zyre-elementor-addons' ),
-				'default'   => 'yes',
+				'default'   => '',
 			]
 		);
 
@@ -709,7 +769,7 @@ class Post_Grid extends Base {
 			[
 				'label'     => esc_html__( 'Read More Text', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Read More »', 'zyre-elementor-addons' ),
+				'default'   => esc_html__( 'Read more', 'zyre-elementor-addons' ),
 				'condition' => [
 					'show_read_more' => 'yes',
 				],
@@ -892,7 +952,7 @@ class Post_Grid extends Base {
 			[
 				'label'     => esc_html__( 'Meta Separator', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( '•', 'zyre-elementor-addons' ),
+				'default'   => '',
 				'ai'        => false,
 				'selectors' => [
 					"{{WRAPPER}} .zyre-post-{$id_base} > .zyre-post-meta-item + .zyre-post-meta-item:before" => 'content: "{{VALUE}}"',
@@ -991,6 +1051,7 @@ class Post_Grid extends Base {
 		$this->__general_style();
 		$this->__post_style();
 		$this->__thumbnail_style();
+		$this->__thumbnail_overlay_style();
 		$this->__content_overflow_style();
 		$this->__header_meta_style();
 		$this->__content_wrapper_style();
@@ -1101,16 +1162,66 @@ class Post_Grid extends Base {
 	}
 
 	/**
-	 * Style - Content Overflow
+	 * Style - Thumbnail Overlay
+	 */
+	protected function __thumbnail_overlay_style() {
+		$this->start_controls_section(
+			'section_thumbnail_overlay_style',
+			[
+				'label'      => esc_html__( 'Thumbnail Overlay', 'zyre-elementor-addons' ),
+				'tab'        => Controls_Manager::TAB_STYLE,
+				'conditions' => [
+					'relation' => 'and',
+					'terms'    => [
+						[
+							'name'     => 'show_thumbnail',
+							'operator' => '==',
+							'value'    => 'yes',
+						],
+						[
+							'relation' => 'or',
+							'terms'    => [
+								[
+									'name'     => 'thumbnail_overlay',
+									'operator' => '!=',
+									'value'    => '',
+								],
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'thumbnail_overlay',
+			[
+				'selector' => '{{WRAPPER}} .zyre-post-thumbnail-overlay',
+				'controls' => [
+					'bg'            => [],
+					'padding'       => [],
+					'border_radius' => [],
+					'align_y'       => [
+						'css_property' => 'align-content',
+					],
+				],
+			]
+		);
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Style - Content Float
 	 */
 	protected function __content_overflow_style() {
 		$this->start_controls_section(
 			'section_content_overflow_style',
 			[
-				'label' => esc_html__( 'Content Overflow', 'zyre-elementor-addons' ),
+				'label' => esc_html__( 'Content Float', 'zyre-elementor-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'content_display' => 'overflow',
+					'content_display' => 'float',
 				],
 			]
 		);
@@ -1118,11 +1229,11 @@ class Post_Grid extends Base {
 		$this->set_style_controls(
 			'content_overflow',
 			[
-				'selector' => '{{WRAPPER}}.zyre-post-content-display-overflow .zyre-post-content',
+				'selector' => '{{WRAPPER}}.zyre-post-content-display-float .zyre-post-content',
 				'controls' => [
 					'height'   => [
-						'selector' => '{{WRAPPER}}.zyre-post-content-display-overflow .zyre-post,
-								{{WRAPPER}}.zyre-post-content-display-overflow .zyre-post-thumbnail img',
+						'selector' => '{{WRAPPER}}.zyre-post-content-display-float .zyre-post,
+								{{WRAPPER}}.zyre-post-content-display-float .zyre-post-thumbnail img',
 					],
 					'bg_color' => [],
 					'padding'  => [],
@@ -1264,7 +1375,7 @@ class Post_Grid extends Base {
 		$this->set_style_controls(
 			'post_date',
 			[
-				'selector'  => '{{WRAPPER}}.zyre-post-date-display-overflow .zyre-post-date:not(.zyre-post-meta-item)',
+				'selector'  => '{{WRAPPER}}.zyre-post-date-display-float .zyre-post-date:not(.zyre-post-meta-item)',
 				'controls'  => [
 					'width'      => [],
 					'offset_x'   => [
@@ -1301,7 +1412,7 @@ class Post_Grid extends Base {
 					'box_shadow' => [],
 				],
 				'condition' => [
-					'post_date_display' => 'overflow',
+					'post_date_display' => 'float',
 				],
 			]
 		);
@@ -1550,6 +1661,39 @@ class Post_Grid extends Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
+
+		$this->set_style_controls(
+			'read_more_hrline',
+			[
+				'selector' => '{{WRAPPER}} .zyre-post-readmore-hrline',
+				'controls' => [
+					'heading' => [
+						'label'     => esc_html__( 'Horizontal Line', 'zyre-elementor-addons' ),
+						'separator' => 'before',
+					],
+					'switch'  => [
+						'label' => esc_html__( 'Show Horizontal Line', 'zyre-elementor-addons' ),
+					],
+					'gap'     => [
+						'label'     => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+						'selector'  => '{{WRAPPER}} .zyre-post-readmore',
+						'condition' => [
+							'read_more_hrline_switch' => 'yes',
+						],
+					],
+					'border'  => [
+						'condition' => [
+							'read_more_hrline_switch' => 'yes',
+						],
+					],
+					'margin'  => [
+						'condition' => [
+							'read_more_hrline_switch' => 'yes',
+						],
+					],
+				],
+			],
+		);
 
 		$this->end_controls_section();
 	}
@@ -1926,7 +2070,7 @@ class Post_Grid extends Base {
 
 		if ( 'yes' === $this->settings['show_thumbnail_link'] ) {
 			printf(
-				'<a href="%1$s" class="zyre-post-thumbnail-link zy-block"><div class="zyre-post-thumbnail">%2$s</div></a>',
+				'<a href="%1$s" class="zyre-post-thumbnail-link zy-block"><div class="zyre-post-thumbnail zy-relative zy-overflow-hidden zy-overflow-y-auto">%2$s%3$s</div></a>',
 				esc_url( get_the_permalink() ),
 				get_the_post_thumbnail(
 					get_the_ID(),
@@ -1934,21 +2078,65 @@ class Post_Grid extends Base {
 					[
 						'class' => 'zy-w-100',
 					]
+				),
+				sprintf(
+					'<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">%s</div>',
+					! empty( $this->settings['thumbnail_overlay'] ) ? $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ) : '',
 				)
 			);
 		} else {
 			?>
-			<div class="zyre-post-thumbnail">
-				<?php the_post_thumbnail( $this->settings['post_thumbnail_img_size'], [ 'class' => 'zy-w-100' ] ); ?>
+			<div class="zyre-post-thumbnail zy-relative zy-overflow-hidden zy-overflow-y-auto">
+				<?php
+				the_post_thumbnail( $this->settings['post_thumbnail_img_size'], [ 'class' => 'zy-w-100' ] );
+				if ( ! empty( $this->settings['thumbnail_overlay'] ) ) {
+					?>
+					<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">
+						<?php echo $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ); ?>
+					</div>
+					<?php
+				}
+				?>
 			</div>
 			<?php
 		}
+	}
+
+	protected function thumbnail_overlay_contents( $contents ) {
+		ob_start();
+
+		if ( in_array( 'header_meta', $contents, true ) ) {
+			$this->render_meta_data( 'header_meta' );
+		}
+
+		if ( in_array( 'post_date', $contents, true ) ) {
+			$this->render_post_date();
+		}
+
+		if ( in_array( 'title', $contents, true ) ) {
+			$this->render_title();
+		}
+
+		if ( in_array( 'excerpt', $contents, true ) ) {
+			$this->render_excerpt();
+		}
+
+		if ( in_array( 'footer_meta', $contents, true ) ) {
+			$this->render_meta_data( 'footer_meta' );
+		}
+
+		if ( in_array( 'read_more', $contents, true ) ) {
+			$this->render_read_more();
+		}
+
+		return ob_get_clean();
 	}
 
 	protected function render_post_date() {
 		if ( 'yes' !== $this->settings['show_post_date'] ) {
 			return;
 		}
+
 		$date_format = ! empty( $this->settings['post_date_format'] ) ? $this->settings['post_date_format'] : '';
 		$date_type = 'publish';
 		if ( ! empty( $this->settings['post_date_type'] ) && in_array( $this->settings['post_date_type'], [ 'publish', 'modified' ] ) ) {
@@ -2196,10 +2384,11 @@ class Post_Grid extends Base {
 
 		if ( 'yes' === $show_read_more && ! empty( $read_more_text ) ) {
 			printf(
-				'<div class="zyre-post-readmore zy-w-100"><a class="%1$s" href="%2$s">%3$s</a></div>',
+				'<div class="zyre-post-readmore zy-w-100 zy-flex zy-align-center zy-gap-2"><a class="%1$s" href="%2$s">%3$s</a>%4$s</div>',
 				'zyre-post-readmore-link zy-inline-block zy-transition',
 				esc_url( get_the_permalink( get_the_ID() ) ),
 				esc_html( $read_more_text ),
+				( 'yes' === $this->settings['read_more_hrline_switch'] ) ? '<span class="zyre-post-readmore-hrline zy-grow-1 zy-border-t-1"></span>' : '',
 			);
 		}
 	}
@@ -2222,24 +2411,41 @@ class Post_Grid extends Base {
 			'type-' . get_post_type(),
 			'status-' . get_post_status(),
 		], true );
+
+		$thumbnail_overlay = ! empty( $this->settings['thumbnail_overlay'] ) ? $this->settings['thumbnail_overlay'] : [];
 		?>
 		<article <?php $this->print_render_attribute_string( 'posts' ); ?>>
 			<?php $this->render_thumbnail(); ?>
 			<div class="zyre-post-content">
 				<?php
-				if( empty( $this->settings['header_meta_display'] ) ) {
+
+				if( ! in_array( 'header_meta', $thumbnail_overlay, true ) ) {
 					$this->render_meta_data( 'header_meta' );
 				}
+
 				$this->render_post_body_before();
-				$this->render_post_date();
-				$this->render_title();
-				$this->render_excerpt();
-				$this->render_post_body_after();
-				if( isset( $this->settings['header_meta_display'] ) && 'after' === $this->settings['header_meta_display'] ) {
-					$this->render_meta_data( 'header_meta' );
+	
+				if ( ! in_array( 'post_date', $thumbnail_overlay, true ) ) {
+					$this->render_post_date();
 				}
-				$this->render_meta_data( 'footer_meta' );
-				$this->render_read_more();
+
+				if ( ! in_array( 'title', $thumbnail_overlay, true ) ) {
+					$this->render_title();
+				}
+
+				if ( ! in_array( 'excerpt', $thumbnail_overlay, true ) ) {
+					$this->render_excerpt();
+				}
+				
+				$this->render_post_body_after();
+
+				if ( ! in_array( 'footer_meta', $thumbnail_overlay, true ) ) {
+					$this->render_meta_data( 'footer_meta' );
+				}
+
+				if ( ! in_array( 'read_more', $thumbnail_overlay, true ) ) {
+					$this->render_read_more();
+				}
 				?>
 			</div>
 		</article>
