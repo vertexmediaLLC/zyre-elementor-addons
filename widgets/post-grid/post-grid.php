@@ -1301,22 +1301,6 @@ class Post_Grid extends Base {
 			]
 		);
 
-		$this->add_control(
-			'content_position',
-			[
-				'label'     => esc_html__( 'Position', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::SELECT,
-				'default'   => '',
-				'options'   => [
-					''         => esc_html__( 'Default', 'zyre-elementor-addons' ),
-					'relative' => esc_html__( 'Relative', 'zyre-elementor-addons' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .zyre-post-content' => 'position: {{VALUE}};',
-				],
-			]
-		);
-
 		$this->end_controls_section();
 	}
 
@@ -2423,7 +2407,7 @@ class Post_Grid extends Base {
 		?>
 		<article <?php $this->print_render_attribute_string( 'posts' ); ?>>
 			<?php $this->render_thumbnail(); ?>
-			<div class="zyre-post-content">
+			<div class="zyre-post-content zy-relative">
 				<?php
 
 				if( ! in_array( 'header_meta', $thumbnail_overlay, true ) ) {

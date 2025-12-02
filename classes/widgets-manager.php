@@ -704,7 +704,7 @@ class Widgets_Manager {
 						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-three.jpg' ),
 					],
 					'four' => [
-						'name'      => esc_html__( 'Overflow', 'zyre-elementor-addons' ),
+						'name'      => esc_html__( 'Overlay', 'zyre-elementor-addons' ),
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-four.jpg' ),
 					],
