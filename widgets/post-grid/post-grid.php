@@ -213,7 +213,7 @@ class Post_Grid extends Base {
 				'label_on' => esc_html__( 'Show', 'zyre-elementor-addons' ),
 				'label_off' => esc_html__( 'Hide', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
-				'default' => 'no',
+				'default' => 'yes',
 				'condition' => [
 					'query_source!' => 'manual',
 				],
@@ -225,9 +225,9 @@ class Post_Grid extends Base {
 			[
 				'label' => esc_html__( 'Posts Per Page', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::NUMBER,
-				'default' => 0,
+				'default' => 6,
 				'min' => 1,
-				'max' => 20,
+				'max' => 96,
 				'condition' => [
 					'query_source!' => 'manual',
 				],
@@ -576,7 +576,7 @@ class Post_Grid extends Base {
 				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
 				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
-				'default'      => 'yes',
+				'default'      => '',
 			]
 		);
 
@@ -983,7 +983,7 @@ class Post_Grid extends Base {
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'Show', 'zyre-elementor-addons' ),
 				'label_off' => esc_html__( 'Hide', 'zyre-elementor-addons' ),
-				'default'   => 'yes',
+				'default'   => '',
 			]
 		);
 
@@ -1141,8 +1141,15 @@ class Post_Grid extends Base {
 					'width'         => [
 						'selector' => '{{WRAPPER}} .zyre-post-thumbnail',
 					],
-					'height'        => [],
-					'object_fit'    => [],
+					'height'        => [
+						'default' => [
+							'unit' => 'px',
+							'size' => 305,
+						],
+					],
+					'object_fit'    => [
+						'default' => 'cover',
+					],
 					'border'        => [],
 					'border_radius' => [],
 					'padding'       => [],

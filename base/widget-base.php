@@ -617,7 +617,7 @@ abstract class Base extends Widget_Base {
 									'min'  => 0.1,
 								],
 							],
-							'default' => ! empty( $values['default'] ) ? $values['default'] : [],
+							'default'    => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [],
 							'type'       => Controls_Manager::SLIDER,
 							'selectors'  => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => ! empty( $values['css_value'] ) ? esc_html( $values['css_value'] ) : "{$css_property}: {{SIZE}}{{UNIT}};",
@@ -637,7 +637,7 @@ abstract class Base extends Widget_Base {
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Height', 'zyre-elementor-addons' ),
 							'size_units' => ! empty( $values['size_units'] ) ? $values['size_units'] : [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
-							'default'    => ! empty( $values['default'] ) ? $values['default'] : [ 'unit' => 'px' ],
+							'default'    => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [ 'unit' => 'px' ],
 							'range'      => ! empty( $values['range'] ) ? $values['range'] : [
 								'px'  => [
 									'max' => 1000,
@@ -668,7 +668,8 @@ abstract class Base extends Widget_Base {
 						$css_property_h = ! empty( $values['css_property_h'] ) && in_array( $values['css_property_h'], $allowed_props_h, true ) ? $values['css_property_h'] : 'height';
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Size', 'zyre-elementor-addons' ),
-							'size_units' => ! empty( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : [ 'px', '%', 'em', 'rem', 'custom' ],
+							'size_units' => isset( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : [ 'px', '%', 'em', 'rem', 'custom' ],
+							'default'    => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [ 'unit' => 'px' ],
 							'range'      => ! empty( $values['range'] ) && is_array( $values['range'] ) ? $values['range'] : [
 								'px' => [
 									'max'  => 1000,
