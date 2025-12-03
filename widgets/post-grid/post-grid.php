@@ -2070,10 +2070,10 @@ class Post_Grid extends Base {
 						'class' => 'zy-w-100',
 					]
 				),
-				sprintf(
+				! empty( $this->settings['thumbnail_overlay'] ) ? sprintf(
 					'<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">%s</div>',
-					! empty( $this->settings['thumbnail_overlay'] ) ? $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ) : '',
-				)
+					$this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ),
+				) : '',
 			);
 		} else {
 			?>
