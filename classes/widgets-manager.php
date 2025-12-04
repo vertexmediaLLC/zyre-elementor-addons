@@ -1241,6 +1241,10 @@ class Widgets_Manager {
 					],
 				],
 				'js'        => [],
+				'libs' => [
+					'js'  => [],
+					'css' => [ 'zyre-elementor-addons-nav-menu' ],
+				],
 			],
 			'post-title'  => [
 				'cat'       => 'general',
