@@ -88,7 +88,7 @@ class Assets_Manager {
 
 		wp_register_style(
 			'zyre-icons-bold',
-			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b' . self::$suffix . 'css',
+			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
 			null,
 			ZYRE_ADDONS_VERSION
 		);
