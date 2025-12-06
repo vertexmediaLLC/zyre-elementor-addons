@@ -358,19 +358,12 @@ class Assets_Manager {
 	public static function elementor_editor_enqueue() {
 
 		wp_enqueue_style(
-			'zyre-icons-bold',
-			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b' . self::$suffix . 'css',
-			null,
-			ZYRE_ADDONS_VERSION
-		);
-
-		wp_enqueue_style(
-			'zyre-icons',
+			'zyre-font-icons',
 			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
 			null,
 			ZYRE_ADDONS_VERSION
 		);
-
+		
 		wp_enqueue_style(
 			'zyre-elementor-addons-editor',
 			ZYRE_ADDONS_ASSETS . 'admin/css/editor' . self::$suffix . 'css',

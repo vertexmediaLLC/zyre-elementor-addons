@@ -795,15 +795,19 @@ class InfoBox extends Base {
 	 */
 	private function text_style_controls( string $prefix ) {
 		$class_base = str_replace( '_', '-', $prefix );
+		$class_base_p = ( 'description' === $prefix ) ? $class_base . ' p' : $class_base;
 
 		$this->set_style_controls(
 			$prefix,
 			[
 				'selector' => '{{WRAPPER}} .zyre-infobox-' . $class_base,
 				'controls' => [
-					'typography' => [],
+					'typography' => [
+						'selector' => '{{WRAPPER}} .zyre-infobox-' . $class_base_p,
+					],
 					'color'      => [
-						'default' => '#000000',
+						'selector' => '{{WRAPPER}} .zyre-infobox-' . $class_base_p,
+						'default'  => '#000000',
 					],
 					'margin'     => [],
 					'alignment'  => [

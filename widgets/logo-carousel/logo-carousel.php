@@ -433,10 +433,11 @@ class Logo_Carousel extends Base {
 				'selector' => '{{WRAPPER}} .zyre-carousel-image',
 				'controls' => [
 					'height'        => [
-						'size_units' => [ 'px', '%', 'custom' ],
+						'size_units' => ['px', '%', 'custom'],
 					],
 					'object_fit'    => [
-						'label' => esc_html__( 'Fit Image as', 'zyre-elementor-addons' ),
+						'label'   => esc_html__( 'Fit Image as', 'zyre-elementor-addons' ),
+						'default' => 'contain',
 					],
 					'bg_color'      => [],
 					'padding'       => [],

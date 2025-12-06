@@ -11,27 +11,29 @@ class Icons_Manager {
 
 	public static function add_zyre_icons_tab( $tabs ) {
 		$tabs['zyre-icons'] = [
-			'name' => 'zyre-icons',
-			'label' => __( 'Zyre Icons - Regular', 'zyre-elementor-addons' ),
-			'url' => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.min.css',
-			'prefix' => 'zy-',
+			'name'          => 'zyre-icons',
+			'label'         => __( 'Zyre Icons - Regular', 'zyre-elementor-addons' ),
+			'url'           => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.min.css',
+			'enqueue'       => [ ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.min.css' ],
+			'prefix'        => 'zy-',
 			'displayPrefix' => 'zy-fonticon',
-			'labelIcon' => 'zy-fonticon zy-Zyre-addons',
-			'ver' => ZYRE_ADDONS_VERSION,
-			'fetchJson' => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.js?v=' . ZYRE_ADDONS_VERSION,
-			'native' => false,
+			'labelIcon'     => 'zy-fonticon zy-Zyre-addons',
+			'ver'           => ZYRE_ADDONS_VERSION,
+			'fetchJson'     => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.js?v=' . ZYRE_ADDONS_VERSION,
+			'native'        => false,
 		];
 
 		$tabs['zyre-icons-bold'] = [
-			'name' => 'zyre-icons-bold',
-			'label' => __( 'Zyre Icons - Bold', 'zyre-elementor-addons' ),
-			'url' => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
-			'prefix' => 'zy-',
+			'name'          => 'zyre-icons-bold',
+			'label'         => __( 'Zyre Icons - Bold', 'zyre-elementor-addons' ),
+			'url'           => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
+			'enqueue'       => [ ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.min.css' ],
+			'prefix'        => 'zy-',
 			'displayPrefix' => 'zy-fonticon-b',
-			'labelIcon' => 'zy-fonticon-b zy-Zyre-addons',
-			'ver' => ZYRE_ADDONS_VERSION,
-			'fetchJson' => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.js?v=' . ZYRE_ADDONS_VERSION,
-			'native' => false,
+			'labelIcon'     => 'zy-fonticon-b zy-Zyre-addons',
+			'ver'           => ZYRE_ADDONS_VERSION,
+			'fetchJson'     => ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.js?v=' . ZYRE_ADDONS_VERSION,
+			'native'        => false,
 		];
 
 		return $tabs;
