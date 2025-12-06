@@ -171,30 +171,31 @@ class Logo_Grid extends Base {
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			[
-				'name' => 'thumbnail',
-				'default' => 'large',
+				'name'      => 'thumbnail',
+				'default'   => 'full',
 				'separator' => 'before',
-				'exclude' => [ 'custom' ],
+				'exclude'   => ['custom'],
 			]
 		);
 
 		$this->add_responsive_control(
 			'logo_columns',
 			[
-				'label' => esc_html__( 'Columns', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					2 => esc_html__( '2 Columns', 'zyre-elementor-addons' ),
-					3 => esc_html__( '3 Columns', 'zyre-elementor-addons' ),
-					4 => esc_html__( '4 Columns', 'zyre-elementor-addons' ),
-					5 => esc_html__( '5 Columns', 'zyre-elementor-addons' ),
-					6 => esc_html__( '6 Columns', 'zyre-elementor-addons' ),
+				'label'           => esc_html__( 'Columns', 'zyre-elementor-addons' ),
+				'type'            => Controls_Manager::SELECT,
+				'options'         => [
+					'1' => esc_html__( '1 Columns', 'zyre-elementor-addons' ),
+					'2' => esc_html__( '2 Columns', 'zyre-elementor-addons' ),
+					'3' => esc_html__( '3 Columns', 'zyre-elementor-addons' ),
+					'4' => esc_html__( '4 Columns', 'zyre-elementor-addons' ),
+					'5' => esc_html__( '5 Columns', 'zyre-elementor-addons' ),
+					'6' => esc_html__( '6 Columns', 'zyre-elementor-addons' ),
 				],
-				'desktop_default' => 4,
-				'tablet_default' => 2,
-				'mobile_default' => 2,
-				'prefix_class' => 'zyre-logo-grid--col-%s',
-				'style_transfer' => true,
+				'desktop_default' => '4',
+				'tablet_default'  => '2',
+				'mobile_default'  => '2',
+				'prefix_class'    => 'zyre-logo-grid--col-%s',
+				'style_transfer'  => true,
 				'selectors'       => [
 					'{{WRAPPER}} .zyre-logo-grid-contents' => 'grid-template-columns: repeat({{VALUE}}, 1fr);',
 				],
@@ -216,6 +217,7 @@ class Logo_Grid extends Base {
 
 	protected function register_style_controls() {
 		$this->__general_style_controls();
+		$this->__logo_box_style_controls();
 		$this->__logo_item_style_controls();
 	}
 
@@ -241,6 +243,90 @@ class Logo_Grid extends Base {
 
 		$this->end_controls_section();
 	}
+	
+	protected function __logo_box_style_controls() {
+
+		$this->start_controls_section(
+			'section_logo_box_style',
+			[
+				'label' => esc_html__( 'Logo Box', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->set_style_controls(
+			'logo_box',
+			[
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-content',
+				'controls' => [
+					'padding' => [],
+					'margin'  => [],
+				],
+			]
+		);
+
+		// Tabs
+		$this->start_controls_tabs( 'tabs_logo_box_style' );
+
+		// Start Normal Tab
+		$this->start_controls_tab(
+			'tab_logo_box_normal',
+			[
+				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			'logo_box',
+			[
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-content',
+				'controls' => [
+					'background' => [],
+					'border'     => [],
+					'box_shadow' => [],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'tab_logo_box_hover',
+			[
+				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			'logo_box_hover',
+			[
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-content:hover',
+				'controls' => [
+					'background'   => [],
+					'border_color' => [],
+					'box_shadow'   => [],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->set_style_controls(
+			'logo_box',
+			[
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-content',
+				'controls' => [
+					'border_radius' => [
+						'separator' => 'before',
+					],
+				],
+			]
+		);
+
+		$this->end_controls_section();
+	}
 
 	protected function __logo_item_style_controls() {
 
@@ -253,21 +339,11 @@ class Logo_Grid extends Base {
 		);
 
 		$this->set_style_controls(
-			'logo_item',
-			[
-				'selector' => '{{WRAPPER}} .zyre-logo-grid-content',
-				'controls' => [
-					'background' => [],
-				],
-			]
-		);
-
-		$this->set_style_controls(
 			'logo_image',
 			[
 				'selector' => '{{WRAPPER}} .zyre-logo-grid-content img',
 				'controls' => [
-					'width'  => [
+					'width'      => [
 						'label' => esc_html__( 'Image Width', 'zyre-elementor-addons' ),
 						'range' => [
 							'%'  => [
@@ -280,7 +356,7 @@ class Logo_Grid extends Base {
 							],
 						],
 					],
-					'height' => [
+					'height'     => [
 						'label' => esc_html__( 'Image Height', 'zyre-elementor-addons' ),
 						'range' => [
 							'%'  => [
@@ -292,6 +368,9 @@ class Logo_Grid extends Base {
 							],
 						],
 					],
+					'object_fit' => [
+						'default' => 'cover',
+					],
 				],
 			]
 		);
@@ -299,7 +378,7 @@ class Logo_Grid extends Base {
 		$this->set_style_controls(
 			'logo_item',
 			[
-				'selector' => '{{WRAPPER}} .zyre-logo-grid-content',
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-img-wrap',
 				'controls' => [
 					'width'   => [
 						'label' => esc_html__( 'Item Width', 'zyre-elementor-addons' ),
@@ -328,7 +407,6 @@ class Logo_Grid extends Base {
 						],
 					],
 					'padding' => [],
-					'margin'  => [],
 				],
 			]
 		);
@@ -358,10 +436,9 @@ class Logo_Grid extends Base {
 		$this->set_style_controls(
 			'logo_item',
 			[
-				'selector' => '{{WRAPPER}} .zyre-logo-grid-content',
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-img-wrap',
 				'controls' => [
 					'border'     => [],
-					'box_shadow' => [],
 				],
 			]
 		);
@@ -416,10 +493,9 @@ class Logo_Grid extends Base {
 		$this->set_style_controls(
 			'logo_item_hover',
 			[
-				'selector' => '{{WRAPPER}} .zyre-logo-grid-content:hover',
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-content:hover .zyre-logo-grid-img-wrap',
 				'controls' => [
-					'border'     => [],
-					'box_shadow' => [],
+					'border_color' => [],
 				],
 			]
 		);
@@ -431,7 +507,7 @@ class Logo_Grid extends Base {
 		$this->set_style_controls(
 			'logo_item',
 			[
-				'selector' => '{{WRAPPER}} .zyre-logo-grid-content',
+				'selector' => '{{WRAPPER}} .zyre-logo-grid-img-wrap',
 				'controls' => [
 					'border_radius' => [
 						'separator' => 'before',
@@ -466,7 +542,8 @@ class Logo_Grid extends Base {
 				?>
 				<<?php echo $tag; ?> <?php $this->print_render_attribute_string( $repeater_key ); ?>>
 					<?php if ( isset( $image['source'] ) && $image['id'] ) :
-						echo wp_get_attachment_image(
+						$output = '<div class="zyre-logo-grid-img-wrap zy-self-stretch zy-content-center zy-grow-1 zy-text-center">';
+						$output .= wp_get_attachment_image(
 							$image['id'],
 							$settings['thumbnail_size'],
 							false,
@@ -474,9 +551,11 @@ class Logo_Grid extends Base {
 								'class' => 'zyre-logo-grid-img elementor-animation-' . esc_attr( $settings['logo_hover_animation'] ),
 							]
 						);
+						$output .= '</div>';
+						echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						else :
 							$url = $image['url'] ? $image['url'] : Utils::get_placeholder_image_src();
-							printf( '<img class="zyre-logo-grid-img elementor-animation-%s" src="%s" alt="%s">',
+							printf( '<div class="zyre-logo-grid-img-wrap zy-self-stretch zy-content-center zy-grow-1 zy-text-center"><img class="zyre-logo-grid-img elementor-animation-%s" src="%s" alt="%s"></div>',
 								esc_attr( $settings['logo_hover_animation'] ),
 								esc_url( $url ),
 								esc_attr( $item['brand_name'] )
