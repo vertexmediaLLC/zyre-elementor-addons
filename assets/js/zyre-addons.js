@@ -537,7 +537,9 @@ function haObserveTarget(target, callback) {
 					return;
 				}
 
-				$this.css('height', this.scrollHeight + 'px');
+				if( this.scrollHeight >= parseFloat(prevHeight) ) {
+					$this.css('height', this.scrollHeight + 'px');
+				}
 			});
 		});
 	};

@@ -386,3 +386,18 @@
 .zyre-list-item-text {
     transition: color var(--zy-transition-duration);
 }
+
+/* forms */
+.zyre-addon input:-webkit-autofill,
+.zyre-addon input:-webkit-autofill:hover,
+.zyre-addon input:-webkit-autofill:focus,
+.zyre-addon textarea:-webkit-autofill,
+.zyre-addon textarea:-webkit-autofill:hover,
+.zyre-addon textarea:-webkit-autofill:focus,
+.zyre-addon select:-webkit-autofill,
+.zyre-addon select:-webkit-autofill:hover,
+.zyre-addon select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+}

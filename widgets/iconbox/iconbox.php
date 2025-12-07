@@ -218,10 +218,11 @@ class IconBox extends Base {
 					'gap' => [
 						'label'       => __( 'Spacing', 'zyre-elementor-addons' ),
 						'description' => __( 'Space between Media Icon & Content.', 'zyre-elementor-addons' ),
+						'condition' => [
+							'iconbox_icon[value]!' => '',
+						],
 					],
-				],
-				'condition' => [
-					'iconbox_icon[value]!' => '',
+					'height' => [],
 				],
 			]
 		);
