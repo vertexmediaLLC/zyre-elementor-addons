@@ -524,6 +524,24 @@ function haObserveTarget(target, callback) {
 		}
 	);
 
+	// Contact Form 7
+	var ZyreCF7 = function ZyreCF7($scope) {
+		const $textarea = $scope.find('.wpcf7-textarea');
+		$textarea.each(function () {
+			var $this = $(this),
+				prevHeight = getComputedStyle(this).getPropertyValue('height');
+
+			$this.on('input', function () {
+				if(!$this.val().trim()) {
+					$this.css('height', prevHeight);
+					return;
+				}
+
+				$this.css('height', this.scrollHeight + 'px');
+			});
+		});
+	};
+
     // Function Handlers
     var fnHanlders = {
       "zyre-toggle.default": Toggle_Switcher,
@@ -537,6 +555,7 @@ function haObserveTarget(target, callback) {
 	  "zyre-subscription-form.default": ZyreMailChimp,
 	  "zyre-advance-accordion.default": ZyreAccordion,
 	  "zyre-advance-toggle.default": ZyreAccordion,
+	  "zyre-cf7.default": ZyreCF7,
     };
     $.each(fnHanlders, function (widgetName, handlerFn) {
       elementorFrontend.hooks.addAction(

@@ -97,6 +97,7 @@ class CF7 extends Base {
 	 */
 	protected function register_style_controls() {
 		$this->__general_style();
+		$this->__field_wrap_style();
 		$this->__input_textarea_style();
 		$this->__submit_btn_style();
 		$this->__error_style();
@@ -133,6 +134,40 @@ class CF7 extends Base {
 	}
 
 	/**
+	 * Style - Field Wrap
+	 */
+	protected function __field_wrap_style() {
+		$this->start_controls_section(
+			'section_field_wrap_style',
+			[
+				'label' => esc_html__( 'Field Wrap', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->set_style_controls(
+			'field_wrap',
+			[
+				'selector' => '{{WRAPPER}} .wpcf7-form-control-wrap',
+				'controls' => [
+					'margin' => [
+						'default' => [
+							'top'       => '0',
+							'right'     => '0',
+							'bottom'    => '0',
+							'left'      => '0',
+							'unit'      => 'px',
+							'is_linked' => false,
+						],
+					],
+				],
+			],
+		);
+
+		$this->end_controls_section();
+	}
+
+	/**
 	 * Style - Input & Textarea
 	 */
 	protected function __input_textarea_style() {
@@ -149,6 +184,7 @@ class CF7 extends Base {
 			[
 				'selector' => '{{WRAPPER}} .wpcf7-text, {{WRAPPER}} .wpcf7-email, {{WRAPPER}} .wpcf7-url, {{WRAPPER}} .wpcf7-number, {{WRAPPER}} .wpcf7-quiz, {{WRAPPER}} .wpcf7-date, {{WRAPPER}} .wpcf7-select, {{WRAPPER}} .wpcf7-textarea',
 				'controls' => [
+					'typo'          => [],
 					'bg_color'      => [],
 					'box_shadow'    => [],
 					'border'        => [],
@@ -196,7 +232,7 @@ class CF7 extends Base {
 		$this->set_style_controls(
 			'input_textarea_hover',
 			[
-				'selector' => '{{WRAPPER}} .wpcf7-text:focus, {{WRAPPER}} .wpcf7-email:focus, {{WRAPPER}} .wpcf7-url:focus, {{WRAPPER}} .wpcf7-number:focus, {{WRAPPER}} .wpcf7-quiz:focus, {{WRAPPER}} .wpcf7-date:focus, {{WRAPPER}} .wpcf7-textarea:focus',
+				'selector' => '{{WRAPPER}} .wpcf7-text:focus, {{WRAPPER}} .wpcf7-email:focus, {{WRAPPER}} .wpcf7-url:focus, {{WRAPPER}} .wpcf7-number:focus, {{WRAPPER}} .wpcf7-quiz:focus, {{WRAPPER}} .wpcf7-date:focus, {{WRAPPER}} .wpcf7-textarea:focus, {{WRAPPER}} .wpcf7-select:focus',
 				'controls' => [
 					'color' => [],
 					'border_color' => [],
@@ -240,6 +276,18 @@ class CF7 extends Base {
 				'controls' => [
 					'color' => [
 						'label'     => esc_html__( 'Placeholder Color', 'zyre-elementor-addons' ),
+					],
+				],
+			],
+		);
+
+		$this->set_style_controls(
+			'select',
+			[
+				'selector' => '{{WRAPPER}} .wpcf7-form-control.wpcf7-select',
+				'controls' => [
+					'box_shadow' => [
+						'label' => esc_html__( 'Select Box Shadow', 'zyre-elementor-addons' ),
 					],
 				],
 			],
@@ -408,6 +456,13 @@ class CF7 extends Base {
 		}
 
 		$settings = $this->get_settings_for_display();
+		$widget_class = '.elementor-element-' . $this->get_id();
+
+		if ( ! empty( $settings['input_textarea_padding'] ) ) {
+			$field_padding = $settings['input_textarea_padding'];
+			$padding_x = is_rtl() ? $field_padding['left'] : $field_padding['right'];
+			echo "<style>{$widget_class} .wpcf7-select {--padding-r:{$padding_x}{$field_padding['unit']}}</style>";
+		}
 
 		// Remove Contact Form 7 Extra <p> tag
 		add_filter( 'wpcf7_autop_or_not', '__return_false' );

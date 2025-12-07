@@ -715,6 +715,7 @@ class Social_Share extends Base {
 				'controls' => [
 					'bg_color'     => [],
 					'border_color' => [],
+					'box_shadow'   => [],
 				],
 			]
 		);
@@ -764,6 +765,7 @@ class Social_Share extends Base {
 				'controls' => [
 					'bg_color'     => [],
 					'border_color' => [],
+					'box_shadow'   => [],
 				],
 			]
 		);
@@ -809,6 +811,7 @@ class Social_Share extends Base {
 				'selectors'  => [
 					'{{WRAPPER}}' => '--grid-column-gap: {{SIZE}}{{UNIT}}',
 				],
+				'separator'  => 'before',
 			]
 		);
 
@@ -829,7 +832,7 @@ class Social_Share extends Base {
 			[
 				'label' => esc_html__( 'Item Width', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'range' => [
 					'px' => [
 						'max' => 500,
@@ -849,6 +852,35 @@ class Social_Share extends Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .zyre-share-wrapper > .zyre-share-item' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'all_share_height',
+			[
+				'label'      => esc_html__( 'Item Height', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => ['px', '%', 'em', 'rem', 'vh', 'custom'],
+				'range'      => [
+					'px'  => [
+						'max' => 500,
+					],
+					'%'   => [
+						'max' => 100,
+					],
+					'em'  => [
+						'max' => 20,
+					],
+					'rem' => [
+						'max' => 20,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-share-wrapper > .zyre-share-item' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -883,8 +915,33 @@ class Social_Share extends Base {
 				'controls' => [
 					'border'        => [],
 					'border_radius' => [],
-					'box_shadow'    => [],
 					'padding'       => [],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'share_items_align',
+			[
+				'label'     => esc_html__( 'Items Alignment', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'default'   => 'center',
+				'options'   => [
+					'flex-start' => [
+						'title' => esc_html__( 'Start', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-h-align-left',
+					],
+					'center'     => [
+						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-h-align-center',
+					],
+					'flex-end'   => [
+						'title' => esc_html__( 'End', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-h-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .zyre-share-wrapper > .zyre-share-item' => 'justify-content: {{VALUE}};',
 				],
 			]
 		);

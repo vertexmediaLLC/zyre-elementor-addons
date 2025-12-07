@@ -176,8 +176,9 @@ class Countdown extends Base {
 						'default' => 'row',
 					],
 					'align_x'    => [
-						'default'   => 'center',
-						'condition' => [
+						'label_block' => true,
+						'default'     => 'center',
+						'condition'   => [
 							'general_direction' => 'row',
 						],
 					],
