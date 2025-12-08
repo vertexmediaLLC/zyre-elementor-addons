@@ -881,6 +881,50 @@ abstract class Base extends Widget_Base {
 						$this->add_responsive_control( $control_name, $control_args );
 						break;
 
+					case 'justify_y':
+						$allowed_defaults = [ 'flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly' ];
+						$control_args = [
+							'label'       => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Vertical Align', 'zyre-elementor-addons' ),
+							'type'        => Controls_Manager::CHOOSE,
+							'label_block' => isset( $values['label_block'] ) ? true : false,
+							'default'     => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '',
+							'options'     => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
+								'flex-start'    => [
+									'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-justify-start-v',
+								],
+								'center'        => [
+									'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-justify-center-v',
+								],
+								'flex-end'      => [
+									'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-justify-end-v',
+								],
+								'space-between' => [
+									'title' => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-justify-space-between-v',
+								],
+								'space-around'  => [
+									'title' => esc_html__( 'Space Around', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-justify-space-around-v',
+								],
+								'space-evenly'  => [
+									'title' => esc_html__( 'Space Evenly', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-justify-space-evenly-v',
+								],
+							],
+							'selectors'   => [
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'justify-content: {{VALUE}};',
+							],
+							'condition'   => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
+						];
+						if ( ! empty( $values['separator'] ) ) {
+							$control_args['separator'] = $values['separator'];
+						}
+						$this->add_responsive_control( $control_name, $control_args );
+						break;
+
 					case 'align_xy':
 						$allowed_defaults = [ 'flex-start', 'center', 'flex-end', 'stretch' ];
 						$control_args = [

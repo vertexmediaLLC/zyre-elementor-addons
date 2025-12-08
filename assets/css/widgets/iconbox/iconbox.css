@@ -4,6 +4,7 @@
 }
     
 .zyre-addon-iconbox .elementor-widget-container {
+	--flex-grow: 1;
     display: flex;
 	flex-direction:column;
 	text-align:center;
@@ -40,6 +41,11 @@
     position: relative;
     display: block;
     z-index: 1;
+}
+
+.zyre-addon-iconbox .zyre-iconbox-media,
+.zyre-addon-iconbox .zyre-iconbox-content {
+	flex-grow: var(--flex-grow);
 }
 
 .zyre-addon-iconbox .zyre-iconbox-titles > * {

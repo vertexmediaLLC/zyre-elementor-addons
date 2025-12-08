@@ -213,16 +213,23 @@ class IconBox extends Base {
 		$this->set_style_controls(
 			'box',
 			[
-				'selector'  => '{{WRAPPER}}.zyre-addon-iconbox .elementor-widget-container',
-				'controls'  => [
-					'gap' => [
+				'selector' => '{{WRAPPER}}.zyre-addon-iconbox .elementor-widget-container',
+				'controls' => [
+					'gap'       => [
 						'label'       => __( 'Spacing', 'zyre-elementor-addons' ),
 						'description' => __( 'Space between Media Icon & Content.', 'zyre-elementor-addons' ),
-						'condition' => [
+						'condition'   => [
 							'iconbox_icon[value]!' => '',
 						],
 					],
-					'height' => [],
+					'height'    => [],
+					'justify_y' => [
+						'label_block' => true,
+						'condition'   => [
+							'iconbox_icon[value]!'  => '',
+							'iconbox_icon_position' => 'top',
+						],
+					],
 				],
 			]
 		);
@@ -363,9 +370,9 @@ class IconBox extends Base {
 				'default'              => 'top',
 				'toggle'               => false,
 				'selectors_dictionary' => [
-					'left'  => '-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;text-align:left;',
-					'top'   => '-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;text-align:center;',
-					'right' => '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;text-align:right;',
+					'left'  => '-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;text-align:left;--flex-grow: 1;',
+					'top'   => '-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;text-align:center;--flex-grow: 0;',
+					'right' => '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;text-align:right;--flex-grow: 1;',
 				],
 				'selectors'            => [
 					'{{WRAPPER}} .elementor-widget-container' => '{{VALUE}}',
@@ -756,13 +763,54 @@ class IconBox extends Base {
 							],
 						],
 					],
-					'color'      => [
-						'default' => '#000000',
-					],
 					'margin'     => [],
 				],
 			]
 		);
+
+		$this->start_controls_tabs( $prefix . '_tabs' );
+
+		$this->start_controls_tab(
+			$prefix . '_tab_normal',
+			[
+				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			$prefix,
+			[
+				'selector' => '{{WRAPPER}} .zyre-iconbox-' . $class_base,
+				'controls' => [
+					'color' => [
+						'default' => '#000000',
+					],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			$prefix . '_tab_hover',
+			[
+				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			$prefix . '_hover',
+			[
+				'selector' => '{{WRAPPER}} .elementor-widget-container:hover .zyre-iconbox-' . $class_base,
+				'controls' => [
+					'color' => [],
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 	}
 
 	/**
@@ -830,7 +878,7 @@ class IconBox extends Base {
 		<?php } ?>
 
 		<?php if ( $settings['title'] || $settings['subtitle'] || $settings['description'] || $settings['button_text'] ) : ?>
-		<div class="zyre-iconbox-content zy-index-1 zy-relative zy-inline-flex zy-direction-column zy-grow-1">
+		<div class="zyre-iconbox-content zy-index-1 zy-relative zy-inline-flex zy-direction-column">
 			<?php if ( $settings['title'] || $settings['subtitle'] ) : ?>
 				<div class="zyre-iconbox-titles zy-flex zy-direction-column">
 					<?php
