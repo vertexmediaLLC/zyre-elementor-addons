@@ -743,11 +743,9 @@ class Heading extends Base {
 		$this->set_style_controls(
 			$prefix,
 			[
-				'selector'  => "{{WRAPPER}} .zyre-heading-{$id_base}::before",
+				'selector' => "{{WRAPPER}} .zyre-heading-{$id_base}::before",
 				'controls'  => [
-					'bg_color'      => [
-						'label' => esc_html__( 'Color', 'zyre-elementor-addons' ),
-					],
+					'bg'            => [],
 					'width'         => [
 						'range' => [
 							'%'  => [
