@@ -12,6 +12,7 @@ use ZyreAddons\Elementor\Traits\Button_Trait;
 defined( 'ABSPATH' ) || die();
 
 class Call_To_Action extends Base {
+
 	use Button_Trait;
 
 	public function get_title() {
@@ -24,6 +25,10 @@ class Call_To_Action extends Base {
 
 	public function get_keywords() {
 		return [ 'call to action', 'content', 'information', 'content box', 'info box', 'cta', 'buttons', 'card' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	private function html_tags() {

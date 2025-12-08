@@ -9,25 +9,21 @@ defined( 'ABSPATH' ) || die();
 require ZYRE_ADDONS_DIR_PATH . 'classes/walker-nav-menu.php';
 
 class Menu extends Base {
-	/**
-	 * Widget Name
-	 */
+
 	public function get_title() {
 		return esc_html__( 'Navigation Menu', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Widget Icon
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Menu';
 	}
 
-	/**
-	 * Widget search keywords
-	 */
 	public function get_keywords() {
 		return [ 'menu', 'nav', 'header', 'navigation', 'nav menu', 'navigation menu', 'header menu', 'horizontal menu', 'horizontal navigation', 'vertical menu', 'vertical navigation', 'hamburger menu', 'mobile menu', 'responsive menu' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	public function get_style_depends() {

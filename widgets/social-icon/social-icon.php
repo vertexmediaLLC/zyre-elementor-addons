@@ -23,6 +23,10 @@ class Social_Icon extends Base {
 		return [ 'social', 'icon', 'social icon', 'link', 'links', 'social links', 'icons', 'media', 'facebook', 'fb', 'twitter', 'linkedin' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_social_content',

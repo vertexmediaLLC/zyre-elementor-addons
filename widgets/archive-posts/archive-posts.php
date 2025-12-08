@@ -16,25 +16,20 @@ class Archive_Posts extends Base {
 	public $settings = [];
 	private $current_permalink;
 
-	/**
-	 * Widget Name
-	 */
 	public function get_title() {
 		return esc_html__( 'Archive Posts', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Widget Icon
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Archive-Post';
 	}
 
-	/**
-	 * Widget search keywords
-	 */
 	public function get_keywords() {
 		return [ 'archive posts', 'posts', 'post', 'recent post', 'category posts', 'taxonomy posts', 'tags posts', 'tag post', 'post grid', 'post list' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

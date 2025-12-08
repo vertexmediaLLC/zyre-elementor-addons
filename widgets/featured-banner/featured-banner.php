@@ -14,6 +14,7 @@ use ZyreAddons\Elementor\Traits\Button_Trait;
 defined( 'ABSPATH' ) || die();
 
 class Featured_Banner extends Base {
+
 	use Button_Trait;
 
 	public function get_title() {
@@ -26,6 +27,10 @@ class Featured_Banner extends Base {
 
 	public function get_keywords() {
 		return [ 'featured', 'banner', 'featured banner', 'content', 'content banner', 'content box', 'card', 'info' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	private function html_tags() {

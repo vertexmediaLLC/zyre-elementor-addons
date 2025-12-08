@@ -19,43 +19,22 @@ defined( 'ABSPATH' ) || die();
  */
 class InfoBox extends Base {
 
-	use Button_Trait;
-	use List_Item_Trait;
+	use Button_Trait, List_Item_Trait;
 
-	/**
-	 * Get widget title.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget title.
-	 */
 	public function get_title() {
 		return esc_html__( 'Info box', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Infobox';
 	}
 
-	/**
-	 * Get widget search keywords.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_keywords() {
 		return [ 'info', 'box', 'infobox', 'card', 'blurb', 'text', 'content' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

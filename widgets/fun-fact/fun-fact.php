@@ -10,6 +10,7 @@ use Elementor\Utils;
 defined( 'ABSPATH' ) || die();
 
 class Fun_Fact extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Fun Fact', 'zyre-elementor-addons' );
 	}
@@ -20,6 +21,10 @@ class Fun_Fact extends Base {
 
 	public function get_keywords() {
 		return [ 'fun', 'fun fact', 'fun factor', 'animation', 'info', 'icon', 'box', 'number', 'animated' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	protected function is_dynamic_content(): bool {

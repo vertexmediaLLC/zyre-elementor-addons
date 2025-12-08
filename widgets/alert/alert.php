@@ -22,6 +22,10 @@ class Alert extends Base {
 		return [ 'alert', 'notice', 'message', 'warning', 'info', 'danger', 'success' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_content',

@@ -23,6 +23,10 @@ class Logo_Grid extends Base {
 		return [ 'logo', 'logo grids', 'logos grid', 'logo list', 'image grid', 'images', 'images grid', 'brand', 'client', 'brands', 'clients' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_logo_content',

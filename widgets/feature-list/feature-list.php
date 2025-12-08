@@ -23,6 +23,10 @@ class Feature_List extends Base {
 		return [ 'feature list', 'features lists', 'image list', 'images lists', 'image grid', 'lists icons', 'list icon', 'icon list', 'icons lists', 'lists items', 'list item', 'text', 'feature content', 'featured content' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_content_heading',

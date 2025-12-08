@@ -20,6 +20,10 @@ class Heading extends Base {
 		return [ 'heading', 'advance heading', 'title', 'text', 'content', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_heading',

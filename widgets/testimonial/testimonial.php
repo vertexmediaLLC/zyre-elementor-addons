@@ -22,6 +22,10 @@ class Testimonial extends Base {
 		return [ 'testimonial', 'reviews', 'feedback', 'quote', 'blockquote', 'appreciate', 'ratings', 'stars', 'recommendation' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	/**
 	 * Register content controls
 	 */

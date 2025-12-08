@@ -29,6 +29,10 @@ class FlipBox extends Base {
 		return [ 'flip', 'box', 'flip box', 'info', 'info box', 'content', 'flip content' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function is_dynamic_content(): bool {
 		return false;
 	}

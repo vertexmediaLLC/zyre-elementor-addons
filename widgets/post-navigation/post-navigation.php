@@ -8,6 +8,7 @@ use Elementor\Group_Control_Typography;
 defined( 'ABSPATH' ) || die();
 
 class Post_Navigation extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Post Navigation', 'zyre-elementor-addons' );
 	}
@@ -18,6 +19,10 @@ class Post_Navigation extends Base {
 
 	public function get_keywords() {
 		return [ 'posts', 'post navigation', 'post links', 'next post', 'previous post', 'after post', 'before post' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

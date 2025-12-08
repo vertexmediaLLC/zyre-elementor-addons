@@ -7,6 +7,7 @@ use Elementor\Controls_Manager;
 defined( 'ABSPATH' ) || die();
 
 class Post_Title extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Post Title', 'zyre-elementor-addons' );
 	}
@@ -17,6 +18,10 @@ class Post_Title extends Base {
 
 	public function get_keywords() {
 		return [ 'title', 'post title', 'post heading', 'heading', 'post name', 'post info' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	// Widget Content controls

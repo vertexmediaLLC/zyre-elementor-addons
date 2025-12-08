@@ -9,6 +9,7 @@ use Elementor\Group_Control_Image_Size;
 defined( 'ABSPATH' ) || die();
 
 class Site_Logo extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Site Logo', 'zyre-elementor-addons' );
 	}
@@ -19,6 +20,10 @@ class Site_Logo extends Base {
 
 	public function get_keywords() {
 		return [ 'site logo', 'logo', 'site', 'site info', 'site branding', 'branding', 'company logo', 'company branding' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	// Widget Content controls

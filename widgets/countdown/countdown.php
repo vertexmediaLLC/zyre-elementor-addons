@@ -20,6 +20,10 @@ class Countdown extends Base {
 		return [ 'countdown', 'timer', 'time', 'date', 'upcoming', 'coming soon' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	/**
 	 * Register widget content controls
 	 */

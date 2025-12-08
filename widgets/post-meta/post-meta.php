@@ -8,6 +8,7 @@ use Elementor\Controls_Manager;
 defined( 'ABSPATH' ) || die();
 
 class Post_Meta extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Post Meta', 'zyre-elementor-addons' );
 	}
@@ -18,6 +19,10 @@ class Post_Meta extends Base {
 
 	public function get_keywords() {
 		return [ 'meta', 'post meta', 'post info', 'post', 'post data', 'post meta info', 'author', 'edit post text', 'edit post link', 'comments', 'comments count', 'tags', 'category', 'taxonomy', 'dates', 'author link' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

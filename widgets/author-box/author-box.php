@@ -8,25 +8,21 @@ use Elementor\Utils;
 defined( 'ABSPATH' ) || die();
 
 class Author_Box extends Base {
-	/**
-	 * Widget Name
-	 */
+
 	public function get_title() {
 		return esc_html__( 'Author Box', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Widget Icon
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Author-Box';
 	}
 
-	/**
-	 * Widget search keywords
-	 */
 	public function get_keywords() {
 		return [ 'author box', 'author meta', 'author', 'author description', 'author details', 'author name', 'author info', 'author link', 'author bio', 'bio' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

@@ -21,6 +21,10 @@ class Toggle extends Base {
 		return [ 'toggle', 'toggle content', 'switch', 'switcher', 'content switcher', 'toggle button', 'tabs', 'advance tabs' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	public function select_elementor_page( $type ) {
 		$args  = [
 			'tax_query'      => [

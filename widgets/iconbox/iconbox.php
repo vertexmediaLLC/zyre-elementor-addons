@@ -18,40 +18,20 @@ class IconBox extends Base {
 
 	use Button_Trait;
 
-	/**
-	 * Get widget title.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget title.
-	 */
 	public function get_title() {
 		return esc_html__( 'Icon Box', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Iconbox';
 	}
 
-	/**
-	 * Get widget search keywords.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_keywords() {
 		return [ 'icon', 'box', 'iconbox', 'info', 'infobox', 'content' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

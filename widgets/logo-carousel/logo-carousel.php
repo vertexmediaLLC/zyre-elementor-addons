@@ -28,6 +28,10 @@ class Logo_Carousel extends Base {
 		return [ 'logos', 'logo carousel', 'logo slider', 'image carousel', 'image slider', 'image', 'slider', 'media carousel', 'media slider', 'media' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function is_dynamic_content(): bool {
 		return false;
 	}

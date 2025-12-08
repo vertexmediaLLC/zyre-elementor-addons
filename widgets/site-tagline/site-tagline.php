@@ -7,6 +7,7 @@ use Elementor\Controls_Manager;
 defined( 'ABSPATH' ) || die();
 
 class Site_Tagline extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Site Tagline', 'zyre-elementor-addons' );
 	}
@@ -17,6 +18,10 @@ class Site_Tagline extends Base {
 
 	public function get_keywords() {
 		return [ 'site tagline', 'tagline', 'site', 'site info', 'site description', 'description', 'site brand', 'brand description' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	// Widget Content controls

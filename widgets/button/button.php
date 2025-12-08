@@ -17,40 +17,20 @@ class Button extends Base {
 
 	use Button_Trait;
 
-	/**
-	 * Get widget title.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget title.
-	 */
 	public function get_title() {
 		return esc_html__( 'Button', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Button';
 	}
 
-	/**
-	 * Get widget search keywords.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_keywords() {
 		return [ 'button', 'btn', 'advance button', 'link' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

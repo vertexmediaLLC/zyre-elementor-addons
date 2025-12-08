@@ -8,25 +8,21 @@ use Elementor\Controls_Manager;
 defined( 'ABSPATH' ) || die();
 
 class Advance_Toggle extends Base {
-	/**
-	 * Widget Name
-	 */
+
 	public function get_title() {
 		return esc_html__( 'Advance Toggle', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Widget Icon
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Advance-toggle';
 	}
 
-	/**
-	 * Widget search keywords
-	 */
 	public function get_keywords() {
 		return [ 'advance toggle', 'toggle', 'accordion', 'expand', 'collapse', 'show hide', 'interactive', 'faq', 'expandable content', 'content toggle' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

@@ -116,6 +116,16 @@ abstract class Base extends Widget_Base {
 	abstract protected function register_style_controls();
 
 	/**
+	 * Set help/doc url.
+	 * @since 1.0.0
+	 */
+	protected function set_help_url() {
+		$widget_name = str_replace( 'zyre-', '', $this->get_name() );
+
+		return Widgets_Manager::get_widget_doc_url( $widget_name );
+	}
+
+	/**
 	 * Set pre-style controls.
 	 * @since 1.0.0
 	 */

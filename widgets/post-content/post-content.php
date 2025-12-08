@@ -8,6 +8,7 @@ use ZyreAddons\Elementor\Controls\Select2;
 defined( 'ABSPATH' ) || die();
 
 class Post_Content extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Post Content', 'zyre-elementor-addons' );
 	}
@@ -18,6 +19,10 @@ class Post_Content extends Base {
 
 	public function get_keywords() {
 		return [ 'post content', 'post info', 'post', 'full post', 'full content', 'post data' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

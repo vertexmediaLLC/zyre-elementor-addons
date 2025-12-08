@@ -8,6 +8,7 @@ use ZyreAddons\Elementor\Controls\Select2;
 defined( 'ABSPATH' ) || die();
 
 class Post_Excerpt extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Post Excerpt', 'zyre-elementor-addons' );
 	}
@@ -18,6 +19,10 @@ class Post_Excerpt extends Base {
 
 	public function get_keywords() {
 		return [ 'excerpt', 'post excerpt', 'post info', 'post', 'post content', 'post data', 'read more' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	// Widget Content controls

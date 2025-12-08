@@ -20,6 +20,10 @@ class Drop_Cap extends Base {
 		return [ 'dropcap', 'content', 'title', 'text' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_heading',

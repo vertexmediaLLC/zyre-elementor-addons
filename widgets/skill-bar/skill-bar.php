@@ -14,16 +14,16 @@ class Skill_Bar extends Base {
 		return esc_html__( 'Skill Bars', 'zyre-elementor-addons' );
 	}
 
-	public function get_custom_help_url() {
-		return '#';
-	}
-
 	public function get_icon() {
 		return 'zy-fonticon zy-Skillbar';
 	}
 
 	public function get_keywords() {
 		return [ 'skill bars', 'progress bar', 'skill', 'progress', 'bar', 'status' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	protected function is_dynamic_content(): bool {

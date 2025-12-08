@@ -143,7 +143,8 @@ class Widgets_Manager {
 			'heading' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/heading',
+				'demo'      => 'https://zyreaddons.com/demos/heading/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/heading/',
 				'title'     => esc_html__( 'Heading', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Text-t',
 				'css'       => [ 'heading' ],
@@ -184,7 +185,8 @@ class Widgets_Manager {
 			'advance-heading' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/advance-heading',
+				'demo'      => 'https://zyreaddons.com/demos/advanced-heading/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/advanced-heading/',
 				'title'     => esc_html__( 'Advance Heading', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Advance-heading',
 				'css'       => [ 'advance-heading' ],
@@ -216,7 +218,8 @@ class Widgets_Manager {
 			'gradient-heading' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/gradient-heading',
+				'demo'      => 'https://zyreaddons.com/demos/gradient-heading/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/gradient-heading/',
 				'title'     => esc_html__( 'Gradient Heading', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Gradient-heading',
 				'css'       => [ 'gradient-heading' ],
@@ -237,7 +240,8 @@ class Widgets_Manager {
 			'dual-color-heading' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/dual-color-heading',
+				'demo'      => 'https://zyreaddons.com/demos/dual-color-heading/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/dual-color-heading/',
 				'title'     => esc_html__( 'Dual Color Heading', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Dual-color-heading',
 				'css'       => [ 'dual-color-heading' ],
@@ -263,7 +267,8 @@ class Widgets_Manager {
 			'image-heading' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/image-heading',
+				'demo'      => 'https://zyreaddons.com/demos/image-heading/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/image-heading/',
 				'title'     => esc_html__( 'Image Heading', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Image-heading',
 				'css'       => [ 'image-heading' ],
@@ -289,7 +294,8 @@ class Widgets_Manager {
 			'button'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/button',
+				'demo'      => 'https://zyreaddons.com/demos/button/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/button/',
 				'title'     => esc_html__( 'Button', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Button',
 				'css'       => [ 'button' ],
@@ -325,7 +331,8 @@ class Widgets_Manager {
 			'dual-button'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/dual-button',
+				'demo'      => 'https://zyreaddons.com/demos/dual-button/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/dual-button/',
 				'title'     => esc_html__( 'Dual Button', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Dual-button',
 				'css'       => [ 'dual-button' ],
@@ -356,7 +363,8 @@ class Widgets_Manager {
 			'infobox' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/infobox',
+				'demo'      => 'https://zyreaddons.com/demos/info-box/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/info-box/',
 				'title'     => esc_html__( 'Info Box', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Infobox',
 				'css'       => [ 'infobox' ],
@@ -382,7 +390,8 @@ class Widgets_Manager {
 			'iconbox' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/iconbox',
+				'demo'      => 'https://zyreaddons.com/demos/icon-box/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/icon-box/',
 				'title'     => esc_html__( 'Icon Box', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Iconbox',
 				'css'       => [ 'iconbox' ],
@@ -418,7 +427,8 @@ class Widgets_Manager {
 			'flipbox' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/flipbox',
+				'demo'      => 'https://zyreaddons.com/demos/flip-box/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/flip-box/',
 				'title'     => esc_html__( 'Flip Box', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Flip-box',
 				'css'       => [ 'flipbox' ],
@@ -439,7 +449,8 @@ class Widgets_Manager {
 			'call-to-action' => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/cta',
+				'demo'      => 'https://zyreaddons.com/demos/call-to-action/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/call-to-action/',
 				'title'     => esc_html__( 'Call to Action ', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Call-to-action',
 				'css'       => [ 'call-to-action' ],
@@ -475,7 +486,8 @@ class Widgets_Manager {
 			'featured-banner'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/featured-banner',
+				'demo'      => 'https://zyreaddons.com/demos/featured-banner/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/featured-banner/',
 				'title'     => esc_html__( 'Featured Banner', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Featured-banner',
 				'css'       => [ 'featured-banner' ],
@@ -506,7 +518,8 @@ class Widgets_Manager {
 			'feature-list'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/feature-list',
+				'demo'      => 'https://zyreaddons.com/demos/feature-list/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/feature-list/',
 				'title'     => esc_html__( 'Feature List', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Featured-list',
 				'css'       => [ 'feature-list' ],
@@ -532,7 +545,8 @@ class Widgets_Manager {
 			'numeric-list'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/numeric-list',
+				'demo'      => 'https://zyreaddons.com/demos/numeric-list/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/numeric-list/',
 				'title'     => esc_html__( 'Numeric List', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Number-list',
 				'css'       => [ 'numeric-list' ],
@@ -563,7 +577,8 @@ class Widgets_Manager {
 			'image-list'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/image-list',
+				'demo'      => 'https://zyreaddons.com/demos/image-list/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/image-list/',
 				'title'     => esc_html__( 'Image List', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Image-list',
 				'css'       => [ 'image-list' ],
@@ -589,7 +604,8 @@ class Widgets_Manager {
 			'list-group'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/list-group',
+				'demo'      => 'https://zyreaddons.com/demos/list-group/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/list-group/',
 				'title'     => esc_html__( 'List Group', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-List-group',
 				'css'       => [ 'list-group' ],
@@ -615,7 +631,8 @@ class Widgets_Manager {
 			'image-carousel'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/image-carousel',
+				'demo'      => 'https://zyreaddons.com/demos/image-carousel/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/mage-carousel/',
 				'title'     => esc_html__( 'Image Carousel', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Image-carousel',
 				'css'       => [ 'image-carousel' ],
@@ -636,7 +653,8 @@ class Widgets_Manager {
 			'team-member'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/team-member',
+				'demo'      => 'https://zyreaddons.com/demos/team-member/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/team-member/',
 				'title'     => esc_html__( 'Team Member', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Team-member',
 				'css'       => [ 'team-member' ],
@@ -657,7 +675,8 @@ class Widgets_Manager {
 			'testimonial'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/testimonial',
+				'demo'      => 'https://zyreaddons.com/demos/testimonial/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/testimonial/',
 				'title'     => esc_html__( 'Testimonial', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Testimonial',
 				'css'       => [ 'testimonial' ],
@@ -683,7 +702,8 @@ class Widgets_Manager {
 			'post-grid'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-grid',
+				'demo'      => 'https://zyreaddons.com/demos/post-grid/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-grid/',
 				'title'     => esc_html__( 'Post Grid', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-grid',
 				'css'       => [ 'post-grid' ],
@@ -731,10 +751,48 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 			],
+			'image-grid'  => [
+				'cat'       => 'general',
+				'is_active' => true,
+				'demo'      => 'https://zyreaddons.com/demos/image-grid/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/image-grid/',
+				'title'     => esc_html__( 'Image Grid', 'zyre-elementor-addons' ),
+				'icon'      => 'zy-fonticon zy-Image-grid',
+				'css'       => [ 'image-grid' ],
+				'styles'    => [
+					'one'   => [
+						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-one.jpg' ),
+					],
+					'two'   => [
+						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-two.jpg' ),
+					],
+					'three' => [
+						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-three.jpg' ),
+					],
+					'four' => [
+						'name'      => esc_html__( 'Creative', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-four.jpg' ),
+					],
+					'five' => [
+						'name'      => esc_html__( 'With Title', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-five.jpg' ),
+					],
+				],
+				'js'        => [],
+			],
 			'logo-grid'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/logo-grid',
+				'demo'      => 'https://zyreaddons.com/demos/logo-grid/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/logo-grid/',
 				'title'     => esc_html__( 'Logo Grid', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Logo-grid',
 				'css'       => [ 'logo-grid' ],
@@ -760,7 +818,8 @@ class Widgets_Manager {
 			'logo-carousel'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/logo-carousel',
+				'demo'      => 'https://zyreaddons.com/demos/logo-carousel/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/logo-carousel/',
 				'title'     => esc_html__( 'Logo Carousel', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Logo-carousel',
 				'css'       => [ 'logo-carousel' ],
@@ -776,7 +835,8 @@ class Widgets_Manager {
 			'social-icon'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/social-icon',
+				'demo'      => 'https://zyreaddons.com/demos/social-icons/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/social-icons/',
 				'title'     => esc_html__( 'Social Icon', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Social-media',
 				'css'       => [ 'social-icon' ],
@@ -797,7 +857,8 @@ class Widgets_Manager {
 			'social-share'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/social-share',
+				'demo'      => 'https://zyreaddons.com/demos/social-share/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/social-share/',
 				'title'     => esc_html__( 'Social Share', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Social-button',
 				'css'       => [ 'social-share' ],
@@ -822,7 +883,8 @@ class Widgets_Manager {
 			'advance-accordion'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/advance-accordion',
+				'demo'      => 'https://zyreaddons.com/demos/advance-accordion/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/advance-accordion/',
 				'title'     => esc_html__( 'Advance Accordion', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Accordion',
 				'css'       => [ 'advance-accordion' ],
@@ -848,7 +910,8 @@ class Widgets_Manager {
 			'advance-toggle'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/advance-toggle',
+				'demo'      => 'https://zyreaddons.com/demos/advance-toggle/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/advance-toggle/',
 				'title'     => esc_html__( 'Advance Toggle', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Advance-toggle',
 				'css'       => [ 'advance-toggle' ],
@@ -874,7 +937,8 @@ class Widgets_Manager {
 			'fun-fact'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/fun-fact',
+				'demo'      => 'https://zyreaddons.com/demos/fun-fact/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/fun-fact/',
 				'title'     => esc_html__( 'Fun Fact', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Fun-fact',
 				'css'       => [ 'fun-fact' ],
@@ -909,7 +973,8 @@ class Widgets_Manager {
 			'alert'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/alert',
+				'demo'      => 'https://zyreaddons.com/demos/alert/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/alert/',
 				'title'     => esc_html__( 'Alert', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Alert',
 				'css'       => [ 'alert' ],
@@ -929,7 +994,8 @@ class Widgets_Manager {
 			'skill-bar'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/skill-bar',
+				'demo'      => 'https://zyreaddons.com/demos/skill-bars/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/skill-bars/',
 				'title'     => esc_html__( 'Skill Bar', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Skills-bar',
 				'css'       => [ 'skill-bar' ],
@@ -954,7 +1020,8 @@ class Widgets_Manager {
 			'countdown'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/countdown',
+				'demo'      => 'https://zyreaddons.com/demos/countdown/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/countdown/',
 				'title'     => esc_html__( 'Countdown', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Countdown-stopwatch',
 				'css'       => [ 'countdown' ],
@@ -974,7 +1041,8 @@ class Widgets_Manager {
 			'business-hour'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/business-hour',
+				'demo'      => 'https://zyreaddons.com/demos/business-hour/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/business-hour/',
 				'title'     => esc_html__( 'Business Hour', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Business-hour',
 				'css'       => [ 'business-hour' ],
@@ -1000,7 +1068,8 @@ class Widgets_Manager {
 			'drop-cap'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/drop-cap',
+				'demo'      => 'https://zyreaddons.com/demos/drop-cap/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/drop-cap/',
 				'title'     => esc_html__( 'Drop Cap', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Dropcap',
 				'css'       => [ 'drop-cap' ],
@@ -1021,7 +1090,8 @@ class Widgets_Manager {
 			'animated-text'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/animated-text',
+				'demo'      => 'https://zyreaddons.com/demos/animated-text/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/animated-text/',
 				'title'     => esc_html__( 'Animated Text', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Animated-text',
 				'css'       => [ 'animated-text' ],
@@ -1051,7 +1121,8 @@ class Widgets_Manager {
 			'news-ticker'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/news-ticker',
+				'demo'      => 'https://zyreaddons.com/demos/news-ticker/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/news-ticker/',
 				'title'     => esc_html__( 'News Ticker', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-News-ticker',
 				'css'       => [ 'news-ticker' ],
@@ -1082,7 +1153,8 @@ class Widgets_Manager {
 			'divider'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/divider',
+				'demo'      => 'https://zyreaddons.com/demos/divider/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/divider/',
 				'title'     => esc_html__( 'Divider', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Devider-line',
 				'css'       => [ 'divider' ],
@@ -1103,7 +1175,8 @@ class Widgets_Manager {
 			'toggle'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/toggle',
+				'demo'      => 'https://zyreaddons.com/demos/toggle/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/toggle/',
 				'title'     => esc_html__( 'Toggle', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Toggle',
 				'css'       => [ 'toggle' ],
@@ -1134,7 +1207,8 @@ class Widgets_Manager {
 			'subscription-form'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/subscription-form',
+				'demo'      => 'https://zyreaddons.com/demos/subscription-form/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/subscription-form/',
 				'title'     => esc_html__( 'Subscription Form', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Subscription',
 				'css'       => [ 'subscription-form' ],
@@ -1160,7 +1234,8 @@ class Widgets_Manager {
 			'cf7'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/cf7',
+				'demo'      => 'https://zyreaddons.com/demos/contact-form-7/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/contact-form-7/',
 				'title'     => esc_html__( 'Contact Form 7', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Contact-form',
 				'css'       => [ 'cf7' ],
@@ -1181,7 +1256,8 @@ class Widgets_Manager {
 			'site-title'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/site-title',
+				'demo'      => 'https://zyreaddons.com/demos/site-title/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/site-title/',
 				'title'     => esc_html__( 'Site Title', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Site-title',
 				'css'       => [ 'site-title' ],
@@ -1197,7 +1273,8 @@ class Widgets_Manager {
 			'site-tagline'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/site-tagline',
+				'demo'      => 'https://zyreaddons.com/demos/site-tagline/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/site-tagline/',
 				'title'     => esc_html__( 'Site Tagline', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Site-tagline',
 				'css'       => [ 'site-tagline' ],
@@ -1213,7 +1290,8 @@ class Widgets_Manager {
 			'site-logo'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/site-logo',
+				'demo'      => 'https://zyreaddons.com/demos/site-logo/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/site-logo/',
 				'title'     => esc_html__( 'Site Logo', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Site-logo',
 				'css'       => [ 'site-logo' ],
@@ -1229,7 +1307,8 @@ class Widgets_Manager {
 			'menu'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/menu',
+				'demo'      => 'https://zyreaddons.com/demos/menu/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/menu/',
 				'title'     => esc_html__( 'Menu', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Menu',
 				'css'       => [],
@@ -1249,7 +1328,8 @@ class Widgets_Manager {
 			'post-title'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-title',
+				'demo'      => 'https://zyreaddons.com/demos/post-title/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-title/',
 				'title'     => esc_html__( 'Post Title', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-Title',
 				'css'       => [ 'post-title' ],
@@ -1265,7 +1345,8 @@ class Widgets_Manager {
 			'page-title'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/page-title',
+				'demo'      => 'https://zyreaddons.com/demos/page-title/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/page-title/',
 				'title'     => esc_html__( 'Page Title', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Page-Title',
 				'css'       => [ 'page-title' ],
@@ -1281,7 +1362,8 @@ class Widgets_Manager {
 			'post-excerpt'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-excerpt',
+				'demo'      => 'https://zyreaddons.com/demos/post-excerpt/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-excerpt/',
 				'title'     => esc_html__( 'Post Excerpt', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-Excerpt',
 				'css'       => [ 'post-excerpt' ],
@@ -1297,7 +1379,8 @@ class Widgets_Manager {
 			'post-content'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-content',
+				'demo'      => 'https://zyreaddons.com/demos/post-content/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-content/',
 				'title'     => esc_html__( 'Post Content', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-Content',
 				'css'       => [ 'post-content' ],
@@ -1313,7 +1396,8 @@ class Widgets_Manager {
 			'post-thumbnail'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-thumbnail',
+				'demo'      => 'https://zyreaddons.com/demos/post-thumbnail/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-thumbnail/',
 				'title'     => esc_html__( 'Post Thumbnail', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-Thumbnail',
 				'css'       => [ 'post-thumbnail' ],
@@ -1329,7 +1413,8 @@ class Widgets_Manager {
 			'post-meta'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-meta',
+				'demo'      => 'https://zyreaddons.com/demos/post-meta/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-meta/',
 				'title'     => esc_html__( 'Post Meta', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-Meta',
 				'css'       => [ 'post-meta' ],
@@ -1345,7 +1430,8 @@ class Widgets_Manager {
 			'post-navigation'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-navigation',
+				'demo'      => 'https://zyreaddons.com/demos/post-navigation/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-navigation/',
 				'title'     => esc_html__( 'Post Navigation', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-Navigation',
 				'css'       => [ 'post-navigation' ],
@@ -1366,7 +1452,8 @@ class Widgets_Manager {
 			'post-comments'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/post-comments',
+				'demo'      => 'https://zyreaddons.com/demos/post-comments/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/post-comments/',
 				'title'     => esc_html__( 'Post Comments', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Post-Comment',
 				'css'       => [ 'post-comments' ],
@@ -1382,7 +1469,8 @@ class Widgets_Manager {
 			'archive-title'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/archive-title',
+				'demo'      => 'https://zyreaddons.com/demos/archive-title/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/archive-title/',
 				'title'     => esc_html__( 'Archive Title', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Archive-Title',
 				'css'       => [ 'archive-title' ],
@@ -1398,7 +1486,8 @@ class Widgets_Manager {
 			'archive-description'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/archive-description',
+				'demo'      => 'https://zyreaddons.com/demos/archive-description/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/archive-description/',
 				'title'     => esc_html__( 'Archive Description', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Archive-Description',
 				'css'       => [ 'archive-description' ],
@@ -1414,7 +1503,8 @@ class Widgets_Manager {
 			'archive-posts'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/archive-posts',
+				'demo'      => 'https://zyreaddons.com/demos/archive-post/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/archive-post/',
 				'title'     => esc_html__( 'Archive Posts', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Archive-Post',
 				'css'       => [ 'archive-posts' ],
@@ -1430,7 +1520,8 @@ class Widgets_Manager {
 			'author-box'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/author-box',
+				'demo'      => 'https://zyreaddons.com/demos/author-box/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/author-box/',
 				'title'     => esc_html__( 'Author Box', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Author-Box',
 				'css'       => [ 'author-box' ],
@@ -1451,7 +1542,8 @@ class Widgets_Manager {
 			'pdf-view'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/pdf-view',
+				'demo'      => 'https://zyreaddons.com/demos/pdf-view/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/pdf-view/',
 				'title'     => esc_html__( 'PDF View', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-PDF-view',
 				'css'       => [ 'pdf-view' ],
@@ -1471,7 +1563,8 @@ class Widgets_Manager {
 			'lottie-animation'  => [
 				'cat'       => 'general',
 				'is_active' => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/lottie-animation',
+				'demo'      => 'https://zyreaddons.com/demos/lottie-animations/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/lottie-animations/',
 				'title'     => esc_html__( 'Lottie Animations', 'zyre-elementor-addons' ),
 				'icon'      => 'zy-fonticon zy-Lottie-Animations',
 				'css'       => [ 'lottie-animation' ],
@@ -1675,6 +1768,23 @@ class Widgets_Manager {
 		$widget_styles = self::get_the_widget_styles( $widget_id );
 
 		return array_keys( array_filter( $widget_styles, fn( $style ) => ! $style['is_active'] ) );
+	}
+
+	/**
+	 * Retrieve the widget document/help url.
+	 *
+	 * @param string $widget_id The ID of the widget.
+	 * @return array The widget doc url.
+	 * @since 1.0.0
+	 */
+	public static function get_widget_doc_url( string $widget_id ) {
+		$widget_map = self::get_the_widget_map( $widget_id );
+
+		if ( isset( $widget_map[ 'doc' ] ) ) {
+			return $widget_map[ 'doc' ];
+		}
+
+		return null;
 	}
 
 	/**

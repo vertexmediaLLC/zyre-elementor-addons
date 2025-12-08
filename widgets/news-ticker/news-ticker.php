@@ -12,25 +12,20 @@ class News_Ticker extends Base {
 
 	use Swiper_Trait;
 
-	/**
-	 * Widget Name
-	 */
 	public function get_title() {
 		return esc_html__( 'News Ticker', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Widget Icon
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-News-ticker';
 	}
 
-	/**
-	 * Widget search keywords
-	 */
 	public function get_keywords() {
 		return [ 'news ticker', 'news slider', 'news carousel', 'carousel', 'slider', 'content ticker', 'news', 'ticker', 'news scroll', 'trending news', 'hot news', 'content slider', 'content carousel' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	protected function is_dynamic_content(): bool {

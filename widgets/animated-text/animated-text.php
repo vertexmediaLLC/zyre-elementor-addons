@@ -12,6 +12,7 @@ use Elementor\Utils;
 defined( 'ABSPATH' ) || die();
 
 class Animated_Text extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Animated Text', 'zyre-elementor-addons' );
 	}
@@ -22,6 +23,10 @@ class Animated_Text extends Base {
 
 	public function get_keywords() {
 		return [ 'animated text', 'text animation', 'animated headings', 'headings animate', 'fancy text', 'animate', 'fancy', 'text', 'headings', 'typing', 'headline' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	protected function is_dynamic_content(): bool {

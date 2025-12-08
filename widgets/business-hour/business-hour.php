@@ -22,6 +22,10 @@ class Business_Hour extends Base {
 		return [ 'business', 'hours', 'business hours', 'business schedule', 'days', 'dates', 'business days', 'business times', 'times' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_content',

@@ -20,6 +20,10 @@ class CF7 extends Base {
 		return [ 'contact form 7', 'contact form', 'contact', 'form', 'cf7', 'contact us', 'message form', 'message' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	/**
 	 * Register widget content controls
 	 */

@@ -8,25 +8,21 @@ use Elementor\Controls_Manager;
 defined( 'ABSPATH' ) || die();
 
 class Advance_Accordion extends Base {
-	/**
-	 * Widget Name
-	 */
+
 	public function get_title() {
 		return esc_html__( 'Advance Accordion', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Widget Icon
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Accordion';
 	}
 
-	/**
-	 * Widget search keywords
-	 */
 	public function get_keywords() {
 		return [ 'advance accordion', 'accordion', 'toggle', 'collapse', 'expand', 'faq', 'advanced toggle', 'content toggle', 'expandable content' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

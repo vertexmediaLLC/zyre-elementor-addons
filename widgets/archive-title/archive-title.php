@@ -7,6 +7,7 @@ use Elementor\Controls_Manager;
 defined( 'ABSPATH' ) || die();
 
 class Archive_Title extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Archive Title', 'zyre-elementor-addons' );
 	}
@@ -17,6 +18,10 @@ class Archive_Title extends Base {
 
 	public function get_keywords() {
 		return [ 'archive title', 'title', 'archive', 'archive info', 'archive heading', 'heading', 'archive name', 'category', 'tag' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

@@ -8,25 +8,21 @@ use Elementor\Group_Control_Css_Filter;
 defined( 'ABSPATH' ) || die();
 
 class Lottie_Animation extends Base {
-	/**
-	 * Widget Name
-	 */
+
 	public function get_title() {
 		return esc_html__( 'Lottie Animation', 'zyre-elementor-addons' );
 	}
 
-	/**
-	 * Widget Icon
-	 */
 	public function get_icon() {
 		return 'zy-fonticon zy-Lottie-Animations';
 	}
 
-	/**
-	 * Widget search keywords
-	 */
 	public function get_keywords() {
 		return [ 'lottie', 'animation', 'animations', 'svg animation', 'json animation' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

@@ -9,6 +9,7 @@ use Elementor\Group_Control_Image_Size;
 defined( 'ABSPATH' ) || die();
 
 class Post_Thumbnail extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Post Thumbnail', 'zyre-elementor-addons' );
 	}
@@ -19,6 +20,10 @@ class Post_Thumbnail extends Base {
 
 	public function get_keywords() {
 		return [ 'thumbnail', 'post thumbnail', 'post info', 'post', 'post data', 'post featured image', 'featured image', 'post image' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

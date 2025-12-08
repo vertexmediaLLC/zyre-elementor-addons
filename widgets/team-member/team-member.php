@@ -11,8 +11,7 @@ defined( 'ABSPATH' ) || die();
 
 class Team_Member extends Base {
 
-	use Social_Trait;
-	use Button_Trait;
+	use Social_Trait, Button_Trait;
 
 	public function get_title() {
 		return esc_html__( 'Team Member', 'zyre-elementor-addons' );
@@ -24,6 +23,10 @@ class Team_Member extends Base {
 
 	public function get_keywords() {
 		return [ 'team', 'member', 'team member', 'crew', 'staff', 'person', 'card', 'info' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

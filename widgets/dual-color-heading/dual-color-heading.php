@@ -20,6 +20,10 @@ class Dual_Color_Heading extends Base {
 		return [ 'dual heading', 'dual color heading', 'title', 'text', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	protected function register_content_controls() {
 		$this->start_controls_section(
 			'section_heading',

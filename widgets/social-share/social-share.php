@@ -23,6 +23,10 @@ class Social_Share extends Base {
 		return [ 'social', 'share', 'social share', 'icons', 'social icons', 'social links', 'links', 'facebook', 'fb', 'twitter', 'linkedin', 'pinterest', 'telegram', 'whatsapp' ];
 	}
 
+	public function get_custom_help_url() {
+		return $this->set_help_url();
+	}
+
 	private static function get_network_icon_data( $network_name ) {
 		$networks_class_dictionary = [
 			'pocket' => [

@@ -11,6 +11,7 @@ use ZyreAddons\Elementor\Controls\Select2;
 defined( 'ABSPATH' ) || die();
 
 class Post_Comments extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Post Comments', 'zyre-elementor-addons' );
 	}
@@ -21,6 +22,10 @@ class Post_Comments extends Base {
 
 	public function get_keywords() {
 		return [ 'comments', 'post comments', 'post info', 'comments form', 'comments list', 'reply', 'replies', 'post reply', 'reponse', 'respond', 'post response' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

@@ -11,14 +11,14 @@ class Subscription_Form extends Base {
 
 	private $settings;
 
-	public function get_title() {
-		return esc_html__( 'Subscription Form', 'zyre-elementor-addons' );
-	}
-
 	public function __construct( $data = [], $args = null ) {
 		parent::__construct( $data, $args );
 
 		$this->settings = zyre_get_credentials( 'mailchimp' );
+	}
+
+	public function get_title() {
+		return esc_html__( 'Subscription Form', 'zyre-elementor-addons' );
 	}
 
 	public function get_icon() {
@@ -27,6 +27,10 @@ class Subscription_Form extends Base {
 
 	public function get_keywords() {
 		return [ 'subscription form', 'email', 'mailchimp', 'mail', 'email list', 'subscription', 'subscribe', 'form', 'email template' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	/**

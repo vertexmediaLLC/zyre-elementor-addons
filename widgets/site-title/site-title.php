@@ -9,6 +9,7 @@ use Elementor\Group_Control_Text_Shadow;
 defined( 'ABSPATH' ) || die();
 
 class Site_Title extends Base {
+
 	public function get_title() {
 		return esc_html__( 'Site Title', 'zyre-elementor-addons' );
 	}
@@ -19,6 +20,10 @@ class Site_Title extends Base {
 
 	public function get_keywords() {
 		return [ 'site title', 'site info', 'site', 'title', 'brand name', 'brand' ];
+	}
+
+	public function get_custom_help_url() {
+		return $this->set_help_url();
 	}
 
 	// Widget Content controls
