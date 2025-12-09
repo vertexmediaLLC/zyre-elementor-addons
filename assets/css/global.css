@@ -113,7 +113,8 @@
 
 .zyre-addon .zy-align-center {align-items: center;}
 .zyre-addon .zy-align-stretch {align-items: stretch;}
-.zyre-addon .zy-align-start {align-items: start;}
+.zyre-addon .zy-align-start {align-items: flex-start;}
+.zyre-addon .zy-align-end {align-items: flex-end;}
 .zyre-addon .zy-self-center {align-self: center;}
 .zyre-addon .zy-self-start {align-self: flex-start;}
 .zyre-addon .zy-self-end {align-self: flex-end;}
