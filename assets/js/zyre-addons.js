@@ -34,7 +34,23 @@ function haObserveTarget(target, callback) {
     };
   }
 
+  function initFilterNav($scope, filterFn) {
+    var $filterNav = $scope.find('.zyre-js-filter-tabs'),
+      defaultFilter = $filterNav.data('default-filter');
+    if ($filterNav.length) {
+      $filterNav.on('click.onFilterNav', 'a', function (event) {
+        event.stopPropagation();
+        var $current = $(this);
+        $current.addClass('zyre-filter-tab--active').parent().siblings().find('.zyre-filter-tab--active').removeClass('zyre-filter-tab--active');
+        filterFn($current.data('filter'));
+      });
+      $filterNav.find('[data-filter="' + defaultFilter + '"]').click();
+    }
+  }
+
   $window.on("elementor/frontend/init", function () {
+	var ModuleHandler = elementorModules.frontend.handlers.Base;
+
     // Toggle Switcher
     var Toggle_Switcher = function Toggle_Switcher($scope) {
       var parent = $scope.find(".zyre-toggle-wrapper"),
@@ -544,6 +560,67 @@ function haObserveTarget(target, callback) {
 		});
 	};
 
+	// Image Grid
+	var ImageGrid = ModuleHandler.extend({
+		onInit: function onInit() {
+			ModuleHandler.prototype.onInit.apply(this, arguments);
+			this.run();
+			this.runFilter();
+			$window.on('resize', debounce(this.run.bind(this), 100));
+		},
+		getLayoutMode: function getLayoutMode() {
+			var layout = this.getElementSettings('layout');
+			return layout === 'even' ? 'masonry' : layout;
+		},
+		getDefaultSettings: function getDefaultSettings() {
+			return {
+			itemSelector: '.zyre-image-grid-item',
+			percentPosition: true,
+			layoutMode: this.getLayoutMode()
+			};
+		},
+		getDefaultElements: function getDefaultElements() {
+			return {
+			$container: this.findElement('.zyre-isotope')
+			};
+		},
+		getLightBoxSettings: function getLightBoxSettings() {
+			return {
+			key: 'imagegrid',
+			$element: this.$element,
+			selector: '.zyre-js-lightbox',
+			isEnabled: !!this.getElementSettings('enable_lightbox'),
+			disableOnTablet: !!this.getElementSettings('disable_lightbox_on_tablet'),
+			disableOnMobile: !!this.getElementSettings('disable_lightbox_on_mobile')
+			};
+		},
+		runFilter: function runFilter() {
+			var self = this;
+			var lbSettings = this.getLightBoxSettings();
+			initFilterNav(this.$element, function (filter) {
+			self.elements.$container.isotope({
+				filter: filter
+			});
+			if (filter !== '*') {
+				lbSettings.selector = filter;
+			}
+			// initPopupGallery(lbSettings);
+			});
+		},
+		onElementChange: function onElementChange(changedProp) {
+			if (['layout', 'image_height', 'columns', 'image_margin', 'enable_lightbox'].indexOf(changedProp) !== -1) {
+			this.run();
+			}
+		},
+		run: function run() {
+			var self = this;
+			self.elements.$container.isotope(self.getDefaultSettings()).imagesLoaded().progress(function () {
+			self.elements.$container.isotope('layout');
+			});
+			// initPopupGallery(self.getLightBoxSettings());
+		}
+	});
+
     // Function Handlers
     var fnHanlders = {
       "zyre-toggle.default": Toggle_Switcher,
@@ -565,5 +642,16 @@ function haObserveTarget(target, callback) {
         handlerFn
       );
     });
+
+	var classHandlers = {
+		"zyre-image-grid.default": ImageGrid,
+	};
+	$.each(classHandlers, function (widgetName, handlerClass) {
+		elementorFrontend.hooks.addAction("frontend/element_ready/" + widgetName, function ($scope) {
+			elementorFrontend.elementsHandler.addHandler(handlerClass, {
+				$element: $scope,
+			});
+		});
+	});
   });
 })(jQuery);

@@ -1,0 +1,4 @@
+.zyre-addon-image-grid .zyre-image-grid-item {
+    float: left;
+    width: calc(100%/var(--image-grid-column, 4));
+}

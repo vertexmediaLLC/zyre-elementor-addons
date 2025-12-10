@@ -11,6 +11,14 @@ defined( 'ABSPATH' ) || die();
 
 class Image_Grid extends Base {
 
+	/**
+	 * The default filter acts as the global filter
+	 * and can be overridden in the settings.
+	 *
+	 * @var string
+	 */
+	protected $_default_filter = '*';
+
 	public function get_title() {
 		return esc_html__( 'Image Grid', 'zyre-elementor-addons' );
 	}
@@ -20,7 +28,7 @@ class Image_Grid extends Base {
 	}
 
 	public function get_keywords() {
-		return [ 'image list', 'images lists', 'image grid', 'media grid', 'media filter', 'post grid', 'post filter', 'gallery', 'image gallery', 'media gallery', 'portfolio' ];
+		return [ 'image list', 'images lists', 'image grid', 'media grid', 'media filter', 'gallery', 'image gallery', 'media gallery', 'portfolio' ];
 	}
 
 	public function get_custom_help_url() {
@@ -158,6 +166,24 @@ class Image_Grid extends Base {
 			]
 		);
 
+		$this->add_control(
+			'layout',
+			[
+				'label'              => esc_html__( 'Layout', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SELECT,
+				'options'            => [
+					'even'    => esc_html__( 'Even', 'zyre-elementor-addons' ),
+					'fitRows' => esc_html__( 'Fit Rows', 'zyre-elementor-addons' ),
+					'masonry' => esc_html__( 'Masonry', 'zyre-elementor-addons' ),
+				],
+				'default'            => 'masonry',
+				'render'             => 'none',
+				'frontend_available' => true,
+				'prefix_class'       => 'zyre-image-grid-layout--',
+				'style_transfer'     => true,
+			]
+		);
+
 		$this->add_responsive_control(
 			'columns',
 			[
@@ -175,8 +201,9 @@ class Image_Grid extends Base {
 				'tablet_default' => '3',
 				'mobile_default' => '2',
 				'selectors'      => [
-					'{{WRAPPER}} .zyre-image-grid-items' => 'grid-template-columns: repeat({{VALUE}}, 1fr);',
+					'{{WRAPPER}} .zyre-image-grid-item' => '--image-grid-column: {{VALUE}};',
 				],
+				'style_transfer' => true,
 			]
 		);
 
@@ -248,10 +275,60 @@ class Image_Grid extends Base {
 		$this->add_control(
 			'filter_tabs_all',
 			[
-				'label'       => esc_html__( 'All Label', 'zyre-elementor-addons' ),
+				'label'       => esc_html__( 'Filter All Label', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'condition'   => [
 					'filter_tabs_show' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'filter_tabs_separator',
+			[
+				'label'     => esc_html__( 'Tabs Separator', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'label_on'  => esc_html__( 'On', 'zyre-elementor-addons' ),
+				'label_off' => esc_html__( 'Off', 'zyre-elementor-addons' ),
+				'condition'   => [
+					'filter_tabs_show' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'enable_lightbox',
+			[
+				'label'              => esc_html__( 'Enable Lightbox', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SWITCHER,
+				'separator'          => 'before',
+				'return_value'       => 'yes',
+				'frontend_available' => true,
+			]
+		);
+
+		$this->add_control(
+			'disable_lightbox_on_tablet',
+			[
+				'label'              => esc_html__( 'Disable On Tablet', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SWITCHER,
+				'return_value'       => 'yes',
+				'frontend_available' => true,
+				'condition'          => [
+					'enable_lightbox' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'disable_lightbox_on_mobile',
+			[
+				'label'              => esc_html__( 'Disable On Mobile', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SWITCHER,
+				'return_value'       => 'yes',
+				'frontend_available' => true,
+				'condition'          => [
+					'enable_lightbox' => 'yes',
 				],
 			]
 		);
@@ -260,6 +337,34 @@ class Image_Grid extends Base {
 	}
 
 	protected function register_style_controls() {
+	}
+
+	protected function __image_style_controls() {
+		$this->start_controls_section(
+			'section_style_image',
+			[
+				'label' => esc_html__( 'Image', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->set_style_controls(
+			'image',
+			[
+				'selector'  => '{{WRAPPER}} .zyre-image-grid-item',
+				'controls'  => [
+					'height' => [
+						'description' => esc_html__( 'Image height is only applicable for Even layout', 'zyre-elementor-addons' ),
+					],
+					'margin' => [],
+				],
+				'condition' => [
+					'layout' => 'even',
+				],
+			]
+		);
+
+		$this->end_controls_section();
 	}
 
 	protected function __general_style_controls() {
@@ -311,17 +416,16 @@ class Image_Grid extends Base {
 		$settings = $this->get_settings_for_display();
 
 		$show_filter_tabs = $settings['filter_tabs_show'];
+		$is_enable_lightbox = ( 'yes' === $settings['enable_lightbox'] );
 
 		$link_switch = ! empty( $settings['link_switch'] ) ? $settings['link_switch'] : 'image';
 		$display_category = ( 'yes' === $settings['category_display'] );
 
-		/* $this->add_render_attribute(
-			'items_container',
-			[
-				'class'         => 'zyre-image-grid-items',
-				'data-settings' => wp_json_encode( [] ),
-			],
-		); */
+		$this->add_render_attribute( 'items_wrap', 'class', 'zyre-image-grid-items zyre-isotope' );
+
+		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+			$this->add_render_attribute( 'items_wrap', 'class', 'zyre-isotope-' . $this->get_id() );
+		}
 
 		$content_display = $settings['content_display'] ?? '';
 
@@ -342,52 +446,59 @@ class Image_Grid extends Base {
 		}
 
 		if ( 'yes' === $show_filter_tabs ) {
-			$all_label = ! empty( $settings['filter_tabs_all'] ) ? $settings['filter_tabs_all'] : esc_html__( 'All', 'zyre-elementor-addons' );
-			?>
-			<div class="zyre-image-grid-filter-tabs zy-flex zy-align-center">
-				<span class="zyre-image-grid-filter-separator"></span>
-				<ul class="zy-flex zy-m-0 zy-list-none zy-gap-2">
-					<li>
-						<a href="javascript:;" class="category" data-filter="*">
-							<?php echo esc_html( $all_label ); ?>
-						</a>
-					</li>
-					<?php
-					foreach ( $settings['all_items'] as $index => $item ) {
-						if ( ! empty( $item['category'] ) ) {
-							$formatted_category = $this->format_category(  $item['category'] );
-							$category_key = 'category_' . $index;
-							
+			$filter_tabs = [];
+			foreach ( $settings['all_items'] as $index => $item ) {
+				if ( ! empty( $item['category'] ) ) {
+					$formatted_category = $this->format_category( $item['category'] );
+					$filter_tabs[$formatted_category] = [
+						'item_cat' => $item['category'],
+						'item_id'  => $item['_id'],
+					];
+				}
+			}
+			if ( ! empty( $filter_tabs ) ) :
+				?>
+				<div class="zyre-image-grid-filter-tabs zy-flex zy-align-center zy-gap-3">
+					<?php if ( 'yes' === $settings['filter_tabs_separator'] ) : ?>
+						<span class="zyre-image-grid-filter-separator zyre-image-grid-filter-separator zy-grow-1 zy-h-1 zy-bg-black"></span>
+					<?php endif; ?>
+					<ul class="zy-flex zy-m-0 zy-list-none zy-gap-2 zyre-js-filter-tabs" data-default-filter="<?php echo $this->_default_filter; ?>">
+						<?php if ( ! empty( $settings['filter_tabs_all'] ) ) : ?>
+							<li>
+								<a href="javascript:;" class="zyre-image-grid-filter-tab" data-filter="*"><?php echo esc_html( $settings['filter_tabs_all'] ); ?></a>
+							</li>
+						<?php endif; ?>
+						<?php
+						foreach ( $filter_tabs as $key => $tab ) {
 							$this->add_render_attribute(
-								$category_key,
+								$key,
 								'class',
 								[
 									'zyre-image-grid-filter-tab',
-									'elementor-repeater-item-' . $item['_id'],
+									'elementor-repeater-item-' . $tab['item_id'],
 								]
 							);
 
-							$slug = sprintf( '.%s', $formatted_category );
-
-							$this->add_render_attribute( $category_key, 'data-filter', $slug );
+							$slug = sprintf( '.%s', $key );
+							$this->add_render_attribute( $key, 'data-filter', $slug );
 							?>
 							<li>
-								<a href="javascript:;" <?php echo wp_kses_post( $this->get_render_attribute_string( $category_key ) ); ?>>
-									<?php echo wp_kses_post( $item['category'] ); ?>
-								</a>
+								<a href="javascript:;" <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>><?php echo esc_html( $tab['item_cat'] ); ?></a>
 							</li>
 							<?php
 						}
-					}
-					?>
-				</ul>
-			</div>
-			<?php
+						?>
+					</ul>
+				</div>
+				<?php
+			endif;
 		}
 		?>
 		
-		<div class="zyre-image-grid-items zy-grid">
+		<div <?php $this->print_render_attribute_string( 'items_wrap' ); ?>>
 			<?php
+			$items_total = count( $settings['all_items'] );
+
 			foreach ( $settings['all_items'] as $index => $item ) :
 				
 				$key = 'item_' . $index;
@@ -420,21 +531,41 @@ class Image_Grid extends Base {
 				?>
 
 				<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>>
-					<<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $image_link_key ) ); ?> class="zyre-image-grid-item-img-wrapper">
+					<<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $image_link_key ) ); ?> class="zyre-image-grid-item-img-wrapper zy-relative">
 						<?php
+						$url = $image['url'] ? $image['url'] : Utils::get_placeholder_image_src();
+						$img_html = sprintf( '<img src="%s" class="zyre-image-grid-item-img" alt="%s">',
+							esc_url( $url ),
+							esc_attr( $item['title'] )
+						);
+
 						if ( isset( $image['source'] ) && $image['id'] && isset( $settings['image_size'] ) ) :
-							echo wp_get_attachment_image(
+							$url = wp_get_attachment_image_src( $image['id'], 'full' );
+							$img_html = wp_get_attachment_image(
 								$image['id'],
 								$settings['image_size'],
 								[ 'class' => 'zyre-image-grid-item-img' ],
 							);
-						else :
-							$url = $image['url'] ? $image['url'] : Utils::get_placeholder_image_src();
-							printf( '<img src="%s" class="zyre-image-grid-item-img" alt="%s">',
-								esc_url( $url ),
-								esc_attr( $item['title'] )
-							);
 						endif;
+
+						echo $img_html;
+
+						if ( $is_enable_lightbox ) {
+							$lightbox_key = 'lightbox_' . $index;
+							$this->add_render_attribute(
+								$lightbox_key,
+								[
+									'href'                              => esc_url( $url ),
+									'class'                             => 'zyre-js-lightbox zy-absolute zy-index-1',
+									'data-elementor-open-lightbox'      => 'yes',
+									'data-elementor-lightbox-slideshow' => $items_total > 1 ? $this->get_id() : false,
+									'data-elementor-lightbox-title'     => esc_attr( $item['title'] ),
+								]
+							);
+							?>
+							<a <?php echo wp_kses_post( $this->get_render_attribute_string( $lightbox_key ) ); ?>>&times;</a>
+							<?php
+						}
 						?>
 					</<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?>>
 
@@ -475,6 +606,16 @@ class Image_Grid extends Base {
 			endforeach; 
 			?>
 		</div>
+		
 		<?php
+		/**
+		 * Zyre Isotope adjustment.
+		 *
+		 * This code may look unnecessary,
+		 * but it resolves a critical issue.
+		 */
+		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) :
+			printf( '<script>jQuery(".zyre-isotope-%s").isotope();</script>', $this->get_id() );
+		endif;
 	}
 }

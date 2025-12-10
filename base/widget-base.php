@@ -642,13 +642,14 @@ abstract class Base extends Widget_Base {
 
 					case 'height':
 					case 'min_height':
-						$allowed_props = [ 'height', 'min-height', 'max-height' ];
+						$allowed_props = ['height', 'min-height', 'max-height'];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'height';
 						$control_args = [
-							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Height', 'zyre-elementor-addons' ),
-							'size_units' => ! empty( $values['size_units'] ) ? $values['size_units'] : [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
-							'default'    => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [ 'unit' => 'px' ],
-							'range'      => ! empty( $values['range'] ) ? $values['range'] : [
+							'label'       => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Height', 'zyre-elementor-addons' ),
+							'description' => ! empty( $values['description'] ) ? esc_html( $values['description'] ) : '',
+							'size_units'  => ! empty( $values['size_units'] ) ? $values['size_units'] : ['px', '%', 'em', 'rem', 'vh', 'custom'],
+							'default'     => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : ['unit' => 'px'],
+							'range'       => ! empty( $values['range'] ) ? $values['range'] : [
 								'px'  => [
 									'max' => 1000,
 								],
@@ -659,11 +660,11 @@ abstract class Base extends Widget_Base {
 									'min' => 0.1,
 								],
 							],
-							'type'       => Controls_Manager::SLIDER,
-							'selectors'  => [
+							'type'        => Controls_Manager::SLIDER,
+							'selectors'   => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => "{$css_property}: {{SIZE}}{{UNIT}};",
 							],
-							'condition'  => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
+							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
 						if ( ! empty( $values['separator'] ) ) {
 							$control_args['separator'] = $values['separator'];

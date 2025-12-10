@@ -787,6 +787,10 @@ class Widgets_Manager {
 					],
 				],
 				'js'        => [],
+				'libs'      => [
+					'css'   => [ 'e-swiper' ],
+					'js'    => [ 'zyre-isotope', 'imagesloaded' ]
+				],
 			],
 			'logo-grid'  => [
 				'cat'       => 'general',

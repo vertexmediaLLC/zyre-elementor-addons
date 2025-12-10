@@ -121,29 +121,6 @@ class Assets_Manager {
 			ZYRE_ADDONS_VERSION
 		);
 
-		// Carousel and Slider.
-		wp_register_style(
-			'slick',
-			ZYRE_ADDONS_ASSETS . 'libs/slick/slick.css',
-			[ 'zyre-elementor-addons-widgets' ],
-			ZYRE_ADDONS_VERSION
-		);
-
-		wp_register_style(
-			'slick-theme',
-			ZYRE_ADDONS_ASSETS . 'libs/slick/slick-theme.css',
-			[ 'slick' ],
-			ZYRE_ADDONS_VERSION
-		);
-
-		wp_register_script(
-			'jquery-slick',
-			ZYRE_ADDONS_ASSETS . 'libs/slick/slick.min.js',
-			array( 'jquery' ),
-			ZYRE_ADDONS_VERSION,
-			true
-		);
-
 		// Sharer JS
 		wp_register_script(
 			'sharer-js',
@@ -229,6 +206,15 @@ class Assets_Manager {
 		wp_register_script(
 			'zyre-jquery-downcount',
 			ZYRE_ADDONS_ASSETS . 'js/jquery-downcount.js',
+			[ 'jquery' ],
+			ZYRE_ADDONS_VERSION,
+			true
+		);
+
+		// Isotope
+		wp_register_script(
+			'zyre-isotope',
+			ZYRE_ADDONS_ASSETS . 'js/isotope.pkgd.min.js',
 			[ 'jquery' ],
 			ZYRE_ADDONS_VERSION,
 			true
