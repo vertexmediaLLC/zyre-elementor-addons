@@ -569,55 +569,41 @@ function haObserveTarget(target, callback) {
 			$window.on('resize', debounce(this.run.bind(this), 100));
 		},
 		getLayoutMode: function getLayoutMode() {
-			var layout = this.getElementSettings('layout');
-			return layout === 'even' ? 'masonry' : layout;
+			// var layout = this.getElementSettings('layout');
+			// return layout === 'even' ? 'masonry' : layout;
 		},
 		getDefaultSettings: function getDefaultSettings() {
 			return {
-			itemSelector: '.zyre-image-grid-item',
-			percentPosition: true,
-			layoutMode: this.getLayoutMode()
+				itemSelector: '.zyre-image-grid-item',
+				// layoutMode: this.getLayoutMode(),
+				masonry: {
+					columnWidth: 1,
+				},
 			};
 		},
 		getDefaultElements: function getDefaultElements() {
 			return {
-			$container: this.findElement('.zyre-isotope')
-			};
-		},
-		getLightBoxSettings: function getLightBoxSettings() {
-			return {
-			key: 'imagegrid',
-			$element: this.$element,
-			selector: '.zyre-js-lightbox',
-			isEnabled: !!this.getElementSettings('enable_lightbox'),
-			disableOnTablet: !!this.getElementSettings('disable_lightbox_on_tablet'),
-			disableOnMobile: !!this.getElementSettings('disable_lightbox_on_mobile')
+				$container: this.findElement('.zyre-isotope')
 			};
 		},
 		runFilter: function runFilter() {
 			var self = this;
-			var lbSettings = this.getLightBoxSettings();
 			initFilterNav(this.$element, function (filter) {
-			self.elements.$container.isotope({
-				filter: filter
-			});
-			if (filter !== '*') {
-				lbSettings.selector = filter;
-			}
-			// initPopupGallery(lbSettings);
+				self.elements.$container.isotope({
+					filter: filter
+				});
 			});
 		},
 		onElementChange: function onElementChange(changedProp) {
-			if (['layout', 'image_height', 'columns', 'image_margin', 'enable_lightbox'].indexOf(changedProp) !== -1) {
-			this.run();
+			if (['image_height', 'columns', 'image_margin', 'enable_lightbox'].indexOf(changedProp) !== -1) {
+				this.run();
 			}
 		},
 		run: function run() {
 			var self = this;
 			self.elements.$container.isotope(self.getDefaultSettings()).imagesLoaded().progress(function () {
-			self.elements.$container.isotope('layout');
+				self.elements.$container.isotope('layout');
 			});
-			// initPopupGallery(self.getLightBoxSettings());
 		}
 	});
 

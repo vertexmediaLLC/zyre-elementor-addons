@@ -1,4 +1,17 @@
 .zyre-addon-image-grid .zyre-image-grid-item {
+	--image-grid-column: 3;
+	text-decoration: none;
+	outline: 0;
     float: left;
-    width: calc(100%/var(--image-grid-column, 4));
+    width: calc(100% / var(--image-grid-column));
+}
+
+.zyre-addon-image-grid .zyre-image-grid-item-img-wrapper {
+	height: 100%;
+}
+
+.zyre-addon-image-grid .zyre-image-grid-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }

@@ -47,20 +47,13 @@ class Image_Grid extends Base {
 		// Pre-styles
 		$this->set_prestyle_controls();
 		
-		$this->end_controls_section();
-
 		$this->__items_content();
+
+		$this->end_controls_section();
 	}
 
 	protected function __items_content() {
-		$this->start_controls_section(
-			'section_content_items',
-			[
-				'label' => esc_html__( 'Items', 'zyre-elementor-addons' ),
-				'tab'   => Controls_Manager::TAB_CONTENT,
-			]
-		);
-
+	
 		$repeater = new Repeater();
 
 		$repeater->add_control(
@@ -86,16 +79,6 @@ class Image_Grid extends Base {
 		);
 
 		$repeater->add_control(
-			'description',
-			[
-				'label'       => esc_html__( 'Description', 'zyre-elementor-addons' ),
-				'type'        => Controls_Manager::TEXTAREA,
-				'dynamic'     => [ 'active' => true ],
-				'label_block' => true,
-			]
-		);
-
-		$repeater->add_control(
 			'category',
 			[
 				'label'       => esc_html__( 'Category', 'zyre-elementor-addons' ),
@@ -107,6 +90,16 @@ class Image_Grid extends Base {
 		);
 
 		$repeater->add_control(
+			'description',
+			[
+				'label'       => esc_html__( 'Description', 'zyre-elementor-addons' ),
+				'type'        => Controls_Manager::TEXTAREA,
+				'dynamic'     => [ 'active' => true ],
+				'label_block' => true,
+			]
+		);
+
+		$repeater->add_control(
 			'link',
 			[
 				'label'       => esc_html__( 'Link', 'zyre-elementor-addons' ),
@@ -114,6 +107,24 @@ class Image_Grid extends Base {
 				'dynamic'     => [ 'active' => true ],
 				'placeholder' => 'https://example.com/',
 				'label_block' => true,
+			]
+		);
+
+		$repeater->add_responsive_control(
+			'width',
+			[
+				'label'          => esc_html__( 'Span Width', 'zyre-elementor-addons' ),
+				'type'           => Controls_Manager::NUMBER,
+				'min'            => 1,
+				'max'            => 12,
+				'default'        => 1,
+				'tablet_default' => 1,
+        		'mobile_default' => 1,
+				'selectors'      => [
+					'{{WRAPPER}} {{CURRENT_ITEM}}.zyre-image-grid-item' => 'width: calc((100% / var(--image-grid-column)) * {{VALUE}});',
+				],
+				'render_type'    => 'template',
+				'style_transfer' => true,
 			]
 		);
 
@@ -166,30 +177,12 @@ class Image_Grid extends Base {
 			]
 		);
 
-		$this->add_control(
-			'layout',
-			[
-				'label'              => esc_html__( 'Layout', 'zyre-elementor-addons' ),
-				'type'               => Controls_Manager::SELECT,
-				'options'            => [
-					'even'    => esc_html__( 'Even', 'zyre-elementor-addons' ),
-					'fitRows' => esc_html__( 'Fit Rows', 'zyre-elementor-addons' ),
-					'masonry' => esc_html__( 'Masonry', 'zyre-elementor-addons' ),
-				],
-				'default'            => 'masonry',
-				'render'             => 'none',
-				'frontend_available' => true,
-				'prefix_class'       => 'zyre-image-grid-layout--',
-				'style_transfer'     => true,
-			]
-		);
-
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label'          => esc_html__( 'Columns', 'zyre-elementor-addons' ),
-				'type'           => Controls_Manager::SELECT,
-				'options'        => [
+				'label'              => esc_html__( 'Columns', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SELECT,
+				'options'            => [
 					'1' => esc_html__( 'Column - 1', 'zyre-elementor-addons' ),
 					'2' => esc_html__( 'Columns - 2', 'zyre-elementor-addons' ),
 					'3' => esc_html__( 'Columns - 3', 'zyre-elementor-addons' ),
@@ -197,13 +190,14 @@ class Image_Grid extends Base {
 					'5' => esc_html__( 'Columns - 5', 'zyre-elementor-addons' ),
 					'6' => esc_html__( 'Columns - 6', 'zyre-elementor-addons' ),
 				],
-				'default'        => '4',
-				'tablet_default' => '3',
-				'mobile_default' => '2',
-				'selectors'      => [
+				'default'            => '4',
+				'tablet_default'     => '3',
+				'mobile_default'     => '2',
+				'selectors'          => [
 					'{{WRAPPER}} .zyre-image-grid-item' => '--image-grid-column: {{VALUE}};',
 				],
-				'style_transfer' => true,
+				'frontend_available' => true,
+				'style_transfer'     => true,
 			]
 		);
 
@@ -251,13 +245,15 @@ class Image_Grid extends Base {
 		$this->add_control(
 			'content_display',
 			[
-				'label'   => esc_html__( 'Content Display', 'zyre-elementor-addons' ),
-				'type'    => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
+				'label'        => esc_html__( 'Content Display', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SELECT,
+				'default'      => '',
+				'options'      => [
 					''        => esc_html__( 'Default', 'zyre-elementor-addons' ),
 					'overlay' => esc_html__( 'Overlay', 'zyre-elementor-addons' ),
 				],
+				'prefix_class' => 'zyre-image-grid-content-display--',
+				'render_type'  => 'template',
 			]
 		);
 
@@ -276,6 +272,7 @@ class Image_Grid extends Base {
 			'filter_tabs_all',
 			[
 				'label'       => esc_html__( 'Filter All Label', 'zyre-elementor-addons' ),
+				'default'     => esc_html__( 'All', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'condition'   => [
 					'filter_tabs_show' => 'yes',
@@ -290,7 +287,7 @@ class Image_Grid extends Base {
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => esc_html__( 'On', 'zyre-elementor-addons' ),
 				'label_off' => esc_html__( 'Off', 'zyre-elementor-addons' ),
-				'condition'   => [
+				'condition' => [
 					'filter_tabs_show' => 'yes',
 				],
 			]
@@ -306,37 +303,47 @@ class Image_Grid extends Base {
 				'frontend_available' => true,
 			]
 		);
+	}
 
-		$this->add_control(
-			'disable_lightbox_on_tablet',
-			[
-				'label'              => esc_html__( 'Disable On Tablet', 'zyre-elementor-addons' ),
-				'type'               => Controls_Manager::SWITCHER,
-				'return_value'       => 'yes',
-				'frontend_available' => true,
-				'condition'          => [
-					'enable_lightbox' => 'yes',
-				],
-			]
-		);
+	protected function register_style_controls() {
+		$this->__general_style_controls();
+		$this->__item_style_controls();
+		$this->__image_style_controls();
+	}
 
-		$this->add_control(
-			'disable_lightbox_on_mobile',
+	protected function __general_style_controls() {
+		$this->start_controls_section(
+			'section_general_style',
 			[
-				'label'              => esc_html__( 'Disable On Mobile', 'zyre-elementor-addons' ),
-				'type'               => Controls_Manager::SWITCHER,
-				'return_value'       => 'yes',
-				'frontend_available' => true,
-				'condition'          => [
-					'enable_lightbox' => 'yes',
-				],
+				'label' => esc_html__( 'General', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+
 			]
 		);
 
 		$this->end_controls_section();
 	}
 
-	protected function register_style_controls() {
+	protected function __item_style_controls() {
+		$this->start_controls_section(
+			'section_style_item',
+			[
+				'label' => esc_html__( 'Grid Item', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->set_style_controls(
+			'item',
+			[
+				'selector'  => '{{WRAPPER}} .zyre-image-grid-item',
+				'controls'  => [
+					'height' => [],
+				],
+			]
+		);
+
+		$this->end_controls_section();
 	}
 
 	protected function __image_style_controls() {
@@ -358,22 +365,6 @@ class Image_Grid extends Base {
 					],
 					'margin' => [],
 				],
-				'condition' => [
-					'layout' => 'even',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-	}
-
-	protected function __general_style_controls() {
-		$this->start_controls_section(
-			'section_general_style',
-			[
-				'label' => esc_html__( 'General', 'zyre-elementor-addons' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-
 			]
 		);
 
@@ -441,7 +432,7 @@ class Image_Grid extends Base {
 			$this->add_render_attribute(
 				'content',
 				'class',
-				'zyre-image-grid-item-content-overlay zy-absolute zy-w-100 zy-h-100 zy-top-0 zy-left-0 zy-content-end zy-p-3 zy-index-1',
+				'zy-absolute zy-w-100 zy-h-100 zy-top-0 zy-left-0 zy-content-end zy-p-3 zy-index-1',
 			);
 		}
 
