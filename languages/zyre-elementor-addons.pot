@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-11T11:58:32+00:00\n"
+"POT-Creation-Date: 2025-12-13T09:37:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -78,7 +78,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:182
 #: widgets/featured-banner/featured-banner.php:203
 #: widgets/featured-banner/featured-banner.php:1947
-#: widgets/image-grid/image-grid.php:252
+#: widgets/image-grid/image-grid.php:265
 #: widgets/image-heading/image-heading.php:390
 #: widgets/news-ticker/news-ticker.php:380
 #: widgets/page-title/page-title.php:49
@@ -526,8 +526,8 @@ msgstr ""
 #: widgets/advance-heading/advance-heading.php:142
 #: widgets/author-box/author-box.php:63
 #: widgets/author-box/author-box.php:1022
-#: widgets/flipbox/flipbox.php:728
-#: widgets/flipbox/flipbox.php:877
+#: widgets/flipbox/flipbox.php:729
+#: widgets/flipbox/flipbox.php:880
 #: widgets/post-navigation/post-navigation.php:284
 msgid "Gap"
 msgstr ""
@@ -657,6 +657,7 @@ msgstr ""
 #: widgets/heading/heading.php:669
 #: widgets/iconbox/iconbox.php:338
 #: widgets/iconbox/iconbox.php:415
+#: widgets/image-grid/image-grid.php:316
 #: widgets/image-heading/image-heading.php:399
 #: widgets/infobox/infobox.php:167
 #: widgets/infobox/infobox.php:556
@@ -875,6 +876,7 @@ msgstr ""
 #: widgets/heading/heading.php:677
 #: widgets/iconbox/iconbox.php:346
 #: widgets/iconbox/iconbox.php:423
+#: widgets/image-grid/image-grid.php:320
 #: widgets/image-heading/image-heading.php:400
 #: widgets/infobox/infobox.php:175
 #: widgets/infobox/infobox.php:564
@@ -948,6 +950,7 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:863
 #: widgets/business-hour/business-hour.php:908
 #: widgets/business-hour/business-hour.php:988
+#: widgets/image-grid/image-grid.php:438
 #: widgets/news-ticker/news-ticker.php:738
 #: widgets/post-comments/post-comments.php:854
 #: widgets/post-comments/post-comments.php:879
@@ -1215,9 +1218,9 @@ msgstr ""
 #: widgets/flipbox/flipbox.php:261
 #: widgets/fun-fact/fun-fact.php:261
 #: widgets/fun-fact/fun-fact.php:593
-#: widgets/image-grid/image-grid.php:224
-#: widgets/image-grid/image-grid.php:265
-#: widgets/image-grid/image-grid.php:288
+#: widgets/image-grid/image-grid.php:237
+#: widgets/image-grid/image-grid.php:278
+#: widgets/image-grid/image-grid.php:301
 #: widgets/post-meta/post-meta.php:328
 #: widgets/post-meta/post-meta.php:639
 #: widgets/site-logo/site-logo.php:85
@@ -1238,9 +1241,9 @@ msgstr ""
 #: widgets/flipbox/flipbox.php:262
 #: widgets/fun-fact/fun-fact.php:262
 #: widgets/fun-fact/fun-fact.php:594
-#: widgets/image-grid/image-grid.php:225
-#: widgets/image-grid/image-grid.php:266
-#: widgets/image-grid/image-grid.php:289
+#: widgets/image-grid/image-grid.php:238
+#: widgets/image-grid/image-grid.php:279
+#: widgets/image-grid/image-grid.php:302
 #: widgets/post-meta/post-meta.php:329
 #: widgets/post-meta/post-meta.php:638
 #: widgets/site-logo/site-logo.php:86
@@ -1581,8 +1584,8 @@ msgstr ""
 #: widgets/dual-color-heading/dual-color-heading.php:252
 #: widgets/dual-color-heading/dual-color-heading.php:278
 #: widgets/featured-banner/featured-banner.php:2120
-#: widgets/flipbox/flipbox.php:885
-#: widgets/flipbox/flipbox.php:926
+#: widgets/flipbox/flipbox.php:888
+#: widgets/flipbox/flipbox.php:929
 #: widgets/gradient-heading/gradient-heading.php:351
 #: widgets/gradient-heading/gradient-heading.php:377
 #: widgets/heading/heading.php:214
@@ -1848,7 +1851,7 @@ msgstr ""
 #: classes/widgets-manager.php:727
 #: widgets/featured-banner/featured-banner.php:894
 #: widgets/flipbox/flipbox.php:587
-#: widgets/image-grid/image-grid.php:253
+#: widgets/image-grid/image-grid.php:266
 msgid "Overlay"
 msgstr ""
 
@@ -1857,7 +1860,7 @@ msgid "Modern-2"
 msgstr ""
 
 #: classes/widgets-manager.php:759
-#: widgets/image-grid/image-grid.php:23
+#: widgets/image-grid/image-grid.php:24
 msgid "Image Grid"
 msgstr ""
 
@@ -2192,8 +2195,7 @@ msgstr ""
 #: widgets/dual-color-heading/dual-color-heading.php:159
 #: widgets/feature-list/feature-list.php:59
 #: widgets/flipbox/flipbox.php:343
-#: widgets/image-grid/image-grid.php:42
-#: widgets/image-grid/image-grid.php:318
+#: widgets/image-grid/image-grid.php:43
 #: widgets/image-list/image-list.php:60
 #: widgets/infobox/infobox.php:380
 #: widgets/list-group/list-group.php:61
@@ -2503,7 +2505,7 @@ msgid "Archive"
 msgstr ""
 
 #: modules/theme-builder/module.php:529
-#: widgets/image-grid/image-grid.php:275
+#: widgets/image-grid/image-grid.php:288
 msgid "All"
 msgstr ""
 
@@ -2526,6 +2528,7 @@ msgstr ""
 #: widgets/advance-toggle/advance-toggle.php:480
 #: widgets/advance-toggle/advance-toggle.php:598
 #: widgets/cf7/cf7.php:232
+#: widgets/image-grid/image-grid.php:511
 #: widgets/menu/menu.php:444
 #: widgets/menu/menu.php:809
 #: widgets/menu/menu.php:1163
@@ -2935,7 +2938,7 @@ msgstr ""
 #: traits/list-item-trait.php:93
 #: traits/social-trait.php:116
 #: traits/swiper-trait.php:108
-#: widgets/image-grid/image-grid.php:105
+#: widgets/image-grid/image-grid.php:99
 #: widgets/lottie-animation/lottie-animation.php:113
 #: widgets/lottie-animation/lottie-animation.php:128
 #: widgets/page-title/page-title.php:45
@@ -2973,7 +2976,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:638
 #: widgets/flipbox/flipbox.php:432
 #: widgets/flipbox/flipbox.php:476
-#: widgets/flipbox/flipbox.php:713
+#: widgets/flipbox/flipbox.php:714
 #: widgets/fun-fact/fun-fact.php:58
 #: widgets/fun-fact/fun-fact.php:112
 #: widgets/fun-fact/fun-fact.php:639
@@ -3144,6 +3147,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:447
 #: widgets/iconbox/iconbox.php:756
 #: widgets/image-carousel/image-carousel.php:168
+#: widgets/image-grid/image-grid.php:466
 #: widgets/image-heading/image-heading.php:647
 #: widgets/infobox/infobox.php:391
 #: widgets/logo-carousel/logo-carousel.php:177
@@ -3220,6 +3224,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:473
 #: widgets/iconbox/iconbox.php:777
 #: widgets/image-carousel/image-carousel.php:190
+#: widgets/image-grid/image-grid.php:488
 #: widgets/image-heading/image-heading.php:673
 #: widgets/infobox/infobox.php:419
 #: widgets/logo-carousel/logo-carousel.php:199
@@ -3298,7 +3303,7 @@ msgstr ""
 #: widgets/fun-fact/fun-fact.php:62
 #: widgets/fun-fact/fun-fact.php:75
 #: widgets/image-carousel/image-carousel.php:490
-#: widgets/image-grid/image-grid.php:353
+#: widgets/image-grid/image-grid.php:600
 #: widgets/infobox/infobox.php:96
 #: widgets/infobox/infobox.php:123
 #: widgets/testimonial/testimonial.php:63
@@ -3331,7 +3336,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:405
 #: widgets/featured-banner/featured-banner.php:1546
 #: widgets/flipbox/flipbox.php:493
-#: widgets/flipbox/flipbox.php:863
+#: widgets/flipbox/flipbox.php:866
 #: widgets/fun-fact/fun-fact.php:305
 #: widgets/fun-fact/fun-fact.php:626
 #: widgets/gradient-heading/gradient-heading.php:173
@@ -3341,7 +3346,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:70
 #: widgets/iconbox/iconbox.php:665
 #: widgets/image-carousel/image-carousel.php:457
-#: widgets/image-grid/image-grid.php:74
+#: widgets/image-grid/image-grid.php:68
 #: widgets/image-list/image-list.php:106
 #: widgets/infobox/infobox.php:251
 #: widgets/infobox/infobox.php:708
@@ -3393,12 +3398,12 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:449
 #: widgets/featured-banner/featured-banner.php:1597
 #: widgets/flipbox/flipbox.php:511
-#: widgets/flipbox/flipbox.php:911
+#: widgets/flipbox/flipbox.php:914
 #: widgets/heading/heading.php:176
 #: widgets/heading/heading.php:305
 #: widgets/iconbox/iconbox.php:135
 #: widgets/iconbox/iconbox.php:705
-#: widgets/image-grid/image-grid.php:95
+#: widgets/image-grid/image-grid.php:89
 #: widgets/image-list/image-list.php:126
 #: widgets/infobox/infobox.php:304
 #: widgets/infobox/infobox.php:728
@@ -3456,7 +3461,7 @@ msgstr ""
 #: traits/social-trait.php:401
 #: widgets/archive-posts/archive-posts.php:65
 #: widgets/business-hour/business-hour.php:648
-#: widgets/image-grid/image-grid.php:183
+#: widgets/image-grid/image-grid.php:196
 #: widgets/logo-grid/logo-grid.php:188
 #: widgets/post-grid/post-grid.php:57
 #: widgets/social-share/social-share.php:591
@@ -4190,6 +4195,7 @@ msgstr ""
 #: widgets/advance-toggle/advance-toggle.php:321
 #: widgets/archive-posts/archive-posts.php:905
 #: widgets/archive-posts/archive-posts.php:1115
+#: widgets/image-grid/image-grid.php:376
 #: widgets/news-ticker/news-ticker.php:704
 #: widgets/post-grid/post-grid.php:1152
 #: widgets/post-grid/post-grid.php:1354
@@ -5006,37 +5012,37 @@ msgid "This is placeholder text. To display the real description for the archive
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:71
-#: widgets/image-grid/image-grid.php:186
+#: widgets/image-grid/image-grid.php:199
 #: widgets/post-grid/post-grid.php:60
 msgid "Column - 1"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:72
-#: widgets/image-grid/image-grid.php:187
+#: widgets/image-grid/image-grid.php:200
 #: widgets/post-grid/post-grid.php:61
 msgid "Columns - 2"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:73
-#: widgets/image-grid/image-grid.php:188
+#: widgets/image-grid/image-grid.php:201
 #: widgets/post-grid/post-grid.php:62
 msgid "Columns - 3"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:74
-#: widgets/image-grid/image-grid.php:189
+#: widgets/image-grid/image-grid.php:202
 #: widgets/post-grid/post-grid.php:63
 msgid "Columns - 4"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:75
-#: widgets/image-grid/image-grid.php:190
+#: widgets/image-grid/image-grid.php:203
 #: widgets/post-grid/post-grid.php:64
 msgid "Columns - 5"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:76
-#: widgets/image-grid/image-grid.php:191
+#: widgets/image-grid/image-grid.php:204
 #: widgets/post-grid/post-grid.php:65
 msgid "Columns - 6"
 msgstr ""
@@ -5084,7 +5090,7 @@ msgid "Date"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:274
-#: widgets/image-grid/image-grid.php:84
+#: widgets/image-grid/image-grid.php:78
 #: widgets/post-grid/post-grid.php:786
 #: widgets/post-meta/post-meta.php:58
 msgid "Category"
@@ -5947,7 +5953,7 @@ msgstr ""
 #: widgets/drop-cap/drop-cap.php:42
 #: widgets/featured-banner/featured-banner.php:61
 #: widgets/featured-banner/featured-banner.php:1137
-#: widgets/flipbox/flipbox.php:850
+#: widgets/flipbox/flipbox.php:851
 #: widgets/fun-fact/fun-fact.php:522
 #: widgets/iconbox/iconbox.php:582
 #: widgets/image-carousel/image-carousel.php:419
@@ -6678,24 +6684,24 @@ msgstr ""
 msgid "p"
 msgstr ""
 
-#: widgets/flipbox/flipbox.php:774
+#: widgets/flipbox/flipbox.php:775
 #: widgets/iconbox/iconbox.php:322
 #: widgets/infobox/infobox.php:537
 msgid "Icon Width"
 msgstr ""
 
-#: widgets/flipbox/flipbox.php:777
+#: widgets/flipbox/flipbox.php:778
 #: widgets/iconbox/iconbox.php:325
 #: widgets/infobox/infobox.php:540
 msgid "Icon Height"
 msgstr ""
 
-#: widgets/flipbox/flipbox.php:790
+#: widgets/flipbox/flipbox.php:791
 #: widgets/iconbox/iconbox.php:543
 msgid "Icon Padding"
 msgstr ""
 
-#: widgets/flipbox/flipbox.php:811
+#: widgets/flipbox/flipbox.php:812
 #: widgets/testimonial/testimonial.php:571
 msgid "Icon Rotate"
 msgstr ""
@@ -6999,77 +7005,95 @@ msgstr ""
 msgid "Fit Image as"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:62
+#: widgets/image-grid/image-grid.php:56
 msgid "Upload Image"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:87
+#: widgets/image-grid/image-grid.php:81
 msgid "Separate multiple categories with commas ','"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:116
+#: widgets/image-grid/image-grid.php:110
 msgid "Span Width"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:134
+#: widgets/image-grid/image-grid.php:128
+msgid "Span Height"
+msgstr ""
+
+#: widgets/image-grid/image-grid.php:129
+msgid "Works if “Content Display” is set to “Overlay”"
+msgstr ""
+
+#: widgets/image-grid/image-grid.php:147
 msgid "All Items"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:207
+#: widgets/image-grid/image-grid.php:220
 msgid "Set Link to"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:211
+#: widgets/image-grid/image-grid.php:224
 msgid "Image Only"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:212
+#: widgets/image-grid/image-grid.php:225
 msgid "Title Only"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:213
+#: widgets/image-grid/image-grid.php:226
 msgid "Both Title & Image"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:214
+#: widgets/image-grid/image-grid.php:227
 msgid "Item Only"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:222
+#: widgets/image-grid/image-grid.php:235
 msgid "Display Category"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:232
+#: widgets/image-grid/image-grid.php:245
 msgid "Category Order"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:248
+#: widgets/image-grid/image-grid.php:261
 #: widgets/post-grid/post-grid.php:366
 msgid "Content Display"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:263
+#: widgets/image-grid/image-grid.php:276
+#: widgets/image-grid/image-grid.php:427
 msgid "Filter Tabs"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:274
+#: widgets/image-grid/image-grid.php:287
 msgid "Filter All Label"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:286
+#: widgets/image-grid/image-grid.php:299
+#: widgets/image-grid/image-grid.php:398
 msgid "Tabs Separator"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:299
+#: widgets/image-grid/image-grid.php:312
+msgid "Separator Position"
+msgstr ""
+
+#: widgets/image-grid/image-grid.php:334
 msgid "Enable Lightbox"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:331
-msgid "Grid Item"
+#: widgets/image-grid/image-grid.php:358
+msgid "Tabs Wrapper"
 msgstr ""
 
-#: widgets/image-grid/image-grid.php:364
-msgid "Image height is only applicable for Even layout"
+#: widgets/image-grid/image-grid.php:539
+msgid "Grid Wrap"
+msgstr ""
+
+#: widgets/image-grid/image-grid.php:567
+msgid "Grid Item"
 msgstr ""
 
 #: widgets/image-heading/image-heading.php:32

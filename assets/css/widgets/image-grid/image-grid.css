@@ -6,6 +6,11 @@
     width: calc(100% / var(--image-grid-column));
 }
 
+.zyre-image-grid-content-display--overlay .zyre-image-grid-item {
+	--height: 356px;
+	height: calc(var(--height) * var(--item-span-height, 1));
+}
+
 .zyre-addon-image-grid .zyre-image-grid-item-img-wrapper {
 	height: 100%;
 }
@@ -13,5 +18,35 @@
 .zyre-addon-image-grid .zyre-image-grid-item img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+}
+
+.zyre-addon-image-grid .zyre-image-grid-filter-tab {
+	display: inline-flex;
+}
+
+.zyre-addon-image-grid .zyre-image-grid-open-lightbox {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    align-content: center;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+	z-index: 2;
+	opacity: 0;
+	transition: var(--zy-transition);
+}
+
+.zyre-addon-image-grid .zyre-image-grid-open-lightbox svg {
+	fill: #fff;
+	margin: 0 auto;
+}
+
+.zyre-addon-image-grid .zyre-image-grid-item:hover .zyre-image-grid-open-lightbox {
+	opacity: 1;
 }

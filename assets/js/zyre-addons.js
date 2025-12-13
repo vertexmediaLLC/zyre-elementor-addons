@@ -595,7 +595,7 @@ function haObserveTarget(target, callback) {
 			});
 		},
 		onElementChange: function onElementChange(changedProp) {
-			if (['image_height', 'columns', 'image_margin', 'enable_lightbox'].indexOf(changedProp) !== -1) {
+			if (['item_height', 'item_padding', 'items_wrap_margin', 'image_height', 'columns', 'columns_tablet', 'columns_mobile', 'enable_lightbox'].indexOf(changedProp) !== -1) {
 				this.run();
 			}
 		},

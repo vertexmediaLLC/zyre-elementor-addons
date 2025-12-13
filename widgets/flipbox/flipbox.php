@@ -698,6 +698,7 @@ class FlipBox extends Base {
 					'border_radius' => [
 						'selector' => "{{WRAPPER}} .zyre-flipbox-{$class_base} .zyre-flipbox-image img",
 					],
+					'padding' => [],
 				],
 				'condition' => [
 					$prefix . '_media_type'   => 'image',
@@ -851,7 +852,9 @@ class FlipBox extends Base {
 						'separator' => 'before',
 					],
 					'bg_color' => [],
+					'border'   => [],
 					'padding'  => [],
+					'align'    => [],
 				],
 			],
 		);
