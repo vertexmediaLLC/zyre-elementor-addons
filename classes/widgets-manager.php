@@ -780,11 +780,6 @@ class Widgets_Manager {
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-four.jpg' ),
 					],
-					'five' => [
-						'name'      => esc_html__( 'With Title', 'zyre-elementor-addons' ),
-						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-five.jpg' ),
-					],
 				],
 				'js'        => [],
 				'libs'      => [

@@ -375,6 +375,11 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'color':
+					case 'color_1':
+					case 'color_2':
+					case 'color_3':
+					case 'color_4':
+					case 'color_5':
 					case 'color_hover':
 					case 'text_color':
 						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';

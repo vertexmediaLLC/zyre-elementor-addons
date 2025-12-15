@@ -217,13 +217,14 @@ class Image_Grid extends Base {
 		$this->add_control(
 			'link_switch',
 			[
-				'label'   => esc_html__( 'Set Link to', 'zyre-elementor-addons' ),
+				'label'       => esc_html__( 'Set Link to', 'zyre-elementor-addons' ),
 				'description' => esc_html__( 'Ensure the Lightbox is disabled for Image Only or Both Title & Image.', 'zyre-elementor-addons' ),
-				'type'    => Controls_Manager::SELECT,
-				'default' => 'image',
-				'options' => [
+				'type'        => Controls_Manager::SELECT,
+				'default'     => 'image',
+				'options'     => [
 					'image'       => esc_html__( 'Image Only', 'zyre-elementor-addons' ),
 					'title'       => esc_html__( 'Title Only', 'zyre-elementor-addons' ),
+					'content'     => esc_html__( 'Content', 'zyre-elementor-addons' ),
 					'image_title' => esc_html__( 'Both Title & Image', 'zyre-elementor-addons' ),
 				],
 			]
@@ -464,22 +465,17 @@ class Image_Grid extends Base {
 			]
 		);
 
-		$this->add_responsive_control(
-			'tabs',
-			[
-				'label'     => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::SLIDER,
-				'selectors' => [
-					'{{WRAPPER}} .zyre-image-grid-filter-tabs > ul' => 'gap: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
 		$this->set_style_controls(
 			'tabs',
 			[
 				'selector' => '{{WRAPPER}} .zyre-image-grid-filter-tab',
 				'controls' => [
+					'row_gap'       => [
+						'selector' => '{{WRAPPER}} .zyre-image-grid-filter-tabs > ul',
+					],
+					'column_gap'    => [
+						'selector' => '{{WRAPPER}} .zyre-image-grid-filter-tabs > ul',
+					],
 					'typo'          => [],
 					'border'        => [],
 					'border_radius' => [],
@@ -606,7 +602,7 @@ class Image_Grid extends Base {
 		$this->set_style_controls(
 			'item',
 			[
-				'selector' => '{{WRAPPER}} .zyre-image-grid-item',
+				'selector' => '{{WRAPPER}} .zyre-image-grid-item-inner',
 				'controls' => [
 					'height'        => [
 						'condition' => [
@@ -616,10 +612,12 @@ class Image_Grid extends Base {
 					'bg'            => [],
 					'border'        => [],
 					'border_radius' => [
-						'selector' => '{{WRAPPER}} .zyre-image-grid-item, {{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item-img',
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-inner, {{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item-img',
 					],
 					'box_shadow'    => [],
-					'padding'       => [],
+					'padding'       => [
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item',
+					],
 				],
 			]
 		);
@@ -664,6 +662,7 @@ class Image_Grid extends Base {
 					'height'        => [],
 					'border'        => [],
 					'border_radius' => [],
+					'box_shadow'    => [],
 					'bg_color'      => [],
 					'padding'       => [],
 				],
@@ -680,7 +679,7 @@ class Image_Grid extends Base {
 		$this->start_controls_section(
 			'section_style_item_content',
 			[
-				'label' => esc_html__( 'Item Content', 'zyre-elementor-addons' ),
+				'label' => esc_html__( 'Content', 'zyre-elementor-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -690,25 +689,23 @@ class Image_Grid extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-image-grid-item-content',
 				'controls' => [
-					'bg'            => [],
 					'border'        => [],
 					'border_radius' => [],
-					'box_shadow'    => [],
 					'padding'       => [],
+					'margin'        => [],
+					'align_y'       => [
+						'css_property' => 'align-content',
+						'condition'    => [
+							'content_display' => 'overlay',
+						],
+					],
 					'align'         => [],
 				],
 			]
 		);
 
 		// Tabs
-		$this->start_controls_tabs(
-			'tabs_item_content',
-			[
-				'condition' => [
-					'content_display' => 'overlay',
-				],
-			]
-		);
+		$this->start_controls_tabs( 'tabs_item_content' );
 
 		// Tab: Normal
 		$this->start_controls_tab(
@@ -718,20 +715,34 @@ class Image_Grid extends Base {
 			]
 		);
 
-		$this->add_control(
+		$this->set_style_controls(
 			'item_content',
 			[
-				'label'     => esc_html__( 'Opacity', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'px' => [
-						'max'  => 1,
-						'min'  => 0.10,
-						'step' => 0.01,
+				'selector' => '{{WRAPPER}} .zyre-image-grid-item-content',
+				'controls' => [
+					'bg'         => [
+						'selector' => '{{WRAPPER}}:not(.zyre-image-grid-content-display--overlay) .zyre-image-grid-item-content,
+								{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item-content::after',
 					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .zyre-image-grid-item-content' => 'opacity: {{SIZE}};transition: opacity 0.4s;',
+					'color_1'    => [
+						'label'    => esc_html__( 'Title Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-title, {{WRAPPER}} .zyre-image-grid-item-title > a',
+					],
+					'color_2'    => [
+						'label'    => esc_html__( 'Category Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-category',
+					],
+					'color_3'    => [
+						'label'    => esc_html__( 'Description Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-description',
+					],
+					'box_shadow' => [],
+					'opacity'    => [
+						'selector'  => '{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item-content',
+						'condition' => [
+							'content_display' => 'overlay',
+						],
+					],
 				],
 			]
 		);
@@ -746,20 +757,35 @@ class Image_Grid extends Base {
 			]
 		);
 
-		$this->add_control(
+		$this->set_style_controls(
 			'item_content_hover',
 			[
-				'label'     => esc_html__( 'Opacity', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'px' => [
-						'max'  => 1,
-						'min'  => 0.10,
-						'step' => 0.01,
+				'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover',
+				'controls' => [
+					'bg'           => [
+						'selector' => '{{WRAPPER}}:not(.zyre-image-grid-content-display--overlay) .zyre-image-grid-item-content:hover,
+										{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item:hover .zyre-image-grid-item-content::after',
 					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .zyre-image-grid-item:hover .zyre-image-grid-item-content' => 'opacity: {{SIZE}};',
+					'color_1'      => [
+						'label'    => esc_html__( 'Title Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} a.zyre-image-grid-item-content:hover .zyre-image-grid-item-title, {{WRAPPER}} .zyre-image-grid-item-title > a:hover',
+					],
+					'color_2'      => [
+						'label'    => esc_html__( 'Category Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-category',
+					],
+					'color_3'      => [
+						'label'    => esc_html__( 'Description Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-description',
+					],
+					'border_color' => [],
+					'box_shadow'   => [],
+					'opacity'      => [
+						'selector'  => '{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item:hover .zyre-image-grid-item-content',
+						'condition' => [
+							'content_display' => 'overlay',
+						],
+					],
 				],
 			]
 		);
@@ -771,27 +797,18 @@ class Image_Grid extends Base {
 		$this->set_style_controls(
 			'item_title',
 			[
-				'selector' => '{{WRAPPER}} .zyre-image-grid-item-title, {{WRAPPER}} .zyre-image-grid-item-title > a',
+				'selector' => '{{WRAPPER}} .zyre-image-grid-item-title',
 				'controls' => [
-					'heading'     => [
+					'heading' => [
 						'label'     => esc_html__( 'Title', 'zyre-elementor-addons' ),
 						'separator' => 'before',
 					],
-					'typo'        => [],
-					'color'       => [],
-					'color_hover' => [
-						'label'    => esc_html__( 'Color Hover', 'zyre-elementor-addons' ),
-						'selector' => '{{WRAPPER}} .zyre-image-grid-item-title > a:hover',
+					'typo'    => [
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-title, {{WRAPPER}} .zyre-image-grid-item-title > a',
 					],
-					'border'      => [
-						'selector' => '{{WRAPPER}} .zyre-image-grid-item-title',
-					],
-					'padding'     => [
-						'selector' => '{{WRAPPER}} .zyre-image-grid-item-title',
-					],
-					'margin'      => [
-						'selector' => '{{WRAPPER}} .zyre-image-grid-item-title',
-					],
+					'border'  => [],
+					'padding' => [],
+					'margin'  => [],
 				],
 			]
 		);
@@ -806,7 +823,6 @@ class Image_Grid extends Base {
 						'separator' => 'before',
 					],
 					'typo'    => [],
-					'color'   => [],
 					'border'  => [],
 					'padding' => [],
 					'margin'  => [],
@@ -827,7 +843,6 @@ class Image_Grid extends Base {
 						'separator' => 'before',
 					],
 					'typo'    => [],
-					'color'   => [],
 					'border'  => [],
 					'padding' => [],
 					'margin'  => [],
@@ -919,20 +934,9 @@ class Image_Grid extends Base {
 
 		$content_display = $settings['content_display'] ?? '';
 
-		$this->add_render_attribute(
-			'content',
-			'class',
-			[
-				'zyre-image-grid-item-content zy-flex zy-flex-wrap zy-relative',
-			]
-		);
-
+		$content_class = 'zyre-image-grid-item-content zy-flex zy-flex-wrap zy-relative';
 		if ( 'overlay' === $content_display ) {
-			$this->add_render_attribute(
-				'content',
-				'class',
-				'zy-absolute zy-w-100 zy-h-100 zy-top-0 zy-left-0 zy-content-end zy-p-3 zy-index-1',
-			);
+			$content_class .= ' zy-absolute zy-w-100 zy-h-100 zy-top-0 zy-left-0 zy-content-end zy-p-3 zy-index-1';
 		}
 
 		if ( 'yes' === $show_filter_tabs ) {
@@ -962,7 +966,7 @@ class Image_Grid extends Base {
 					<?php if ( ( 'yes' === $settings['filter_tabs_separator'] ) && ( '' === $spr_position || 'left' === $spr_position ) ) : ?>
 						<span class="zyre-image-grid-filter-separator zy-grow-1 zy-h-1 zy-bg-black"></span>
 					<?php endif; ?>
-					<ul class="zy-flex zy-m-0 zy-list-none zy-gap-2 zyre-js-filter-tabs" data-default-filter="<?php echo $this->_default_filter; ?>">
+					<ul class="zy-flex zy-flex-wrap zy-m-0 zy-list-none zy-gap-2 zyre-js-filter-tabs" data-default-filter="<?php echo $this->_default_filter; ?>">
 						<?php if ( ! empty( $settings['filter_tabs_all'] ) ) : ?>
 							<li>
 								<a href="javascript:;" class="zyre-image-grid-filter-tab" data-filter="*"><?php echo esc_html( $settings['filter_tabs_all'] ); ?></a>
@@ -1006,12 +1010,24 @@ class Image_Grid extends Base {
 				foreach ( $settings['all_items'] as $index => $item ) :
 					
 					$key = 'item_' . $index;
+					$key_inner = 'item_inner_' . $index;
 
 					$this->add_render_attribute(
 						$key,
 						[
 							'class' => [
-								'zyre-image-grid-item zy-relative zy-overflow-hidden',
+								'zyre-image-grid-item',
+								'elementor-repeater-item-' . $item['_id'],
+								$this->format_category( $item['category'] ),
+							],
+						]
+					);
+
+					$this->add_render_attribute(
+						$key_inner,
+						[
+							'class' => [
+								'zyre-image-grid-item-inner zy-relative zy-overflow-hidden',
 								'elementor-repeater-item-' . $item['_id'],
 								$this->format_category( $item['category'] ),
 							],
@@ -1022,6 +1038,7 @@ class Image_Grid extends Base {
 					$image = $item['image'] ?? [];
 					$link_key = 'link_' . $index;
 					$image_link_key = 'image_' . $link_key;
+					$content_link_key = 'content_' . $link_key;
 	
 					$this->add_link_attributes( $link_key, $item['link'] );
 
@@ -1032,10 +1049,11 @@ class Image_Grid extends Base {
 					);
 
 					if ( isset( $image['source'] ) && $image['id'] && isset( $settings['image_size'] ) ) :
-						$img_src = wp_get_attachment_image_src( $image['id'], 'full' );
+						$img_src = wp_get_attachment_image_url( $image['id'], 'full' );
 						$img_html = wp_get_attachment_image(
 							$image['id'],
 							$settings['image_size'],
+							false,
 							[ 'class' => 'zyre-image-grid-item-img' ],
 						);
 					endif;
@@ -1063,71 +1081,83 @@ class Image_Grid extends Base {
 					?>
 
 					<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>>
-						<<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $image_link_key ) ); ?> class="zyre-image-grid-item-img-wrapper zy-relative">
-							<?php
+						<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key_inner ) ); ?>>
+							<<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $image_link_key ) ); ?> class="zyre-image-grid-item-img-wrapper zy-relative">
+								<?php
 
-							echo $img_html;
+								echo $img_html;
 
-							if ( $is_enable_lightbox ) {
-								$lightbox_key = 'lightbox_' . $index;
-								$this->add_render_attribute(
-									$lightbox_key,
-									[
-										'href'                              => esc_url( $img_src ),
-										'class'                             => 'zyre-image-grid-open-lightbox-btn zyre-js-lightbox',
-										'data-elementor-open-lightbox'      => 'yes',
-										'data-elementor-lightbox-slideshow' => $items_total > 1 ? $this->get_id() : false,
-										'data-elementor-lightbox-title'     => esc_attr( $item['title'] ),
-									]
-								);
+								if ( $is_enable_lightbox ) {
+									$lightbox_key = 'lightbox_' . $index;
+									$this->add_render_attribute(
+										$lightbox_key,
+										[
+											'href'                              => esc_url( $img_src ),
+											'class'                             => 'zyre-image-grid-open-lightbox-btn zyre-js-lightbox',
+											'data-elementor-open-lightbox'      => 'yes',
+											'data-elementor-lightbox-slideshow' => $items_total > 1 ? $this->get_id() : false,
+											'data-elementor-lightbox-title'     => esc_attr( $item['title'] ),
+										]
+									);
 
-								if ( 'button_click' === $open_lightbox_on ) :
-									$icon_settings = [
-										'library' => 'eicons',
-										'value' => 'eicon-search-bold',
-									];
-									?>
-									<a <?php echo wp_kses_post( $this->get_render_attribute_string( $lightbox_key ) ); ?>>
-										<?php Icons_Manager::render_icon( $icon_settings, [ 'aria-hidden' => 'true' ] ); ?>
-									</a>
-									<?php
-								endif;
-							}
-							?>
-						</<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?>>
-
-						<?php 
-						$title       = $item['title']       ?? '';
-						$category    = $item['category']    ?? '';
-						$description = $item['description'] ?? '';
-
-						if ( $title || ( $display_category && $category ) || $description ) : ?>
-							<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'content' ) ); ?>>
-								<?php if ( $title ) : ?>
-									<h3 class="zyre-image-grid-item-title zy-m-0 zy-w-100">
-										<?php
-										if ( ( 'title' === $link_switch || 'image_title' === $link_switch ) && ! empty( $item['link']['url'] ) ) {
-											printf( '<a href="%s" %s>%s</a>',
-												esc_url( $item['link']['url'] ),
-												( $item['link']['is_external'] ?? '' ) ? 'target="_blank"' : '',
-												esc_html( $item['title'] )
-											);
-										} else {
-											echo esc_html( $item['title'] );
-										}
+									if ( 'button_click' === $open_lightbox_on ) :
+										$icon_settings = [
+											'library' => 'eicons',
+											'value' => 'eicon-search-bold',
+										];
 										?>
-									</h3>
-								<?php endif; ?>
+										<a <?php echo wp_kses_post( $this->get_render_attribute_string( $lightbox_key ) ); ?>>
+											<?php Icons_Manager::render_icon( $icon_settings, [ 'aria-hidden' => 'true' ] ); ?>
+										</a>
+										<?php
+									endif;
+								}
+								?>
+							</<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?>>
 
-								<?php if ( $display_category && $category ) : ?>
-									<p class="zyre-image-grid-item-category zy-m-0 zy-w-100"><?php echo esc_html( $item['category'] ); ?></p>
-								<?php endif; ?>
+							<?php 
+							$title       = $item['title']       ?? '';
+							$category    = $item['category']    ?? '';
+							$description = $item['description'] ?? '';
 
-								<?php if ( $description ) : ?>
-									<p class="zyre-image-grid-item-description zy-m-0 zy-w-100"><?php echo esc_html( $item['description'] ); ?></p>
-								<?php endif; ?>
-							</div>
-						<?php endif; ?>
+							$content_tag = 'div';
+			
+							if ( 'content' === $link_switch && ! empty( $item['link']['url'] ) ) {
+								$content_tag = 'a';
+								$this->add_render_attribute(
+									$content_link_key,
+									$this->get_render_attributes( $link_key )
+								);
+							}
+
+							if ( $title || ( $display_category && $category ) || $description ) : ?>
+								<<?php Utils::print_validated_html_tag( $content_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $content_link_key ) ); ?> class="<?php echo esc_attr( $content_class ); ?>">
+									<?php if ( $title ) : ?>
+										<h3 class="zyre-image-grid-item-title zy-m-0 zy-w-100">
+											<?php
+											if ( ( 'title' === $link_switch || 'image_title' === $link_switch ) && ! empty( $item['link']['url'] ) ) {
+												printf( '<a href="%s" %s>%s</a>',
+													esc_url( $item['link']['url'] ),
+													( $item['link']['is_external'] ?? '' ) ? 'target="_blank"' : '',
+													esc_html( $item['title'] )
+												);
+											} else {
+												echo esc_html( $item['title'] );
+											}
+											?>
+										</h3>
+									<?php endif; ?>
+
+									<?php if ( $display_category && $category ) : ?>
+										<p class="zyre-image-grid-item-category zy-m-0 zy-w-100"><?php echo esc_html( $item['category'] ); ?></p>
+									<?php endif; ?>
+
+									<?php if ( $description ) : ?>
+										<p class="zyre-image-grid-item-description zy-m-0 zy-w-100"><?php echo esc_html( $item['description'] ); ?></p>
+									<?php endif; ?>
+								</<?php Utils::print_validated_html_tag( $content_tag ); ?>>
+							<?php endif; ?>
+						</div>
 					</div>
 					<?php
 				endforeach; 

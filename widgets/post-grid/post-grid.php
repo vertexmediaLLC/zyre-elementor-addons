@@ -1286,6 +1286,11 @@ class Post_Grid extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-post-content',
 				'controls' => [
+					'width'         => [
+						'condition' => [
+							'thumbnail_position' => [ 'left', 'right' ],
+						],
+					],
 					'bg_color'      => [],
 					'border'        => [],
 					'border_radius' => [],
