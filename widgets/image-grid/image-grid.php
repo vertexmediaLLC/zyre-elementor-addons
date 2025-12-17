@@ -577,10 +577,9 @@ class Image_Grid extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-image-grid-items-wrap',
 				'controls' => [
-					'bg'            => [],
+					'bg_color'      => [],
 					'border'        => [],
 					'border_radius' => [],
-					'box_shadow'    => [],
 					'padding'       => [],
 					'margin'        => [],
 				],
@@ -634,34 +633,25 @@ class Image_Grid extends Base {
 			]
 		);
 
-		$this->add_control(
-			'image',
-			[
-				'selector'  => '{{WRAPPER}} .zyre-image-grid-item-img',
-				'label'     => esc_html__( 'Image Fit', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::SELECT2,
-				'default'   => 'cover',
-				'options'   => [
-					'cover'      => esc_html__( 'Cover', 'zyre-elementor-addons' ),
-					'contain'    => esc_html__( 'Contain', 'zyre-elementor-addons' ),
-					'fill'       => esc_html__( 'Fill', 'zyre-elementor-addons' ),
-					'scale-down' => esc_html__( 'Scale Down', 'zyre-elementor-addons' ),
-					'none'       => esc_html__( 'None', 'zyre-elementor-addons' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .zyre-image-grid-item-img' => 'object-fit: {{VALUE}};',
-				],
-			]
-		);
-
 		$this->set_style_controls(
 			'image',
 			[
 				'selector'  => '{{WRAPPER}} .zyre-image-grid-item-img',
 				'controls'  => [
 					'height'        => [],
+					'object_fit'    => [
+						'label'     => esc_html__( 'Image Fit', 'zyre-elementor-addons' ),
+						'default'   => 'cover',
+						'condition' => [
+							'content_display' => [ '', 'overlay' ],
+						],
+					],
 					'border'        => [],
-					'border_radius' => [],
+					'border_radius' => [
+						'condition' => [
+							'content_display' => [ '', 'overlay' ],
+						],
+					],
 					'box_shadow'    => [],
 					'bg_color'      => [],
 					'padding'       => [],
@@ -721,8 +711,7 @@ class Image_Grid extends Base {
 				'selector' => '{{WRAPPER}} .zyre-image-grid-item-content',
 				'controls' => [
 					'bg'         => [
-						'selector' => '{{WRAPPER}}:not(.zyre-image-grid-content-display--overlay) .zyre-image-grid-item-content,
-								{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item-content::after',
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content',
 					],
 					'color_1'    => [
 						'label'    => esc_html__( 'Title Color', 'zyre-elementor-addons' ),
@@ -762,25 +751,37 @@ class Image_Grid extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover',
 				'controls' => [
-					'bg'           => [
-						'selector' => '{{WRAPPER}}:not(.zyre-image-grid-content-display--overlay) .zyre-image-grid-item-content:hover,
-										{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item:hover .zyre-image-grid-item-content::after',
+					'bg'             => [
+						'selector' => '{{WRAPPER}}:not(.zyre-image-grid-content-display--overlay) .zyre-image-grid-item-content:hover::before,
+									{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item:hover .zyre-image-grid-item-content::before',
 					],
-					'color_1'      => [
+					'border_color'   => [],
+					'color_1'        => [
 						'label'    => esc_html__( 'Title Color', 'zyre-elementor-addons' ),
-						'selector' => '{{WRAPPER}} a.zyre-image-grid-item-content:hover .zyre-image-grid-item-title, {{WRAPPER}} .zyre-image-grid-item-title > a:hover',
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-title, {{WRAPPER}} .zyre-image-grid-item-title > a:hover',
 					],
-					'color_2'      => [
+					'border_color_1' => [
+						'label'    => esc_html__( 'Title Border Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-title',
+					],
+					'color_2'        => [
 						'label'    => esc_html__( 'Category Color', 'zyre-elementor-addons' ),
 						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-category',
 					],
-					'color_3'      => [
+					'border_color_2' => [
+						'label'    => esc_html__( 'Category Border Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-category',
+					],
+					'color_3'        => [
 						'label'    => esc_html__( 'Description Color', 'zyre-elementor-addons' ),
 						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-description',
 					],
-					'border_color' => [],
-					'box_shadow'   => [],
-					'opacity'      => [
+					'border_color_3' => [
+						'label'    => esc_html__( 'Description Border Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item-content:hover .zyre-image-grid-item-description',
+					],
+					'box_shadow'     => [],
+					'opacity'        => [
 						'selector'  => '{{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item:hover .zyre-image-grid-item-content',
 						'condition' => [
 							'content_display' => 'overlay',
@@ -1016,7 +1017,7 @@ class Image_Grid extends Base {
 						$key,
 						[
 							'class' => [
-								'zyre-image-grid-item',
+								'zyre-image-grid-item zy-overflow-hidden',
 								'elementor-repeater-item-' . $item['_id'],
 								$this->format_category( $item['category'] ),
 							],
@@ -1027,7 +1028,7 @@ class Image_Grid extends Base {
 						$key_inner,
 						[
 							'class' => [
-								'zyre-image-grid-item-inner zy-relative zy-overflow-hidden',
+								'zyre-image-grid-item-inner zy-relative',
 								'elementor-repeater-item-' . $item['_id'],
 								$this->format_category( $item['category'] ),
 							],

@@ -595,7 +595,7 @@ function haObserveTarget(target, callback) {
 			});
 		},
 		onElementChange: function onElementChange(changedProp) {
-			if (['item_height', 'item_height_tablet', 'item_height_mobile', 'item_padding', 'item_padding_tablet', 'item_padding_mobile', 'item_content_margin', 'item_title_margin', 'item_category_margin', 'item_description_margin', 'items_wrap_margin', 'image_height', 'image_height', 'image_height_tablet', 'image_height_mobile', 'columns', 'columns_tablet', 'columns_mobile', 'content_display', 'filter_tabs_show', 'enable_lightbox'].indexOf(changedProp) !== -1) {
+			if (['item_height', 'item_height_tablet', 'item_height_mobile', 'item_padding', 'item_padding_tablet', 'item_padding_mobile', 'item_content_margin', 'item_content_margin_tablet', 'item_content_margin_mobile', 'item_title_margin', 'item_category_margin', 'item_description_margin', 'items_wrap_margin', 'image_height', 'image_height', 'image_height_tablet', 'image_height_mobile', 'columns', 'columns_tablet', 'columns_mobile', 'content_display', 'filter_tabs_show', 'enable_lightbox'].indexOf(changedProp) !== -1) {
 				this.run();
 			}
 		},

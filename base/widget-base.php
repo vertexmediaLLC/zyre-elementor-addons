@@ -441,6 +441,11 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'border_color':
+					case 'border_color_1':
+					case 'border_color_2':
+					case 'border_color_3':
+					case 'border_color_4':
+					case 'border_color_5':
 						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';
 						$allowed_props = [ 'border-color', 'border-left-color', 'border-top-color', 'border-right-color', 'border-bottom-color' ];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'border-color';
