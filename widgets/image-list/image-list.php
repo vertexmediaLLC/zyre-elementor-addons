@@ -50,7 +50,8 @@ class Image_List extends Base {
 		$this->__content_style_controls();
 		$this->__title_style_controls();
 		$this->__description_style_controls();
-		$this->__item_type_style_controls();
+		$this->__media_style_controls();
+		$this->__media_caption_style_controls();
 	}
 
 	protected function __general_style_controls() {
@@ -64,6 +65,13 @@ class Image_List extends Base {
 		);
 
 		$this->register_general_style_controls( [ 'id_prefix' => 'image' ] );
+
+		$this->register_grid_style_controls(
+			[
+				'id_prefix'       => 'image',
+				'selector_suffix' => 'divider',
+			]
+		);
 
 		$this->end_controls_section();
 	}
@@ -94,6 +102,13 @@ class Image_List extends Base {
 		);
 
 		$this->register_content_style_controls( [ 'id_prefix' => 'image' ] );
+
+		$this->register_grid_style_controls(
+			[
+				'id_prefix'       => 'image',
+				'selector_suffix' => 'content',
+			]
+		);
 
 		$this->end_controls_section();
 	}
@@ -138,7 +153,21 @@ class Image_List extends Base {
 		$this->end_controls_section();
 	}
 
-	protected function __item_type_style_controls() {
+	protected function __media_caption_style_controls() {
+		$this->start_controls_section(
+			'section_media_caption_style',
+			[
+				'label'     => esc_html__( 'Media Caption', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->register_media_caption_style_controls( [ 'id_prefix' => 'image' ] );
+
+		$this->end_controls_section();
+	}
+
+	protected function __media_style_controls() {
 		$this->start_controls_section(
 			'section_media_style',
 			[
@@ -149,6 +178,13 @@ class Image_List extends Base {
 		);
 
 		$this->register_item_type_element_style_controls( [ 'id_prefix' => 'image' ] );
+
+		$this->register_grid_style_controls(
+			[
+				'id_prefix'       => 'image',
+				'selector_suffix' => 'image',
+			]
+		);
 
 		$this->end_controls_section();
 	}

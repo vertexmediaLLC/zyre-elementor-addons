@@ -125,6 +125,11 @@ function haObserveTarget(target, callback) {
     var FunFact = function FunFact($scope) {
       haObserveTarget($scope[0], function () {
         var $fun_fact = $scope.find(".zyre-fun-fact-number");
+
+		if ($fun_fact.data("animated")) {
+			return;
+		}
+			
         var animationData = $fun_fact.data("animation");
 
         // Check if we need to insert a decimal before the last N digits
@@ -145,6 +150,7 @@ function haObserveTarget(target, callback) {
           };
         }
 
+		$fun_fact.data("animated", true);
         $fun_fact.numerator(animationData);
       });
     };

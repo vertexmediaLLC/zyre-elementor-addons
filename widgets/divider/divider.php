@@ -316,6 +316,7 @@ class Divider extends Base {
 						'default' => '#000000',
 					],
 					'border_radius' => [],
+					'width'         => [],
 					'options'       => [
 						'label'        => esc_html__( 'Position', 'zyre-elementor-addons' ),
 						'options'      => [
@@ -428,7 +429,7 @@ class Divider extends Base {
 			<div class="zyre-divider-separator zy-flex zy-align-center">
 				<?php if ( $has_text ) :
 					$this->add_inline_editing_attributes( 'divider_text' );
-					$this->add_render_attribute( 'divider_text', 'class', 'zyre-divider-text zy-relative zy-index-1' );
+					$this->add_render_attribute( 'divider_text', 'class', 'zyre-divider-text zy-relative zy-index-1 zy-shrink-0' );
 					?>
 					<<?php Utils::print_validated_html_tag( $text_html_tag ); ?> <?php $this->print_render_attribute_string( 'divider_text' ); ?>>
 						<?php echo zyre_kses_basic( $settings['divider_text'] ); ?>

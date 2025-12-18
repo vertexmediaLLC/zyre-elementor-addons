@@ -2356,7 +2356,7 @@ class Call_To_Action extends Base {
 						<?php endif; ?>
 
 						<?php if ( 'none' !== $settings['button_show'] ) : ?>
-							<div class="zyre-cta-buttons zy-flex zy-align-center zy-justify-start">
+							<div class="zyre-cta-buttons zy-flex zy-align-center zy-justify-start zy-grow-1">
 								<?php $this->render_button( null, [ 'id_prefix' => 'primary' ] ); ?>
 
 								<?php if ( 'yes' === $settings['show_button_connector'] ) { ?>

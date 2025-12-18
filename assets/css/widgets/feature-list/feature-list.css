@@ -39,8 +39,11 @@
 	font-family: inherit;
 }
 
-.zyre-addon-feature-list .zyre-feature-list-item-type-wrapper {
+.zyre-addon-feature-list:not(.zyre-feature-list-caption-display--normal) .zyre-feature-list-item-type-wrapper {
 	display: inline-flex;
+}
+
+.zyre-addon-feature-list .zyre-feature-list-item-type-wrapper {
 	text-align: center;
 	transition: background var(--zy-transition-duration);
 }

@@ -50,6 +50,7 @@ class Feature_List extends Base {
 		$this->__title_style_controls();
 		$this->__description_style_controls();
 		$this->__item_type_style_controls();
+		$this->__media_caption_style_controls();
 	}
 
 	protected function __general_style_controls() {
@@ -148,6 +149,20 @@ class Feature_List extends Base {
 		);
 
 		$this->register_item_type_element_style_controls( [ 'id_prefix' => 'feature' ] );
+
+		$this->end_controls_section();
+	}
+
+	protected function __media_caption_style_controls() {
+		$this->start_controls_section(
+			'section_media_caption_style',
+			[
+				'label'     => esc_html__( 'Media Caption', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->register_media_caption_style_controls( [ 'id_prefix' => 'feature' ] );
 
 		$this->end_controls_section();
 	}
