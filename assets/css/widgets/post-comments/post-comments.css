@@ -1,27 +1,34 @@
 /* Comments Area */
 .zyre-addon-post-comments #comments .comment .comment-body,
 .zyre-addon-post-comments #comments .pingback .comment-body {
+	background-color: #fff;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.zyre-addon-post-comments #comments .comment .comment-content-box,
+.zyre-addon-post-comments #comments .pingback .comment-content-box {
 	display: flex;
     flex-direction: column;
 	padding-block: 0;
-	padding: 30px 30px 30px 30px;
+	padding: 32px 45px;
 	border-block-end: 0;
     border-bottom: 1px solid #ccc;
 }
 
-.zyre-addon-post-comments .comment .comment-body a,
-.zyre-addon-post-comments .pingback .comment-body a {
+.zyre-addon-post-comments .comment .comment-content-box a,
+.zyre-addon-post-comments .pingback .comment-content-box a {
 	transition: color 0.12s;
 }
 
 body:not(.rtl) .zyre-addon-post-comments #comments .comment .comment-body.has-avatar,
 body:not(.rtl) .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar {
-	padding-left: 60px;
+	padding-left: 75px;
 }
 
 body.rtl .zyre-addon-post-comments #comments .comment .comment-body.has-avatar,
 body.rtl .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar {
-	padding-right: 60px;
+	padding-right: 75px;
 }
 
 .zyre-addon-post-comments #comments .comment-meta {
@@ -41,7 +48,7 @@ body.rtl .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar 
 }
 
 .zyre-addon-post-comments #comments .children {
-	padding-inline-start: 30px;
+	padding-inline-start: 75px;
 }
 
 /* Pagination */

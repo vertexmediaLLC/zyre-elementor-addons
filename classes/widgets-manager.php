@@ -1472,6 +1472,11 @@ class Widgets_Manager {
 						'is_active' => true,
 						'thumb'     => self::get_widget_thumbnail_url( 'post-comments', 'style-one.jpg' ),
 					],
+					'two'   => [
+						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'post-comments', 'style-one.jpg' ),
+					],
 				],
 				'js'        => [],
 			],

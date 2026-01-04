@@ -158,7 +158,7 @@ class Post_Comments extends Base {
 				],
 				'default' => [
 					'unit' => 'px',
-					'size' => 42,
+					'size' => 60,
 				],
 				'separator' => 'before',
 			]
@@ -647,9 +647,6 @@ class Post_Comments extends Base {
 				'selectors'   => [
 					'{{WRAPPER}} .zyre-comments-title' => 'text-align: {{VALUE}};',
 				],
-				'condition'   => [
-					'comment_meta_direction' => 'column',
-				],
 			]
 		);
 
@@ -1120,7 +1117,7 @@ class Post_Comments extends Base {
 			]
 		);
 
-		$this->text_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment .comment-body, {{WRAPPER}} #comments .pingback .comment-body' );
+		$this->text_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment .comment-content-box, {{WRAPPER}} #comments .pingback .comment-content-box' );
 
 		$this->add_control(
 			'comment_body_link_color',
@@ -1128,7 +1125,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Link Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-body a, {{WRAPPER}} .pingback .comment-body a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .comment .comment-content-box a, {{WRAPPER}} .pingback .comment-content-box a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1139,7 +1136,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Link Hover Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-body a:hover, {{WRAPPER}} .pingback .comment-body a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .comment .comment-content-box a:hover, {{WRAPPER}} .pingback .comment-content-box a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1150,14 +1147,14 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} #comments .comment:not(:last-child) .comment-body,
-					{{WRAPPER}} #comments .pingback:not(:last-child) .comment-body' => 'margin-block-end: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #comments .comment:not(:last-child) .comment-content-box,
+					{{WRAPPER}} #comments .pingback:not(:last-child) .comment-content-box' => 'margin-block-end: {{SIZE}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
 		);
 
-		$this->common_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment .comment-body, {{WRAPPER}} #comments .pingback .comment-body' );
+		$this->common_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment .comment-content-box, {{WRAPPER}} #comments .pingback .comment-content-box' );
 
 		$this->end_controls_section();
 	}
@@ -1174,16 +1171,31 @@ class Post_Comments extends Base {
 			]
 		);
 
-		$this->text_style_controls( 'comment_reply', '{{WRAPPER}} .comment .comment-body .comment-reply-link' );
-
-		$this->add_control(
-			'comment_reply_hover',
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
 			[
-				'label'     => esc_html__( 'Text Hover Color', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::COLOR,
+				'name'     => 'comment_reply_typo',
+				'selector' => '{{WRAPPER}} .comment .comment-content-box .comment-reply-link',
+			]
+		);
+
+		$this->add_responsive_control(
+			'comment_reply_padding',
+			[
+				'label' => __( 'Padding', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-body .comment-reply-link:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name'      => 'comment_reply_border',
+				'selector'  => '{{WRAPPER}} .comment .comment-content-box .comment-reply-link',
 			]
 		);
 
@@ -1193,7 +1205,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-body .reply' => 'margin-block-start: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .comment .comment-content-box .reply' => 'margin-block-start: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1219,10 +1231,90 @@ class Post_Comments extends Base {
 				],
 				'default' => is_rtl() ? 'right' : 'left',
 				'selectors'   => [
-					'{{WRAPPER}} .comment .comment-body .reply' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .comment .comment-content-box .reply' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
+
+		// Tabs
+		$this->start_controls_tabs( 'tabs_comment_reply_style' );
+
+		// Tab: Normal
+		$this->start_controls_tab(
+			'tab_comment_reply_normal',
+			[
+				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->add_control(
+			'comment_reply_normal_bg',
+			[
+				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'comment_reply_normal_color',
+			[
+				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab(); // End Normal Tab.
+
+		// Tab: Hover.
+		$this->start_controls_tab(
+			'tab_comment_reply_hover',
+			[
+				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->add_control(
+			'comment_reply_hover_bg',
+			[
+				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link:hover' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'comment_reply_hover_color',
+			[
+				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'comment_reply_hover_border_color',
+			[
+				'label'     => esc_html__( 'Border Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link:hover' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab(); // End Hover Tab
+
+		$this->end_controls_tabs(); // End Tabs
 
 		$this->end_controls_section();
 	}
@@ -1437,7 +1529,7 @@ class Post_Comments extends Base {
 			]
 		);
 
-		// Prev & Next Buttons
+		// Prev & Next Buttons.
 		$this->add_control(
 			'heading_prev_next_button',
 			[
@@ -2180,7 +2272,7 @@ class Post_Comments extends Base {
 
 			// Title Reply
 			$reply_title_tag = zyre_escape_tags( $settings['title_reply_tag'], 'h3' );
-			$defaults['title_reply'] = ! empty( $settings['title_reply'] ) ? esc_html( $settings['title_reply'] ) : esc_html( $defaults['title_reply'] );
+			$defaults['title_reply'] = ! empty( $settings['title_reply'] ) ? esc_html( $settings['title_reply'] ) : '';
 			$defaults['title_reply_before'] = '<' . $reply_title_tag . ' id="reply-title" class="zyre-comment-form-reply-title">';
 			$defaults['title_reply_after'] = '</' . $reply_title_tag . '>';
 			$title_reply_to = ! empty( $settings['title_reply_to'] ) ? $settings['title_reply_to'] . ' %s' : $defaults['title_reply_to'];
@@ -2453,87 +2545,89 @@ class Post_Comments extends Base {
 		?>
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="<?php echo esc_attr( $body_class ); ?>">
-				<footer class="comment-meta zy-gap-2">
-					<div class="comment-author vcard">
-						<?php
-						if ( $show_avatars ) {
-							echo get_avatar( $comment, (int) $settings['avatar_size']['size'] );
-						}
-
-						if ( 'yes' === $settings['disable_author_link'] ) {
-							add_filter( 'get_comment_author_url', function ( $comment_author_url ) {
-								$comment_author_url = '';
-								return $comment_author_url;
-							});
-						}
-
-						$comment_author = get_comment_author_link( $comment );
-
-						if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
-							$comment_author = get_comment_author( $comment );
-						}
-
-						$says_text = ! empty( $settings['comment_says_text'] ) ? $settings['comment_says_text'] : __( 'says:', 'zyre-elementor-addons' );
-						printf(
-							'%s <span class="says">%s</span> %s',
-							is_rtl() ? '' : sprintf( '<b class="fn">%s</b>', $comment_author ),
-							esc_html( $says_text ),
-							is_rtl() ? sprintf( '<b class="fn">%s</b>', $comment_author ) : '',
-						);
-						?>
-					</div><!-- .comment-author -->
-
-					<?php if ( 'yes' === $settings['show_date_time'] || 'yes' === $settings['show_comment_edit'] ) : ?>
-					<div class="comment-metadata">
-						<?php
-						if ( 'yes' === $settings['show_date_time'] ) {
-							$date_format = ! empty( $settings['comment_date_format'] ) ? esc_html( $settings['comment_date_format'] ) : '';
-							$time_format = ! empty( $settings['comment_time_format'] ) ? esc_html( $settings['comment_time_format'] ) : '';
-							printf(
-								'<a href="%s"><time datetime="%s">%s</time></a>',
-								esc_url( get_comment_link( $comment, $args ) ),
-								get_comment_time( 'c' ),
-								sprintf(
-									/* translators: 1: Comment date, 2: Comment time. */
-									__( '%1$s at %2$s', 'zyre-elementor-addons' ),
-									get_comment_date( $date_format, $comment ),
-									get_comment_time( $time_format )
-								)
-							);
-						}
-
-						if ( 'yes' === $settings['show_comment_edit'] ) {
-							edit_comment_link( __( 'Edit', 'zyre-elementor-addons' ), ' <span class="edit-link">', '</span>' );
-						}
-						?>
-					</div><!-- .comment-metadata -->
-					<?php endif; ?>
-
-					<?php if ( '0' === $comment->comment_approved ) : ?>
-					<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
-					<?php endif; ?>
-				</footer><!-- .comment-meta -->
-
-				<div class="comment-content">
-					<?php comment_text(); ?>
-				</div><!-- .comment-content -->
-
 				<?php
-				if ( '1' === $comment->comment_approved || $show_pending_links ) {
-					comment_reply_link(
-						array_merge(
-							$args,
-							[
-								'add_below'  => 'div-comment',
-								'depth'      => $depth,
-								'max_depth'  => $args['max_depth'],
-								'before'     => '<div class="reply">',
-								'after'      => '</div>',
-							]
-						)
-					);
+				if ( $show_avatars ) {
+					echo get_avatar( $comment, (int) $settings['avatar_size']['size'] );
 				}
 				?>
+				<div class="comment-content-box">
+					<footer class="comment-meta zy-gap-2">
+						<div class="comment-author vcard">
+							<?php
+							if ( 'yes' === $settings['disable_author_link'] ) {
+								add_filter( 'get_comment_author_url', function ( $comment_author_url ) {
+									$comment_author_url = '';
+									return $comment_author_url;
+								});
+							}
+
+							$comment_author = get_comment_author_link( $comment );
+
+							if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
+								$comment_author = get_comment_author( $comment );
+							}
+
+							$says_text = ! empty( $settings['comment_says_text'] ) ? $settings['comment_says_text'] : '';
+							printf(
+								'%s <span class="says">%s</span> %s',
+								is_rtl() ? '' : sprintf( '<b class="fn">%s</b>', $comment_author ),
+								esc_html( $says_text ),
+								is_rtl() ? sprintf( '<b class="fn">%s</b>', $comment_author ) : '',
+							);
+							?>
+						</div><!-- .comment-author -->
+
+						<?php if ( 'yes' === $settings['show_date_time'] || 'yes' === $settings['show_comment_edit'] ) : ?>
+						<div class="comment-metadata">
+							<?php
+							if ( 'yes' === $settings['show_date_time'] ) {
+								$date_format = ! empty( $settings['comment_date_format'] ) ? esc_html( $settings['comment_date_format'] ) : '';
+								$time_format = ! empty( $settings['comment_time_format'] ) ? esc_html( $settings['comment_time_format'] ) : '';
+								printf(
+									'<a href="%s"><time datetime="%s">%s</time></a>',
+									esc_url( get_comment_link( $comment, $args ) ),
+									get_comment_time( 'c' ),
+									sprintf(
+										/* translators: 1: Comment date, 2: Comment time. */
+										__( '%1$s at %2$s', 'zyre-elementor-addons' ),
+										get_comment_date( $date_format, $comment ),
+										get_comment_time( $time_format )
+									)
+								);
+							}
+
+							if ( 'yes' === $settings['show_comment_edit'] ) {
+								edit_comment_link( __( 'Edit', 'zyre-elementor-addons' ), ' <span class="edit-link">', '</span>' );
+							}
+							?>
+						</div><!-- .comment-metadata -->
+						<?php endif; ?>
+
+						<?php if ( '0' === $comment->comment_approved ) : ?>
+						<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
+						<?php endif; ?>
+					</footer><!-- .comment-meta -->
+
+					<div class="comment-content">
+						<?php comment_text(); ?>
+					</div><!-- .comment-content -->
+					<?php
+					if ( '1' === $comment->comment_approved || $show_pending_links ) {
+						comment_reply_link(
+							array_merge(
+								$args,
+								[
+									'add_below'  => 'div-comment',
+									'depth'      => $depth,
+									'max_depth'  => $args['max_depth'],
+									'before'     => '<div class="reply">',
+									'after'      => '</div>',
+								]
+							)
+						);
+					}
+					?>
+				</div><!-- .comment-content-box -->
 			</article><!-- .comment-body -->
 		</li>
 		<?php

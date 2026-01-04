@@ -50,6 +50,7 @@ class Image_List extends Base {
 		$this->__content_style_controls();
 		$this->__title_style_controls();
 		$this->__description_style_controls();
+		$this->__media_wrapper_style_controls();
 		$this->__media_style_controls();
 		$this->__media_caption_style_controls();
 	}
@@ -149,6 +150,20 @@ class Image_List extends Base {
 				'widget_base' => 'image',
 			]
 		);
+
+		$this->end_controls_section();
+	}
+
+	protected function __media_wrapper_style_controls() {
+		$this->start_controls_section(
+			'section_media_wrapper_style',
+			[
+				'label'     => esc_html__( 'Media Wrapper', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->register_media_wrapper_style_controls( [ 'id_prefix' => 'image' ] );
 
 		$this->end_controls_section();
 	}

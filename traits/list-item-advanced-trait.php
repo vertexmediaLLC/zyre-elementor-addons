@@ -1418,6 +1418,24 @@ trait List_Item_Advanced_Trait {
 					],
 				]
 			);
+
+			$this->add_control(
+				'item_type_image_scale',
+				[
+					'label' => esc_html__( 'Scale', 'zyre-elementor-addons' ),
+					'type' => Controls_Manager::SLIDER,
+					'range' => [
+						'px' => [
+							'max' => 1,
+							'min' => 0,
+							'step' => 0.01,
+						],
+					],
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$class_base}list-item-image img" => 'transform: scale({{SIZE}});',
+					],
+				]
+			);
 		}
 
 		$this->add_group_control(
@@ -1528,6 +1546,25 @@ trait List_Item_Advanced_Trait {
 					'selectors' => [
 						"{{WRAPPER}}:not(.zyre-addon-{$class_base}list-item-hover-yes) .zyre-{$class_base}list-item-image:hover img" => 'opacity: {{SIZE}};',
 						"{{WRAPPER}}.zyre-addon-{$class_base}list-item-hover-yes .zyre-{$class_base}list-item:hover .zyre-{$class_base}list-item-image img" => 'opacity: {{SIZE}};',
+					],
+				]
+			);
+
+			$this->add_control(
+				'item_type_image_scale_hover',
+				[
+					'label' => esc_html__( 'Scale', 'zyre-elementor-addons' ),
+					'type' => Controls_Manager::SLIDER,
+					'range' => [
+						'px' => [
+							'max' => 1,
+							'min' => 0,
+							'step' => 0.01,
+						],
+					],
+					'selectors' => [
+						"{{WRAPPER}}:not(.zyre-addon-{$class_base}list-item-hover-yes) .zyre-{$class_base}list-item-image:hover img" => 'transform: scale({{SIZE}});',
+						"{{WRAPPER}}.zyre-addon-{$class_base}list-item-hover-yes .zyre-{$class_base}list-item:hover .zyre-{$class_base}list-item-image img" => 'transform: scale({{SIZE}});',
 					],
 				]
 			);
@@ -1655,6 +1692,112 @@ trait List_Item_Advanced_Trait {
 	}
 
 	/**
+	 * Register media wrapper style controls.
+	 *
+	 * @param array $args {
+	 *     Optional. An array of arguments for adjusting the controls.
+	 *
+	 *     @type string $id_prefix     Prefix for the control IDs.
+	 * }
+	 */
+	protected function register_media_wrapper_style_controls( $args = [] ) {
+		$default_args = [
+			'id_prefix' => '',
+		];
+
+		$args = wp_parse_args( $args, $default_args );
+		$class_base = ! empty( $args['id_prefix'] ) ? $args['id_prefix'] . '-' : '';
+
+		// Tabs
+		$this->start_controls_tabs( 'media_wrapper_tabs' );
+
+		// Normal Tab
+		$this->start_controls_tab(
+			'media_wrapper_tab_normal',
+			[
+				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->add_control(
+			'media_wrapper_bg_color',
+			[
+				'label'    => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+				'type'     => Controls_Manager::COLOR,
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-type-wrapper" => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name'      => 'media_wrapper_border',
+				'selector'  => "{{WRAPPER}} .zyre-{$class_base}list-item-type-wrapper",
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Hover Tab
+		$this->start_controls_tab(
+			'media_wrapper_tab_hover',
+			[
+				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->add_control(
+			'media_wrapper_bg_color_hover',
+			[
+				'label'    => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+				'type'     => Controls_Manager::COLOR,
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-type-wrapper:hover" => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name'      => 'media_wrapper_border_hover',
+				'selector'  => "{{WRAPPER}} .zyre-{$class_base}list-item-type-wrapper:hover",
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'media_wrapper_border_radius',
+			[
+				'label'      => esc_html__( 'Border Radius', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'separator'  => 'before',
+				'selectors'  => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-type-wrapper" => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		
+		$this->add_responsive_control(
+			'media_wrapper_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors'  => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-type-wrapper" => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+	}
+
+	/**
 	 * Register media caption style controls.
 	 *
 	 * @param array $args {
@@ -1737,6 +1880,27 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
+		$this->add_control(
+			'caption_scale',
+			[
+				'label' => esc_html__( 'Scale', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 1,
+						'min' => 0,
+						'step' => 0.01,
+					],
+				],
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-caption-wrap" => 'transform: scale({{SIZE}});',
+				],
+				'condition' => [
+					"{$args['id_prefix']}_caption_display" => 'overlay',
+				],
+			]
+		);
+
 		$this->end_controls_tab();
 
 		// Hover Tab
@@ -1783,6 +1947,27 @@ trait List_Item_Advanced_Trait {
 				],
 				'selectors' => [
 					"{{WRAPPER}} .zyre-{$class_base}list-item-image:hover .zyre-{$class_base}list-item-caption-wrap" => 'opacity: {{SIZE}};',
+				],
+				'condition' => [
+					"{$args['id_prefix']}_caption_display" => 'overlay',
+				],
+			]
+		);
+
+		$this->add_control(
+			'caption_scale_hover',
+			[
+				'label' => esc_html__( 'Scale', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 1,
+						'min' => 0,
+						'step' => 0.01,
+					],
+				],
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-image:hover .zyre-{$class_base}list-item-caption-wrap" => 'transform: scale({{SIZE}});',
 				],
 				'condition' => [
 					"{$args['id_prefix']}_caption_display" => 'overlay',

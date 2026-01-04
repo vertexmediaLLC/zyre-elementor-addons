@@ -55,7 +55,7 @@
 
 .zyre-addon-image-list .zyre-image-list-item-type-wrapper {
 	text-align: center;
-	transition: background var(--zy-transition-duration);
+	transition: all var(--zy-transition-duration);
 }
 
 .zyre-addon-image-list .zyre-image-list-item-type-wrapper:not(.zyre-image-list-item-image) {
