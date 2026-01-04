@@ -1,3 +1,4 @@
+.zyre-addon-archive-posts .zyre-archive-post-thumbnail,
 .zyre-addon-archive-posts a {
 	transition: var(--zy-transition);
 }
@@ -16,7 +17,6 @@
 
 .zyre-addon-archive-posts .zyre-archive-post-meta-item,
 .zyre-addon-archive-posts .zyre-archive-post-meta-item-icon,
-.zyre-addon-archive-posts .zyre-archive-post-readmore,
 .zyre-addon-archive-posts .zyre-archive-post-pagination .page-numbers {
 	display: inline-block;
 }
