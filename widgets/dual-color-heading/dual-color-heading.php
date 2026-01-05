@@ -233,6 +233,24 @@ class Dual_Color_Heading extends Base {
 	private function text_style_controls( string $prefix ) {
 		$class_base = str_replace( '_', '-', $prefix );
 
+		$this->add_control(
+			$prefix . '_display',
+			[
+				'label'     => esc_html__( 'Display as', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => [
+					'block'        => esc_html__( 'Block', 'zyre-elementor-addons' ),
+					'inline-block' => esc_html__( 'Inline Block', 'zyre-elementor-addons' ),
+					'inline'       => esc_html__( 'Inline', 'zyre-elementor-addons' ),
+					'table'        => esc_html__( 'Table', 'zyre-elementor-addons' ),
+				],
+				'default'   => 'inline-block',
+				'selectors' => [
+					'{{WRAPPER}} .zyre-dual-color-heading-' . $class_base => 'display: {{VALUE}};',
+				],
+			]
+		);
+
 		// Normal Styles
 		$this->start_controls_tabs( '_tab_' . $prefix );
 
@@ -251,7 +269,9 @@ class Dual_Color_Heading extends Base {
 					'text_color' => [
 						'label' => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
 					],
-					'background' => [],
+					'background' => [
+						'exclude' => [],
+					],
 					'shadow'     => [],
 					'box_shadow' => [],
 					'border'     => [],

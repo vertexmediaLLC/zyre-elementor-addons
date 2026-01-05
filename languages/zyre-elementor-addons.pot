@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-05T05:01:44+00:00\n"
+"POT-Creation-Date: 2026-01-05T05:26:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -1623,8 +1623,8 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:116
 #: widgets/animated-text/animated-text.php:1294
 #: widgets/call-to-action/call-to-action.php:2051
-#: widgets/dual-color-heading/dual-color-heading.php:252
-#: widgets/dual-color-heading/dual-color-heading.php:278
+#: widgets/dual-color-heading/dual-color-heading.php:270
+#: widgets/dual-color-heading/dual-color-heading.php:298
 #: widgets/featured-banner/featured-banner.php:2120
 #: widgets/flipbox/flipbox.php:888
 #: widgets/flipbox/flipbox.php:929
@@ -3185,7 +3185,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1232
 #: widgets/cf7/cf7.php:212
 #: widgets/cf7/cf7.php:342
-#: widgets/dual-color-heading/dual-color-heading.php:242
+#: widgets/dual-color-heading/dual-color-heading.php:260
 #: widgets/featured-banner/featured-banner.php:912
 #: widgets/featured-banner/featured-banner.php:940
 #: widgets/featured-banner/featured-banner.php:1251
@@ -3270,7 +3270,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:939
 #: widgets/call-to-action/call-to-action.php:1370
 #: widgets/cf7/cf7.php:363
-#: widgets/dual-color-heading/dual-color-heading.php:268
+#: widgets/dual-color-heading/dual-color-heading.php:288
 #: widgets/featured-banner/featured-banner.php:965
 #: widgets/featured-banner/featured-banner.php:1381
 #: widgets/gradient-heading/gradient-heading.php:367
@@ -3847,6 +3847,7 @@ msgstr ""
 #: widgets/alert/alert.php:106
 #: widgets/animated-text/animated-text.php:167
 #: widgets/call-to-action/call-to-action.php:2129
+#: widgets/dual-color-heading/dual-color-heading.php:242
 #: widgets/featured-banner/featured-banner.php:2049
 #: widgets/image-heading/image-heading.php:283
 #: widgets/post-grid/post-grid.php:1441
@@ -3860,6 +3861,7 @@ msgstr ""
 #: widgets/alert/alert.php:110
 #: widgets/animated-text/animated-text.php:166
 #: widgets/call-to-action/call-to-action.php:2131
+#: widgets/dual-color-heading/dual-color-heading.php:244
 #: widgets/featured-banner/featured-banner.php:2051
 #: widgets/image-heading/image-heading.php:281
 #: widgets/post-grid/post-grid.php:1445
@@ -6565,12 +6567,14 @@ msgid "Distance"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2125
+#: widgets/dual-color-heading/dual-color-heading.php:239
 #: widgets/featured-banner/featured-banner.php:2046
 #: widgets/testimonial/testimonial.php:1027
 msgid "Display as"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2130
+#: widgets/dual-color-heading/dual-color-heading.php:243
 #: widgets/featured-banner/featured-banner.php:2050
 #: widgets/image-heading/image-heading.php:282
 #: widgets/testimonial/testimonial.php:1031
@@ -6578,6 +6582,7 @@ msgid "Inline Block"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2132
+#: widgets/dual-color-heading/dual-color-heading.php:245
 #: widgets/featured-banner/featured-banner.php:2052
 #: widgets/testimonial/testimonial.php:1033
 msgid "Table"
