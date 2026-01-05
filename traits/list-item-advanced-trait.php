@@ -391,22 +391,6 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
-		if ( ! empty( $args['id_prefix'] ) && 'image' === $args['id_prefix'] ) {
-			$this->add_control(
-				$prefix . 'item_layout',
-				[
-					'label'   => esc_html__( 'Item Layout', 'zyre-elementor-addons' ),
-					'type'    => Controls_Manager::SELECT,
-					'default' => 'flex',
-					'options' => [
-						'flex' => esc_html__( 'Flex', 'zyre-elementor-addons' ),
-						'grid' => esc_html__( 'Grid', 'zyre-elementor-addons' ),
-					],
-					'prefix_class'    => "zyre-{$class_base}list-item-layout--",
-				]
-			);
-		}
-
 		$this->add_responsive_control(
 			'content_alignment',
 			[
@@ -521,6 +505,26 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
+		if ( ! empty( $args['id_prefix'] ) && 'image' === $args['id_prefix'] ) {
+			$this->add_control(
+				'divider_apply_to',
+				[
+					'label'        => esc_html__( 'Apply To', 'zyre-elementor-addons' ),
+					'type'         => Controls_Manager::SELECT,
+					'options'      => [
+						'item'    => esc_html__( 'Item', 'zyre-elementor-addons' ),
+						'content' => esc_html__( 'Content', 'zyre-elementor-addons' ),
+					],
+					'default'      => 'item',
+					'prefix_class' => "zyre-{$class_base}list-divider-to--",
+					'condition' => [
+						'divider'     => 'yes',
+						'item_layout' => 'bottom',
+					],
+				]
+			);
+		}
+
 		$this->add_control(
 			'divider_style',
 			[
@@ -537,7 +541,8 @@ trait List_Item_Advanced_Trait {
 					'divider' => 'yes',
 				],
 				'selectors' => [
-					"{{WRAPPER}} .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child)::after" => '--divider-style: {{VALUE}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child)::after" => '--divider-style: {{VALUE}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => '--divider-style: {{VALUE}}',
 				],
 			]
 		);
@@ -561,7 +566,8 @@ trait List_Item_Advanced_Trait {
 					'divider' => 'yes',
 				],
 				'selectors' => [
-					"{{WRAPPER}} .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child)::after" => '--divider-weight: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child)::after" => '--divider-weight: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => '--divider-weight: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -580,7 +586,8 @@ trait List_Item_Advanced_Trait {
 					'view!' => 'inline',
 				],
 				'selectors' => [
-					"{{WRAPPER}} .zyre-{$class_base}list-item:not(:last-child)::after" => 'width: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item:not(:last-child)::after" => 'width: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => 'width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -613,7 +620,8 @@ trait List_Item_Advanced_Trait {
 					'view' => 'inline',
 				],
 				'selectors' => [
-					"{{WRAPPER}} .zyre-{$class_base}list-item:not(:last-child)::after" => 'height: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item:not(:last-child)::after" => 'height: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => 'height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -628,7 +636,8 @@ trait List_Item_Advanced_Trait {
 					'divider' => 'yes',
 				],
 				'selectors' => [
-					"{{WRAPPER}} .zyre-{$class_base}list-item:not(:last-child)::after" => 'border-color: {{VALUE}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item:not(:last-child)::after" => 'border-color: {{VALUE}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => 'border-color: {{VALUE}}',
 				],
 			]
 		);
@@ -1872,7 +1881,7 @@ trait List_Item_Advanced_Trait {
 					],
 				],
 				'selectors' => [
-					"{{WRAPPER}} .zyre-{$class_base}list-item-caption-wrap" => 'opacity: {{SIZE}}; transition: opacity var(--zy-transition-duration);',
+					"{{WRAPPER}} .zyre-{$class_base}list-item-caption-wrap" => 'opacity: {{SIZE}};',
 				],
 				'condition' => [
 					"{$args['id_prefix']}_caption_display" => 'overlay',
@@ -2672,7 +2681,7 @@ trait List_Item_Advanced_Trait {
 		$instance->add_render_attribute( 'icon', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-icon zy-overflow-hidden" );
 		$instance->add_render_attribute( 'image', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-image zy-overflow-hidden zy-relative" );
 		$instance->add_render_attribute( 'number', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-num zy-overflow-hidden" );
-		$instance->add_render_attribute( 'item_content', 'class', "zyre-{$class_base}list-item-content" );
+		$instance->add_render_attribute( 'item_content', 'class', "zyre-{$class_base}list-item-content zy-relative" );
 		?>
 
 		<ul <?php $instance->print_render_attribute_string( 'items' ); ?>>
