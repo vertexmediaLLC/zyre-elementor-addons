@@ -25,7 +25,7 @@ class Logo_Carousel extends Base {
 	}
 
 	public function get_keywords() {
-		return [ 'logos', 'logo carousel', 'logo slider', 'image carousel', 'image slider', 'image', 'slider', 'media carousel', 'media slider', 'media' ];
+		return [ 'logos', 'logo carousel', 'logo slider', 'image carousel', 'image slider', 'scrolling image', 'image', 'slider', 'media carousel', 'media slider', 'media' ];
 	}
 
 	public function get_custom_help_url() {

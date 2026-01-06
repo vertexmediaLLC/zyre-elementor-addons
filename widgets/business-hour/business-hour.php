@@ -918,7 +918,7 @@ class Business_Hour extends Base {
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .zyre-business-hour-times' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .zyre-business-hour-times' => 'justify-content: {{VALUE}};align-content: {{VALUE}};',
 				],
 			]
 		);
