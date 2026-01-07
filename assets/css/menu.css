@@ -29,18 +29,6 @@
 	position: relative;
 }
 
-.zyre-nav-menu ul.menu > li.menu-item:hover > a,
-.zyre-nav-menu ul.menu > li.menu-item:hover > .submenu-indicator i,
-.zyre-nav-menu ul.sub-menu > li.menu-item:hover > a,
-.zyre-nav-menu ul.sub-menu > li.menu-item:hover > .submenu-indicator i {
-	color: var(--zy-primary);
-}
-
-.zyre-nav-menu ul.menu > li.menu-item:hover > .submenu-indicator svg,
-.zyre-nav-menu ul.sub-menu > li.menu-item:hover > .submenu-indicator svg {
-	fill: var(--zy-primary);
-}
-
 .zyre-nav-menu ul.menu li.menu-item .zy-menu-badge,
 .zyre-nav-menu ul.menu li.menu-item .zy-menu-badge>.zy-menu-badge-arrow {
     position: absolute;

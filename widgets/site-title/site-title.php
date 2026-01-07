@@ -406,22 +406,22 @@ class Site_Title extends Base {
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
-			array(
+			[
 				'name'     => $prefix . '_typography',
 				'selector' => '{{WRAPPER}} .zyre-site-' . $class_base,
-			)
+			]
 		);
 
 		$this->add_control(
 			$prefix . '_padding',
-			array(
+			[
 				'label'      => esc_html__( 'Padding', 'zyre-elementor-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%', 'em', 'rem', 'custom' ),
-				'selectors'  => array(
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
 					'{{WRAPPER}} .zyre-site-' . $class_base => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-			)
+				],
+			]
 		);
 
 		// Tabs.
@@ -432,39 +432,39 @@ class Site_Title extends Base {
 		// Tab: Normal.
 		$this->start_controls_tab(
 			$prefix . '_normal_tab',
-			array(
+			[
 				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
-			)
+			]
 		);
 
 		$this->add_control(
 			$prefix . '_bg_color',
-			array(
+			[
 				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					'{{WRAPPER}} .zyre-site-' . $class_base => 'background-color: {{VALUE}};',
-				),
-			)
+				],
+			]
 		);
 
 		$this->add_control(
 			$prefix . '_color',
-			array(
+			[
 				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					'{{WRAPPER}} .zyre-site-' . $class_base => 'color: {{VALUE}};',
-				),
-			)
+				],
+			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
-			array(
+			[
 				'name'     => $prefix . '_text_shadow',
 				'selector' => '{{WRAPPER}} .zyre-site-' . $class_base,
-			)
+			]
 		);
 
 		$this->end_controls_tab();
@@ -472,39 +472,39 @@ class Site_Title extends Base {
 		// Tab: Hover
 		$this->start_controls_tab(
 			$prefix . '_hover_tab',
-			array(
+			[
 				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
-			)
+			]
 		);
 
 		$this->add_control(
 			$prefix . '_hover_bg_color',
-			array(
+			[
 				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .zyre-site-' . $class_base => 'background-color: {{VALUE}};',
-				),
-			)
+				'selectors' => [
+					"{{WRAPPER}} .zyre-site-title-link:hover .zyre-site-{$class_base}" => 'background-color: {{VALUE}};',
+				],
+			]
 		);
 
 		$this->add_control(
 			$prefix . '_hover_color',
-			array(
+			[
 				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
+				'selectors' => [
 					"{{WRAPPER}} .zyre-site-title-link:hover .zyre-site-{$class_base}" => 'color: {{VALUE}};',
-				),
-			)
+				],
+			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
-			array(
+			[
 				'name'     => $prefix . '_hover_text_shadow',
 				'selector' => "{{WRAPPER}} .zyre-site-title-link:hover .zyre-site-{$class_base}",
-			)
+			]
 		);
 
 		$this->end_controls_tab();

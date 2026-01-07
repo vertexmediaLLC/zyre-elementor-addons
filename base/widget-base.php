@@ -949,27 +949,29 @@ abstract class Base extends Widget_Base {
 					case 'align_xy':
 						$allowed_defaults = [ 'flex-start', 'center', 'flex-end', 'stretch' ];
 						$control_args = [
-							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Horizontal Align', 'zyre-elementor-addons' ),
-							'type'      => Controls_Manager::CHOOSE,
-							'default'   => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '',
-							'options'   => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
-								'flex-start'    => [
+							'label'          => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Horizontal Align', 'zyre-elementor-addons' ),
+							'type'           => Controls_Manager::CHOOSE,
+							'default'        => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '',
+							'tablet_default' => ! empty( $values['tablet_default'] ) && in_array( $values['tablet_default'], $allowed_defaults, true ) ? $values['tablet_default'] : '',
+							'mobile_default' => ! empty( $values['mobile_default'] ) && in_array( $values['mobile_default'], $allowed_defaults, true ) ? $values['mobile_default'] : '',
+							'options'        => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
+								'flex-start' => [
 									'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
 									'icon'  => 'eicon-justify-start-h',
 								],
-								'center' => [
+								'center'     => [
 									'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
 									'icon'  => 'eicon-justify-center-h',
 								],
-								'flex-end' => [
+								'flex-end'   => [
 									'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
 									'icon'  => 'eicon-justify-end-h',
 								],
 							],
-							'selectors' => [
+							'selectors'      => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'align-items: {{VALUE}};',
 							],
-							'condition'  => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
+							'condition'      => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
 						if ( ! empty( $values['separator'] ) ) {
 							$control_args['separator'] = $values['separator'];
