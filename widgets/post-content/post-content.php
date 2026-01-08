@@ -80,6 +80,7 @@ class Post_Content extends Base {
 	 * Register styles related controls
 	 */
 	protected function register_style_controls() {
+		$this->__general_style_controls();
 		$this->__paragraph_style_controls();
 		$this->__heading_style_controls();
 		$this->__link_style_controls();
@@ -88,6 +89,35 @@ class Post_Content extends Base {
 		$this->__pre_code_style_controls();
 		$this->__table_style_controls();
 		$this->__list_style_controls();
+	}
+
+	protected function __general_style_controls() {
+		$this->start_controls_section(
+			'section_general_style',
+			[
+				'label' => esc_html__( 'General', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->set_style_controls(
+			'general',
+			[
+				'selector' => '{{WRAPPER}} .zyre-post-content',
+				'controls' => [
+					'typo'    => [],
+					'color'   => [
+						'label' => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
+					],
+					'color_1' => [
+						'label'    => esc_html__( 'Bold Text Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-post-content strong, {{WRAPPER}} .zyre-post-content b',
+					],
+				],
+			]
+		);
+
+		$this->end_controls_section();
 	}
 
 	protected function __paragraph_style_controls() {
@@ -520,12 +550,18 @@ class Post_Content extends Base {
 					'color'      => [
 						'label' => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
 					],
+					'color_1'    => [
+						'label'    => esc_html__( 'Marker Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-post-content li::marker',
+					],
+					'icon_size'  => [
+						'label'    => esc_html__( 'Marker Size', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-post-content li::marker',
+					],
 					'spacing'    => [
-						'label'        => esc_html__( 'Horizontal Space', 'zyre-elementor-addons' ),
+						'label'        => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+						'selector'     => '{{WRAPPER}} .zyre-post-content ul li, {{WRAPPER}} .zyre-post-content ol li',
 						'css_property' => is_rtl() ? 'padding-right' : 'padding-left',
-						'default'      => [
-							'size' => 16,
-						],
 					],
 					'margin'     => [],
 				],
@@ -586,8 +622,9 @@ class Post_Content extends Base {
 						'label'     => esc_html__( 'Nested Child List', 'zyre-elementor-addons' ),
 						'separator' => 'before',
 					],
-					'spacing' => [
-						'label'        => esc_html__( 'Horizontal Space', 'zyre-elementor-addons' ),
+					'spacing'    => [
+						'label'        => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+						'selector'     => '{{WRAPPER}} .zyre-post-content li ul li, {{WRAPPER}} .zyre-post-content li ol li',
 						'css_property' => is_rtl() ? 'padding-right' : 'padding-left',
 					],
 					'margin'  => [],

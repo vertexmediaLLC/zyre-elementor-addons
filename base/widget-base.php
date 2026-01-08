@@ -188,6 +188,7 @@ abstract class Base extends Widget_Base {
 
 					case 'typography':
 					case 'typo':
+					case 'typo_2':
 						$control_args = [
 							'name'           => $control_name,
 							'label'          => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Typography', 'zyre-elementor-addons' ),
@@ -317,6 +318,36 @@ abstract class Base extends Widget_Base {
 							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
 						$this->add_control( $control_name, $control_args );
+						break;
+
+					case 'indent':
+					case 'text_indent':
+						$allowed_props = [ 'text-indent' ];
+						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'text-indent';
+						$control_args = [
+							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Text Indent', 'zyre-elementor-addons' ),
+							'type'       => Controls_Manager::SLIDER,
+							'size_units' => isset( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : [ 'px', '%', 'em', 'rem', 'vw' ],
+							'range'      => isset( $values['range'] ) && is_array( $values['range'] ) ? $values['range'] : [
+								'px' => [
+									'min' => -100,
+									'max' => 100,
+								],
+								'em' => [
+									'min' => -100,
+									'max' => 100,
+								],
+							],
+							'default'    => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [],
+							'selectors'  => [
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => "{$css_property}: {{SIZE}}{{UNIT}};",
+							],
+							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
+						];
+						if ( ! empty( $values['separator'] ) ) {
+							$control_args['separator'] = $values['separator'];
+						}
+						$this->add_responsive_control( $control_name, $control_args );
 						break;
 
 					case 'background':
