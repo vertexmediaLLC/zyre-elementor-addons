@@ -360,31 +360,6 @@ class Post_Grid extends Base {
 		);
 		$this->read_more();
 
-		$this->add_control(
-			'content_display',
-			[
-				'label'        => esc_html__( 'Content Display', 'zyre-elementor-addons' ),
-				'type'         => Controls_Manager::SELECT,
-				'separator'    => 'before',
-				'default'      => 'normal',
-				'options'      => [
-					'normal' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
-					'float'  => esc_html__( 'Float', 'zyre-elementor-addons' ),
-				],
-				'prefix_class' => 'zyre-post-content-display-',
-				'conditions'   => [
-					'relation' => 'and',
-					'terms'    => [
-						[
-							'name'     => 'thumbnail_overlay',
-							'operator' => '==',
-							'value'    => '',
-						],
-					],
-				],
-			]
-		);
-
 		$this->end_controls_section();
 	}
 
@@ -1047,7 +1022,6 @@ class Post_Grid extends Base {
 		$this->__post_style();
 		$this->__thumbnail_style();
 		$this->__thumbnail_overlay_style();
-		$this->__content_overflow_style();
 		$this->__header_meta_style();
 		$this->__content_wrapper_style();
 		$this->__content_body_style();
@@ -1204,42 +1178,6 @@ class Post_Grid extends Base {
 					'padding'       => [],
 					'border_radius' => [],
 					'align_y'       => [
-						'css_property' => 'align-content',
-					],
-				],
-			]
-		);
-
-		$this->end_controls_section();
-	}
-
-	/**
-	 * Style - Content Float
-	 */
-	protected function __content_overflow_style() {
-		$this->start_controls_section(
-			'section_content_overflow_style',
-			[
-				'label' => esc_html__( 'Content Float', 'zyre-elementor-addons' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'content_display' => 'float',
-				],
-			]
-		);
-
-		$this->set_style_controls(
-			'content_overflow',
-			[
-				'selector' => '{{WRAPPER}}.zyre-post-content-display-float .zyre-post-content',
-				'controls' => [
-					'height'   => [
-						'selector' => '{{WRAPPER}}.zyre-post-content-display-float .zyre-post,
-								{{WRAPPER}}.zyre-post-content-display-float .zyre-post-thumbnail img',
-					],
-					'bg_color' => [],
-					'padding'  => [],
-					'align_y'  => [
 						'css_property' => 'align-content',
 					],
 				],

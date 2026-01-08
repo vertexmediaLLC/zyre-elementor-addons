@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-07T12:00:44+00:00\n"
+"POT-Creation-Date: 2026-01-08T05:09:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -467,7 +467,7 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1205
 #: widgets/post-comments/post-comments.php:1339
 #: widgets/post-comments/post-comments.php:1669
-#: widgets/post-grid/post-grid.php:479
+#: widgets/post-grid/post-grid.php:454
 #: widgets/post-title/post-title.php:209
 #: widgets/social-share/social-share.php:798
 #: widgets/team-member/team-member.php:459
@@ -602,7 +602,7 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1216
 #: widgets/post-comments/post-comments.php:1807
 #: widgets/post-excerpt/post-excerpt.php:88
-#: widgets/post-grid/post-grid.php:1012
+#: widgets/post-grid/post-grid.php:987
 #: widgets/post-meta/post-meta.php:469
 #: widgets/post-thumbnail/post-thumbnail.php:122
 #: widgets/post-title/post-title.php:114
@@ -707,9 +707,9 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1811
 #: widgets/post-comments/post-comments.php:2068
 #: widgets/post-excerpt/post-excerpt.php:92
-#: widgets/post-grid/post-grid.php:441
-#: widgets/post-grid/post-grid.php:1016
-#: widgets/post-grid/post-grid.php:1736
+#: widgets/post-grid/post-grid.php:416
+#: widgets/post-grid/post-grid.php:991
+#: widgets/post-grid/post-grid.php:1674
 #: widgets/post-meta/post-meta.php:473
 #: widgets/post-navigation/post-navigation.php:470
 #: widgets/post-navigation/post-navigation.php:497
@@ -819,8 +819,8 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1815
 #: widgets/post-comments/post-comments.php:2072
 #: widgets/post-excerpt/post-excerpt.php:96
-#: widgets/post-grid/post-grid.php:1020
-#: widgets/post-grid/post-grid.php:1740
+#: widgets/post-grid/post-grid.php:995
+#: widgets/post-grid/post-grid.php:1678
 #: widgets/post-meta/post-meta.php:477
 #: widgets/post-navigation/post-navigation.php:474
 #: widgets/post-navigation/post-navigation.php:501
@@ -930,9 +930,9 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1819
 #: widgets/post-comments/post-comments.php:2076
 #: widgets/post-excerpt/post-excerpt.php:100
-#: widgets/post-grid/post-grid.php:449
-#: widgets/post-grid/post-grid.php:1024
-#: widgets/post-grid/post-grid.php:1744
+#: widgets/post-grid/post-grid.php:424
+#: widgets/post-grid/post-grid.php:999
+#: widgets/post-grid/post-grid.php:1682
 #: widgets/post-meta/post-meta.php:481
 #: widgets/post-navigation/post-navigation.php:478
 #: widgets/post-navigation/post-navigation.php:505
@@ -996,7 +996,7 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1352
 #: widgets/post-comments/post-comments.php:1380
 #: widgets/post-comments/post-comments.php:1877
-#: widgets/post-grid/post-grid.php:1669
+#: widgets/post-grid/post-grid.php:1607
 #: widgets/post-meta/post-meta.php:524
 #: widgets/toggle/toggle.php:353
 #: widgets/toggle/toggle.php:396
@@ -1060,7 +1060,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:196
 #: widgets/lottie-animation/lottie-animation.php:215
 #: widgets/post-comments/post-comments.php:242
-#: widgets/post-grid/post-grid.php:445
+#: widgets/post-grid/post-grid.php:420
 #: widgets/team-member/team-member.php:549
 #: widgets/team-member/team-member.php:611
 #: widgets/testimonial/testimonial.php:520
@@ -1093,7 +1093,7 @@ msgstr ""
 #: widgets/lottie-animation/lottie-animation.php:214
 #: widgets/pdf-view/pdf-view.php:118
 #: widgets/post-comments/post-comments.php:243
-#: widgets/post-grid/post-grid.php:453
+#: widgets/post-grid/post-grid.php:428
 #: widgets/team-member/team-member.php:557
 #: widgets/team-member/team-member.php:619
 #: widgets/testimonial/testimonial.php:528
@@ -2250,7 +2250,7 @@ msgstr ""
 #: widgets/logo-grid/logo-grid.php:232
 #: widgets/numeric-list/numeric-list.php:60
 #: widgets/post-grid/post-grid.php:47
-#: widgets/post-grid/post-grid.php:1069
+#: widgets/post-grid/post-grid.php:1043
 #: widgets/post-meta/post-meta.php:509
 #: widgets/post-navigation/post-navigation.php:166
 #: widgets/social-icon/social-icon.php:65
@@ -3082,7 +3082,7 @@ msgstr ""
 #: traits/button-trait.php:113
 #: widgets/pdf-view/pdf-view.php:672
 #: widgets/post-excerpt/post-excerpt.php:174
-#: widgets/post-grid/post-grid.php:1713
+#: widgets/post-grid/post-grid.php:1651
 #: widgets/site-tagline/site-tagline.php:138
 #: widgets/site-title/site-title.php:140
 msgid "Icon Spacing"
@@ -3225,10 +3225,9 @@ msgstr ""
 #: widgets/post-content/post-content.php:261
 #: widgets/post-content/post-content.php:615
 #: widgets/post-excerpt/post-excerpt.php:306
-#: widgets/post-grid/post-grid.php:371
-#: widgets/post-grid/post-grid.php:613
-#: widgets/post-grid/post-grid.php:1615
-#: widgets/post-grid/post-grid.php:1910
+#: widgets/post-grid/post-grid.php:588
+#: widgets/post-grid/post-grid.php:1553
+#: widgets/post-grid/post-grid.php:1848
 #: widgets/post-meta/post-meta.php:582
 #: widgets/post-navigation/post-navigation.php:253
 #: widgets/post-navigation/post-navigation.php:393
@@ -3308,8 +3307,8 @@ msgstr ""
 #: widgets/post-content/post-content.php:282
 #: widgets/post-content/post-content.php:637
 #: widgets/post-excerpt/post-excerpt.php:334
-#: widgets/post-grid/post-grid.php:1636
-#: widgets/post-grid/post-grid.php:1931
+#: widgets/post-grid/post-grid.php:1574
+#: widgets/post-grid/post-grid.php:1869
 #: widgets/post-meta/post-meta.php:602
 #: widgets/post-navigation/post-navigation.php:273
 #: widgets/post-navigation/post-navigation.php:427
@@ -3427,8 +3426,8 @@ msgstr ""
 #: widgets/pdf-view/pdf-view.php:575
 #: widgets/post-grid/post-grid.php:256
 #: widgets/post-grid/post-grid.php:326
-#: widgets/post-grid/post-grid.php:503
-#: widgets/post-grid/post-grid.php:1471
+#: widgets/post-grid/post-grid.php:478
+#: widgets/post-grid/post-grid.php:1409
 #: widgets/post-title/post-title.php:351
 #: widgets/site-title/site-title.php:284
 #: widgets/toggle/toggle.php:148
@@ -3453,7 +3452,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:85
 #: widgets/image-heading/image-heading.php:78
 #: widgets/infobox/infobox.php:265
-#: widgets/post-grid/post-grid.php:655
+#: widgets/post-grid/post-grid.php:630
 msgid "Title HTML Tag"
 msgstr ""
 
@@ -3855,7 +3854,7 @@ msgstr ""
 #: widgets/dual-color-heading/dual-color-heading.php:242
 #: widgets/featured-banner/featured-banner.php:2049
 #: widgets/image-heading/image-heading.php:283
-#: widgets/post-grid/post-grid.php:1441
+#: widgets/post-grid/post-grid.php:1379
 #: widgets/testimonial/testimonial.php:1030
 msgid "Block"
 msgstr ""
@@ -3869,7 +3868,7 @@ msgstr ""
 #: widgets/dual-color-heading/dual-color-heading.php:244
 #: widgets/featured-banner/featured-banner.php:2051
 #: widgets/image-heading/image-heading.php:281
-#: widgets/post-grid/post-grid.php:1445
+#: widgets/post-grid/post-grid.php:1383
 #: widgets/testimonial/testimonial.php:1032
 msgid "Inline"
 msgstr ""
@@ -3918,9 +3917,9 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1484
 #: widgets/post-comments/post-comments.php:1547
 #: widgets/post-grid/post-grid.php:175
-#: widgets/post-grid/post-grid.php:571
-#: widgets/post-grid/post-grid.php:645
-#: widgets/post-grid/post-grid.php:696
+#: widgets/post-grid/post-grid.php:546
+#: widgets/post-grid/post-grid.php:620
+#: widgets/post-grid/post-grid.php:671
 #: widgets/skill-bar/skill-bar.php:96
 #: widgets/skill-bar/skill-bar.php:306
 #: widgets/skill-bar/skill-bar.php:488
@@ -3947,11 +3946,11 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1485
 #: widgets/post-comments/post-comments.php:1548
 #: widgets/post-grid/post-grid.php:176
-#: widgets/post-grid/post-grid.php:401
-#: widgets/post-grid/post-grid.php:425
-#: widgets/post-grid/post-grid.php:572
-#: widgets/post-grid/post-grid.php:646
-#: widgets/post-grid/post-grid.php:697
+#: widgets/post-grid/post-grid.php:376
+#: widgets/post-grid/post-grid.php:400
+#: widgets/post-grid/post-grid.php:547
+#: widgets/post-grid/post-grid.php:621
+#: widgets/post-grid/post-grid.php:672
 #: widgets/skill-bar/skill-bar.php:97
 #: widgets/skill-bar/skill-bar.php:307
 #: widgets/skill-bar/skill-bar.php:489
@@ -4088,8 +4087,8 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:1400
 #: widgets/image-carousel/image-carousel.php:270
 #: widgets/logo-carousel/logo-carousel.php:279
-#: widgets/post-grid/post-grid.php:970
-#: widgets/post-grid/post-grid.php:1861
+#: widgets/post-grid/post-grid.php:945
+#: widgets/post-grid/post-grid.php:1799
 msgid "Pagination"
 msgstr ""
 
@@ -4334,12 +4333,12 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:1288
 #: widgets/image-grid/image-grid.php:409
 #: widgets/news-ticker/news-ticker.php:704
-#: widgets/post-grid/post-grid.php:1152
-#: widgets/post-grid/post-grid.php:1359
-#: widgets/post-grid/post-grid.php:1489
-#: widgets/post-grid/post-grid.php:1547
-#: widgets/post-grid/post-grid.php:1729
-#: widgets/post-grid/post-grid.php:1753
+#: widgets/post-grid/post-grid.php:1126
+#: widgets/post-grid/post-grid.php:1297
+#: widgets/post-grid/post-grid.php:1427
+#: widgets/post-grid/post-grid.php:1485
+#: widgets/post-grid/post-grid.php:1667
+#: widgets/post-grid/post-grid.php:1691
 msgid "Margin Bottom"
 msgstr ""
 
@@ -4672,12 +4671,12 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:502
 #: widgets/post-excerpt/post-excerpt.php:120
 #: widgets/post-grid/post-grid.php:208
-#: widgets/post-grid/post-grid.php:553
-#: widgets/post-grid/post-grid.php:694
-#: widgets/post-grid/post-grid.php:738
-#: widgets/post-grid/post-grid.php:756
-#: widgets/post-grid/post-grid.php:852
-#: widgets/post-grid/post-grid.php:979
+#: widgets/post-grid/post-grid.php:528
+#: widgets/post-grid/post-grid.php:669
+#: widgets/post-grid/post-grid.php:713
+#: widgets/post-grid/post-grid.php:731
+#: widgets/post-grid/post-grid.php:827
+#: widgets/post-grid/post-grid.php:954
 #: widgets/post-navigation/post-navigation.php:47
 #: widgets/post-navigation/post-navigation.php:83
 #: widgets/post-navigation/post-navigation.php:126
@@ -4720,11 +4719,11 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:503
 #: widgets/post-excerpt/post-excerpt.php:121
 #: widgets/post-grid/post-grid.php:209
-#: widgets/post-grid/post-grid.php:554
-#: widgets/post-grid/post-grid.php:739
-#: widgets/post-grid/post-grid.php:757
-#: widgets/post-grid/post-grid.php:853
-#: widgets/post-grid/post-grid.php:980
+#: widgets/post-grid/post-grid.php:529
+#: widgets/post-grid/post-grid.php:714
+#: widgets/post-grid/post-grid.php:732
+#: widgets/post-grid/post-grid.php:828
+#: widgets/post-grid/post-grid.php:955
 #: widgets/post-navigation/post-navigation.php:48
 #: widgets/post-navigation/post-navigation.php:84
 #: widgets/post-navigation/post-navigation.php:127
@@ -5246,7 +5245,7 @@ msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:178
 #: widgets/news-ticker/news-ticker.php:574
-#: widgets/post-grid/post-grid.php:1123
+#: widgets/post-grid/post-grid.php:1097
 msgid "Thumbnail"
 msgstr ""
 
@@ -5255,7 +5254,7 @@ msgid "Thumbnail Position"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:250
-#: widgets/post-grid/post-grid.php:495
+#: widgets/post-grid/post-grid.php:470
 msgid "Overlay Contents"
 msgstr ""
 
@@ -5263,8 +5262,8 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:720
 #: widgets/post-excerpt/post-excerpt.php:240
 #: widgets/post-grid/post-grid.php:336
-#: widgets/post-grid/post-grid.php:504
-#: widgets/post-grid/post-grid.php:1528
+#: widgets/post-grid/post-grid.php:479
+#: widgets/post-grid/post-grid.php:1466
 msgid "Excerpt"
 msgstr ""
 
@@ -5276,8 +5275,8 @@ msgstr ""
 #: widgets/post-excerpt/post-excerpt.php:132
 #: widgets/post-excerpt/post-excerpt.php:265
 #: widgets/post-grid/post-grid.php:356
-#: widgets/post-grid/post-grid.php:506
-#: widgets/post-grid/post-grid.php:1584
+#: widgets/post-grid/post-grid.php:481
+#: widgets/post-grid/post-grid.php:1522
 msgid "Read More"
 msgstr ""
 
@@ -5289,7 +5288,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:236
 #: widgets/author-box/author-box.php:610
 #: widgets/pdf-view/pdf-view.php:607
-#: widgets/post-grid/post-grid.php:788
+#: widgets/post-grid/post-grid.php:763
 #: widgets/post-meta/post-meta.php:56
 #: widgets/testimonial/testimonial.php:921
 msgid "Author"
@@ -5298,8 +5297,8 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:359
 #: widgets/news-ticker/news-ticker.php:198
 #: widgets/post-grid/post-grid.php:257
-#: widgets/post-grid/post-grid.php:789
-#: widgets/post-grid/post-grid.php:1339
+#: widgets/post-grid/post-grid.php:764
+#: widgets/post-grid/post-grid.php:1277
 #: widgets/post-meta/post-meta.php:57
 msgid "Date"
 msgstr ""
@@ -5307,7 +5306,7 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:360
 #: widgets/image-grid/image-grid.php:78
 #: widgets/image-grid/image-grid.php:823
-#: widgets/post-grid/post-grid.php:786
+#: widgets/post-grid/post-grid.php:761
 #: widgets/post-meta/post-meta.php:58
 msgid "Category"
 msgstr ""
@@ -5320,7 +5319,7 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:362
 #: widgets/post-comments/post-comments.php:2463
 #: widgets/post-comments/post-comments.php:2646
-#: widgets/post-grid/post-grid.php:791
+#: widgets/post-grid/post-grid.php:766
 #: widgets/post-meta/post-meta.php:60
 msgid "Comments"
 msgstr ""
@@ -5374,8 +5373,8 @@ msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:525
 #: widgets/archive-posts/archive-posts.php:571
-#: widgets/post-grid/post-grid.php:867
-#: widgets/post-grid/post-grid.php:893
+#: widgets/post-grid/post-grid.php:842
+#: widgets/post-grid/post-grid.php:868
 msgid ", "
 msgstr ""
 
@@ -5404,7 +5403,7 @@ msgid "Excerpt Length"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:770
-#: widgets/post-grid/post-grid.php:765
+#: widgets/post-grid/post-grid.php:740
 msgid "Read More Text"
 msgstr ""
 
@@ -5413,29 +5412,29 @@ msgid "Read More »"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:797
-#: widgets/post-grid/post-grid.php:977
+#: widgets/post-grid/post-grid.php:952
 msgid "Pagination Show"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:808
-#: widgets/post-grid/post-grid.php:988
+#: widgets/post-grid/post-grid.php:963
 #: widgets/post-navigation/post-navigation.php:56
 msgid "Previous Label"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:809
-#: widgets/post-grid/post-grid.php:989
+#: widgets/post-grid/post-grid.php:964
 msgid "&laquo; Previous"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:820
-#: widgets/post-grid/post-grid.php:1000
+#: widgets/post-grid/post-grid.php:975
 #: widgets/post-navigation/post-navigation.php:68
 msgid "Next Label"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:821
-#: widgets/post-grid/post-grid.php:1001
+#: widgets/post-grid/post-grid.php:976
 msgid "Next &raquo;"
 msgstr ""
 
@@ -5472,12 +5471,12 @@ msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:1428
 #: widgets/post-comments/post-comments.php:1402
-#: widgets/post-grid/post-grid.php:1889
+#: widgets/post-grid/post-grid.php:1827
 msgid "Page Numbers"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:1492
-#: widgets/post-grid/post-grid.php:1953
+#: widgets/post-grid/post-grid.php:1891
 msgid "Current"
 msgstr ""
 
@@ -5522,7 +5521,7 @@ msgid "Prefixes won't appear in the Editor Preview."
 msgstr ""
 
 #: widgets/archive-title/archive-title.php:170
-#: widgets/post-grid/post-grid.php:879
+#: widgets/post-grid/post-grid.php:854
 msgid "Category Prefix"
 msgstr ""
 
@@ -5532,7 +5531,7 @@ msgid "Category:"
 msgstr ""
 
 #: widgets/archive-title/archive-title.php:183
-#: widgets/post-grid/post-grid.php:905
+#: widgets/post-grid/post-grid.php:880
 msgid "Tag Prefix"
 msgstr ""
 
@@ -5542,7 +5541,7 @@ msgid "Tag:"
 msgstr ""
 
 #: widgets/archive-title/archive-title.php:196
-#: widgets/post-grid/post-grid.php:836
+#: widgets/post-grid/post-grid.php:811
 msgid "Author Prefix"
 msgstr ""
 
@@ -5601,7 +5600,7 @@ msgstr ""
 
 #: widgets/archive-title/archive-title.php:300
 #: widgets/page-title/page-title.php:162
-#: widgets/post-grid/post-grid.php:1815
+#: widgets/post-grid/post-grid.php:1753
 #: widgets/post-meta/post-meta.php:313
 #: widgets/post-title/post-title.php:162
 msgid "Separator"
@@ -5749,7 +5748,7 @@ msgstr ""
 
 #: widgets/author-box/author-box.php:107
 #: widgets/author-box/author-box.php:573
-#: widgets/post-grid/post-grid.php:1772
+#: widgets/post-grid/post-grid.php:1710
 msgid "Avatar"
 msgstr ""
 
@@ -5845,8 +5844,8 @@ msgid "Member since"
 msgstr ""
 
 #: widgets/author-box/author-box.php:437
-#: widgets/post-grid/post-grid.php:581
-#: widgets/post-grid/post-grid.php:802
+#: widgets/post-grid/post-grid.php:556
+#: widgets/post-grid/post-grid.php:777
 msgid "Format Date"
 msgstr ""
 
@@ -5869,8 +5868,8 @@ msgstr ""
 #: widgets/author-box/author-box.php:647
 #: widgets/image-carousel/image-carousel.php:324
 #: widgets/logo-carousel/logo-carousel.php:333
-#: widgets/post-grid/post-grid.php:1512
-#: widgets/post-grid/post-grid.php:1847
+#: widgets/post-grid/post-grid.php:1450
+#: widgets/post-grid/post-grid.php:1785
 #: widgets/site-title/site-title.php:378
 msgid "Hover Color"
 msgstr ""
@@ -6200,7 +6199,7 @@ msgstr ""
 #: widgets/image-heading/image-heading.php:386
 #: widgets/logo-carousel/logo-carousel.php:150
 #: widgets/post-comments/post-comments.php:710
-#: widgets/post-grid/post-grid.php:437
+#: widgets/post-grid/post-grid.php:412
 #: widgets/team-member/team-member.php:92
 #: widgets/team-member/team-member.php:318
 #: widgets/testimonial/testimonial.php:86
@@ -6410,7 +6409,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:733
 #: widgets/featured-banner/featured-banner.php:706
 #: widgets/iconbox/iconbox.php:187
-#: widgets/post-grid/post-grid.php:1094
+#: widgets/post-grid/post-grid.php:1068
 msgid "Box"
 msgstr ""
 
@@ -7252,7 +7251,6 @@ msgid "Category Order"
 msgstr ""
 
 #: widgets/image-grid/image-grid.php:262
-#: widgets/post-grid/post-grid.php:366
 msgid "Content Display"
 msgstr ""
 
@@ -7752,7 +7750,7 @@ msgid "Ignore Sticky Post"
 msgstr ""
 
 #: widgets/news-ticker/news-ticker.php:230
-#: widgets/post-grid/post-grid.php:398
+#: widgets/post-grid/post-grid.php:373
 msgid "Show Thumbnail"
 msgstr ""
 
@@ -8446,180 +8444,175 @@ msgid "Contents"
 msgstr ""
 
 #: widgets/post-grid/post-grid.php:306
-#: widgets/post-grid/post-grid.php:501
-#: widgets/post-grid/post-grid.php:1259
+#: widgets/post-grid/post-grid.php:476
+#: widgets/post-grid/post-grid.php:1197
 msgid "Header Meta"
 msgstr ""
 
 #: widgets/post-grid/post-grid.php:316
-#: widgets/post-grid/post-grid.php:502
+#: widgets/post-grid/post-grid.php:477
 msgid "Post Date"
 msgstr ""
 
 #: widgets/post-grid/post-grid.php:346
-#: widgets/post-grid/post-grid.php:505
-#: widgets/post-grid/post-grid.php:1564
+#: widgets/post-grid/post-grid.php:480
+#: widgets/post-grid/post-grid.php:1502
 msgid "Footer Meta"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:372
-#: widgets/post-grid/post-grid.php:614
-msgid "Float"
-msgstr ""
-
-#: widgets/post-grid/post-grid.php:400
-#: widgets/post-grid/post-grid.php:424
+#: widgets/post-grid/post-grid.php:375
+#: widgets/post-grid/post-grid.php:399
 msgid " Yes"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:422
+#: widgets/post-grid/post-grid.php:397
 msgid "Show Thumbnail Link"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:518
+#: widgets/post-grid/post-grid.php:493
 msgid "Note: Ensure the selected items are enabled, and disable the Thumbnail Link to prevent link issues."
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:551
+#: widgets/post-grid/post-grid.php:526
 msgid "Show Header Meta"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:569
+#: widgets/post-grid/post-grid.php:544
 msgid "Show Post Date"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:593
+#: widgets/post-grid/post-grid.php:568
 msgid "Date Type"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:597
+#: widgets/post-grid/post-grid.php:572
 msgid "Publish"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:598
+#: widgets/post-grid/post-grid.php:573
 msgid "Modified"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:609
+#: widgets/post-grid/post-grid.php:584
 msgid "Date Display"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:643
+#: widgets/post-grid/post-grid.php:589
+msgid "Float"
+msgstr ""
+
+#: widgets/post-grid/post-grid.php:618
 msgid "Show Title"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:678
+#: widgets/post-grid/post-grid.php:653
 msgid "Word Length"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:706
+#: widgets/post-grid/post-grid.php:681
 msgid "Length"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:717
+#: widgets/post-grid/post-grid.php:692
 msgid "Expansion Indicator"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:721
+#: widgets/post-grid/post-grid.php:696
 msgid "..."
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:736
+#: widgets/post-grid/post-grid.php:711
 msgid "Show Footer Meta"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:754
+#: widgets/post-grid/post-grid.php:729
 msgid "Show Read More"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:767
+#: widgets/post-grid/post-grid.php:742
 msgid "Read more"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:780
+#: widgets/post-grid/post-grid.php:755
 msgid "Meta Data"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:787
+#: widgets/post-grid/post-grid.php:762
 #: widgets/subscription-form/subscription-form.php:95
 msgid "Tags"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:790
+#: widgets/post-grid/post-grid.php:765
 msgid "Date Modified"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:838
+#: widgets/post-grid/post-grid.php:813
 msgid "By"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:850
+#: widgets/post-grid/post-grid.php:825
 msgid "Show Author Avatar"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:865
+#: widgets/post-grid/post-grid.php:840
 msgid "Category Separator"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:891
+#: widgets/post-grid/post-grid.php:866
 msgid "Tag Separator"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:917
+#: widgets/post-grid/post-grid.php:892
 msgid "Comments Icon"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:935
+#: widgets/post-grid/post-grid.php:910
 msgid "No Comments Text"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:948
+#: widgets/post-grid/post-grid.php:923
 msgid "Meta Separator"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1173
+#: widgets/post-grid/post-grid.php:1147
 msgid "Thumbnail Overlay"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1223
-msgid "Content Float"
-msgstr ""
-
-#: widgets/post-grid/post-grid.php:1279
+#: widgets/post-grid/post-grid.php:1217
 msgid "Content Wrapper"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1314
+#: widgets/post-grid/post-grid.php:1252
 #: widgets/team-member/team-member.php:578
 #: widgets/testimonial/testimonial.php:836
 msgid "Content Body"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1415
+#: widgets/post-grid/post-grid.php:1353
 msgid "HTML b Tag/Element"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1425
+#: widgets/post-grid/post-grid.php:1363
 msgid "Make sure you have added HTML b Tags in \"Format Date\" input. e.g. <b>d</b> M Y"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1438
+#: widgets/post-grid/post-grid.php:1376
 msgid "Display Type"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1662
+#: widgets/post-grid/post-grid.php:1600
 msgid "Horizontal Line"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1666
+#: widgets/post-grid/post-grid.php:1604
 msgid "Show Horizontal Line"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1797
+#: widgets/post-grid/post-grid.php:1735
 msgid "Prefix"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1833
+#: widgets/post-grid/post-grid.php:1771
 msgid "Link Colors"
 msgstr ""
 
