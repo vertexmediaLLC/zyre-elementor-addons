@@ -49,6 +49,7 @@ body.rtl .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar 
 
 .zyre-addon-post-comments #comments .children {
 	padding-inline-start: 75px;
+	list-style: none;
 }
 
 /* Pagination */
@@ -71,6 +72,10 @@ body.rtl .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar 
 .zyre-addon-post-comments .logged-in-as,
 .zyre-addon-post-comments .must-log-in {
 	margin: 0;
+}
+
+.zyre-addon-post-comments .zyre-comment-form > * {
+	width: 100%;
 }
 
 .zyre-addon-post-comments .zyre-comment-form input[type=email],

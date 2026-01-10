@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Box_Shadow;
@@ -279,7 +280,19 @@ class Post_Comments extends Base {
 			]
 		);
 
-		// Reply
+		$this->add_control(
+			'form_position',
+			[
+				'label'   => esc_html__( 'Form Position', 'zyre-elementor-addons' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => [
+					'before' => esc_html__( 'Before Comments', 'zyre-elementor-addons' ),
+					'after'  => esc_html__( 'After Comments', 'zyre-elementor-addons' ),
+				],
+				'default' => 'after',
+			]
+		);
+
 		$this->add_control(
 			'title_reply',
 			[
@@ -567,10 +580,25 @@ class Post_Comments extends Base {
 		);
 
 		$this->add_control(
+			'label_submit_show',
+			[
+				'label'        => esc_html__( 'Show Label', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'yes',
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'Off', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+			]
+		);
+
+		$this->add_control(
 			'label_submit',
 			[
 				'label'     => esc_html__( 'Button Text', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::TEXT,
+				'condition' => [
+					'label_submit_show' => 'yes',
+				],
 			]
 		);
 
@@ -816,7 +844,7 @@ class Post_Comments extends Base {
 						'icon'  => 'eicon-arrow-down',
 					],
 				],
-				'prefix_class'         => '.zyre-addon-post-comments',
+				'prefix_class'         => 'zyre-addon-post-comments-meta-dir-',
 				'selectors_dictionary' => [
 					'row'    => 'display: flex;justify-content: space-between;align-items: center;',
 					'column' => 'display: block;',
@@ -1872,6 +1900,54 @@ class Post_Comments extends Base {
 		$this->common_style_controls( 'form_field_wrap', '{{WRAPPER}} .zyre-comment-form-field-wrap' );
 
 		$this->add_responsive_control(
+			'form_field_wrap_width_c',
+			[
+				'label'      => esc_html__( 'Comment Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-comment-form-comment' => 'max-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'form_field_wrap_width_a',
+			[
+				'label'      => esc_html__( 'Author Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-comment-form-author' => 'max-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'form_field_wrap_width_e',
+			[
+				'label'      => esc_html__( 'Email Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-comment-form-email' => 'max-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'form_field_wrap_width_u',
+			[
+				'label'      => esc_html__( 'Url Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-comment-form-url' => 'max-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
 			'form_field_wrap_space',
 			[
 				'label'     => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
@@ -2094,17 +2170,29 @@ class Post_Comments extends Base {
 	 * @param string $selector CSS selector.
 	 */
 	private function common_style_controls( $prefix, $selector, $conditions = [] ) {
-		$this->add_control(
-			$prefix . '_bg_color',
-			[
-				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					$selector => 'background-color: {{VALUE}};',
-				],
-				'condition' => $conditions,
-			]
-		);
+
+		if ( 'form_submit' === $prefix ) {
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name'      => $prefix . '_bg',
+					'selector'  => $selector,
+					'condition' => $conditions,
+				]
+			);
+		} else {
+			$this->add_control(
+				$prefix . '_bg_color',
+				[
+					'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => [
+						$selector => 'background-color: {{VALUE}};',
+					],
+					'condition' => $conditions,
+				]
+			);
+		}
 
 		$this->add_responsive_control(
 			$prefix . '_padding',
@@ -2268,7 +2356,7 @@ class Post_Comments extends Base {
 			$commenter = wp_get_current_commenter();
 
 			$defaults['class_container'] = 'zyre-comment-respond';
-			$defaults['class_form'] = 'zyre-comment-form';
+			$defaults['class_form'] = 'zyre-comment-form zy-flex zy-flex-wrap';
 
 			// Title Reply
 			$reply_title_tag = zyre_escape_tags( $settings['title_reply_tag'], 'h3' );
@@ -2425,6 +2513,9 @@ class Post_Comments extends Base {
 			$defaults['submit_field'] = '<div class="zyre-comment-form-field-wrap zyre-comment-form-submit">%1$s %2$s</div>';
 			$defaults['class_submit'] = 'zyre-comment-form-submit-btn';
 			$defaults['label_submit'] = ! empty( $settings['label_submit'] ) ? esc_attr( $settings['label_submit'] ) : esc_attr( $defaults['label_submit'] );
+			if ( '' === $settings['label_submit_show'] ) {
+				$defaults['label_submit'] = '';
+			}
 
 			return $defaults;
 		});
@@ -2456,6 +2547,12 @@ class Post_Comments extends Base {
 
 		<div id="comments" class="zyre-comments-area">
 			<?php
+			// Form Output
+			if ( 'before' === $settings['form_position'] ) {
+				comment_form();
+			}
+
+			// Comments List Output
 			if ( (int) $comments_count > 0 ) {
 				if ( 'yes' === $settings['show_comments_title'] ) {
 					$comments_one = ! empty( $settings['comments_one'] ) ? $settings['comments_one'] : _x( 'One Comment', 'comments title', 'zyre-elementor-addons' );
@@ -2513,7 +2610,9 @@ class Post_Comments extends Base {
 			}
 
 			// Form Output
-			comment_form();
+			if ( 'after' === $settings['form_position'] ) {
+				comment_form();
+			}
 			?>
 		</div><!-- #comments -->
 
