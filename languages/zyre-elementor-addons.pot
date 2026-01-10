@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-08T11:24:34+00:00\n"
+"POT-Creation-Date: 2026-01-10T10:01:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -122,6 +122,8 @@ msgstr ""
 #: widgets/archive-title/archive-title.php:298
 #: widgets/business-hour/business-hour.php:736
 #: widgets/call-to-action/call-to-action.php:236
+#: widgets/cf7/cf7.php:225
+#: widgets/cf7/cf7.php:576
 #: widgets/divider/divider.php:50
 #: widgets/featured-banner/featured-banner.php:253
 #: widgets/flipbox/flipbox.php:424
@@ -667,6 +669,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1180
 #: widgets/call-to-action/call-to-action.php:1669
 #: widgets/call-to-action/call-to-action.php:1897
+#: widgets/cf7/cf7.php:226
+#: widgets/cf7/cf7.php:577
 #: widgets/divider/divider.php:170
 #: widgets/divider/divider.php:324
 #: widgets/divider/divider.php:393
@@ -891,6 +895,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1188
 #: widgets/call-to-action/call-to-action.php:1677
 #: widgets/call-to-action/call-to-action.php:1905
+#: widgets/cf7/cf7.php:227
+#: widgets/cf7/cf7.php:578
 #: widgets/divider/divider.php:178
 #: widgets/divider/divider.php:332
 #: widgets/divider/divider.php:401
@@ -1707,6 +1713,7 @@ msgstr ""
 #: classes/widgets-manager.php:299
 #: widgets/button/button.php:21
 #: widgets/call-to-action/call-to-action.php:462
+#: widgets/cf7/cf7.php:604
 #: widgets/featured-banner/featured-banner.php:479
 #: widgets/iconbox/iconbox.php:803
 #: widgets/infobox/infobox.php:349
@@ -2244,7 +2251,7 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:54
 #: widgets/archive-posts/archive-posts.php:56
 #: widgets/archive-posts/archive-posts.php:884
-#: widgets/cf7/cf7.php:118
+#: widgets/cf7/cf7.php:156
 #: widgets/countdown/countdown.php:169
 #: widgets/dual-button/dual-button.php:256
 #: widgets/dual-color-heading/dual-color-heading.php:159
@@ -2583,7 +2590,7 @@ msgstr ""
 #: widgets/advance-toggle/advance-toggle.php:382
 #: widgets/advance-toggle/advance-toggle.php:480
 #: widgets/advance-toggle/advance-toggle.php:598
-#: widgets/cf7/cf7.php:232
+#: widgets/cf7/cf7.php:297
 #: widgets/image-grid/image-grid.php:540
 #: widgets/menu/menu.php:444
 #: widgets/menu/menu.php:809
@@ -3196,8 +3203,9 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:885
 #: widgets/call-to-action/call-to-action.php:914
 #: widgets/call-to-action/call-to-action.php:1232
-#: widgets/cf7/cf7.php:212
-#: widgets/cf7/cf7.php:342
+#: widgets/cf7/cf7.php:277
+#: widgets/cf7/cf7.php:413
+#: widgets/cf7/cf7.php:620
 #: widgets/dual-color-heading/dual-color-heading.php:260
 #: widgets/featured-banner/featured-banner.php:912
 #: widgets/featured-banner/featured-banner.php:940
@@ -3281,7 +3289,8 @@ msgstr ""
 #: widgets/author-box/author-box.php:846
 #: widgets/call-to-action/call-to-action.php:939
 #: widgets/call-to-action/call-to-action.php:1370
-#: widgets/cf7/cf7.php:363
+#: widgets/cf7/cf7.php:434
+#: widgets/cf7/cf7.php:644
 #: widgets/dual-color-heading/dual-color-heading.php:288
 #: widgets/featured-banner/featured-banner.php:965
 #: widgets/featured-banner/featured-banner.php:1381
@@ -3914,6 +3923,7 @@ msgstr ""
 #: traits/social-trait.php:162
 #: traits/swiper-trait.php:401
 #: widgets/business-hour/business-hour.php:229
+#: widgets/cf7/cf7.php:100
 #: widgets/fun-fact/fun-fact.php:413
 #: widgets/image-heading/image-heading.php:196
 #: widgets/news-ticker/news-ticker.php:217
@@ -3943,6 +3953,7 @@ msgstr ""
 #: traits/social-trait.php:163
 #: traits/swiper-trait.php:402
 #: widgets/business-hour/business-hour.php:230
+#: widgets/cf7/cf7.php:101
 #: widgets/fun-fact/fun-fact.php:414
 #: widgets/image-heading/image-heading.php:197
 #: widgets/news-ticker/news-ticker.php:218
@@ -6612,50 +6623,105 @@ msgstr ""
 msgid "Select Your Form"
 msgstr ""
 
-#: widgets/cf7/cf7.php:147
+#: widgets/cf7/cf7.php:98
+msgid "Multi Step Addon Activated"
+msgstr ""
+
+#: widgets/cf7/cf7.php:120
+#, php-format
+msgid "Whether %1$s Plugin By NinjaTeam is Activated."
+msgstr ""
+
+#: widgets/cf7/cf7.php:185
 msgid "Field Wrap"
 msgstr ""
 
-#: widgets/cf7/cf7.php:181
+#: widgets/cf7/cf7.php:194
+msgid "CSS Selector is .wpcf7-form-control-wrap"
+msgstr ""
+
+#: widgets/cf7/cf7.php:223
+#: widgets/cf7/cf7.php:574
+#: widgets/post-grid/post-grid.php:589
+msgid "Float"
+msgstr ""
+
+#: widgets/cf7/cf7.php:246
 msgid "Input & Textarea"
 msgstr ""
 
-#: widgets/cf7/cf7.php:257
+#: widgets/cf7/cf7.php:322
 #: widgets/post-comments/post-comments.php:1954
 msgid "Input Height"
 msgstr ""
 
-#: widgets/cf7/cf7.php:270
+#: widgets/cf7/cf7.php:326
+msgid "Input Width"
+msgstr ""
+
+#: widgets/cf7/cf7.php:338
 #: widgets/post-comments/post-comments.php:1973
 msgid "Textarea Height"
 msgstr ""
 
-#: widgets/cf7/cf7.php:282
+#: widgets/cf7/cf7.php:341
+msgid "Textarea Width"
+msgstr ""
+
+#: widgets/cf7/cf7.php:353
 #: widgets/post-comments/post-comments.php:1916
 #: widgets/subscription-form/subscription-form.php:349
 msgid "Placeholder Color"
 msgstr ""
 
-#: widgets/cf7/cf7.php:294
+#: widgets/cf7/cf7.php:365
 msgid "Select Box Shadow"
 msgstr ""
 
-#: widgets/cf7/cf7.php:310
+#: widgets/cf7/cf7.php:381
 #: widgets/post-comments/post-comments.php:563
 #: widgets/subscription-form/subscription-form.php:209
 #: widgets/subscription-form/subscription-form.php:361
 msgid "Submit Button"
 msgstr ""
 
-#: widgets/cf7/cf7.php:393
+#: widgets/cf7/cf7.php:464
+msgid "Steps"
+msgstr ""
+
+#: widgets/cf7/cf7.php:478
+msgid "Wrapper Padding"
+msgstr ""
+
+#: widgets/cf7/cf7.php:481
+msgid "Wrapper Margin"
+msgstr ""
+
+#: widgets/cf7/cf7.php:493
+msgid "Step Two"
+msgstr ""
+
+#: widgets/cf7/cf7.php:508
+msgid "Step Three"
+msgstr ""
+
+#: widgets/cf7/cf7.php:527
+msgid "Next / Back Button"
+msgstr ""
+
+#: widgets/cf7/cf7.php:559
+msgid "Button Container"
+msgstr ""
+
+#: widgets/cf7/cf7.php:673
 msgid "Error Massage"
 msgstr ""
 
-#: widgets/cf7/cf7.php:406
+#: widgets/cf7/cf7.php:686
 msgid "Margin Top"
 msgstr ""
 
-#: widgets/cf7/cf7.php:426
+#: widgets/cf7/cf7.php:706
 msgid "After Submit Massage"
 msgstr ""
 
@@ -8513,10 +8579,6 @@ msgstr ""
 
 #: widgets/post-grid/post-grid.php:584
 msgid "Date Display"
-msgstr ""
-
-#: widgets/post-grid/post-grid.php:589
-msgid "Float"
 msgstr ""
 
 #: widgets/post-grid/post-grid.php:618

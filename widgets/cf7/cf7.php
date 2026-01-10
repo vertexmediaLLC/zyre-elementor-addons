@@ -91,6 +91,42 @@ class CF7 extends Base {
 					'options' => zyre_get_cf7_forms(),
 				]
 			);
+
+			$this->add_control(
+				'ms_for_cf7',
+				[
+					'label'        => esc_html__( 'Multi Step Addon Activated', 'zyre-elementor-addons' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+					'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
+					'return_value' => 'yes',
+				]
+			);
+
+			$ms_plugin_info = zyre_get_plugin_missing_info(
+				[
+					'plugin_name' => 'cf7-multi-step',
+					'plugin_file' => 'cf7-multi-step/cf7-multi-step.php',
+				]
+			);
+
+			$ms_plugin_url = ! empty( $ms_plugin_info['url'] ) ? $ms_plugin_info['url'] : '#';
+
+			$this->add_control(
+				'ms_for_cf7_notice',
+				[
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => sprintf(
+						__( 'Whether %1$s Plugin By NinjaTeam is Activated.', 'zyre-elementor-addons' ),
+						sprintf(
+							'<a href="%s" target="_blank" rel="noopener">%s</a>',
+							esc_url( $ms_plugin_url ),
+							esc_html( 'Multi Step for Contact Form 7 (Lite)' )
+						),
+					),
+					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+				]
+			);
 		}
 
 		$this->end_controls_section();
@@ -104,6 +140,8 @@ class CF7 extends Base {
 		$this->__field_wrap_style();
 		$this->__input_textarea_style();
 		$this->__submit_btn_style();
+		$this->__steps_style();
+		$this->__next_back_btn_style();
 		$this->__error_style();
 		$this->__after_submit_style();
 	}
@@ -149,6 +187,15 @@ class CF7 extends Base {
 			]
 		);
 
+		$this->add_control(
+			'field_wrap_notice',
+			[
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => esc_html__( 'CSS Selector is .wpcf7-form-control-wrap', 'zyre-elementor-addons' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+			]
+		);
+
 		$this->set_style_controls(
 			'field_wrap',
 			[
@@ -164,6 +211,24 @@ class CF7 extends Base {
 							'is_linked' => false,
 						],
 					],
+					'width'  => [],
+				],
+			],
+		);
+
+		$this->add_control(
+			'field_wrap_float',
+			[
+				'type'      => Controls_Manager::SELECT,
+				'label'     => esc_html__( 'Float', 'zyre-elementor-addons' ),
+				'options'   => [
+					'none'  => esc_html__( 'None', 'zyre-elementor-addons' ),
+					'left'  => esc_html__( 'Left', 'zyre-elementor-addons' ),
+					'right' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+				],
+				'default'   => 'none',
+				'selectors' => [
+					'{{WRAPPER}} .wpcf7-form-control-wrap' => 'float: {{VALUE}};',
 				],
 			],
 		);
@@ -251,11 +316,14 @@ class CF7 extends Base {
 		$this->set_style_controls(
 			'input',
 			[
-				'selector' => '{{WRAPPER}} .wpcf7-text, {{WRAPPER}} .wpcf7-email, {{WRAPPER}} .wpcf7-url, {{WRAPPER}} .wpcf7-number, {{WRAPPER}} .wpcf7-quiz, {{WRAPPER}} .wpcf7-date',
+				'selector' => '{{WRAPPER}} .wpcf7-text, {{WRAPPER}} .wpcf7-email, {{WRAPPER}} .wpcf7-url, {{WRAPPER}} .wpcf7-number, {{WRAPPER}} .wpcf7-quiz, {{WRAPPER}} .wpcf7-date, {{WRAPPER}} .wpcf7-select',
 				'controls' => [
 					'height' => [
 						'label' => esc_html__( 'Input Height', 'zyre-elementor-addons' ),
 						'separator' => 'before',
+					],
+					'width' => [
+						'label' => esc_html__( 'Input Width', 'zyre-elementor-addons' ),
 					],
 				],
 			],
@@ -268,6 +336,9 @@ class CF7 extends Base {
 				'controls' => [
 					'height' => [
 						'label' => esc_html__( 'Textarea Height', 'zyre-elementor-addons' ),
+					],
+					'width' => [
+						'label' => esc_html__( 'Textarea Width', 'zyre-elementor-addons' ),
 					],
 				],
 			],
@@ -381,6 +452,215 @@ class CF7 extends Base {
 		$this->end_controls_tabs();
 
 		$this->end_controls_section();
+	}
+
+	/**
+	 * Style - Steps Wrapper
+	 */
+	protected function __steps_style() {
+		$this->start_controls_section(
+			'step_style',
+			[
+				'label'     => esc_html__( 'Steps', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'ms_for_cf7' => 'yes',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'step',
+			[
+				'selector' => '{{WRAPPER}} .fieldset-cf7mls-wrapper .fieldset-cf7mls',
+				'controls' => [
+					'padding' => [
+						'label' => esc_html__( 'Wrapper Padding', 'zyre-elementor-addons' ),
+					],
+					'margin'  => [
+						'label' => esc_html__( 'Wrapper Margin', 'zyre-elementor-addons' ),
+					],
+				],
+			],
+		);
+
+		$this->set_style_controls(
+			'step1',
+			[
+				'selector' => '{{WRAPPER}} .fieldset-cf7mls:nth-child(2) .wpcf7-form-control-wrap',
+				'controls' => [
+					'heading' => [
+						'label'     => esc_html__( 'Step Two', 'zyre-elementor-addons' ),
+						'separator' => 'before',
+					],
+					'width'   => [],
+					'margin'  => [],
+				],
+			],
+		);
+
+		$this->set_style_controls(
+			'step3',
+			[
+				'selector' => '{{WRAPPER}} .fieldset-cf7mls:nth-child(3) .wpcf7-form-control-wrap',
+				'controls' => [
+					'heading' => [
+						'label'     => esc_html__( 'Step Three', 'zyre-elementor-addons' ),
+						'separator' => 'before',
+					],
+					'width'   => [],
+					'margin'  => [],
+				],
+			],
+		);
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Style - Next/Back Button
+	 */
+	protected function __next_back_btn_style() {
+		$this->start_controls_section(
+			'next_back_btn_style',
+			[
+				'label'     => esc_html__( 'Next / Back Button', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'ms_for_cf7' => 'yes',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'next_back_btn',
+			[
+				'selector' => '{{WRAPPER}} .cf7mls_btn',
+				'controls' => [
+					'typography'    => [],
+					'width'         => [],
+					'height'        => [],
+					'border'        => [],
+					'border_radius' => [],
+					'align'         => [
+						'default' => 'center',
+					],
+				],
+			],
+		);
+
+		// Button Container
+		$this->set_style_controls(
+			'next_back_btns',
+			[
+				'selector' => '{{WRAPPER}} .fieldset-cf7mls .cf7mls-btns',
+				'controls' => [
+					'heading'    => [
+						'label'     => esc_html__( 'Button Container', 'zyre-elementor-addons' ),
+						'separator' => 'before',
+					],
+					'min_height' => [
+						'css_property' => 'min-height',
+					],
+					'margin'     => [],
+				],
+			],
+		);
+
+		$this->add_control(
+			'next_back_btns_float',
+			[
+				'type'      => Controls_Manager::SELECT,
+				'label'     => esc_html__( 'Float', 'zyre-elementor-addons' ),
+				'options'   => [
+					'none'  => esc_html__( 'None', 'zyre-elementor-addons' ),
+					'left'  => esc_html__( 'Left', 'zyre-elementor-addons' ),
+					'right' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+				],
+				'default'   => 'none',
+				'selectors' => [
+					'{{WRAPPER}} .fieldset-cf7mls .cf7mls-btns' => 'float: {{VALUE}};',
+				],
+			],
+		);
+
+		$this->next_back_btn_style( 'next' );
+
+		$this->next_back_btn_style( 'back' );
+
+		$this->end_controls_section();
+	}
+
+	private function next_back_btn_style( string $prefix ) {
+
+		$class_selector = '.cf7mls_' . $prefix;
+
+		$this->set_style_controls(
+			$prefix . '_btn',
+			[
+				'selector' => "{{WRAPPER}} $class_selector",
+				'controls' => [
+					'heading' => [
+						'label'     => ucfirst( $prefix ) . ' ' . esc_html__( 'Button', 'zyre-elementor-addons' ),
+						'separator' => 'before',
+					],
+					'padding' => [],
+					'margin'  => [],
+				],
+			],
+		);
+
+		// Tabs
+		$this->start_controls_tabs( $prefix . '_btn_tabs' );
+
+		// Tab: Normal
+		$this->start_controls_tab(
+			$prefix . '_btn_tab_normal',
+			[
+				'label' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			$prefix . '_btn',
+			[
+				'selector' => "{{WRAPPER}} $class_selector",
+				'controls' => [
+					'color'      => [],
+					'bg'         => [
+						'exclude' => [],
+					],
+					'box_shadow' => [],
+				],
+			],
+		);
+
+		$this->end_controls_tab();
+
+		// Tab: Hover
+		$this->start_controls_tab(
+			$prefix . '_btn_tab_hover',
+			[
+				'label' => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+			]
+		);
+
+		$this->set_style_controls(
+			$prefix . '_btn_hover',
+			[
+				'selector' => "{{WRAPPER}} $class_selector:hover",
+				'controls' => [
+					'color'        => [],
+					'bg_color'     => [],
+					'border_color' => [],
+					'box_shadow'   => [],
+				],
+			],
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 	}
 
 	/**
