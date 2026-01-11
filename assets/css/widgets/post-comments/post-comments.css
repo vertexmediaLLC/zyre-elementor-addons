@@ -4,6 +4,7 @@
 	background-color: #fff;
 	padding: 0;
 	margin-bottom: 0;
+	border-block-end: none;
 }
 
 .zyre-addon-post-comments #comments .comment .comment-content-box,

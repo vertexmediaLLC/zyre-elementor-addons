@@ -147,6 +147,34 @@ class Post_Comments extends Base {
 		);
 
 		$this->add_control(
+			'show_comments_order',
+			[
+				'label'        => esc_html__( 'Show Comments by Order', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'On', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'Off', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'separator'    => 'before',
+			]
+		);
+
+		$this->add_control(
+			'comments_order',
+			[
+				'label'     => esc_html__( 'Comments Order', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => [
+					'asc' => esc_html__( 'Latest', 'zyre-elementor-addons' ),
+					'desc' => esc_html__( 'Oldest', 'zyre-elementor-addons' ),
+				],
+				'default'   => 'asc',
+				'condition' => [
+					'show_comments_order' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
 			'avatar_size',
 			[
 				'label'     => esc_html__( 'Avatar Size (px)', 'zyre-elementor-addons' ),
@@ -188,12 +216,13 @@ class Post_Comments extends Base {
 		$this->add_control(
 			'show_date_time',
 			[
-				'label' => esc_html__( 'Show Date & Time', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'zyre-elementor-addons' ),
-				'label_off' => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'label'        => esc_html__( 'Show Date & Time', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
-				'default' => 'yes',
+				'default'      => 'yes',
+				'separator'    => 'before',
 			]
 		);
 
@@ -222,14 +251,91 @@ class Post_Comments extends Base {
 		);
 
 		$this->add_control(
+			'comment_time_icon',
+			[
+				'label'       => esc_html__( 'Date Time Icon', 'zyre-elementor-addons' ),
+				'label_block' => false,
+				'type'        => Controls_Manager::ICONS,
+				'skin'        => 'inline',
+				'default'     => [
+					'value'   => 'far fa-clock',
+					'library' => 'fa-regular',
+				],
+				'condition'   => [
+					'show_date_time' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'comment_time_ago',
+			[
+				'label'        => esc_html__( 'Convert to Human Time', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'condition'    => [
+					'show_date_time' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'show_ago_text',
+			[
+				'label'        => esc_html__( 'Show Ago Text', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+				'condition'    => [
+					'show_date_time'   => 'yes',
+					'comment_time_ago' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
 			'show_comment_edit',
 			[
-				'label' => esc_html__( 'Show Edit', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'zyre-elementor-addons' ),
-				'label_off' => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'label'        => esc_html__( 'Show Edit', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
-				'default' => 'yes',
+				'default'      => 'yes',
+				'separator'    => 'before',
+			]
+		);
+
+		$this->add_control(
+			'show_comment_count',
+			[
+				'label'        => esc_html__( 'Show Comment Count', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'separator'    => 'before',
+			]
+		);
+
+		$this->add_control(
+			'comment_count_icon',
+			[
+				'label'       => esc_html__( 'Comment Count Icon', 'zyre-elementor-addons' ),
+				'label_block' => false,
+				'type'        => Controls_Manager::ICONS,
+				'skin'        => 'inline',
+				'default'     => [
+					'value'   => 'far fa-comment',
+					'library' => 'fa-regular',
+				],
+				'condition'   => [
+					'show_comment_count' => 'yes',
+				],
 			]
 		);
 
@@ -249,9 +355,22 @@ class Post_Comments extends Base {
 		);
 
 		$this->add_control(
+			'pagination_type',
+			[
+				'label'   => esc_html__( 'Pagination Type', 'zyre-elementor-addons' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => [
+					'pagination' => esc_html__( 'Pagination', 'zyre-elementor-addons' ),
+					'loadmore'   => esc_html__( 'Next / Previous', 'zyre-elementor-addons' ),
+				],
+				'default' => 'pagination',
+			]
+		);
+
+		$this->add_control(
 			'pagination_prev_text',
 			[
-				'label'       => esc_html__( 'Pagination Prev Text', 'zyre-elementor-addons' ),
+				'label'       => esc_html__( 'Previous Text', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'placeholder' => esc_html( '&laquo;' ),
 			]
@@ -260,7 +379,7 @@ class Post_Comments extends Base {
 		$this->add_control(
 			'pagination_next_text',
 			[
-				'label'       => esc_html__( 'Pagination Next Text', 'zyre-elementor-addons' ),
+				'label'       => esc_html__( 'Next Text', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'placeholder' => esc_html( '&raquo;' ),
 			]
@@ -610,6 +729,7 @@ class Post_Comments extends Base {
 	 */
 	protected function register_style_controls() {
 		$this->__comments_title();
+		$this->__comments_order();
 		$this->__comments_list();
 		$this->__comment_author_image();
 		$this->__comment_meta();
@@ -677,6 +797,26 @@ class Post_Comments extends Base {
 				],
 			]
 		);
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Comments Order Style Controls
+	 */
+	protected function __comments_order() {
+		$this->start_controls_section(
+			'section_comments_order_style',
+			[
+				'label'     => esc_html__( 'Comments Order', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'show_comments_order' => 'yes',
+				],
+			]
+		);
+
+		$this->text_style_controls( 'comments_order', '{{WRAPPER}} .zyre-comments-order' );
 
 		$this->end_controls_section();
 	}
@@ -2337,6 +2477,23 @@ class Post_Comments extends Base {
 	}
 
 	/**
+	 * Get comments order
+	 *
+	 * @param array $settings Widget settings.
+	 * @return string
+	 */
+	protected function get_comments_order( $settings ) {
+		$order = 'asc';
+		if ( 'yes' === $settings['show_comments_order'] && 'desc' === $settings['comments_order'] ) {
+			$order = 'desc';
+		}
+		if ( ! empty( $_GET['order'] ) && ( 'asc' === $_GET['order'] || 'desc' === $_GET['order'] ) ) {
+			$order = sanitize_key( $_GET['order'] );
+		}
+		return $order;
+	}
+
+	/**
 	 * Register render display controls
 	 */
 	protected function render() {
@@ -2523,10 +2680,12 @@ class Post_Comments extends Base {
 		// Variable "cpage" is set for pagination
 		$page     = max( 1, get_query_var( 'cpage' ) );
 
+		$order = $this->get_comments_order( $settings );
+
 		$comment_args = [
 			'post_id' => get_the_ID(),
 			'orderby' => 'comment_date_gmt',
-			'order'   => 'ASC',
+			'order'   => $order,
 			'status'  => 'approve',
 		];
 
@@ -2554,6 +2713,10 @@ class Post_Comments extends Base {
 
 			// Comments List Output
 			if ( (int) $comments_count > 0 ) {
+				if ( 'yes' === $settings['show_comments_title'] || 'yes' === $settings['show_comments_order'] ) {
+					echo '<div class="zyre-comments-header zy-flex zy-align-center zy-justify-between zy-gap-6">';
+				}
+
 				if ( 'yes' === $settings['show_comments_title'] ) {
 					$comments_one = ! empty( $settings['comments_one'] ) ? $settings['comments_one'] : _x( 'One Comment', 'comments title', 'zyre-elementor-addons' );
 					$comments_singular = ! empty( $settings['comments_singular'] ) ? $settings['comments_singular'] : __( 'Comment', 'zyre-elementor-addons' );
@@ -2581,6 +2744,24 @@ class Post_Comments extends Base {
 						?>
 					</h2>
 					<?php
+				}
+
+				// Comments Order
+				if ( 'yes' === $settings['show_comments_order'] ) {
+					$permalink = get_permalink();
+					$action_url = trailingslashit( $permalink ) . '#comments';
+					?>
+					<form action="<?php echo esc_url( $action_url ); ?>" class="zyre-comments-order">
+						<select name="order" class="zyre-comments-order zy-p-0 zy-border-none zy-radius-0 zy-outline-none" onchange="this.form.submit()">
+							<option value="asc" <?php selected( $order, 'asc' ); ?>><?php esc_html_e( 'Latest', 'zyre-elementor-addons' ); ?></option>
+							<option value="desc" <?php selected( $order, 'desc' ); ?>><?php esc_html_e( 'Oldest', 'zyre-elementor-addons' ); ?></option>
+						</select>
+					</form>
+					<?php
+				}
+
+				if ( 'yes' === $settings['show_comments_title'] || 'yes' === $settings['show_comments_order'] ) {
+					echo '</div>';
 				}
 
 				// Pagination
@@ -2677,22 +2858,34 @@ class Post_Comments extends Base {
 						</div><!-- .comment-author -->
 
 						<?php if ( 'yes' === $settings['show_date_time'] || 'yes' === $settings['show_comment_edit'] ) : ?>
-						<div class="comment-metadata">
+						<div class="comment-metadata zy-inline-flex zy-align-center zy-gap-1">
 							<?php
 							if ( 'yes' === $settings['show_date_time'] ) {
 								$date_format = ! empty( $settings['comment_date_format'] ) ? esc_html( $settings['comment_date_format'] ) : '';
 								$time_format = ! empty( $settings['comment_time_format'] ) ? esc_html( $settings['comment_time_format'] ) : '';
-								printf(
-									'<a href="%s"><time datetime="%s">%s</time></a>',
-									esc_url( get_comment_link( $comment, $args ) ),
-									get_comment_time( 'c' ),
-									sprintf(
-										/* translators: 1: Comment date, 2: Comment time. */
-										__( '%1$s at %2$s', 'zyre-elementor-addons' ),
-										get_comment_date( $date_format, $comment ),
-										get_comment_time( $time_format )
-									)
-								);
+								if ( 'yes' === $settings['comment_time_ago'] ) {
+									printf(
+										'<a href="%s" class="zy-inline-flex zy-align-center zy-gap-1">%s<time datetime="%s">%s%s</time></a>',
+										esc_url( get_comment_link( $comment, $args ) ),
+										! empty( $settings['comment_time_icon']['value'] ) ? zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) : '',
+										get_comment_time( 'c' ),
+										human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ),
+										( 'yes' === $settings['show_ago_text'] ) ? esc_html__( ' ago', 'zyre-elementor-addons' ) : '',
+									);
+								} else {
+									printf(
+										'<a href="%s" class="zy-inline-flex zy-align-center zy-gap-1">%s<time datetime="%s">%s</time></a>',
+										esc_url( get_comment_link( $comment, $args ) ),
+										! empty( $settings['comment_time_icon']['value'] ) ? zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) : '',
+										get_comment_time( 'c' ),
+										sprintf(
+											/* translators: 1: Comment date, 2: Comment time. */
+											__( '%1$s at %2$s', 'zyre-elementor-addons' ),
+											get_comment_date( $date_format, $comment ),
+											get_comment_time( $time_format )
+										)
+									);
+								}
 							}
 
 							if ( 'yes' === $settings['show_comment_edit'] ) {
@@ -2710,20 +2903,43 @@ class Post_Comments extends Base {
 					<div class="comment-content">
 						<?php comment_text(); ?>
 					</div><!-- .comment-content -->
+
 					<?php
-					if ( '1' === $comment->comment_approved || $show_pending_links ) {
-						comment_reply_link(
-							array_merge(
-								$args,
-								[
-									'add_below'  => 'div-comment',
-									'depth'      => $depth,
-									'max_depth'  => $args['max_depth'],
-									'before'     => '<div class="reply">',
-									'after'      => '</div>',
-								]
-							)
-						);
+					$show_extra = 'yes' === $settings['show_comment_count'] || '1' === $comment->comment_approved || $show_pending_links;
+		
+					if ( $show_extra ) {
+						echo '<div class="comment-meta-extra zy-flex zy-align-center zy-gap-6 zy-justify-between">';
+
+						if ( 'yes' === $settings['show_comment_count'] ) {
+							$author_email = $comment->comment_author_email;
+							$comment_count = get_comments([
+								'author_email' => $author_email,
+								'count'   => true
+							]);
+
+							printf(
+								'<div class="comment-author-total-comments zy-inline-flex zy-align-center zy-gap-1">%s<span class="comment-author-total-comments-text">%s</span></div>',
+								! empty( $settings['comment_count_icon']['value'] ) ? zyre_get_icon_html( $settings, 'icon', 'comment_count_icon' ) : '',
+								esc_html( $comment_count )
+							);
+						}
+
+						if ( '1' === $comment->comment_approved || $show_pending_links ) {
+							comment_reply_link(
+								array_merge(
+									$args,
+									[
+										'add_below'  => 'div-comment',
+										'depth'      => $depth,
+										'max_depth'  => $args['max_depth'],
+										'before'     => '<div class="reply">',
+										'after'      => '</div>',
+									]
+								)
+							);
+						}
+
+						echo '</div>';
 					}
 					?>
 				</div><!-- .comment-content-box -->
@@ -2745,14 +2961,38 @@ class Post_Comments extends Base {
 			<nav class="navigation zyre-comments-navigation zy-flex zy-justify-center zy-gap-1" aria-label="<?php esc_attr_e( 'Comments', 'zyre-elementor-addons' ); ?>">
 				<h2 class="screen-reader-text"><?php esc_html_e( 'Comments navigation', 'zyre-elementor-addons' ); ?></h2>
 				<?php
-				echo paginate_links([
-					'base'      => add_query_arg( 'cpage', '%#%' ),
-					'format'    => '',
-					'total'     => $total_pages,
-					'current'   => $page,
-					'prev_text' => ! empty( $settings['pagination_prev_text'] ) ? esc_html( $settings['pagination_prev_text'] ) : '&laquo;',
-					'next_text' => ! empty( $settings['pagination_next_text'] ) ? esc_html( $settings['pagination_next_text'] ) : '&raquo;',
-				]);
+				$prev_text = ! empty( $settings['pagination_prev_text'] ) ? esc_html( $settings['pagination_prev_text'] ) : '&laquo;';
+				$next_text = ! empty( $settings['pagination_next_text'] ) ? esc_html( $settings['pagination_next_text'] ) : '&raquo;';
+				if ( 'pagination' === $settings['pagination_type'] ) {
+					echo paginate_links( [
+						'base'         => add_query_arg( 'cpage', '%#%' ),
+						'format'       => '',
+						'total'        => $total_pages,
+						'current'      => $page,
+						'prev_text'    => $prev_text,
+						'next_text'    => $next_text,
+						'add_fragment' => '#comments',
+					] );
+				} elseif ( 'loadmore' === $settings['pagination_type'] ) {
+					global $wp_rewrite;
+					$order_params = ! empty( $_GET['order']) ? '?order=' . sanitize_key( $_GET['order'] ) : '';
+					$prev_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page - 1 ) . $order_params . '#comments';
+					$next_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page + 1 ) . $order_params . '#comments';
+					?>
+					<div class="nav-links">
+						<?php if ( get_previous_comments_link( $prev_text, $page ) ) : ?>
+							<div class="nav-previous">
+								<?php echo '<a href="' . esc_url( $prev_page_url ) . '">' . $prev_text . '</a>'; ?>
+							</div>
+						<?php endif; ?>
+						<?php if ( get_next_comments_link( $next_text, $total_pages, $page ) ) : ?>
+							<div class="nav-next">
+								<?php echo '<a href="' . esc_url( $next_page_url ) . '">' . $next_text . '</a>'; ?>
+							</div>
+						<?php endif; ?>
+					</div>
+					<?php
+				}
 				?>
 			</nav>
 			<?php
