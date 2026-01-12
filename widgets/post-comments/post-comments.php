@@ -275,6 +275,7 @@ class Post_Comments extends Base {
 				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
 				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
+				'default'      => 'yes',
 				'condition'    => [
 					'show_date_time' => 'yes',
 				],
@@ -318,6 +319,7 @@ class Post_Comments extends Base {
 				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
 				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
+				'default'      => 'yes',
 				'separator'    => 'before',
 			]
 		);
@@ -361,7 +363,7 @@ class Post_Comments extends Base {
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
 					'pagination' => esc_html__( 'Pagination', 'zyre-elementor-addons' ),
-					'loadmore'   => esc_html__( 'Next / Previous', 'zyre-elementor-addons' ),
+					'next_prev'  => esc_html__( 'Next / Previous', 'zyre-elementor-addons' ),
 				],
 				'default' => 'pagination',
 			]
@@ -542,12 +544,11 @@ class Post_Comments extends Base {
 		$this->add_control(
 			'show_logged_in_as',
 			[
-				'label' => esc_html__( 'Show Logged in As', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'zyre-elementor-addons' ),
-				'label_off' => esc_html__( 'Hide', 'zyre-elementor-addons' ),
+				'label'        => esc_html__( 'Show Logged in As', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Show', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'Hide', 'zyre-elementor-addons' ),
 				'return_value' => 'yes',
-				'default' => 'yes',
 			]
 		);
 
@@ -1520,7 +1521,8 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation' => 'gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-links' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1558,7 +1560,8 @@ class Post_Comments extends Base {
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-links' => 'justify-content: {{VALUE}};',
 				],
 			]
 		);
@@ -1739,7 +1742,9 @@ class Post_Comments extends Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.prev,
-					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next' => 'color: {{VALUE}};',
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-next > a,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-previous > a' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'prev_next_style_switcher' => 'yes',
@@ -1747,7 +1752,14 @@ class Post_Comments extends Base {
 			]
 		);
 
-		$this->common_style_controls( 'prev_next', '{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.prev, {{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next', [ 'prev_next_style_switcher' => 'yes' ] );
+		$this->common_style_controls(
+			'prev_next',
+			'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.prev,
+			{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next,
+			{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-next > a,
+			{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-previous > a',
+			['prev_next_style_switcher' => 'yes' ]
+		);
 
 		$this->end_controls_tab(); // End Normal Tab
 
@@ -1769,7 +1781,9 @@ class Post_Comments extends Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.prev:hover,
-					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next:hover' => 'color: {{VALUE}} !important;',
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next:hover,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-next > a:hover,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-previous > a:hover' => 'color: {{VALUE}} !important;',
 				],
 				'condition' => [
 					'prev_next_style_switcher' => 'yes',
@@ -1784,7 +1798,9 @@ class Post_Comments extends Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.prev:hover,
-					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next:hover' => 'background-color: {{VALUE}} !important;',
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next:hover,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-next > a:hover,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-previous > a:hover' => 'background-color: {{VALUE}} !important;',
 				],
 				'condition' => [
 					'prev_next_style_switcher' => 'yes',
@@ -1799,7 +1815,9 @@ class Post_Comments extends Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.prev:hover,
-					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next:hover' => 'border-color: {{VALUE}} !important;',
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers.next:hover,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-next > a:hover,
+					{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-previous > a:hover' => 'border-color: {{VALUE}} !important;',
 				],
 				'condition' => [
 					'prev_next_style_switcher' => 'yes',
@@ -1834,7 +1852,7 @@ class Post_Comments extends Base {
 		$this->add_responsive_control(
 			'reply_title_space',
 			[
-				'label'     => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
+				'label'     => esc_html__( 'Title Spacing', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .zyre-comment-form-reply-title' => 'margin-block-end: {{SIZE}}{{UNIT}};',
@@ -1995,6 +2013,31 @@ class Post_Comments extends Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'comment_meta_align_y',
+			[
+				'label'     => esc_html__( 'Vertical Align', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => [
+					'flex-start' => [
+						'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-align-start-v',
+					],
+					'center'     => [
+						'title' => esc_html__( 'Middle', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-align-center-v',
+					],
+					'flex-end'   => [
+						'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-align-end-v',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .zyre-comment-form' => 'align-items: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -2042,7 +2085,7 @@ class Post_Comments extends Base {
 		$this->add_responsive_control(
 			'form_field_wrap_width_c',
 			[
-				'label'      => esc_html__( 'Comment Width', 'zyre-elementor-addons' ),
+				'label'      => esc_html__( 'Comment Wrap Width', 'zyre-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
 				'selectors'  => [
@@ -2054,7 +2097,7 @@ class Post_Comments extends Base {
 		$this->add_responsive_control(
 			'form_field_wrap_width_a',
 			[
-				'label'      => esc_html__( 'Author Width', 'zyre-elementor-addons' ),
+				'label'      => esc_html__( 'Author Wrap Width', 'zyre-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors'  => [
@@ -2066,7 +2109,7 @@ class Post_Comments extends Base {
 		$this->add_responsive_control(
 			'form_field_wrap_width_e',
 			[
-				'label'      => esc_html__( 'Email Width', 'zyre-elementor-addons' ),
+				'label'      => esc_html__( 'Email Wrap Width', 'zyre-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors'  => [
@@ -2078,11 +2121,23 @@ class Post_Comments extends Base {
 		$this->add_responsive_control(
 			'form_field_wrap_width_u',
 			[
-				'label'      => esc_html__( 'Url Width', 'zyre-elementor-addons' ),
+				'label'      => esc_html__( 'Url Wrap Width', 'zyre-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors'  => [
 					'{{WRAPPER}} .zyre-comment-form-url' => 'max-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'form_field_wrap_width_s',
+			[
+				'label'      => esc_html__( 'Submit Wrap Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-comment-form-submit' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -2093,7 +2148,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comment-form-field-wrap:not(:last-child)' => 'margin-block-end: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .zyre-comment-form' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 				'separator' => 'after',
 			]
@@ -2513,7 +2568,7 @@ class Post_Comments extends Base {
 			$commenter = wp_get_current_commenter();
 
 			$defaults['class_container'] = 'zyre-comment-respond';
-			$defaults['class_form'] = 'zyre-comment-form zy-flex zy-flex-wrap';
+			$defaults['class_form'] = 'zyre-comment-form zy-flex zy-flex-wrap zy-gap-3';
 
 			// Title Reply
 			$reply_title_tag = zyre_escape_tags( $settings['title_reply_tag'], 'h3' );
@@ -2752,7 +2807,7 @@ class Post_Comments extends Base {
 					$action_url = trailingslashit( $permalink ) . '#comments';
 					?>
 					<form action="<?php echo esc_url( $action_url ); ?>" class="zyre-comments-order">
-						<select name="order" class="zyre-comments-order zy-p-0 zy-border-none zy-radius-0 zy-outline-none" onchange="this.form.submit()">
+						<select name="order" class="zyre-comments-order zy-p-0 zy-border-none zy-radius-0 zy-outline-none zy-bg-transparent" onchange="this.form.submit()">
 							<option value="asc" <?php selected( $order, 'asc' ); ?>><?php esc_html_e( 'Latest', 'zyre-elementor-addons' ); ?></option>
 							<option value="desc" <?php selected( $order, 'desc' ); ?>><?php esc_html_e( 'Oldest', 'zyre-elementor-addons' ); ?></option>
 						</select>
@@ -2973,13 +3028,13 @@ class Post_Comments extends Base {
 						'next_text'    => $next_text,
 						'add_fragment' => '#comments',
 					] );
-				} elseif ( 'loadmore' === $settings['pagination_type'] ) {
+				} elseif ( 'next_prev' === $settings['pagination_type'] ) {
 					global $wp_rewrite;
 					$order_params = ! empty( $_GET['order']) ? '?order=' . sanitize_key( $_GET['order'] ) : '';
 					$prev_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page - 1 ) . $order_params . '#comments';
 					$next_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page + 1 ) . $order_params . '#comments';
 					?>
-					<div class="nav-links">
+					<div class="nav-links zy-flex zy-align-center zy-justify-between zy-w-100 zy-gap-6">
 						<?php if ( get_previous_comments_link( $prev_text, $page ) ) : ?>
 							<div class="nav-previous">
 								<?php echo '<a href="' . esc_url( $prev_page_url ) . '">' . $prev_text . '</a>'; ?>
