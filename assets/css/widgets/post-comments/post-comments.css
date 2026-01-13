@@ -1,7 +1,12 @@
 /* Comments Area */
+.zyre-addon-post-comments #comments .comment,
+.zyre-addon-post-comments #comments .pingback {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 .zyre-addon-post-comments #comments .comment .comment-body,
 .zyre-addon-post-comments #comments .pingback .comment-body {
-	background-color: #fff;
 	padding: 0;
 	margin-bottom: 0;
 	border-block-end: none;
@@ -12,14 +17,16 @@
 	display: flex;
     flex-direction: column;
 	padding-block: 0;
-	padding: 32px 45px;
 	border-block-end: 0;
-    border-bottom: 1px solid #ccc;
 }
 
 .zyre-addon-post-comments .comment .comment-content-box a,
 .zyre-addon-post-comments .pingback .comment-content-box a {
 	transition: color 0.12s;
+}
+
+.zyre-addon-post-comments .comment .comment-content p {
+	margin: 0;
 }
 
 body:not(.rtl) .zyre-addon-post-comments #comments .comment .comment-body.has-avatar,
