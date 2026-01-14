@@ -3,7 +3,6 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Box_Shadow;
@@ -722,6 +721,38 @@ class Post_Comments extends Base {
 			]
 		);
 
+		$this->add_control(
+			'submit_btn_icon',
+			[
+				'label'       => esc_html__( 'Icon', 'zyre-elementor-addons' ),
+				'label_block' => false,
+				'type'        => Controls_Manager::ICONS,
+				'skin'        => 'inline',
+			]
+		);
+
+		// User Avatar
+		$this->add_control(
+			'heading_user_avatar',
+			[
+				'label' => esc_html__( 'User Avatar', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'user_avatar_show',
+			[
+				'label'        => esc_html__( 'Show User Avatar on Form', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'yes',
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'Off', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+			]
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -1062,6 +1093,8 @@ class Post_Comments extends Base {
 				],
 			]
 		);
+
+		$this->common_style_controls( 'avatar', '{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar' );
 
 		$this->end_controls_section();
 	}
@@ -1511,6 +1544,39 @@ class Post_Comments extends Base {
 		);
 
 		$this->common_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment .comment-content-box, {{WRAPPER}} #comments .pingback .comment-content-box' );
+
+		$this->add_control(
+			'heading_pingback_comment',
+			[
+				'label'     => esc_html__( 'Pingback Comment', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'comment_body_pingback_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors'  => [
+					'{{WRAPPER}} #comments .pingback .comment-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'comment_body_pingback_margin',
+			[
+				'label'      => esc_html__( 'Margin', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors'  => [
+					'{{WRAPPER}} #comments .pingback .comment-content-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 	}
@@ -2311,6 +2377,36 @@ class Post_Comments extends Base {
 			]
 		);
 
+		// User Avatar
+		$this->add_control(
+			'heading_commenter_avatar',
+			[
+				'label'     => esc_html__( 'User Avatar', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'user_avatar_show' => 'yes',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'commenter_avatar_space',
+			[
+				'label'      => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em', 'rem'],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-comment-form-wrap' => 'gap: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'user_avatar_show' => 'yes',
+				],
+			]
+		);
+
+		$this->common_style_controls( 'commenter_avatar', '{{WRAPPER}} #comments .zyre-commenter-avatar .avatar', [ 'user_avatar_show' => 'yes' ] );
+
 		$this->end_controls_section();
 	}
 
@@ -2639,28 +2735,17 @@ class Post_Comments extends Base {
 	 */
 	private function common_style_controls( $prefix, $selector, $conditions = [] ) {
 
-		if ( 'form_submit' === $prefix ) {
-			$this->add_group_control(
-				Group_Control_Background::get_type(),
-				[
-					'name'      => $prefix . '_bg',
-					'selector'  => $selector,
-					'condition' => $conditions,
-				]
-			);
-		} else {
-			$this->add_control(
-				$prefix . '_bg_color',
-				[
-					'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
-					'type'      => Controls_Manager::COLOR,
-					'selectors' => [
-						$selector => 'background-color: {{VALUE}};',
-					],
-					'condition' => $conditions,
-				]
-			);
-		}
+		$this->add_control(
+			$prefix . '_bg_color',
+			[
+				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					$selector => 'background-color: {{VALUE}};',
+				],
+				'condition' => $conditions,
+			]
+		);
 
 		$this->add_responsive_control(
 			$prefix . '_padding',
@@ -2675,7 +2760,7 @@ class Post_Comments extends Base {
 			]
 		);
 
-		if ( 'comment_respond' === $prefix || 'comment_item' === $prefix ) {
+		if ( 'comment_respond' === $prefix || 'comment_item' === $prefix || 'comment_body' === $prefix ) {
 			$this->add_responsive_control(
 				$prefix . '_margin',
 				[
@@ -2697,6 +2782,24 @@ class Post_Comments extends Base {
 					'name'      => $prefix . '_border',
 					'selector'  => $selector,
 					'condition' => $conditions,
+				]
+			);
+		}
+
+		if ( 'comment_body' === $prefix ) {
+			$this->add_control(
+				$prefix . '_border_parent',
+				[
+					'label'     => esc_html__( 'Enable Border to Parent Only', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'label_on'  => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+					'label_off' => esc_html__( 'No', 'zyre-elementor-addons' ),
+					'selectors' => [
+						'{{WRAPPER}} #comments .comment:not(.parent) .comment-content-box, {{WRAPPER}} #comments .pingback:not(.parent) .comment-content-box' => 'border: none;',
+					],
+					'condition' => [
+						'comment_body_border_border!' => ['', 'none'],
+					],
 				]
 			);
 		}
@@ -2824,6 +2927,25 @@ class Post_Comments extends Base {
 	}
 
 	/**
+	 * Get commenter avatar
+	 *
+	 * @param array $settings Widget settings.
+	 * @return string
+	 */
+	protected function get_commenter_avatar( $settings ) {
+		if ( ! is_user_logged_in() || '' === $settings['user_avatar_show'] ) {
+			return '';
+		}
+
+		$avatar_size = ! empty( $settings['user_avatar_size']['size'] ) ? (int) $settings['user_avatar_size']['size'] : 60;
+		$output = '<div class="zyre-commenter-avatar zy-shrink-0">';
+		$output .= get_avatar( get_current_user_id(), $avatar_size );
+		$output .= '</div>';
+
+		return $output;
+	}
+
+	/**
 	 * Register render display controls
 	 */
 	protected function render() {
@@ -2838,11 +2960,35 @@ class Post_Comments extends Base {
 			return;
 		}
 
+		$commenter_avatar = $this->get_commenter_avatar( $settings );
+
+		// Filter: Comment form Submit Button
+		add_filter( 'comment_form_submit_button', function ( $button, $args ) use ( $settings ) {
+			$args['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s %5$s</button>';
+			$args['class_submit'] = 'zyre-comment-form-submit-btn zy-inline-flex zy-align-center zy-justify-center zy-gap-1';
+
+			$icon_html = '';
+			if ( ! empty( $settings['submit_btn_icon']['value'] ) ) {
+				$icon_html = '<span class="zyre-comment-form-submit-btn-icon">' . zyre_get_icon_html( $settings, 'icon', 'submit_btn_icon' ) . '</span>';
+			}
+
+			$button = sprintf(
+				$args['submit_button'],
+				esc_attr( $args['name_submit'] ),
+				esc_attr( $args['id_submit'] ),
+				esc_attr( $args['class_submit'] ),
+				esc_attr( $args['label_submit'] ),
+				$icon_html
+			);
+
+			return $button;
+		}, 10, 2 );
+
 		// Comment Form Defaults
 		add_filter( 'comment_form_defaults', function ( $defaults ) use ( $settings ) {
 			$commenter = wp_get_current_commenter();
 
-			$defaults['class_container'] = 'zyre-comment-respond';
+			$defaults['class_container'] = 'zyre-comment-respond zy-grow-1';
 			$defaults['class_form'] = 'zyre-comment-form zy-flex zy-flex-wrap zy-gap-3';
 
 			// Title Reply
@@ -2998,7 +3144,6 @@ class Post_Comments extends Base {
 
 			// Submit Button
 			$defaults['submit_field'] = '<div class="zyre-comment-form-field-wrap zyre-comment-form-submit">%1$s %2$s</div>';
-			$defaults['class_submit'] = 'zyre-comment-form-submit-btn';
 			$defaults['label_submit'] = ! empty( $settings['label_submit'] ) ? esc_attr( $settings['label_submit'] ) : esc_attr( $defaults['label_submit'] );
 			if ( '' === $settings['label_submit_show'] ) {
 				$defaults['label_submit'] = '';
@@ -3008,7 +3153,7 @@ class Post_Comments extends Base {
 		});
 
 		// Variable "cpage" is set for pagination
-		$page     = max( 1, get_query_var( 'cpage' ) );
+		$page = max( 1, get_query_var( 'cpage' ) );
 
 		$order = $this->get_comments_order( $settings );
 
@@ -3038,7 +3183,10 @@ class Post_Comments extends Base {
 			<?php
 			// Form Output
 			if ( 'before' === $settings['form_position'] ) {
+				echo '<div class="zyre-comment-form-wrap zy-flex zy-align-center zy-gap-3 zy-w-100">';
+				echo $commenter_avatar;
 				comment_form();
+				echo '</div>';
 			}
 
 			// Comments List Output
@@ -3094,7 +3242,10 @@ class Post_Comments extends Base {
 					echo '</div>';
 
 					if ( 'after_title' === $settings['form_position'] ) {
+						echo '<div class="zyre-comment-form-wrap zy-flex zy-align-center zy-gap-3 zy-w-100">';
+						echo $commenter_avatar;
 						comment_form();
+						echo '</div>';
 					}
 				}
 
@@ -3126,7 +3277,10 @@ class Post_Comments extends Base {
 
 			// Form Output
 			if ( 'after' === $settings['form_position'] ) {
+				echo '<div class="zyre-comment-form-wrap zy-flex zy-align-center zy-gap-3 zy-w-100">';
+				echo $commenter_avatar;
 				comment_form();
+				echo '</div>';
 			}
 			?>
 		</div><!-- #comments -->
@@ -3144,10 +3298,11 @@ class Post_Comments extends Base {
 		$settings = $this->get_settings_for_display();
 		$commenter = wp_get_current_commenter();
 		$show_pending_links = ! empty( $commenter['comment_author'] );
+		$author_email = $comment->comment_author_email;
 
 		$body_class = 'comment-body';
 		$show_avatars = (bool) get_option( 'show_avatars' );
-		if ( $show_avatars ) {
+		if ( $author_email && $show_avatars ) {
 			$body_class .= ' has-avatar';
 		}
 
@@ -3161,8 +3316,8 @@ class Post_Comments extends Base {
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class( $args['has_children'] ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="<?php echo esc_attr( $body_class ); ?>">
 				<?php
-				if ( $show_avatars ) {
-					$avatar_args = [ $comment ];
+				if ( $author_email && $show_avatars ) {
+					$avatar_args = [ $author_email ];
 					if ( ! empty( $settings['avatar_size']['size'] ) ) {
 						$avatar_args[] = (int) $settings['avatar_size']['size'];
 					}
@@ -3254,9 +3409,7 @@ class Post_Comments extends Base {
 		
 					if ( $show_extra ) {
 						echo '<div class="comment-meta-extra zy-flex zy-align-center zy-gap-6 zy-justify-between zy-mt-3">';
-
-						if ( 'yes' === $settings['show_comment_count'] ) {
-							$author_email = $comment->comment_author_email;
+						if ( $author_email && 'yes' === $settings['show_comment_count'] ) {
 							$comment_count = get_comments([
 								'author_email' => $author_email,
 								'count'   => true

@@ -48,6 +48,24 @@ function haObserveTarget(target, callback) {
     }
   }
 
+  function adjustInputHeight( $selector ) {
+	$selector.each(function () {
+		var $this = $(this),
+			prevHeight = getComputedStyle(this).getPropertyValue('height');
+
+		$this.on('input', function () {
+			if(!$this.val().trim()) {
+				$this.css('height', prevHeight);
+				return;
+			}
+
+			if( this.scrollHeight >= parseFloat(prevHeight) ) {
+				$this.css('height', this.scrollHeight + 'px');
+			}
+		});
+	});
+  }
+
   $window.on("elementor/frontend/init", function () {
 	var ModuleHandler = elementorModules.frontend.handlers.Base;
 
@@ -549,21 +567,7 @@ function haObserveTarget(target, callback) {
 	// Contact Form 7
 	var ZyreCF7 = function ZyreCF7($scope) {
 		const $textarea = $scope.find('.wpcf7-textarea');
-		$textarea.each(function () {
-			var $this = $(this),
-				prevHeight = getComputedStyle(this).getPropertyValue('height');
-
-			$this.on('input', function () {
-				if(!$this.val().trim()) {
-					$this.css('height', prevHeight);
-					return;
-				}
-
-				if( this.scrollHeight >= parseFloat(prevHeight) ) {
-					$this.css('height', this.scrollHeight + 'px');
-				}
-			});
-		});
+		adjustInputHeight( $textarea );
 	};
 
 	// Image Grid
@@ -613,6 +617,12 @@ function haObserveTarget(target, callback) {
 		}
 	});
 
+	// Post Comments
+	var PostComments = function PostComments($scope) {
+		const $comment = $scope.find('#comment');
+		adjustInputHeight( $comment );
+	};
+
     // Function Handlers
     var fnHanlders = {
       "zyre-toggle.default": Toggle_Switcher,
@@ -627,6 +637,7 @@ function haObserveTarget(target, callback) {
 	  "zyre-advance-accordion.default": ZyreAccordion,
 	  "zyre-advance-toggle.default": ZyreAccordion,
 	  "zyre-cf7.default": ZyreCF7,
+	  "zyre-post-comments.default": PostComments,
     };
     $.each(fnHanlders, function (widgetName, handlerFn) {
       elementorFrontend.hooks.addAction(
