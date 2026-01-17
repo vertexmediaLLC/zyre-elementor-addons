@@ -1015,13 +1015,15 @@ class Post_Comments extends Base {
 			]
 		);
 
-		$this->common_style_controls( 'comment_item', '{{WRAPPER}} #comments .zyre-comments-list > .comment, {{WRAPPER}} #comments .zyre-comments-list > .pingback' );
+		$this->common_style_controls( 'comment_item', '{{WRAPPER}} #comments .zyre-comments-list > .comment, {{WRAPPER}} #comments .zyre-comments-list > .pingback, {{WRAPPER}} #comments .zyre-comments-list > .trackback' );
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'comment_item_border',
-				'selector'  => '{{WRAPPER}} #comments .zyre-comments-list > .comment:not(:last-child), {{WRAPPER}} #comments .zyre-comments-list > .pingback:not(:last-child)',
+				'selector'  => '{{WRAPPER}} #comments .zyre-comments-list > .comment:not(:last-child),
+								{{WRAPPER}} #comments .zyre-comments-list > .pingback:not(:last-child),
+								{{WRAPPER}} #comments .zyre-comments-list > .trackback:not(:last-child)',
 			]
 		);
 
@@ -1053,7 +1055,7 @@ class Post_Comments extends Base {
 				'tablet_default' => 'absolute',
 				'mobile_default' => 'absolute',
 				'selectors' => [
-					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar' => 'position: {{VALUE}}',
+					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar, {{WRAPPER}} #comments .trackback .avatar' => 'position: {{VALUE}}',
 				],
 			]
 		);
@@ -1064,13 +1066,15 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar' => 'margin-inline-end: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar, {{WRAPPER}} #comments .trackback .avatar' => 'margin-inline-end: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'avatar_position' => 'static',
 				],
 			]
 		);
+
+		$avatar_pos_x_prop = is_rtl() ? 'right' : 'left';
 
 		$this->add_responsive_control(
 			'avatar_position_x',
@@ -1087,7 +1091,7 @@ class Post_Comments extends Base {
 					'unit' => 'px',
 				],
 				'selectors'  => [
-					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar, {{WRAPPER}} #comments .trackback .avatar' => "{$avatar_pos_x_prop}: {{SIZE}}{{UNIT}};",
 				],
 				'condition'  => [
 					'avatar_position' => 'absolute',
@@ -1110,7 +1114,7 @@ class Post_Comments extends Base {
 					'unit' => 'px',
 				],
 				'selectors'  => [
-					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar, {{WRAPPER}} #comments .trackback .avatar' => 'top: {{SIZE}}{{UNIT}};',
 				],
 				'condition'  => [
 					'avatar_position' => 'absolute',
@@ -1143,7 +1147,8 @@ class Post_Comments extends Base {
 				],
 				'selectors'  => [
 					'{{WRAPPER}} #comments .zyre-comments-list > .comment > .comment-body > .avatar,
-					{{WRAPPER}} #comments .zyre-comments-list > .pingback > .comment-body > .avatar' => 'left: {{SIZE}}{{UNIT}};',
+					{{WRAPPER}} #comments .zyre-comments-list > .pingback > .comment-body > .avatar,
+					{{WRAPPER}} #comments .zyre-comments-list > .trackback > .comment-body > .avatar' => 'left: {{SIZE}}{{UNIT}};',
 				],
 				'condition'  => [
 					'avatar_position' => 'absolute',
@@ -1167,7 +1172,8 @@ class Post_Comments extends Base {
 				],
 				'selectors'  => [
 					'{{WRAPPER}} #comments .zyre-comments-list > .comment > .comment-body > .avatar,
-					{{WRAPPER}} #comments .zyre-comments-list > .pingback > .comment-body > .avatar' => 'top: {{SIZE}}{{UNIT}};',
+					{{WRAPPER}} #comments .zyre-comments-list > .pingback > .comment-body > .avatar,
+					{{WRAPPER}} #comments .zyre-comments-list > .trackback > .comment-body > .avatar' => 'top: {{SIZE}}{{UNIT}};',
 				],
 				'condition'  => [
 					'avatar_position' => 'absolute',
@@ -1175,7 +1181,7 @@ class Post_Comments extends Base {
 			]
 		);
 
-		$this->common_style_controls( 'avatar', '{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar' );
+		$this->common_style_controls( 'avatar', '{{WRAPPER}} #comments .comment .avatar, {{WRAPPER}} #comments .pingback .avatar, {{WRAPPER}} #comments .trackback .avatar' );
 
 		$this->end_controls_section();
 	}
@@ -1198,12 +1204,12 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} #comments .comment .comment-meta' => 'margin-block-end: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #comments .comment-meta' => 'margin-block-end: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
-		$this->common_style_controls( 'comment_meta', '{{WRAPPER}} #comments .comment .comment-meta' );
+		$this->common_style_controls( 'comment_meta', '{{WRAPPER}} #comments .comment-meta' );
 
 		$this->add_responsive_control(
 			'comment_meta_direction',
@@ -1352,7 +1358,7 @@ class Post_Comments extends Base {
 			[
 				'name'     => 'comment_author_typo',
 				'label'     => esc_html__( 'Author Typography', 'zyre-elementor-addons' ),
-				'selector' => '{{WRAPPER}} .zyre-comments-area .comment .fn',
+				'selector' => '{{WRAPPER}} .zyre-comments-area .fn',
 			]
 		);
 
@@ -1361,7 +1367,7 @@ class Post_Comments extends Base {
 			[
 				'name'     => 'author_says_typo',
 				'label'     => esc_html__( 'Says Typography', 'zyre-elementor-addons' ),
-				'selector' => '{{WRAPPER}} .zyre-comments-area .comment .says',
+				'selector' => '{{WRAPPER}} .zyre-comments-area .says',
 			]
 		);
 
@@ -1370,7 +1376,7 @@ class Post_Comments extends Base {
 			[
 				'name'     => 'comment_time',
 				'label'     => esc_html__( 'Time Typography', 'zyre-elementor-addons' ),
-				'selector' => '{{WRAPPER}} .zyre-comments-area .comment time',
+				'selector' => '{{WRAPPER}} .zyre-comments-area time',
 				'condition' => [
 					'show_date_time' => 'yes',
 				],
@@ -1382,7 +1388,7 @@ class Post_Comments extends Base {
 			[
 				'name'     => 'comment_edit',
 				'label'     => esc_html__( 'Edit Typography', 'zyre-elementor-addons' ),
-				'selector' => '{{WRAPPER}} .zyre-comments-area .comment .edit-link',
+				'selector' => '{{WRAPPER}} .zyre-comments-area .edit-link',
 				'condition' => [
 					'show_comment_edit' => 'yes',
 				],
@@ -1406,8 +1412,8 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Author Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .fn' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .zyre-comments-area .comment .fn .url' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .fn' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .fn .url' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1418,7 +1424,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Time Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment time' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area time' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'show_date_time' => 'yes',
@@ -1432,8 +1438,8 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Time Icon Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .time-icon i'   => 'color: {{VALUE}};',
-					'{{WRAPPER}} .zyre-comments-area .comment .time-icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .time-icon i'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .time-icon svg' => 'fill: {{VALUE}};',
 				],
 				'condition'  => [
 					'show_date_time'            => 'yes',
@@ -1448,7 +1454,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Edit Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .comment-edit-link' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .comment-edit-link' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'show_comment_edit' => 'yes',
@@ -1472,7 +1478,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Author Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .url:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .url:hover' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'disable_author_link!' => 'yes',
@@ -1486,7 +1492,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Time Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment a:hover time' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area a:hover time' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'show_date_time' => 'yes',
@@ -1500,8 +1506,8 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Time Icon Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .time-link:hover .time-icon i'   => 'color: {{VALUE}};',
-					'{{WRAPPER}} .zyre-comments-area .comment .time-link:hover .time-icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .time-link:hover .time-icon i'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .time-link:hover .time-icon svg' => 'fill: {{VALUE}};',
 				],
 				'condition'  => [
 					'show_date_time'            => 'yes',
@@ -1516,7 +1522,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Edit Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .comment-edit-link:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .comment-edit-link:hover' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'show_comment_edit' => 'yes',
@@ -1534,7 +1540,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Says Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .says' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .says' => 'color: {{VALUE}};',
 				],
 				'separator' => 'before',
 			]
@@ -1547,7 +1553,7 @@ class Post_Comments extends Base {
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em', 'rem'],
 				'selectors'  => [
-					'{{WRAPPER}} .zyre-comments-area .comment .time-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .zyre-comments-area .time-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'condition'  => [
 					'show_date_time'            => 'yes',
@@ -1563,7 +1569,7 @@ class Post_Comments extends Base {
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em', 'rem'],
 				'selectors'  => [
-					'{{WRAPPER}} .zyre-comments-area .comment .time-link' => 'gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .zyre-comments-area .time-link' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 				'condition'  => [
 					'show_date_time'            => 'yes',
@@ -1587,7 +1593,7 @@ class Post_Comments extends Base {
 			]
 		);
 
-		$this->text_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment .comment-content-box, {{WRAPPER}} #comments .pingback .comment-content-box' );
+		$this->text_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment-content-box' );
 
 		$this->add_control(
 			'comment_body_link_color',
@@ -1595,7 +1601,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Link Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box a, {{WRAPPER}} .pingback .comment-content-box a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} #comments .comment-content-box a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1606,7 +1612,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Link Hover Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box a:hover, {{WRAPPER}} .pingback .comment-content-box a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} #comments .comment-content-box a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1615,12 +1621,11 @@ class Post_Comments extends Base {
 			'comment_body_wrap_padding',
 			[
 				'label'       => esc_html__( 'Padding', 'zyre-elementor-addons' ),
-				'description' => esc_html__( 'Works only if Avatar Image exists.', 'zyre-elementor-addons' ),
+				'description' => esc_html__( 'This Padding Works only if Avatar exists.', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::DIMENSIONS,
 				'size_units'  => ['px', 'em', '%'],
 				'selectors'   => [
-					'{{WRAPPER}} #comments .comment .comment-body.has-avatar,
-							{{WRAPPER}} #comments .pingback .comment-body.has-avatar' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #comments .comment-body.has-avatar' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1641,17 +1646,51 @@ class Post_Comments extends Base {
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} #comments .comment:not(:last-child) .comment-content-box,
-					{{WRAPPER}} #comments .pingback:not(:last-child) .comment-content-box' => 'margin-block-end: {{SIZE}}{{UNIT}};',
+					{{WRAPPER}} #comments .pingback:not(:last-child) .comment-content-box,
+					{{WRAPPER}} #comments .trackback:not(:last-child) .comment-content-box' => 'margin-block-end: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
-		$this->common_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment .comment-content-box, {{WRAPPER}} #comments .pingback .comment-content-box' );
+		$this->common_style_controls( 'comment_body', '{{WRAPPER}} #comments .comment-content-box' );
+
+		$this->add_control(
+			'heading_comment_body_tl_item',
+			[
+				'label'     => esc_html__( 'Top Level Items', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'comment_body_tl_item_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', 'rem'],
+				'selectors'  => [
+					'{{WRAPPER}} #comments .zyre-comments-list > .comment:not(.parent) .comment-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'comment_body_tl_item_margin',
+			[
+				'label'      => esc_html__( 'Margin', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', 'rem'],
+				'selectors'  => [
+					'{{WRAPPER}} #comments .zyre-comments-list > .comment:not(.parent) .comment-content-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->add_control(
 			'heading_pingback_comment',
 			[
-				'label'     => esc_html__( 'Pingback Comment', 'zyre-elementor-addons' ),
+				'label'     => esc_html__( 'Pingback/Trackback Comment', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1664,7 +1703,8 @@ class Post_Comments extends Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} #comments .pingback .comment-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #comments .pingback .comment-content-box,
+					{{WRAPPER}} #comments .trackback .comment-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1676,7 +1716,45 @@ class Post_Comments extends Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} #comments .pingback .comment-content-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #comments .pingback .comment-content-box,
+					{{WRAPPER}} #comments .trackback .comment-content-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'heading_child_comment_body_last_item',
+			[
+				'label'     => esc_html__( 'Child Comment Last Item', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'child_comment_body_last_item_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', 'rem'],
+				'selectors'  => [
+					'{{WRAPPER}} #comments .children:not(:has(.children)) > .comment:last-child .comment-content-box,
+					{{WRAPPER}} #comments .children:not(:has(.children)) > .pingback:last-child .comment-content-box,
+					{{WRAPPER}} #comments .children:not(:has(.children)) > .trackback:last-child .comment-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'child_comment_body_last_item_margin',
+			[
+				'label'      => esc_html__( 'Margin', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em', 'rem'],
+				'selectors'  => [
+					'{{WRAPPER}} #comments .children:not(:has(.children)) > .comment:last-child .comment-content-box,
+					{{WRAPPER}} #comments .children:not(:has(.children)) > .pingback:last-child .comment-content-box,
+					{{WRAPPER}} #comments .children:not(:has(.children)) > .trackback:last-child .comment-content-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1700,7 +1778,7 @@ class Post_Comments extends Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'comment_reply_typo',
-				'selector' => '{{WRAPPER}} .comment .comment-content-box .comment-reply-link',
+				'selector' => '{{WRAPPER}} .comment-content-box .comment-reply-link',
 			]
 		);
 
@@ -1711,7 +1789,7 @@ class Post_Comments extends Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .comment-content-box .comment-reply-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1720,7 +1798,7 @@ class Post_Comments extends Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'comment_reply_border',
-				'selector'  => '{{WRAPPER}} .comment .comment-content-box .comment-reply-link',
+				'selector'  => '{{WRAPPER}} .comment-content-box .comment-reply-link',
 			]
 		);
 
@@ -1730,7 +1808,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .reply' => 'margin-block-start: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .comment-content-box .reply' => 'margin-block-start: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1754,9 +1832,14 @@ class Post_Comments extends Base {
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
-				'default'   => is_rtl() ? 'right' : 'left',
+				'default'   => is_rtl() ? 'left' : 'right',
+				'selectors_dictionary' => [
+					'left'   => 'text-align: left; margin-left: 0; margin-right: auto;',
+					'center' => 'text-align: center; margin-right: auto; margin-left: auto;',
+					'right'  => 'text-align: right; margin-left: auto; margin-right: 0;',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .reply' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .comment-content-box .reply' => '{{VALUE}}',
 				],
 			]
 		);
@@ -1778,7 +1861,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .comment-content-box .comment-reply-link' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1789,7 +1872,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .comment-content-box .comment-reply-link' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1810,7 +1893,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .comment-content-box .comment-reply-link:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1821,7 +1904,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .comment-content-box .comment-reply-link:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1832,7 +1915,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Border Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .comment .comment-content-box .comment-reply-link:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .comment-content-box .comment-reply-link:hover' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1857,7 +1940,7 @@ class Post_Comments extends Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'      => 'comment_count_text_typo',
-				'selector'  => '{{WRAPPER}} .zyre-comments-area .comment .comments-total-text',
+				'selector'  => '{{WRAPPER}} .zyre-comments-area .comments-total-text',
 				'condition' => [
 					'show_comment_count' => 'yes',
 				],
@@ -1870,7 +1953,7 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Count Text Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .comments-total-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .comments-total-text' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'show_comment_count'         => 'yes',
@@ -1886,7 +1969,7 @@ class Post_Comments extends Base {
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em', 'rem'],
 				'selectors'  => [
-					'{{WRAPPER}} .zyre-comments-area .comment .comments-total-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .zyre-comments-area .comments-total-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'condition'  => [
 					'show_comment_count'         => 'yes',
@@ -1901,8 +1984,8 @@ class Post_Comments extends Base {
 				'label'     => esc_html__( 'Count Icon Color', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-comments-area .comment .comments-total-icon i'   => 'color: {{VALUE}};',
-					'{{WRAPPER}} .zyre-comments-area .comment .comments-total-icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .comments-total-icon i'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .zyre-comments-area .comments-total-icon svg' => 'fill: {{VALUE}};',
 				],
 				'condition' => [
 					'show_comment_count'         => 'yes',
@@ -1918,7 +2001,7 @@ class Post_Comments extends Base {
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em', 'rem'],
 				'selectors'  => [
-					'{{WRAPPER}} .zyre-comments-area .comment .comments-total' => 'gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .zyre-comments-area .comments-total' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 				'condition'  => [
 					'show_comment_count'         => 'yes',
@@ -1942,7 +2025,7 @@ class Post_Comments extends Base {
 			]
 		);
 
-		$this->text_style_controls( 'comments_pagination', '{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers' );
+		$this->text_style_controls( 'comments_pagination', '{{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .page-numbers, {{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-next > a, {{WRAPPER}} .zyre-comments-area .zyre-comments-navigation .nav-previous > a' );
 
 		$this->add_responsive_control(
 			'comments_pagination_space',
@@ -2863,7 +2946,7 @@ class Post_Comments extends Base {
 			]
 		);
 
-		if ( 'comment_respond' === $prefix || 'comment_item' === $prefix || 'comment_body' === $prefix ) {
+		if ( 'comment_respond' === $prefix || 'comment_item' === $prefix || 'comment_body' === $prefix || 'comments_pagination' === $prefix ) {
 			$this->add_responsive_control(
 				$prefix . '_margin',
 				[
@@ -2898,7 +2981,7 @@ class Post_Comments extends Base {
 					'label_on'  => esc_html__( 'Yes', 'zyre-elementor-addons' ),
 					'label_off' => esc_html__( 'No', 'zyre-elementor-addons' ),
 					'selectors' => [
-						'{{WRAPPER}} #comments .comment:not(.parent) .comment-content-box, {{WRAPPER}} #comments .pingback:not(.parent) .comment-content-box' => 'border: none;',
+						'{{WRAPPER}} #comments .comment:not(.parent) .comment-content-box, {{WRAPPER}} #comments .pingback:not(.parent) .comment-content-box, {{WRAPPER}} #comments .trackback:not(.parent) .comment-content-box' => 'border: none;',
 					],
 					'condition' => [
 						'comment_body_border_border!' => ['', 'none'],

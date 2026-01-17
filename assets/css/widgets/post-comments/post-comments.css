@@ -29,13 +29,11 @@
 	margin: 0;
 }
 
-body:not(.rtl) .zyre-addon-post-comments #comments .comment .comment-body.has-avatar,
-body:not(.rtl) .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar {
+body:not(.rtl) .zyre-addon-post-comments #comments .comment-body.has-avatar {
 	padding-left: 75px;
 }
 
-body.rtl .zyre-addon-post-comments #comments .comment .comment-body.has-avatar,
-body.rtl .zyre-addon-post-comments #comments .pingback .comment-body.has-avatar {
+body.rtl .zyre-addon-post-comments #comments .comment-body.has-avatar {
 	padding-right: 75px;
 }
 
