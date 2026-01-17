@@ -1155,6 +1155,43 @@ p.zyre-tab-sub-heading {
 	color: #BEC5CF;
 }
 
+.zyre-elementor-addons-dashboard .zyre-widget-help-links {
+	width: 100%;
+	display: flex;
+	gap: 38px;
+	align-items: center;
+}
+
+.zyre-elementor-addons-dashboard .zyre-widget-help-links a {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	text-decoration: none;
+	border-radius: 22px;
+	color: #6E7378;
+	font-family: "Inter", serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1;
+	transition: all 0.25s;
+	white-space: nowrap;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.zyre-elementor-addons-dashboard .zyre-widget-help-links a i {
+	color: inherit;
+	font-size: 0.8em;
+    margin-bottom: 3px;
+}
+
+.zyre-elementor-addons-dashboard .zyre-widget-help-links a:hover {
+	background-color: #EBEDF0;
+	color: #000;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 .zyre-widget-pro-badge {
     position: absolute;
     left: -39px;
@@ -1384,8 +1421,8 @@ p.zyre-tab-sub-heading {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	gap: 20px;
-	padding: 33px 0px;
+	gap: 10px;
+	padding: 33px 0px 20px;
 	border-bottom: 1px solid #ebedf0;
 }
 

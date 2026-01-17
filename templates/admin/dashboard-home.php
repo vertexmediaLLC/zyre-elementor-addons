@@ -480,6 +480,9 @@ $credential_data = zyre_get_credentials();
 									$widget_class .= ' widget-pro-placeholder';
 									$checked = 'disabled="disabled"';
 								}
+
+								$demo_url = ! empty( $widget['demo'] ) ? $widget['demo'] : '#';
+								$doc_url = ! empty( $widget['doc'] ) ? $widget['doc'] : '#';
 								?>
 								<div id="<?php echo esc_attr( $widget_key ); ?>-widget-tab" class="<?php echo esc_attr( $widget_class ); ?>">
 									<!-- Pro Badge -->
@@ -507,6 +510,11 @@ $credential_data = zyre_get_credentials();
 											<p class="zyre-tab-disable"><?php esc_html_e( 'Inactive', 'zyre-elementor-addons' ); ?></p>
 											<input type="checkbox" name="widgets[]" value="<?php echo esc_attr( $widget_key ); ?>" id="<?php echo esc_attr( $widget_key ); ?>-widget-checkbox" <?php echo $checked; ?>>
 											<p class="zyre-tab-enable"><?php esc_html_e( 'Active', 'zyre-elementor-addons' ); ?></p>
+										</div>
+
+										<div class="zyre-widget-help-links">
+											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank"><?php esc_html_e( 'View Demo', 'zyre-elementor-addons' ); ?> <i class="fas fa-external-link-alt"></i></a>
+											<a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'zyre-elementor-addons' ); ?> <i class="fas fa-external-link-alt"></i></a>
 										</div>
 									</div>
 
