@@ -259,7 +259,9 @@ class Heading extends Base {
 					'color'         => [
 						'label' => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
 					],
-					'background'    => [],
+					'background'    => [
+						'exclude' => [],
+					],
 					'padding'       => [],
 					'margin'        => [],
 					'border'        => [],
@@ -311,15 +313,6 @@ class Heading extends Base {
 		);
 
 		// Separator Style Controls
-		$this->add_control(
-			'_heading_title_separator',
-			[
-				'type'      => Controls_Manager::HEADING,
-				'label'     => esc_html__( 'Separator Style', 'zyre-elementor-addons' ),
-				'separator' => 'before',
-			]
-		);
-
 		$this->separator_style_controls( 'title_separator', 'title' );
 
 		$this->end_controls_section();
