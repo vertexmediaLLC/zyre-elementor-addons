@@ -565,6 +565,20 @@ class IconBox extends Base {
 					'border_radius' => [],
 					'padding'       => [],
 					'box_shadow'    => [],
+					'box_shadow'    => [],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'media_grow',
+			[
+				'label'     => esc_html__( 'Flex Grow', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => 0,
+				'max'       => 1,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-iconbox-media' => 'flex-grow: {{VALUE}};',
 				],
 			]
 		);
@@ -648,6 +662,19 @@ class IconBox extends Base {
 				'controls' => [
 					'border'  => [],
 					'padding' => [],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_grow',
+			[
+				'label'     => esc_html__( 'Flex Grow', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => 0,
+				'max'       => 1,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-iconbox-content' => 'flex-grow: {{VALUE}};',
 				],
 			]
 		);

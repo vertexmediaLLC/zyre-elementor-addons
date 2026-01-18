@@ -355,10 +355,11 @@ abstract class Base extends Widget_Base {
 						$control_args = [
 							'name'           => $control_name,
 							'label'          => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Background', 'zyre-elementor-addons' ),
-							'types'          => ! empty( $values['types'] ) && is_array( $values['types'] ) ? $values['types'] : [ 'classic', 'gradient' ],
-							'exclude'        => isset( $values['exclude'] ) && is_array( $values['exclude'] ) ? $values['exclude'] : [ 'image' ],
+							'types'          => ! empty( $values['types'] ) && is_array( $values['types'] ) ? $values['types'] : ['classic', 'gradient'],
+							'exclude'        => isset( $values['exclude'] ) && is_array( $values['exclude'] ) ? $values['exclude'] : ['image'],
 							'fields_options' => ! empty( $values['fields_options'] ) && is_array( $values['fields_options'] ) ? $values['fields_options'] : [],
 							'selector'       => ! empty( $values['selector'] ) ? $values['selector'] : $selector,
+							'condition'      => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
 						$this->add_group_control( Group_Control_Background::get_type(), $control_args );
 						break;
@@ -1306,6 +1307,34 @@ abstract class Base extends Widget_Base {
 							$control_args['separator'] = $values['separator'];
 						}
 						$this->add_responsive_control( $control_name, $control_args );
+						break;
+
+					case 'display':
+						$allowed_defaults = [ 'block', 'inline-block', 'inline', 'flex', 'inline-flex', 'grid', 'inline-grid', 'table', 'none' ];
+						$control_args = [
+							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Display', 'zyre-elementor-addons' ),
+							'type'      => Controls_Manager::SELECT,
+							'default'   => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : 'block',
+							'options'   => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
+								'block'        => esc_html__( 'Block', 'zyre-elementor-addons' ),
+								'inline-block' => esc_html__( 'Inline Block', 'zyre-elementor-addons' ),
+								'inline'       => esc_html__( 'Inline', 'zyre-elementor-addons' ),
+								'flex'         => esc_html__( 'Flex', 'zyre-elementor-addons' ),
+								'inline-flex'  => esc_html__( 'Inline Flex', 'zyre-elementor-addons' ),
+								'grid'         => esc_html__( 'Grid', 'zyre-elementor-addons' ),
+								'inline-grid'  => esc_html__( 'Inline Grid', 'zyre-elementor-addons' ),
+								'table'        => esc_html__( 'table', 'zyre-elementor-addons' ),
+								'none'         => esc_html__( 'None', 'zyre-elementor-addons' ),
+							],
+							'selectors' => [
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'display: {{VALUE}};',
+							],
+							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
+						];
+						if ( ! empty( $values['separator'] ) ) {
+							$control_args['separator'] = $values['separator'];
+						}
+						$this->add_control( $control_name, $control_args );
 						break;
 
 					case 'options':

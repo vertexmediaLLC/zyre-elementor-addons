@@ -1175,6 +1175,20 @@ trait List_Item_Advanced_Trait {
 				],
 			]
 		);
+
+		$this->add_responsive_control(
+			'item_content_zindex',
+			[
+				'label'     => esc_html__( 'Z-Index', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -5,
+				'max'       => 5,
+				'step'      => 1,
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-content" => 'z-index: {{VALUE}};',
+				],
+			]
+		);
 	}
 
 	/**
@@ -1695,6 +1709,20 @@ trait List_Item_Advanced_Trait {
 				'selectors'    => [
 					"{{WRAPPER}} .zyre-{$class_base}list-item .zyre-{$class_base}list-item-type-wrapper" => 'align-items: {{VALUE}};',
 					"{{WRAPPER}} .zyre-{$class_base}list-item:not(.zyre-{$class_base}list-item--content-bottom) .zyre-{$class_base}list-item-type-wrapper" => 'align-self: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'item_type_zindex',
+			[
+				'label'     => esc_html__( 'Z-Index', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -5,
+				'max'       => 5,
+				'step'      => 1,
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$class_base}list-items .zyre-{$class_base}list-item-type-wrapper" => 'z-index: {{VALUE}};',
 				],
 			]
 		);

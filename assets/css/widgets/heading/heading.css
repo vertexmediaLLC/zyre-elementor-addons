@@ -12,6 +12,12 @@
 	flex-shrink: 0;
 }
 
+.zyre-addon-heading .zyre-heading-title.has--separator.separator--left::before,
+.zyre-addon-heading .zyre-heading-title.has--separator.separator--right::after {
+	content: '';
+	display: block;
+}
+
 .zyre-addon.zyre-addon-heading-subtitle-separator-position--right .zyre-heading-subtitle,
 .zyre-addon.zyre-addon-heading-description-separator-position--right .zyre-heading-description{
 	justify-content: flex-end;

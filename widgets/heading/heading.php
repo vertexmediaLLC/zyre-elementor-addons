@@ -234,7 +234,7 @@ class Heading extends Base {
 
 		// START Suffix Controls
 		$this->add_control(
-			'_heading_title_separator',
+			'_heading_title_suffix',
 			[
 				'type'      => Controls_Manager::HEADING,
 				'label'     => esc_html__( 'Suffix Style', 'zyre-elementor-addons' ),
@@ -270,6 +270,57 @@ class Heading extends Base {
 				],
 			]
 		);
+
+		$this->add_control(
+			'_heading_title_text_style',
+			[
+				'type'      => Controls_Manager::HEADING,
+				'label'     => esc_html__( 'Title Text Styles', 'zyre-elementor-addons' ),
+				'separator' => 'before',
+			]
+		);
+
+		// Title Text Style Controls
+		$this->add_control(
+			'show_title_text_style',
+			[
+				'label'        => esc_html__( 'Show Title Text Styles', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'YES', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'NO', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'default'      => '',
+			]
+		);
+
+		$this->set_style_controls(
+			'title_text',
+			[
+				'selector'  => '{{WRAPPER}} .zyre-heading-title-text',
+				'controls'  => [
+					'bg_color'        => [],
+					'padding'         => [],
+					'background_clip' => [
+						'default' => 'padding-box',
+					],
+				],
+				'condition' => [
+					'show_title_text_style' => 'yes',
+				],
+			]
+		);
+
+		// Separator Style Controls
+		$this->add_control(
+			'_heading_title_separator',
+			[
+				'type'      => Controls_Manager::HEADING,
+				'label'     => esc_html__( 'Separator Style', 'zyre-elementor-addons' ),
+				'separator' => 'before',
+			]
+		);
+
+		$this->separator_style_controls( 'title_separator', 'title' );
 
 		$this->end_controls_section();
 	}
@@ -333,7 +384,9 @@ class Heading extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-heading-' . $id_base,
 				'controls' => [
-					'background'    => [],
+					'background'    => [
+						'exclude' => [],
+					],
 					'padding'       => [],
 					'margin'        => [],
 					'border'        => [],
@@ -619,131 +672,169 @@ class Heading extends Base {
 			]
 		);
 
-		$this->add_responsive_control(
-			$prefix . '_position',
-			[
-				'label'                => esc_html__( 'Position', 'zyre-elementor-addons' ),
-				'type'                 => Controls_Manager::CHOOSE,
-				'options'              => [
-					'left'  => [
-						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-h-align-left',
+		if ( 'title_separator' === $prefix ) {
+			$this->add_responsive_control(
+				$prefix . '_position',
+				[
+					'label'        => esc_html__( 'Position', 'zyre-elementor-addons' ),
+					'type'         => Controls_Manager::SELECT,
+					'options'      => [
+						'left'  => esc_html__( 'Left', 'zyre-elementor-addons' ),
+						'right' => esc_html__( 'Right', 'zyre-elementor-addons' ),
 					],
-					'top'   => [
-						'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-v-align-top',
+					'default'      => is_rtl() ? 'right' : 'left',
+					'condition'    => [
+						$prefix . '_switch' => 'yes',
 					],
-					'bottom'   => [
-						'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-v-align-bottom',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-h-align-right',
-					],
-				],
-				'toggle'               => false,
-				'selectors_dictionary' => [
-					'left'  => '-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;',
-					'right' => '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;',
-					'top'   => '-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;',
-					'bottom'   => '-webkit-box-orient:vertical;-webkit-box-direction:reverse;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;',
-				],
-				'selectors'            => [
-					'{{WRAPPER}} .zyre-heading-' . $id_base => '{{VALUE}}',
-				],
-				'prefix_class'  => 'zyre-addon-heading-' . $id_base . '-separator-position--',
-				'condition' => [
-					$prefix . '_switch' => 'yes',
-				],
-			]
-		);
+				]
+			);
 
-		$this->add_responsive_control(
-			$prefix . '_position_x',
-			[
-				'label'                => esc_html__( 'Horizontal Position', 'zyre-elementor-addons' ),
-				'type'                 => Controls_Manager::CHOOSE,
-				'options'              => [
-					'left'   => [
-						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-text-align-left',
+			$this->add_responsive_control(
+				$prefix . '_display',
+				[
+					'label'     => esc_html__( 'Display', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::SELECT,
+					'options'   => [
+						'block'        => esc_html__( 'Block', 'zyre-elementor-addons' ),
+						'inline-block' => esc_html__( 'Inline Block', 'zyre-elementor-addons' ),
 					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-text-align-center',
+					'default'   => 'block',
+					'selectors' => [
+						"{{WRAPPER}} .zyre-heading-{$id_base}::before, {{WRAPPER}} .zyre-heading-{$id_base}::after" => 'display: {{VALUE}};',
 					],
-					'right'  => [
-						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-text-align-right',
+					'condition' => [
+						$prefix . '_switch' => 'yes',
 					],
-					'stretch' => [
-						'title' => esc_html__( 'Stretch', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-text-align-justify',
-					],
-				],
-				'toggle'               => true,
-				'selectors_dictionary' => [
-					'left'   => '-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;',
-					'center' => '-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;',
-					'right'  => '-webkit-align-self:flex-end;-ms-flex-item-align:end;align-self:flex-end;',
-					'stretch'  => '-webkit-align-self:stretch;-ms-flex-item-align:stretch;align-self:stretch;width: 100%;max-width: 100%;',
-				],
-				'selectors'            => [
-					'{{WRAPPER}} .zyre-heading-' . $id_base . '::before' => '{{VALUE}};',
-				],
-				'condition' => [
-					$prefix . '_switch' => 'yes',
-					$prefix . '_position' => [ 'top', 'bottom' ],
-				],
-			]
-		);
+				]
+			);
+		} else {
 
-		$this->add_responsive_control(
-			$prefix . '_position_y',
-			[
-				'label'                => esc_html__( 'Vertical Position', 'zyre-elementor-addons' ),
-				'type'                 => Controls_Manager::CHOOSE,
-				'options'              => [
-					'top'     => [
-						'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-v-align-top',
+			$this->add_responsive_control(
+				$prefix . '_position',
+				[
+					'label'                => esc_html__( 'Position', 'zyre-elementor-addons' ),
+					'type'                 => Controls_Manager::CHOOSE,
+					'options'              => [
+						'left'  => [
+							'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-h-align-left',
+						],
+						'top'   => [
+							'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-v-align-top',
+						],
+						'bottom'   => [
+							'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-v-align-bottom',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-h-align-right',
+						],
 					],
-					'center'  => [
-						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-v-align-middle',
+					'toggle'               => false,
+					'selectors_dictionary' => [
+						'left'  => '-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;',
+						'right' => '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;',
+						'top'   => '-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;',
+						'bottom'   => '-webkit-box-orient:vertical;-webkit-box-direction:reverse;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;',
 					],
-					'bottom'  => [
-						'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-v-align-bottom',
+					'selectors'            => [
+						'{{WRAPPER}} .zyre-heading-' . $id_base => '{{VALUE}}',
 					],
-					'stretch' => [
-						'title' => esc_html__( 'Stretch', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-v-align-stretch',
+					'prefix_class'  => 'zyre-addon-heading-' . $id_base . '-separator-position--',
+					'condition' => [
+						$prefix . '_switch' => 'yes',
 					],
-				],
-				'default'              => '',
-				'toggle'               => false,
-				'selectors_dictionary' => [
-					'top'     => '-webkit-align-self: flex-start; -ms-flex-item-align: start; align-self: flex-start;',
-					'center'  => '-webkit-align-self: center; -ms-flex-item-align: center; align-self: center;',
-					'bottom'  => '-webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end;',
-					'stretch' => '-webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch;',
-				],
-				'selectors'            => [
-					'{{WRAPPER}} .zyre-heading-' . $id_base . '::before' => '{{VALUE}};',
-				],
-				'condition' => [
-					$prefix . '_switch' => 'yes',
-					$prefix . '_position!' => [ 'top', 'bottom' ],
-				],
-			]
-		);
+				]
+			);
+
+			$this->add_responsive_control(
+				$prefix . '_position_x',
+				[
+					'label'                => esc_html__( 'Horizontal Position', 'zyre-elementor-addons' ),
+					'type'                 => Controls_Manager::CHOOSE,
+					'options'              => [
+						'left'   => [
+							'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-center',
+						],
+						'right'  => [
+							'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-right',
+						],
+						'stretch' => [
+							'title' => esc_html__( 'Stretch', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-justify',
+						],
+					],
+					'toggle'               => true,
+					'selectors_dictionary' => [
+						'left'   => '-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;',
+						'center' => '-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;',
+						'right'  => '-webkit-align-self:flex-end;-ms-flex-item-align:end;align-self:flex-end;',
+						'stretch'  => '-webkit-align-self:stretch;-ms-flex-item-align:stretch;align-self:stretch;width: 100%;max-width: 100%;',
+					],
+					'selectors'            => [
+						'{{WRAPPER}} .zyre-heading-' . $id_base . '::before' => '{{VALUE}};',
+					],
+					'condition' => [
+						$prefix . '_switch' => 'yes',
+						$prefix . '_position' => [ 'top', 'bottom' ],
+					],
+				]
+			);
+
+			$this->add_responsive_control(
+				$prefix . '_position_y',
+				[
+					'label'                => esc_html__( 'Vertical Position', 'zyre-elementor-addons' ),
+					'type'                 => Controls_Manager::CHOOSE,
+					'options'              => [
+						'top'     => [
+							'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-v-align-top',
+						],
+						'center'  => [
+							'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-v-align-middle',
+						],
+						'bottom'  => [
+							'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-v-align-bottom',
+						],
+						'stretch' => [
+							'title' => esc_html__( 'Stretch', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-v-align-stretch',
+						],
+					],
+					'default'              => '',
+					'toggle'               => false,
+					'selectors_dictionary' => [
+						'top'     => '-webkit-align-self: flex-start; -ms-flex-item-align: start; align-self: flex-start;',
+						'center'  => '-webkit-align-self: center; -ms-flex-item-align: center; align-self: center;',
+						'bottom'  => '-webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end;',
+						'stretch' => '-webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch;',
+					],
+					'selectors'            => [
+						'{{WRAPPER}} .zyre-heading-' . $id_base . '::before' => '{{VALUE}};',
+					],
+					'condition' => [
+						$prefix . '_switch' => 'yes',
+						$prefix . '_position!' => [ 'top', 'bottom' ],
+					],
+				]
+			);
+		}
 
 		$this->set_style_controls(
 			$prefix,
 			[
-				'selector' => "{{WRAPPER}} .zyre-heading-{$id_base}::before",
+				'selector' => ( 'title_separator' === $prefix ) ? "{{WRAPPER}} .zyre-heading-{$id_base}::before, {{WRAPPER}} .zyre-heading-{$id_base}::after" : "{{WRAPPER}} .zyre-heading-{$id_base}::before",
 				'controls'  => [
 					'bg'            => [],
 					'width'         => [
@@ -804,6 +895,17 @@ class Heading extends Base {
 			$this->add_render_attribute( 'heading_description_wrap', 'class', 'has--separator' );
 		}
 
+		$this->add_render_attribute( 'heading_main_title', 'class', 'zyre-heading-title zy-m-0' );
+		if ( ! empty( $settings['title_separator_switch'] ) && 'yes' === $settings['title_separator_switch'] ) {
+			$this->add_render_attribute( 'heading_main_title', 'class', 'has--separator' );
+			if ( 'left' === $settings['title_separator_position'] ) {
+				$this->add_render_attribute( 'heading_main_title', 'class', 'separator--left' );
+			}
+			if ( 'right' === $settings['title_separator_position'] ) {
+				$this->add_render_attribute( 'heading_main_title', 'class', 'separator--right' );
+			}
+		}
+
 		$this->add_render_attribute( 'heading_title', 'class', 'zyre-heading-title-text' );
 		$this->add_render_attribute( 'heading_suffix', 'class', 'zyre-heading-title-suffix zy-inline-block' );
 		$this->add_render_attribute( 'heading_subtitle', 'class', 'zyre-heading-subtitle zy-inline-flex zy-self-stretch zy-w-100 zy-relative zy-m-0' );
@@ -818,7 +920,7 @@ class Heading extends Base {
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_title'] ) ) : ?>
-				<<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); ?> class="zyre-heading-title zy-m-0">
+				<<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); ?> <?php echo $this->get_render_attribute_string( 'heading_main_title' ); ?>>
 					<span <?php echo $this->get_render_attribute_string( 'heading_title' ); ?>><?php echo zyre_kses_basic( $settings['heading_title'] ); ?></span>
 					<?php if ( $settings['heading_suffix'] ) : ?>
 					<span <?php echo $this->get_render_attribute_string( 'heading_suffix' ); ?>><?php echo esc_html( $settings['heading_suffix'] ); ?></span>
