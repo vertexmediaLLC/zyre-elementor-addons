@@ -771,6 +771,104 @@ class Toggle extends Base {
 			]
 		);
 
+		$this->add_control(
+			'heading_toggle_button_arrow_style',
+			[
+				'label' => esc_html__( 'Arrow Style', 'zyre-elementor-addons' ),
+				'type'  => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'toggle_button_arrow',
+			[
+				'label'        => esc_html__( 'Show Arrow', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'YES', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'NO', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'selectors'    => [
+					'{{WRAPPER}} .zyre-toggle-switch-button'        => '--arrow-width: 8px;--arrow-height: 12px;--arrow-color: #197dff;--arrow-bottom: 0px;--arrow-flip: 1;',
+					'{{WRAPPER}} .zyre-toggle-switch-button::after' => 'content: "";width: 0;height: 0;border-style: solid;border-width: 0px var(--arrow-width) var(--arrow-height) var(--arrow-width);border-color: transparent transparent var(--arrow-color) transparent;position: absolute;bottom: var(--arrow-bottom);left: 50%;transform: translateX(-50%) scaleY(var(--arrow-flip));',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'toggle_button_arrow_width',
+			[
+				'label'      => esc_html__( 'Arrow Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => ['px'],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-toggle-switch-button' => '--arrow-width: {{SIZE}}{{UNIT}};',
+				],
+				'condition'  => [
+					'toggle_button_arrow' => 'yes',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'toggle_button_arrow_height',
+			[
+				'label'      => esc_html__( 'Arrow Height', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => ['px'],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-toggle-switch-button' => '--arrow-height: {{SIZE}}{{UNIT}};',
+				],
+				'condition'  => [
+					'toggle_button_arrow' => 'yes',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'toggle_button_arrow_y_offset',
+			[
+				'label'      => esc_html__( 'Vertical Offset', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => ['px'],
+				'range'      => [
+					'px' => [
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .zyre-toggle-switch-button' => '--arrow-bottom: {{SIZE}}{{UNIT}};',
+				],
+				'condition'  => [
+					'toggle_button_arrow' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'toggle_button_arrow_flip',
+			[
+				'label'     => esc_html__( 'Flip Arrow', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => [
+					'1'  => [
+						'title' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-arrow-down',
+					],
+					'-1' => [
+						'title' => esc_html__( 'Flipped', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-arrow-up',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .zyre-toggle-switch-button' => '--arrow-flip: {{VALUE}};',
+				],
+				'condition' => [
+					'toggle_button_arrow' => 'yes',
+				],
+			]
+		);
+
 		// Tabs
 		$this->start_controls_tabs( 'tabs_toggle_button' );
 
@@ -807,6 +905,20 @@ class Toggle extends Base {
 
 		$this->common_style_controls( 'toggle_button', '.zyre-toggle-switch-button' );
 
+		$this->add_control(
+			'toggle_button_arrow_color',
+			[
+				'label'     => esc_html__( 'Arrow Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-toggle-switch-button' => '--arrow-color: {{VALUE}};',
+				],
+				'condition' => [
+					'toggle_button_arrow' => 'yes',
+				],
+			]
+		);
+
 		$this->end_controls_tab();
 
 		// Tab: Hover
@@ -842,6 +954,20 @@ class Toggle extends Base {
 
 		$this->common_style_controls( 'toggle_button_hover', '.zyre-toggle-switch-button:not(.active):hover' );
 
+		$this->add_control(
+			'toggle_button_arrow_color_hover',
+			[
+				'label'     => esc_html__( 'Arrow Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-toggle-switch-button:hover' => '--arrow-color: {{VALUE}};',
+				],
+				'condition' => [
+					'toggle_button_arrow' => 'yes',
+				],
+			]
+		);
+
 		$this->end_controls_tab();
 
 		// Tab: Active
@@ -876,6 +1002,20 @@ class Toggle extends Base {
 		);
 
 		$this->common_style_controls( 'toggle_button_active', '.zyre-toggle-switch-button.active' );
+
+		$this->add_control(
+			'toggle_button_arrow_color_active',
+			[
+				'label'     => esc_html__( 'Arrow Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-toggle-switch-button.active' => '--arrow-color: {{VALUE}};',
+				],
+				'condition' => [
+					'toggle_button_arrow' => 'yes',
+				],
+			]
+		);
 
 		$this->end_controls_tab();
 
@@ -1254,15 +1394,10 @@ class Toggle extends Base {
 				<div class="zyre-toggle-switch-wrapper zy-inline-flex zy-align-center zy-justify-center zy-gap-4">
 					<?php if ( 'button' === $settings['toggle_type'] ) : ?>
 						<?php foreach ( $settings['content_list'] as $i => $item ) : ?>
-							<button class="zyre-toggle-switch-button zy-flex zy-align-center zy-justify-center zy-nowrap zy-gap-1 zy-outline-none zy-shadow-none zy-bg-white zy-lh-normal <?php echo esc_attr( ( 'yes' === $item['active'] ) ? 'active' : '' ); ?> zyre-toggle-switch-icon-<?php echo esc_attr( $item['icon_align'] ); ?> elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>" data-content-id="<?php echo esc_attr( $item['_id'] ); ?>">
+							<button class="zyre-toggle-switch-button zy-relative zy-flex zy-align-center zy-justify-center zy-nowrap zy-gap-1 zy-outline-none zy-shadow-none zy-bg-white zy-lh-normal <?php echo esc_attr( ( 'yes' === $item['active'] ) ? 'active' : '' ); ?> zyre-toggle-switch-icon-<?php echo esc_attr( $item['icon_align'] ); ?> elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>" data-content-id="<?php echo esc_attr( $item['_id'] ); ?>">
 								<?php if ( isset( $item['image']['id'] ) ) : ?>
 									<div class="zyre-toggle-switch-image">
-										<?php
-										echo wp_get_attachment_image(
-											$item['image']['id'],
-											'medium_large',
-										);
-										?>
+										<?php echo wp_get_attachment_image( $item['image']['id'], 'medium_large' ); ?>
 									</div>
 								<?php endif; ?>
 								<?php if ( ! empty( $item['icon']['value'] ) ) : ?>

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-19T05:31:08+00:00\n"
+"POT-Creation-Date: 2026-01-19T09:30:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -400,8 +400,8 @@ msgstr ""
 #: widgets/pdf-view/pdf-view.php:326
 #: widgets/post-comments/post-comments.php:2996
 #: widgets/skill-bar/skill-bar.php:249
-#: widgets/toggle/toggle.php:986
-#: widgets/toggle/toggle.php:1102
+#: widgets/toggle/toggle.php:1126
+#: widgets/toggle/toggle.php:1242
 msgid "Border Radius"
 msgstr ""
 
@@ -1037,7 +1037,7 @@ msgstr ""
 #: widgets/toggle/toggle.php:376
 #: widgets/toggle/toggle.php:419
 #: widgets/toggle/toggle.php:685
-#: widgets/toggle/toggle.php:897
+#: widgets/toggle/toggle.php:1037
 msgid "Space Between"
 msgstr ""
 
@@ -1215,7 +1215,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1504
 #: widgets/logo-grid/logo-grid.php:473
 #: widgets/lottie-animation/lottie-animation.php:377
-#: widgets/toggle/toggle.php:1115
+#: widgets/toggle/toggle.php:1255
 msgid "Transition Duration"
 msgstr ""
 
@@ -1271,6 +1271,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1989
 #: widgets/team-member/team-member.php:931
 #: widgets/testimonial/testimonial.php:642
+#: widgets/toggle/toggle.php:830
 msgid "Vertical Offset"
 msgstr ""
 
@@ -1798,11 +1799,11 @@ msgstr ""
 #: widgets/team-member/team-member.php:999
 #: widgets/testimonial/testimonial.php:1049
 #: widgets/toggle/toggle.php:616
-#: widgets/toggle/toggle.php:788
-#: widgets/toggle/toggle.php:823
-#: widgets/toggle/toggle.php:858
-#: widgets/toggle/toggle.php:1149
-#: widgets/toggle/toggle.php:1199
+#: widgets/toggle/toggle.php:886
+#: widgets/toggle/toggle.php:935
+#: widgets/toggle/toggle.php:984
+#: widgets/toggle/toggle.php:1289
+#: widgets/toggle/toggle.php:1339
 msgid "Text Color"
 msgstr ""
 
@@ -2706,9 +2707,9 @@ msgstr ""
 #: widgets/menu/menu.php:1267
 #: widgets/toggle/toggle.php:295
 #: widgets/toggle/toggle.php:549
-#: widgets/toggle/toggle.php:851
-#: widgets/toggle/toggle.php:973
-#: widgets/toggle/toggle.php:1089
+#: widgets/toggle/toggle.php:977
+#: widgets/toggle/toggle.php:1113
+#: widgets/toggle/toggle.php:1229
 msgid "Active"
 msgstr ""
 
@@ -3377,9 +3378,10 @@ msgstr ""
 #: widgets/subscription-form/subscription-form.php:443
 #: widgets/team-member/team-member.php:857
 #: widgets/toggle/toggle.php:475
-#: widgets/toggle/toggle.php:781
-#: widgets/toggle/toggle.php:949
-#: widgets/toggle/toggle.php:1065
+#: widgets/toggle/toggle.php:855
+#: widgets/toggle/toggle.php:879
+#: widgets/toggle/toggle.php:1089
+#: widgets/toggle/toggle.php:1205
 msgid "Normal"
 msgstr ""
 
@@ -3460,9 +3462,9 @@ msgstr ""
 #: widgets/subscription-form/subscription-form.php:464
 #: widgets/team-member/team-member.php:877
 #: widgets/toggle/toggle.php:512
-#: widgets/toggle/toggle.php:816
-#: widgets/toggle/toggle.php:961
-#: widgets/toggle/toggle.php:1077
+#: widgets/toggle/toggle.php:928
+#: widgets/toggle/toggle.php:1101
+#: widgets/toggle/toggle.php:1217
 msgid "Hover"
 msgstr ""
 
@@ -3477,7 +3479,7 @@ msgstr ""
 #: widgets/skill-bar/skill-bar.php:415
 #: widgets/skill-bar/skill-bar.php:521
 #: widgets/subscription-form/subscription-form.php:406
-#: widgets/toggle/toggle.php:1025
+#: widgets/toggle/toggle.php:1165
 msgid "Horizontal Position"
 msgstr ""
 
@@ -3776,7 +3778,7 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:672
 #: widgets/infobox/infobox.php:676
 #: widgets/testimonial/testimonial.php:197
-#: widgets/toggle/toggle.php:1187
+#: widgets/toggle/toggle.php:1327
 msgid "Content"
 msgstr ""
 
@@ -6554,7 +6556,7 @@ msgstr ""
 #: widgets/team-member/team-member.php:607
 #: widgets/testimonial/testimonial.php:516
 #: widgets/testimonial/testimonial.php:872
-#: widgets/toggle/toggle.php:1043
+#: widgets/toggle/toggle.php:1183
 msgid "Vertical Position"
 msgstr ""
 
@@ -6618,9 +6620,9 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1294
 #: widgets/featured-banner/featured-banner.php:1419
 #: widgets/toggle/toggle.php:640
-#: widgets/toggle/toggle.php:800
-#: widgets/toggle/toggle.php:835
-#: widgets/toggle/toggle.php:870
+#: widgets/toggle/toggle.php:898
+#: widgets/toggle/toggle.php:947
+#: widgets/toggle/toggle.php:996
 msgid "Sub Title Color"
 msgstr ""
 
@@ -7245,11 +7247,13 @@ msgstr ""
 
 #: widgets/heading/heading.php:291
 #: widgets/toggle/toggle.php:134
+#: widgets/toggle/toggle.php:787
 msgid "YES"
 msgstr ""
 
 #: widgets/heading/heading.php:292
 #: widgets/toggle/toggle.php:135
+#: widgets/toggle/toggle.php:788
 msgid "NO"
 msgstr ""
 
@@ -7822,6 +7826,9 @@ msgstr ""
 #: widgets/menu/menu.php:794
 #: widgets/menu/menu.php:850
 #: widgets/news-ticker/news-ticker.php:506
+#: widgets/toggle/toggle.php:911
+#: widgets/toggle/toggle.php:960
+#: widgets/toggle/toggle.php:1009
 msgid "Arrow Color"
 msgstr ""
 
@@ -9304,6 +9311,7 @@ msgid "Arrow"
 msgstr ""
 
 #: widgets/skill-bar/skill-bar.php:486
+#: widgets/toggle/toggle.php:785
 msgid "Show Arrow"
 msgstr ""
 
@@ -9776,7 +9784,7 @@ msgid "Toggle Type"
 msgstr ""
 
 #: widgets/toggle/toggle.php:74
-#: widgets/toggle/toggle.php:923
+#: widgets/toggle/toggle.php:1063
 msgid "Switch"
 msgstr ""
 
@@ -9842,7 +9850,7 @@ msgid "Toggle Bar"
 msgstr ""
 
 #: widgets/toggle/toggle.php:359
-#: widgets/toggle/toggle.php:1215
+#: widgets/toggle/toggle.php:1355
 msgid "Toggle Alignment"
 msgstr ""
 
@@ -9872,7 +9880,7 @@ msgid "Sub Title Typography"
 msgstr ""
 
 #: widgets/toggle/toggle.php:628
-#: widgets/toggle/toggle.php:1171
+#: widgets/toggle/toggle.php:1311
 msgid "Active Text Color"
 msgstr ""
 
@@ -9881,23 +9889,43 @@ msgid "Sub Title Active Color"
 msgstr ""
 
 #: widgets/toggle/toggle.php:732
-#: widgets/toggle/toggle.php:906
+#: widgets/toggle/toggle.php:1046
 msgid "Title Order"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1003
+#: widgets/toggle/toggle.php:777
+msgid "Arrow Style"
+msgstr ""
+
+#: widgets/toggle/toggle.php:800
+msgid "Arrow Width"
+msgstr ""
+
+#: widgets/toggle/toggle.php:815
+msgid "Arrow Height"
+msgstr ""
+
+#: widgets/toggle/toggle.php:851
+msgid "Flip Arrow"
+msgstr ""
+
+#: widgets/toggle/toggle.php:859
+msgid "Flipped"
+msgstr ""
+
+#: widgets/toggle/toggle.php:1143
 msgid "Switch Handle"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1117
+#: widgets/toggle/toggle.php:1257
 msgid "Set Transition Duration in Millisecond"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1134
+#: widgets/toggle/toggle.php:1274
 msgid "Switch Handle Text"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1160
+#: widgets/toggle/toggle.php:1300
 msgid "Hover Text Color"
 msgstr ""
 
