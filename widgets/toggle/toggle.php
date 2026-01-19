@@ -727,14 +727,14 @@ class Toggle extends Base {
 		);
 
 		$this->add_responsive_control(
-			'subtitle_order',
+			'switch_text_title_order',
 			[
-				'label'     => esc_html__( 'Sub Title Order', 'zyre-elementor-addons' ),
+				'label'     => esc_html__( 'Title Order', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::NUMBER,
 				'min'       => -5,
 				'max'       => 5,
 				'selectors' => [
-					'{{WRAPPER}} .zyre-toggle-switch-text .zyre-toggle-switch-subtitle' => 'order: {{VALUE}};',
+					'{{WRAPPER}} .zyre-toggle-switch-text .zyre-toggle-switch-title' => 'order: {{VALUE}};',
 				],
 			]
 		);
@@ -896,6 +896,19 @@ class Toggle extends Base {
 					'gap'           => [
 						'label' => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
 					],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'toggle_button_title_order',
+			[
+				'label'     => esc_html__( 'Title Order', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -5,
+				'max'       => 5,
+				'selectors' => [
+					'{{WRAPPER}} .zyre-toggle-switch-button .zyre-toggle-switch-title' => 'order: {{VALUE}};',
 				],
 			]
 		);

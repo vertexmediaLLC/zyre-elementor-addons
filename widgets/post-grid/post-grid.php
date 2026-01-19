@@ -341,6 +341,16 @@ class Post_Grid extends Base {
 		$this->excerpt();
 
 		$this->add_control(
+			'heading_body_meta',
+			[
+				'label' => esc_html__( 'Body Meta', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->body_meta();
+
+		$this->add_control(
 			'heading_footer_meta',
 			[
 				'label' => esc_html__( 'Footer Meta', 'zyre-elementor-addons' ),
@@ -476,6 +486,7 @@ class Post_Grid extends Base {
 					'header_meta' => esc_html__( 'Header Meta', 'zyre-elementor-addons' ),
 					'post_date'   => esc_html__( 'Post Date', 'zyre-elementor-addons' ),
 					'title'       => esc_html__( 'Title', 'zyre-elementor-addons' ),
+					'body_meta'   => esc_html__( 'Body Meta', 'zyre-elementor-addons' ),
 					'excerpt'     => esc_html__( 'Excerpt', 'zyre-elementor-addons' ),
 					'footer_meta' => esc_html__( 'Footer Meta', 'zyre-elementor-addons' ),
 					'read_more'   => esc_html__( 'Read More', 'zyre-elementor-addons' ),
@@ -702,6 +713,24 @@ class Post_Grid extends Base {
 	}
 
 	/**
+	 * Body Post Meta
+	 */
+	protected function body_meta() {
+		$this->add_control(
+			'show_body_meta',
+			[
+				'label'     => esc_html__( 'Show Body Meta', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'label_on'  => esc_html__( 'Show', 'zyre-elementor-addons' ),
+				'label_off' => esc_html__( 'Hide', 'zyre-elementor-addons' ),
+				'default'   => '',
+			]
+		);
+
+		$this->meta_controls( 'body_meta' );
+	}
+
+	/**
 	 * Footer Post Meta
 	 */
 	protected function footer_meta() {
@@ -749,13 +778,22 @@ class Post_Grid extends Base {
 	}
 
 	protected function meta_controls( $id_base = 'header_meta' ) {
+
+		$default_metadata = [ 'category', 'author' ];
+		if ( 'footer_meta' === $id_base ) {
+			$default_metadata = [ 'comments' ];
+		}
+		if ( 'body_meta' === $id_base ) {
+			$default_metadata = [ 'author' ];
+		}
+
 		$this->add_control(
 			$id_base,
 			[
 				'label'       => esc_html__( 'Meta Data', 'zyre-elementor-addons' ),
 				'label_block' => true,
 				'type'        => Controls_Manager::SELECT2,
-				'default'     => ( 'footer_meta' === $id_base ) ? [ 'comments' ] : [ 'category', 'author' ],
+				'default'     => $default_metadata,
 				'multiple'    => true,
 				'options'     => [
 					'category' => esc_html__( 'Category', 'zyre-elementor-addons' ),
@@ -1027,6 +1065,7 @@ class Post_Grid extends Base {
 		$this->__content_body_style();
 		$this->__date_style();
 		$this->__title_style();
+		$this->__body_meta_style();
 		$this->__excerpt_style();
 		$this->__footer_meta_style();
 		$this->__read_more_style();
@@ -1108,7 +1147,7 @@ class Post_Grid extends Base {
 				'selector' => '{{WRAPPER}} .zyre-post-thumbnail img',
 				'controls' => [
 					'width'         => [
-						'selector' => '{{WRAPPER}} .zyre-post-thumbnail',
+						'selector' => '{{WRAPPER}} .zyre-post-thumbnail img',
 					],
 					'height'        => [
 						'default' => [
@@ -1452,6 +1491,43 @@ class Post_Grid extends Base {
 				],
 			]
 		);
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Style - Body Meta
+	 */
+	protected function __body_meta_style() {
+		$this->start_controls_section(
+			'section_body_meta_style',
+			[
+				'label'     => esc_html__( 'Body Meta', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'conditions' => [
+					'relation' => 'and',
+					'terms'    => [
+						[
+							'name'     => 'show_body_meta',
+							'operator' => '==',
+							'value'    => 'yes',
+						],
+						[
+							'relation' => 'or',
+							'terms'    => [
+								[
+									'name'     => 'body_meta',
+									'operator' => '!=',
+									'value'    => '',
+								],
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->post_meta_style( 'body_meta' );
 
 		$this->end_controls_section();
 	}
@@ -1999,7 +2075,7 @@ class Post_Grid extends Base {
 
 		if ( 'yes' === $this->settings['show_thumbnail_link'] ) {
 			printf(
-				'<a href="%1$s" class="zyre-post-thumbnail-link zy-block"><div class="zyre-post-thumbnail zy-relative zy-overflow-hidden zy-overflow-y-auto">%2$s%3$s</div></a>',
+				'<a href="%1$s" class="zyre-post-thumbnail-link zy-block"><div class="zyre-post-thumbnail zy-relative zy-overflow-hidden zy-overflow-y-auto zy-shrink-0">%2$s%3$s</div></a>',
 				esc_url( get_the_permalink() ),
 				get_the_post_thumbnail(
 					get_the_ID(),
@@ -2015,7 +2091,7 @@ class Post_Grid extends Base {
 			);
 		} else {
 			?>
-			<div class="zyre-post-thumbnail zy-relative zy-overflow-hidden zy-overflow-y-auto">
+			<div class="zyre-post-thumbnail zy-relative zy-overflow-hidden zy-overflow-y-auto zy-shrink-0">
 				<?php
 				the_post_thumbnail( $this->settings['post_thumbnail_img_size'], [ 'class' => 'zy-w-100' ] );
 				if ( ! empty( $this->settings['thumbnail_overlay'] ) ) {
@@ -2360,6 +2436,10 @@ class Post_Grid extends Base {
 
 				if ( ! in_array( 'title', $thumbnail_overlay, true ) ) {
 					$this->render_title();
+				}
+
+				if ( ! in_array( 'body_meta', $thumbnail_overlay, true ) ) {
+					$this->render_meta_data( 'body_meta' );
 				}
 
 				if ( ! in_array( 'excerpt', $thumbnail_overlay, true ) ) {

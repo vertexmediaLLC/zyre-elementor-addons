@@ -69,12 +69,16 @@ body.rtl .zyre-addon-toggle .zyre-toggle-switch-input:checked + .zyre-toggle-swi
 	left: auto;
 }
 
+.zyre-addon-toggle  .zyre-toggle-switch-button,
+.zyre-addon-toggle  .zyre-toggle-switch-button * {
+	transition: var(--zy-transition);
+}
+
 .zyre-addon-toggle .zyre-toggle-switch-button {
     border: 1px solid #dce1e8;
 	border-radius: 24px;
     color: #8c919b;
 	padding: 0.5em 1em;
-	transition: var(--zy-transition);
 }
 
 .zyre-addon-toggle .zyre-toggle-switch-button.active {
