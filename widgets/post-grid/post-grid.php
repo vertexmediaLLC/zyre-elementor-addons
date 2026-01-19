@@ -1708,66 +1708,65 @@ class Post_Grid extends Base {
 			'typography' => [
 				'selector' => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-item",
 			],
-			'color'      => [],
+			'color' => [],
 			'icon_color' => [
-				'selector'  => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-item",
+				'selector' => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-item",
 				'condition' => [
 					$id_base                            => 'comments',
 					$id_base . '_comments_icon[value]!' => '',
 				],
 			],
-			'icon_size'  => [
-				'selector'  => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-icon",
+			'icon_size' => [
+				'selector' => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-icon",
 				'condition' => [
 					$id_base                            => 'comments',
 					$id_base . '_comments_icon[value]!' => '',
 				],
 			],
-			'spacing'    => [
-				'label'        => esc_html__( 'Icon Spacing', 'zyre-elementor-addons' ),
-				'selector'     => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-icon",
+			'spacing' => [
+				'label'    => esc_html__( 'Icon Spacing', 'zyre-elementor-addons' ),
+				'selector' => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-icon",
 				'css_property' => 'margin-inline-end',
-				'condition'    => [
+				'condition' => [
 					$id_base                            => 'comments',
 					$id_base . '_comments_icon[value]!' => '',
 				],
 			],
-			'border'     => [],
-			'padding'    => [],
-			'gap'        => [
+			'border' => [],
+			'padding' => [],
+			'gap' => [
 				'condition' => [
 					$id_base . '_separator' => '',
 				],
 			],
-			'space'      => [
+			'space' => [
 				'label'        => esc_html__( 'Margin Bottom', 'zyre-elementor-addons' ),
+				'range'        => [
+					'px' => [
+						'min' => -100,
+						'max' => 100,
+					],
+				],
 				'css_property' => 'margin-bottom',
 			],
-			'align'      => [],
-			'align_x'    => [
+			'align' => [],
+			'align_x' => [
 				'options' => [
-					'flex-start'    => [
+					'flex-start' => [
 						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-justify-start-h',
 					],
-					'center' => [
+					'center'     => [
 						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-justify-center-h',
 					],
-					'flex-end' => [
+					'flex-end'   => [
 						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-justify-end-h',
 					],
 				],
 			],
 		];
-
-		if ( 'header_meta' === $id_base ) {
-			$controls_args['space'] = [
-				'label'        => esc_html__( 'Margin Bottom', 'zyre-elementor-addons' ),
-				'css_property' => 'margin-bottom',
-			];
-		}
 
 		$this->set_style_controls(
 			$id_base,
@@ -1780,17 +1779,27 @@ class Post_Grid extends Base {
 		$this->set_style_controls(
 			$id_base . '_avatar',
 			[
-				'selector'  => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-author-avatar img",
-				'controls'  => [
+				'selector' => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-author-avatar img",
+				'controls' => [
 					'heading'       => [
 						'label'     => esc_html__( 'Avatar', 'zyre-elementor-addons' ),
 						'separator' => 'before',
 					],
 					'width_height'  => [],
 					'border_radius' => [],
+					'margin_top'    => [
+						'label'        => esc_html__( 'Margin Top', 'zyre-elementor-addons' ),
+						'range'        => [
+							'px' => [
+								'min' => -100,
+								'max' => 100,
+							],
+						],
+						'css_property' => 'margin-block-start',
+					],
 					'space'         => [
-						'selector'     => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-author-avatar",
-						'css_property' => 'margin-inline-end',
+						'selector' => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-author-avatar",
+						'css_property'  => 'margin-inline-end',
 					],
 				],
 				'condition' => [
@@ -1860,6 +1869,57 @@ class Post_Grid extends Base {
 					'color' => [
 						'label' => esc_html__( 'Hover Color', 'zyre-elementor-addons' ),
 					],
+				],
+			]
+		);
+
+		$this->add_control(
+			$id_base . '_cc_plugin_enable',
+			[
+				'label'        => esc_html__( 'Colorful Categories', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'separator'    => 'before',
+			]
+		);
+
+		$cc_plugin_info = zyre_get_plugin_missing_info(
+			[
+				'plugin_name' => 'colorful-categories',
+				'plugin_file' => 'colorful-categories/colorful-categories.php',
+			]
+		);
+
+		$cc_plugin_url = ! empty( $cc_plugin_info['url'] ) ? $cc_plugin_info['url'] : '#';
+
+		$this->add_control(
+			$id_base . '_cc_plugin_notice',
+			[
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => sprintf(
+					__( 'The following options works only if %1$s Plugin By Artem P is Activated.', 'zyre-elementor-addons' ),
+					sprintf(
+						'<a href="%s" target="_blank" rel="noopener">%s</a>',
+						esc_url( $cc_plugin_url ),
+						esc_html( 'Colorful Categories' )
+					),
+				),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+			]
+		);
+
+		$this->set_style_controls(
+			$id_base . '_link',
+			[
+				'selector' => "{{WRAPPER}} .zyre-post-{$id_base} .zyre-post-meta-item a",
+				'controls'  => [
+					'padding'       => [],
+					'border_radius' => [],
+				],
+				'condition' => [
+					$id_base . '_cc_plugin_enable' => 'yes',
 				],
 			]
 		);
@@ -2269,7 +2329,7 @@ class Post_Grid extends Base {
 		$user_id = get_post_field( 'post_author', get_the_ID() );
 		?>
 		<span class="zyre-post-author-avatar">
-			<?php echo get_avatar( $user_id, 32 ); ?>
+			<?php echo get_avatar( $user_id, 48 ); ?>
 		</span>
 		<?php
 	}
@@ -2313,6 +2373,7 @@ class Post_Grid extends Base {
 	protected function render_category( $type ) {
 		if ( has_category() ) {
 			$categories = get_the_category();
+			$cc_plugin_active = class_exists( 'ColorfulCategories' ) && ( 'yes' === $this->settings[ $type . '_cc_plugin_enable' ] );
 
 			if ( ! empty( $categories ) ) {
 				$category_separator_key = $type . '_category_separator';
@@ -2332,7 +2393,20 @@ class Post_Grid extends Base {
 				}
 
 				foreach ( $categories as $category ) {
-					$names[] = '<a class="zyre-post-category-link" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+					$term_color = '';
+					if ( $cc_plugin_active ) {
+						$cc_color = get_term_meta( $category->term_id, 'cc_color', true );
+						if ( ! empty( $cc_color ) ) {
+							$term_color = "style='background-color: {$cc_color}'";
+						}
+					}
+
+					$names[] = sprintf(
+						'<a %1$s class="zyre-post-category-link" href="%2$s">%3$s</a>',
+						$term_color,
+						esc_url( get_category_link( $category->term_id ) ),
+						esc_html( $category->name )
+					);
 				}
 
 				echo implode( $category_separator, $names );

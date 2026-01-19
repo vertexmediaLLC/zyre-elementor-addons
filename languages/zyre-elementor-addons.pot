@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-19T09:30:31+00:00\n"
+"POT-Creation-Date: 2026-01-19T11:58:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -733,7 +733,7 @@ msgstr ""
 #: widgets/post-excerpt/post-excerpt.php:92
 #: widgets/post-grid/post-grid.php:426
 #: widgets/post-grid/post-grid.php:1029
-#: widgets/post-grid/post-grid.php:1750
+#: widgets/post-grid/post-grid.php:1756
 #: widgets/post-meta/post-meta.php:473
 #: widgets/post-navigation/post-navigation.php:470
 #: widgets/post-navigation/post-navigation.php:497
@@ -846,7 +846,7 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:2898
 #: widgets/post-excerpt/post-excerpt.php:96
 #: widgets/post-grid/post-grid.php:1033
-#: widgets/post-grid/post-grid.php:1754
+#: widgets/post-grid/post-grid.php:1760
 #: widgets/post-meta/post-meta.php:477
 #: widgets/post-navigation/post-navigation.php:474
 #: widgets/post-navigation/post-navigation.php:501
@@ -962,7 +962,7 @@ msgstr ""
 #: widgets/post-excerpt/post-excerpt.php:100
 #: widgets/post-grid/post-grid.php:434
 #: widgets/post-grid/post-grid.php:1037
-#: widgets/post-grid/post-grid.php:1758
+#: widgets/post-grid/post-grid.php:1764
 #: widgets/post-meta/post-meta.php:481
 #: widgets/post-navigation/post-navigation.php:478
 #: widgets/post-navigation/post-navigation.php:505
@@ -3365,7 +3365,7 @@ msgstr ""
 #: widgets/post-excerpt/post-excerpt.php:306
 #: widgets/post-grid/post-grid.php:599
 #: widgets/post-grid/post-grid.php:1629
-#: widgets/post-grid/post-grid.php:1924
+#: widgets/post-grid/post-grid.php:1984
 #: widgets/post-meta/post-meta.php:582
 #: widgets/post-navigation/post-navigation.php:253
 #: widgets/post-navigation/post-navigation.php:393
@@ -3449,7 +3449,7 @@ msgstr ""
 #: widgets/post-content/post-content.php:674
 #: widgets/post-excerpt/post-excerpt.php:334
 #: widgets/post-grid/post-grid.php:1650
-#: widgets/post-grid/post-grid.php:1945
+#: widgets/post-grid/post-grid.php:2005
 #: widgets/post-meta/post-meta.php:602
 #: widgets/post-navigation/post-navigation.php:273
 #: widgets/post-navigation/post-navigation.php:427
@@ -4041,6 +4041,7 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:557
 #: widgets/post-grid/post-grid.php:631
 #: widgets/post-grid/post-grid.php:682
+#: widgets/post-grid/post-grid.php:1881
 #: widgets/skill-bar/skill-bar.php:96
 #: widgets/skill-bar/skill-bar.php:306
 #: widgets/skill-bar/skill-bar.php:488
@@ -4077,6 +4078,7 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:558
 #: widgets/post-grid/post-grid.php:632
 #: widgets/post-grid/post-grid.php:683
+#: widgets/post-grid/post-grid.php:1882
 #: widgets/skill-bar/skill-bar.php:97
 #: widgets/skill-bar/skill-bar.php:307
 #: widgets/skill-bar/skill-bar.php:489
@@ -4216,7 +4218,7 @@ msgstr ""
 #: widgets/logo-carousel/logo-carousel.php:279
 #: widgets/post-comments/post-comments.php:364
 #: widgets/post-grid/post-grid.php:983
-#: widgets/post-grid/post-grid.php:1875
+#: widgets/post-grid/post-grid.php:1935
 msgid "Pagination"
 msgstr ""
 
@@ -4466,7 +4468,6 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:1466
 #: widgets/post-grid/post-grid.php:1561
 #: widgets/post-grid/post-grid.php:1743
-#: widgets/post-grid/post-grid.php:1767
 msgid "Margin Bottom"
 msgstr ""
 
@@ -5596,12 +5597,12 @@ msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:1428
 #: widgets/post-comments/post-comments.php:2098
-#: widgets/post-grid/post-grid.php:1903
+#: widgets/post-grid/post-grid.php:1963
 msgid "Page Numbers"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:1492
-#: widgets/post-grid/post-grid.php:1967
+#: widgets/post-grid/post-grid.php:2027
 msgid "Current"
 msgstr ""
 
@@ -5725,7 +5726,7 @@ msgstr ""
 
 #: widgets/archive-title/archive-title.php:300
 #: widgets/page-title/page-title.php:162
-#: widgets/post-grid/post-grid.php:1829
+#: widgets/post-grid/post-grid.php:1838
 #: widgets/post-meta/post-meta.php:313
 #: widgets/post-title/post-title.php:162
 msgid "Separator"
@@ -5874,7 +5875,7 @@ msgstr ""
 
 #: widgets/author-box/author-box.php:107
 #: widgets/author-box/author-box.php:573
-#: widgets/post-grid/post-grid.php:1786
+#: widgets/post-grid/post-grid.php:1785
 msgid "Avatar"
 msgstr ""
 
@@ -5995,7 +5996,7 @@ msgstr ""
 #: widgets/image-carousel/image-carousel.php:324
 #: widgets/logo-carousel/logo-carousel.php:333
 #: widgets/post-grid/post-grid.php:1489
-#: widgets/post-grid/post-grid.php:1861
+#: widgets/post-grid/post-grid.php:1870
 #: widgets/site-title/site-title.php:378
 msgid "Hover Color"
 msgstr ""
@@ -6827,6 +6828,7 @@ msgid "Error Massage"
 msgstr ""
 
 #: widgets/cf7/cf7.php:686
+#: widgets/post-grid/post-grid.php:1791
 msgid "Margin Top"
 msgstr ""
 
@@ -8988,12 +8990,21 @@ msgstr ""
 msgid "Show Horizontal Line"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1811
+#: widgets/post-grid/post-grid.php:1820
 msgid "Prefix"
 msgstr ""
 
-#: widgets/post-grid/post-grid.php:1847
+#: widgets/post-grid/post-grid.php:1856
 msgid "Link Colors"
+msgstr ""
+
+#: widgets/post-grid/post-grid.php:1879
+msgid "Colorful Categories"
+msgstr ""
+
+#: widgets/post-grid/post-grid.php:1902
+#, php-format
+msgid "The following options works only if %1$s Plugin By Artem P is Activated."
 msgstr ""
 
 #: widgets/post-meta/post-meta.php:45
