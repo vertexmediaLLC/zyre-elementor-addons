@@ -133,13 +133,18 @@
 }
 
 .zyre-addon-call-to-action .zyre-cta-ribbon {
+	--translateX: 0;
+	--translateY: 0;
 	height: 150px;
 	transform: rotate(90deg);
 	width: 150px;
+	left: auto;
+	right: var(--translateX);
+	top: var(--translateY);
 }
 
 .zyre-addon-call-to-action .zyre-cta-ribbon.zyre-cta-ribbon-left {
-	left: 0;
+	left: var(--translateX);
 	right: auto;
 	transform: rotate(0);
 }

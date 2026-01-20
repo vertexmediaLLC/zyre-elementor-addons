@@ -226,6 +226,19 @@ class Image_Grid extends Base {
 					'title'       => esc_html__( 'Title Only', 'zyre-elementor-addons' ),
 					'content'     => esc_html__( 'Content', 'zyre-elementor-addons' ),
 					'image_title' => esc_html__( 'Both Title & Image', 'zyre-elementor-addons' ),
+					'button'      => esc_html__( 'Button', 'zyre-elementor-addons' ),
+				],
+			]
+		);
+
+		$this->add_control(
+			'view_button_text',
+			[
+				'label'     => esc_html__( 'View Button Text', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => esc_html__( 'View', 'zyre-elementor-addons' ),
+				'condition' => [
+					'link_switch' => 'button',
 				],
 			]
 		);
@@ -359,13 +372,27 @@ class Image_Grid extends Base {
 				'label'       => esc_html__( 'Open Lightbox on', 'zyre-elementor-addons' ),
 				'description' => esc_html__( 'Image click won’t work with Content \'Overlay\' display.', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::SELECT,
-				'default'     => 'button_click',
+				'default'     => 'icon_click',
 				'options'     => [
-					'button_click' => esc_html__( 'Button Click', 'zyre-elementor-addons' ),
+					'icon_click'   => esc_html__( 'Icon Click', 'zyre-elementor-addons' ),
 					'image_click'  => esc_html__( 'Image Click', 'zyre-elementor-addons' ),
+					'button_click' => esc_html__( 'Button Click', 'zyre-elementor-addons' ),
 				],
 				'condition'   => [
 					'enable_lightbox' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'lightbox_button_text',
+			[
+				'label'     => esc_html__( 'Button Text', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => esc_html__( 'Zoom', 'zyre-elementor-addons' ),
+				'condition' => [
+					'enable_lightbox'  => 'yes',
+					'open_lightbox_on' => 'button_click',
 				],
 			]
 		);
@@ -381,6 +408,7 @@ class Image_Grid extends Base {
 		$this->__tabs_wrap_style_controls();
 		$this->__tabs_style_controls();
 		$this->__tabs_separator_style_controls();
+		$this->__buttons_style_controls();
 		$this->__lightbox_btn_style_controls();
 	}
 
@@ -854,6 +882,143 @@ class Image_Grid extends Base {
 		$this->end_controls_section();
 	}
 
+	protected function __buttons_style_controls() {
+		$this->start_controls_section(
+			'section_style_buttons',
+			[
+				'label'      => esc_html__( 'Buttons', 'zyre-elementor-addons' ),
+				'tab'        => Controls_Manager::TAB_STYLE,
+				'conditions' => [
+					'relation' => 'or',
+					'terms'    => [
+						[
+							'name'     => 'link_switch',
+							'operator' => '==',
+							'value'    => 'button',
+						],
+						[
+							'relation' => 'and',
+							'terms'    => [
+								[
+									'name'     => 'enable_lightbox',
+									'operator' => '==',
+									'value'    => 'yes',
+								],
+								[
+									'name'     => 'open_lightbox_on',
+									'operator' => '==',
+									'value'    => 'button_click',
+								],
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'buttons',
+			[
+				'selector' => '{{WRAPPER}} .zyre-image-grid-buttons > a',
+				'controls' => [
+					'typo'          => [],
+					'padding'       => [
+						'label' => esc_html__( 'Buttons Padding', 'zyre-elementor-addons' ),
+					],
+					'border_radius' => [
+						'label' => esc_html__( 'Buttons Radius', 'zyre-elementor-addons' ),
+					],
+					'margin'        => [
+						'selector' => '{{WRAPPER}} .zyre-image-grid-buttons',
+					],
+					'gap'           => [
+						'selector' => '{{WRAPPER}} .zyre-image-grid-buttons',
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'heading_view_button',
+			[
+				'type'      => Controls_Manager::HEADING,
+				'label'     => esc_html__( 'View Button', 'zyre-elementor-addons' ),
+				'separator' => 'before',
+				'condition' => [
+					'link_switch' => 'button',
+				],
+			]
+		);
+
+		// Tabs
+		$this->start_controls_tabs(
+			'tabs_view_button',
+			[
+				'condition' => [
+					'link_switch' => 'button',
+				],
+			]
+		);
+
+		// Tab: Normal
+		$this->start_controls_tab(
+			'tab_view_button_normal',
+			[
+				'label'     => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+				'condition' => [
+					'link_switch' => 'button',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'view_button',
+			[
+				'selector'  => '{{WRAPPER}} .zyre-image-grid-view-button',
+				'controls'  => [
+					'color'    => [],
+					'bg_color' => [],
+				],
+				'condition' => [
+					'link_switch' => 'button',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Tab: Hover
+		$this->start_controls_tab(
+			'tab_view_button_hover',
+			[
+				'label'     => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+				'condition' => [
+					'link_switch' => 'button',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'view_button_hover',
+			[
+				'selector'  => '{{WRAPPER}} .zyre-image-grid-view-button:hover',
+				'controls'  => [
+					'color'        => [],
+					'bg_color'     => [],
+				],
+				'condition' => [
+					'link_switch' => 'button',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
+	}
+
 	protected function __lightbox_btn_style_controls() {
 		$this->start_controls_section(
 			'section_style_lightbox_btn',
@@ -861,8 +1026,8 @@ class Image_Grid extends Base {
 				'label'     => esc_html__( 'Lightbox Button', 'zyre-elementor-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'enable_lightbox' => 'yes',
-					'open_lightbox_on' => 'button_click',
+					'enable_lightbox'  => 'yes',
+					'open_lightbox_on' => [ 'button_click', 'icon_click' ],
 				],
 			]
 		);
@@ -870,16 +1035,85 @@ class Image_Grid extends Base {
 		$this->set_style_controls(
 			'lightbox_btn',
 			[
-				'selector' => '{{WRAPPER}} .zyre-image-grid-open-lightbox-btn',
-				'controls' => [
+				'selector'  => '{{WRAPPER}} .zyre-image-grid-open-lightbox-btn',
+				'controls'  => [
 					'width'      => [],
 					'height'     => [],
 					'bg_color'   => [],
 					'icon_size'  => [],
 					'icon_color' => [],
 				],
+				'condition' => [
+					'open_lightbox_on' => 'icon_click',
+				],
 			]
 		);
+
+		// Tabs
+		$this->start_controls_tabs(
+			'tabs_lightbox_zoom_btn',
+			[
+				'condition' => [
+					'open_lightbox_on' => 'button_click',
+				],
+			]
+		);
+
+		// Tab: Normal
+		$this->start_controls_tab(
+			'tab_lightbox_zoom_btn_normal',
+			[
+				'label'     => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+				'condition' => [
+					'open_lightbox_on' => 'button_click',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'lightbox_zoom_btn',
+			[
+				'selector'  => '{{WRAPPER}} .zyre-image-grid-zoom-button',
+				'controls'  => [
+					'color'    => [],
+					'bg_color' => [],
+				],
+				'condition' => [
+					'open_lightbox_on' => 'button_click',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		// Tab: Hover
+		$this->start_controls_tab(
+			'tab_lightbox_zoom_btn_hover',
+			[
+				'label'     => esc_html__( 'Hover', 'zyre-elementor-addons' ),
+				'condition' => [
+					'open_lightbox_on' => 'button_click',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'lightbox_zoom_btn_hover',
+			[
+				'selector'  => '{{WRAPPER}} .zyre-image-grid-zoom-button:hover',
+				'controls'  => [
+					'color'        => [],
+					'bg_color'     => [],
+				],
+				'condition' => [
+					'open_lightbox_on' => 'button_click',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 	}
@@ -925,6 +1159,8 @@ class Image_Grid extends Base {
 		$open_lightbox_on = $settings['open_lightbox_on'];
 
 		$link_switch = ! empty( $settings['link_switch'] ) ? $settings['link_switch'] : 'image';
+		$view_text = ! empty( $settings['view_button_text'] ) ? $settings['view_button_text'] : '';
+		$lb_button_text = ! empty( $settings['lightbox_button_text'] ) ? $settings['lightbox_button_text'] : '';
 		$display_category = ( 'yes' === $settings['category_display'] );
 
 		$this->add_render_attribute( 'items_wrap', 'class', 'zyre-image-grid-items zyre-isotope' );
@@ -1039,6 +1275,7 @@ class Image_Grid extends Base {
 					$image = $item['image'] ?? [];
 					$link_key = 'link_' . $index;
 					$image_link_key = 'image_' . $link_key;
+					$lb_button_key = 'button_' . $link_key;
 					$content_link_key = 'content_' . $link_key;
 	
 					$this->add_link_attributes( $link_key, $item['link'] );
@@ -1101,7 +1338,7 @@ class Image_Grid extends Base {
 										]
 									);
 
-									if ( 'button_click' === $open_lightbox_on ) :
+									if ( 'icon_click' === $open_lightbox_on ) :
 										$icon_settings = [
 											'library' => 'eicons',
 											'value' => 'eicon-search-bold',
@@ -1131,7 +1368,7 @@ class Image_Grid extends Base {
 								);
 							}
 
-							if ( $title || ( $display_category && $category ) || $description ) : ?>
+							if ( $title || ( $display_category && $category ) || $description || ( $is_enable_lightbox && $open_lightbox_on ) ) : ?>
 								<<?php Utils::print_validated_html_tag( $content_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $content_link_key ) ); ?> class="<?php echo esc_attr( $content_class ); ?>">
 									<?php if ( $title ) : ?>
 										<h3 class="zyre-image-grid-item-title zy-m-0 zy-w-100">
@@ -1156,12 +1393,34 @@ class Image_Grid extends Base {
 									<?php if ( $description ) : ?>
 										<p class="zyre-image-grid-item-description zy-m-0 zy-w-100"><?php echo esc_html( $item['description'] ); ?></p>
 									<?php endif; ?>
+
+									<?php if ( 'button_click' === $open_lightbox_on || ( 'button' === $link_switch && ! empty( $item['link']['url'] ) ) ) : ?>
+										<div class="zyre-image-grid-buttons zy-inline-flex zy-gap-2">
+											<?php if ( 'button_click' === $open_lightbox_on ) :
+												$this->add_render_attribute(
+													$lb_button_key,
+													[
+														'href'                              => esc_url( $img_src ),
+														'data-elementor-open-lightbox'      => 'yes',
+														'data-elementor-lightbox-slideshow' => $items_total > 1 ? $this->get_id() : false,
+														'data-elementor-lightbox-title'     => esc_attr( $item['title'] ),
+													]
+												);
+												?>
+												<a class="zyre-image-grid-zoom-button zy-transition" <?php echo wp_kses_post( $this->get_render_attribute_string( $lb_button_key ) ); ?>><?php echo esc_html( $lb_button_text ); ?></a>
+											<?php endif;
+											
+											if ( 'button' === $link_switch && ! empty( $item['link']['url'] ) ) : ?>
+												<a class="zyre-image-grid-view-button zy-transition" <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?>><?php echo esc_html( $view_text ); ?></a>
+											<?php endif; ?>
+										</div>
+									<?php endif; ?>
 								</<?php Utils::print_validated_html_tag( $content_tag ); ?>>
 							<?php endif; ?>
 						</div>
 					</div>
 					<?php
-				endforeach; 
+				endforeach;
 				?>
 			</div>
 		</div>

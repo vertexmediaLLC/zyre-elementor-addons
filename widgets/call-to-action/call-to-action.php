@@ -2073,10 +2073,10 @@ class Call_To_Action extends Base {
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'range' => [
 					'px' => [
-						'max' => 50,
+						'max' => 100,
 					],
 					'em' => [
-						'max' => 5,
+						'max' => 10,
 					],
 				],
 				'selectors' => [
@@ -2103,6 +2103,22 @@ class Call_To_Action extends Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .zyre-cta-ribbon .zyre-cta-ribbon-title' => '--rotate: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'ribbon_wrap',
+			[
+				'selector' => '{{WRAPPER}} .zyre-cta-ribbon',
+				'controls' => [
+					'offset_x' => [
+						'css_property' => '--translateX',
+						'separator'    => 'before',
+					],
+					'offset_y' => [
+						'css_property' => '--translateY',
+					],
 				],
 			]
 		);
@@ -2379,7 +2395,7 @@ class Call_To_Action extends Base {
 
 			<?php
 			if ( ! empty( $settings['ribbon_title'] ) ) :
-				$this->add_render_attribute( 'ribbon-wrapper', 'class', 'zyre-cta-ribbon zy-absolute zy-left-auto zy-right-0 zy-top-0 zy-index-1 zy-overflow-hidden' );
+				$this->add_render_attribute( 'ribbon-wrapper', 'class', 'zyre-cta-ribbon zy-absolute zy-index-1 zy-overflow-hidden' );
 
 				if ( ! empty( $settings['ribbon_position_x'] ) ) {
 					$this->add_render_attribute( 'ribbon-wrapper', 'class', 'zyre-cta-ribbon-' . $settings['ribbon_position_x'] );
