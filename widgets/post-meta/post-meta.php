@@ -466,14 +466,14 @@ class Post_Meta extends Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label'              => esc_html__( 'Alignment', 'zyre-elementor-addons' ),
-				'type'               => Controls_Manager::CHOOSE,
-				'options'            => [
-					'flex-start'    => [
+				'label'     => esc_html__( 'Alignment', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => [
+					'flex-start' => [
 						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-text-align-left',
 					],
-					'center'  => [
+					'center'     => [
 						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-text-align-center',
 					],
@@ -482,13 +482,15 @@ class Post_Meta extends Base {
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
-				'default'      => 'flex-start',
+				'default'   => 'flex-start',
+				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .zyre-post-meta-horizontal.zyre-post-meta' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .zyre-post-meta-horizontal.zyre-post-meta'     => 'justify-content: {{VALUE}};',
 					'{{WRAPPER}} .zyre-post-meta-vertical .zyre-post-meta-item' => 'align-items: {{VALUE}};',
 				],
 			]
 		);
+
 		$this->end_controls_section();
 	}
 

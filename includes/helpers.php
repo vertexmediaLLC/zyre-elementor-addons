@@ -681,3 +681,109 @@ function zyre_get_texonomy_list( $taxonomy = 'category', $key = 'term_id' ) {
 	}
 	return $options;
 }
+
+/**
+ * Properly strips all HTML tags including 'script' and 'style'.
+ *
+ * This differs from strip_tags() because it removes the contents of
+ * the `<script>` and `<style>` tags. E.g. `strip_tags( '<script>something</script>' )`
+ * will return 'something'. zyre_strip_all_tags() will return an empty string.
+ *
+ * @since 1.0.0
+ *
+ * @param string $text          String containing HTML tags
+ * @param bool   $remove_breaks Optional. Whether to remove left over line breaks and white space chars
+ * @return string The processed string.
+ */
+function zyre_strip_all_tags( $text, $remove_breaks = false ) {
+	if ( is_null( $text ) ) {
+		return '';
+	}
+
+	if ( ! is_scalar( $text ) ) {
+		/*
+		 * To maintain consistency with pre-PHP 8 error levels,
+		 * wp_trigger_error() is used to trigger an E_USER_WARNING,
+		 * rather than _doing_it_wrong(), which triggers an E_USER_NOTICE.
+		 */
+		wp_trigger_error(
+			'',
+			sprintf(
+				/* translators: 1: The function name, 2: The argument number, 3: The argument name, 4: The expected type, 5: The provided type. */
+				__( 'Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given.' ),
+				__FUNCTION__,
+				'#1',
+				'$text',
+				'string',
+				gettype( $text )
+			),
+			E_USER_WARNING
+		);
+
+		return '';
+	}
+
+	$text = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $text );
+	$text = strip_tags( $text, '<br>' );
+
+	if ( $remove_breaks ) {
+		$text = preg_replace( '/[\r\n\t ]+/', ' ', $text );
+	}
+
+	return trim( $text );
+}
+
+/**
+ * Trims text to a certain number of words.
+ *
+ * This function is localized. For languages that count 'words' by the individual
+ * character (such as East Asian languages), the $num_words argument will apply
+ * to the number of individual characters.
+ *
+ * @since 1.0.0
+ *
+ * @param string $text      Text to trim.
+ * @param int    $num_words Number of words. Default 55.
+ * @param string $more      Optional. What to append if $text needs to be trimmed. Default '&hellip;'.
+ * @return string Trimmed text.
+ */
+function zyre_trim_words( $text, $num_words = 55, $more = null ) {
+	if ( null === $more ) {
+		$more = __( '&hellip;' );
+	}
+
+	$original_text = $text;
+	$text          = zyre_strip_all_tags( $text );
+	$text_count = str_replace( '<br>', ' ', $text ); // Make sure <br> does NOT count as a word
+	$num_words     = (int) $num_words;
+
+	if ( str_starts_with( wp_get_word_count_type(), 'characters' ) && preg_match( '/^utf\-?8$/i', get_option( 'blog_charset' ) ) ) {
+		$text_count = trim( preg_replace( "/[\n\r\t ]+/", ' ', $text_count ), ' ' );
+		preg_match_all( '/./u', $text_count, $words_array );
+		$words_array = array_slice( $words_array[0], 0, $num_words + 1 );
+		$sep         = '';
+	} else {
+		$words_array = preg_split( "/[\n\r\t ]+/", $text_count, $num_words + 1, PREG_SPLIT_NO_EMPTY );
+		$sep         = ' ';
+	}
+
+	if ( count( $words_array ) > $num_words ) {
+		array_pop( $words_array );
+		$text = implode( $sep, $words_array );
+		$text = $text . $more;
+	} else {
+		$text = implode( $sep, $words_array );
+	}
+
+	/**
+	 * Filters the text content after words have been trimmed.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $text          The trimmed text.
+	 * @param int    $num_words     The number of words to trim the text to. Default 55.
+	 * @param string $more          An optional string to append to the end of the trimmed text, e.g. &hellip;.
+	 * @param string $original_text The text before it was trimmed.
+	 */
+	return apply_filters( 'zyre_trim_words', $text, $num_words, $more, $original_text );
+}

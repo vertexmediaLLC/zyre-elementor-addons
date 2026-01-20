@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-19T11:58:19+00:00\n"
+"POT-Creation-Date: 2026-01-20T06:53:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -320,7 +320,7 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1872
 #: widgets/post-comments/post-comments.php:1904
 #: widgets/post-comments/post-comments.php:3075
-#: widgets/post-meta/post-meta.php:648
+#: widgets/post-meta/post-meta.php:650
 #: widgets/post-navigation/post-navigation.php:400
 #: widgets/post-navigation/post-navigation.php:434
 #: widgets/post-navigation/post-navigation.php:536
@@ -507,7 +507,7 @@ msgstr ""
 #: widgets/news-ticker/news-ticker.php:376
 #: widgets/pdf-view/pdf-view.php:273
 #: widgets/post-comments/post-comments.php:2862
-#: widgets/post-meta/post-meta.php:718
+#: widgets/post-meta/post-meta.php:720
 #: widgets/post-navigation/post-navigation.php:586
 #: widgets/team-member/team-member.php:437
 #: widgets/testimonial/testimonial.php:408
@@ -527,7 +527,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:714
 #: widgets/flipbox/flipbox.php:150
 #: widgets/pdf-view/pdf-view.php:298
-#: widgets/post-meta/post-meta.php:738
+#: widgets/post-meta/post-meta.php:740
 #: widgets/post-navigation/post-navigation.php:612
 #: widgets/skill-bar/skill-bar.php:212
 msgid "Height"
@@ -1033,7 +1033,7 @@ msgstr ""
 #: widgets/post-content/post-content.php:562
 #: widgets/post-content/post-content.php:626
 #: widgets/post-grid/post-grid.php:1683
-#: widgets/post-meta/post-meta.php:524
+#: widgets/post-meta/post-meta.php:526
 #: widgets/toggle/toggle.php:376
 #: widgets/toggle/toggle.php:419
 #: widgets/toggle/toggle.php:685
@@ -1356,8 +1356,8 @@ msgstr ""
 #: widgets/divider/divider.php:142
 #: widgets/fun-fact/fun-fact.php:693
 #: widgets/news-ticker/news-ticker.php:526
-#: widgets/post-meta/post-meta.php:628
-#: widgets/post-meta/post-meta.php:636
+#: widgets/post-meta/post-meta.php:630
+#: widgets/post-meta/post-meta.php:638
 #: widgets/post-navigation/post-navigation.php:525
 msgid "Divider"
 msgstr ""
@@ -1380,7 +1380,7 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:315
 #: widgets/post-comments/post-comments.php:153
 #: widgets/post-meta/post-meta.php:328
-#: widgets/post-meta/post-meta.php:639
+#: widgets/post-meta/post-meta.php:641
 #: widgets/site-logo/site-logo.php:85
 #: widgets/skill-bar/skill-bar.php:370
 msgid "On"
@@ -1406,7 +1406,7 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:707
 #: widgets/post-comments/post-comments.php:751
 #: widgets/post-meta/post-meta.php:329
-#: widgets/post-meta/post-meta.php:638
+#: widgets/post-meta/post-meta.php:640
 #: widgets/site-logo/site-logo.php:86
 #: widgets/skill-bar/skill-bar.php:371
 msgid "Off"
@@ -1788,9 +1788,9 @@ msgstr ""
 #: widgets/post-content/post-content.php:684
 #: widgets/post-excerpt/post-excerpt.php:316
 #: widgets/post-excerpt/post-excerpt.php:344
-#: widgets/post-meta/post-meta.php:531
-#: widgets/post-meta/post-meta.php:589
-#: widgets/post-meta/post-meta.php:609
+#: widgets/post-meta/post-meta.php:533
+#: widgets/post-meta/post-meta.php:591
+#: widgets/post-meta/post-meta.php:611
 #: widgets/post-thumbnail/post-thumbnail.php:265
 #: widgets/post-title/post-title.php:384
 #: widgets/post-title/post-title.php:406
@@ -2143,7 +2143,7 @@ msgstr ""
 
 #: classes/widgets-manager.php:1167
 #: traits/list-item-advanced-trait.php:536
-#: widgets/post-meta/post-meta.php:676
+#: widgets/post-meta/post-meta.php:678
 #: widgets/post-navigation/post-navigation.php:552
 msgid "Dotted"
 msgstr ""
@@ -2375,7 +2375,7 @@ msgstr ""
 #: widgets/post-content/post-content.php:98
 #: widgets/post-grid/post-grid.php:47
 #: widgets/post-grid/post-grid.php:1082
-#: widgets/post-meta/post-meta.php:509
+#: widgets/post-meta/post-meta.php:511
 #: widgets/post-navigation/post-navigation.php:166
 #: widgets/social-icon/social-icon.php:65
 #: widgets/social-share/social-share.php:684
@@ -3366,7 +3366,7 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:599
 #: widgets/post-grid/post-grid.php:1629
 #: widgets/post-grid/post-grid.php:1984
-#: widgets/post-meta/post-meta.php:582
+#: widgets/post-meta/post-meta.php:584
 #: widgets/post-navigation/post-navigation.php:253
 #: widgets/post-navigation/post-navigation.php:393
 #: widgets/post-navigation/post-navigation.php:679
@@ -3450,7 +3450,7 @@ msgstr ""
 #: widgets/post-excerpt/post-excerpt.php:334
 #: widgets/post-grid/post-grid.php:1650
 #: widgets/post-grid/post-grid.php:2005
-#: widgets/post-meta/post-meta.php:602
+#: widgets/post-meta/post-meta.php:604
 #: widgets/post-navigation/post-navigation.php:273
 #: widgets/post-navigation/post-navigation.php:427
 #: widgets/post-navigation/post-navigation.php:700
@@ -3783,32 +3783,32 @@ msgid "Content"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:531
-#: widgets/post-meta/post-meta.php:671
+#: widgets/post-meta/post-meta.php:673
 #: widgets/post-navigation/post-navigation.php:547
 msgid "Style"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:534
-#: widgets/post-meta/post-meta.php:674
+#: widgets/post-meta/post-meta.php:676
 #: widgets/post-navigation/post-navigation.php:550
 msgid "Solid"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:535
-#: widgets/post-meta/post-meta.php:675
+#: widgets/post-meta/post-meta.php:677
 #: widgets/post-navigation/post-navigation.php:551
 msgid "Double"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:537
-#: widgets/post-meta/post-meta.php:677
+#: widgets/post-meta/post-meta.php:679
 #: widgets/post-navigation/post-navigation.php:553
 msgid "Dashed"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:553
 #: widgets/news-ticker/news-ticker.php:543
-#: widgets/post-meta/post-meta.php:693
+#: widgets/post-meta/post-meta.php:695
 #: widgets/post-navigation/post-navigation.php:565
 msgid "Weight"
 msgstr ""
@@ -9059,7 +9059,7 @@ msgstr ""
 
 #: widgets/post-meta/post-meta.php:204
 #: widgets/post-meta/post-meta.php:220
-#: widgets/post-meta/post-meta.php:570
+#: widgets/post-meta/post-meta.php:572
 msgid "Meta Link"
 msgstr ""
 
@@ -9079,7 +9079,7 @@ msgstr ""
 msgid "Icon Distance"
 msgstr ""
 
-#: widgets/post-meta/post-meta.php:548
+#: widgets/post-meta/post-meta.php:550
 msgid "Meta Item"
 msgstr ""
 

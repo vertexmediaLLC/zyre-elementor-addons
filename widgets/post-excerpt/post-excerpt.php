@@ -383,8 +383,8 @@ class Post_Excerpt extends Base {
 		}
 
 		$settings = $this->get_settings_for_display();
-		$length = $settings['excerpt_length'];
-		$wp_excerpt = apply_filters( 'get_the_excerpt', wp_trim_words( get_the_excerpt(), $length ) );
+		$length = ! empty( $settings['excerpt_length'] ) ? (int) $settings['excerpt_length'] : 55;
+		$wp_excerpt = apply_filters( 'get_the_excerpt', zyre_trim_words( get_the_excerpt(), $length ) );
 
 		$this->add_render_attribute( 'read_more', 'class', 'zyre-post-read-more-link zy-inline-flex zy-align-center zy-justify-center' );
 		if ( 'custom' === $settings['link'] && ! empty( $settings['custom_link']['url'] ) ) {
