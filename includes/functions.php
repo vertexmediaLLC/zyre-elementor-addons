@@ -16,7 +16,6 @@ defined( 'ABSPATH' ) || die();
  * @param string $widget_id
  * @param array $value
  */
-
 function zyre_get_elementor_widget_settings( $elements, $widget_id ) {
 
 	if ( is_array( $elements ) ) {
@@ -43,7 +42,6 @@ function zyre_get_elementor_widget_settings( $elements, $widget_id ) {
  * @param string $widget_id
  * @param array
  */
-
 function zyre_get_el_post_widget_settings( $post_id, $widget_id ) {
 
 	$elementor_data = @json_decode( get_post_meta( $post_id, '_elementor_data', true ), true );

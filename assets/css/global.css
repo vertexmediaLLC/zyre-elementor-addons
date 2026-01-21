@@ -208,8 +208,12 @@
 .zyre-addon .zy-p-5 {padding: 25px;}
 .zyre-addon .zy-p-6 {padding: 30px;}
 .zyre-addon .zy-px-1 {padding-left: 5px;padding-right: 5px;}
+.zyre-addon .zy-px-2 {padding-left: 10px;padding-right: 10px;}
+.zyre-addon .zy-px-3 {padding-left: 15px;padding-right: 15px;}
+.zyre-addon .zy-px-4 {padding-left: 20px;padding-right: 20px;}
 .zyre-addon .zy-py-1 {padding-top: 5px;padding-bottom: 5px;}
 .zyre-addon .zy-py-2 {padding-top: 10px;padding-bottom: 10px;}
+.zyre-addon .zy-py-3 {padding-top: 15px;padding-bottom: 15px;}
 .zyre-addon .zy-pt-1 {padding-top: 5px;}
 .zyre-addon .zy-pt-2 {padding-top: 10px;}
 .zyre-addon .zy-pt-3 {padding-top: 15px;}

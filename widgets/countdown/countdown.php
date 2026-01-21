@@ -243,6 +243,18 @@ class Countdown extends Base {
 				'controls' => [
 					'typography' => [],
 					'color'      => [],
+					'color_2'    => [
+						'label'    => esc_html__( 'Hours Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-addons-countdown-item-count.hours',
+					],
+					'color_3'    => [
+						'label'    => esc_html__( 'Minutes Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-addons-countdown-item-count.minutes',
+					],
+					'color_4'    => [
+						'label'    => esc_html__( 'Seconds Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-addons-countdown-item-count.seconds',
+					],
 					'padding'    => [],
 				],
 			],
@@ -266,6 +278,18 @@ class Countdown extends Base {
 				'controls' => [
 					'typography' => [],
 					'color'      => [],
+					'color_2'    => [
+						'label'    => esc_html__( 'Hours Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-addons-countdown-item-label.hours_ref',
+					],
+					'color_3'    => [
+						'label'    => esc_html__( 'Minutes Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-addons-countdown-item-label.minutes_ref',
+					],
+					'color_4'    => [
+						'label'    => esc_html__( 'Seconds Color', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-addons-countdown-item-label.seconds_ref',
+					],
 					'bg_color'   => [],
 					'border'     => [],
 					'padding'    => [],

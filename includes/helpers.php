@@ -614,7 +614,7 @@ function zyre_get_all_type_posts() {
  * @return array Array of authors with user ID as key and display name as value.
  */
 function zyre_get_all_author() {
-	$allowed_roles = [ 'author', 'editor', 'administrator' ];
+	$allowed_roles = [ 'contributor', 'author', 'editor', 'administrator' ];
 
 	$users = get_users( [
 		'role__in'            => $allowed_roles,

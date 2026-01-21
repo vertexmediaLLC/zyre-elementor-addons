@@ -218,7 +218,7 @@ class Image_Grid extends Base {
 			'link_switch',
 			[
 				'label'       => esc_html__( 'Set Link to', 'zyre-elementor-addons' ),
-				'description' => esc_html__( 'Ensure the Lightbox is disabled for Image Only or Both Title & Image.', 'zyre-elementor-addons' ),
+				'description' => esc_html__( 'Ensure items have links and the lightbox is disabled for "Image Only" / "Both Title & Image".', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::SELECT,
 				'default'     => 'image',
 				'options'     => [
@@ -1368,7 +1368,7 @@ class Image_Grid extends Base {
 								);
 							}
 
-							if ( $title || ( $display_category && $category ) || $description || ( $is_enable_lightbox && $open_lightbox_on ) ) : ?>
+							if ( $title || ( $display_category && $category ) || $description || ( $is_enable_lightbox && $open_lightbox_on ) || ( 'button' === $link_switch && ! empty( $item['link']['url'] ) ) ) : ?>
 								<<?php Utils::print_validated_html_tag( $content_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $content_link_key ) ); ?> class="<?php echo esc_attr( $content_class ); ?>">
 									<?php if ( $title ) : ?>
 										<h3 class="zyre-image-grid-item-title zy-m-0 zy-w-100">

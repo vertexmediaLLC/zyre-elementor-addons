@@ -73,6 +73,24 @@ class Post_Grid extends Base {
 			]
 		);
 
+		$counter_offset = is_rtl() ? 'right' : 'left';
+
+		$this->add_control(
+			'enable_item_counter',
+			[
+				'label'        => esc_html__( 'Enable Item Counter', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'On', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'Off', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'selectors'    => [
+					'{{WRAPPER}} .zyre-post-grid'    => 'counter-reset: item-counter;',
+					'{{WRAPPER}} .zyre-post'         => 'counter-increment: item-counter;',
+					'{{WRAPPER}} .zyre-post::before' => "content: counter(item-counter);position: absolute;top:0;{$counter_offset}:0;",
+				],
+			]
+		);
+
 		$this->add_control(
 			'nothing_found_message',
 			[
@@ -98,6 +116,7 @@ class Post_Grid extends Base {
 		);
 
 		$post_types = zyre_get_post_types();
+		$post_types['archive'] = esc_html__( 'Archive Posts', 'zyre-elementor-addons' );
 
 		$this->add_control(
 			'query_source',
@@ -133,7 +152,7 @@ class Post_Grid extends Base {
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
 				'options' => zyre_get_all_author(),
 				'condition' => [
-					'query_source!' => 'manual',
+					'query_source!' => [ 'manual', 'archive' ],
 				],
 			]
 		);
@@ -186,6 +205,20 @@ class Post_Grid extends Base {
 		}
 
 		$this->add_control(
+			'exclude_parent_cats',
+			[
+				'label'        => esc_html__( 'Exclude Parent Categories', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'return_value' => 'yes',
+				'condition'    => [
+					'query_source' => 'archive',
+				],
+			]
+		);
+
+		$this->add_control(
 			'exclude_posts',
 			[
 				'label' => esc_html__( 'Exclude Posts', 'zyre-elementor-addons' ),
@@ -195,7 +228,7 @@ class Post_Grid extends Base {
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
 				'options' => zyre_get_all_posts(),
 				'condition' => [
-					'query_source!' => 'manual',
+					'query_source!' => [ 'manual', 'archive' ],
 				],
 			]
 		);
@@ -280,6 +313,36 @@ class Post_Grid extends Base {
 				'default' => 'desc',
 				'condition' => [
 					'query_source!' => 'manual',
+					'post_orderby!' => 'most_viewed',
+				],
+			]
+		);
+
+		$pv_plugin_info = zyre_get_plugin_missing_info(
+			[
+				'plugin_name' => 'post-views-counter',
+				'plugin_file' => 'post-views-counter/post-views-counter.php',
+			]
+		);
+
+		$pv_plugin_url = ! empty( $pv_plugin_info['url'] ) ? $pv_plugin_info['url'] : '#';
+
+		$this->add_control(
+			'pv_plugin_notice',
+			[
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => sprintf(
+					__( 'Ensure %1$s Plugin By dFactory is Installed & Activated.', 'zyre-elementor-addons' ),
+					sprintf(
+						'<a href="%s" target="_blank" rel="noopener">%s</a>',
+						esc_url( $pv_plugin_url ),
+						esc_html( 'Post Views Counter' )
+					),
+				),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+				'condition'       => [
+					'query_source!' => 'manual',
+					'post_orderby'  => 'most_viewed',
 				],
 			]
 		);
@@ -858,6 +921,22 @@ class Post_Grid extends Base {
 		);
 
 		$this->add_control(
+			$id_base . '_author_name',
+			[
+				'label'        => esc_html__( 'Show Author Name', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Show', 'zyre-elementor-addons' ),
+				'label_off'    => esc_html__( 'Hide', 'zyre-elementor-addons' ),
+				'default'      => 'yes',
+				'return_value' => 'yes',
+				'condition'    => [
+					'show_' . $id_base => 'yes',
+					$id_base           => 'author',
+				],
+			]
+		);
+
+		$this->add_control(
 			$id_base . '_author_avatar',
 			[
 				'label'     => esc_html__( 'Show Author Avatar', 'zyre-elementor-addons' ),
@@ -1058,6 +1137,7 @@ class Post_Grid extends Base {
 	protected function register_style_controls() {
 		$this->__general_style();
 		$this->__post_style();
+		$this->__item_counter_style();
 		$this->__thumbnail_style();
 		$this->__thumbnail_overlay_style();
 		$this->__header_meta_style();
@@ -1119,6 +1199,69 @@ class Post_Grid extends Base {
 					'border_radius' => [],
 					'box_shadow'    => [],
 					'padding'       => [],
+				],
+			]
+		);
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Style - Item Counter
+	 */
+	protected function __item_counter_style() {
+		$this->start_controls_section(
+			'section_item_counter_style',
+			[
+				'label'     => esc_html__( 'Item Counter', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'enable_item_counter' => 'yes',
+				],
+			]
+		);
+
+		$this->set_style_controls(
+			'item_counter',
+			[
+				'selector' => '{{WRAPPER}} .zyre-post::before',
+				'controls' => [
+					'typo'     => [],
+					'color'    => [],
+					'offset_x' => [
+						'range'        => [
+							'%'  => [
+								'min' => -10,
+								'max' => 10,
+							],
+							'px' => [
+								'min' => -200,
+								'max' => 200,
+							],
+							'vw' => [
+								'min' => -10,
+								'max' => 10,
+							],
+						],
+						'css_property' => is_rtl() ? 'right' : 'left',
+					],
+					'offset_y' => [
+						'range'        => [
+							'%'  => [
+								'min' => -10,
+								'max' => 10,
+							],
+							'px' => [
+								'min' => -200,
+								'max' => 200,
+							],
+							'vh' => [
+								'min' => -10,
+								'max' => 10,
+							],
+						],
+						'css_property' => 'top',
+					],
 				],
 			]
 		);
@@ -1740,14 +1883,14 @@ class Post_Grid extends Base {
 				],
 			],
 			'space' => [
-				'label'        => esc_html__( 'Margin Bottom', 'zyre-elementor-addons' ),
+				'label'        => esc_html__( 'Margin Top', 'zyre-elementor-addons' ),
 				'range'        => [
 					'px' => [
 						'min' => -100,
 						'max' => 100,
 					],
 				],
-				'css_property' => 'margin-bottom',
+				'css_property' => 'margin-top',
 			],
 			'align' => [],
 			'align_x' => [
@@ -1786,6 +1929,7 @@ class Post_Grid extends Base {
 						'separator' => 'before',
 					],
 					'width_height'  => [],
+					'border'        => [],
 					'border_radius' => [],
 					'margin_top'    => [
 						'label'        => esc_html__( 'Margin Top', 'zyre-elementor-addons' ),
@@ -2048,10 +2192,33 @@ class Post_Grid extends Base {
 	}
 
 	/**
+	 * Fitler query order by post views
+	 * based on Post Views Counter plugin
+	 */
+	public function filter_query_order_by_post_views( $clauses ) {
+		global $wpdb;
+
+		// join the views table
+		$clauses['join'] .= " 
+			LEFT JOIN {$wpdb->prefix}post_views AS pv 
+			ON pv.id = {$wpdb->posts}.ID 
+			AND pv.period = 'total'
+		";
+
+		// order by numeric view count
+		$clauses['orderby'] = " pv.count+0 DESC ";
+
+		return $clauses;
+	}
+
+	/**
 	 * Register render display controls
 	 */
 	protected function render() {
 		$this->settings = $this->get_settings_for_display();
+		global $wp_query;
+		$is_editor = zyre_elementor()->editor->is_edit_mode() || is_preview();
+		$editor_notice = '';
 
 		// Determine if sticky posts should be ignored
 		$ignore_sticky = ( 'yes' === $this->settings['show_sticky'] );
@@ -2061,6 +2228,15 @@ class Post_Grid extends Base {
 		if ( 'manual' === $this->settings['query_source'] ) {
 			$post_type = 'any';
 			$ignore_sticky = true;
+		}
+
+		// If query_source is archive & editor page.
+		if ( 'archive' === $this->settings['query_source'] && $is_editor ) {
+			$post_type = 'post';
+			$editor_notice = sprintf(
+				'<div class="zy-py-3 zy-px-4 zy-text-center zy-mb-3" style="background-color: #fff0d4;color: #9f6800;border: 1px solid #ffdc9b;">%s</div>',
+				esc_html__( 'Posts are displayed in the preview panel for design purposes only. Check your archive pages for the real view.' )
+			);
 		}
 
 		$query_args = [
@@ -2110,10 +2286,31 @@ class Post_Grid extends Base {
 			];
 		}
 
+		// If post_orderby is most_viewed
+		if ( 'most_viewed' === $this->settings['post_orderby'] ) {
+			add_filter( 'posts_clauses', [ $this, 'filter_query_order_by_post_views' ] );
+		}
+
 		// Final query
 		$the_query = new \WP_Query( $query_args );
 
+		// Archive pages only
+		if ( 'archive' === $this->settings['query_source'] && ! $is_editor ) {
+			$query_vars = $wp_query->query_vars;
+			$query_vars['offset'] = 1;
+
+			if ( $query_vars !== $wp_query->query_vars ) {
+				$the_query = new \WP_Query( $query_vars ); // SQL_CALC_FOUND_ROWS is used.
+			} else {
+				$the_query = $wp_query;
+			}
+		} elseif ( 'archive' === $this->settings['query_source'] && $is_editor ) {
+			$the_query = $the_query;
+		}
+
 		if ( $the_query->have_posts() ) {
+			echo $editor_notice;
+
 			echo '<div class="zyre-post-grid zy-grid zy-gap-x-6 zy-gap-y-6 zy-grid-columns-3">';
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
@@ -2297,13 +2494,13 @@ class Post_Grid extends Base {
 		<span <?php $this->print_render_attribute_string( $author_key ); ?>>
 			<?php
 			if ( is_rtl() ) {
-				the_author();
+				$this->render_author_name( $type );
 				$this->render_avatar( $type );
 				$this->render_author_by( $type );
 			} else {
 				$this->render_author_by( $type );
 				$this->render_avatar( $type );
-				the_author();
+				$this->render_author_name( $type );
 			}
 			?>
 		</span>
@@ -2320,6 +2517,15 @@ class Post_Grid extends Base {
 		<span class="zyre-post-author-by"><?php echo esc_html( $this->settings[ $author_by_key ] ); ?></span>
 		<?php
 	}
+	
+	protected function render_author_name( $type ) {
+		$author_name_key = $type . '_author_name';
+		if ( empty( $this->settings[ $author_name_key ] ) ) {
+			return;
+		}
+
+		the_author();
+	}
 
 	protected function render_avatar( $type ) {
 		if ( 'yes' !== $this->settings[ $type . '_author_avatar' ] ) {
@@ -2329,7 +2535,7 @@ class Post_Grid extends Base {
 		$user_id = get_post_field( 'post_author', get_the_ID() );
 		?>
 		<span class="zyre-post-author-avatar">
-			<?php echo get_avatar( $user_id, 48 ); ?>
+			<?php echo get_avatar( $user_id ); ?>
 		</span>
 		<?php
 	}
@@ -2380,6 +2586,22 @@ class Post_Grid extends Base {
 				$category_prefix_key = $type . '_category_prefix';
 				$category_separator = ! empty( $this->settings[ $category_separator_key ] ) ? esc_html( $this->settings[ $category_separator_key ] ) : '';
 				$category_prefix = '';
+
+				// Exclude parent categories only
+				if ( 'yes' === $this->settings[ 'exclude_parent_cats' ] ) {
+					// Collect all parent IDs from categories
+					$parent_ids = array_map(
+						fn($t) => $t->parent,
+						$categories
+					);
+
+					// Remove any term whose term_id matches a parent ID
+					$categories = array_filter(
+						$categories,
+						fn($t) => ! in_array($t->term_id, $parent_ids)
+					);
+				}
+
 				$names = [];
 
 				echo '<span class="zyre-post-meta-item zyre-post-categories">';
@@ -2393,6 +2615,7 @@ class Post_Grid extends Base {
 				}
 
 				foreach ( $categories as $category ) {
+					// Colorful Categories
 					$term_color = '';
 					if ( $cc_plugin_active ) {
 						$cc_color = get_term_meta( $category->term_id, 'cc_color', true );
@@ -2401,6 +2624,7 @@ class Post_Grid extends Base {
 						}
 					}
 
+					// Collect category links
 					$names[] = sprintf(
 						'<a %1$s class="zyre-post-category-link" href="%2$s">%3$s</a>',
 						$term_color,
