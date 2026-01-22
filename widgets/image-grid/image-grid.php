@@ -642,6 +642,10 @@ class Image_Grid extends Base {
 						'selector' => '{{WRAPPER}} .zyre-image-grid-item-inner, {{WRAPPER}}.zyre-image-grid-content-display--overlay .zyre-image-grid-item-img',
 					],
 					'box_shadow'    => [],
+					'box_shadow_2'  => [
+						'label'    => esc_html__( 'Hover Box Shadow', 'zyre-elementor-addons' ),
+						'selector' => '{{WRAPPER}} .zyre-image-grid-item:hover .zyre-image-grid-item-inner',
+					],
 					'padding'       => [
 						'selector' => '{{WRAPPER}} .zyre-image-grid-item',
 					],

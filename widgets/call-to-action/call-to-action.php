@@ -2213,12 +2213,19 @@ class Call_To_Action extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-cta-' . $class_base,
 				'controls' => [
-					'text_color'    => [],
-					'background'    => [],
-					'border'        => [],
-					'border_radius' => [],
-					'box_shadow'    => [],
-					'padding'       => [],
+					'text_color'      => [],
+					'background'      => [],
+					'background_clip' => [
+						'default'   => 'inherit',
+						'separator' => 'after',
+						'condition' => [
+							$prefix . '_background_background' => 'gradient',
+						],
+					],
+					'border'          => [],
+					'border_radius'   => [],
+					'box_shadow'      => [],
+					'padding'         => [],
 				],
 			]
 		);

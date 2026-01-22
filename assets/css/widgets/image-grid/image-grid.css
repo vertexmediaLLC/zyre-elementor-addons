@@ -25,6 +25,7 @@
 }
 
 .zyre-addon-image-grid .zyre-image-grid-filter-tab,
+.zyre-addon-image-grid .zyre-image-grid-item-inner,
 .zyre-addon-image-grid .zyre-image-grid-item-content,
 .zyre-addon-image-grid .zyre-image-grid-item-content > * {
 	transition: var(--zy-transition);

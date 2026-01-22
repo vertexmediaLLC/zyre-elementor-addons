@@ -50,10 +50,27 @@ class Group_Control_Typography_Extended extends Group_Control_Typography {
 			],
 		];
 
+		// White Space
+		$white_space_data = [
+			'label'          => esc_html__( 'White Space', 'zyre-elementor-addons' ),
+			'type'           => \Elementor\Controls_Manager::SELECT,
+			'options'        => [
+				''         => esc_html__( 'Default', 'zyre-elementor-addons' ),
+				'normal'   => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+				'nowrap'   => esc_html__( 'No Wrap', 'zyre-elementor-addons' ),
+				'pre'      => esc_html__( 'Pre', 'zyre-elementor-addons' ),
+				'pre-wrap' => esc_html__( 'Pre Wrap', 'zyre-elementor-addons' ),
+				'pre-line' => esc_html__( 'Pre Line', 'zyre-elementor-addons' ),
+			],
+			'default'        => '',
+			'selector_value' => 'white-space: {{VALUE}};',
+		];
+
 		// Insert after 'text_decoration' in one line
 		array_splice( $fields, array_search( 'text_decoration', array_keys( $fields ), true ) + 1, 0, [
 			'text_decoration_thickness' => $decoration_thickness_data,
 			'text_underline_offset'     => $underline_offset_data,
+			'white_space'               => $white_space_data,
 		] );
 
 		return $fields;

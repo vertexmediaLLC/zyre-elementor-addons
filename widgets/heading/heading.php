@@ -206,13 +206,14 @@ class Heading extends Base {
 				'controls' => [
 					'typography' => [
 						'fields_options' => [
-							'typography'  => [ 'default' => 'yes' ],
-							'font_family' => [ 'default' => 'Inter Tight' ],
+							'typography'  => ['default' => 'yes'],
+							'font_family' => ['default' => 'Inter Tight'],
 						],
 					],
 					'color'      => [
 						'label' => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
 					],
+					'stroke'     => [],
 				],
 			]
 		);
@@ -498,8 +499,8 @@ class Heading extends Base {
 				'controls' => [
 					'typography'    => [
 						'fields_options' => [
-							'typography'  => [ 'default' => 'yes' ],
-							'font_family' => [ 'default' => 'Inter' ],
+							'typography'  => ['default' => 'yes'],
+							'font_family' => ['default' => 'Inter'],
 						],
 					],
 					'background'    => [
@@ -508,6 +509,7 @@ class Heading extends Base {
 					'color'         => [
 						'label' => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
 					],
+					'stroke'        => [],
 					'padding'       => [
 						'label' => esc_html__( 'Text Padding', 'zyre-elementor-addons' ),
 					],

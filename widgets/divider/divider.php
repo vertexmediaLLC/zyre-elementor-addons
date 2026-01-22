@@ -92,9 +92,29 @@ class Divider extends Base {
 					'h5'   => 'h5',
 					'h6'   => 'h6',
 					'p'    => 'p',
+					'a'    => 'a',
 				],
 				'condition' => [
 					'show_element' => 'text',
+				],
+			]
+		);
+
+		$this->add_control(
+			'text_link',
+			[
+				'label'       => esc_html__( 'Text Link', 'zyre-elementor-addons' ),
+				'type'        => Controls_Manager::URL,
+				'placeholder' => 'https://example.com',
+				'dynamic'     => [
+					'active' => true,
+				],
+				'default'     => [
+					'url' => '#',
+				],
+				'condition'   => [
+					'show_element'          => 'text',
+					'divider_text_html_tag' => 'a',
 				],
 			]
 		);
@@ -315,6 +335,13 @@ class Divider extends Base {
 					'color'         => [
 						'default' => '#000000',
 					],
+					'color_2'       => [
+						'label'     => esc_html__( 'Hover Color', 'zyre-elementor-addons' ),
+						'selector'  => '{{WRAPPER}} .zyre-divider-text:hover',
+						'condition' => [
+							'divider_text_html_tag' => 'a',
+						],
+					],
 					'border_radius' => [],
 					'width'         => [],
 					'options'       => [
@@ -429,7 +456,10 @@ class Divider extends Base {
 			<div class="zyre-divider-separator zy-flex zy-align-center">
 				<?php if ( $has_text ) :
 					$this->add_inline_editing_attributes( 'divider_text' );
-					$this->add_render_attribute( 'divider_text', 'class', 'zyre-divider-text zy-relative zy-index-1 zy-shrink-0' );
+					$this->add_render_attribute( 'divider_text', 'class', 'zyre-divider-text zy-relative zy-index-1 zy-shrink-0 zy-transition' );
+					if ( 'a' === $text_html_tag ) {
+						$this->add_link_attributes( 'divider_text', $settings[ 'text_link' ] );
+					}
 					?>
 					<<?php Utils::print_validated_html_tag( $text_html_tag ); ?> <?php $this->print_render_attribute_string( 'divider_text' ); ?>>
 						<?php echo zyre_kses_basic( $settings['divider_text'] ); ?>

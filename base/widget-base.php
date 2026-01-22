@@ -381,6 +381,9 @@ abstract class Base extends Widget_Base {
 							],
 							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
+						if ( ! empty( $values['separator'] ) ) {
+							$control_args['separator'] = $values['separator'];
+						}
 						$this->add_control( $control_name, $control_args );
 						break;
 
@@ -541,6 +544,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'box_shadow':
+					case 'box_shadow_2':
 						$control_args = [
 							'name'      => $control_name,
 							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Box Shadow', 'zyre-elementor-addons' ),

@@ -1167,7 +1167,7 @@ class Business_Hour extends Base {
 						<?php if ( ! empty( $item['day_task'] ) ) : ?>
 							<div class="zyre-business-hour-day-task">
 								<div class="zyre-business-hour-day-task-wrap">
-									<span class="zyre-business-hour-day-task-text"><?php echo zyre_kses_basic( $item['day_task'] ); ?></span>
+									<span class="zyre-business-hour-day-task-text zy-inline-block"><?php echo zyre_kses_basic( $item['day_task'] ); ?></span>
 								</div>
 							</div>
 						<?php endif; ?>

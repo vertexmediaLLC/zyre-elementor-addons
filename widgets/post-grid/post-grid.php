@@ -2296,8 +2296,11 @@ class Post_Grid extends Base {
 
 		// Archive pages only
 		if ( 'archive' === $this->settings['query_source'] && ! $is_editor ) {
+			$query_args['post_type'] = '';
+			unset( $query_args['post_status'] );
+
 			$query_vars = $wp_query->query_vars;
-			$query_vars['offset'] = 1;
+			$query_vars = array_merge( $query_vars, $query_args );
 
 			if ( $query_vars !== $wp_query->query_vars ) {
 				$the_query = new \WP_Query( $query_vars ); // SQL_CALC_FOUND_ROWS is used.
