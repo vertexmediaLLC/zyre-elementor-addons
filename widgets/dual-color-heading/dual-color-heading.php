@@ -167,6 +167,8 @@ class Dual_Color_Heading extends Base {
 				'selector' => '{{WRAPPER}} .zyre-dual-color-heading-title',
 				'controls' => [
 					'typography' => [],
+					'padding'    => [],
+					'margin'     => [],
 				],
 			]
 		);

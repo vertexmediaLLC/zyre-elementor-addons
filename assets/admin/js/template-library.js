@@ -203,12 +203,18 @@ function _typeof(o) {
       this.ui.iframe.attr("src", this.getOption("url")).hide();
       var self = this,
         loadingScreen = new ZyreLibrary.Views.Loading().render();
+
       this.$el.append(loadingScreen.el);
       this.ui.iframe.on("load", function () {
         self.$el.find("#zyre-TemplateLibrary_loading").remove();
         self.ui.iframe.show();
       });
     },
+  });
+
+  ZyreLibrary.Views.Notice = Marionette.ItemView.extend({
+    template: "#tmpl-zyre-TemplateLibrary_notice",
+    className: "zyre-TemplateLibrary_notice-wrapper",
   });
 
   ZyreLibrary.Views.TemplateCollection = Marionette.CompositeView.extend({
@@ -242,7 +248,7 @@ function _typeof(o) {
       this.listenTo(
         zyre.library.channels.templates,
         "filter:change",
-        this._renderChildren
+        this._renderChildren,
       );
     },
     filter: function filter(childModel) {
@@ -256,7 +262,7 @@ function _typeof(o) {
         if (filterTerm.callback) {
           var callbackResult = filterTerm.callback.call(
             childModel,
-            filterValue
+            filterValue,
           );
           if (!callbackResult) {
             passingFilter = false;
@@ -288,8 +294,8 @@ function _typeof(o) {
         type === "section"
           ? " hero section"
           : type === "container"
-          ? " block"
-          : " " + type;
+            ? " block"
+            : " " + type;
       if (len > 1) {
         text += "s";
       }
@@ -322,7 +328,7 @@ function _typeof(o) {
           this.ui.templatesWindow[0],
           {
             suppressScrollX: true,
-          }
+          },
         ); // The RTL is buggy, so always keep it LTR.
       }
       this.perfectScrollbar.isRtl = false;
@@ -349,10 +355,14 @@ function _typeof(o) {
           sensitivity: 50,
           interval: 150,
           timeout: 100,
-        }
+        },
       );
     },
     onRender: function onRender() {
+      // Render notice before list
+      var noticeView = new ZyreLibrary.Views.Notice();
+      this.$el.prepend(noticeView.render().el);
+
       this.setTagsFilterHover();
       this.updatePerfectScrollbar();
     },
@@ -406,23 +416,25 @@ function _typeof(o) {
         title: "TEMPLATES",
       });
       var headerView = this.getHeaderView();
+
       headerView.tools.show(new ZyreLibrary.Views.Actions());
       headerView.menuArea.show(new ZyreLibrary.Views.Menu());
       // headerView.menuArea.reset();
     },
     showPreviewView: function showPreviewView(templateModel) {
       var headerView = this.getHeaderView();
+
       headerView.menuArea.show(new ZyreLibrary.Views.ResponsiveMenu());
       headerView.logoArea.show(new ZyreLibrary.Views.BackButton());
       headerView.tools.show(
         new ZyreLibrary.Views.InsertWrapper({
           model: templateModel,
-        })
+        }),
       );
       this.modalContent.show(
         new ZyreLibrary.Views.Preview({
           url: templateModel.get("url"),
-        })
+        }),
       );
     },
     showTemplatesView: function showTemplatesView(templatesCollection) {
@@ -430,7 +442,7 @@ function _typeof(o) {
       this.modalContent.show(
         new ZyreLibrary.Views.TemplateCollection({
           collection: templatesCollection,
-        })
+        }),
       );
     },
   });
@@ -476,14 +488,14 @@ function _typeof(o) {
         ".elementor-editor-section-settings .elementor-editor-element-add",
         function (e) {
           addZyreTemplatesOpenButton(e, ".elementor-top-section");
-        }
+        },
       );
       $previewContents.on(
         "click.onZyreTemplatesOpenButton",
         ".elementor-editor-container-settings .elementor-editor-element-add",
         function (e) {
           addZyreTemplatesOpenButton(e, ".e-parent");
-        }
+        },
       );
     }
     function onDeviceChange(device, $target) {
@@ -505,7 +517,7 @@ function _typeof(o) {
       $previewContents.on(
         "click.onZyreAddTemplateButton",
         ".elementor-add-zyre-button",
-        self.showModal.bind(self)
+        self.showModal.bind(self),
       );
       this.channels.tabs.on("change:device", onDeviceChange);
     }
@@ -635,7 +647,7 @@ function _typeof(o) {
         data: {},
         success: function success(data) {
           templatesCollection = new ZyreLibrary.Collections.Template(
-            data.templates
+            data.templates,
           );
           if (data.tags) {
             tags = data.tags;
@@ -716,7 +728,7 @@ function _typeof(o) {
           "The following error(s) occurred while processing the request:" +
             '<div id="elementor-template-library-error-info">' +
             errorMessage +
-            "</div>"
+            "</div>",
         )
         .show();
     };

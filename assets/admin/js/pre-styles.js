@@ -20,14 +20,34 @@
 
         onRender: function () {
             this.constructor.__super__.onRender.apply(this, arguments);
-            this.addResetButton();
+            // this.addSyncButton(); ToDo: not working now, fix it later
+            this.addClearButton();
         },
 
 		onElementChange: function () {
 			this.$el.find('.zyre-reset-style').removeAttr('disabled');
 		},
 
-        addResetButton: function () {
+		addSyncButton: function () {
+            var self = this;
+
+            this.ui.select.closest('.elementor-control-field').find('.elementor-control-title').prepend(
+                '<span class="zyre-sync-button" title="Sync the current prestyle.">' +
+                '<i class="eicon-sync" aria-hidden="true"></i>' +
+                '</span>'
+            );
+
+            this.$el.find(".zyre-sync-button").on("click", function () {
+                self.onSyncClick();
+            });
+        },
+
+		onSyncClick: function () {
+			// ToDo: fix it later
+			this.fetchStyles(true);
+        },
+
+        addClearButton: function () {
             var self = this;
 
             this.ui.select.parent().prev().after(
@@ -37,11 +57,11 @@
             );
 
             this.$el.find(".zyre-reset-style").on("click", function () {
-                self.onResetClick();
+                self.onClearClick();
             });
         },
 
-        onResetClick: function () {
+        onClearClick: function () {
 			var selectedValue = this.ui.select.val();
 			var styles = this.getStylesMerged(true);
 			if (styles[selectedValue]) {

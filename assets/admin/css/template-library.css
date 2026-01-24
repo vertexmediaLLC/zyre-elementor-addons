@@ -60,6 +60,15 @@
 	border-bottom-color: var(--zy-tmpl-modal-primary);
 }
 
+.zyre-TemplateLibrary_notice-wrapper {
+	margin-bottom: 10px;
+}
+
+.zyre-TemplateLibrary_notice-wrapper .zyre-TemplateLibrary_notice {
+    color: #b38603;
+    display: inline-block;
+}
+
 #zyre-TemplateLibrary_toolbar {
 	display: -webkit-box;
 	display: -webkit-flex;

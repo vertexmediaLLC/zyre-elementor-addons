@@ -143,14 +143,42 @@ class IconBox extends Base {
 			]
 		);
 
+		$this->add_control(
+			'link',
+			[
+				'label'     => esc_html__( 'Link', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::URL,
+				'dynamic'   => [
+					'active' => true,
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'link_to',
+			[
+				'label'     => esc_html__( 'Set Link To', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SELECT2,
+				'options'   => [
+					'title'    => esc_html__( 'Title Only', 'zyre-elementor-addons' ),
+					'subtitle' => esc_html__( 'Subtitle Only', 'zyre-elementor-addons' ),
+				],
+				'default'   => 'title',
+				'condition' => [
+					'link[url]!' => '',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		// Button Content
 		$this->start_controls_section(
 			'section_button_content',
 			[
-				'label' => esc_html__( 'Button Content', 'zyre-elementor-addons' ),
-				'tab'   => Controls_Manager::TAB_CONTENT,
+				'label'     => esc_html__( 'Button Content', 'zyre-elementor-addons' ),
+				'tab'       => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
@@ -787,7 +815,7 @@ class IconBox extends Base {
 		$this->set_style_controls(
 			$prefix,
 			[
-				'selector' => '{{WRAPPER}} .zyre-iconbox-' . $class_base,
+				'selector' => "{{WRAPPER}} .zyre-iconbox-{$class_base}, {{WRAPPER}} .zyre-iconbox-{$class_base} a",
 				'controls' => [
 					'color' => [
 						'default' => '#000000',
@@ -808,7 +836,7 @@ class IconBox extends Base {
 		$this->set_style_controls(
 			$prefix . '_hover',
 			[
-				'selector' => '{{WRAPPER}} .elementor-widget-container:hover .zyre-iconbox-' . $class_base,
+				'selector' => "{{WRAPPER}} .elementor-widget-container:hover .zyre-iconbox-{$class_base}, {{WRAPPER}} .elementor-widget-container:hover .zyre-iconbox-{$class_base} a",
 				'controls' => [
 					'color' => [],
 				],
@@ -865,6 +893,7 @@ class IconBox extends Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+		$has_link = ! empty( $settings['link']['url'] );
 
 		$this->add_render_attribute( 'iconbox_media', 'class', 'zyre-iconbox-media zy-index-1 zy-relative zy-inline-flex zy-justify-center' );
 		$this->add_render_attribute( 'iconbox_icon', 'class', 'zyre-iconbox-icon zy-inline-block zy-relative zy-overflow-hidden zy-content-center zy-justify-items-center' );
@@ -877,6 +906,11 @@ class IconBox extends Base {
 
 		$this->add_inline_editing_attributes( 'description' );
 		$this->add_render_attribute( 'description', 'class', 'zyre-iconbox-description zy-m-0' );
+
+		if ( $has_link ) {
+			$this->add_link_attributes( 'link', $settings['link'] );
+			$this->add_render_attribute( 'link', 'class', 'zy-transition' );
+		}
 
 		if ( $settings['iconbox_icon']['value'] ) {?>
 			<div <?php $this->print_render_attribute_string( 'iconbox_media' ); ?>>
@@ -894,14 +928,30 @@ class IconBox extends Base {
 							'<%1$s %2$s>%3$s</%1$s>',
 							zyre_escape_tags( $settings['title_tag'], 'h2' ),
 							$this->get_render_attribute_string( 'title' ),
-							wp_kses( $settings['title'], zyre_get_allowed_html( 'basic' ) )
+							sprintf(
+								'%s',
+								( 'title' === $settings['link_to'] && $has_link ) ? sprintf(
+									'<a %1$s>%2$s</a>',
+									$this->get_render_attribute_string( 'link' ),
+									zyre_kses_basic( $settings['title'] )
+								) : zyre_kses_basic( $settings['title'] )
+							)
 						);
 					endif;
 					?>
 
 					<?php if ( $settings['subtitle'] ) : ?>
 						<p <?php $this->print_render_attribute_string( 'subtitle' ); ?>>
-							<?php echo zyre_kses_basic( $settings['subtitle'] ); ?>
+							<?php
+							printf(
+								'%s',
+								( 'subtitle' === $settings['link_to'] && $has_link ) ? sprintf(
+									'<a %1$s>%2$s</a>',
+									$this->get_render_attribute_string( 'link' ),
+									zyre_kses_basic( $settings['subtitle'] )
+								) : zyre_kses_basic( $settings['subtitle'] )
+							);
+							?>
 						</p>
 					<?php endif; ?>
 				</div>

@@ -84,6 +84,10 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </script>
 
+<script type="text/template" id="tmpl-zyre-TemplateLibrary_notice">
+    <em class="zyre-TemplateLibrary_notice"><?php esc_html_e( 'After importing the template, make sure to publish and reload the page to avoid any widget style reverting issues.', 'zyre-elementor-addons' ); ?></em>
+</script>
+
 <script type="text/template" id="tmpl-zyre-TemplateLibrary_templates">
 	<div id="zyre-TemplateLibrary_toolbar">
 		<div id="zyre-TemplateLibrary_toolbar-filter" class="zyre-TemplateLibrary_toolbar-filter">
