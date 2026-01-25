@@ -1610,7 +1610,7 @@ class Animated_Text extends Base {
 			<<?php Utils::print_validated_html_tag( $title_tag ); ?> class="zyre-animated-text-heading">
 				<?php if ( ! empty( $settings['prefix_text'] ) ) : ?>
 					<span class="zyre-animated-text-prefix">
-						<span <?php $this->print_render_attribute_string( 'prefix' ); ?>><?php echo zyre_kses_basic( ( $settings['prefix_text'] ), true ); ?></span>
+						<span <?php $this->print_render_attribute_string( 'prefix' ); ?>><?php echo wp_kses( $settings['prefix_text'], zyre_get_allowed_html() ); ?></span>
 					</span>
 				<?php endif; ?>
 
@@ -1624,7 +1624,7 @@ class Animated_Text extends Base {
 
 				<?php if ( ! empty( $settings['suffix_text'] ) ) : ?>
 					<span class="zyre-animated-text-suffix">
-						<span <?php $this->print_render_attribute_string( 'suffix' ); ?>><?php echo zyre_kses_basic( ( $settings['suffix_text'] ), true ); ?></span>
+						<span <?php $this->print_render_attribute_string( 'suffix' ); ?>><?php echo wp_kses( $settings['suffix_text'], zyre_get_allowed_html() ); ?></span>
 					</span>
 				<?php endif; ?>
 			</<?php Utils::print_validated_html_tag( $title_tag ); ?>>
@@ -1663,7 +1663,7 @@ class Animated_Text extends Base {
 
 		<?php if ( 'lines' !== $settings['single_eff_type'] ) : ?>
 			<span <?php $this->print_render_attribute_string( 'anim_text' ); ?>>
-				<?php echo zyre_kses_basic( $settings['anim_text'] ); ?>
+				<?php echo wp_kses( $settings['anim_text'], zyre_get_allowed_html() ); ?>
 				<?php if ( 'shape' === $settings['single_eff_type'] ) : ?>
 					<?php $this->render_draw_shape(); ?>
 				<?php endif; ?>
@@ -1674,7 +1674,7 @@ class Animated_Text extends Base {
 				<!-- Symbol -->
 				<symbol id="s-text">
 					<text text-anchor="middle" x="50%" y="50%" dy=".35em">
-						<?php echo zyre_kses_basic( $settings['anim_text'] ); ?>
+						<?php echo wp_kses( $settings['anim_text'], zyre_get_allowed_html() ); ?>
 					</text>
 				</symbol>
 
@@ -1720,7 +1720,7 @@ class Animated_Text extends Base {
 							}
 							?>
 								<li <?php $this->print_render_attribute_string( 'text_' . $item['_id'] ); ?>>
-									<?php echo zyre_kses_basic( $item['switch_text'] ); ?>
+									<?php echo wp_kses( $item['switch_text'], zyre_get_allowed_html() ); ?>
 								</li>
 							<?php
 						endif;

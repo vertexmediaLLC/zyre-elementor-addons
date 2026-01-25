@@ -1157,7 +1157,7 @@ class Business_Hour extends Base {
 								<?php if ( ! empty( $item['day_icon']['value'] ) && 'left' === $item['day_icon_position'] ) : ?>
 									<span class="zyre-business-hour-day-icon"><?php zyre_render_icon( $item, 'icon', 'day_icon' ); ?></span>
 								<?php endif; ?>
-								<span class="zyre-business-hour-day-text"><?php echo zyre_kses_basic( $item['day'] ); ?></span>
+								<span class="zyre-business-hour-day-text"><?php echo wp_kses( $item['day'], zyre_get_allowed_html() ); ?></span>
 								<?php if ( ! empty( $item['day_icon']['value'] ) && 'right' === $item['day_icon_position'] ) : ?>
 									<span class="zyre-business-hour-day-icon"><?php zyre_render_icon( $item, 'icon', 'day_icon' ); ?></span>
 								<?php endif; ?>
@@ -1167,7 +1167,7 @@ class Business_Hour extends Base {
 						<?php if ( ! empty( $item['day_task'] ) ) : ?>
 							<div class="zyre-business-hour-day-task">
 								<div class="zyre-business-hour-day-task-wrap">
-									<span class="zyre-business-hour-day-task-text zy-inline-block"><?php echo zyre_kses_basic( $item['day_task'] ); ?></span>
+									<span class="zyre-business-hour-day-task-text zy-inline-block"><?php echo wp_kses( $item['day_task'], zyre_get_allowed_html() ); ?></span>
 								</div>
 							</div>
 						<?php endif; ?>
@@ -1177,18 +1177,18 @@ class Business_Hour extends Base {
 								<?php if ( $item['time_start'] ) : ?>
 									<div class="zyre-business-hour-time zyre-business-hour-start-time zy-flex zy-align-center">
 										<?php if ( ! empty( $item['label_time_start'] ) ) : ?>
-											<span class="zyre-business-hour-time-label zyre-business-hour-start-time-label"><?php echo zyre_kses_basic( $item['label_time_start'] ); ?></span>
+											<span class="zyre-business-hour-time-label zyre-business-hour-start-time-label"><?php echo wp_kses( $item['label_time_start'], zyre_get_allowed_html() ); ?></span>
 										<?php endif; ?>
-										<span class="zyre-business-hour-time-text zyre-business-hour-start-time-text"><?php echo zyre_kses_basic( $item['time_start'] ); ?></span>
+										<span class="zyre-business-hour-time-text zyre-business-hour-start-time-text"><?php echo wp_kses( $item['time_start'], zyre_get_allowed_html() ); ?></span>
 									</div>
 								<?php endif; ?>
 
 								<?php if ( $item['time_end'] ) : ?>
 									<div class="zyre-business-hour-time zyre-business-hour-end-time zy-flex zy-align-center">
 										<?php if ( $item['label_time_end'] ) : ?>
-											<span class="zyre-business-hour-time-label zyre-business-hour-end-time-label"><?php echo zyre_kses_basic( $item['label_time_end'] ); ?></span>
+											<span class="zyre-business-hour-time-label zyre-business-hour-end-time-label"><?php echo wp_kses( $item['label_time_end'], zyre_get_allowed_html() ); ?></span>
 										<?php endif; ?>
-										<span class="zyre-business-hour-time-text zyre-business-hour-end-time-text"><?php echo zyre_kses_basic( $item['time_end'] ); ?></span>
+										<span class="zyre-business-hour-time-text zyre-business-hour-end-time-text"><?php echo wp_kses( $item['time_end'], zyre_get_allowed_html() ); ?></span>
 									</div>
 								<?php endif; ?>
 							</div>
@@ -1197,7 +1197,7 @@ class Business_Hour extends Base {
 						<?php if ( 'yes' === $item['day_off'] && ! empty( $item['day_off_text'] ) ) : ?>
 							<div class="zyre-business-hour-times">
 								<div class="zyre-business-hour-time zyre-business-hour-dayoff">
-									<span class="zyre-business-hour-time-text zyre-business-hour-dayoff-text"><?php echo zyre_kses_basic( $item['day_off_text'] ); ?></span>
+									<span class="zyre-business-hour-time-text zyre-business-hour-dayoff-text"><?php echo wp_kses( $item['day_off_text'], zyre_get_allowed_html() ); ?></span>
 								</div>
 							</div>
 						<?php endif; ?>

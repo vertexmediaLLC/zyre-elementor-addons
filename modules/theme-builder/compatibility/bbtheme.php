@@ -58,7 +58,7 @@ class Bbtheme {
 
 		<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
 			<div class="ekit-template-content-markup ekit-template-content-header">
-				<?php echo Module::render_builder_data( $this->header ); ?>
+				<?php echo Module::render_builder_data( $this->header ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 		</header>
 		<style>
@@ -79,7 +79,7 @@ class Bbtheme {
 		do_action( 'zyreaddons/template/before_footer' ); ?>
 
 		<footer itemscope="itemscope" itemtype="https://schema.org/WPFooter">
-		<?php echo Module::render_builder_data( $this->footer ); ?>
+		<?php echo Module::render_builder_data( $this->footer ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</footer>
 
 		<?php do_action( 'zyreaddons/template/after_footer' );

@@ -364,11 +364,11 @@ class Post_Thumbnail extends Base {
 					}
 					if ( 'display' === $settings['post_thumbnail_caption'] && ! empty( $wp_caption ) ) : ?>
 						<figcaption class="zyre-thumbnail-caption">
-							<?php echo zyre_kses_basic( $wp_caption ); ?>
+							<?php echo wp_kses( $wp_caption, zyre_get_allowed_html() ); ?>
 						</figcaption>
 					<?php elseif ( 'hover' === $settings['post_thumbnail_caption'] && ! empty( $wp_caption ) ) : ?>
 						<figcaption class="zyre-thumbnail-caption zyre-thumbnail-caption-hover zy-absolute zy-left-0 zy-bottom-0 zy-bg-black zy-color-white zy-w-100 zy-opacity-0 zy-px-1 zy-py-2">
-							<?php echo zyre_kses_basic( $wp_caption ); ?>
+							<?php echo wp_kses( $wp_caption, zyre_get_allowed_html() ); ?>
 						</figcaption>
 					<?php endif; ?>
 				</figure>

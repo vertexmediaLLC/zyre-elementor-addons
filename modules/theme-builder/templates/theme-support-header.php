@@ -11,10 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<?php echo Utils::get_meta_viewport( 'theme-builder' ); ?>
+	<?php echo Utils::get_meta_viewport( 'theme-builder' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	<?php if ( ! current_theme_supports( 'title-tag' ) ) : ?>
 		<title>
-			<?php echo wp_get_document_title(); ?>
+			<?php echo esc_html( wp_get_document_title() ); ?>
 		</title>
 	<?php endif; ?>
 	<?php wp_head(); ?>
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="zyre-template-content-markup zyre-template-content-header zyre-template-content-theme-support">
 		<?php
-		echo \ZyreAddons\Elementor\ThemeBuilder\Module::instance()->render_builder_data_location( 'header' );
+		echo \ZyreAddons\Elementor\ThemeBuilder\Module::instance()->render_builder_data_location( 'header' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
 	</div>
 

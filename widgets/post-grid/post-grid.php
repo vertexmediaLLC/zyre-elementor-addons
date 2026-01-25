@@ -332,6 +332,7 @@ class Post_Grid extends Base {
 			[
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
+					/* translators: %1$s: Plugin Name with link */
 					__( 'Ensure %1$s Plugin By dFactory is Installed & Activated.', 'zyre-elementor-addons' ),
 					sprintf(
 						'<a href="%s" target="_blank" rel="noopener">%s</a>',
@@ -2043,6 +2044,7 @@ class Post_Grid extends Base {
 			[
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
+					/* translators: %1$s: Plugin Name with link */
 					__( 'The following options works only if %1$s Plugin By Artem P is Activated.', 'zyre-elementor-addons' ),
 					sprintf(
 						'<a href="%s" target="_blank" rel="noopener">%s</a>',
@@ -2235,7 +2237,7 @@ class Post_Grid extends Base {
 			$post_type = 'post';
 			$editor_notice = sprintf(
 				'<div class="zy-py-3 zy-px-4 zy-text-center zy-mb-3" style="background-color: #fff0d4;color: #9f6800;border: 1px solid #ffdc9b;">%s</div>',
-				esc_html__( 'Posts are displayed in the preview panel for design purposes only. Check your archive pages for the real view.' )
+				esc_html__( 'Posts are displayed in the preview panel for design purposes only. Check your archive pages for the real view.', 'zyre-elementor-addons' )
 			);
 		}
 
@@ -2442,7 +2444,7 @@ class Post_Grid extends Base {
 		$excerpt = wp_trim_words( $excerpt, $excerpt_length, $excerpt_more );
 
 		if ( $excerpt ) : ?>
-			<p class="zyre-post-excerpt zy-m-0"><?php echo zyre_kses_basic( $excerpt ); ?></p>
+			<p class="zyre-post-excerpt zy-m-0"><?php echo wp_kses( $excerpt, zyre_get_allowed_html() ); ?></p>
 		<?php endif;
 	}
 

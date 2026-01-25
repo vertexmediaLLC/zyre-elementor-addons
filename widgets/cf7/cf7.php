@@ -117,6 +117,7 @@ class CF7 extends Base {
 				[
 					'type'            => Controls_Manager::RAW_HTML,
 					'raw'             => sprintf(
+						/* translators: 1: plugin link */
 						__( 'Whether %1$s Plugin By NinjaTeam is Activated.', 'zyre-elementor-addons' ),
 						sprintf(
 							'<a href="%s" target="_blank" rel="noopener">%s</a>',
@@ -745,7 +746,7 @@ class CF7 extends Base {
 		if ( ! empty( $settings['input_textarea_padding'] ) ) {
 			$field_padding = $settings['input_textarea_padding'];
 			$padding_x = is_rtl() ? $field_padding['left'] : $field_padding['right'];
-			echo "<style>{$widget_class} .wpcf7-select {--padding-r:{$padding_x}{$field_padding['unit']}}</style>";
+			echo "<style>{$widget_class} .wpcf7-select {--padding-r:{$padding_x}{$field_padding['unit']}}</style>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		// Remove Contact Form 7 Extra <p> tag

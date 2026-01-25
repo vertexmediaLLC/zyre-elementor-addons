@@ -2261,7 +2261,7 @@ class Featured_Banner extends Base {
 
 								<?php if ( ! empty( $settings['description'] ) ) : ?>
 									<<?php Utils::print_validated_html_tag( $description_tag ); ?> <?php $this->print_render_attribute_string( 'description' ); ?>>
-										<?php echo zyre_kses_basic( $settings['description'] ); ?>
+										<?php echo wp_kses( $settings['description'], zyre_get_allowed_html() ); ?>
 									</<?php Utils::print_validated_html_tag( $description_tag ); ?>>
 								<?php endif; ?>
 							</div>

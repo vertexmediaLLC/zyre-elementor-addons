@@ -462,7 +462,7 @@ class Divider extends Base {
 					}
 					?>
 					<<?php Utils::print_validated_html_tag( $text_html_tag ); ?> <?php $this->print_render_attribute_string( 'divider_text' ); ?>>
-						<?php echo zyre_kses_basic( $settings['divider_text'] ); ?>
+						<?php echo wp_kses( $settings['divider_text'], zyre_get_allowed_html() ); ?>
 					</<?php Utils::print_validated_html_tag( $text_html_tag ); ?>>
 				<?php elseif ( $has_icon ) : ?>
 					<span class="zyre-divider-icon zy-relative zy-index-1 zy-text-center zy-content-center zy-shrink-0">

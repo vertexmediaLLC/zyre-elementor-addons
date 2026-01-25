@@ -46,6 +46,7 @@ class Countdown extends Base {
 				'label_block' => false,
 				'default'   => gmdate( 'Y-m-d H:i', strtotime( '+1 month' ) + ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) ),
 				'description' => sprintf(
+					// translators: %s: General Settings URL.
 					__( 'Set your timezone in <a href="%s" target="_blank">General Settings</a> to display the correct time.', 'zyre-elementor-addons' ),
 					esc_url( admin_url('options-general.php') )
 				),

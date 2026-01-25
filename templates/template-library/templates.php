@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 <script type="text/template" id="tmpl-zyre-TemplateLibrary_header-back">
 	<i class="eicon-" aria-hidden="true"></i>
-	<span><?php echo __( 'Back to Library', 'zyre-elementor-addons' ); ?></span>
+	<span><?php esc_html_e( 'Back to Library', 'zyre-elementor-addons' ); ?></span>
 </script>
 
 <script type="text/template" id="tmpl-zyre-TemplateLibrary_header-menu">
@@ -141,12 +141,12 @@ defined( 'ABSPATH' ) || exit;
 
 <script type="text/template" id="tmpl-zyre-TemplateLibrary_empty">
 	<div class="elementor-template-library-blank-icon">
-		<img src="<?php echo ELEMENTOR_ASSETS_URL . 'images/no-search-results.svg'; ?>" class="elementor-template-library-no-results" />
+		<img src="<?php echo esc_url( ELEMENTOR_ASSETS_URL . 'images/no-search-results.svg' ); ?>" class="elementor-template-library-no-results" />
 	</div>
 	<div class="elementor-template-library-blank-title"></div>
 	<div class="elementor-template-library-blank-message"></div>
 	<div class="elementor-template-library-blank-footer">
 		<?php esc_html_e( 'Want to learn more about the Zyre Library?', 'zyre-elementor-addons' ); ?>
-		<a class="elementor-template-library-blank-footer-link" href="#" target="_blank"><?php echo __( 'Click here', 'zyre-elementor-addons' ); ?></a>
+		<a class="elementor-template-library-blank-footer-link" href="<?php echo esc_url( 'https://zyreaddons.com/docs/zyre-elementor-addons/general/how-to-import-templates-from-zyre-library/' ); ?>" target="_blank"><?php esc_html_e( 'Click here', 'zyre-elementor-addons' ); ?></a>
 	</div>
 </script>

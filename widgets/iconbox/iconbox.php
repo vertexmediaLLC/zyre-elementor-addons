@@ -933,8 +933,8 @@ class IconBox extends Base {
 								( 'title' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
 									$this->get_render_attribute_string( 'link' ),
-									zyre_kses_basic( $settings['title'] )
-								) : zyre_kses_basic( $settings['title'] )
+									wp_kses( $settings['title'], zyre_get_allowed_html() )
+								) : wp_kses( $settings['title'], zyre_get_allowed_html() )
 							)
 						);
 					endif;
@@ -948,8 +948,8 @@ class IconBox extends Base {
 								( 'subtitle' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
 									$this->get_render_attribute_string( 'link' ),
-									zyre_kses_basic( $settings['subtitle'] )
-								) : zyre_kses_basic( $settings['subtitle'] )
+									wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
+								) : wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
 							);
 							?>
 						</p>
@@ -958,7 +958,7 @@ class IconBox extends Base {
 			<?php endif; ?>
 
 			<?php if ( $settings['description'] ) : ?>
-				<p <?php $this->print_render_attribute_string( 'description' ); ?>><?php echo zyre_kses_basic( $settings['description'] ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses( $settings['description'], zyre_get_allowed_html() ); ?></p>
 			<?php endif; ?>
 
 			<?php $this->render_button(); ?>

@@ -398,22 +398,22 @@ class Conditions_Manager {
 		$template_id = isset( $_REQUEST['template_id'] ) ? absint( $_REQUEST['template_id'] ) : null;
 
 		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
-			throw new Exception( __( 'Invalid request', 'zyre-elementor-addons' ) );
+			throw new Exception( 'Invalid request' );
 		}
 
 		if ( ! current_user_can( 'edit_posts' ) ) {
-			throw new Exception( __( 'Unauthorized request', 'zyre-elementor-addons' ) );
+			throw new Exception( 'Unauthorized request' );
 		}
 
 		$post_status = get_post_status( $template_id );
 		$same_author = self::is_the_same_author( $template_id );
 
 		if ( ( 'private' === $post_status || 'draft' === $post_status ) && ! $same_author ) {
-			throw new Exception( __( 'Unauthorized request', 'zyre-elementor-addons' ) );
+			throw new Exception( 'Unauthorized request' );
 		}
 
 		if ( post_password_required( $template_id ) && ! $same_author ) {
-			throw new Exception( __( 'Unauthorized request', 'zyre-elementor-addons' ) );
+			throw new Exception( 'Unauthorized request' );
 		}
 	}
 
@@ -460,7 +460,7 @@ class Conditions_Manager {
 		}
 
 		if ( empty( $term_taxonomy ) ) {
-			throw new Exception( __( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
+			throw new Exception( 'Invalid taxonomy' );
 		}
 
 		$args = [
@@ -738,7 +738,8 @@ class Conditions_Manager {
 			</div>
 			EOF;
 		}
-		echo $html;
+
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 

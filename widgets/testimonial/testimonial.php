@@ -1123,12 +1123,12 @@ class Testimonial extends Base {
 					printf( '<%1$s %2$s>%3$s</%1$s>',
 						Utils::validate_html_tag( $settings['author_tag'] ),
 						$this->get_render_attribute_string( 'author' ),
-						zyre_kses_basic( $settings['author'] )
+						wp_kses( $settings['author'], zyre_get_allowed_html() )
 					);
 				endif; ?>
 
 				<?php if ( ! empty( $settings['designation'] ) ) : ?>
-					<div <?php $this->print_render_attribute_string( 'designation' ); ?>><?php echo zyre_kses_basic( $settings['designation'] ); ?></div>
+					<div <?php $this->print_render_attribute_string( 'designation' ); ?>><?php echo wp_kses( $settings['designation'], zyre_get_allowed_html() ); ?></div>
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>

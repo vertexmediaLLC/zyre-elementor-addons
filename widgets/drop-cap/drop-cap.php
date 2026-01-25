@@ -148,8 +148,8 @@ class Drop_Cap extends Base {
 		$this->add_render_attribute( 'dropcap_content', 'class', 'zyre-dropcap' );
 		?>
 	
-		<p <?php echo $this->get_render_attribute_string( 'dropcap_content' ); ?>>
-			<?php echo zyre_kses_basic( html_entity_decode( $settings['dropcap_content'] ) ); ?>
+		<p <?php $this->print_render_attribute_string( 'dropcap_content' ); ?>>
+			<?php echo wp_kses( html_entity_decode( $settings['dropcap_content'] ), zyre_get_allowed_html() ); ?>
 		</p>
 	
 		<?php

@@ -911,20 +911,20 @@ class Heading extends Base {
 		?>
 		<div class="zyre-headings zy-flex zy-flex-wrap">
 			<?php if ( ! empty( $settings['subtitle'] ) ) : ?>
-				<<?php echo zyre_escape_tags( $settings['heading_subtitle_tag'], 'h3' ); ?> <?php echo $this->get_render_attribute_string( 'heading_subtitle' ); ?>><span <?php echo $this->get_render_attribute_string( 'subtitle' ); ?>><?php echo zyre_kses_basic( $settings['subtitle'] ); ?></span></<?php echo zyre_escape_tags( $settings['heading_subtitle_tag'], 'h3' ); ?>>
+				<<?php echo zyre_escape_tags( $settings['heading_subtitle_tag'], 'h3' ); ?> <?php $this->print_render_attribute_string( 'heading_subtitle' ); ?>><span <?php $this->print_render_attribute_string( 'subtitle' ); ?>><?php echo wp_kses( $settings['subtitle'], zyre_get_allowed_html() ); ?></span></<?php echo zyre_escape_tags( $settings['heading_subtitle_tag'], 'h3' ); ?>>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_title'] ) ) : ?>
-				<<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); ?> <?php echo $this->get_render_attribute_string( 'heading_main_title' ); ?>>
-					<span <?php echo $this->get_render_attribute_string( 'heading_title' ); ?>><?php echo zyre_kses_basic( $settings['heading_title'] ); ?></span>
+				<<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); ?> <?php $this->print_render_attribute_string( 'heading_main_title' ); ?>>
+					<span <?php $this->print_render_attribute_string( 'heading_title' ); ?>><?php echo wp_kses( $settings['heading_title'], zyre_get_allowed_html() ); ?></span>
 					<?php if ( $settings['heading_suffix'] ) : ?>
-					<span <?php echo $this->get_render_attribute_string( 'heading_suffix' ); ?>><?php echo esc_html( $settings['heading_suffix'] ); ?></span>
+					<span <?php $this->print_render_attribute_string( 'heading_suffix' ); ?>><?php echo esc_html( $settings['heading_suffix'] ); ?></span>
 					<?php endif; ?>
 				</<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); ?>>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_description'] ) ) : ?>
-				<p <?php echo $this->get_render_attribute_string( 'heading_description_wrap' ); ?>><span <?php echo $this->get_render_attribute_string( 'heading_description' ); ?>><?php echo zyre_kses_basic( $settings['heading_description'] ); ?></span></p>
+				<p <?php $this->print_render_attribute_string( 'heading_description_wrap' ); ?>><span <?php $this->print_render_attribute_string( 'heading_description' ); ?>><?php echo wp_kses( $settings['heading_description'], zyre_get_allowed_html() ); ?></span></p>
 			<?php endif; ?>
 		</div>
 	

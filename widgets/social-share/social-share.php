@@ -1093,7 +1093,7 @@ class Social_Share extends Base {
 
 					<?php if ( 'text' === $settings['share_view'] || 'icon-text' === $settings['share_view'] ) : ?>
 						<span class="zyre-share-item-label zy-inline-flex zy-align-center zy-w-100 zy-lh-1">
-							<?php echo zyre_kses_basic( ! empty( $item['share_label'] ) ? $item['share_label'] : $networks_data[ $network_name ]['title'] ); ?>
+							<?php echo ! empty( $item['share_label'] ) ? wp_kses( $item['share_label'], zyre_get_allowed_html() ) : wp_kses( $networks_data[ $network_name ]['title'], zyre_get_allowed_html() ); ?>
 						</span>
 					<?php endif; ?>
 				</a>

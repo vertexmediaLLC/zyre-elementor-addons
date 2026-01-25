@@ -1099,18 +1099,18 @@ class Author_Box extends Base {
 		<div <?php $this->print_render_attribute_string( 'author_box' ); ?>>
 			<?php if ( 'yes' === $settings['show_avatar'] ) : ?>
 				<<?php Utils::print_validated_html_tag( $author_img_tag ); ?> <?php $this->print_render_attribute_string( 'author_img' ); ?>>
-					<?php echo $avatar; ?>
+					<?php echo wp_kses( $avatar, zyre_get_allowed_html( 'all' ) ); ?>
 				</<?php Utils::print_validated_html_tag( $author_img_tag ); ?>>
 			<?php endif; ?>
 
 			<?php if ( 'yes' === $settings['show_author'] || 'yes' === $settings['show_username'] ) : ?>
 				<div class="zyre-author-user-name zy-self-center">
 					<?php if ( 'yes' === $settings['show_author'] ) : ?>
-						<<?php echo zyre_escape_tags( $settings ['author_meta_tag'], 'h4' ); ?> class="zyre-author-name-heading zy-m-0">
+						<<?php echo zyre_escape_tags( $settings ['author_meta_tag'], 'h4' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-author-name-heading zy-m-0">
 							<<?php Utils::print_validated_html_tag( $author_name_tag ); ?> <?php $this->print_render_attribute_string( 'author_name' ); ?>>
 								<?php echo esc_html( $display_name ); ?>
 							</<?php Utils::print_validated_html_tag( $author_name_tag ); ?>>
-						</<?php echo zyre_escape_tags( $settings ['author_meta_tag'], 'h4' ); ?>>
+						</<?php echo zyre_escape_tags( $settings ['author_meta_tag'], 'h4' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 					<?php endif; ?>
 
 					<?php if ( 'yes' === $settings['show_username'] ) : ?>
@@ -1143,7 +1143,7 @@ class Author_Box extends Base {
 					<?php if ( ! empty( $settings['reg_label'] ) ) : ?>
 						<span class="zyre-author-reg-label"><?php echo esc_html( $settings['reg_label'] ); ?></span>
 					<?php endif; ?>
-					<span class="zyre-author-reg-date"><?php echo date( $reg_date_f, strtotime( $reg_date )); ?></span>
+					<span class="zyre-author-reg-date"><?php echo esc_html( date( $reg_date_f, strtotime( $reg_date ) ) ); ?></span>
 				</div>
 			<?php endif; ?>
 		</div>

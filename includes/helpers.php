@@ -103,6 +103,20 @@ function zyre_get_allowed_html( $level = 'basic' ) {
 			'id'    => array(),
 			'style' => array(),
 		),
+		'svg' => array(
+            'xmlns' => array(),
+            'width' => array(),
+            'height' => array(),
+            'viewbox' => array(),
+            'aria-hidden' => array(),
+            'role' => array(),
+            'focusable' => array(),
+        ),
+        'path' => array(
+            'd' => array(),
+            'fill' => array(),
+            'style' => array(),
+        ),
 	);
 
 	$allowed_html_extra = array(
@@ -307,7 +321,7 @@ function zyre_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_icon_id
  * @param array $attributes
  */
 function zyre_render_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
-	echo zyre_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes );
+	echo zyre_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**
@@ -710,7 +724,7 @@ function zyre_strip_all_tags( $text, $remove_breaks = false ) {
 			'',
 			sprintf(
 				/* translators: 1: The function name, 2: The argument number, 3: The argument name, 4: The expected type, 5: The provided type. */
-				__( 'Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given.' ),
+				__( 'Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given.', 'zyre-elementor-addons' ),
 				__FUNCTION__,
 				'#1',
 				'$text',
@@ -749,7 +763,7 @@ function zyre_strip_all_tags( $text, $remove_breaks = false ) {
  */
 function zyre_trim_words( $text, $num_words = 55, $more = null ) {
 	if ( null === $more ) {
-		$more = __( '&hellip;' );
+		$more = __( '&hellip;', 'zyre-elementor-addons' );
 	}
 
 	$original_text = $text;

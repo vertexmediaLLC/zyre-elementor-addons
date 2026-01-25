@@ -1082,12 +1082,12 @@ class Team_Member extends Base {
 				printf( '<%1$s %2$s>%3$s</%1$s>',
 					Utils::validate_html_tag( $settings['name_tag'] ),
 					$this->get_render_attribute_string( 'name' ),
-					zyre_kses_basic( $settings['name'] )
+					wp_kses( $settings['name'], zyre_get_allowed_html() )
 				);
 			endif; ?>
 
 			<?php if ( ! empty( $settings['job_title'] ) ) : ?>
-				<div <?php $this->print_render_attribute_string( 'job_title' ); ?>><?php echo zyre_kses_basic( $settings['job_title'] ); ?></div>
+				<div <?php $this->print_render_attribute_string( 'job_title' ); ?>><?php echo wp_kses( $settings['job_title'], zyre_get_allowed_html() ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['bio'] ) ) : ?>
@@ -1125,7 +1125,7 @@ class Team_Member extends Base {
 				<div class="zyre-member-lightbox-inner">
 					<div class="zyre-member-lightbox-close">&times;</div>
 					<?php
-					$saved_template_list = apply_filters( 'wpml_object_id', $settings['saved_template_list'], 'elementor_library' );
+					$saved_template_list = apply_filters( 'wpml_object_id', $settings['saved_template_list'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 					echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_template_list );
 					?>
 				</div>

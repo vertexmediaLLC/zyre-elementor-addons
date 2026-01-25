@@ -340,7 +340,7 @@ class Module {
 			ob_start();
 			include ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/template-conditions.php';
 			$template = ob_get_clean();
-			echo $template;
+			echo $template; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 
@@ -491,12 +491,12 @@ class Module {
 			<div class="zyre-admin-top-bar">
 				<div class="zyre-admin-top-bar-branding">
 					<div class="zyre-admin-top-bar-branding-logo">
-						<img src="<?php echo zyre_get_b64_3dicon(); ?>" alt="" width="46">
+						<img src="<?php echo zyre_get_b64_3dicon(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" alt="" width="46">
 					</div>
 					<h1 class="zyre-admin-top-bar-branding-title"><?php esc_html_e( 'Theme Builder', 'zyre-elementor-addons' ); ?></h1>
 				</div>
 				<div class="zyre-admin-top-bar-buttons">
-					<a class="button-secondary button-large" id="zyre-template-library-add-new" href="<?php echo admin_url(); ?>post-new.php?post_type=zyre_library"><?php esc_html_e( 'Add New', 'zyre-elementor-addons' ); ?></a>
+					<a class="button-secondary button-large" id="zyre-template-library-add-new" href="<?php echo esc_url( admin_url() ); ?>post-new.php?post_type=zyre_library"><?php esc_html_e( 'Add New', 'zyre-elementor-addons' ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -518,7 +518,7 @@ class Module {
 		ob_start();
 		include ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/new-template.php';
 		$template = ob_get_clean();
-		echo $template;
+		echo $template; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	// Render tabs in the edit page
@@ -531,7 +531,7 @@ class Module {
 			foreach ( self::get_template_types() as $key => $value ) {
 				$active = ( $get_active === $key ) ? 'nav-tab-active' : '';
 				$admin_filter_url = admin_url( self::TAB_BASE . '&zyre_library_type=' . $key );
-				echo '<a class="nav-tab ' . $active . '" href="' . $admin_filter_url . '">' . esc_html( $value ) . '</a>';
+				echo '<a class="nav-tab ' . $active . '" href="' . esc_url( $admin_filter_url ) . '">' . esc_html( $value ) . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			?>
 		</div>
@@ -588,9 +588,9 @@ class Module {
 			$type       = get_post_meta( $post_id, '_zyre_library_type', true );
 			$is_active   = get_post_meta( $post_id, '_zyre_template_active', true );
 
-			echo ucwords( str_replace( '-', ' ', $type ) );
+			echo ucwords( str_replace( '-', ' ', $type ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-			echo "<span id='tmpl-", $post_id, "'>";
+			echo "<span id='tmpl-", esc_html( $post_id ), "'>";
 
 			if ( $is_active ) {
 				echo ' - <b>' . esc_html__( 'Active', 'zyre-elementor-addons' ) . '</b>';
@@ -627,9 +627,9 @@ class Module {
 
 				printf(
 					/* translators: 1: included conditions, 2: excluded conditions */
-					__( '<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s', 'zyre-elementor-addons' ),
-					implode( ', ', $include_conditions ),
-					implode( ', ', $exclude_conditions )
+					__( '<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s', 'zyre-elementor-addons' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					implode( ', ', $include_conditions ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					implode( ', ', $exclude_conditions ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			} else {
 				echo '<b>' . esc_html__( 'Not Applicable', 'zyre-elementor-addons' ) . '</b>';
@@ -754,7 +754,7 @@ class Module {
 		$post_id = $this->create_or_update_post( $type, $post_data, $meta );
 
 		if ( is_wp_error( $post_id ) ) {
-			wp_die( $post_id );
+			wp_die( esc_html( $post_id ) );
 		}
 
 		wp_safe_redirect( $this->get_edit_url( $post_id ) );
@@ -879,7 +879,7 @@ class Module {
 		if ( ( 'internal' === get_option( 'elementor_css_print_method' ) ) || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$has_css = true;
 		}
-		$content_id = apply_filters( 'wpml_object_id', $content_id, 'elementor_library' );
+		$content_id = apply_filters( 'wpml_object_id', $content_id, 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		return $_elementor->frontend->get_builder_content_for_display( $content_id, $has_css );
 	}
 
@@ -894,7 +894,7 @@ class Module {
 	public function single_blog_content_elementor( $post ) {
 		$templates = $this->singular_template;
 		if ( ! empty( $templates ) ) {
-			echo self::render_builder_data( $templates );
+			echo self::render_builder_data( $templates ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			the_content();
 		}

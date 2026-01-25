@@ -737,10 +737,10 @@ class Image_Heading extends Base {
 		if ( ! empty( $title_text ) || ! empty( $title_suffix ) ) { // Check if there's anything to wrap in the title tag
 			$title_html .= sprintf( '<%s class="zyre-image-heading-title zy-m-0 zy-lh-normal">', esc_attr( $title_tag ) );
 			if ( ! empty( $title_text ) ) {
-				$title_html .= sprintf( '<span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_text' ), zyre_kses_basic( $title_text ) );
+				$title_html .= sprintf( '<span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_text' ), wp_kses( $title_text, zyre_get_allowed_html() ) );
 			}
 			if ( ! empty( $title_suffix ) ) {
-				$title_html .= sprintf( ' <span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_suffix' ), zyre_kses_basic( $title_suffix ) ); // Added space before suffix span
+				$title_html .= sprintf( ' <span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_suffix' ), wp_kses( $title_suffix, zyre_get_allowed_html() ) ); // Added space before suffix span
 			}
 			$title_html .= sprintf( '</%s>', esc_attr( $title_tag ) );
 		}
@@ -752,7 +752,7 @@ class Image_Heading extends Base {
 				'<%1$s %2$s>%3$s</%1$s>',
 				esc_attr( $subtitle_tag ),
 				$this->get_render_attribute_string( 'text_subtitle' ),
-				zyre_kses_basic( $subtitle_text )
+				wp_kses( $subtitle_text, zyre_get_allowed_html() )
 			);
 		}
 

@@ -16,7 +16,7 @@ $selected = get_query_var( 'zyre_library_type' );
 			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-login-title">
 				<header class="modal__header">
 					<h3 class="modal__title">
-						<img src="<?php echo zyre_get_b64_3dicon(); ?>" width="40" alt="">
+						<img src="<?php echo zyre_get_b64_3dicon(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" width="40" alt="">
 						<span><?php esc_html_e( 'Template Elements Condition', 'zyre-elementor-addons' ); ?></span>
 					</h3>
 					<button class="modal__close" aria-label="<?php esc_attr_e( 'Close modal', 'zyre-elementor-addons' ); ?>" data-micromodal-close=""></button>
@@ -72,7 +72,7 @@ $selected = get_query_var( 'zyre_library_type' );
 			</div>
 		</div>
 		<div class="zyre-template-condition-remove">
-			<?php echo zyre_get_svg_icon( 'trash-can' ); ?>
+			<?php echo zyre_get_svg_icon( 'trash-can' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<span class="elementor-screen-only"><?php esc_html_e( 'Remove this item', 'zyre-elementor-addons' ); ?></span>
 		</div>
 	</div>

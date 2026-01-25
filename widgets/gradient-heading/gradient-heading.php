@@ -424,7 +424,7 @@ class Gradient_Heading extends Base {
 		}
 
 		if ( ! empty( $settings['title_text'] ) ) {
-			$title_html .= '<span ' . $this->get_render_attribute_string( 'title_text' ) . '>' . zyre_kses_basic( $settings['title_text'] ) . '</span>';
+			$title_html .= '<span ' . $this->get_render_attribute_string( 'title_text' ) . '>' . wp_kses( $settings['title_text'], zyre_get_allowed_html() ) . '</span>';
 		}
 
 		if ( ! empty( $settings['title_suffix'] ) ) {
@@ -435,7 +435,7 @@ class Gradient_Heading extends Base {
 
 		$subtitle_html = '';
 		if ( ! empty( $settings['text_subtitle'] ) ) {
-			$subtitle_html = '<p ' . $this->get_render_attribute_string( 'text_subtitle' ) . '>' . zyre_kses_basic( $settings['text_subtitle'] ) . '</p>';
+			$subtitle_html = '<p ' . $this->get_render_attribute_string( 'text_subtitle' ) . '>' . wp_kses( $settings['text_subtitle'], zyre_get_allowed_html() ) . '</p>';
 		}
 
 		// Get the order from settings

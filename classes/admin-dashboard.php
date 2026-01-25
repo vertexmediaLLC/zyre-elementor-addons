@@ -264,12 +264,14 @@ class Dashboard {
 			],
 		];
 
+		/* 
+		ToDo: Uncomment this part when pro version is released
 		if ( ! zyre_has_pro() ) {
 			$tabs['pro'] = [
 				'title' => esc_html__( 'Get Pro', 'zyre-elementor-addons' ),
 				'icon' => zyre_get_svg_icon( 'star' ),
 			];
-		}
+		} */
 
 		return apply_filters( 'zyreaddons_dashboard_get_tabs', $tabs );
 	}

@@ -554,7 +554,7 @@ class Post_Title extends Base {
 		}
 		?>
 		<<?php echo esc_attr( $html_tag ); ?> <?php $this->print_render_attribute_string( 'title' ); ?>>
-			<?php echo zyre_kses_basic( get_the_title() ); ?>
+			<?php echo wp_kses( get_the_title(), zyre_get_allowed_html() ); ?>
 		</<?php echo esc_attr( $html_tag ); ?>>
 	<?php }
 

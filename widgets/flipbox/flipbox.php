@@ -997,11 +997,11 @@ class FlipBox extends Base {
 				</div>
 			<?php endif;
 		} elseif ( 'saved_section' === $settings[ $content_type ] && 'publish' === get_post_status( $settings[ $saved_section ] ) ) {
-			$settings[ $saved_section ] = apply_filters( 'wpml_object_id', $settings[ $saved_section ], 'elementor_library' );
-			echo zyre_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_section ] );
+			$settings[ $saved_section ] = apply_filters( 'wpml_object_id', $settings[ $saved_section ], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+			echo zyre_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_section ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} elseif ( 'saved_container' === $settings[ $content_type ] && 'publish' === get_post_status( $settings[ $saved_container ] ) ) {
-			$settings[ $saved_container ] = apply_filters( 'wpml_object_id', $settings[ $saved_container ], 'elementor_library' );
-			echo zyre_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_container ] );
+			$settings[ $saved_container ] = apply_filters( 'wpml_object_id', $settings[ $saved_container ], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+			echo zyre_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_container ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 }

@@ -558,7 +558,7 @@ trait Swiper_Trait {
 		$img_alt = ! empty( $slide['title'] ) ? $slide['title'] : '';
 		?>
 
-		<<?php echo $item_tag; ?> <?php $this->print_render_attribute_string( $item_key ); ?>>
+		<<?php Utils::print_validated_html_tag( $item_tag ); ?> <?php $this->print_render_attribute_string( $item_key ); ?>>
 			<img <?php $this->print_render_attribute_string( $element_key . '-image' ); ?> src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $img_alt ); ?>">
 			<?php if ( 'yes' === $settings['lazyload'] ) : ?>
 				<div class="swiper-lazy-preloader"></div>
@@ -569,17 +569,17 @@ trait Swiper_Trait {
 					<?php
 					if ( ! empty( $slide['title'] ) ) {
 						printf( '<%1$s class="zyre-carousel-title zy-m-0 zy-fs-1.5">%2$s</%1$s>',
-							zyre_escape_tags( $settings['title_tag'], 'h3' ),
-							zyre_kses_basic( $slide['title'] )
+							zyre_escape_tags( $settings['title_tag'], 'h3' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							wp_kses( $slide['title'], zyre_get_allowed_html() )
 						);
 					}
 					?>
 					<?php if ( ! empty( $slide['subtitle'] ) ) : ?>
-						<p class="zyre-carousel-subtitle zy-m-0"><?php echo zyre_kses_basic( $slide['subtitle'] ); ?></p>
+						<p class="zyre-carousel-subtitle zy-m-0"><?php echo wp_kses( $slide['subtitle'], zyre_get_allowed_html() ); ?></p>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
-		</<?php echo $item_tag; ?>>
+		</<?php Utils::print_validated_html_tag( $item_tag ); ?>>
 		<?php
 	}
 

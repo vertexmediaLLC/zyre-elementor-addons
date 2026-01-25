@@ -1455,13 +1455,13 @@ class Toggle extends Base {
 								if ( 'plain_content' === $item['content_type'] ) {
 									echo zyre_kses_advanced( $item['plain_content'] );
 								} elseif ( 'saved_section' === $item['content_type'] && 'publish' === get_post_status( $item['saved_section'] ) ) {
-									$item['saved_section'] = apply_filters( 'wpml_object_id', $item['saved_section'], 'elementor_library' );
+									$item['saved_section'] = apply_filters( 'wpml_object_id', $item['saved_section'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 									echo zyre_elementor()->frontend->get_builder_content_for_display( $item['saved_section'] );
 								} elseif ( 'saved_container' === $item['content_type'] && 'publish' === get_post_status( $item['saved_container'] ) ) {
-									$item['saved_container'] = apply_filters( 'wpml_object_id', $item['saved_container'], 'elementor_library' );
+									$item['saved_container'] = apply_filters( 'wpml_object_id', $item['saved_container'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 									echo zyre_elementor()->frontend->get_builder_content_for_display( $item['saved_container'] );
 								} elseif ( 'saved_page' === $item['content_type'] && 'publish' === get_post_status( $item['saved_pages'] ) ) {
-									$item['saved_pages'] = apply_filters( 'wpml_object_id', $item['saved_pages'], 'elementor_library' );
+									$item['saved_pages'] = apply_filters( 'wpml_object_id', $item['saved_pages'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 									echo zyre_elementor()->frontend->get_builder_content_for_display( $item['saved_pages'] );
 								}
 								?>
@@ -1475,13 +1475,13 @@ class Toggle extends Base {
 							if ( 'plain_content' === $primary['content_type'] ) {
 								echo zyre_kses_advanced( $primary['plain_content'] );
 							} elseif ( 'saved_section' === $primary['content_type'] && 'publish' === get_post_status( $primary['saved_section'] ) ) {
-								$primary['saved_section'] = apply_filters( 'wpml_object_id', $primary['saved_section'], 'elementor_library' );
+								$primary['saved_section'] = apply_filters( 'wpml_object_id', $primary['saved_section'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 								echo zyre_elementor()->frontend->get_builder_content_for_display( $primary['saved_section'] );
 							} elseif ( 'saved_container' === $primary['content_type'] && 'publish' === get_post_status( $primary['saved_container'] ) ) {
-								$primary['saved_container'] = apply_filters( 'wpml_object_id', $primary['saved_container'], 'elementor_library' );
+								$primary['saved_container'] = apply_filters( 'wpml_object_id', $primary['saved_container'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 								echo zyre_elementor()->frontend->get_builder_content_for_display( $primary['saved_container'] );
 							} elseif ( 'saved_page' === $primary['content_type'] && 'publish' === get_post_status( $primary['saved_pages'] ) ) {
-								$primary['saved_pages'] = apply_filters( 'wpml_object_id', $primary['saved_pages'], 'elementor_library' );
+								$primary['saved_pages'] = apply_filters( 'wpml_object_id', $primary['saved_pages'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 								echo zyre_elementor()->frontend->get_builder_content_for_display( $primary['saved_pages'] );
 							}
 							?>
@@ -1492,13 +1492,13 @@ class Toggle extends Base {
 							if ( 'plain_content' === $secondary['content_type'] ) {
 								echo zyre_kses_advanced( $secondary['plain_content'] );
 							} elseif ( 'saved_section' === $secondary['content_type'] && 'publish' === get_post_status( $secondary['saved_section'] ) ) {
-								$secondary['saved_section'] = apply_filters( 'wpml_object_id', $secondary['saved_section'], 'elementor_library' );
+								$secondary['saved_section'] = apply_filters( 'wpml_object_id', $secondary['saved_section'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 								echo zyre_elementor()->frontend->get_builder_content_for_display( $secondary['saved_section'] );
 							} elseif ( 'saved_container' === $secondary['content_type'] && 'publish' === get_post_status( $secondary['saved_container'] ) ) {
-								$secondary['saved_container'] = apply_filters( 'wpml_object_id', $secondary['saved_container'], 'elementor_library' );
+								$secondary['saved_container'] = apply_filters( 'wpml_object_id', $secondary['saved_container'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 								echo zyre_elementor()->frontend->get_builder_content_for_display( $secondary['saved_container'] );
 							} elseif ( 'saved_page' === $secondary['content_type'] && 'publish' === get_post_status( $secondary['saved_pages'] ) ) {
-								$secondary['saved_pages'] = apply_filters( 'wpml_object_id', $secondary['saved_pages'], 'elementor_library' );
+								$secondary['saved_pages'] = apply_filters( 'wpml_object_id', $secondary['saved_pages'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 								echo zyre_elementor()->frontend->get_builder_content_for_display( $secondary['saved_pages'] );
 							}
 							?>

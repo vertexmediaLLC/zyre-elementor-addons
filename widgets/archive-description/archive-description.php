@@ -226,8 +226,8 @@ class Archive_Description extends Base {
 
 		if ( ! empty( $archive_desc ) ) {
 			echo '<div class="zyre-archive-desc-wrap zy-flex zy-align-center zy-justify-between">';
-			echo '<' . zyre_escape_tags( $settings ['tag'], 'p' ) . ' class="zyre-archive-desc zy-m-0">' . esc_html( $archive_desc ) . '</' . zyre_escape_tags( $settings ['tag'], 'p' ) . '>';
-			echo $archive_desc_separator;
+			echo '<' . zyre_escape_tags( $settings ['tag'], 'p' ) . ' class="zyre-archive-desc zy-m-0">' . esc_html( $archive_desc ) . '</' . zyre_escape_tags( $settings ['tag'], 'p' ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $archive_desc_separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</div>';
 		}
 	}

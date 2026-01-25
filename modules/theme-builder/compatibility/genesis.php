@@ -86,7 +86,7 @@ class Genesis {
 	public function add_plugin_header_markup() {
 		do_action( 'zyreaddons/template/before_header' );
 		echo '<div class="ekit-template-content-markup ekit-template-content-header">';
-		echo Module::render_builder_data( $this->header );
+		echo Module::render_builder_data( $this->header ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '</div>';
 		do_action( 'zyreaddons/template/after_header' );
 	}
@@ -129,7 +129,7 @@ class Genesis {
 	public function add_plugin_footer_markup() {
 		do_action( 'zyreaddons/template/before_footer' );
 		echo '<div class="ekit-template-content-markup ekit-template-content-footer">';
-		echo Module::render_builder_data( $this->footer );
+		echo Module::render_builder_data( $this->footer ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '</div>';
 		do_action( 'zyreaddons/template/after_footer' );
 	}

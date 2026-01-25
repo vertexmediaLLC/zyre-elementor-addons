@@ -666,18 +666,18 @@ class Advance_Accordion extends Base {
 
 					<!-- Accordion Content -->
 					<?php if ( isset( $accordion[ $content_type ] ) && 'custom_content' === $accordion[ $content_type ] ) : ?>				
-					<div <?php echo $this->get_render_attribute_string( $content_key ); ?>>
+					<div <?php $this->print_render_attribute_string( $content_key ); ?>>
 						<?php echo wp_kses_post( $item_descripton ); ?>
 					</div>
 					<?php elseif ( isset( $accordion[ $content_type ] ) && 'saved_section' === $accordion[ $content_type ] && 'publish' === get_post_status( $accordion[ $saved_section ] ) ) : ?>
-					<div <?php echo $this->get_render_attribute_string( $content_key ); ?>>
-						<?php $accordion[ $saved_section ] = apply_filters( 'wpml_object_id', $accordion[ $saved_section ], 'elementor_library' );
-						echo zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_section ] ); ?>
+					<div <?php $this->print_render_attribute_string( $content_key ); ?>>
+						<?php $accordion[ $saved_section ] = apply_filters( 'wpml_object_id', $accordion[ $saved_section ], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+						echo zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_section ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 					<?php elseif ( isset( $accordion[ $content_type ] ) && 'saved_container' === $accordion[ $content_type ] && 'publish' === get_post_status( $accordion[ $saved_container ] ) ) : ?>
-					<div <?php echo $this->get_render_attribute_string( $content_key ); ?>>
-						<?php $accordion[ $saved_container ] = apply_filters( 'wpml_object_id', $accordion[ $saved_container ], 'elementor_library' );
-						echo zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_container ] ); ?>
+					<div <?php $this->print_render_attribute_string( $content_key ); ?>>
+						<?php $accordion[ $saved_container ] = apply_filters( 'wpml_object_id', $accordion[ $saved_container ], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+						echo zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_container ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 					<?php endif; ?>
 				</div>

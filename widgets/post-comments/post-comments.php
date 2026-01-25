@@ -3391,9 +3391,9 @@ class Post_Comments extends Base {
 						if ( '1' === $comments_count ) {
 							printf( esc_html( $comments_one ) );
 						} else {
-							/* translators: %1$s: number of comments */
 							printf(
 								esc_html(
+									/* translators: %1$s: number of comments */
 									_nx(
 										'%1$s comment',
 										'%1$s comments',

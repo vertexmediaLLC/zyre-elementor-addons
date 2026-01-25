@@ -939,9 +939,8 @@ trait Social_Trait {
 				] );
 
 				$instance->add_link_attributes( $link_key, $item['social_link'] );
-
-				$social_name = esc_html( $item['social_name'] );
 				?>
+
 				<a <?php $instance->print_render_attribute_string( $link_key ); ?>>
 					<span class="elementor-screen-only"><?php echo esc_html( ucwords( $social ) ); ?></span>
 					<?php
@@ -951,8 +950,8 @@ trait Social_Trait {
 						<span class="zyre-social-icon-holder zy-inline-flex zy-align-center"><i class="<?php echo esc_attr( $item['social'] ); ?>"></i></span>
 					<?php } ?>
 
-					<?php if ( ! empty( $social_name ) && '' !== $social_name ) {
-						echo '<span class="zyre-social-icon-label zy-inline-flex zy-align-center zy-w-100 zy-lh-1">' . $social_name . '</span>';
+					<?php if ( ! empty( $item['social_name'] ) && '' !== $item['social_name'] ) {
+						echo '<span class="zyre-social-icon-label zy-inline-flex zy-align-center zy-w-100 zy-lh-1">' . esc_html( $item['social_name'] ) . '</span>';
 					} ?>
 				</a>
 				<?php

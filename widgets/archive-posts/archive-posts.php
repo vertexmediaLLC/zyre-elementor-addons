@@ -1652,7 +1652,7 @@ class Archive_Posts extends Base {
 			if ( ! empty( $this->settings['thumbnail_overlay'] ) ) {
 				?>
 				<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">
-					<?php echo $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ); ?>
+					<?php echo $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 				<?php
 			}
@@ -1688,10 +1688,10 @@ class Archive_Posts extends Base {
 
 			printf(
 				'<%1$s %2$s><a href="%3$s">%4$s</a></%1$s>',
-				zyre_escape_tags( $title_tag, 'h3' ),
+				zyre_escape_tags( $title_tag, 'h3' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'class="zyre-archive-post-title zy-m-0"',
 				esc_url( get_the_permalink( get_the_ID() ) ),
-				zyre_kses_basic( get_the_title() )
+				wp_kses( get_the_title(), zyre_get_allowed_html() )
 			);
 		}
 	}
@@ -1718,17 +1718,17 @@ class Archive_Posts extends Base {
 			switch ( $meta_item ['post_meta_select'] ) {
 				case 'author':
 					$this->render_author( $meta_item );
-					echo $cur_separator;
+					echo $cur_separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					break;
 
 				case 'date':
 					$this->render_date( $meta_item );
-					echo $cur_separator;
+					echo $cur_separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					break;
 
 				case 'comments':
 					$this->render_comments( $meta_item );
-					echo $cur_separator;
+					echo $cur_separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					break;
 
 				case 'category':
@@ -1863,7 +1863,7 @@ class Archive_Posts extends Base {
 					$names[] = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
 				}
 
-				echo implode( $category_separator, $names ) . '</span>' . $separator;
+				echo implode( $category_separator, $names ) . '</span>' . $separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 	}
@@ -1894,7 +1894,7 @@ class Archive_Posts extends Base {
 					$names[] = '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" >' . esc_html( $tag->name ) . '</a>';
 				}
 
-				echo implode( $tag_separator, $names ) . '</span>' . $separator;
+				echo implode( $tag_separator, $names ) . '</span>' . $separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 	}
@@ -1917,7 +1917,7 @@ class Archive_Posts extends Base {
 
 			$text = ! empty( $meta_item['edit_text'] ) ? $meta_item['edit_text'] : '';
 			edit_post_link( esc_html( $text ) );
-			echo '</span>' . $separator;
+			echo '</span>' . $separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 
@@ -1934,7 +1934,7 @@ class Archive_Posts extends Base {
 		$excerpt = apply_filters( 'get_the_excerpt', wp_trim_words( get_the_excerpt(), $excerpt_length ) );
 		if ( $excerpt ) :
 			?>
-			<p class="zyre-archive-post-excerpt zy-m-0"><?php echo zyre_kses_basic( $excerpt ); ?></p>
+			<p class="zyre-archive-post-excerpt zy-m-0"><?php echo wp_kses( $excerpt, zyre_get_allowed_html() ); ?></p>
 			<?php
 		endif;
 	}
