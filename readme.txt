@@ -12,41 +12,37 @@ Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-[Zyre Elementor Addons](https://zyreaddons.com/) – Build sites faster with Header/Footer, Single/Archive Page Builder & 56+ premium-quality Elementor widgets
-
+[Zyre Elementor Addons](https://zyreaddons.com/) – Build sites faster with Header/Footer, Single/Archive Page Builder & 57+ free widgets
 
 == Description ==
 
+[Zyre Elementor Addons](https://zyreaddons.com/) is a lightweight and user-friendly addon for Elementor that helps you build modern WordPress websites faster—without writing any code.
 
-[Zyre Elementor Addons](https://zyreaddons.com/) is one of the best Elementor addons, featuring a powerful Theme Builder with a free Header & Footer Builder, Single Post/Page Templates, and an Archive Page Builder.
-Includes 56+ free widgets to enhance your [Elementor](https://wordpress.org/plugins/elementor/) experience.
-Get 15+ full-page Elementor templates and 50+ template blocks, and more coming soon!
+The plugin includes a free **Theme Builder** with **Header & Footer Builder**, **Single Post/Page templates**, and **Archive page layouts**, giving you full control over your site structure inside Elementor.
 
+Zyre Elementor Addons also provides **57+ free widgets**, **ready-made page templates**, and **template blocks** to help you design professional layouts with ease.
 
 ## Useful Links
 
+[Didgets Demo](https://zyreaddons.com/all-widgets/) | [Documentation](https://zyreaddons.com/docs/) | [Videos](https://www.youtube.com/watch?v=dVWxTTj64F8&list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj)
 
-[Didgets Demo](https://zyreaddons.com/all-widgets/) | [Documentation](https://zyreaddons.com/docs/) | [Videos](#)
+## Key Features
 
+* Free Theme Builder (Header, Footer, Single, Archive)
+* 57+ free Elementor widgets
+* Pre-built widget styles
+* Widget & pre-style control panel
+* Lightweight and performance optimized
+* No coding required
+* One-click template import
+* Compatible with Elementor & Elementor Pro
 
-## Why you Choose Zyre Elementor Addons
+## 57+ Free Elementor Widgets
 
-
-* **Pre-built Styles**: Each widget comes with multiple pre-built styles—you just need to choose one and customize it to your needs.
-* **Control Widgets**: Enable or disable individual widgets from the plugin dashboard to speed up the Elementor editor/preview panel.
-* **Control Pre-Styles**: Enable or disable each widget's pre-styles from the plugin's dashboard to speed up the Elementor editor/preview panel.
-* **Light Weight**: ZyreAddons is optimized for speed, ensuring widgets load quickly without slowing down your website.
-* **Extensive Customization Options**: Each widget offers numerous customizable settings and advanced styles, providing more flexibility than other Elementor addons on the market.
-* **No Coding Required**: Each widget comes with comprehensive options, so you can achieve your design without writing any code.
-* **Premium Quality Widgets**: ZyreAddons offers high-quality widgets to enhance your website and meet your business needs.
-* **Templates Library**: Access a variety of free, premium-quality pre-built templates—import them with just one click.
-
-
-## 56+ Free Elementor Widgets
-
+Below is the complete list of widgets included in the free version.
 
 * **[Heading](#)**: Add headings including suffix, subtitle, & description.
-* **[Advance Heading](#)**: Add gradient-styled headings including prefix & suffix.
+* **[Advanced Heading](https://zyreaddons.com/demos/advanced-heading/)**: Add gradient-styled headings including prefix & suffix.
 * **[Gradient Heading](#)**: Add gradient-styled headings & sub-headings including prefix & suffix.
 * **[Dual Color Heading](#)**: Add dual-colored headings including prefix & suffix.
 * **[Image Heading](#)**: Add image-filled headings including sub-headings & suffix.
@@ -69,7 +65,7 @@ Get 15+ full-page Elementor templates and 50+ template blocks, and more coming s
 * **[Logo Carousel](#)**: Showcase logos or images in a rotating carousel with optional clickable links.
 * **[Social Icons](#)**: Showcase your social profiles with customizable styles, icons, & links.
 * **[Social Share](#)**: Display social share buttons with customizable styles & links.
-* **[Advance Accordion](#)**: Create collapsible accordions with custom content or pre-saved templates.
+* **[Advanced Accordion](https://zyreaddons.com/demos/advance-accordion/)**: Create collapsible accordions with custom content or pre-saved templates.
 * **[Advance Toggle](#)**: Create collapsible toggle sections with custom content or pre-saved templates.
 * **[Fun Fact](#)**: Display animated counters with icons/images & titles.
 * **[Alert](#)**: Display a colored, dismissible alert box to grab visitors’ attention.
