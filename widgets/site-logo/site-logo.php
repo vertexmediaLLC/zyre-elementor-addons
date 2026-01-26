@@ -171,9 +171,9 @@ class Site_Logo extends Base {
 			$custom_logo_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'site_logo_size', 'custom_site_logo' );
 
 			if ( 'yes' === $settings['logo_link_switcher'] ) {
-				echo '<a class="zyre-site-logo-link zyre-site-logo-link-custom" href="' . esc_url( home_url( '/' ) ) . '">' . $custom_logo_html . '</a>';
+				echo '<a class="zyre-site-logo-link zyre-site-logo-link-custom" href="' . esc_url( home_url( '/' ) ) . '">' . wp_kses_post( $custom_logo_html ) . '</a>';
 			} else {
-				echo '<div class="zyre-site-logo zyre-site-logo-custom zy-inline-block">' . $custom_logo_html . '</div>';
+				echo '<div class="zyre-site-logo zyre-site-logo-custom zy-inline-block">' . wp_kses_post( $custom_logo_html ) . '</div>';
 			}
 		}
 	}

@@ -20,7 +20,7 @@
  *
  * [WP]
  * Requires at least: 5.0
- * Tested up to: 6.8.3
+ * Tested up to: 6.9
  *
  * @package ZyreAddons
  */

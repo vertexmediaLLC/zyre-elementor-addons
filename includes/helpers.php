@@ -121,11 +121,13 @@ function zyre_get_allowed_html( $level = 'basic' ) {
 
 	$allowed_html_extra = array(
 		'a'       => array(
-			'href'  => array(),
-			'title' => array(),
-			'class' => array(),
-			'id'    => array(),
-			'style' => array(),
+			'href'   => array(),
+			'title'  => array(),
+			'class'  => array(),
+			'id'     => array(),
+			'style'  => array(),
+			'rel'    => array(),
+			'target' => array(),
 		),
 		'q'       => array(
 			'cite'  => array(),
@@ -169,15 +171,19 @@ function zyre_get_allowed_html( $level = 'basic' ) {
 	}
 
 	if ( 'all' === $level ) {
-		$allowed_html_extra['img'] = array(
-			'src'    => array(),
-			'alt'    => array(),
-			'height' => array(),
-			'width'  => array(),
-			'class'  => array(),
-			'id'     => array(),
-			'style'  => array(),
-		);
+		$allowed_html_extra['img'] = [
+			'src'           => array(),
+			'alt'           => array(),
+			'height'        => array(),
+			'width'         => array(),
+			'class'         => array(),
+			'id'            => array(),
+			'style'         => array(),
+			'srcset'        => array(),
+			'sizes'         => array(),
+			'decoding'      => array(),
+			'fetchpriority' => array(),
+		];
 
 		$allowed_html = array_merge( $allowed_html, $allowed_html_extra );
 	}

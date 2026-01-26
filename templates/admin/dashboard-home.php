@@ -103,8 +103,8 @@ $credential_data = zyre_get_credentials();
 									esc_html( $key),
 									esc_html( $class ),
 									isset( $value['icon'] ) ? '<span class="zyre-icon-svg">' . wp_kses( $value['icon'], zyre_get_allowed_html() ) . '</span>' : '',
-									/* translators: %s is the tab number */
 									isset( $value['title'] ) ? esc_html( $value['title'] ) : sprintf(
+										/* translators: %s is the tab number */
 										esc_html__( 'Tab %s', 'zyre-elementor-addons' ),
 										esc_html( $tab_count )
 									)

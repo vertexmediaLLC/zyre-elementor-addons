@@ -762,15 +762,15 @@ class Image_Heading extends Base {
 			<?php
 			// Conditionally render subtitle based on position
 			if ( 'top' === $subtitle_position && ! empty( $subtitle_html ) ) {
-				echo $subtitle_html; // Subtitle first
+				echo $subtitle_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			// Render Title
-			echo $title_html;
+			echo $title_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 			// Conditionally render subtitle based on position (default case)
 			if ( 'bottom' === $subtitle_position && ! empty( $subtitle_html ) ) {
-				echo $subtitle_html; // Subtitle second
+				echo $subtitle_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			?>
 	

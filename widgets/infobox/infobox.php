@@ -854,7 +854,7 @@ class InfoBox extends Base {
 
 		<?php if ( 'image' === $settings['infobox_media'] && ( $settings['infobox_media_image']['url'] || $settings['infobox_media_image']['id'] ) ) : ?>
 			<div <?php $this->print_render_attribute_string( 'infobox_image' ); ?>>
-				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'infobox_media_image' ); ?>
+				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'infobox_media_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 
 			<?php elseif ( 'icon' === $settings['infobox_media'] && ! empty( $settings['infobox_media_icon'] ) ) : ?>
@@ -869,9 +869,9 @@ class InfoBox extends Base {
 			if ( $settings['infobox_title'] ) :
 				printf(
 					'<%1$s %2$s>%3$s</%1$s>',
-					zyre_escape_tags( $settings['infobox_title_tag'], 'h2' ),
-					$this->get_render_attribute_string( 'title' ),
-					wp_kses( $settings['infobox_title'], zyre_get_allowed_html( 'basic' ) )
+					zyre_escape_tags( $settings['infobox_title_tag'], 'h2' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$this->get_render_attribute_string( 'title' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					wp_kses( $settings['infobox_title'], zyre_get_allowed_html() )
 				);
 			endif;
 			?>
@@ -879,7 +879,7 @@ class InfoBox extends Base {
 			<?php if ( $settings['infobox_description'] ) :
 				?>
 				<div <?php $this->print_render_attribute_string( 'description' ); ?>>
-					<p class="zy-m-0"><?php echo zyre_kses_advanced( $settings['infobox_description'] ); ?></p>
+					<p class="zy-m-0"><?php echo wp_kses( $settings['infobox_description'], zyre_get_allowed_html( 'advanced' ) ); ?></p>
 				</div>
 				<?php
 			endif; ?>

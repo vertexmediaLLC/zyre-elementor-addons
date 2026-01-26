@@ -53,10 +53,6 @@ class Plugin {
 		return self::$instance;
 	}
 
-	private function __construct() {
-		add_action( 'init', [ $this, 'load_textdomain' ] );
-	}
-
 	/**
 	 * Include Files
 	 * Register custom category in Elementor
@@ -80,10 +76,6 @@ class Plugin {
 		// $this->appsero_tracking_init();
 
 		do_action( 'zyreaddons_loaded' );
-	}
-
-	public function load_textdomain() {
-		load_plugin_textdomain( 'zyre-elementor-addons', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**

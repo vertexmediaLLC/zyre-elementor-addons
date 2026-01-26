@@ -876,7 +876,7 @@ class Post_Meta extends Base {
 			?>
 			<span <?php $this->print_render_attribute_string( 'post_category' ); ?>>
 			<?php
-			echo trim( $output, $separator );
+			echo wp_kses_post( trim( $output, $separator ));
 		}
 	}
 
@@ -911,7 +911,7 @@ class Post_Meta extends Base {
 			?>
 			<span <?php $this->print_render_attribute_string( 'post_tag' ); ?>>
 			<?php
-			echo trim( $output, $separator );
+			echo wp_kses_post( trim( $output, $separator ) );
 		}
 	}
 

@@ -1143,7 +1143,7 @@ class Author_Box extends Base {
 					<?php if ( ! empty( $settings['reg_label'] ) ) : ?>
 						<span class="zyre-author-reg-label"><?php echo esc_html( $settings['reg_label'] ); ?></span>
 					<?php endif; ?>
-					<span class="zyre-author-reg-date"><?php echo esc_html( date( $reg_date_f, strtotime( $reg_date ) ) ); ?></span>
+					<span class="zyre-author-reg-date"><?php echo esc_html( wp_date( $reg_date_f, strtotime( $reg_date ) ) ); ?></span>
 				</div>
 			<?php endif; ?>
 		</div>

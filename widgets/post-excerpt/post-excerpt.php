@@ -378,7 +378,7 @@ class Post_Excerpt extends Base {
 		}
 
 		if ( post_password_required( $post->ID ) ) {
-			echo get_the_password_form( $post->ID );
+			echo wp_kses_post( get_the_password_form( $post->ID ) );
 			return;
 		}
 

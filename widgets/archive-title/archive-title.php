@@ -842,6 +842,6 @@ class Archive_Title extends Base {
 		 *
 		 * @param string $title Page title to be displayed.
 		 */
-		echo apply_filters( 'zyre/widgets/get_the_archive_title', wp_kses( $title, zyre_get_allowed_html() ) ); // pphcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo apply_filters( 'zyre/widgets/get_the_archive_title', wp_kses( $title, zyre_get_allowed_html() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }

@@ -440,9 +440,9 @@ class Gradient_Heading extends Base {
 
 		// Get the order from settings
 		if ( 'title_first' === $settings['title_subtitle_order'] ) {
-			echo $title_html . $subtitle_html;
+			echo wp_kses_post( $title_html . $subtitle_html );
 		} else {
-			echo $subtitle_html . $title_html;
+			echo wp_kses_post( $subtitle_html . $title_html );
 		}
 	}
 }

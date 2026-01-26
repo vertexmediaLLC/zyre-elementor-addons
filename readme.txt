@@ -1,12 +1,13 @@
 === Zyre Elementor Addons ===
 Plugin Name: Zyre Elementor Addons
 Version: 1.0.0
+Stable tag: 1.0.0
 Author: VertexMedia
 Author URI: https://zyreaddons.com/
 Contributors: VertexMedia, ZyreAddons, ElemenatorIn
-Tags: Elementor, Elementor Addons, Elementor Modules, Header Footer Builder, Elementor Widget, Theme Builder
+Tags: elementor, elementor addons, elementor modules, header footer builder, elementor widget, theme builder
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

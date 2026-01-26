@@ -471,6 +471,6 @@ class Lottie_Animation extends Base {
 			$lottie_animation = '<div class="zyre-lottie-animation" data-settings="' . esc_attr( $this->lottie_attributes( $settings ) ) . '" data-json-url="' . esc_url( $lottie_json ) . '"></div>';
 		}
 
-		echo '<div class="zyre-lottie-animation-wrapper zy-flex zy-align-center">' . $lottie_animation . '</div>';
+		echo '<div class="zyre-lottie-animation-wrapper zy-flex zy-align-center">' . wp_kses_post( $lottie_animation ) . '</div>';
 	}
 }

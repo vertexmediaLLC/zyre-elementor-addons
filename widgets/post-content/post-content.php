@@ -712,7 +712,7 @@ class Post_Content extends Base {
 		}
 
 		if ( post_password_required( $post->ID ) ) {
-			echo get_the_password_form( $post->ID );
+			echo wp_kses_post( get_the_password_form( $post->ID ) );
 			return;
 		}
 
@@ -723,7 +723,10 @@ class Post_Content extends Base {
 		?>
 
 		<div class="zyre-post-content">
-			<?php echo apply_filters( 'the_content', get_the_content() ); ?>
+			<?php
+			$content = apply_filters( 'the_content', get_the_content() );
+			echo wp_kses_post( $content );
+			?>
 		</div>
 
 		<?php

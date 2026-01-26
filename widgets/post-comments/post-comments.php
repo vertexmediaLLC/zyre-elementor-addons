@@ -3370,7 +3370,7 @@ class Post_Comments extends Base {
 			// Form Output
 			if ( 'before' === $settings['form_position'] ) {
 				echo '<div class="zyre-comment-form-wrap zy-flex zy-gap-3 zy-w-100">';
-				echo $commenter_avatar;
+				echo $commenter_avatar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				comment_form();
 				echo '</div>';
 			}
@@ -3429,7 +3429,7 @@ class Post_Comments extends Base {
 
 					if ( 'after_title' === $settings['form_position'] ) {
 						echo '<div class="zyre-comment-form-wrap zy-flex zy-gap-3 zy-w-100">';
-						echo $commenter_avatar;
+						echo $commenter_avatar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						comment_form();
 						echo '</div>';
 					}
@@ -3464,7 +3464,7 @@ class Post_Comments extends Base {
 			// Form Output
 			if ( 'after' === $settings['form_position'] ) {
 				echo '<div class="zyre-comment-form-wrap zy-flex zy-gap-3 zy-w-100">';
-				echo $commenter_avatar;
+				echo $commenter_avatar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				comment_form();
 				echo '</div>';
 			}
@@ -3530,9 +3530,9 @@ class Post_Comments extends Base {
 							$says_text = ! empty( $settings['comment_says_text'] ) ? $settings['comment_says_text'] : '';
 							printf(
 								'%s <span class="says">%s</span> %s',
-								is_rtl() ? '' : sprintf( '<b class="fn">%s</b>', $comment_author ),
+								is_rtl() ? '' : sprintf( '<b class="fn">%s</b>', wp_kses( $comment_author, zyre_get_allowed_html( 'advanced' ) ) ),
 								esc_html( $says_text ),
-								is_rtl() ? sprintf( '<b class="fn">%s</b>', $comment_author ) : '',
+								is_rtl() ? sprintf( '<b class="fn">%s</b>', wp_kses( $comment_author, zyre_get_allowed_html( 'advanced' ) ) ) : '',
 							);
 							?>
 						</div><!-- .comment-author -->
@@ -3549,10 +3549,10 @@ class Post_Comments extends Base {
 										esc_url( get_comment_link( $comment, $args ) ),
 										! empty( $settings['comment_time_icon']['value'] ) ? sprintf(
 											'<span class="time-icon">%s</span>',
-											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' )
+											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										) : '',
-										get_comment_time( 'c' ),
-										human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ),
+										wp_kses( get_comment_time( 'c' ), zyre_get_allowed_html() ),
+										human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										( 'yes' === $settings['show_ago_text'] ) ? esc_html__( ' ago', 'zyre-elementor-addons' ) : '',
 									);
 								} else {
@@ -3561,14 +3561,14 @@ class Post_Comments extends Base {
 										esc_url( get_comment_link( $comment, $args ) ),
 										! empty( $settings['comment_time_icon']['value'] ) ? sprintf(
 											'<span class="time-icon">%s</span>',
-											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' )
+											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										) : '',
-										get_comment_time( 'c' ),
+										wp_kses( get_comment_time( 'c' ), zyre_get_allowed_html() ),
 										sprintf(
 											/* translators: 1: Comment date, 2: Comment time. */
-											__( '%1$s at %2$s', 'zyre-elementor-addons' ),
-											get_comment_date( $date_format, $comment ),
-											get_comment_time( $time_format )
+											__( '%1$s at %2$s', 'zyre-elementor-addons' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+											get_comment_date( $date_format, $comment ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+											get_comment_time( $time_format ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										)
 									);
 								}
@@ -3605,7 +3605,7 @@ class Post_Comments extends Base {
 								'<div class="comments-total zy-inline-flex zy-align-center zy-gap-2">%s<span class="comments-total-text">%s</span></div>',
 								! empty( $settings['comment_count_icon']['value'] ) ? sprintf(
 									'<span class="comments-total-icon">%s</span>',
-									zyre_get_icon_html( $settings, 'icon', 'comment_count_icon' )
+									zyre_get_icon_html( $settings, 'icon', 'comment_count_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								) : '',
 								esc_html( $comment_count )
 							);
@@ -3651,7 +3651,7 @@ class Post_Comments extends Base {
 				$prev_text = ! empty( $settings['pagination_prev_text'] ) ? esc_html( $settings['pagination_prev_text'] ) : '&laquo;';
 				$next_text = ! empty( $settings['pagination_next_text'] ) ? esc_html( $settings['pagination_next_text'] ) : '&raquo;';
 				if ( 'pagination' === $settings['pagination_type'] ) {
-					echo paginate_links( [
+					$paginate_links = paginate_links( [
 						'base'         => add_query_arg( 'cpage', '%#%' ),
 						'format'       => '',
 						'total'        => $total_pages,
@@ -3660,6 +3660,8 @@ class Post_Comments extends Base {
 						'next_text'    => $next_text,
 						'add_fragment' => '#comments',
 					] );
+
+					echo wp_kses_post( $paginate_links );
 				} elseif ( 'next_prev' === $settings['pagination_type'] ) {
 					global $wp_rewrite;
 					$order_params = ! empty( $_GET['order']) ? '?order=' . sanitize_key( $_GET['order'] ) : '';
@@ -3667,14 +3669,14 @@ class Post_Comments extends Base {
 					$next_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page + 1 ) . $order_params . '#comments';
 					?>
 					<div class="nav-links zy-flex zy-align-center zy-justify-between zy-w-100 zy-gap-6">
-						<?php if ( get_previous_comments_link( $prev_text, $page ) ) : ?>
+						<?php if ( get_previous_comments_link( $prev_text, $page ) ) : // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							<div class="nav-previous">
-								<?php echo '<a href="' . esc_url( $prev_page_url ) . '">' . $prev_text . '</a>'; ?>
+								<?php echo '<a href="' . esc_url( $prev_page_url ) . '">' . esc_html( $prev_text ) . '</a>'; ?>
 							</div>
 						<?php endif; ?>
-						<?php if ( get_next_comments_link( $next_text, $total_pages, $page ) ) : ?>
+						<?php if ( get_next_comments_link( $next_text, $total_pages, $page ) ) : // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							<div class="nav-next">
-								<?php echo '<a href="' . esc_url( $next_page_url ) . '">' . $next_text . '</a>'; ?>
+								<?php echo '<a href="' . esc_url( $next_page_url ) . '">' . esc_html( $next_text ) . '</a>'; ?>
 							</div>
 						<?php endif; ?>
 					</div>

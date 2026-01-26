@@ -672,7 +672,7 @@ class Skill_Bar extends Base {
 
 			_.each(settings.skills, function(skill, index) {
 				var nameKey = view.getRepeaterSettingKey( 'name', 'skills', index );
-				view.addRenderAttribute( nameKey, 'class', 'zyre-progress-title zy-absolute zy-bottom-4 zy-<?php echo $left_right; ?>-0 zy-index-1' );
+				view.addRenderAttribute( nameKey, 'class', 'zyre-progress-title zy-absolute zy-bottom-4 zy-<?php echo esc_attr( $left_right ); ?>-0 zy-index-1' );
 				#>
 				<div class="zyre-progress-item zy-relative elementor-repeater-item-{{skill._id}}">
 					<div class="zyre-progress-bar" data-percentage="{{skill.level.size}}" data-duration="{{skill.animate_duration}}">

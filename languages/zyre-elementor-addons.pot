@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-25T11:52:16+00:00\n"
+"POT-Creation-Date: 2026-01-26T07:00:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "ZyreAddons"
 msgstr ""
 
-#: base/plugin-base.php:196
+#: base/plugin-base.php:188
 #: classes/admin-dashboard.php:173
 msgid "Zyre Addons"
 msgstr ""
@@ -2442,38 +2442,38 @@ msgid "invalid key"
 msgstr ""
 
 #. Translators: translate with allowed HTML tags.
-#: includes/helpers.php:261
+#: includes/helpers.php:267
 #, php-format
 msgid "This input field has support for the following HTML tags: %1$s"
 msgstr ""
 
-#: includes/helpers.php:495
+#: includes/helpers.php:501
 msgid "plugin is missing! Please install and activate it."
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:524
+#: includes/helpers.php:530
 #, php-format
 msgid "Activate %s"
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:529
+#: includes/helpers.php:535
 #, php-format
 msgid "Install %s"
 msgstr ""
 
-#: includes/helpers.php:600
+#: includes/helpers.php:606
 msgid "Manual Selection"
 msgstr ""
 
 #. translators: 1: The function name, 2: The argument number, 3: The argument name, 4: The expected type, 5: The provided type.
-#: includes/helpers.php:727
+#: includes/helpers.php:733
 #, php-format
 msgid "Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given."
 msgstr ""
 
-#: includes/helpers.php:766
+#: includes/helpers.php:772
 msgid "&hellip;"
 msgstr ""
 
@@ -2969,6 +2969,7 @@ msgstr ""
 msgid "Not In-Use"
 msgstr ""
 
+#. translators: %s is the tab number
 #: templates/admin/dashboard-home.php:108
 #, php-format
 msgid "Tab %s"

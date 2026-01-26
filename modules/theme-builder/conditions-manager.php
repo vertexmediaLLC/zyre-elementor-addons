@@ -702,6 +702,7 @@ class Conditions_Manager {
 
 			$icon = zyre_get_svg_icon( 'trash-can' );
 
+			// phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed
 			$html .= <<<EOF
 			<div id="zyre-template-condition-item-$uuid" class="zyre-template-condition-item">
 				<div class="zyre-template-condition-item-row">
@@ -739,7 +740,7 @@ class Conditions_Manager {
 			EOF;
 		}
 
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $html );
 	}
 }
 

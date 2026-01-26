@@ -1170,7 +1170,7 @@ class Image_Grid extends Base {
 		$this->add_render_attribute( 'items_wrap', 'class', 'zyre-image-grid-items zyre-isotope' );
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			$this->add_render_attribute( 'items_wrap', 'class', 'zyre-isotope-' . $this->get_id() );
+			$this->add_render_attribute( 'items_wrap', 'class', 'zyre-isotope-' . esc_html( $this->get_id() ) );
 		}
 
 		$content_display = $settings['content_display'] ?? '';
@@ -1207,7 +1207,7 @@ class Image_Grid extends Base {
 					<?php if ( ( 'yes' === $settings['filter_tabs_separator'] ) && ( '' === $spr_position || 'left' === $spr_position ) ) : ?>
 						<span class="zyre-image-grid-filter-separator zy-grow-1 zy-h-1 zy-bg-black"></span>
 					<?php endif; ?>
-					<ul class="zy-flex zy-flex-wrap zy-m-0 zy-list-none zy-gap-2 zyre-js-filter-tabs" data-default-filter="<?php echo $this->_default_filter; ?>">
+					<ul class="zy-flex zy-flex-wrap zy-m-0 zy-list-none zy-gap-2 zyre-js-filter-tabs" data-default-filter="<?php echo esc_attr( $this->_default_filter ); ?>">
 						<?php if ( ! empty( $settings['filter_tabs_all'] ) ) : ?>
 							<li>
 								<a href="javascript:;" class="zyre-image-grid-filter-tab" data-filter="*"><?php echo esc_html( $settings['filter_tabs_all'] ); ?></a>
@@ -1315,7 +1315,7 @@ class Image_Grid extends Base {
 							[
 								'href'                              => esc_url( $img_src ),
 								'data-elementor-open-lightbox'      => 'yes',
-								'data-elementor-lightbox-slideshow' => $items_total > 1 ? $this->get_id() : false,
+								'data-elementor-lightbox-slideshow' => $items_total > 1 ? esc_html( $this->get_id() ) : false,
 								'data-elementor-lightbox-title'     => esc_attr( $item['title'] ),
 							]
 						);
@@ -1327,7 +1327,7 @@ class Image_Grid extends Base {
 							<<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $image_link_key ) ); ?> class="zyre-image-grid-item-img-wrapper zy-relative">
 								<?php
 
-								echo $img_html;
+								echo $img_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 								if ( $is_enable_lightbox ) {
 									$lightbox_key = 'lightbox_' . $index;
@@ -1337,7 +1337,7 @@ class Image_Grid extends Base {
 											'href'                              => esc_url( $img_src ),
 											'class'                             => 'zyre-image-grid-open-lightbox-btn zyre-js-lightbox',
 											'data-elementor-open-lightbox'      => 'yes',
-											'data-elementor-lightbox-slideshow' => $items_total > 1 ? $this->get_id() : false,
+											'data-elementor-lightbox-slideshow' => $items_total > 1 ? esc_html( $this->get_id() ) : false,
 											'data-elementor-lightbox-title'     => esc_attr( $item['title'] ),
 										]
 									);
@@ -1406,7 +1406,7 @@ class Image_Grid extends Base {
 													[
 														'href'                              => esc_url( $img_src ),
 														'data-elementor-open-lightbox'      => 'yes',
-														'data-elementor-lightbox-slideshow' => $items_total > 1 ? $this->get_id() : false,
+														'data-elementor-lightbox-slideshow' => $items_total > 1 ? esc_html( $this->get_id() ) : false,
 														'data-elementor-lightbox-title'     => esc_attr( $item['title'] ),
 													]
 												);
@@ -1437,7 +1437,7 @@ class Image_Grid extends Base {
 		 * but it resolves a critical issue.
 		 */
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) :
-			printf( '<script>jQuery(".zyre-isotope-%s").isotope();</script>', $this->get_id() );
+			printf( '<script>jQuery(".zyre-isotope-%s").isotope();</script>', esc_html( $this->get_id() ) );
 		endif;
 	}
 }

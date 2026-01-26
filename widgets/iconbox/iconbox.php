@@ -926,13 +926,13 @@ class IconBox extends Base {
 					if ( $settings['title'] ) :
 						printf(
 							'<%1$s %2$s>%3$s</%1$s>',
-							zyre_escape_tags( $settings['title_tag'], 'h2' ),
-							$this->get_render_attribute_string( 'title' ),
+							zyre_escape_tags( $settings['title_tag'], 'h2' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							$this->get_render_attribute_string( 'title' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							sprintf(
 								'%s',
 								( 'title' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
-									$this->get_render_attribute_string( 'link' ),
+									$this->get_render_attribute_string( 'link' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									wp_kses( $settings['title'], zyre_get_allowed_html() )
 								) : wp_kses( $settings['title'], zyre_get_allowed_html() )
 							)
@@ -947,7 +947,7 @@ class IconBox extends Base {
 								'%s',
 								( 'subtitle' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
-									$this->get_render_attribute_string( 'link' ),
+									$this->get_render_attribute_string( 'link' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
 								) : wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
 							);

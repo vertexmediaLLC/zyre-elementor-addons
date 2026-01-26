@@ -1073,15 +1073,15 @@ class Team_Member extends Base {
 
 		<?php if ( $settings['photo']['url'] || $settings['photo']['id'] ) : ?>
 			<figure class="zyre-member-figure">
-				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'photo_thumb', 'photo' ); ?>
+				<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings, 'photo_thumb', 'photo' ) ); ?>
 			</figure>
 		<?php endif; ?>
 
 		<div class="zyre-member-body">
 			<?php if ( ! empty( $settings['name'] ) ) :
 				printf( '<%1$s %2$s>%3$s</%1$s>',
-					Utils::validate_html_tag( $settings['name_tag'] ),
-					$this->get_render_attribute_string( 'name' ),
+					Utils::validate_html_tag( $settings['name_tag'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$this->get_render_attribute_string( 'name' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					wp_kses( $settings['name'], zyre_get_allowed_html() )
 				);
 			endif; ?>
@@ -1091,7 +1091,7 @@ class Team_Member extends Base {
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['bio'] ) ) : ?>
-				<p <?php $this->print_render_attribute_string( 'bio' ); ?>><?php echo zyre_kses_advanced( $settings['bio'] ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'bio' ); ?>><?php echo wp_kses( $settings['bio'], zyre_get_allowed_html('advanced') ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $show_button && 'before' === $button_position ) :
@@ -1126,7 +1126,7 @@ class Team_Member extends Base {
 					<div class="zyre-member-lightbox-close">&times;</div>
 					<?php
 					$saved_template_list = apply_filters( 'wpml_object_id', $settings['saved_template_list'], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-					echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_template_list );
+					echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_template_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?>
 				</div>
 			</div>

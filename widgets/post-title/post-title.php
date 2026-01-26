@@ -527,13 +527,13 @@ class Post_Title extends Base {
 	// Widget Display
 	protected function render() {
 		$settings = $this->get_settings_for_display(); ?>
-		<<?php echo zyre_escape_tags( $settings['post_title_tag'], 'h2' ); ?> class="zyre-post-title-heading zy-flex zy-align-center zy-m-0 zy-lh-1.5">        
+		<<?php echo zyre_escape_tags( $settings['post_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-post-title-heading zy-flex zy-align-center zy-m-0 zy-lh-1.5">        
 			<?php
 				$this->__render_title_before_after( 'before', 'prefix' );
 				$this->__render_title();
 				$this->__render_title_before_after( 'after', 'suffix' );
 			?> 
-		</<?php echo zyre_escape_tags( $settings['post_title_tag'], 'h2' ); ?>>
+		</<?php echo zyre_escape_tags( $settings['post_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php
 	}
 

@@ -544,7 +544,7 @@ class Logo_Grid extends Base {
 					$this->add_link_attributes( $repeater_key, $item['website_link'] );
 				}
 				?>
-				<<?php echo $tag; ?> <?php $this->print_render_attribute_string( $repeater_key ); ?>>
+				<<?php Utils::print_validated_html_tag( $tag ); ?> <?php $this->print_render_attribute_string( $repeater_key ); ?>>
 					<?php if ( isset( $image['source'] ) && $image['id'] ) :
 						$output = '<div class="zyre-logo-grid-img-wrap zy-self-stretch zy-content-center zy-grow-1 zy-text-center">';
 						$output .= wp_get_attachment_image(
@@ -556,7 +556,9 @@ class Logo_Grid extends Base {
 							]
 						);
 						$output .= '</div>';
-						echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+						echo wp_kses_post( $output );
+
 						else :
 							$url = $image['url'] ? $image['url'] : Utils::get_placeholder_image_src();
 							printf( '<div class="zyre-logo-grid-img-wrap zy-self-stretch zy-content-center zy-grow-1 zy-text-center"><img class="zyre-logo-grid-img elementor-animation-%s" src="%s" alt="%s"></div>',
@@ -565,7 +567,7 @@ class Logo_Grid extends Base {
 								esc_attr( $item['brand_name'] )
 							);
 						endif; ?>
-				</<?php echo $tag; ?>>
+				</<?php Utils::print_validated_html_tag( $tag ); ?>>
 			<?php endforeach; ?>
 		</div>
 	

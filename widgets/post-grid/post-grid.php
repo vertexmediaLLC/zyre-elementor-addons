@@ -2314,7 +2314,7 @@ class Post_Grid extends Base {
 		}
 
 		if ( $the_query->have_posts() ) {
-			echo $editor_notice;
+			echo wp_kses_post( $editor_notice );
 
 			echo '<div class="zyre-post-grid zy-grid zy-gap-x-6 zy-gap-y-6 zy-grid-columns-3">';
 			while ( $the_query->have_posts() ) {
@@ -2348,7 +2348,7 @@ class Post_Grid extends Base {
 				),
 				! empty( $this->settings['thumbnail_overlay'] ) ? sprintf(
 					'<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">%s</div>',
-					$this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ),
+					$this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				) : '',
 			);
 		} else {
@@ -2359,7 +2359,7 @@ class Post_Grid extends Base {
 				if ( ! empty( $this->settings['thumbnail_overlay'] ) ) {
 					?>
 					<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">
-						<?php echo $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ); ?>
+						<?php echo $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 					<?php
 				}
@@ -2417,7 +2417,7 @@ class Post_Grid extends Base {
 			return;
 		}
 		?>
-		<<?php echo zyre_escape_tags( $this->settings['title_tag'], 'h3' ); ?> class="zyre-post-title zy-m-0">
+		<<?php echo zyre_escape_tags( $this->settings['title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-post-title zy-m-0">
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 				<?php
 				if ( empty( $this->settings['title_length'] ) ) {
@@ -2427,7 +2427,7 @@ class Post_Grid extends Base {
 				}
 				?>
 			</a>
-		</<?php echo zyre_escape_tags( $this->settings['title_tag'], 'h3' ); ?>>
+		</<?php echo zyre_escape_tags( $this->settings['title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php
 	}
 
@@ -2616,7 +2616,7 @@ class Post_Grid extends Base {
 				}
 
 				if ( ! is_rtl() ) {
-					echo $category_prefix;
+					echo wp_kses( $category_prefix, zyre_get_allowed_html() );
 				}
 
 				foreach ( $categories as $category ) {
@@ -2638,10 +2638,10 @@ class Post_Grid extends Base {
 					);
 				}
 
-				echo implode( $category_separator, $names );
+				echo wp_kses_post( implode( $category_separator, $names ) );
 
 				if ( is_rtl() ) {
-					echo $category_prefix;
+					echo wp_kses( $category_prefix, zyre_get_allowed_html() );
 				}
 
 				echo '</span>';
@@ -2668,17 +2668,17 @@ class Post_Grid extends Base {
 				}
 
 				if ( ! is_rtl() ) {
-					echo $tag_prefix;
+					echo wp_kses( $tag_prefix, zyre_get_allowed_html() );
 				}
 
 				foreach ( $tags as $tag ) {
 					$names[] = '<a class="zyre-post-tag-link" href="' . esc_url( get_tag_link( $tag->term_id ) ) . '" >' . esc_html( $tag->name ) . '</a>';
 				}
 
-				echo implode( $tag_separator, $names );
+				echo wp_kses_post( implode( $tag_separator, $names ) );
 
 				if ( is_rtl() ) {
-					echo $tag_prefix;
+					echo wp_kses( $tag_prefix, zyre_get_allowed_html() );
 				}
 
 				echo '</span>';

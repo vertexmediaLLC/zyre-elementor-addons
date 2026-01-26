@@ -177,7 +177,7 @@ class Assets_Cache {
 	 */
 	public function delete() {
 		if ( $this->cache_exists() ) {
-			unlink( $this->get_file_name() );
+			wp_delete_file( $this->get_file_name() );
 		}
 	}
 
@@ -191,7 +191,7 @@ class Assets_Cache {
 		$files = glob( $this->get_cache_dir() . '*' );
 		foreach ( $files as $file ) {
 			if ( is_file( $file ) ) {
-				unlink( $file );
+				wp_delete_file( $file );
 			}
 		}
 	}

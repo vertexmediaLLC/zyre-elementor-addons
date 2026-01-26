@@ -1358,7 +1358,7 @@ class Menu extends Base {
 			}
 		}
 
-		echo '<style id="zyre-menu-inline-css" type="text/css">' . $css_styles . '</style>';
+		echo '<style id="zyre-menu-inline-css" type="text/css">' . $css_styles . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		// Hamburger Icon
 		ob_start();
@@ -1397,7 +1397,7 @@ class Menu extends Base {
 		if ( empty( $menu_html ) ) {
 			return;
 		} else {
-			echo $menu_html;
+			echo wp_kses_post( $menu_html );
 		}
 	}
 }

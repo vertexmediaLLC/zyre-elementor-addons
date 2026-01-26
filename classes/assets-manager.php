@@ -187,7 +187,7 @@ class Assets_Manager {
 		// View PDF JS
 		wp_register_script(
 			'zyre-pdf-js',
-			'//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.1/pdfobject.min.js',
+			ZYRE_ADDONS_ASSETS . 'js/pdfobject.min.js',
 			[],
 			ZYRE_ADDONS_VERSION,
 			false

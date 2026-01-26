@@ -1083,7 +1083,7 @@ class Testimonial extends Base {
 
 		<?php if ( $settings['image']['url'] || $settings['image']['id'] ) : ?>
 			<figure class="zyre-testimonial-image">
-				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'image_thumb', 'image' ); ?>
+				<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings, 'image_thumb', 'image' ) ); ?>
 			</figure>
 		<?php endif; ?>
 
@@ -1098,15 +1098,20 @@ class Testimonial extends Base {
 				$rating_count = $settings['ratting']['size'];
 				$this->add_render_attribute( 'rating_wrapper', 'class', 'zyre-testimonial-rating-wrapper' );
 				$this->add_render_attribute( 'rating_wrapper', 'class', 'zyre-testimonial-rating-type-' . esc_attr( $settings['ratting_type'] ) );
+				$ratings = sprintf(
+					/* translators: %s is the rating count */
+					esc_attr__( 'Rated %s out of 5','zyre-elementor-addons' ),
+					$rating_count
+				);
 				?>
 				<div <?php $this->print_render_attribute_string( 'rating_wrapper' ); ?>>
-					<div class="zyre-testimonial-rating-stars zy-relative zy-inline-flex zy-align-center zy-overflow-hidden zy-lh-1" role="img" aria-label="<?php /* translators: %s is the rating count */ printf( esc_attr__( 'Rated %s out of 5', 'zyre-elementor-addons' ), $rating_count ); ?>">
+					<div class="zyre-testimonial-rating-stars zy-relative zy-inline-flex zy-align-center zy-overflow-hidden zy-lh-1" role="img" aria-label="<?php echo esc_attr( $ratings ); ?>">
 						<?php if ( 'number' === $settings['ratting_type'] ) : ?>
 							<span class="zyre-testimonial-rating-num"><?php echo esc_html( $rating_count ); ?></span>
 							<span class="zyre-testimonial-rating-icon"><i class="fas fa-star" aria-hidden="true"></i></span>
 						<?php else : ?>
 							<span class="zyre-testimonial-rating"><?php echo esc_html( '★★★★★' ); ?></span>
-							<span class="zyre-testimonial-rated zy-absolute zy-left-0 zy-top-0 zy-bottom-0 zy-index-1 zy-overflow-hidden" style="width:<?php echo ( ( $rating_count / 5 ) * 100 ); ?>%"><?php echo esc_html( '★★★★★' ); ?></span>
+							<span class="zyre-testimonial-rated zy-absolute zy-left-0 zy-top-0 zy-bottom-0 zy-index-1 zy-overflow-hidden" style="width:<?php echo esc_attr( ( $rating_count / 5 ) * 100 ); ?>%"><?php echo esc_html( '★★★★★' ); ?></span>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -1114,15 +1119,15 @@ class Testimonial extends Base {
 			endif; ?>
 			
 			<?php if ( ! empty( $settings['content'] ) && 'above' === $content_position ) : ?>
-				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo zyre_kses_advanced( $settings['content'] ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo wp_kses( $settings['content'], zyre_get_allowed_html( 'advanced' ) ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['author'] ) || ! empty( $settings['designation'] ) ) : ?>
 			<div class="zyre-testimonial-bio">
 				<?php if ( ! empty( $settings['author'] ) ) :
 					printf( '<%1$s %2$s>%3$s</%1$s>',
-						Utils::validate_html_tag( $settings['author_tag'] ),
-						$this->get_render_attribute_string( 'author' ),
+						Utils::validate_html_tag( $settings['author_tag'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						$this->get_render_attribute_string( 'author' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						wp_kses( $settings['author'], zyre_get_allowed_html() )
 					);
 				endif; ?>
@@ -1134,7 +1139,7 @@ class Testimonial extends Base {
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['content'] ) && 'below' === $content_position ) : ?>
-				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo zyre_kses_advanced( $settings['content'] ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo wp_kses( $settings['content'], zyre_get_allowed_html( 'advanced' ) ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $settings['logo']['url'] || $settings['logo']['id'] ) : ?>

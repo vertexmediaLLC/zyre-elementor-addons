@@ -528,7 +528,7 @@ class Site_Title extends Base {
 		$this->add_render_attribute( 'url', 'class', 'zyre-site-title-link zy-flex zy-color-black' );
 		?>
 		<a <?php $this->print_render_attribute_string( 'url' ); ?>>
-			<<?php echo zyre_escape_tags( $settings['site_title_tag'], 'h1' ); ?> class="zyre-site-title-heading zy-inline-flex zy-align-center zy-m-0 zy-lh-1.5">
+			<<?php echo zyre_escape_tags( $settings['site_title_tag'], 'h1' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-site-title-heading zy-inline-flex zy-align-center zy-m-0 zy-lh-1.5">
 				<?php if ( 'before' === $icon_position ) : ?>
 					<?php $this->render_icon( $settings, $icon_position ); ?>
 				<?php endif; ?>	
@@ -548,7 +548,7 @@ class Site_Title extends Base {
 				<?php if ( 'after' === $icon_position ) : ?>
 					<?php $this->render_icon( $settings, $icon_position ); ?>
 				<?php endif; ?>
-			</<?php echo zyre_escape_tags( $settings['site_title_tag'], 'h1' ); ?>>
+			</<?php echo zyre_escape_tags( $settings['site_title_tag'], 'h1' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		</a>
 		<?php
 	}
