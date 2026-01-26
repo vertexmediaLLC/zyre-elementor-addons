@@ -875,8 +875,8 @@ class Fun_Fact extends Base {
 							<?php if ( ! empty( $settings['ff_title_icon']['value'] ) ) : ?>
 								<span class="zyre-fun-fact-title-icon"><?php zyre_render_icon( $settings, 'icon', 'ff_title_icon' ); ?></span>
 							<?php endif; ?>
-							<<?php echo zyre_escape_tags( $settings['ff_title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-								<?php $this->print_render_attribute_string( 'ff_title' ); ?>><?php echo wp_kses( $settings['ff_title'], zyre_get_allowed_html() ); ?>
+							<<?php echo zyre_escape_tags( $settings['ff_title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php $this->print_render_attribute_string( 'ff_title' ); ?>>
+								<?php echo wp_kses( $settings['ff_title'], zyre_get_allowed_html() ); ?>
 							</<?php echo zyre_escape_tags( $settings['ff_title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						</div>
 					</div>
