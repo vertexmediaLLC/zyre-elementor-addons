@@ -184,9 +184,7 @@ class Image_Grid extends Base {
 				'name'      => 'image',
 				'default'   => 'medium_large',
 				'separator' => 'before',
-				'exclude'   => [
-					'custom',
-				],
+				'exclude'   => [ 'custom' ],
 			]
 		);
 

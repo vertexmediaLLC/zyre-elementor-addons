@@ -8,7 +8,7 @@ use Exception;
 class Select2_Handler {
 
 	protected static function validate_reqeust() {
-		$nonce = ! empty( $_REQUEST['nonce'] ) ? $_REQUEST['nonce'] : '';
+		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( $_POST['nonce'] ) : '';
 
 		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
 			throw new Exception( 'Invalid request' );

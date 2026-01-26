@@ -5,14 +5,14 @@ Stable tag: 1.0.0
 Author: VertexMedia
 Author URI: https://zyreaddons.com/
 Contributors: VertexMedia, ZyreAddons, ElemenatorIn
-Tags: elementor, elementor addons, elementor modules, header footer builder, elementor widget, theme builder
+Tags: elementor addons, elementor modules, header footer builder, elementor widget, theme builder
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-[Zyre Elementor Addons](https://zyreaddons.com/)-Build stunning websites faster with Header & Footer, Single Post/Page, Archive Page Builder, and 56+ premium-quality Elementor widgets.
+[Zyre Elementor Addons](https://zyreaddons.com/) – Build sites faster with Header/Footer, Single/Archive Page Builder & 56+ premium-quality Elementor widgets
 
 
 == Description ==

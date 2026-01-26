@@ -281,9 +281,7 @@ class Skill_Bar extends Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'box_shadow',
-				'exclude' => [
-					'box_shadow_position',
-				],
+				'exclude' => [ 'box_shadow_position' ],
 				'selector' => '{{WRAPPER}} .zyre-progress-bg',
 			]
 		);

@@ -339,7 +339,7 @@ function zyre_render_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id =
  * @param string $new_icon_id
  * @param array $attributes
  */
-function get_zyre_render_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
+function zyre_get_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
 	return zyre_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes );
 }
 

@@ -22,8 +22,8 @@ class PreStyles_Manager {
 			wp_send_json_error( __( 'Incomplete prestyle request', 'zyre-elementor-addons' ), 404 );
 		}
 
-		$widget_name = sanitize_text_field( substr( $_GET['widget'], 5 ) );
-		$widget_id = sanitize_text_field( $_GET['widgetID'] );
+		$widget_name = sanitize_text_field( substr( wp_unslash( $_GET['widget'] ), 5 ) );
+		$widget_id = sanitize_text_field( wp_unslash( $_GET['widgetID'] ) );
 		$post_id = intval( $_GET['post_id'] );
 		$is_pro = isset( $_GET['isPro'] ) ? filter_var( $_GET['isPro'], FILTER_VALIDATE_BOOLEAN ) : false;
 

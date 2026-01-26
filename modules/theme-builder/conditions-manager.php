@@ -394,8 +394,8 @@ class Conditions_Manager {
 	}
 
 	protected function validate_reqeust() {
-		$nonce = ! empty( $_REQUEST['nonce'] ) ? $_REQUEST['nonce'] : '';
-		$template_id = isset( $_REQUEST['template_id'] ) ? absint( $_REQUEST['template_id'] ) : null;
+		
+		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( $_POST['nonce'] ) : '';
 
 		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
 			throw new Exception( 'Invalid request' );
@@ -404,6 +404,8 @@ class Conditions_Manager {
 		if ( ! current_user_can( 'edit_posts' ) ) {
 			throw new Exception( 'Unauthorized request' );
 		}
+
+		$template_id = isset( $_REQUEST['template_id'] ) ? absint( $_REQUEST['template_id'] ) : null;
 
 		$post_status = get_post_status( $template_id );
 		$same_author = self::is_the_same_author( $template_id );

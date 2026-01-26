@@ -739,7 +739,7 @@ class Module {
 		if ( empty( $_GET['template_type'] ) ) {
 			$type = 'post';
 		} else {
-			$type = sanitize_text_field( $_GET['template_type'] );
+			$type = sanitize_text_field( wp_unslash( $_GET['template_type'] ) );
 		}
 
 		$post_data = isset( $_GET['post_data'] ) ? zyre_sanitize_array_recursively( $_GET['post_data'] ) : [];

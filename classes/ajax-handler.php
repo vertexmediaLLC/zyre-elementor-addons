@@ -17,7 +17,7 @@ class Ajax_Handler {
 			return;
 		}
 
-		parse_str( isset( $_POST['subscriber_info'] ) ? $_POST['subscriber_info'] : '', $subscriber );
+		parse_str( isset( $_POST['subscriber_info'] ) ? wp_unslash( $_POST['subscriber_info'] ) : '', $subscriber );
 		$subscriber = zyre_sanitize_array_recursively( $subscriber );
 
 		if ( ! class_exists( 'ZyreAddons\Elementor\Widget\Mailchimp\Mailchimp_Api' ) ) {

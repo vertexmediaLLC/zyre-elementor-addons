@@ -19,7 +19,7 @@ class Dashboard {
 	protected static $menu_slug = '';
 
 	public static function is_page() {
-		return ( isset( $_GET['page'] ) && ( sanitize_text_field( $_GET['page'] ) === self::PAGE_SLUG ) );
+		return ( isset( $_GET['page'] ) && ( wp_unslash( $_GET['page'] ) === self::PAGE_SLUG ) );
 	}
 
 	public static function add_body_class( $classes ) {

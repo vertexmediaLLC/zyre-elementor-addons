@@ -356,7 +356,7 @@ abstract class Base extends Widget_Base {
 							'name'           => $control_name,
 							'label'          => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Background', 'zyre-elementor-addons' ),
 							'types'          => ! empty( $values['types'] ) && is_array( $values['types'] ) ? $values['types'] : ['classic', 'gradient'],
-							'exclude'        => isset( $values['exclude'] ) && is_array( $values['exclude'] ) ? $values['exclude'] : ['image'],
+							'exclude'        => isset( $values['exclude'] ) && is_array( $values['exclude'] ) ? $values['exclude'] : [ 'image' ],
 							'fields_options' => ! empty( $values['fields_options'] ) && is_array( $values['fields_options'] ) ? $values['fields_options'] : [],
 							'selector'       => ! empty( $values['selector'] ) ? $values['selector'] : $selector,
 							'condition'      => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,

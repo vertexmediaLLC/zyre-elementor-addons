@@ -329,9 +329,7 @@ trait List_Item_Advanced_Trait {
 					'name'      => 'thumbnail',
 					'default'   => 'medium',
 					'separator' => 'before',
-					'exclude'   => [
-						'custom',
-					],
+					'exclude'   => [ 'custom' ],
 				]
 			);
 		}

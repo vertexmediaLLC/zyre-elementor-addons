@@ -178,7 +178,7 @@ class Logo_Grid extends Base {
 				'name'      => 'thumbnail',
 				'default'   => 'full',
 				'separator' => 'before',
-				'exclude'   => ['custom'],
+				'exclude'   => [ 'custom' ],
 			]
 		);
 
