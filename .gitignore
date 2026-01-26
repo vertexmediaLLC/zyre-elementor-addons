@@ -1,9 +1,11 @@
-# Allow tracking the .gitignore file
-# !.gitignore
-
 # Ignore git-related files
 .git
-# .gitignore
+
+# Master branch only: ignore the files below
+.gitignore
+composer.json
+gulpfile.js
+package.json
 
 # Ignore Node and Composer dependencies
 node_modules/
