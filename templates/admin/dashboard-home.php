@@ -328,7 +328,7 @@ $credential_data = zyre_get_credentials();
 									</span>
 								</a>
 							</div>
-							<div class="zyre-sidebar-content">
+							<div class="zyre-sidebar-content" style="display: none;"> <!-- ToDo: show when support center is available -->
 								<div class="zyre-sidebar-header">
 									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyre_get_svg_icon( 'support-center' ), zyre_get_allowed_html() ); ?></div>
 									<h2 class="zyre-sidebar-header-heading"><?php esc_html_e( 'Support Center', 'zyre-elementor-addons' ); ?></h2>
@@ -346,7 +346,7 @@ $credential_data = zyre_get_credentials();
 									<h2 class="zyre-sidebar-header-heading"><?php esc_html_e( 'Ask a Question', 'zyre-elementor-addons' ); ?></h2>
 								</div>
 								<p class="zyre-sidebar-description"><?php esc_html_e( 'Need further help? Submit a support request for quick assistance.', 'zyre-elementor-addons' ); ?></p>
-								<a href="#" target="_blank" class="zyre-button-header zyre-browse-button">
+								<a href="<?php echo esc_url( 'https://zyreaddons.com/contact/' ); ?>" target="_blank" class="zyre-button-header zyre-browse-button">
 									<span class="zyre-button-inner">
 										<span class="zyre-button-text"><?php esc_html_e( 'Submit a Question', 'zyre-elementor-addons' ); ?></span>
 									</span>

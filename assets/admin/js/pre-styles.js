@@ -20,7 +20,7 @@
 
         onRender: function () {
             this.constructor.__super__.onRender.apply(this, arguments);
-            // this.addSyncButton(); ToDo: not working now, fix it later
+            this.addSyncButton();
             this.addClearButton();
         },
 
@@ -29,22 +29,25 @@
 		},
 
 		addSyncButton: function () {
-            var self = this;
+            var self = this,
+				$preStyleTitle = this.ui.select.closest('.elementor-control-field').find('.elementor-control-title');
 
-            this.ui.select.closest('.elementor-control-field').find('.elementor-control-title').prepend(
-                '<span class="zyre-sync-button" title="Sync the current prestyle.">' +
-                '<i class="eicon-sync" aria-hidden="true"></i>' +
-                '</span>'
-            );
+            $preStyleTitle.attr('title', zyrePreStyles.syncTitleText).prepend( '<span class="zyre-sync-button">' + '<i class="eicon-sync" aria-hidden="true" style="font-size: 1.15em;"></i>' + '</span>' );
 
-            this.$el.find(".zyre-sync-button").on("click", function () {
+            $preStyleTitle.on("click", function () {
                 self.onSyncClick();
             });
         },
 
 		onSyncClick: function () {
-			// ToDo: fix it later
-			this.fetchStyles(true);
+			var syncConfirmed = window.confirm(zyrePreStyles.syncStyleAlert);
+			if (syncConfirmed) {
+				// clear cache for current widget
+				delete window.zyrePreStylesCached[this.getWidgetID()];
+
+				// applyInitial=true, isReset=true
+				this.fetchStyles(true, true);
+			}
         },
 
         addClearButton: function () {
