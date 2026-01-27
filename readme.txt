@@ -41,23 +41,24 @@ Zyre Elementor Addons also provides **57+ free widgets**, **ready-made page temp
 
 Below is the complete list of widgets included in the free version.
 
-* **[Heading](#)**: Add headings including suffix, subtitle, & description.
+* **[Heading](https://zyreaddons.com/demos/heading/)**: Add headings including suffix, subtitle, & description.
 * **[Advanced Heading](https://zyreaddons.com/demos/advanced-heading/)**: Add gradient-styled headings including prefix & suffix.
-* **[Gradient Heading](#)**: Add gradient-styled headings & sub-headings including prefix & suffix.
-* **[Dual Color Heading](#)**: Add dual-colored headings including prefix & suffix.
+* **[Gradient Heading](https://zyreaddons.com/demos/gradient-heading/)**: Add gradient-styled headings & sub-headings including prefix & suffix.
+* **[Dual Color Heading](https://zyreaddons.com/demos/dual-color-heading/)**: Add dual-colored headings including prefix & suffix.
 * **[Image Heading](#)**: Add image-filled headings including sub-headings & suffix.
-* **[Button](#)**: Create interactive buttons with onClick functionality.
-* **[Dual Button](#)**: Create interactive dual buttons with connectors & onClick functionality.
+* **[Button](https://zyreaddons.com/demos/button/)**: Create interactive buttons with onClick functionality.
+* **[Dual Button](https://zyreaddons.com/demos/dual-button/)**: Create interactive dual buttons with connectors & onClick functionality.
 * **[Info box](#)**: Show info with icons/images, titles, descriptions, icon list, & CTA buttons.
-* **[Icon Box](#)**: Show info with icons, titles, subtitles, descriptions, & CTA buttons.
-* **[Flip Box](#)**: Display front and back sides with smooth flip animations, featuring custom content or pre-saved templates.
-* **[Call to Action](#)**: Encourage user engagement with images, icons, titles (with suffix), subtitles, descriptions, CTA buttons (with connectors), & ribbons.
-* **[Featured Banner](#)**: Show info with banner images, icons, titles (with prefix & suffix), subtitles, descriptions, CTA buttons (with connectors).
-* **[Feature List](#)**: Display a list of features, including icons/images, titles, descriptions, & links.
+* **[Icon Box](https://zyreaddons.com/demos/icon-box/)**: Show info with icons, titles, subtitles, descriptions, & CTA buttons.
+* **[Flip Box](https://zyreaddons.com/demos/flip-box/)**: Display front and back sides with smooth flip animations, featuring custom content or pre-saved templates.
+* **[Call to Action](https://zyreaddons.com/demos/call-to-action/)**: Encourage user engagement with images, icons, titles (with suffix), subtitles, descriptions, CTA buttons (with connectors), & ribbons.
+* **[Featured Banner](https://zyreaddons.com/demos/featured-banner/)**: Show info with banner images, icons, titles (with prefix & suffix), subtitles, descriptions, CTA buttons (with connectors).
+* **[Feature List](https://zyreaddons.com/demos/feature-list/)**: Display a list of features, including icons/images, titles, descriptions, & links.
 * **[Numeric List](#)**: Display a numbered or icon-based list of items, including titles, descriptions, & links.
 * **[Image List](#)**: Display an image/icon based list of items, including titles, descriptions, & links.
+* **[Image Grid](https://zyreaddons.com/demos/image-grid/)**: Display an image/icon based list of items, including titles, descriptions, & links.
 * **[List Group](#)**: Display a numbered, icon, or image-based list of items, including titles, descriptions, & links.
-* **[Image Carousel](#)**: Create a carousel of selected images with optional titles, subtitles, & links.
+* **[Image Carousel](https://zyreaddons.com/demos/image-carousel/)**: Create a carousel of selected images with optional titles, subtitles, & links.
 * **[Team Member](#)**: Showcase team members with photo, name, job title, bio, social links, & an optional CTA button or Lightbox modal.
 * **[Testimonial](#)**: Showcase customer reviews with images, icons, star/number ratings, names, designations, review text, & logos.
 * **[Post Grid](#)**: Display posts using custom queries, including thumbnails, post meta, Read More button, & pagination.
@@ -66,19 +67,19 @@ Below is the complete list of widgets included in the free version.
 * **[Social Icons](#)**: Showcase your social profiles with customizable styles, icons, & links.
 * **[Social Share](#)**: Display social share buttons with customizable styles & links.
 * **[Advanced Accordion](https://zyreaddons.com/demos/advance-accordion/)**: Create collapsible accordions with custom content or pre-saved templates.
-* **[Advance Toggle](#)**: Create collapsible toggle sections with custom content or pre-saved templates.
-* **[Fun Fact](#)**: Display animated counters with icons/images & titles.
-* **[Alert](#)**: Display a colored, dismissible alert box to grab visitors’ attention.
+* **[Advanced Toggle](https://zyreaddons.com/demos/advance-toggle/)**: Create collapsible toggle sections with custom content or pre-saved templates.
+* **[Fun Fact](https://zyreaddons.com/demos/fun-fact/)**: Display animated counters with icons/images & titles.
+* **[Alert](https://zyreaddons.com/demos/alert/)**: Display a colored, dismissible alert box to grab visitors’ attention.
 * **[Skill Bars](#)**: Display animated progress bars with customizable colors.
-* **[Countdown](#)**: Add countdown timers for events, promotions or product launches.
-* **[Business Hour](#)**: Display your business or office hours with customizable styles.
-* **[Drop Cap](#)**: Add text with a stylish drop cap.
-* **[Animated Text](#)**: Create animated or fancy headings with multiple effects.
+* **[Countdown](https://zyreaddons.com/demos/countdown/)**: Add countdown timers for events, promotions or product launches.
+* **[Business Hour](https://zyreaddons.com/demos/business-hour/)**: Display your business or office hours with customizable styles.
+* **[Drop Cap](https://zyreaddons.com/demos/drop-cap/)**: Add text with a stylish drop cap.
+* **[Animated Text](https://zyreaddons.com/demos/animated-text/)**: Create animated or fancy headings with multiple effects.
 * **[News Ticker](#)**: Display posts in a scrolling ticker, like on news websites.
-* **[Divider](#)**: Separate content with styled dividers, including text or icons.
+* **[Divider](https://zyreaddons.com/demos/divider/)**: Separate content with styled dividers, including text or icons.
 * **[Toggle](#)**: Switch between content blocks for comparisons or pricing plans, with custom content or pre-saved templates.
 * **[Subscription Form](#)**: Create Mailchimp subscription forms with customizable fields.
-* **[Contact Form 7](#)**: Style Contact Form 7 forms with custom design.
+* **[Contact Form 7](https://zyreaddons.com/demos/contact-form-7/)**: Style Contact Form 7 forms with custom design.
 * **[Site Title](#)**: Display the site’s title with before/after text & icons.
 * **[Site Tagline](#)**: Display the site’s tagline with before/after text & icons.
 * **[Site Logo](#)**: Display the site’s logo or show a custom image instead.
@@ -91,10 +92,10 @@ Below is the complete list of widgets included in the free version.
 * **[Post Meta](#)**: Display post info like author, date, categories, & more.
 * **[Post Navigation](#)**: Add links to navigate between previous & next posts or pages.
 * **[Post Comments](#)**: Display post or page comments with customizable fields.
-* **[Archive Title](#)**: Display the title of archive pages with before/after text & icons.
-* **[Archive Description](#)**: Display the description of archive pages.
-* **[Archive Posts](#)**: Display posts on archive pages with advanced styling, & customization options.
-* **[Author Box](#)**: Display author information including avatar, name, posts link, & bio.
+* **[Archive Title](https://zyreaddons.com/demos/archive-title/)**: Display the title of archive pages with before/after text & icons.
+* **[Archive Description](https://zyreaddons.com/demos/archive-description/)**: Display the description of archive pages.
+* **[Archive Posts](https://zyreaddons.com/demos/archive-post/)**: Display posts on archive pages with advanced styling, & customization options.
+* **[Author Box](https://zyreaddons.com/demos/author-box/)**: Display author information including avatar, name, posts link, & bio.
 * **[PDF View](#)**: View PDF files with download button.
 * **[Lottie Animation](#)**: Add Lottie animations to boost visual appeal & interactivity.
 * More coming...
