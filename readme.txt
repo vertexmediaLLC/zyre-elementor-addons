@@ -1,18 +1,14 @@
 === Zyre Elementor Addons ===
-Plugin Name: Zyre Elementor Addons
-Version: 1.0.0
-Stable tag: 1.0.0
-Author: VertexMedia
-Author URI: https://zyreaddons.com/
-Contributors: VertexMedia, ZyreAddons, ElemenatorIn
-Tags: elementor addons, elementor modules, header footer builder, elementor widget, theme builder
+Contributors: vertexmedia, zyreaddons, elementorin
+Tags: elementor, elementor addons, elementor templates, elementor widget, theme builder
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-License: GPLv2
+Stable tag: 1.0.0
+License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-[Zyre Elementor Addons](https://zyreaddons.com/) – Build sites faster with Header/Footer, Single/Archive Page Builder & 57+ free widgets
+Lightweight Elementor addon with Theme Builder, Header & Footer Builder, and 57+ free widgets.
 
 == Description ==
 
@@ -41,135 +37,132 @@ Zyre Elementor Addons also provides **57+ free widgets**, **ready-made page temp
 
 Below is the complete list of widgets included in the free version.
 
-* **[Heading](https://zyreaddons.com/demos/heading/)**: Add headings including suffix, subtitle, & description.
-* **[Advanced Heading](https://zyreaddons.com/demos/advanced-heading/)**: Add gradient-styled headings including prefix & suffix.
-* **[Gradient Heading](https://zyreaddons.com/demos/gradient-heading/)**: Add gradient-styled headings & sub-headings including prefix & suffix.
-* **[Dual Color Heading](https://zyreaddons.com/demos/dual-color-heading/)**: Add dual-colored headings including prefix & suffix.
-* **[Image Heading](#)**: Add image-filled headings including sub-headings & suffix.
-* **[Button](https://zyreaddons.com/demos/button/)**: Create interactive buttons with onClick functionality.
-* **[Dual Button](https://zyreaddons.com/demos/dual-button/)**: Create interactive dual buttons with connectors & onClick functionality.
-* **[Info box](#)**: Show info with icons/images, titles, descriptions, icon list, & CTA buttons.
-* **[Icon Box](https://zyreaddons.com/demos/icon-box/)**: Show info with icons, titles, subtitles, descriptions, & CTA buttons.
-* **[Flip Box](https://zyreaddons.com/demos/flip-box/)**: Display front and back sides with smooth flip animations, featuring custom content or pre-saved templates.
-* **[Call to Action](https://zyreaddons.com/demos/call-to-action/)**: Encourage user engagement with images, icons, titles (with suffix), subtitles, descriptions, CTA buttons (with connectors), & ribbons.
-* **[Featured Banner](https://zyreaddons.com/demos/featured-banner/)**: Show info with banner images, icons, titles (with prefix & suffix), subtitles, descriptions, CTA buttons (with connectors).
-* **[Feature List](https://zyreaddons.com/demos/feature-list/)**: Display a list of features, including icons/images, titles, descriptions, & links.
-* **[Numeric List](#)**: Display a numbered or icon-based list of items, including titles, descriptions, & links.
-* **[Image List](#)**: Display an image/icon based list of items, including titles, descriptions, & links.
-* **[Image Grid](https://zyreaddons.com/demos/image-grid/)**: Display an image/icon based list of items, including titles, descriptions, & links.
-* **[List Group](#)**: Display a numbered, icon, or image-based list of items, including titles, descriptions, & links.
-* **[Image Carousel](https://zyreaddons.com/demos/image-carousel/)**: Create a carousel of selected images with optional titles, subtitles, & links.
-* **[Team Member](#)**: Showcase team members with photo, name, job title, bio, social links, & an optional CTA button or Lightbox modal.
-* **[Testimonial](#)**: Showcase customer reviews with images, icons, star/number ratings, names, designations, review text, & logos.
-* **[Post Grid](#)**: Display posts using custom queries, including thumbnails, post meta, Read More button, & pagination.
-* **[Logo Grid](#)**: Display logos or images in a grid layout, including names & links.
-* **[Logo Carousel](#)**: Showcase logos or images in a rotating carousel with optional clickable links.
-* **[Social Icons](#)**: Showcase your social profiles with customizable styles, icons, & links.
-* **[Social Share](#)**: Display social share buttons with customizable styles & links.
-* **[Advanced Accordion](https://zyreaddons.com/demos/advance-accordion/)**: Create collapsible accordions with custom content or pre-saved templates.
-* **[Advanced Toggle](https://zyreaddons.com/demos/advance-toggle/)**: Create collapsible toggle sections with custom content or pre-saved templates.
-* **[Fun Fact](https://zyreaddons.com/demos/fun-fact/)**: Display animated counters with icons/images & titles.
-* **[Alert](https://zyreaddons.com/demos/alert/)**: Display a colored, dismissible alert box to grab visitors’ attention.
-* **[Skill Bars](#)**: Display animated progress bars with customizable colors.
-* **[Countdown](https://zyreaddons.com/demos/countdown/)**: Add countdown timers for events, promotions or product launches.
-* **[Business Hour](https://zyreaddons.com/demos/business-hour/)**: Display your business or office hours with customizable styles.
-* **[Drop Cap](https://zyreaddons.com/demos/drop-cap/)**: Add text with a stylish drop cap.
-* **[Animated Text](https://zyreaddons.com/demos/animated-text/)**: Create animated or fancy headings with multiple effects.
-* **[News Ticker](#)**: Display posts in a scrolling ticker, like on news websites.
-* **[Divider](https://zyreaddons.com/demos/divider/)**: Separate content with styled dividers, including text or icons.
-* **[Toggle](#)**: Switch between content blocks for comparisons or pricing plans, with custom content or pre-saved templates.
-* **[Subscription Form](#)**: Create Mailchimp subscription forms with customizable fields.
-* **[Contact Form 7](https://zyreaddons.com/demos/contact-form-7/)**: Style Contact Form 7 forms with custom design.
-* **[Site Title](#)**: Display the site’s title with before/after text & icons.
-* **[Site Tagline](#)**: Display the site’s tagline with before/after text & icons.
-* **[Site Logo](#)**: Display the site’s logo or show a custom image instead.
-* **[Navigation Menu](#)**: Display your WordPress menus with advanced customization for dropdowns, hamburger styles, & responsive mobile navigation.
-* **[Post Title](#)**: Display the post title with before & after text.
-* **[Page Title](#)**: Display the page title with before & after text.
-* **[Post Excerpt](#)**: Display the post excerpt with a “Read More” button with icon.
-* **[Post Content](#)**: Display post or page content with advanced customization options.
-* **[Post Thumbnail](#)**: Display the post or page featured image, or replace it with a custom image.
-* **[Post Meta](#)**: Display post info like author, date, categories, & more.
-* **[Post Navigation](#)**: Add links to navigate between previous & next posts or pages.
-* **[Post Comments](#)**: Display post or page comments with customizable fields.
-* **[Archive Title](https://zyreaddons.com/demos/archive-title/)**: Display the title of archive pages with before/after text & icons.
-* **[Archive Description](https://zyreaddons.com/demos/archive-description/)**: Display the description of archive pages.
-* **[Archive Posts](https://zyreaddons.com/demos/archive-post/)**: Display posts on archive pages with advanced styling, & customization options.
-* **[Author Box](https://zyreaddons.com/demos/author-box/)**: Display author information including avatar, name, posts link, & bio.
-* **[PDF View](#)**: View PDF files with download button.
-* **[Lottie Animation](#)**: Add Lottie animations to boost visual appeal & interactivity.
+* **[Heading](https://zyreaddons.com/demos/heading/)**: Headings with subtitle, suffix, and description.
+* **[Advanced Heading](https://zyreaddons.com/demos/advanced-heading/)**: Gradient-style headings with prefix and suffix.
+* **[Gradient Heading](https://zyreaddons.com/demos/gradient-heading/)**: Gradient text headings and subheadings.
+* **[Dual Color Heading](https://zyreaddons.com/demos/dual-color-heading/)**: Headings with dual-color text styles.
+* **[Image Heading](https://zyreaddons.com/demos/image-heading/)**: Image-filled text headings with advanced styling.
+* **[Button](https://zyreaddons.com/demos/button/)**: Customizable buttons with onClick actions.
+* **[Dual Button](https://zyreaddons.com/demos/dual-button/)**: Two-button layouts with connectors and onClick functionality.
+* **[Info box](https://zyreaddons.com/demos/info-box/)**: Icon or image boxes with title, description, lists, and CTA.
+* **[Icon Box](https://zyreaddons.com/demos/icon-box/)**: Feature boxes with icons, text, and call-to-action buttons.
+* **[Flip Box](https://zyreaddons.com/demos/flip-box/)**: Front and back content with smooth flip animations.
+* **[Call to Action](https://zyreaddons.com/demos/call-to-action/)**: CTA blocks with icons, ribbons, and connectors.
+* **[Featured Banner](https://zyreaddons.com/demos/featured-banner/)**: Promotional banners with rich content options.
+* **[Feature List](https://zyreaddons.com/demos/feature-list/)**: Icon or image-based feature lists.
+* **[Numeric List](https://zyreaddons.com/demos/numeric-list/)**: Numbered or icon-based content lists.
+* **[Image List](https://zyreaddons.com/demos/image-list/)**: Lists using images or icons with links.
+* **[List Group](https://zyreaddons.com/demos/list-group/)**: Flexible list layouts with icons or images.
+* **[Image Carousel](https://zyreaddons.com/demos/image-carousel/)**: Responsive image sliders with captions.
+* **[Team Member](https://zyreaddons.com/demos/team-member/)**: Team profiles with social links and optional modal.
+* **[Testimonial](https://zyreaddons.com/demos/testimonial/)**: Customer reviews with ratings and logos.
+* **[Post Grid](https://zyreaddons.com/demos/post-grid/)**: Display posts with custom queries and pagination.
+* **[Logo Grid](https://zyreaddons.com/demos/logo-grid/)**: Grid layout for brand or client logos.
+* **[Image Grid](https://zyreaddons.com/demos/image-grid/)**: Display images with filters & grid layout.
+* **[Logo Carousel](https://zyreaddons.com/demos/logo-carousel/)**: Animated logo sliders.
+* **[Social Icons](https://zyreaddons.com/demos/social-icons/)**: Social profile icons with styling options.
+* **[Social Share](https://zyreaddons.com/demos/social-share/)**: Social media sharing buttons.
+* **[Advanced Accordion](https://zyreaddons.com/demos/advance-accordion/)**: Collapsible accordion content sections.
+* **[Advanced Toggle](https://zyreaddons.com/demos/advance-toggle/)**: Toggle layouts with template support.
+* **[Fun Fact](https://zyreaddons.com/demos/fun-fact/)**: Animated counters with icons or images.
+* **[Alert](https://zyreaddons.com/demos/alert/)**: Dismissible alert notifications.
+* **[Skill Bars](https://zyreaddons.com/demos/skill-bars/)**: Animated progress indicators.
+* **[Countdown](https://zyreaddons.com/demos/countdown/)**: Event and promotion countdown timers.
+* **[Business Hour](https://zyreaddons.com/demos/business-hour/)**: Office or business hours display.
+* **[Drop Cap](https://zyreaddons.com/demos/drop-cap/)**: Stylized first-letter typography.
+* **[Animated Text](https://zyreaddons.com/demos/animated-text/)**: Animated headlines and text effects.
+* **[News Ticker](https://zyreaddons.com/demos/news-ticker/)**: Scrolling news-style content.
+* **[Divider](https://zyreaddons.com/demos/divider/)**: Decorative dividers with icons or text.
+* **[Toggle](https://zyreaddons.com/demos/toggle/)**: Content switcher for comparisons or pricing.
+* **[Subscription Form](https://zyreaddons.com/demos/subscription-form/)**: Mailchimp email subscription forms.
+* **[Contact Form 7](https://zyreaddons.com/demos/contact-form-7/)**: Style Contact Form 7 forms visually.
+* **[Site Title](https://zyreaddons.com/demos/site-title/)**: Dynamic site title widget.
+* **[Site Tagline](https://zyreaddons.com/demos/site-tagline/)**: Display site tagline with styling.
+* **[Site Logo](https://zyreaddons.com/demos/site-logo/)**: Show logo or custom image.
+* **[Navigation Menu](https://zyreaddons.com/demos/menu/)**: Advanced responsive menu builder.
+* **[Post Title](https://zyreaddons.com/demos/post-title/)**: Display post titles dynamically.
+* **[Page Title](https://zyreaddons.com/demos/page-title/)**: Display page titles dynamically.
+* **[Post Excerpt](https://zyreaddons.com/demos/post-excerpt/)**: Excerpt with read-more option.
+* **[Post Content](https://zyreaddons.com/demos/post-content/)**: Full post or page content display.
+* **[Post Thumbnail](https://zyreaddons.com/demos/post-thumbnail/)**: Featured image display options.
+* **[Post Meta](https://zyreaddons.com/demos/post-meta/)**: Author, date, categories, and more.
+* **[Post Navigation](https://zyreaddons.com/demos/post-navigation/)**: Previous and next post links.
+* **[Post Comments](https://zyreaddons.com/demos/post-comments/)**: Styled comment sections.
+* **[Archive Title](https://zyreaddons.com/demos/archive-title/)**: Archive page title display.
+* **[Archive Description](https://zyreaddons.com/demos/archive-description/)**: Archive description output.
+* **[Archive Posts](https://zyreaddons.com/demos/archive-post/)**: Archive post listings.
+* **[Author Box](https://zyreaddons.com/demos/author-box/)**: Author bio and details.
+* **[PDF View](https://zyreaddons.com/demos/pdf-view/)**: Embed PDF files with download option.
+* **[Lottie Animation](https://zyreaddons.com/demos/lottie-animations/)**: Lightweight Lottie animations.
 * More coming...
 
+## Theme Builder
 
-## Available Widgets in ZyreAddons Pro Version
+Zyre Elementor Addons includes a free Theme Builder that allows you to visually create:
 
+* Headers
+* Footers
+* Single Posts & Pages
+* Archive Pages
 
-**ZyreAddons Pro is currently under development and will be released soon.**
+All layouts are built directly inside Elementor with live preview support.
 
+## Performance & Usability
 
-## Zyre Addons Features/Extenions/Modules
+* Enable or disable widgets as needed
+* Disable unused pre-styles for faster loading
+* Clean and intuitive UI
+* Works with all Elementor-compatible themes
+* Optimized for speed and stability
 
-* **Theme Builder**: Build headers, footers, single post/page templates, and archive pages. More features available in the Pro version.
+## Pro Version
 
+ZyreAddons Pro is currently under development and will include advanced widgets, extended Theme Builder features, and premium templates.
 
 ### Privacy-Policy
 
+Zyre Elementor Addons may collect limited, non-sensitive telemetry data only with user consent.
 
-**Zyre Addons** may collect limited telemetry data, but only with the user’s consent. [Read our full Privacy Policy](https://zyreaddons.com/privacy-policy/).
+Privacy Policy: https://zyreaddons.com/privacy-policy/
 
 
 == Frequently Asked Questions ==
 
+= Does this plugin require Elementor? =
+Yes. Elementor must be installed and activated.
 
-= Can I use Zyre Addons without Elementor? =
-Unfortunately, **[Zyre Addons](https://zyreaddons.com/)** requires Elementor to work and cannot be used independently.
+= Is it compatible with Elementor Pro? =
+Yes. Fully compatible.
 
+= Will it work with my theme? =
+Yes. Works with all Elementor-compatible WordPress themes.
+
+= Is it safe to update? =
+Yes. Updates are designed to be safe. We recommend backups as a best practice.
 
 = Does it work with other Elementor Addons? =
 Yes! **Zyre Addons** is fully compatible with other Elementor Addons and also adds extra features to enhance your overall experience.
 
 
-= Does it work with any WordPress theme? =
-Yes! it works with any WordPress theme compatible with Elementor, and it performs best with [Hello Elementor](https://wordpress.org/themes/hello-elementor/).
-
-
-= Does it work with Elementor Pro? =
-Yes! it is fully compatible with Elementor Pro and works seamlessly with its features.
-
-
-= Will Zyre Addons break my site after an update? =
-No! **Zyre Addons** is designed to be safe and won’t break your site or pages. However, we always recommend taking a backup before updating the plugin. If anything goes wrong, you can restore your backup and contact our support team immediately.
-
-
 == Installation ==
 
-
-**Step 1:** Upload and install the plugin via your WordPress dashboard by going to **Plugins ➔ Add New ➔ Upload Plugin**, then choose the Zyre Addons plugin file.
-Alternatively, you can search for **Zyre Addons** in the plugin directory under **Plugins ➔ Add New** and install it directly.
-
-
-**Step 2:** After installation, click **Activate** to enable Zyre Addons for Elementor.
-
-
-**Step 3:** Once activated, you will be redirected to the **ZyreAddons Dashboard** tab.
-
-
-For a more detailed guide, see our documentation:
-
+1. Go to **Plugins → Add New**.
+2. Search for **Zyre Elementor Addons** or Click **Upload Plugin** and upload the plugin file.
+3. Install and activate the plugin.
+4. Start using widgets inside Elementor.
 
 ☞ [**How to Install Zyre Elementor Addons**](#)
 
 
 == Screenshots ==
 
-
 1. screenshot 1
+
 
 == Changelog ==
 
-= 1.0.0 - 01 November 2025 =
+= 1.0.0 - 29 January 2026 =
 
-- Initial release with 56 free widgets.
-
+- Initial release with 57 free Elementor widgets.
 
 [See changelog for all versions.](https://raw.githubusercontent.com/vertexmediaLLC/zyre-elementor-addons/master/changelog.txt)
