@@ -261,33 +261,33 @@ $credential_data = zyre_get_credentials();
 						<div class="zyre-content-main zyre-home-content-left">
 							<h2><?php esc_html_e( 'Video Tutorials', 'zyre-elementor-addons' ); ?></h2>
 							<div class="zyre-video-wrapper">
-								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=9jmOg0i5Jwo">
+								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=im5FkD2gvUQ">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/thumbnail-placeholder.png' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/manage-widgets-styles.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
-									<h3 class="zyre-video-title"><?php esc_html_e( 'Transform Your Presentations Today!', 'zyre-elementor-addons' ); ?></h3>
+									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Manage Widgets and Styles', 'zyre-elementor-addons' ); ?></h3>
 								</a>
-								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=9jmOg0i5Jwo">
+								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=aPPgxrB-8Bw">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/thumbnail-placeholder.png' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/design-from-scratch.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
-									<h3 class="zyre-video-title"><?php esc_html_e( 'Master Unlimited Elements in Elementor', 'zyre-elementor-addons' ); ?></h3>
+									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Design From Scratch', 'zyre-elementor-addons' ); ?></h3>
 								</a>
-								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=9jmOg0i5Jwo">
+								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=cPH6I2ancMI">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/thumbnail-placeholder.png' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/import-templates.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
-									<h3 class="zyre-video-title"><?php esc_html_e( 'Boost Your Website\'s Performance', 'zyre-elementor-addons' ); ?></h3>
+									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Import Templates', 'zyre-elementor-addons' ); ?></h3>
 								</a>
-								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=9jmOg0i5Jwo">
+								<a class="zyre-video-item" href="https://www.youtube.com/watch?v=KhoMkFSeGE4">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/thumbnail-placeholder.png' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/build-header-template.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
-									<h3 class="zyre-video-title"><?php esc_html_e( 'Transform Your Presentations Today!', 'zyre-elementor-addons' ); ?></h3>
+									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Design Header Template', 'zyre-elementor-addons' ); ?></h3>
 								</a>
 							</div>
 			

@@ -667,8 +667,12 @@ a.zyre-button-pro:focus {
 .zyre-video {
 	position: relative;
 	overflow: hidden;
-	transition: transform 0.3s;
 	border-radius: 6px;
+}
+
+.zyre-video img {
+	opacity: 0.65;
+	transition: all 0.3s;
 }
 
 .zyre-video:hover img {
@@ -677,6 +681,7 @@ a.zyre-button-pro:focus {
 	-moz-transform: scale(1.04);
 	-ms-transform: scale(1.04);
 	-o-transform: scale(1.04);
+	opacity: 1;
 }
 
 .zyre-video-bg {

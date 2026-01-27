@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-27T10:58:26+00:00\n"
+"POT-Creation-Date: 2026-01-27T11:20:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -3052,16 +3052,19 @@ msgid "Video Tutorials"
 msgstr ""
 
 #: templates/admin/dashboard-home.php:269
-#: templates/admin/dashboard-home.php:290
-msgid "Transform Your Presentations Today!"
+msgid "How to Manage Widgets and Styles"
 msgstr ""
 
 #: templates/admin/dashboard-home.php:276
-msgid "Master Unlimited Elements in Elementor"
+msgid "How to Design From Scratch"
 msgstr ""
 
 #: templates/admin/dashboard-home.php:283
-msgid "Boost Your Website's Performance"
+msgid "How to Import Templates"
+msgstr ""
+
+#: templates/admin/dashboard-home.php:290
+msgid "How to Design Header Template"
 msgstr ""
 
 #: templates/admin/dashboard-home.php:296
