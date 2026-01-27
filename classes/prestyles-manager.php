@@ -38,11 +38,15 @@ class PreStyles_Manager {
 		$elementor_data = self::get_elementor_data( $post_id, $widget_id );
 		if ( $elementor_data ) {
 			$prestyles = json_decode( $styles, true );
-			$merged_styles = $is_reset
-			? array_merge( $elementor_data, $prestyles ) // Reset: elementor_data takes precedence
-			: array_merge( $prestyles, $elementor_data ); // Default: prestyles take precedence
 
-			$styles = wp_json_encode( $merged_styles );
+			if ( $is_reset ) {
+				// SYNC mode → return pure JSON, no merge
+				$styles = wp_json_encode( $prestyles );
+			} else {
+				// normal load → keep merge behavior
+				$merged_styles = array_merge( $prestyles, $elementor_data );
+				$styles = wp_json_encode( $merged_styles );
+			}
 		}
 
 		// Got the widget prestyle
@@ -123,7 +127,9 @@ class PreStyles_Manager {
 			[
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 				'security'  => wp_create_nonce( self::NONCE ),
-				'resetStyleAlert'  => __( "This will remove the current preset permanently.\nAre you sure you want to proceed?", 'zyre-elementor-addons' ),
+				'resetStyleAlert'  => __( "This action will remove the current preset permanently.\nDo you wish to proceed?", 'zyre-elementor-addons' ),
+				'syncStyleAlert'  => __( "This action will revert the Pre-styles to its default state.\nDo you wish to proceed?", 'zyre-elementor-addons' ),
+				'syncTitleText'  => __( "Click to reset the Pre-styles", 'zyre-elementor-addons' ),
 			]
 		);
 	}

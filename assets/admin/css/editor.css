@@ -54,13 +54,16 @@
 	justify-content: space-between;
 }
 
+.elementor-control-type-zyre_style_select .elementor-control-title,
+.elementor-control-type-zyre_style_select .zyre-reset-style {
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
 .elementor-control-type-zyre_style_select .zyre-reset-style {
 	background: none;
 	outline: none;
 	border: none;
-	cursor: pointer;
-	opacity: 0.7;
-	transition: opacity 0.2s;
 }
 
 .elementor-control-type-zyre_style_select .zyre-reset-style[disabled] {
@@ -68,8 +71,9 @@
 }
 
 .elementor-control-type-zyre_style_select .zyre-reset-style:not([disabled]):hover,
-.elementor-control-type-zyre_style_select .zyre-reset-style:not([disabled]):focus {
-	opacity: 1;
+.elementor-control-type-zyre_style_select .zyre-reset-style:not([disabled]):focus,
+.elementor-control-type-zyre_style_select .elementor-control-title:hover {
+	opacity: 0.8;
 }
 
 /* Fix icon rotation based on selected direction */
