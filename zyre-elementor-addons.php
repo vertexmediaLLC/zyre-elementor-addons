@@ -7,11 +7,11 @@
  * Plugin URI: https://zyreaddons.com/
  * Version: 1.0.0
  * Author: ZyreAddons
- * Author URI: https://zyreaddons.com/
+ * Author URI: https://vertexmedia.tech/
  * Text Domain: zyre-elementor-addons
  * Domain Path: /languages/
- * Elementor tested up to: 3.32
- * Elementor Pro tested up to: 3.32
+ * Elementor tested up to: 3.34
+ * Elementor Pro tested up to: 3.34
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -40,7 +40,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-Copyright 2019 AbsolutePlugins <https://elementorin.com>
+Copyright 2023 VertexMediaLLC <https://vertexmedia.tech/>
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
