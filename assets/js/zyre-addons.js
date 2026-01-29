@@ -397,17 +397,15 @@ function haObserveTarget(target, callback) {
 					mcForm.trigger('reset');
 					
 					if (response.status) {
-						mcMessage.removeClass('mc-error');
-						mcMessage.addClass('mc-success');
-						mcMessage.text(response.msg);
+						if (window !== window.parent) {
+							window.parent.postMessage({ subscribed: true }, '*');
+						}
+						mcMessage.removeClass('mc-error').addClass('mc-success').text(response.msg);
 					} else {
-						mcMessage.addClass('mc-error');
-						mcMessage.removeClass('mc-success');
-						mcMessage.text(response.msg);
+						mcMessage.addClass('mc-error').removeClass('mc-success').text(response.msg);
 					}
 					var hideMsg = setTimeout(function () {
-						mcMessage.removeClass('mc-error');
-						mcMessage.removeClass('mc-success');
+						mcMessage.removeClass('mc-error').removeClass('mc-success');
 						clearTimeout(hideMsg);
 					}, 5000);
 				},

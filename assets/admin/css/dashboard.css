@@ -763,10 +763,6 @@ a.zyre-button-pro:focus {
 	padding: 30px;
 }
 
-.zyre-subscription-modal .zyre-modal-content iframe {
-	width: 100%;
-}
-
 .zyre-modal-close {
 	position: absolute;
 	top: 20px;
