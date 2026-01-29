@@ -394,10 +394,7 @@ class Conditions_Manager {
 	}
 
 	protected function validate_reqeust() {
-		
-		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( $_POST['nonce'] ) : '';
-
-		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
+		if ( ! wp_verify_nonce( $_REQUEST['nonce'], 'zyre_editor_nonce' ) ) {
 			throw new Exception( 'Invalid request' );
 		}
 
@@ -497,7 +494,7 @@ class Conditions_Manager {
 		try {
 			$this->validate_reqeust();
 
-			$object_type = ! empty( $_REQUEST['object_type'] ) ? trim( sanitize_text_field( $_REQUEST['object_type'] ) ) : '';
+			$object_type = ! empty( $_REQUEST['object_type'] ) ? sanitize_text_field( trim( $_REQUEST['object_type'] ) ) : '';
 
 			if ( ! in_array( $object_type, [ 'post', 'tax', 'author', 'archive', 'singular' ], true ) ) {
 				throw new Exception( __( 'Invalid object type', 'zyre-elementor-addons' ) );
@@ -709,13 +706,13 @@ class Conditions_Manager {
 			<div id="zyre-template-condition-item-$uuid" class="zyre-template-condition-item">
 				<div class="zyre-template-condition-item-row">
 					<div class="zyre-tce-type">
-						<select data-id="type-$uuid" data-parent="$uuid" data-setting="type" data-selected="$include" class="modal__form-select">
+						<select id="type-$uuid" data-id="type-$uuid" data-parent="$uuid" data-setting="type" data-selected="$include" class="modal__form-select">
 							<option value="include" {$if($include == 'include', "selected", "")}>Include</option>
 							<option value="exclude" {$if($include == 'exclude', "selected", "")}>Exclude</option>
 						</select>
 					</div>
 					<div class="zyre-tce-name">
-						<select data-id="name-$uuid" data-parent="$uuid" data-setting="name" data-selected="$name" class="modal__form-select">
+						<select id="name-$uuid" data-id="name-$uuid" data-parent="$uuid" data-setting="name" data-selected="$name" class="modal__form-select">
 							<optgroup label="General">
 								<option value="general" {$if($name == 'general', "selected", "")}>Entire Site</option>
 								<option value="archive" {$if($name == 'archive', "selected", "")}>Archives</option>
@@ -724,12 +721,12 @@ class Conditions_Manager {
 						</select>
 					</div>
 					<div class="zyre-tce-sub_name" $sub_name_visibility>
-						<select data-id="sub_name-$uuid" data-parent="$uuid" data-setting="sub_name" data-selected="$sub_name" class="modal__form-select">
+						<select id="sub_name-$uuid" data-id="sub_name-$uuid" data-parent="$uuid" data-setting="sub_name" data-selected="$sub_name" class="modal__form-select">
 						$sub_name_html
 						</select>
 					</div>
 					<div class="zyre-tce-sub_id" $sub_id_visibility>
-						<select data-id="sub_id-$uuid" data-parent="$uuid" data-setting="sub_id" data-selected="$sub_id" class="modal__form-select">
+						<select id="sub_id-$uuid" data-id="sub_id-$uuid" data-parent="$uuid" data-setting="sub_id" data-selected="$sub_id" class="modal__form-select">
 						$sub_id_html
 						</select>
 					</div>
@@ -742,7 +739,7 @@ class Conditions_Manager {
 			EOF;
 		}
 
-		echo wp_kses_post( $html );
+		echo $html; // phpcs:ignore PluginCheck.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 

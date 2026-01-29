@@ -548,27 +548,41 @@ class Subscription_Form extends Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
+		$allowed_input_html = [
+			'input' => [
+				'type'         => [],
+				'id'           => [],
+				'name'         => [],
+				'class'        => [],
+				'placeholder'  => [],
+				'autocomplete' => [],
+			],
+			'div'   => [
+				'class' => [],
+			],
+		];
+
 		// Email Field
 		$email_field = sprintf(
-			'<div class="zyre-subscription-field"><input type="text" id="email" name="email" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s"></div>',
+			'<div class="zyre-subscription-field"><input type="text" id="email" name="email" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s" autocomplete="email"></div>',
 			! empty( $settings['email_placeholder'] ) ? esc_attr( $settings['email_placeholder'] ) : ''
 		);
 
 		// First Name Field
 		$fname_field = sprintf(
-			'<div class="zyre-subscription-field"><input type="text" id="fname" name="fname" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s"></div>',
+			'<div class="zyre-subscription-field"><input type="text" id="fname" name="fname" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s" autocomplete="fname"></div>',
 			! empty( $settings['fname_placeholder'] ) ? esc_attr( $settings['fname_placeholder'] ) : ''
 		);
 
 		// Last Name Field
 		$lname_field = sprintf(
-			'<div class="zyre-subscription-field"><input type="text" id="lname" name="lname" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s"></div>',
+			'<div class="zyre-subscription-field"><input type="text" id="lname" name="lname" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s" autocomplete="lname"></div>',
 			! empty( $settings['lname_placeholder'] ) ? esc_attr( $settings['lname_placeholder'] ) : ''
 		);
 
 		// Phone field
 		$phone_field = sprintf(
-			'<div class="zyre-subscription-field"><input type="text" id="phone" name="phone" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s"></div>',
+			'<div class="zyre-subscription-field"><input type="text" id="phone" name="phone" class="zyre-subscription-form-input zy-w-100 zy-outline-0" placeholder="%1$s" autocomplete="phone"></div>',
 			! empty( $settings['phone_placeholder'] ) ? esc_attr( $settings['phone_placeholder'] ) : ''
 		);
 
@@ -591,10 +605,10 @@ class Subscription_Form extends Base {
 				<?php
 					printf(
 						'<div class="zyre-subscription-fields zy-grow-1 zy-w-100">%1$s %2$s %3$s %4$s</div><div class="zyre-subscription-btn-wrap">%5$s</div>',
-						wp_kses_post( $email_field ),
-						( 'yes' === $settings['fname_enable'] ) ? wp_kses_post( $fname_field ) : '',
-						( 'yes' === $settings['lname_enable'] ) ? wp_kses_post( $lname_field ) : '',
-						( 'yes' === $settings['enable_phone'] ) ? wp_kses_post( $phone_field ) : '',
+						wp_kses( $email_field, $allowed_input_html ),
+						( 'yes' === $settings['fname_enable'] ) ? wp_kses( $fname_field, $allowed_input_html ) : '',
+						( 'yes' === $settings['lname_enable'] ) ? wp_kses( $lname_field, $allowed_input_html ) : '',
+						( 'yes' === $settings['enable_phone'] ) ? wp_kses( $phone_field, $allowed_input_html ) : '',
 						sprintf(
 							'<button class="zyre-subscription-form-button zy-outline-0 zy-border-none zy-c-pointer zy-transition" type="submit">%1$s</button>',
 							esc_html( $submit_btn_text )

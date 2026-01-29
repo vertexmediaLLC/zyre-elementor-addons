@@ -1226,7 +1226,7 @@ class Image_Grid extends Base {
 							$this->add_render_attribute( $key, 'data-filter', $slug );
 							?>
 							<li>
-								<a href="javascript:;" <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>><?php echo esc_html( $tab['item_cat'] ); ?></a>
+								<a href="javascript:;" <?php $this->print_render_attribute_string( $key ); ?>><?php echo esc_html( $tab['item_cat'] ); ?></a>
 							</li>
 							<?php
 						}
@@ -1320,12 +1320,12 @@ class Image_Grid extends Base {
 					}
 					?>
 
-					<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>>
-						<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key_inner ) ); ?>>
-							<<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $image_link_key ) ); ?> class="zyre-image-grid-item-img-wrapper zy-relative">
+					<div <?php $this->print_render_attribute_string( $key ); ?>>
+						<div <?php $this->print_render_attribute_string( $key_inner ); ?>>
+							<<?php Utils::print_validated_html_tag( $image_wrapper_tag ); ?> <?php $this->print_render_attribute_string( $image_link_key ); ?> class="zyre-image-grid-item-img-wrapper zy-relative">
 								<?php
 
-								echo $img_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo wp_kses_post( $img_html );
 
 								if ( $is_enable_lightbox ) {
 									$lightbox_key = 'lightbox_' . $index;
@@ -1346,7 +1346,7 @@ class Image_Grid extends Base {
 											'value' => 'eicon-search-bold',
 										];
 										?>
-										<a <?php echo wp_kses_post( $this->get_render_attribute_string( $lightbox_key ) ); ?>>
+										<a <?php $this->print_render_attribute_string( $lightbox_key ); ?>>
 											<?php Icons_Manager::render_icon( $icon_settings, [ 'aria-hidden' => 'true' ] ); ?>
 										</a>
 										<?php
@@ -1371,7 +1371,7 @@ class Image_Grid extends Base {
 							}
 
 							if ( $title || ( $display_category && $category ) || $description || ( $is_enable_lightbox && $open_lightbox_on ) || ( 'button' === $link_switch && ! empty( $item['link']['url'] ) ) ) : ?>
-								<<?php Utils::print_validated_html_tag( $content_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $content_link_key ) ); ?> class="<?php echo esc_attr( $content_class ); ?>">
+								<<?php Utils::print_validated_html_tag( $content_tag ); ?> <?php $this->print_render_attribute_string( $content_link_key ); ?> class="<?php echo esc_attr( $content_class ); ?>">
 									<?php if ( $title ) : ?>
 										<h3 class="zyre-image-grid-item-title zy-m-0 zy-w-100">
 											<?php
@@ -1409,11 +1409,11 @@ class Image_Grid extends Base {
 													]
 												);
 												?>
-												<a class="zyre-image-grid-zoom-button zy-transition" <?php echo wp_kses_post( $this->get_render_attribute_string( $lb_button_key ) ); ?>><?php echo esc_html( $lb_button_text ); ?></a>
+												<a class="zyre-image-grid-zoom-button zy-transition" <?php $this->print_render_attribute_string( $lb_button_key ); ?>><?php echo esc_html( $lb_button_text ); ?></a>
 											<?php endif;
 											
 											if ( 'button' === $link_switch && ! empty( $item['link']['url'] ) ) : ?>
-												<a class="zyre-image-grid-view-button zy-transition" <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?>><?php echo esc_html( $view_text ); ?></a>
+												<a class="zyre-image-grid-view-button zy-transition" <?php $this->print_render_attribute_string( $link_key ); ?>><?php echo esc_html( $view_text ); ?></a>
 											<?php endif; ?>
 										</div>
 									<?php endif; ?>
