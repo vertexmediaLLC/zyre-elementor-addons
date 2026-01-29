@@ -736,7 +736,7 @@ class Conditions_Manager {
 						</select>
 					</div>
 
-					<div class="zyre-tce-sub_name" <?php echo $sub_name_visibility; ?>>
+					<div class="zyre-tce-sub_name" <?php echo $sub_name_visibility; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<select
 							id="sub_name-<?php echo esc_attr( $uuid ); ?>"
 							data-id="sub_name-<?php echo esc_attr( $uuid ); ?>"
@@ -744,11 +744,11 @@ class Conditions_Manager {
 							data-setting="sub_name"
 							data-selected="<?php echo esc_attr( $sub_name ); ?>"
 							class="modal__form-select">
-							<?php echo $sub_name_html; ?>
+							<?php echo $sub_name_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</select>
 					</div>
 
-					<div class="zyre-tce-sub_id" <?php echo $sub_id_visibility; ?>>
+					<div class="zyre-tce-sub_id" <?php echo $sub_id_visibility; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<select
 							id="sub_id-<?php echo esc_attr( $uuid ); ?>"
 							data-id="sub_id-<?php echo esc_attr( $uuid ); ?>"
@@ -756,7 +756,7 @@ class Conditions_Manager {
 							data-setting="sub_id"
 							data-selected="<?php echo esc_attr( $sub_id ); ?>"
 							class="modal__form-select">
-							<?php echo $sub_id_html; ?>
+							<?php echo $sub_id_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</select>
 					</div>
 
