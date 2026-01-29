@@ -678,68 +678,98 @@ class Conditions_Manager {
 	}
 
 	private function cond_to_html( $cond ) {
-		$html = '';
+
 		foreach ( $cond as $condition ) {
 			$parsed_condition = $this->parse_condition( $condition );
 
-			$include = $parsed_condition['type'];
-			$name = $parsed_condition['name'];
+			$include  = $parsed_condition['type'];
+			$name     = $parsed_condition['name'];
 			$sub_name = $parsed_condition['sub_name'];
-			$sub_id = $parsed_condition['sub_id'];
-
-			$sub_name_html = ( $sub_name ) ? '<option value="' . $sub_name . '" selected="selected">' . $this->all_conds_list[ $sub_name ]['title'] . '</option>' : '';
-
-			$sub_id_html = ( $sub_id ) ? '<option value="' . $sub_id . '" selected="selected">' . get_the_title( $sub_id ) . '</option>' : '';
+			$sub_id   = $parsed_condition['sub_id'];
 
 			$uuid = uniqid();
-			$if = function ( $condition, $true, $false ) {
-				return $condition ? $true : $false;
-			};
 
-			$sub_name_visibility = ( $sub_name ) ? '' : 'style="display:none"';
-			$sub_id_visibility = ( $sub_id ) ? '' : 'style="display:none"';
+			$sub_name_visibility = $sub_name ? '' : 'style="display:none"';
+			$sub_id_visibility   = $sub_id ? '' : 'style="display:none"';
+
+			$sub_name_html = $sub_name
+				? '<option value="' . esc_attr( $sub_name ) . '" selected="selected">' . esc_html( $this->all_conds_list[ $sub_name ]['title'] ) . '</option>'
+				: '';
+
+			$sub_id_html = $sub_id
+				? '<option value="' . esc_attr( $sub_id ) . '" selected="selected">' . esc_html( get_the_title( $sub_id ) ) . '</option>'
+				: '';
 
 			$icon = zyre_get_svg_icon( 'trash-can' );
 
-			// phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed
-			$html .= <<<EOF
-			<div id="zyre-template-condition-item-$uuid" class="zyre-template-condition-item">
+			ob_start();
+			?>
+			<div id="zyre-template-condition-item-<?php echo esc_attr( $uuid ); ?>" class="zyre-template-condition-item">
 				<div class="zyre-template-condition-item-row">
+
 					<div class="zyre-tce-type">
-						<select id="type-$uuid" data-id="type-$uuid" data-parent="$uuid" data-setting="type" data-selected="$include" class="modal__form-select">
-							<option value="include" {$if($include == 'include', "selected", "")}>Include</option>
-							<option value="exclude" {$if($include == 'exclude', "selected", "")}>Exclude</option>
+						<select
+							id="type-<?php echo esc_attr( $uuid ); ?>"
+							data-id="type-<?php echo esc_attr( $uuid ); ?>"
+							data-parent="<?php echo esc_attr( $uuid ); ?>"
+							data-setting="type"
+							data-selected="<?php echo esc_attr( $include ); ?>"
+							class="modal__form-select">
+							<option value="include" <?php selected( $include, 'include' ); ?>>Include</option>
+							<option value="exclude" <?php selected( $include, 'exclude' ); ?>>Exclude</option>
 						</select>
 					</div>
+
 					<div class="zyre-tce-name">
-						<select id="name-$uuid" data-id="name-$uuid" data-parent="$uuid" data-setting="name" data-selected="$name" class="modal__form-select">
+						<select
+							id="name-<?php echo esc_attr( $uuid ); ?>"
+							data-id="name-<?php echo esc_attr( $uuid ); ?>"
+							data-parent="<?php echo esc_attr( $uuid ); ?>"
+							data-setting="name"
+							data-selected="<?php echo esc_attr( $name ); ?>"
+							class="modal__form-select">
 							<optgroup label="General">
-								<option value="general" {$if($name == 'general', "selected", "")}>Entire Site</option>
-								<option value="archive" {$if($name == 'archive', "selected", "")}>Archives</option>
-								<option value="singular" {$if($name == 'singular', "selected", "")}>Singular</option>
+								<option value="general" <?php selected( $name, 'general' ); ?>>Entire Site</option>
+								<option value="archive" <?php selected( $name, 'archive' ); ?>>Archives</option>
+								<option value="singular" <?php selected( $name, 'singular' ); ?>>Singular</option>
 							</optgroup>
 						</select>
 					</div>
-					<div class="zyre-tce-sub_name" $sub_name_visibility>
-						<select id="sub_name-$uuid" data-id="sub_name-$uuid" data-parent="$uuid" data-setting="sub_name" data-selected="$sub_name" class="modal__form-select">
-						$sub_name_html
+
+					<div class="zyre-tce-sub_name" <?php echo $sub_name_visibility; ?>>
+						<select
+							id="sub_name-<?php echo esc_attr( $uuid ); ?>"
+							data-id="sub_name-<?php echo esc_attr( $uuid ); ?>"
+							data-parent="<?php echo esc_attr( $uuid ); ?>"
+							data-setting="sub_name"
+							data-selected="<?php echo esc_attr( $sub_name ); ?>"
+							class="modal__form-select">
+							<?php echo $sub_name_html; ?>
 						</select>
 					</div>
-					<div class="zyre-tce-sub_id" $sub_id_visibility>
-						<select id="sub_id-$uuid" data-id="sub_id-$uuid" data-parent="$uuid" data-setting="sub_id" data-selected="$sub_id" class="modal__form-select">
-						$sub_id_html
+
+					<div class="zyre-tce-sub_id" <?php echo $sub_id_visibility; ?>>
+						<select
+							id="sub_id-<?php echo esc_attr( $uuid ); ?>"
+							data-id="sub_id-<?php echo esc_attr( $uuid ); ?>"
+							data-parent="<?php echo esc_attr( $uuid ); ?>"
+							data-setting="sub_id"
+							data-selected="<?php echo esc_attr( $sub_id ); ?>"
+							class="modal__form-select">
+							<?php echo $sub_id_html; ?>
 						</select>
 					</div>
+
 				</div>
+
 				<div class="zyre-template-condition-remove">
-					{$icon}
-					<span class="elementor-screen-only">Remove this item</span>
+					<?php echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<span class="elementor-screen-only"><?php esc_html_e( 'Remove this item', 'zyre-elementor-addons' ); ?></span>
 				</div>
 			</div>
-			EOF;
+			<?php
+			echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
-
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
