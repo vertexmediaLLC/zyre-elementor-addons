@@ -104,7 +104,7 @@
 	});
 
 	// Ajax: User Did Subscribed
-	$userDidSubscribed.on('click', function () {
+	/* $userDidSubscribed.on('click', function () {
 		$.ajax({
 			url: ZyreAddonsDashboard.ajaxUrl,
 			type: 'POST',
@@ -120,6 +120,24 @@
 				}
 			}
 		});
+	}); */
+	window.addEventListener('message', function(event) {
+		if (event.data.subscribed) {
+			// Close the modal
+			$subscriptionModal.fadeOut(function() {
+				$(this).removeClass('video-modal-shown');
+			});
+
+			// Trigger your AJAX to save user_meta
+			$.ajax({
+				url: ZyreAddonsDashboard.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'zyreaddons_user_subscribed',
+					nonce: ZyreAddonsDashboard.nonce
+				}
+			});
+		}
 	});
 
 
