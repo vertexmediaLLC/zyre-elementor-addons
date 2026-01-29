@@ -104,25 +104,7 @@
 	});
 
 	// Ajax: User Did Subscribed
-	/* $userDidSubscribed.on('click', function () {
-		$.ajax({
-			url: ZyreAddonsDashboard.ajaxUrl,
-			type: 'POST',
-			data: {
-				action: 'zyreaddons_user_subscribed',
-				nonce: ZyreAddonsDashboard.nonce
-			},
-			success: function (response) {
-				if (response.success) {
-					$subscriptionModal.fadeOut(function () {
-						$subscriptionModal.removeClass('video-modal-shown');
-					});
-				}
-			}
-		});
-	}); */
 	window.addEventListener('message', function(event) {
-		console.log(event.data);
 		if (event.data.subscribed) {
 			// Close the modal
 			$subscriptionModal.fadeOut(function() {
@@ -140,7 +122,6 @@
 			});
 		}
 	});
-
 
 	/**
 	 * Main Tabs
