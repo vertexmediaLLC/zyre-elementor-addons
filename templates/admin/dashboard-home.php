@@ -577,5 +577,9 @@ $credential_data = zyre_get_credentials();
 				<div class="zyre-tab-panel zyre-dash-content content-pro"></div>
 			</div>
 		</form>
-	</div>
+
+		<?php
+		include_once ZYRE_ADDONS_DIR_PATH . 'templates/admin/subscription-modal.php';
+		?>
+	</div> <!-- .zyre-dashboard-wrapper -->
 </div>

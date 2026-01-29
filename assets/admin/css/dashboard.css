@@ -734,6 +734,11 @@ a.zyre-button-pro:focus {
 	box-sizing: border-box;
 }
 
+
+.zyre-subscription-modal {
+	background: rgba(0, 0, 0, 0.5);
+}
+
 .zyre-modal.video-modal-shown {
 	display: flex;
 	align-items: center;
@@ -751,12 +756,24 @@ a.zyre-button-pro:focus {
     text-align: left;
 }
 
+.zyre-subscription-modal .zyre-modal-content {
+	max-width: 500px;
+	background-color: #fff;
+	border-radius: 0;
+	padding: 30px;
+}
+
+.zyre-subscription-modal .zyre-modal-content iframe {
+	width: 100%;
+}
+
 .zyre-modal-close {
 	position: absolute;
 	top: 20px;
 	right: 20px;
 	font-size: 32px;
 	font-weight: 400;
+	line-height: 1.2;
 	cursor: pointer;
 	background: rgba(0, 0, 0, 0.7);
 	color: #fff;
@@ -766,6 +783,25 @@ a.zyre-button-pro:focus {
 	display: flex;
 	justify-content: center;
 	z-index: 99;
+	transition: all var(--zy-transition-duration);
+}
+
+.zyre-modal-close:hover {
+	background: rgba(0, 0, 0, 0.9);
+}
+
+.zyre-subscription-modal .zyre-modal-close {
+	top: -45px;
+	right: 0;
+}
+
+body.rtl .zyre-modal-close,
+body.rtl .zyre-subscription-modal .zyre-modal-close {
+	right: auto;
+}
+
+body.rtl .zyre-modal-close {
+	left: 20px;
 }
 
 .zyre-iframe-scaler {
