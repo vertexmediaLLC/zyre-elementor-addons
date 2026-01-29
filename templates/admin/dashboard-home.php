@@ -579,7 +579,10 @@ $credential_data = zyre_get_credentials();
 		</form>
 
 		<?php
-		include_once ZYRE_ADDONS_DIR_PATH . 'templates/admin/subscription-modal.php';
+		// Subscription Modal
+		if ( ! self::is_user_subscribed() ) {
+			include_once ZYRE_ADDONS_DIR_PATH . 'templates/admin/subscription-modal.php';
+		}
 		?>
 	</div> <!-- .zyre-dashboard-wrapper -->
 </div>

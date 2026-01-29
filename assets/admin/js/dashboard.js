@@ -27,6 +27,7 @@
 		subscriptionModalSelector = '#zyre-subscription-modal',
 		$subscriptionModal = $dashboardWrapper.find(subscriptionModalSelector),
 		$subscriptionModalClose = $subscriptionModal.find('.zyre-modal-close'),
+		$userDidSubscribed = $subscriptionModal.find('#zyre-user-did-subscribed'),
 
 		$dashboardForm = $('#zyre-dashboard-form'),
 		$saveButton = $dashboardForm.find('.zyre-save-settings'),
@@ -86,6 +87,9 @@
 	 ==================== */
 	$subscriptionModalClose.click(function () {
 		$subscriptionModal.fadeOut(function () {
+			// set cookie for 7 days
+    		document.cookie = "ZY_SB_MODAL_CLOSED=yes; path=/; max-age=" + (60 * 60 * 24 * 7);
+
 			$subscriptionModal.removeClass('video-modal-shown');
 		});
 	});
@@ -98,6 +102,26 @@
 			});
 		}
 	});
+
+	// Ajax: User Did Subscribed
+	$userDidSubscribed.on('click', function () {
+		$.ajax({
+			url: ZyreAddonsDashboard.ajaxUrl,
+			type: 'POST',
+			data: {
+				action: 'zyreaddons_user_subscribed',
+				nonce: ZyreAddonsDashboard.nonce
+			},
+			success: function (response) {
+				if (response.success) {
+					$subscriptionModal.fadeOut(function () {
+						$subscriptionModal.removeClass('video-modal-shown');
+					});
+				}
+			}
+		});
+	});
+
 
 	/**
 	 * Main Tabs
