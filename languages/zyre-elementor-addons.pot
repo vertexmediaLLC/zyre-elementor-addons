@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-27T11:20:38+00:00\n"
+"POT-Creation-Date: 2026-01-29T05:12:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -2312,21 +2312,17 @@ msgstr ""
 msgid "Lottie Animation"
 msgstr ""
 
-#: classes/widgets-manager.php:1623
-msgid "Mega Menu"
-msgstr ""
-
-#: classes/widgets-manager.php:1717
+#: classes/widgets-manager.php:1718
 msgid "(Inactive)"
 msgstr ""
 
 #. translators: 1: style number, 2: style name, 3: additional text
-#: classes/widgets-manager.php:1719
+#: classes/widgets-manager.php:1720
 #, php-format
 msgid "Style %1$d - %2$s %3$s"
 msgstr ""
 
-#: classes/widgets-manager.php:1754
+#: classes/widgets-manager.php:1755
 msgid "Default - No Style"
 msgstr ""
 
@@ -2639,19 +2635,19 @@ msgstr ""
 msgid "404 Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:458
+#: modules/theme-builder/conditions-manager.php:455
 msgid "Categories: "
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:461
+#: modules/theme-builder/conditions-manager.php:458
 msgid "Tags: "
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:503
+#: modules/theme-builder/conditions-manager.php:500
 msgid "Invalid object type"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:637
+#: modules/theme-builder/conditions-manager.php:634
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
@@ -3178,6 +3174,14 @@ msgstr ""
 #: templates/admin/dashboard-home.php:553
 #, php-format
 msgid "Style %d"
+msgstr ""
+
+#: templates/admin/subscription-modal.php:12
+msgid "Get Zyre Addons <span>Pro</span> Notification"
+msgstr ""
+
+#: templates/admin/subscription-modal.php:17
+msgid "I already did this!"
 msgstr ""
 
 #: templates/template-library/templates.php:18
@@ -9636,7 +9640,7 @@ msgid "Phone input placeholder"
 msgstr ""
 
 #: widgets/subscription-form/subscription-form.php:211
-#: widgets/subscription-form/subscription-form.php:576
+#: widgets/subscription-form/subscription-form.php:590
 msgid "Subscribe now"
 msgstr ""
 
@@ -9680,11 +9684,11 @@ msgstr ""
 msgid "Error Message Color"
 msgstr ""
 
-#: widgets/subscription-form/subscription-form.php:582
+#: widgets/subscription-form/subscription-form.php:596
 msgid "This is a dummy success message and will not appear in the live preview."
 msgstr ""
 
-#: widgets/subscription-form/subscription-form.php:585
+#: widgets/subscription-form/subscription-form.php:599
 msgid "This is a dummy error message and will not appear in the live preview."
 msgstr ""
 

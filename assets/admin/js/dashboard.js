@@ -15,13 +15,18 @@
 		$sidePanelClose = $('.zyre-sidebar-close'),
 		$overlay = $('.zyre-dashboard-overlay');
 
-	var $contentWrapper = $('.zyre-content-wrapper'),
+	var $dashboardWrapper = $('.zyre-dashboard-wrapper'),
+		$contentWrapper = $('.zyre-content-wrapper'),
 
 		$videoItem = $contentWrapper.find('.zyre-video-item'),
 		videoModalSelector = '#zyre-video-modal',
 		$videoModal = $contentWrapper.find(videoModalSelector),
-		$videoModalScaler = $contentWrapper.find('.zyre-iframe-scaler'),
-		$videoModalClose = $contentWrapper.find('.zyre-modal-close'),
+		$videoModalScaler = $videoModal.find('.zyre-iframe-scaler'),
+		$videoModalClose = $videoModal.find('.zyre-modal-close'),
+
+		subscriptionModalSelector = '#zyre-subscription-modal',
+		$subscriptionModal = $dashboardWrapper.find(subscriptionModalSelector),
+		$subscriptionModalClose = $subscriptionModal.find('.zyre-modal-close'),
 
 		$dashboardForm = $('#zyre-dashboard-form'),
 		$saveButton = $dashboardForm.find('.zyre-save-settings'),
@@ -72,6 +77,24 @@
 			$videoModal.fadeOut(function () {
 				$videoModal.removeClass('video-modal-shown');
 				$videoModalScaler.find('iframe').remove();
+			});
+		}
+	});
+
+	/**
+	 * Subscription Modal
+	 ==================== */
+	$subscriptionModalClose.click(function () {
+		$subscriptionModal.fadeOut(function () {
+			$subscriptionModal.removeClass('video-modal-shown');
+		});
+	});
+
+	// Close Subscription modal on background click
+	$(window).click(function (e) {
+		if ($(e.target).is(subscriptionModalSelector)) {
+			$subscriptionModal.fadeOut(function () {
+				$subscriptionModal.removeClass('video-modal-shown');
 			});
 		}
 	});

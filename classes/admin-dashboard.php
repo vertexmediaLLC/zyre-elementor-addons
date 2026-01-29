@@ -152,7 +152,7 @@ class Dashboard {
 
 	public static function get_widgets() {
 		$widgets_map = Widgets_Manager::get_real_widgets_map();
-		$widgets_map = array_merge( $widgets_map, Widgets_Manager::get_pro_widget_map() );
+		$widgets_map = apply_filters( 'zyreaddons_dashboard_get_widgets', $widgets_map );
 
 		uksort( $widgets_map, [ __CLASS__, 'sort_widgets' ] );
 		return $widgets_map;
