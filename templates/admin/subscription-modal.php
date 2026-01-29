@@ -11,11 +11,5 @@ defined( 'ABSPATH' ) || die();
 		<span class="zyre-modal-close">&times;</span>
 		<h3 style="margin-bottom: 15px;"><?php _e( 'Get Zyre Addons <span>Pro</span> Notification', 'zyre-elementor-addons' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h3>
 		<iframe style="min-height: 220px;width:100%;" src="<?php echo esc_url( 'https://templates.zyreaddons.com/zyreaddons-subscription-form/' ); ?>" frameborder="0"></iframe>
-		<?php
-		printf(
-			'<p style="text-align: center;margin-top:5px;"><span style="font-size: 13px;font-weight:700;text-decoration: underline;cursor: pointer;padding: 5px;display: inline-block;" id="zyre-user-did-subscribed" onmouseover="this.style.color=\'#000000\'" onmouseout="this.style.color=\'#999999\'">%s</span></p>',
-			esc_html__( 'I already did this!', 'zyre-elementor-addons' )
-		)
-		?>
 	</div>
 </div>

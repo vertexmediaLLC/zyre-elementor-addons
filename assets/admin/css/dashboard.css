@@ -800,6 +800,10 @@ body.rtl .zyre-modal-close {
 	left: 20px;
 }
 
+body.rtl .zyre-subscription-modal .zyre-modal-close {
+	left: 0;
+}
+
 .zyre-iframe-scaler {
 	width: 100%;
     height: 0;
