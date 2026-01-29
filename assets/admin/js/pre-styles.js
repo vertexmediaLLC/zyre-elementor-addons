@@ -136,7 +136,7 @@
 
 					// Apply initial design if `applyInitial` is true
                     if (applyInitial) {
-						var selectedValue = self.ui.select.val();
+						var selectedValue = self.ui.select.val() || 'one';
 						var styles = self.getStyles();
 						
 						if (styles[selectedValue]) {

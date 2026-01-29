@@ -18,6 +18,10 @@ The plugin includes a free **Theme Builder** with **Header & Footer Builder**, *
 
 Zyre Elementor Addons also provides **57+ free widgets**, **ready-made page templates**, and **template blocks** to help you design professional layouts with ease.
 
+### Complete Demo & Walkthrough
+
+https://www.youtube.com/watch?v=QoDlnYgSWcE
+
 ## Useful Links
 
 [Didgets Demo](https://zyreaddons.com/all-widgets/) | [Documentation](https://zyreaddons.com/docs/) | [Videos](https://www.youtube.com/watch?v=dVWxTTj64F8&list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj)
@@ -32,6 +36,7 @@ Zyre Elementor Addons also provides **57+ free widgets**, **ready-made page temp
 * No coding required
 * One-click template import
 * Compatible with Elementor & Elementor Pro
+* Support RTL
 
 ## 57+ Free Elementor Widgets
 
@@ -156,7 +161,21 @@ Yes! **Zyre Addons** is fully compatible with other Elementor Addons and also ad
 
 == Screenshots ==
 
-1. screenshot 1
+1. Drag & Drop widget & Edit
+2. ZyreAddons Admin Dashboard
+3. ZyreAddons Admin Dashboard → Widgets
+4. Image Grid Widget with Filters
+5. Info Box Widget
+6. Team Member Widget with Social Links
+7. Feature List Widget based Block Design
+8. Featured Banner Widget based Block Design
+9. Navigation Menu Widget
+10. Hero Section Template Design 1
+11. Hero Section Template Design 2
+12. Hero Section Template Design 3
+13. Hero Section Template Design 4
+14. Page Template Design 1
+15. Page Template Design 2
 
 
 == Changelog ==
