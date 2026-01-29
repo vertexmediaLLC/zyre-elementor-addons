@@ -16,6 +16,8 @@ class Dashboard {
 
 	const DASHBOARD_NONCE = 'zyre_save_dashboard_settings';
 
+	const SUBSCRIBED_META_KEY = 'zyreaddons_subscribed';
+
 	protected static $menu_slug = '';
 
 	public static function is_page() {
@@ -298,4 +300,54 @@ class Dashboard {
 
 		return $credentail_map;
 	}
+
+	/**
+	 * Check if user subscribed to newsletter
+	 *
+	 * @return bool
+	 */
+	public static function is_user_subscribed() {
+		if ( ! is_user_logged_in() ) {
+			return false;
+		}
+
+		$subscribed = get_user_meta( get_current_user_id(), self::SUBSCRIBED_META_KEY, true );
+        if ( 'yes' === $subscribed ) {
+            return true;
+        }
+
+		// Fallback: check cookie (optional)
+		if ( isset( $_COOKIE['ZY_SB_MODAL_CLOSED'] ) && 'yes' === sanitize_text_field( wp_unslash( $_COOKIE['ZY_SB_MODAL_CLOSED'] ) ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Mark user as subscribed via ajax
+	 */
+	public static function user_subscribed() {
+		if ( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		check_ajax_referer( self::DASHBOARD_NONCE, 'nonce' );
+
+		update_user_meta(
+			get_current_user_id(),
+			'zyreaddons_subscribed',
+			'yes'
+		);
+
+		wp_send_json_success();
+	}
 }
+
+/**
+ * Ajax action to mark user as subscribed
+ */
+add_action(
+    'wp_ajax_zyreaddons_user_subscribed',
+    [ __NAMESPACE__ . '\Dashboard', 'user_subscribed' ]
+);
