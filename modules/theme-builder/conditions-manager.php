@@ -739,7 +739,7 @@ class Conditions_Manager {
 			EOF;
 		}
 
-		echo $html; // phpcs:ignore PluginCheck.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
