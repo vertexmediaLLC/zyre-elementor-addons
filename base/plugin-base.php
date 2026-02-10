@@ -73,7 +73,7 @@ class Plugin {
 		add_action( 'wp_ajax_zyre_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
 		add_action( 'wp_ajax_nopriv_zyre_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
 
-		// $this->appsero_tracking_init();
+		$this->appsero_tracking_init();
 
 		do_action( 'zyreaddons_loaded' );
 	}
