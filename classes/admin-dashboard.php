@@ -213,34 +213,63 @@ class Dashboard {
 		return $submenu_file;
 	}
 
-	public static function get_widgets_raw_usage( $format = 'raw' ) {
-		/** @var Module $module */
+    public static function get_widgets_raw_usage() {
 
-		$module = \Elementor\Modules\Usage\Module::instance();
-		$usage = PHP_EOL;
-		$widgets_list = [];
-		$all_widgets = self::get_widgets();
+        $usage = [];
 
-		if ( is_array( $module->get_formatted_usage( $format ) ) || is_object( $module->get_formatted_usage( $format ) ) ) {
-			foreach ( $module->get_formatted_usage( $format ) as $doc_type => $data ) {
-				$usage .= "\t{$data['title']} : " . $data['count'] . PHP_EOL;
+        $posts = get_posts([
+            'post_type'      => get_post_types(['public' => true]),
+            'posts_per_page' => -1,
+            'meta_key'       => '_elementor_data',
+            'meta_compare'   => 'EXISTS',
+            'fields'         => 'ids'
+        ]);
 
-				if ( is_array( $data['elements'] ) || is_object( $data['elements'] ) ) {
-					foreach ( $data['elements'] as $element => $count ) {
-						$usage .= "\t\t{$element} : {$count}" . PHP_EOL;
-						$is_zyre_widget = strpos( $element, 'zyre-' ) !== false;
-						$widget_key = str_replace( 'zyre-', '', $element );
+        foreach ( $posts as $post_id ) {
 
-						if ( $is_zyre_widget && array_key_exists( $widget_key, $all_widgets ) ) {
-							$widgets_list[ $widget_key ] = $count;
-						}
-					}
-				}
-			}
-		}
+            $data = get_post_meta( $post_id, '_elementor_data', true );
 
-		return $widgets_list;
-	}
+            if ( empty( $data ) ) {
+                continue;
+            }
+
+            $elements = json_decode( $data, true );
+
+            if ( ! is_array( $elements ) ) {
+                continue;
+            }
+
+            self::parse_elements_recursive( $elements, $usage );
+        }
+
+        return $usage;
+    }
+
+    private static function parse_elements_recursive( $elements, &$usage ) {
+
+        foreach ( $elements as $element ) {
+
+            // Check if widget
+            if ( isset( $element['elType'] ) && $element['elType'] === 'widget' ) {
+
+                if ( isset( $element['widgetType'] ) && strpos( $element['widgetType'], 'zyre-' ) === 0 ) {
+
+                    $widget_key = str_replace( 'zyre-', '', $element['widgetType'] );
+
+                    if ( isset( $usage[ $widget_key ] ) ) {
+                        $usage[ $widget_key ]++;
+                    } else {
+                        $usage[ $widget_key ] = 1;
+                    }
+                }
+            }
+
+            // Check nested elements
+            if ( isset( $element['elements'] ) && is_array( $element['elements'] ) ) {
+                self::parse_elements_recursive( $element['elements'], $usage );
+            }
+        }
+    }
 
 	public static function get_widgets_unusage() {
 		$all_widgets = self::get_widgets();

@@ -17,6 +17,14 @@ $total_widgets_count = count( $widgets );
 $total_used_widgets_count = count( $used_widgets );
 $total_unused_widgets_count = count( $unused_widgets );
 
+$total_styles = 0;
+
+foreach ($widgets as $widget) {
+    if ( ! empty( $widget['styles'] ) && is_array( $widget['styles'] ) ) {
+        $total_styles += count( $widget['styles'] );
+    }
+}
+
 $widget_style_thumb_ph = ZYRE_ADDONS_ASSETS . 'img/widget-style-thumb-placeholder.png';
 
 $has_pro = zyre_has_pro();
@@ -420,9 +428,11 @@ $credential_data = zyre_get_credentials();
 						<h2 class="zyre-widget-title">
 							<?php
 							printf(
-								'%1$s <span class="zyre-widget-count">%2$d</span>',
+								'%1$s <span class="zyre-widget-count">%2$d</span> <span class="zyre-total-styles">%3$d %4$s</span>',
 								esc_html( _n( 'Widget', 'Widgets', $total_widgets_count, 'zyre-elementor-addons' ) ),
-								esc_html( number_format_i18n( $total_widgets_count ) )
+								esc_html( number_format_i18n( $total_widgets_count ) ),
+                                esc_html( number_format_i18n( $total_styles ) ),
+                                esc_html( _n( 'Style', 'Styles', $total_styles, 'zyre-elementor-addons' ) ),
 							);
 							?>
 						</h2>
@@ -457,7 +467,7 @@ $credential_data = zyre_get_credentials();
 								<?php endforeach; ?>
 							</ul>
 						</div>
-					
+
 						<!-- All Widgets Content -->
 						<div class="zyre-content-main zyre-content-left zyre-dash-widget-content-main">
 							<?php foreach ( $widgets as $widget_key => $widget ) :

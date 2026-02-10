@@ -671,7 +671,6 @@ a.zyre-button-pro:focus {
 }
 
 .zyre-video img {
-	opacity: 0.65;
 	transition: all 0.3s;
 }
 
@@ -681,7 +680,6 @@ a.zyre-button-pro:focus {
 	-moz-transform: scale(1.04);
 	-ms-transform: scale(1.04);
 	-o-transform: scale(1.04);
-	opacity: 1;
 }
 
 .zyre-video-bg {
@@ -1274,6 +1272,15 @@ p.zyre-tab-sub-heading {
 
 .zyre-widget-count {
 	color: #bec5cf;
+}
+
+.zyre-total-styles {
+    font-size: 18px;
+    color: #6e7378;
+    font-weight: 400;
+    margin-left: 10px;
+    bottom: 5px;
+    position: relative;
 }
 
 .zyre-dash-widget-content {

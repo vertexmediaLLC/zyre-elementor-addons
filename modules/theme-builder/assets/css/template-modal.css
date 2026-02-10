@@ -337,6 +337,7 @@
 	font-style: normal;
 	font-family: "Inter Tight", sans-serif;
 	line-height: 39px;
+    letter-spacing: 1px;
 }
 
 .zyre-template-element-modal .modal__information .modal__info-title {
