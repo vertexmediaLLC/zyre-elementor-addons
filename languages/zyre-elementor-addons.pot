@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-07T10:06:24+00:00\n"
+"POT-Creation-Date: 2026-02-10T06:07:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -1434,7 +1434,7 @@ msgid "HIDE"
 msgstr ""
 
 #: classes/admin-dashboard.php:132
-#: templates/admin/dashboard-home.php:118
+#: templates/admin/dashboard-home.php:126
 msgid "Save Settings"
 msgstr ""
 
@@ -1446,15 +1446,15 @@ msgstr ""
 msgid "Zyre Elementor Addons Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:256
+#: classes/admin-dashboard.php:285
 msgid "Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:260
+#: classes/admin-dashboard.php:289
 msgid "Widgets"
 msgstr ""
 
-#: classes/admin-dashboard.php:264
+#: classes/admin-dashboard.php:293
 #: widgets/subscription-form/subscription-form.php:58
 msgid "Integrations"
 msgstr ""
@@ -2176,7 +2176,7 @@ msgid "Subscription Form"
 msgstr ""
 
 #: classes/widgets-manager.php:1238
-#: templates/admin/dashboard-home.php:395
+#: templates/admin/dashboard-home.php:403
 #: widgets/cf7/cf7.php:12
 #: widgets/cf7/cf7.php:34
 msgid "Contact Form 7"
@@ -2663,7 +2663,7 @@ msgstr ""
 #: modules/theme-builder/module.php:296
 #: modules/theme-builder/module.php:297
 #: modules/theme-builder/module.php:431
-#: modules/theme-builder/module.php:496
+#: modules/theme-builder/module.php:502
 msgid "Theme Builder"
 msgstr ""
 
@@ -2708,7 +2708,7 @@ msgid "Add New Theme Builder"
 msgstr ""
 
 #: modules/theme-builder/module.php:410
-#: modules/theme-builder/module.php:499
+#: modules/theme-builder/module.php:505
 msgid "Add New"
 msgstr ""
 
@@ -2781,42 +2781,42 @@ msgstr ""
 msgid "Build your website header, footer, single page/post template and more."
 msgstr ""
 
-#: modules/theme-builder/module.php:508
+#: modules/theme-builder/module.php:514
 #: widgets/business-hour/business-hour.php:458
 msgid "Header"
 msgstr ""
 
-#: modules/theme-builder/module.php:509
+#: modules/theme-builder/module.php:515
 msgid "Footer"
 msgstr ""
 
-#: modules/theme-builder/module.php:510
+#: modules/theme-builder/module.php:516
 #: widgets/animated-text/animated-text.php:68
 msgid "Single"
 msgstr ""
 
-#: modules/theme-builder/module.php:511
+#: modules/theme-builder/module.php:517
 msgid "Archive"
 msgstr ""
 
-#: modules/theme-builder/module.php:529
+#: modules/theme-builder/module.php:535
 #: widgets/image-grid/image-grid.php:300
 msgid "All"
 msgstr ""
 
-#: modules/theme-builder/module.php:577
+#: modules/theme-builder/module.php:583
 #: traits/list-item-advanced-trait.php:100
 #: widgets/alert/alert.php:44
 #: widgets/toggle/toggle.php:173
 msgid "Type"
 msgstr ""
 
-#: modules/theme-builder/module.php:578
+#: modules/theme-builder/module.php:584
 msgid "Conditions"
 msgstr ""
 
-#: modules/theme-builder/module.php:596
-#: templates/admin/dashboard-home.php:517
+#: modules/theme-builder/module.php:602
+#: templates/admin/dashboard-home.php:527
 #: widgets/advance-accordion/advance-accordion.php:383
 #: widgets/advance-accordion/advance-accordion.php:530
 #: widgets/advance-toggle/advance-toggle.php:382
@@ -2837,44 +2837,44 @@ msgid "Active"
 msgstr ""
 
 #. translators: 1: included conditions, 2: excluded conditions
-#: modules/theme-builder/module.php:630
+#: modules/theme-builder/module.php:636
 #, php-format
 msgid "<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s"
 msgstr ""
 
-#: modules/theme-builder/module.php:635
+#: modules/theme-builder/module.php:641
 msgid "Not Applicable"
 msgstr ""
 
-#: modules/theme-builder/module.php:642
+#: modules/theme-builder/module.php:648
 #: zyre-elementor-addons.php:122
 #: zyre-elementor-addons.php:135
 #: zyre-elementor-addons.php:157
 msgid "Elementor"
 msgstr ""
 
-#: modules/theme-builder/module.php:688
+#: modules/theme-builder/module.php:694
 msgid "Header Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:692
+#: modules/theme-builder/module.php:698
 msgid "Footer Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:696
+#: modules/theme-builder/module.php:702
 #: widgets/animated-text/animated-text.php:490
 msgid "Single Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:700
+#: modules/theme-builder/module.php:706
 msgid "Archive Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:704
+#: modules/theme-builder/module.php:710
 msgid "Loop Template"
 msgstr ""
 
-#: modules/theme-builder/module.php:908
+#: modules/theme-builder/module.php:914
 msgid "Happy Theme Builder"
 msgstr ""
 
@@ -2949,234 +2949,243 @@ msgid "Exclude"
 msgstr ""
 
 #. translators: %s is the plugin version
-#: templates/admin/dashboard-home.php:46
+#: templates/admin/dashboard-home.php:54
 #, php-format
 msgid "Version %s"
 msgstr ""
 
 #. translators: %s is the plugin version
-#: templates/admin/dashboard-home.php:47
+#: templates/admin/dashboard-home.php:55
 msgid "View Changelog"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:51
+#: templates/admin/dashboard-home.php:59
 msgid "Looking to unlock more opportunities<br>and elevate your journey?"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:54
+#: templates/admin/dashboard-home.php:62
 #: templates/template-library/templates.php:69
 msgid "Get Pro"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:64
+#: templates/admin/dashboard-home.php:72
 msgid "Total Widgets"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:68
+#: templates/admin/dashboard-home.php:76
 msgid "In-Use"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:72
+#: templates/admin/dashboard-home.php:80
 msgid "Not In-Use"
 msgstr ""
 
 #. translators: %s is the tab number
-#: templates/admin/dashboard-home.php:108
+#: templates/admin/dashboard-home.php:116
 #, php-format
 msgid "Tab %s"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:137
+#: templates/admin/dashboard-home.php:145
 msgid "Welcome!"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:138
+#: templates/admin/dashboard-home.php:146
 msgid "Build your next stunning, pixel-perfect WordPress site quickly and easily with professional Elementor widgets."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:141
+#: templates/admin/dashboard-home.php:149
 msgid "Explore Elements Library"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:147
+#: templates/admin/dashboard-home.php:155
 msgid "Welcome Image"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:155
+#: templates/admin/dashboard-home.php:163
 msgid "Elements Library"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:158
+#: templates/admin/dashboard-home.php:166
 msgid "Global Control"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:159
+#: templates/admin/dashboard-home.php:167
 msgid "Use toggle button to active or deactive all widgets at once."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:163
+#: templates/admin/dashboard-home.php:171
 msgid "Disable all"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:164
+#: templates/admin/dashboard-home.php:172
 msgid "Enable all"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:174
+#: templates/admin/dashboard-home.php:182
 msgid "Third-Party Credentials & Plugin Integrations"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:175
+#: templates/admin/dashboard-home.php:183
 msgid "Below is the list of credentials and plugins. You can enter credentials and install third-party plugins from this section. After making any changes, be sure to click the \"Save Settings\" button."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:204
-#: templates/admin/dashboard-home.php:495
+#: templates/admin/dashboard-home.php:212
+#: templates/admin/dashboard-home.php:505
 #: templates/template-library/templates.php:130
 msgid "Pro"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:246
+#: templates/admin/dashboard-home.php:254
 msgid "Enhance Elementor experience and elevate your journey by unlocking Pro-Version."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:247
+#: templates/admin/dashboard-home.php:255
 msgid "Get access to automatic updates & keep your website up-to-dates."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:250
+#: templates/admin/dashboard-home.php:258
 msgid "Get Pro Now"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:262
+#: templates/admin/dashboard-home.php:270
 msgid "Video Tutorials"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:269
+#: templates/admin/dashboard-home.php:277
 msgid "How to Manage Widgets and Styles"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:276
+#: templates/admin/dashboard-home.php:284
 msgid "How to Design From Scratch"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:283
+#: templates/admin/dashboard-home.php:291
 msgid "How to Import Templates"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:290
+#: templates/admin/dashboard-home.php:298
 msgid "How to Design Header Template"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:296
+#: templates/admin/dashboard-home.php:304
 msgid "View More Videos"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:302
+#: templates/admin/dashboard-home.php:310
 msgid "Happy with ZyreAddons"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:303
+#: templates/admin/dashboard-home.php:311
 msgid "Please rate us"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:318
+#: templates/admin/dashboard-home.php:326
 msgid "Quick Help Links"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:322
+#: templates/admin/dashboard-home.php:330
 msgid "Knowledge Base"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:324
+#: templates/admin/dashboard-home.php:332
 msgid "Explore our comprehensive documentation to familiarize yourself with Zyre."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:327
+#: templates/admin/dashboard-home.php:335
 msgid "Browse Documentation"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:334
+#: templates/admin/dashboard-home.php:342
 msgid "Support Center"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:336
+#: templates/admin/dashboard-home.php:344
 msgid "We may have already answered your question— visit our Support Forum to find the solution."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:339
+#: templates/admin/dashboard-home.php:347
 msgid "Visit Suppport Forum"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:346
+#: templates/admin/dashboard-home.php:354
 msgid "Ask a Question"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:348
+#: templates/admin/dashboard-home.php:356
 msgid "Need further help? Submit a support request for quick assistance."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:351
+#: templates/admin/dashboard-home.php:359
 msgid "Submit a Question"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:362
+#: templates/admin/dashboard-home.php:370
 msgid "ZyreAddons Integrations"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:368
-#: templates/admin/dashboard-home.php:392
+#: templates/admin/dashboard-home.php:376
+#: templates/admin/dashboard-home.php:400
 msgid "Free"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:372
+#: templates/admin/dashboard-home.php:380
 msgid "Free Elementor WordPress<br>theme and addons"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:375
+#: templates/admin/dashboard-home.php:383
 msgid "Install Now"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:396
+#: templates/admin/dashboard-home.php:404
 msgid "Enable your visitors to connect<br>with you"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:402
+#: templates/admin/dashboard-home.php:410
 msgid " Now"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:424
+#: templates/admin/dashboard-home.php:432
 msgid "Widget"
 msgid_plural "Widgets"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard-home.php:444
+#: templates/admin/dashboard-home.php:435
+#: traits/list-item-advanced-trait.php:529
+#: widgets/post-meta/post-meta.php:673
+#: widgets/post-navigation/post-navigation.php:547
+msgid "Style"
+msgid_plural "Styles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/dashboard-home.php:454
 msgid "Search Widgets"
 msgstr ""
 
 #. translators: %s is the style count
-#: templates/admin/dashboard-home.php:507
+#: templates/admin/dashboard-home.php:517
 #, php-format
 msgid "%s style"
 msgid_plural "%s styles"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard-home.php:515
+#: templates/admin/dashboard-home.php:525
 msgid "Inactive"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:521
+#: templates/admin/dashboard-home.php:531
 msgid "View Demo"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:522
+#: templates/admin/dashboard-home.php:532
 msgid "Documentation"
 msgstr ""
 
 #. translators: %d is the style number
-#: templates/admin/dashboard-home.php:553
+#: templates/admin/dashboard-home.php:563
 #, php-format
 msgid "Style %d"
 msgstr ""
@@ -3824,12 +3833,6 @@ msgstr ""
 #: widgets/testimonial/testimonial.php:197
 #: widgets/toggle/toggle.php:1327
 msgid "Content"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:529
-#: widgets/post-meta/post-meta.php:673
-#: widgets/post-navigation/post-navigation.php:547
-msgid "Style"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:532

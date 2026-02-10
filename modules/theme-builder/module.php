@@ -461,14 +461,20 @@ class Module {
 	 * Set custom meta query parameters to posts query.
 	 */
 	public function set_meta_query_to_posts_query( $query ) {
-		if ( ! is_admin() ) {
+		if ( ! is_admin() || empty( $query->query['post_type'] ) ) {
 			return;
 		}
+
+        $post_type = $query->get( 'post_type' );
+
+        if ( empty( $post_type ) ) {
+            return;
+        }
 
 		global $pagenow;
 
 		// use $query parameter instead of global $post_type
-		if ( 'edit.php' === $pagenow && self::POST_TYPE === $query->query['post_type'] ) {
+		if ( 'edit.php' === $pagenow && self::POST_TYPE === $post_type ) {
 
 			if ( isset( $_GET['zyre_library_type'] ) ) {
 				$meta_query = array(
