@@ -1645,7 +1645,7 @@ class Archive_Posts extends Base {
 		}
 		?>
 		<div class="zyre-archive-post-thumbnail zy-relative zy-overflow-hidden zy-overflow-y-auto">
-			<a class="zyre-archive-post-thumbnail__link zy-block" href="<?php echo esc_attr( $this->current_permalink ); ?>">
+			<a class="zyre-archive-post-thumbnail__link zy-block" href="<?php echo esc_url( $this->current_permalink ); ?>">
 				<?php echo wp_kses_post( $thumbnail_html ); ?>
 			</a>
 			<?php
