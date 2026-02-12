@@ -85,7 +85,7 @@ class Subscription_Form extends Base {
 				'select2options' => [
 					'minimumInputLength' => 0,
 				],
-				'description'    => esc_html__( 'Create a audience/list in mailchimp account ', 'zyre-elementor-addons' ) . '<a href="https://mailchimp.com/help/create-audience/" target="_blank"> ' . esc_html__( 'Create Audience', 'zyre-elementor-addons' ) . '</a>',
+				'description'    => esc_html__( 'Create a audience/list in mailchimp account ', 'zyre-elementor-addons' ) . '<a href="' . esc_url('https://mailchimp.com/help/create-audience/') . '" target="_blank"> ' . esc_html__( 'Create Audience', 'zyre-elementor-addons' ) . '</a>',
 			]
 		);
 

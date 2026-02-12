@@ -502,7 +502,7 @@ class Module {
 					<h1 class="zyre-admin-top-bar-branding-title"><?php esc_html_e( 'Theme Builder', 'zyre-elementor-addons' ); ?></h1>
 				</div>
 				<div class="zyre-admin-top-bar-buttons">
-					<a class="button-secondary button-large" id="zyre-template-library-add-new" href="<?php echo esc_url( admin_url() ); ?>post-new.php?post_type=zyre_library"><?php esc_html_e( 'Add New', 'zyre-elementor-addons' ); ?></a>
+					<a class="button-secondary button-large" id="zyre-template-library-add-new" href="<?php echo esc_url( admin_url( 'post-new.php?post_type=zyre_library' ) ); ?>"><?php esc_html_e( 'Add New', 'zyre-elementor-addons' ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -537,7 +537,8 @@ class Module {
 			foreach ( self::get_template_types() as $key => $value ) {
 				$active = ( $get_active === $key ) ? 'nav-tab-active' : '';
 				$admin_filter_url = admin_url( self::TAB_BASE . '&zyre_library_type=' . $key );
-				echo '<a class="nav-tab ' . $active . '" href="' . esc_url( $admin_filter_url ) . '">' . esc_html( $value ) . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                $nav_tab_link = '<a class="nav-tab ' . $active . '" href="' . esc_url( $admin_filter_url ) . '">' . esc_html( $value ) . '</a>';
+				echo wp_kses_post( $nav_tab_link );
 			}
 			?>
 		</div>
