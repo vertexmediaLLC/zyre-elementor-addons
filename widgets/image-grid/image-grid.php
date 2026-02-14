@@ -1168,7 +1168,7 @@ class Image_Grid extends Base {
 		$this->add_render_attribute( 'items_wrap', 'class', 'zyre-image-grid-items zyre-isotope' );
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			$this->add_render_attribute( 'items_wrap', 'class', 'zyre-isotope-' . esc_html( $this->get_id() ) );
+			$this->add_render_attribute( 'items_wrap', 'class', 'zyre-isotope-' . esc_attr( $this->get_id() ) );
 		}
 
 		$content_display = $settings['content_display'] ?? '';

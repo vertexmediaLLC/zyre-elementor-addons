@@ -8,6 +8,7 @@ use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
+use Elementor\Utils;
 use Elementor\Widget_Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -700,7 +701,7 @@ trait Button_Trait {
 		$button_class_attr = "{$prefix}button_class_attr";
 		$button_onclick_event = "{$prefix}button_onclick_event";
 
-		$instance->add_render_attribute( $button, 'class', ! empty( $args['id_prefix'] ) ? 'zyre-button zyre-button-' . $args['id_prefix'] : 'zyre-button' );
+		$instance->add_render_attribute( $button, 'class', ! empty( $args['id_prefix'] ) ? 'zyre-button zyre-button-' . esc_attr( $args['id_prefix'] ) : 'zyre-button' );
 
 		$html_tag = 'span';
 		if ( ! empty( $settings[ $button_link ]['url'] ) ) {
@@ -735,7 +736,7 @@ trait Button_Trait {
 		}
 
 		if ( ! empty( $settings[ $button_icon ]['value'] ) || $settings[ $button_text ] ) : ?>
-			<<?php echo esc_attr( $html_tag ); ?> <?php $instance->print_render_attribute_string( $button ); ?>>
+			<<?php Utils::print_validated_html_tag( $html_tag ); ?> <?php $instance->print_render_attribute_string( $button ); ?>>
 				<span class="zyre-button-inner">
 					<?php if ( $settings[ $button_icon ]['value'] ) : ?>
 						<span <?php $instance->print_render_attribute_string( $icon ); ?>><?php Icons_Manager::render_icon( $settings[ $button_icon ], [ 'aria-hidden' => 'true' ] ); ?></span>
@@ -745,7 +746,7 @@ trait Button_Trait {
 						<span <?php $instance->print_render_attribute_string( $button_text ); ?>><?php echo wp_kses( $settings[ $button_text ], zyre_get_allowed_html() ); ?></span>
 					<?php endif; ?>
 				</span>
-			</<?php echo esc_attr( $html_tag ); ?>>
+			</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 		<?php endif;
 	}
 }

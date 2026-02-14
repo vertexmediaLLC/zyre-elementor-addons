@@ -190,7 +190,7 @@ $credential_data = zyre_get_credentials();
 										$icon = isset( $credential['icon'] ) ? $credential['icon'] : '';
 										$is_pro = isset( $credential['is_pro'] ) && $credential['is_pro'] ? true : false;
 										$is_placeholder = $is_pro && ! zyre_has_pro();
-										$item_class = 'zyre-credential__item zyre-credential__item-' . esc_attr( $credential_key );
+										$item_class = 'zyre-credential__item zyre-credential__item-' . $credential_key;
 
 										$fields = isset( $credential['fields'] ) ? $credential['fields'] : '';
 
