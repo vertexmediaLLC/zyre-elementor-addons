@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -553,9 +554,9 @@ class Post_Title extends Base {
 			$this->add_render_attribute( 'title', 'class', 'zyre-post-title' );
 		}
 		?>
-		<<?php echo esc_attr( $html_tag ); ?> <?php $this->print_render_attribute_string( 'title' ); ?>>
+		<<?php Utils::print_validated_html_tag( $html_tag ); ?> <?php $this->print_render_attribute_string( 'title' ); ?>>
 			<?php echo wp_kses( get_the_title(), zyre_get_allowed_html() ); ?>
-		</<?php echo esc_attr( $html_tag ); ?>>
+		</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 	<?php }
 
 	/**

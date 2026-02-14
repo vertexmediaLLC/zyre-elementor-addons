@@ -352,7 +352,7 @@ class Post_Thumbnail extends Base {
 			$wp_caption = '';
 			?>
 
-			<<?php echo esc_attr( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_thumbnail' ); ?>>
+			<<?php Utils::print_validated_html_tag( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_thumbnail' ); ?>>
 				<figure class="zyre-post-thumbnail-inner zyre-post-thumbnail-caption--<?php echo esc_attr( $settings['post_thumbnail_caption'] ); ?> zy-relative zy-m-0 zy-overflow-hidden">
 					<?php
 					if ( 'default' === $settings['post_thumbnail_type'] ) {
@@ -372,7 +372,7 @@ class Post_Thumbnail extends Base {
 						</figcaption>
 					<?php endif; ?>
 				</figure>
-			</<?php echo esc_attr( $html_tag ); ?>>
+			</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 			<?php
 		}
 	}

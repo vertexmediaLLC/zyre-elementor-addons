@@ -4,6 +4,7 @@ namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -810,9 +811,9 @@ class Post_Meta extends Base {
 		$this->render_post_item_before( $item );
 		?>
 
-		<<?php echo esc_attr( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_author' ); ?>>
+		<<?php Utils::print_validated_html_tag( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_author' ); ?>>
 			<?php echo esc_html( $author_name ); ?>
-		</<?php echo esc_attr( $html_tag ); ?>>
+		</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 
 		<?php
 	}
@@ -832,14 +833,14 @@ class Post_Meta extends Base {
 		$this->render_post_item_before( $item );
 		?>
 
-		<<?php echo esc_attr( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_date' ); ?>>
+		<<?php Utils::print_validated_html_tag( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_date' ); ?>>
 			<?php if ( 'custom' === $item['date_format'] && '' !== $item['custom_date_format'] ) {
 				echo esc_html( get_the_date( $item['custom_date_format'] ) );
 			} else {
 				echo esc_html( get_the_date( get_option( 'date_format' ) ) );
 			}
 			?>
-		</<?php echo esc_attr( $html_tag ); ?>>
+		</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 
 		<?php
 	}
@@ -953,9 +954,9 @@ class Post_Meta extends Base {
 		$this->render_post_item_before( $item );
 		?>
 
-		<<?php echo esc_attr( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_comment' ); ?>>
+		<<?php Utils::print_validated_html_tag( $html_tag ); ?> <?php $this->print_render_attribute_string( 'post_comment' ); ?>>
 			<?php echo esc_html( $text ); ?>
-		</<?php echo esc_attr( $html_tag ); ?>>
+		</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 
 		<?php
 	}
