@@ -1517,7 +1517,7 @@ class Animated_Text extends Base {
 		$this->add_render_attribute( 'wrapper', 'class', 'zyre-animated-text-wrapper zy-relative' );
 
 		if ( 'switch' === $settings['type'] ) {
-			$this->add_render_attribute( 'wrapper', 'data-start-effect', $settings['trigger'] );
+			$this->add_render_attribute( 'wrapper', 'data-start-effect', esc_attr( $settings['trigger'] ) );
 
 			$pause = '';
 

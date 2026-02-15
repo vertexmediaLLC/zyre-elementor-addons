@@ -108,8 +108,8 @@ $credential_data = zyre_get_credentials();
 
 								printf( '<a href="%1$s" aria-controls="tab-content-%2$s" id="tab-nav-%2$s" class="%3$s" role="tab">%4$s %5$s</a>',
 									esc_url( $href ),
-									esc_html( $key),
-									esc_html( $class ),
+									esc_attr( $key ),
+									esc_attr( $class ),
 									isset( $value['icon'] ) ? '<span class="zyre-icon-svg">' . wp_kses( $value['icon'], zyre_get_allowed_html() ) . '</span>' : '',
 									isset( $value['title'] ) ? esc_html( $value['title'] ) : sprintf(
 										/* translators: %s is the tab number */
