@@ -3303,8 +3303,8 @@ class Post_Comments extends Base {
 						),
 						sprintf(
 							'<input id="url" name="url" type="url" value="%s" placeholder="%s" size="30" maxlength="200" autocomplete="url" />',
-							esc_attr( $commenter['comment_author_url'] ),
-							! empty( $settings['url_field_placeholder'] ) ? esc_attr( $settings['url_field_placeholder'] ) : ''
+							esc_url( $commenter['comment_author_url'] ),
+							! empty( $settings['url_field_placeholder'] ) ? esc_url( $settings['url_field_placeholder'] ) : ''
 						)
 					);
 				}

@@ -597,7 +597,7 @@ class Module {
 
 			echo ucwords( str_replace( '-', ' ', $type ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-			echo "<span id='tmpl-", esc_html( $post_id ), "'>";
+			echo "<span id='tmpl-", esc_attr( $post_id ), "'>";
 
 			if ( $is_active ) {
 				echo ' - <b>' . esc_html__( 'Active', 'zyre-elementor-addons' ) . '</b>';

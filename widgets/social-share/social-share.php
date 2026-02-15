@@ -1079,9 +1079,9 @@ class Social_Share extends Base {
 				] );
 
 				$this->set_render_attribute( $link_attr, 'data-sharer', esc_attr( $network_name ) );
-				$this->set_render_attribute( $link_attr, 'data-url', $share_url );
-				$this->set_render_attribute( $link_attr, 'data-hashtags', $hashtags ? esc_html( $hashtags ) : '' );
-				$this->set_render_attribute( $link_attr, 'data-title', $custom_share_title );
+				$this->set_render_attribute( $link_attr, 'data-url', esc_url( $share_url ) );
+				$this->set_render_attribute( $link_attr, 'data-hashtags', $hashtags ? esc_attr( $hashtags ) : '' );
+				$this->set_render_attribute( $link_attr, 'data-title', esc_attr( $custom_share_title ) );
 				$this->set_render_attribute( $link_attr, 'data-image', esc_url( $image ) );
 				$this->set_render_attribute( $link_attr, 'data-to', esc_attr( $email_to ) );
 				$this->set_render_attribute( $link_attr, 'data-subject', esc_attr( $email_subject ) );
