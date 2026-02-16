@@ -3541,8 +3541,10 @@ class Post_Comments extends Base {
 						<div class="comment-metadata zy-inline-flex zy-align-center zy-gap-1 zy-grow-1">
 							<?php
 							if ( 'yes' === $settings['show_date_time'] ) {
-								$date_format = ! empty( $settings['comment_date_format'] ) ? esc_html( $settings['comment_date_format'] ) : '';
-								$time_format = ! empty( $settings['comment_time_format'] ) ? esc_html( $settings['comment_time_format'] ) : '';
+
+								$date_format = ! empty( $settings['comment_date_format'] ) ? $settings['comment_date_format'] : '';
+								$time_format = ! empty( $settings['comment_time_format'] ) ? $settings['comment_time_format'] : '';
+
 								if ( 'yes' === $settings['comment_time_ago'] ) {
 									printf(
 										'<a href="%s" class="time-link zy-inline-flex zy-align-center zy-gap-1">%s<time datetime="%s">%s%s</time></a>',
@@ -3551,8 +3553,10 @@ class Post_Comments extends Base {
 											'<span class="time-icon">%s</span>',
 											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										) : '',
-										wp_kses( get_comment_time( 'c' ), zyre_get_allowed_html() ),
-										human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										esc_attr( get_comment_time( 'c' ) ),
+                                        esc_html(
+                                            human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) )
+                                        ),
 										( 'yes' === $settings['show_ago_text'] ) ? esc_html__( ' ago', 'zyre-elementor-addons' ) : '',
 									);
 								} else {
@@ -3563,13 +3567,13 @@ class Post_Comments extends Base {
 											'<span class="time-icon">%s</span>',
 											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										) : '',
-										wp_kses( get_comment_time( 'c' ), zyre_get_allowed_html() ),
-										sprintf(
-											/* translators: 1: Comment date, 2: Comment time. */
-											__( '%1$s at %2$s', 'zyre-elementor-addons' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-											get_comment_date( $date_format, $comment ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-											get_comment_time( $time_format ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-										)
+                                        esc_attr( get_comment_time( 'c' ) ),
+                                        sprintf(
+                                            /* translators: 1: Comment date, 2: Comment time. */
+                                            esc_html__( '%1$s at %2$s', 'zyre-elementor-addons' ),
+                                            esc_html( get_comment_date( $date_format, $comment ) ),
+                                            esc_html( get_comment_time( $time_format ) )
+                                        )
 									);
 								}
 							}

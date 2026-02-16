@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -343,10 +344,11 @@ class Site_Tagline extends Base {
 		$settings = $this->get_settings();
 		$tagline    = get_bloginfo( 'description' );
 		$icon_position = $settings['site_tagline_icon_position'];
+        $html_tag = $settings['site_tagline_tag'] ?? 'p';
 
 		if ( $tagline ) {
 			?>
-			<<?php echo zyre_escape_tags( $settings['site_tagline_tag'], 'p' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-site-tagline zy-flex zy-align-center zy-m-0">
+			<<?php Utils::print_validated_html_tag( $html_tag ); ?> class="zyre-site-tagline zy-flex zy-align-center zy-m-0">
 				<?php if ( 'before' === $icon_position ) : ?>
 					<span class="zyre-site-tagline-icon zyre-site-tagline-icon--<?php echo esc_attr( $icon_position ); ?>">
 						<?php zyre_render_icon( $settings, 'icon', 'site_tagline_icon' ); ?>
@@ -369,7 +371,7 @@ class Site_Tagline extends Base {
 						<?php zyre_render_icon( $settings, 'icon', 'site_tagline_icon' ); ?>					
 					</span>
 				<?php endif; ?>
-			</<?php echo zyre_escape_tags( $settings['site_tagline_tag'], 'p' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 			<?php
 		}
 	}

@@ -746,7 +746,9 @@ class CF7 extends Base {
 		if ( ! empty( $settings['input_textarea_padding'] ) ) {
 			$field_padding = $settings['input_textarea_padding'];
 			$padding_x = is_rtl() ? $field_padding['left'] : $field_padding['right'];
-			echo "<style>{$widget_class} .wpcf7-select {--padding-r:{$padding_x}{$field_padding['unit']}}</style>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            if ( ! empty( $padding_x ) ) {
+                echo "<style>{$widget_class} .wpcf7-select {--padding-r:{$padding_x}{$field_padding['unit']}}</style>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            }
 		}
 
 		// Remove Contact Form 7 Extra <p> tag
