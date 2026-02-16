@@ -689,9 +689,6 @@ class Conditions_Manager {
 
 			$uuid = uniqid();
 
-			$sub_name_visibility = $sub_name ? '' : 'style="display:none"';
-			$sub_id_visibility   = $sub_id ? '' : 'style="display:none"';
-
 			$sub_name_html = $sub_name
 				? '<option value="' . esc_attr( $sub_name ) . '" selected="selected">' . esc_html( $this->all_conds_list[ $sub_name ]['title'] ) . '</option>'
 				: '';
@@ -709,7 +706,7 @@ class Conditions_Manager {
 
 					<div class="zyre-tce-type">
 						<select
-							id="type-<?php echo esc_attr( $uuid ); ?>"
+                            id="type-<?php echo esc_attr( $uuid ); ?>"
 							data-id="type-<?php echo esc_attr( $uuid ); ?>"
 							data-parent="<?php echo esc_attr( $uuid ); ?>"
 							data-setting="type"
@@ -736,7 +733,7 @@ class Conditions_Manager {
 						</select>
 					</div>
 
-					<div class="zyre-tce-sub_name" <?php echo $sub_name_visibility; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+					<div class="zyre-tce-sub_name" <?php echo $sub_name ? '' : 'style="display:none"'; ?>>
 						<select
 							id="sub_name-<?php echo esc_attr( $uuid ); ?>"
 							data-id="sub_name-<?php echo esc_attr( $uuid ); ?>"
@@ -744,11 +741,11 @@ class Conditions_Manager {
 							data-setting="sub_name"
 							data-selected="<?php echo esc_attr( $sub_name ); ?>"
 							class="modal__form-select">
-							<?php echo $sub_name_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php printf( '%s', $sub_name_html ); ?>
 						</select>
 					</div>
 
-					<div class="zyre-tce-sub_id" <?php echo $sub_id_visibility; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+                    <div class="zyre-tce-sub_id" <?php echo $sub_id ? '' : 'style="display:none"'; ?>>
 						<select
 							id="sub_id-<?php echo esc_attr( $uuid ); ?>"
 							data-id="sub_id-<?php echo esc_attr( $uuid ); ?>"
@@ -756,7 +753,7 @@ class Conditions_Manager {
 							data-setting="sub_id"
 							data-selected="<?php echo esc_attr( $sub_id ); ?>"
 							class="modal__form-select">
-							<?php echo $sub_id_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                            <?php printf( '%s', $sub_id_html ); ?>
 						</select>
 					</div>
 

@@ -4,6 +4,7 @@ namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -2348,7 +2349,7 @@ class Post_Grid extends Base {
 				),
 				! empty( $this->settings['thumbnail_overlay'] ) ? sprintf(
 					'<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">%s</div>',
-					$this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					wp_kses_post( $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ) ),
 				) : '',
 			);
 		} else {
@@ -2359,7 +2360,7 @@ class Post_Grid extends Base {
 				if ( ! empty( $this->settings['thumbnail_overlay'] ) ) {
 					?>
 					<div class="zyre-post-thumbnail-overlay zy-absolute zy-left-0 zy-top-0 zy-w-100 zy-h-100 zy-index-1 zy-content-end">
-						<?php echo $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo wp_kses_post( $this->thumbnail_overlay_contents( $this->settings['thumbnail_overlay'] ) ); ?>
 					</div>
 					<?php
 				}
@@ -2416,8 +2417,11 @@ class Post_Grid extends Base {
 		if ( 'yes' !== $this->settings['show_title'] ) {
 			return;
 		}
+
+        $title_html_tag = $this->settings['title_tag'] ?? 'h3';
 		?>
-		<<?php echo zyre_escape_tags( $this->settings['title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-post-title zy-m-0">
+
+		<<?php Utils::print_validated_html_tag( $title_html_tag ); ?> class="zyre-post-title zy-m-0">
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 				<?php
 				if ( empty( $this->settings['title_length'] ) ) {
@@ -2427,7 +2431,7 @@ class Post_Grid extends Base {
 				}
 				?>
 			</a>
-		</<?php echo zyre_escape_tags( $this->settings['title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		</<?php Utils::print_validated_html_tag( $title_html_tag ); ?>>
 		<?php
 	}
 
@@ -2557,8 +2561,10 @@ class Post_Grid extends Base {
 		endswitch;
 
 		/** This filter is documented in wp-includes/general-template.php */
-		// PHPCS - The date is safe.
-		echo apply_filters( 'the_date', $date, get_option( 'date_format' ), '', '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo wp_kses(
+            apply_filters( 'the_date', $date, get_option( 'date_format' ), '', '' ),
+            zyre_get_allowed_html()
+        );
 
 		echo $in_meta ? '</span>' : '</div>';
 	}

@@ -56,7 +56,16 @@ $credential_data = zyre_get_credentials();
 				</div>
 			</div>
 			<div class="zyre-dashboard-header-right" style="display: none;"> <!---- ToDo: Show this part when pro version is released ---->
-				<p><?php _e( 'Looking to unlock more opportunities<br>and elevate your journey?', 'zyre-elementor-addons' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
+				<p>
+                <?php
+                echo wp_kses(
+                    __('Looking to unlock more opportunities<br>and elevate your journey?', 'zyre-elementor-addons'),
+                    [
+                        'br' => [],
+                    ]
+                );
+                ?>    
+                </p>
 				<a href="#" class="zyre-button-header zyre-button-link">
 					<span class="zyre-button-inner">
 						<span class="zyre-button-text"><?php esc_html_e( 'Get Pro', 'zyre-elementor-addons' ); ?></span>
@@ -377,7 +386,16 @@ $credential_data = zyre_get_credentials();
 								</div>
 								<div class="zyre-each-plugin-body">
 									<h2 class="zyre-plugin-name"><?php echo esc_html( 'Elementorin' ); ?></h2>
-									<p class="zyre-plugin-description"><?php _e( 'Free Elementor WordPress<br>theme and addons', 'zyre-elementor-addons' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
+									<p class="zyre-plugin-description">
+                                        <?php
+                                        echo wp_kses(
+                                            __('Free Elementor WordPress<br>theme and addons', 'zyre-elementor-addons'),
+                                            [
+                                                'br' => [],
+                                            ]
+                                        );
+                                        ?>
+                                    </p>
 								</div>
 								<a href="#" class="zyre-button-header zyre-install-button">
 									<span class="zyre-button-inner"><span class="zyre-button-text"><?php esc_html_e( 'Install Now', 'zyre-elementor-addons' ); ?></span></span>
@@ -401,7 +419,16 @@ $credential_data = zyre_get_credentials();
 									</div>
 									<div class="zyre-each-plugin-body">
 										<h2 class="zyre-plugin-name"><?php esc_html_e( 'Contact Form 7', 'zyre-elementor-addons' ); ?></h2>
-										<p class="zyre-plugin-description"><?php _e( 'Enable your visitors to connect<br>with you', 'zyre-elementor-addons' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
+										<p class="zyre-plugin-description">
+                                            <?php
+                                            echo wp_kses(
+                                                __('Enable your visitors to connect<br>with you', 'zyre-elementor-addons'),
+                                                [
+                                                    'br' => [],
+                                                ]
+                                            );
+                                            ?>
+                                        </p>
 									</div>
 									<?php
 									printf(

@@ -5,6 +5,7 @@ namespace ZyreAddons\Elementor\Widget;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -518,6 +519,7 @@ class Site_Title extends Base {
 		$settings      = $this->get_settings();
 		$title         = get_bloginfo( 'name' );
 		$icon_position = $settings['site_title_icon_position'];
+        $html_tag = $settings['site_title_tag'] ?? 'h1';
 
 		if ( 'custom' === $settings['link'] && ! empty( $settings['custom_link']['url'] ) ) {
 			$this->add_link_attributes( 'url', $settings['custom_link'] );
@@ -528,7 +530,7 @@ class Site_Title extends Base {
 		$this->add_render_attribute( 'url', 'class', 'zyre-site-title-link zy-flex zy-color-black' );
 		?>
 		<a <?php $this->print_render_attribute_string( 'url' ); ?>>
-			<<?php echo zyre_escape_tags( $settings['site_title_tag'], 'h1' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-site-title-heading zy-inline-flex zy-align-center zy-m-0 zy-lh-1.5">
+			<<?php Utils::print_validated_html_tag( $html_tag ); ?> class="zyre-site-title-heading zy-inline-flex zy-align-center zy-m-0 zy-lh-1.5">
 				<?php if ( 'before' === $icon_position ) : ?>
 					<?php $this->render_icon( $settings, $icon_position ); ?>
 				<?php endif; ?>	
@@ -548,7 +550,7 @@ class Site_Title extends Base {
 				<?php if ( 'after' === $icon_position ) : ?>
 					<?php $this->render_icon( $settings, $icon_position ); ?>
 				<?php endif; ?>
-			</<?php echo zyre_escape_tags( $settings['site_title_tag'], 'h1' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 		</a>
 		<?php
 	}

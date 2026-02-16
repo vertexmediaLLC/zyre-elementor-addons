@@ -48,13 +48,13 @@ $selected = get_query_var( 'zyre_library_type' );
 	<div id="zyre-template-condition-item-{{uniqeID}}" class="zyre-template-condition-item">
 		<div class="zyre-template-condition-item-row">
 			<div class="zyre-tce-type">
-				<select data-id="type-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="type" class="modal__form-select">
+				<select id="type-{{uniqeID}}" data-id="type-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="type" class="modal__form-select">
 					<option value="include"><?php esc_html_e( 'Include', 'zyre-elementor-addons' ); ?></option>
 					<option value="exclude"><?php esc_html_e( 'Exclude', 'zyre-elementor-addons' ); ?></option>
 				</select>
 			</div>
 			<div class="zyre-tce-name">
-				<select data-id="name-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="name" class="modal__form-select">
+				<select id="name-{{uniqeID}}" data-id="name-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="name" class="modal__form-select">
 					<optgroup label="<?php esc_attr_e( 'General', 'zyre-elementor-addons' ); ?>">
 						<option value="general"><?php esc_html_e( 'Entire Site', 'zyre-elementor-addons' ); ?></option>
 						<option value="archive"><?php esc_html_e( 'Archives', 'zyre-elementor-addons' ); ?></option>
@@ -63,11 +63,11 @@ $selected = get_query_var( 'zyre_library_type' );
 				</select>
 			</div>
 			<div class="zyre-tce-sub_name" style="display:none">
-				<select data-id="sub_name-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="sub_name" class="modal__form-select">
+				<select id="sub_name-{{uniqeID}}" data-id="sub_name-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="sub_name" class="modal__form-select">
 				</select>
 			</div>
 			<div class="zyre-tce-sub_id" style="display:none">
-				<select data-id="sub_id-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="sub_id" class="modal__form-select">
+				<select id="sub_id-{{uniqeID}}" data-id="sub_id-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="sub_id" class="modal__form-select">
 				</select>
 			</div>
 		</div>

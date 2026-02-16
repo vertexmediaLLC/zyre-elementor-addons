@@ -595,7 +595,7 @@ class Module {
 			$type       = get_post_meta( $post_id, '_zyre_library_type', true );
 			$is_active   = get_post_meta( $post_id, '_zyre_template_active', true );
 
-			echo ucwords( str_replace( '-', ' ', $type ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo esc_html( ucwords( str_replace( '-', ' ', $type ) ) );
 
 			echo "<span id='tmpl-", esc_attr( $post_id ), "'>";
 
@@ -632,12 +632,18 @@ class Module {
 					}
 				}
 
-				printf(
-					/* translators: 1: included conditions, 2: excluded conditions */
-					__( '<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s', 'zyre-elementor-addons' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					implode( ', ', $include_conditions ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					implode( ', ', $exclude_conditions ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
+                printf(
+                    wp_kses(
+                        /* translators: 1: included conditions, 2: excluded conditions */
+                        __( '<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s', 'zyre-elementor-addons' ),
+                        [
+                            'b'  => [],
+                            'br' => [],
+                        ]
+                    ),
+                    esc_html( implode( ', ', $include_conditions ) ),
+                    esc_html( implode( ', ', $exclude_conditions ) )
+                );
 			} else {
 				echo '<b>' . esc_html__( 'Not Applicable', 'zyre-elementor-addons' ) . '</b>';
 			}
@@ -901,7 +907,7 @@ class Module {
 	public function single_blog_content_elementor( $post ) {
 		$templates = $this->singular_template;
 		if ( ! empty( $templates ) ) {
-			echo self::render_builder_data( $templates ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo self::render_builder_data( $templates ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			the_content();
 		}

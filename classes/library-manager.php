@@ -80,14 +80,14 @@ class Library_Manager {
 	public static function register_ajax_actions( Ajax $ajax ) {
 		$ajax->register_ajax_action( 'get_zyre_library_data', function ( $data ) {
 			if ( ! current_user_can( 'edit_posts' ) ) {
-				throw new \Exception( __( 'Access Denied', 'zyre-elementor-addons' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+				throw new \Exception( esc_html__( 'Access Denied', 'zyre-elementor-addons' ) );
 			}
 
 			if ( ! empty( $data['editor_post_id'] ) ) {
 				$editor_post_id = absint( $data['editor_post_id'] );
 
 				if ( ! get_post( $editor_post_id ) ) {
-					throw new \Exception( __( 'Post not found.', 'zyre-elementor-addons' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+					throw new \Exception( esc_html__( 'Post not found.', 'zyre-elementor-addons' ) );
 				}
 
 				zyre_elementor()->db->switch_to_post( $editor_post_id );
@@ -100,21 +100,21 @@ class Library_Manager {
 
 		$ajax->register_ajax_action( 'get_zyre_template_data', function ( $data ) {
 			if ( ! current_user_can( 'edit_posts' ) ) {
-				throw new \Exception( __( 'Access Denied', 'zyre-elementor-addons' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+				throw new \Exception( esc_html__( 'Access Denied', 'zyre-elementor-addons' ) );
 			}
 
 			if ( ! empty( $data['editor_post_id'] ) ) {
 				$editor_post_id = absint( $data['editor_post_id'] );
 
 				if ( ! get_post( $editor_post_id ) ) {
-					throw new \Exception( __( 'Post not found', 'zyre-elementor-addons' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+					throw new \Exception( esc_html__( 'Post not found', 'zyre-elementor-addons' ) );
 				}
 
 				zyre_elementor()->db->switch_to_post( $editor_post_id );
 			}
 
 			if ( empty( $data['template_id'] ) ) {
-				throw new \Exception( __( 'Template id missing', 'zyre-elementor-addons' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+				throw new \Exception( esc_html__( 'Template id missing', 'zyre-elementor-addons' ) );
 			}
 
 			$result = self::get_template_data( $data );
