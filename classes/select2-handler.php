@@ -11,11 +11,11 @@ class Select2_Handler {
 		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( $_POST['nonce'] ) : '';
 
 		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
-			throw new Exception( 'Invalid request' );
+			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
 		}
 
 		if ( ! current_user_can( 'edit_posts' ) ) {
-			throw new Exception( 'Unauthorized request' );
+			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 		}
 	}
 
@@ -26,7 +26,7 @@ class Select2_Handler {
 			$object_type = ! empty( $_REQUEST['object_type'] ) ? sanitize_text_field( trim( $_REQUEST['object_type'] ) ) : '';
 
 			if ( ! in_array( $object_type, [ 'post', 'term', 'user', 'mailchimp_list' ], true ) ) {
-				throw new Exception( 'Invalid object type' );
+				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );
 			}
 
 			$response = [];
@@ -95,7 +95,7 @@ class Select2_Handler {
 		$saved_values = ! empty( $_REQUEST['saved_values'] ) ? zyre_sanitize_array_recursively( $_REQUEST['saved_values'] ) : 0;
 
 		if ( empty( $term_taxonomy ) ) {
-			throw new Exception( 'Invalid taxonomy' );
+			throw new Exception( esc_html__( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
 		}
 
 		$args = [
@@ -140,7 +140,7 @@ class Select2_Handler {
 		$saved_values = ! empty( $_REQUEST['saved_values'] ) ? zyre_sanitize_array_recursively( $_REQUEST['saved_values'] ) : 0;
 
 		if ( empty( $global_api ) ) {
-			throw new Exception( 'Invalid taxonomy' );
+			throw new Exception( esc_html__( 'Invalid API key', 'zyre-elementor-addons' ) );
 		}
 
 		if ( ! class_exists( 'ZyreAddons\Elementor\Widget\Mailchimp\Mailchimp_Api' ) ) {

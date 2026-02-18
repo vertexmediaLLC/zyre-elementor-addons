@@ -1434,8 +1434,8 @@ class Image_Grid extends Base {
 		 * This code may look unnecessary,
 		 * but it resolves a critical issue.
 		 */
-		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) :
-			printf( '<script>jQuery(".zyre-isotope-%s").isotope();</script>', esc_html( $this->get_id() ) );
-		endif;
+		/* if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) :
+			printf( '<script>jQuery(".zyre-isotope-%s").isotope();</script>', esc_html( $this->get_id() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		endif; */
 	}
 }

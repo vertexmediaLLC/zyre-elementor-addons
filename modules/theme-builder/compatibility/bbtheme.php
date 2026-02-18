@@ -61,11 +61,6 @@ class Bbtheme {
 				<?php echo Module::render_builder_data( $this->header ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 		</header>
-		<style>
-			[data-type="header"] {
-				display: none !important;
-			}
-		</style>
 
 		<?php do_action( 'zyreaddons/template/after_header' );
 	}

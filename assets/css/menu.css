@@ -2,15 +2,19 @@
 	overflow: hidden;
 }
 
+.zyre-nav-menu:not(.initialized) {
+	display: none
+}
+
 .zyre-nav-menu:hover {
 	overflow: visible;
 }
 
 .zyre-nav-menu ul.menu,
 .zyre-nav-menu ul.sub-menu {
-    padding: 0;
+	padding: 0;
 	margin: 0;
-    list-style: none;
+	list-style: none;
 }
 
 .zyre-nav-menu ul.menu li.menu-item {
@@ -23,39 +27,39 @@
 }
 
 .zyre-nav-menu ul.menu li.menu-item a {
-    color: #000;
-    text-decoration: none;
-    transition: var(--zy-transition);
+	color: #000;
+	text-decoration: none;
+	transition: var(--zy-transition);
 	position: relative;
 }
 
 .zyre-nav-menu ul.menu li.menu-item .zy-menu-badge,
 .zyre-nav-menu ul.menu li.menu-item .zy-menu-badge>.zy-menu-badge-arrow {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .zyre-nav-menu ul.menu li.menu-item .zy-menu-badge {
-    top: 5px;
-    z-index: 10;
-    padding: 4px 8px;
-    border-radius: 3px;
-    background-color: #bbb;
-    color: #fff;
-    font-size: 8px;
-    line-height: 1;
+	top: 5px;
+	z-index: 10;
+	padding: 4px 8px;
+	border-radius: 3px;
+	background-color: #bbb;
+	color: #fff;
+	font-size: 8px;
+	line-height: 1;
 }
 
 .zyre-nav-menu ul.menu li.menu-item .zy-menu-badge>.zy-menu-badge-arrow {
-    bottom: -6px;
-    border-width: 6px;
-    border-top: solid #bbb;
-    border-right: solid transparent;
-    border-bottom: solid transparent;
-    border-left: solid transparent;
+	bottom: -6px;
+	border-width: 6px;
+	border-top: solid #bbb;
+	border-right: solid transparent;
+	border-bottom: solid transparent;
+	border-left: solid transparent;
 }
 
 .zyre-nav-menu ul.menu li.menu-item .zy-menu-icon {
@@ -72,7 +76,7 @@
 	font-size: 0.8em;
 }
 
-.zyre-nav-menu ul.sub-menu > li.menu-item {
+.zyre-nav-menu ul.sub-menu>li.menu-item {
 	justify-content: space-between;
 }
 
@@ -80,13 +84,13 @@
 	border-bottom: 1px solid var(--zy-hue2);
 }
 
-.zyre-nav-menu ul.sub-menu > li.menu-item > a {
+.zyre-nav-menu ul.sub-menu>li.menu-item>a {
 	flex-grow: 1;
 }
 
 /* Hamburger */
 .zyre-nav-menu .zyre-menu-toggler {
-    fill: #fff;
+	fill: #fff;
 	background-color: var(--zy-gray);
 	border-radius: 3px;
 }

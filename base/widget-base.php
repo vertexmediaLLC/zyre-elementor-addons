@@ -607,13 +607,14 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'padding':
+						$css_values = ! empty( $values['css_values'] ) ? $values['css_values'] : 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};';
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Padding', 'zyre-elementor-addons' ),
 							'type'       => Controls_Manager::DIMENSIONS,
 							'size_units' => ! empty( $values['size_units'] ) ? $values['size_units'] : [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 							'default'    => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [],
 							'selectors'  => [
-								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => esc_attr( $css_values ),
 							],
 							'condition'  => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
