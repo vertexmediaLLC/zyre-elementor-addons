@@ -129,6 +129,7 @@ ZyreAddons Pro is currently under development and will include advanced widgets,
 Zyre Elementor Addons may collect limited, non-sensitive telemetry data only with user consent.
 
 Privacy Policy: https://zyreaddons.com/privacy-policy/
+Terms of Use: https://zyreaddons.com/terms-of-use/
 
 
 == Frequently Asked Questions ==
@@ -147,6 +148,123 @@ Yes. Updates are designed to be safe. We recommend backups as a best practice.
 
 = Does it work with other Elementor Addons? =
 Yes! **Zyre Addons** is fully compatible with other Elementor Addons and also adds extra features to enhance your overall experience.
+
+
+== External services ==
+
+This plugin includes a social share feature that connects to third-party social media and web services when a user clicks a share button. 
+No data is sent automatically. Data is only transmitted after a user interaction (click).
+
+When a share button is clicked, the plugin may send:
+- The current page URL
+- The page title
+- Optional image, description, hashtags, or other share-related parameters (if configured)
+
+The data is sent directly from the user’s browser to the selected service.
+
+Below is a list of the external services used:
+
+Facebook  
+https://www.facebook.com/privacy/policy/  
+https://www.facebook.com/legal/terms/
+
+X (Twitter)  
+https://twitter.com/en/privacy  
+https://twitter.com/en/tos  
+
+LinkedIn  
+https://www.linkedin.com/legal/privacy-policy  
+https://www.linkedin.com/legal/user-agreement  
+
+WhatsApp  
+https://www.whatsapp.com/legal/privacy-policy  
+https://www.whatsapp.com/legal/terms-of-service  
+
+Telegram  
+https://telegram.org/privacy  
+https://telegram.org/tos  
+
+Pinterest  
+https://policy.pinterest.com/en/privacy-policy  
+https://policy.pinterest.com/en/terms-of-service  
+
+Reddit  
+https://www.redditinc.com/policies/privacy-policy  
+https://www.redditinc.com/policies/user-agreement  
+
+Tumblr  
+https://www.tumblr.com/privacy  
+https://www.tumblr.com/terms-of-service  
+
+Buffer  
+https://buffer.com/privacy  
+https://buffer.com/terms  
+
+Pocket  
+https://getpocket.com/privacy  
+https://getpocket.com/tos  
+
+Xing  
+https://privacy.xing.com/en/privacy-policy  
+https://www.xing.com/terms  
+
+VK  
+https://vk.com/privacy  
+https://vk.com/terms  
+
+Weibo  
+https://weibo.com/signup/v5/privacy  
+https://weibo.com/signup/v5/terms  
+
+Odnoklassniki  
+https://ok.ru/regulations  
+https://ok.ru/help/terms  
+
+Mail.ru  
+https://help.mail.ru/legal/terms  
+
+Line  
+https://line.me/en/terms/policy/
+
+Skype  
+https://privacy.microsoft.com/en-us/privacystatement  
+https://www.microsoft.com/en-us/servicesagreement  
+
+Threads  
+https://privacycenter.instagram.com/policy  
+https://help.instagram.com/581066165581870  
+
+WordPress.com  
+https://automattic.com/privacy/  
+https://wordpress.com/tos/  
+
+Amazon  
+https://www.amazon.com/privacy  
+https://www.amazon.com/conditionsofuse  
+
+Google Bookmarks  
+https://policies.google.com/privacy  
+https://policies.google.com/terms  
+
+Trello  
+https://www.atlassian.com/legal/privacy-policy  
+https://www.atlassian.com/legal/cloud-terms-of-service  
+
+Quora  
+https://www.quora.com/about/privacy  
+https://www.quora.com/about/tos  
+
+Evernote  
+https://evernote.com/legal/privacy.php  
+https://evernote.com/legal/terms-of-service  
+
+Yahoo Mail  
+https://legal.yahoo.com/us/en/yahoo/privacy/index.html  
+https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html  
+
+Other listed services (e.g., Hacker News, Digg, Mix, Flipboard, etc.) operate under their respective privacy policies and terms of service. Data is transmitted only when the user actively chooses to share content.
+
+The plugin does not store, collect, or process personal user data on its own servers. All sharing actions are handled directly between the user's browser and the selected third-party service.
 
 
 == Installation ==

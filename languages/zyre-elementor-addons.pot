@@ -9,16 +9,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-18T06:56:20+00:00\n"
+"POT-Creation-Date: 2026-02-18T11:56:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
 
 #. Plugin Name of the plugin
 #: zyre-elementor-addons.php
-#: zyre-elementor-addons.php:104
-#: zyre-elementor-addons.php:134
-#: zyre-elementor-addons.php:156
+#: zyre-elementor-addons.php:105
+#: zyre-elementor-addons.php:135
+#: zyre-elementor-addons.php:157
 msgid "Zyre Elementor Addons"
 msgstr ""
 
@@ -43,7 +43,7 @@ msgid "https://vertexmedia.tech/"
 msgstr ""
 
 #: base/plugin-base.php:188
-#: classes/admin-dashboard.php:175
+#: classes/admin-dashboard.php:183
 msgid "Zyre Addons"
 msgstr ""
 
@@ -1433,28 +1433,28 @@ msgstr ""
 msgid "HIDE"
 msgstr ""
 
-#: classes/admin-dashboard.php:132
+#: classes/admin-dashboard.php:140
 #: templates/admin/dashboard-home.php:135
 msgid "Save Settings"
 msgstr ""
 
-#: classes/admin-dashboard.php:133
+#: classes/admin-dashboard.php:141
 msgid "Settings Saved"
 msgstr ""
 
-#: classes/admin-dashboard.php:174
+#: classes/admin-dashboard.php:182
 msgid "Zyre Elementor Addons Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:285
+#: classes/admin-dashboard.php:293
 msgid "Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:289
+#: classes/admin-dashboard.php:297
 msgid "Widgets"
 msgstr ""
 
-#: classes/admin-dashboard.php:293
+#: classes/admin-dashboard.php:301
 #: widgets/subscription-form/subscription-form.php:58
 msgid "Integrations"
 msgstr ""
@@ -2869,9 +2869,9 @@ msgid "Not Applicable"
 msgstr ""
 
 #: modules/theme-builder/module.php:655
-#: zyre-elementor-addons.php:122
-#: zyre-elementor-addons.php:135
-#: zyre-elementor-addons.php:157
+#: zyre-elementor-addons.php:123
+#: zyre-elementor-addons.php:136
+#: zyre-elementor-addons.php:158
 msgid "Elementor"
 msgstr ""
 
@@ -10104,27 +10104,27 @@ msgid "Hover Text Color"
 msgstr ""
 
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
-#: zyre-elementor-addons.php:103
+#: zyre-elementor-addons.php:104
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: zyre-elementor-addons.php:105
+#: zyre-elementor-addons.php:106
 msgid "PHP"
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Elementor installation link
-#: zyre-elementor-addons.php:133
+#: zyre-elementor-addons.php:134
 #, php-format
 msgid "%1$s requires %2$s to be installed and activated to function properly. %3$s"
 msgstr ""
 
-#: zyre-elementor-addons.php:150
+#: zyre-elementor-addons.php:151
 msgid "Update Elementor"
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
-#: zyre-elementor-addons.php:155
+#: zyre-elementor-addons.php:156
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %4$s or greater. %3$s"
 msgstr ""

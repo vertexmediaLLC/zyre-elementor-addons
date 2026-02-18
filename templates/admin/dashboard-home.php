@@ -555,8 +555,8 @@ $credential_data = zyre_get_credentials();
 										</div>
 
 										<div class="zyre-widget-help-links">
-											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank"><?php esc_html_e( 'View Demo', 'zyre-elementor-addons' ); ?> <i class="fas fa-external-link-alt"></i></a>
-											<a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'zyre-elementor-addons' ); ?> <i class="fas fa-external-link-alt"></i></a>
+											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank"><?php esc_html_e( 'View Demo', 'zyre-elementor-addons' ); ?> <?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
+											<a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'zyre-elementor-addons' ); ?> <?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
 										</div>
 									</div>
 
