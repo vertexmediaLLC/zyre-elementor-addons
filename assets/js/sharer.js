@@ -335,13 +335,6 @@
                             url: this.getValue("url")
                         }
                     },
-                    diaspora: {
-                        shareUrl: "https://share.diasporafoundation.org",
-                        params: {
-                            title: this.getValue("title"),
-                            url: this.getValue("url")
-                        }
-                    },
                     googlebookmarks: {
                         shareUrl: "https://www.google.com/bookmarks/mark",
                         params: {

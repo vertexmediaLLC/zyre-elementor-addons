@@ -62,7 +62,7 @@ class Lottie_Animation extends Base {
 					'source' => 'url',
 				],
 				'ai'          => false,
-				'default'     => esc_url( 'https://lottie.host/2dc3d071-7d39-44a0-99b5-44adc2d1e236/hXMgJ0VuGf.json' ),
+				'default'     => esc_url( ZYRE_ADDONS_ASSETS . 'json/lottie-sample.json' ),
 			]
 		);
 

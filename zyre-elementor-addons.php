@@ -10,6 +10,7 @@
  * Author URI: https://vertexmedia.tech/
  * Text Domain: zyre-elementor-addons
  * Domain Path: /languages/
+ * Requires Plugins: elementor
  * Elementor tested up to: 3.34
  * Elementor Pro tested up to: 3.34
  * License: GPLv2

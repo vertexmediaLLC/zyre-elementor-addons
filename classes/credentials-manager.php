@@ -75,7 +75,7 @@ class Credentials_Manager {
 			],
 			'facebook_feed' => [
 				'title' => __( 'Facebook Feed', 'zyre-elementor-addons' ),
-				'icon' => 'zy-fonticon zy-Social-feed-Facebook',
+				'icon' => 'zy-fonticon zy-Social-feed-facebook',
 				'fields' => [
 					[
 						'label' => esc_html__( 'Page ID. ', 'zyre-elementor-addons' ),
@@ -100,7 +100,7 @@ class Credentials_Manager {
 			],
 			'instagram' => [
 				'title' => __( 'Instagram', 'zyre-elementor-addons' ),
-				'icon' => 'zy-fonticon zy-Social-feed-Instagram',
+				'icon' => 'zy-fonticon zy-Social-feed-instagram',
 				'fields' => [
 					[
 						'label' => esc_html__( 'Access Token. ', 'zyre-elementor-addons' ),

@@ -96,21 +96,29 @@ class Dashboard {
 		wp_enqueue_style(
 			'zyre-icons',
 			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . $suffix . 'css',
-			null,
+			[],
 			ZYRE_ADDONS_VERSION
 		);
 
 		wp_enqueue_style(
 			'zyre-elementor-addons-global-vars',
 			ZYRE_ADDONS_ASSETS . 'css/global-vars' . $suffix . 'css',
-			null,
+			[],
 			ZYRE_ADDONS_VERSION
+		);
+
+		// Google fonts for dashboard only
+		wp_enqueue_style(
+			'zyre-elementor-addons-google-fonts',
+			'https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
+			[],
+			null
 		);
 
 		wp_enqueue_style(
 			'zyre-elementor-addons-dashboard',
 			ZYRE_ADDONS_ASSETS . 'admin/css/dashboard' . $suffix . 'css',
-			null,
+			[],
 			ZYRE_ADDONS_VERSION
 		);
 
