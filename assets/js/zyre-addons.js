@@ -293,6 +293,8 @@ function haObserveTarget(target, callback) {
 
 	// Navigation Menu
     var ZyreMenu = function ZyreMenu($scope) {
+		var widgetId = $scope.data('id');
+		var widgetClass = widgetId ? '.elementor-element.elementor-element-' + widgetId : '.zyre-nav-menu';
 		var navMenu = $scope.find('.zyre-nav-menu');
 		var $openIcon = navMenu.find('.zyre-menu-open-icon');
 		var $closeIcon = navMenu.find('.zyre-menu-close-icon');
@@ -301,8 +303,74 @@ function haObserveTarget(target, callback) {
 		var match = classAttr.match(/breakpoint-(-?\d+)/);
 		var breakpoint = match ? Math.round(match[1]) : null;
 
+		function addResponsiveCSS( breakpoint ) {
+			var settings = $scope.data('settings');
+			
+			var cssDesktop = `
+				${widgetClass} .zyre-hamburger-wrapper{display:none}
+				${widgetClass} ul.menu{--flex-grow: 0;display:flex;flex-wrap:wrap;align-items:center;column-gap:20px;row-gap:20px}
+				${widgetClass} ul.menu > li {justify-content: center;flex-grow:var(--flex-grow)}
+				${widgetClass} ul.menu > li > a {padding: 20px 0;}
+				${widgetClass} ul.menu li .submenu-indicator{display:inline-block;vertical-align:middle;margin:auto 0;margin-inline-start:5px;text-align:center;cursor:pointer}
+				${widgetClass} ul.sub-menu{position:absolute;transform:translateY(20px);transition:.3s;visibility:hidden;opacity:0;z-index:9999;background-color:#fff;min-width:260px;top:100%}
+				body:not(.rtl) ${widgetClass} ul.sub-menu{left:0;box-shadow:4px 6px 12px rgba(0,0,0,.1)}
+				body.rtl ${widgetClass} ul.sub-menu{right:0;box-shadow:-4px 6px 12px rgba(0,0,0,.1)}
+				${widgetClass} ul.sub-menu li .submenu-indicator{padding-left:20px;padding-right:20px;transform:rotate(-90deg)}
+				${widgetClass} ul.menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1}
+				${widgetClass} ul.sub-menu li a{padding:20px 25px}
+				body:not(.rtl) ${widgetClass} ul.sub-menu ul.sub-menu{left:100%}
+				body.rtl ${widgetClass} ul.sub-menu ul.sub-menu{right:100%}
+				${widgetClass} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1;top:0;}
+				body:not(.rtl) ${widgetClass} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{left:100%}
+				body.rtl ${widgetClass} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{right:100%}
+				`;
+
+			if (settings && settings.menu_item_rm_border) {
+				cssDesktop += `${widgetClass}:not(.zyre-menu__mobile) ul.menu>li:${settings.menu_item_rm_border} {border: none;}`;
+			}
+
+			if (settings && settings.submenu_item_rm_border) {
+				cssDesktop += `${widgetClass}:not(.zyre-menu__mobile) ul.sub-menu>li:${settings.submenu_item_rm_border} {border: none;}`;
+			}
+
+			var cssResponsive = `
+				${widgetClass} .zyre-hamburger-wrapper{display:flex}
+				${widgetClass} ul.menu,
+				${widgetClass} ul.menu ul.sub-menu{display:none}
+				${widgetClass} ul.menu ul.sub-menu{width:100%;z-index:10;margin-inline-start:15px}
+				${widgetClass} ul.menu > li {justify-content: space-between}
+				${widgetClass} ul.menu li{flex-wrap: wrap;}
+				${widgetClass} ul.menu li:not(:last-child){border-bottom:1px solid var(--zy-hue2)}
+				${widgetClass} ul.menu li a{padding: 15px 0}
+				${widgetClass} ul.menu li .submenu-indicator{cursor:pointer;padding-left:20px;padding-right:20px;align-content:center;align-self: stretch}
+				${widgetClass} ul.menu li .submenu-indicator svg{fill:#8C919B;transition:transform var(--zy-transition-duration),color var(--zy-transition-duration)}
+				${widgetClass} ul.menu li .submenu-indicator.active svg{transform:rotate(-180deg)}
+				${widgetClass} ul.menu li .submenu-indicator.active svg,
+				${widgetClass} ul.menu li .submenu-indicator:hover svg{fill:#000}
+				${widgetClass} ul.sub-menu li a{padding-left: 0;padding-right: 0}
+				`;
+
+			if (settings && settings.mobile_menu_item_rm_border) {
+				cssResponsive += `${widgetClass}.zyre-menu__mobile ul.menu li:${settings.mobile_menu_item_rm_border} {border: none !important;}`;
+			}
+
+			var cssOutput = `<style id="zyre-elementor-addons-nav-menu-${widgetId}-inline">`;
+				if ( breakpoint && '-1' == breakpoint ) {
+					cssOutput += cssResponsive;
+				} else if ( breakpoint && breakpoint > 0 ) {
+					cssOutput += `@media (min-width: ${breakpoint+1}px) { ${cssDesktop} }`;
+					cssOutput += `@media (max-width: ${breakpoint}px) { ${cssResponsive} }`;
+				} else {
+					cssOutput += cssDesktop;
+				}
+				cssOutput += `</style>`;
+
+			$(cssOutput).prependTo($scope);
+		}
+
 		if(navMenu.length) {
 			navMenu.addClass('initialized');
+			addResponsiveCSS(breakpoint);
 		}
 	
 		humBurgerBtn.on('click', function (e) {
@@ -609,6 +677,11 @@ function haObserveTarget(target, callback) {
 		},
 		run: function run() {
 			var self = this;
+
+			if (!self.elements.$container.length) {
+				return;
+			}
+
 			self.elements.$container.isotope(self.getDefaultSettings()).imagesLoaded().progress(function () {
 				self.elements.$container.isotope('layout');
 			});

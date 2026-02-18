@@ -249,6 +249,8 @@ class CF7 extends Base {
 			]
 		);
 
+		$padding_var = is_rtl() ? '--padding-r: {{LEFT}}{{UNIT}};' : '--padding-r: {{RIGHT}}{{UNIT}};';
+
 		$this->set_style_controls(
 			'input_textarea',
 			[
@@ -260,7 +262,9 @@ class CF7 extends Base {
 					'border'        => [],
 					'border_radius' => [],
 					'margin'        => [],
-					'padding'       => [],
+					'padding'       => [
+						'css_values' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' . $padding_var,
+					],
 					'align'         => [
 						'default' => is_rtl() ? 'right' : 'left',
 					],
@@ -741,15 +745,6 @@ class CF7 extends Base {
 		}
 
 		$settings = $this->get_settings_for_display();
-		$widget_class = '.elementor-element-' . $this->get_id();
-
-		if ( ! empty( $settings['input_textarea_padding'] ) ) {
-			$field_padding = $settings['input_textarea_padding'];
-			$padding_x = is_rtl() ? $field_padding['left'] : $field_padding['right'];
-            if ( ! empty( $padding_x ) ) {
-                echo "<style>{$widget_class} .wpcf7-select {--padding-r:{$padding_x}{$field_padding['unit']}}</style>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            }
-		}
 
 		// Remove Contact Form 7 Extra <p> tag
 		add_filter( 'wpcf7_autop_or_not', '__return_false' );

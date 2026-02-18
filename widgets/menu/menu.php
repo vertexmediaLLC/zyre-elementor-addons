@@ -299,16 +299,17 @@ class Menu extends Base {
 		$this->add_control(
 			'menu_item_rm_border',
 			[
-				'label'       => esc_html__( 'Exclude Border from', 'zyre-elementor-addons' ),
-				'type'        => Controls_Manager::SELECT,
-				'options'     => [
-					''  => esc_html__( 'None', 'zyre-elementor-addons' ),
+				'label'              => esc_html__( 'Exclude Border from', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SELECT,
+				'options'            => [
+					''            => esc_html__( 'None', 'zyre-elementor-addons' ),
 					'last-child'  => esc_html__( 'Last Item', 'zyre-elementor-addons' ),
 					'first-child' => esc_html__( 'First Item', 'zyre-elementor-addons' ),
 				],
-				'default'     => '',
-				'condition'   => [
-					'menu_item_border_border!' => [ '', 'none' ],
+				'default'            => '',
+				'frontend_available' => true,
+				'condition'          => [
+					'menu_item_border_border!' => ['', 'none'],
 				],
 			]
 		);
@@ -664,16 +665,17 @@ class Menu extends Base {
 		$this->add_control(
 			'submenu_item_rm_border',
 			[
-				'label'       => esc_html__( 'Exclude Border from', 'zyre-elementor-addons' ),
-				'type'        => Controls_Manager::SELECT,
-				'options'     => [
-					''  => esc_html__( 'None', 'zyre-elementor-addons' ),
+				'label'              => esc_html__( 'Exclude Border from', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SELECT,
+				'options'            => [
+					''            => esc_html__( 'None', 'zyre-elementor-addons' ),
 					'last-child'  => esc_html__( 'Last Item', 'zyre-elementor-addons' ),
 					'first-child' => esc_html__( 'First Item', 'zyre-elementor-addons' ),
 				],
-				'default'     => '',
-				'condition'   => [
-					'submenu_item_border_border!' => [ '', 'none' ],
+				'default'            => '',
+				'frontend_available' => true,
+				'condition'          => [
+					'submenu_item_border_border!' => ['', 'none'],
 				],
 			]
 		);
@@ -1055,16 +1057,17 @@ class Menu extends Base {
 		$this->add_control(
 			'mobile_menu_item_rm_border',
 			[
-				'label'       => esc_html__( 'Exclude Border from', 'zyre-elementor-addons' ),
-				'type'        => Controls_Manager::SELECT,
-				'options'     => [
-					''  => esc_html__( 'None', 'zyre-elementor-addons' ),
+				'label'             => esc_html__( 'Exclude Border from', 'zyre-elementor-addons' ),
+				'type'              => Controls_Manager::SELECT,
+				'options'           => [
+					''            => esc_html__( 'None', 'zyre-elementor-addons' ),
 					'last-child'  => esc_html__( 'Last Item', 'zyre-elementor-addons' ),
 					'first-child' => esc_html__( 'First Item', 'zyre-elementor-addons' ),
 				],
-				'default'     => '',
-				'condition'   => [
-					'mobile_menu_item_border_border!' => [ '', 'none' ],
+				'default'           => '',
+				'fontend_available' => true,
+				'condition'         => [
+					'mobile_menu_item_border_border!' => ['', 'none'],
 				],
 			]
 		);
@@ -1308,19 +1311,6 @@ class Menu extends Base {
 		}
 
 		$settings = $this->get_settings_for_display();
-		$widget_class = '.elementor-element-' . $this->get_id();
-
-		$left_right = is_rtl() ? 'right' : 'left';
-
-		$css_styles = "{$widget_class} .zyre-nav-menu:not(.initialized){display: none} {$widget_class} .zyre-hamburger-wrapper{display:none}{$widget_class} ul.menu{--flex-grow: 0;display:flex;flex-wrap:wrap;align-items:center;column-gap:20px;row-gap:20px}{$widget_class} ul.menu > li {justify-content: center;flex-grow:var(--flex-grow)}{$widget_class} ul.menu > li > a {padding: 20px 0;}{$widget_class} ul.menu li .submenu-indicator{display:inline-block;vertical-align:middle;margin:auto 0;margin-inline-start:5px;text-align:center;cursor:pointer}{$widget_class} ul.sub-menu{position:absolute;{$left_right}:0;transform:translateY(20px);transition:.3s;visibility:hidden;opacity:0;z-index:9999;background-color:#fff;min-width:260px;top:100%}body:not(.rtl) {$widget_class} ul.sub-menu{box-shadow:4px 6px 12px rgba(0,0,0,.1)}body.rtl {$widget_class} ul.sub-menu{box-shadow:-4px 6px 12px rgba(0,0,0,.1)}{$widget_class} ul.sub-menu li .submenu-indicator{padding-left:20px;padding-right:20px;transform:rotate(-90deg)}{$widget_class} ul.menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1}{$widget_class} ul.sub-menu li a{padding:20px 25px}{$widget_class} ul.sub-menu ul.sub-menu{{$left_right}:100%}{$widget_class} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1;top:0;{$left_right}:100%}";
-
-		// Remove border from First or Last Child Menu Item
-		if ( ! empty( $settings['menu_item_rm_border'] ) ) {
-			$css_styles .= "{$widget_class}:not(.zyre-menu__mobile) ul.menu>li:" . esc_attr( $settings['menu_item_rm_border'] ) . '{border: none}';
-		}
-		if ( ! empty( $settings['submenu_item_rm_border'] ) ) {
-			$css_styles .= "{$widget_class}:not(.zyre-menu__mobile) ul.sub-menu>li:" . esc_attr( $settings['submenu_item_rm_border'] ) . '{border: none}';
-		}
 
 		$breakpoint_class = '';
 
@@ -1334,33 +1324,14 @@ class Menu extends Base {
 
 			$has_breakpoint = array_key_exists( $breakpoint, $breakpoint_values );
 
-			$min_width = $has_breakpoint ? $breakpoint_values[ $breakpoint ] + 1 : '';
 			$max_width = $has_breakpoint ? $breakpoint_values[ $breakpoint ] : '-1';
 
-			if ( ! empty( $min_width ) ) {
-				$css_styles = '@media (min-width: ' . $min_width . 'px) {' . $css_styles . '}';
-			}
-
 			if ( ! empty( $max_width ) ) {
-				$css_responsive = "{$widget_class} .zyre-hamburger-wrapper{display:flex}{$widget_class} ul.menu,{$widget_class} ul.menu ul.sub-menu{display:none}{$widget_class} ul.menu ul.sub-menu{width:100%;z-index:10;margin-inline-start:15px}{$widget_class} ul.menu > li {justify-content: space-between}{$widget_class} ul.menu li{flex-wrap: wrap;}{$widget_class} ul.menu li:not(:last-child){border-bottom:1px solid var(--zy-hue2)}{$widget_class} ul.menu li a{padding: 15px 0}{$widget_class} ul.menu li .submenu-indicator{cursor:pointer;padding-left:20px;padding-right:20px;align-content:center;align-self: stretch}{$widget_class} ul.menu li .submenu-indicator svg{fill:#8C919B;transition:transform var(--zy-transition-duration),color var(--zy-transition-duration)}{$widget_class} ul.menu li .submenu-indicator.active svg{transform:rotate(-180deg)}{$widget_class} ul.menu li .submenu-indicator.active svg,{$widget_class} ul.menu li .submenu-indicator:hover svg{fill:#000}{$widget_class} ul.sub-menu li a{padding-left: 0;padding-right: 0}";
-
-				if ( ! empty( $settings['mobile_menu_item_rm_border'] ) ) {
-					$css_responsive .= "{$widget_class}.zyre-menu__mobile ul.menu li:" . esc_attr( $settings['mobile_menu_item_rm_border'] ) . '{border: none !important}';
-				}
-
-				if ( '-1' == $max_width ) {
-					$css_styles = ' @media screen {' . $css_responsive . '}';
-				} else {
-					$css_styles .= ' @media (max-width: ' . $max_width . 'px) {' . $css_responsive . '}';
-				}
-
 				$breakpoint_class = ' breakpoint-' . $max_width;
 			}
 		}
 
-		echo '<style id="zyre-menu-inline-css" type="text/css">' . $css_styles . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
-		// Hamburger Icon
+		// Hamburger
 		ob_start();
 		?>
 		<div class="zyre-hamburger-wrapper zy-justify-end">
@@ -1393,11 +1364,6 @@ class Menu extends Base {
 			'walker'          => $walker,
 		];
 
-		$menu_html = wp_nav_menu( $args );
-		if ( empty( $menu_html ) ) {
-			return;
-		} else {
-			echo wp_kses_post( $menu_html );
-		}
+		wp_nav_menu( $args );
 	}
 }
