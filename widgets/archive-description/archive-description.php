@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -55,13 +56,13 @@ class Archive_Description extends Base {
 				'label'                => esc_html__( 'Separator Position', 'zyre-elementor-addons' ),
 				'type'                 => Controls_Manager::SELECT,
 				'options'              => array(
-					'left'  => esc_html__( 'Left', 'zyre-elementor-addons' ),
 					'right' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+					'left'  => esc_html__( 'Left', 'zyre-elementor-addons' ),
 				),
-				'default'              => 'left',
+				'default'              => 'right',
 				'selectors_dictionary' => array(
-					'left'  => 'flex-direction: row;',
-					'right' => 'flex-direction: row-reverse;',
+					'right' => 'flex-direction: row;',
+					'left'  => 'flex-direction: row-reverse;',
 				),
 				'selectors'            => array(
 					'{{WRAPPER}} .zyre-archive-desc-wrap' => '{{VALUE}};',
@@ -217,6 +218,9 @@ class Archive_Description extends Base {
 		$archive_desc           = get_the_archive_description();
 		$archive_desc_separator = '';
 		$archive_desc           = preg_replace( '#^<p>(.*?)</p>$#is', '$1', trim( $archive_desc ) );
+
+		$this->add_render_attribute( 'archive_desc', 'class', 'zyre-archive-desc zy-m-0' );
+
 		if ( 'yes' === $settings['show_separator'] ) {
 			$archive_desc_separator = '<span class="zyre-archive-desc-separator"></span>';
 		}
@@ -225,10 +229,14 @@ class Archive_Description extends Base {
 		}
 
 		if ( ! empty( $archive_desc ) ) {
-			echo '<div class="zyre-archive-desc-wrap zy-flex zy-align-center zy-justify-between">';
-			echo '<' . zyre_escape_tags( $settings ['tag'], 'p' ) . ' class="zyre-archive-desc zy-m-0">' . esc_html( $archive_desc ) . '</' . zyre_escape_tags( $settings ['tag'], 'p' ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo $archive_desc_separator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo '</div>';
+			?>
+			<div class="zyre-archive-desc-wrap zy-flex zy-align-center zy-justify-between">
+				<<?php Utils::print_validated_html_tag( $settings ['tag'] ); ?> <?php $this->print_render_attribute_string( 'archive_desc' ); ?>>
+					<?php echo esc_html( $archive_desc ); ?>
+				</<?php Utils::print_validated_html_tag( $settings ['tag'] ); ?>>
+				<?php echo wp_kses( $archive_desc_separator, zyre_get_allowed_html() ); ?>
+			</div>
+			<?php
 		}
 	}
 }

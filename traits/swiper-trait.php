@@ -566,10 +566,11 @@ trait Swiper_Trait {
 				<div class="zyre-carousel-content">
 					<?php
 					if ( ! empty( $slide['title'] ) ) {
-						printf( '<%1$s class="zyre-carousel-title zy-m-0 zy-fs-1.5">%2$s</%1$s>',
-							zyre_escape_tags( $settings['title_tag'], 'h3' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						$title_html = sprintf( '<%1$s class="zyre-carousel-title zy-m-0 zy-fs-1.5">%2$s</%1$s>',
+							Utils::validate_html_tag( $settings['title_tag'] ),
 							wp_kses( $slide['title'], zyre_get_allowed_html() )
 						);
+						echo wp_kses_post( $title_html );
 					}
 					?>
 					<?php if ( ! empty( $slide['subtitle'] ) ) : ?>

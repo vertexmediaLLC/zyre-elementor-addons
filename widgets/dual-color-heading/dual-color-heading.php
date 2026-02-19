@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -339,7 +340,7 @@ class Dual_Color_Heading extends Base {
 		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-dual-color-heading-title-suffix zy-inline-block zy-relative' );
 		?>
 	
-		<<?php echo zyre_escape_tags( $settings['title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-dual-color-heading-title zy-m-0">
+		<<?php Utils::print_validated_html_tag( $settings['title_tag'] ); ?> class="zyre-dual-color-heading-title zy-m-0">
 			<?php if ( ! empty( $settings['title_prefix'] ) ) : ?>
 				<span <?php $this->print_render_attribute_string( 'title_prefix' ); ?>>
 					<?php echo wp_kses( $settings['title_prefix'], zyre_get_allowed_html() ); ?>
@@ -357,7 +358,7 @@ class Dual_Color_Heading extends Base {
 					<?php echo esc_html( $settings['title_suffix'] ); ?>
 				</span>
 			<?php endif; ?>
-		</<?php echo zyre_escape_tags( $settings['title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		</<?php Utils::print_validated_html_tag( $settings['title_tag'] ); ?>>
 		<?php
 	}
 }

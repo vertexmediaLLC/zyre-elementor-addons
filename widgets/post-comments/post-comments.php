@@ -3370,7 +3370,7 @@ class Post_Comments extends Base {
 			// Form Output
 			if ( 'before' === $settings['form_position'] ) {
 				echo '<div class="zyre-comment-form-wrap zy-flex zy-gap-3 zy-w-100">';
-				echo $commenter_avatar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $commenter_avatar);
 				comment_form();
 				echo '</div>';
 			}
@@ -3429,7 +3429,7 @@ class Post_Comments extends Base {
 
 					if ( 'after_title' === $settings['form_position'] ) {
 						echo '<div class="zyre-comment-form-wrap zy-flex zy-gap-3 zy-w-100">';
-						echo $commenter_avatar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo wp_kses_post( $commenter_avatar);
 						comment_form();
 						echo '</div>';
 					}
@@ -3464,7 +3464,7 @@ class Post_Comments extends Base {
 			// Form Output
 			if ( 'after' === $settings['form_position'] ) {
 				echo '<div class="zyre-comment-form-wrap zy-flex zy-gap-3 zy-w-100">';
-				echo $commenter_avatar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $commenter_avatar );
 				comment_form();
 				echo '</div>';
 			}
@@ -3507,7 +3507,7 @@ class Post_Comments extends Base {
 					if ( ! empty( $settings['avatar_size']['size'] ) ) {
 						$avatar_args[] = (int) $settings['avatar_size']['size'];
 					}
-					echo get_avatar( ...$avatar_args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo wp_kses_post( get_avatar( ...$avatar_args ) );
 				}
 				?>
 				<div class="comment-content-box">
@@ -3673,12 +3673,12 @@ class Post_Comments extends Base {
 					$next_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page + 1 ) . $order_params . '#comments';
 					?>
 					<div class="nav-links zy-flex zy-align-center zy-justify-between zy-w-100 zy-gap-6">
-						<?php if ( get_previous_comments_link( $prev_text, $page ) ) : // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php if ( get_previous_comments_link() ) : ?>
 							<div class="nav-previous">
 								<?php echo '<a href="' . esc_url( $prev_page_url ) . '">' . esc_html( $prev_text ) . '</a>'; ?>
 							</div>
 						<?php endif; ?>
-						<?php if ( get_next_comments_link( $next_text, $total_pages, $page ) ) : // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php if ( get_next_comments_link() ) : ?>
 							<div class="nav-next">
 								<?php echo '<a href="' . esc_url( $next_page_url ) . '">' . esc_html( $next_text ) . '</a>'; ?>
 							</div>

@@ -753,7 +753,7 @@ class Image_Heading extends Base {
 				'<%1$s %2$s>%3$s</%1$s>',
 				Utils::validate_html_tag( $subtitle_tag ),
 				$this->get_render_attribute_string( 'text_subtitle' ),
-				wp_kses( $subtitle_text, zyre_get_allowed_html() )
+				wp_kses( $subtitle_text, zyre_get_allowed_html() ),
 			);
 		}
 
@@ -763,15 +763,15 @@ class Image_Heading extends Base {
 			<?php
 			// Conditionally render subtitle based on position
 			if ( 'top' === $subtitle_position && ! empty( $subtitle_html ) ) {
-				echo $subtitle_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $subtitle_html );
 			}
 
 			// Render Title
-			echo $title_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( $title_html );
 
 			// Conditionally render subtitle based on position (default case)
 			if ( 'bottom' === $subtitle_position && ! empty( $subtitle_html ) ) {
-				echo $subtitle_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $subtitle_html );
 			}
 			?>
 	

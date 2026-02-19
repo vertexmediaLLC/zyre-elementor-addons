@@ -542,14 +542,16 @@ class Page_Title extends Base {
 
 	// Widget Display
 	protected function render() {
-		$settings = $this->get_settings_for_display(); ?>
-		<<?php echo zyre_escape_tags( $settings['page_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-page-title-heading zy-flex zy-align-center zy-m-0 zy-lh-1.5">
+		$settings = $this->get_settings_for_display();
+		$page_title_tag = ! empty( $settings['page_title_tag'] ) ? Utils::validate_html_tag( $settings['page_title_tag'] ) : 'h2';
+		?>
+		<<?php Utils::print_validated_html_tag( $page_title_tag ); ?> class="zyre-page-title-heading zy-flex zy-align-center zy-m-0 zy-lh-1.5">
 			<?php
 				$this->__render_title_before_after( 'before', 'prefix' );
 				$this->__render_title();
 				$this->__render_title_before_after( 'after', 'suffix' );
 			?> 
-		</<?php echo zyre_escape_tags( $settings['page_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		</<?php Utils::print_validated_html_tag( $page_title_tag ); ?>>
 		<?php
 	}
 

@@ -741,7 +741,20 @@ class Conditions_Manager {
 							data-setting="sub_name"
 							data-selected="<?php echo esc_attr( $sub_name ); ?>"
 							class="modal__form-select">
-							<?php printf( '%s', $sub_name_html ); ?>
+							<?php
+							echo wp_kses(
+								$sub_name_html,
+								[
+									'option'   => [
+										'value'    => [],
+										'selected' => [],
+									],
+									'optgroup' => [
+										'label' => [],
+									],
+								]
+							);
+							?>
 						</select>
 					</div>
 
@@ -753,7 +766,20 @@ class Conditions_Manager {
 							data-setting="sub_id"
 							data-selected="<?php echo esc_attr( $sub_id ); ?>"
 							class="modal__form-select">
-                            <?php printf( '%s', $sub_id_html ); ?>
+							<?php
+							echo wp_kses(
+								$sub_id_html,
+								[
+									'option'   => [
+										'value'    => [],
+										'selected' => [],
+									],
+									'optgroup' => [
+										'label' => [],
+									],
+								]
+							);
+							?>
 						</select>
 					</div>
 

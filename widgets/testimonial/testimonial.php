@@ -1125,11 +1125,12 @@ class Testimonial extends Base {
 			<?php if ( ! empty( $settings['author'] ) || ! empty( $settings['designation'] ) ) : ?>
 			<div class="zyre-testimonial-bio">
 				<?php if ( ! empty( $settings['author'] ) ) :
-					printf( '<%1$s %2$s>%3$s</%1$s>',
-						Utils::validate_html_tag( $settings['author_tag'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						$this->get_render_attribute_string( 'author' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						wp_kses( $settings['author'], zyre_get_allowed_html() )
+					$author_html = sprintf( '<%1$s %2$s>%3$s</%1$s>',
+						Utils::validate_html_tag( $settings['author_tag'] ),
+						$this->get_render_attribute_string( 'author' ),
+						$settings['author'],
 					);
+					echo wp_kses_post( $author_html );
 				endif; ?>
 
 				<?php if ( ! empty( $settings['designation'] ) ) : ?>

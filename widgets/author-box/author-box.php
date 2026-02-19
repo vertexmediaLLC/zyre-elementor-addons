@@ -1106,11 +1106,11 @@ class Author_Box extends Base {
 			<?php if ( 'yes' === $settings['show_author'] || 'yes' === $settings['show_username'] ) : ?>
 				<div class="zyre-author-user-name zy-self-center">
 					<?php if ( 'yes' === $settings['show_author'] ) : ?>
-						<<?php echo zyre_escape_tags( $settings ['author_meta_tag'], 'h4' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-author-name-heading zy-m-0">
+						<<?php Utils::print_validated_html_tag( $settings['author_meta_tag'] ); ?> class="zyre-author-name-heading zy-m-0">
 							<<?php Utils::print_validated_html_tag( $author_name_tag ); ?> <?php $this->print_render_attribute_string( 'author_name' ); ?>>
 								<?php echo esc_html( $display_name ); ?>
 							</<?php Utils::print_validated_html_tag( $author_name_tag ); ?>>
-						</<?php echo zyre_escape_tags( $settings ['author_meta_tag'], 'h4' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+						</<?php Utils::print_validated_html_tag( $settings['author_meta_tag'] ); ?>>
 					<?php endif; ?>
 
 					<?php if ( 'yes' === $settings['show_username'] ) : ?>
