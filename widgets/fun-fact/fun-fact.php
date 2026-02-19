@@ -848,7 +848,7 @@ class Fun_Fact extends Base {
 				</div>
 			<?php elseif ( isset( $settings['image'] ) && isset( $settings['image']['url'] ) && isset( $settings['image']['id'] ) ) : ?>
 				<div class="zyre-fun-fact-media zyre-fun-fact-image zy-inline-block">
-					<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'image' ) ); ?>
 				</div>
 			<?php endif; ?>
 
@@ -875,9 +875,9 @@ class Fun_Fact extends Base {
 							<?php if ( ! empty( $settings['ff_title_icon']['value'] ) ) : ?>
 								<span class="zyre-fun-fact-title-icon"><?php zyre_render_icon( $settings, 'icon', 'ff_title_icon' ); ?></span>
 							<?php endif; ?>
-							<<?php echo zyre_escape_tags( $settings['ff_title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php $this->print_render_attribute_string( 'ff_title' ); ?>>
+							<<?php Utils::print_validated_html_tag( $settings['ff_title_tag'] ); ?> <?php $this->print_render_attribute_string( 'ff_title' ); ?>>
 								<?php echo wp_kses( $settings['ff_title'], zyre_get_allowed_html() ); ?>
-							</<?php echo zyre_escape_tags( $settings['ff_title_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+							</<?php Utils::print_validated_html_tag( $settings['ff_title_tag'] ); ?>>
 						</div>
 					</div>
 				<?php endif; ?>

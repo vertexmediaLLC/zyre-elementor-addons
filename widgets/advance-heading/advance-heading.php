@@ -4,6 +4,7 @@ namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -710,7 +711,7 @@ class Advance_Heading extends Base {
 		}
 		?>
 	
-		<<?php echo zyre_escape_tags( $settings['title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-advance-heading-title zy-text-center zy-relative zy-flex zy-align-center zy-justify-center zy-m-0">
+		<<?php Utils::print_validated_html_tag( $settings['title_tag'] ); ?> class="zyre-advance-heading-title zy-text-center zy-relative zy-flex zy-align-center zy-justify-center zy-m-0">
 			<?php if ( ! empty( $settings['title_prefix'] ) ) : ?>
 				<span <?php $this->print_render_attribute_string( 'title_prefix' ); ?>>
 					<?php echo wp_kses( $settings['title_prefix'], zyre_get_allowed_html() ); ?>
@@ -737,7 +738,7 @@ class Advance_Heading extends Base {
 					<?php echo esc_html( $settings['title_suffix'] ); ?>
 				</span>
 			<?php endif; ?>
-		</<?php echo zyre_escape_tags( $settings['title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		</<?php Utils::print_validated_html_tag( $settings['title_tag'] ); ?>>
 		<?php
 	}
 }

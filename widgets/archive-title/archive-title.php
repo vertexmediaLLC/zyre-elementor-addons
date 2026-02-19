@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -673,13 +674,13 @@ class Archive_Title extends Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display(); ?>
-		<<?php echo zyre_escape_tags( $settings['archive_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="zyre-archive-title-heading zy-flex zy-gap-2 zy-align-center zy-m-0 zy-lh-1.5">
+		<<?php Utils::print_validated_html_tag( $settings['archive_title_tag'] ); ?> class="zyre-archive-title-heading zy-flex zy-gap-2 zy-align-center zy-m-0 zy-lh-1.5">
 			<?php
 			$this->__render_title_before_after( 'before', 'prefix' );
 			$this->__render_title( $settings );
 			$this->__render_title_before_after( 'after', 'suffix' );
 			?>
-		</<?php echo zyre_escape_tags( $settings['archive_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		</<?php Utils::print_validated_html_tag( $settings['archive_title_tag'] ); ?>>
 		<?php
 	}
 
@@ -829,6 +830,8 @@ class Archive_Title extends Base {
 			$title = $prefix . '<span class="zyre-archive-title-text">' . $title . '</span>';
 		}
 
+		$title = apply_filters( 'zyre/widgets/get_the_archive_title', wp_kses( $title, zyre_get_allowed_html() ) );
+
 		/**
 		 * Archive title.
 		 *
@@ -842,6 +845,6 @@ class Archive_Title extends Base {
 		 *
 		 * @param string $title Page title to be displayed.
 		 */
-		echo apply_filters( 'zyre/widgets/get_the_archive_title', wp_kses( $title, zyre_get_allowed_html() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $title );
 	}
 }

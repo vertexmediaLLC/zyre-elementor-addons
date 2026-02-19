@@ -3,6 +3,7 @@
 namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
+use Elementor\Utils;
 
 defined( 'ABSPATH' ) || die();
 
@@ -912,18 +913,18 @@ class Heading extends Base {
 
 		<div class="zyre-headings zy-flex zy-flex-wrap">
 			<?php if ( ! empty( $settings['subtitle'] ) ) : ?>
-				<<?php echo zyre_escape_tags( $settings['heading_subtitle_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php $this->print_render_attribute_string( 'heading_subtitle' ); ?>>
+				<<?php Utils::print_validated_html_tag( $settings['heading_subtitle_tag'] ); ?> <?php $this->print_render_attribute_string( 'heading_subtitle' ); ?>>
 					<span <?php $this->print_render_attribute_string( 'subtitle' ); ?>><?php echo wp_kses( $settings['subtitle'], zyre_get_allowed_html() ); ?></span>
-				</<?php echo zyre_escape_tags( $settings['heading_subtitle_tag'], 'h3' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+				</<?php Utils::print_validated_html_tag( $settings['heading_subtitle_tag'] ); ?>>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_title'] ) ) : ?>
-				<<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php $this->print_render_attribute_string( 'heading_main_title' ); ?>>
+				<<?php Utils::print_validated_html_tag( $settings['heading_title_tag'] ); ?> <?php $this->print_render_attribute_string( 'heading_main_title' ); ?>>
 					<span <?php $this->print_render_attribute_string( 'heading_title' ); ?>><?php echo wp_kses( $settings['heading_title'], zyre_get_allowed_html() ); ?></span>
 					<?php if ( $settings['heading_suffix'] ) : ?>
 						<span <?php $this->print_render_attribute_string( 'heading_suffix' ); ?>><?php echo esc_html( $settings['heading_suffix'] ); ?></span>
 					<?php endif; ?>
-				</<?php echo zyre_escape_tags( $settings['heading_title_tag'], 'h2' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+				</<?php Utils::print_validated_html_tag( $settings['heading_title_tag'] ); ?>>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_description'] ) ) : ?>

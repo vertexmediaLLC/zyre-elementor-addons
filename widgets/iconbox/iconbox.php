@@ -4,6 +4,7 @@ namespace ZyreAddons\Elementor\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Icons_Manager;
+use Elementor\Utils;
 use ZyreAddons\Elementor\Traits\Button_Trait;
 
 defined( 'ABSPATH' ) || die();
@@ -924,33 +925,35 @@ class IconBox extends Base {
 				<div class="zyre-iconbox-titles zy-flex zy-direction-column">
 					<?php
 					if ( $settings['title'] ) :
-						printf(
+						$title_html = sprintf(
 							'<%1$s %2$s>%3$s</%1$s>',
-							zyre_escape_tags( $settings['title_tag'], 'h2' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-							$this->get_render_attribute_string( 'title' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							Utils::validate_html_tag( $settings['title_tag'] ),
+							$this->get_render_attribute_string( 'title' ),
 							sprintf(
 								'%s',
 								( 'title' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
-									$this->get_render_attribute_string( 'link' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									$this->get_render_attribute_string( 'link' ),
 									wp_kses( $settings['title'], zyre_get_allowed_html() )
 								) : wp_kses( $settings['title'], zyre_get_allowed_html() )
 							)
 						);
+						echo wp_kses_post( $title_html );
 					endif;
 					?>
 
 					<?php if ( $settings['subtitle'] ) : ?>
 						<p <?php $this->print_render_attribute_string( 'subtitle' ); ?>>
 							<?php
-							printf(
+							$subtitle_html = sprintf(
 								'%s',
 								( 'subtitle' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
-									$this->get_render_attribute_string( 'link' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									$this->get_render_attribute_string( 'link' ),
 									wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
 								) : wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
 							);
+							echo wp_kses_post( $subtitle_html );
 							?>
 						</p>
 					<?php endif; ?>

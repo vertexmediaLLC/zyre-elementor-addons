@@ -418,7 +418,7 @@ class Gradient_Heading extends Base {
 
 		$title_tag = ! empty( $settings['title_tag'] ) ? zyre_escape_tags( $settings['title_tag'], 'h2' ) : 'h2';
 
-		$title_html = '<' . Utils::validate_html_tag( $title_tag ) . ' class="zyre-gradient-heading-title zy-relative zy-color-transparent zy-break-all zy-m-0">';
+		$title_html = '<' . Utils::validate_html_tag( $title_tag ) . ' class="zyre-gradient-heading-title zy-relative zy-color-transparent zy-m-0">';
 
 		if ( ! empty( $settings['title_prefix'] ) ) {
 			$title_html .= '<span ' . $this->get_render_attribute_string( 'title_prefix' ) . '>' . esc_html( $settings['title_prefix'] ) . '</span>';

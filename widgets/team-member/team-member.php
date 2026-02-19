@@ -1079,11 +1079,12 @@ class Team_Member extends Base {
 
 		<div class="zyre-member-body">
 			<?php if ( ! empty( $settings['name'] ) ) :
-				printf( '<%1$s %2$s>%3$s</%1$s>',
-					Utils::validate_html_tag( $settings['name_tag'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$this->get_render_attribute_string( 'name' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					wp_kses( $settings['name'], zyre_get_allowed_html() )
+				$name_html = sprintf( '<%1$s %2$s>%3$s</%1$s>',
+					Utils::validate_html_tag( $settings['name_tag'] ),
+					$this->get_render_attribute_string( 'name' ),
+					$settings['name'],
 				);
+				echo wp_kses_post( $name_html );
 			endif; ?>
 
 			<?php if ( ! empty( $settings['job_title'] ) ) : ?>

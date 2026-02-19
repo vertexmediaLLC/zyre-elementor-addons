@@ -6,6 +6,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Icons_Manager;
 use Elementor\Utils;
+use ParagonIE\Sodium\Core\Util;
 use ZyreAddons\Elementor\Traits\Button_Trait;
 use ZyreAddons\Elementor\Traits\List_Item_Trait;
 
@@ -854,7 +855,7 @@ class InfoBox extends Base {
 
 		<?php if ( 'image' === $settings['infobox_media'] && ( $settings['infobox_media_image']['url'] || $settings['infobox_media_image']['id'] ) ) : ?>
 			<div <?php $this->print_render_attribute_string( 'infobox_image' ); ?>>
-				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'infobox_media_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'infobox_media_image' ) ); ?>
 			</div>
 
 			<?php elseif ( 'icon' === $settings['infobox_media'] && ! empty( $settings['infobox_media_icon'] ) ) : ?>
@@ -867,12 +868,13 @@ class InfoBox extends Base {
 		<div class="zyre-infobox-content">
 			<?php
 			if ( $settings['infobox_title'] ) :
-				printf(
+				$infobox_title_html = sprintf(
 					'<%1$s %2$s>%3$s</%1$s>',
-					zyre_escape_tags( $settings['infobox_title_tag'], 'h2' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$this->get_render_attribute_string( 'title' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					wp_kses( $settings['infobox_title'], zyre_get_allowed_html() )
+					Utils::validate_html_tag( $settings['infobox_title_tag'] ),
+					$this->get_render_attribute_string( 'title' ),
+					$settings['infobox_title'],
 				);
+				echo wp_kses_post( $infobox_title_html );
 			endif;
 			?>
 
