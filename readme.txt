@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor templates, elementor widget, theme 
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -305,5 +305,9 @@ The plugin does not store, collect, or process personal user data on its own ser
 = 1.0.1 - 29 January 2026 =
 
 - Some escaping issues are fixed.
+
+= 1.0.2 - 19 February 2026 =
+
+- Some escaping outputs, enqueues, assets, and widgets issues are fixed.
 
 [See changelog for all versions.](https://raw.githubusercontent.com/vertexmediaLLC/zyre-elementor-addons/master/changelog.txt)
