@@ -5,3 +5,7 @@
 = 1.0.1 - 2026-01-29 =
 
 * Some escaping issues are fixed.
+
+= 1.0.2 - 2026-02-19 =
+
+- Some escaping outputs, enqueues, assets, and widgets issues are fixed.
