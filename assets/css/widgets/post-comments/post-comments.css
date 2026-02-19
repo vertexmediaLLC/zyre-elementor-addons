@@ -10,6 +10,7 @@
 	padding: 0;
 	margin-bottom: 0;
 	border-block-end: none;
+	position: relative;
 }
 
 .zyre-addon-post-comments #comments .comment .comment-content-box,
