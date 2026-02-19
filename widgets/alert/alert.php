@@ -508,7 +508,7 @@ class Alert extends Base {
 					<span class="zyre-alert-icon zy-self-center zy-lh-1"><?php Icons_Manager::render_icon( $settings['alert_icon'], [ 'aria-hidden' => 'true' ] ); ?></span>
 				<?php endif; ?>
 
-				<div class="zyre-alert-content">
+				<div class="zyre-alert-content zy-align-center">
 					<?php if ( ! Utils::is_empty( $settings['alert_title'] ) ) : ?>
 					<span <?php $this->print_render_attribute_string( 'alert_title' ); ?>><?php $this->print_unescaped_setting( 'alert_title' ); ?></span>
 					<?php endif; ?>

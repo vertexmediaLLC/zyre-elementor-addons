@@ -758,17 +758,21 @@ class Post_Navigation extends Base {
 		?>
 
 		<div class="zyre-post-navigation-wrapper zy-flex zy-justify-between zy-align-center">
-			<div class="zyre-post-navigation-item zyre-post-navigation__prev--wrapper">
-				<?php previous_post_link( '%link', $prev_html ); ?>
-			</div>
+			<?php if ( get_previous_post_link() ) : ?>
+				<div class="zyre-post-navigation-item zyre-post-navigation__prev--wrapper">
+					<?php previous_post_link( '%link', $prev_html ); ?>
+				</div>
+			<?php endif; ?>
 
-			<?php if ( 'yes' === $settings['show_divider'] ) : ?>
+			<?php if ( 'yes' === $settings['show_divider'] && get_previous_post_link() && get_next_post_link() ) : ?>
 				<span class="zyre-post-navigation__divider"></span>
 			<?php endif; ?>
 
-			<div class="zyre-post-navigation-item zyre-post-navigation__next--wrapper">
-				<?php next_post_link( '%link', $next_html ); ?>
-			</div>
+			<?php if ( get_next_post_link() ) : ?>
+				<div class="zyre-post-navigation-item zyre-post-navigation__next--wrapper">
+					<?php next_post_link( '%link', $next_html ); ?>
+				</div>
+			<?php endif; ?>
 		</div>
 		<?php
 	}
