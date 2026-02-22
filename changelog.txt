@@ -6,6 +6,6 @@
 
 * Some escaping issues are fixed.
 
-= 1.0.2 - 2026-02-19 =
+= 1.0.2 - 2026-02-22 =
 
 - Some escaping outputs, enqueues, assets, and widgets issues are fixed.

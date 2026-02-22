@@ -306,7 +306,7 @@ The plugin does not store, collect, or process personal user data on its own ser
 
 - Some escaping issues are fixed.
 
-= 1.0.2 - 19 February 2026 =
+= 1.0.2 - 22 February 2026 =
 
 - Some escaping outputs, enqueues, assets, and widgets issues are fixed.
 
