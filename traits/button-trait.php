@@ -181,12 +181,18 @@ trait Button_Trait {
 	protected function register_button_style_controls( $args = [] ) {
 		$default_args = [
 			'id_prefix' => '',
+			'class_base' => '',
 		];
 
 		$args = wp_parse_args( $args, $default_args );
 
 		$prefix = ! empty( $args['id_prefix'] ) ? $args['id_prefix'] . '_' : '';
-		$class_base = ! empty( $args['id_prefix'] ) ? 'zyre-button-' . $args['id_prefix'] : 'zyre-button';
+
+		if ( ! empty( $args['class_base'] ) ) {
+			$class_base = $args['class_base'];
+		} else {
+			$class_base = ! empty( $args['id_prefix'] ) ? 'zyre-button-' . $args['id_prefix'] : 'zyre-button';
+		}
 
 		$this->add_responsive_control(
 			$prefix . 'button_width',
@@ -497,13 +503,19 @@ trait Button_Trait {
 	 */
 	protected function register_button_icon_style_controls( $args = [] ) {
 		$default_args = [
-			'id_prefix' => '',
+			'id_prefix'  => '',
+			'class_base' => '',
 		];
 
 		$args = wp_parse_args( $args, $default_args );
 
 		$prefix = ! empty( $args['id_prefix'] ) ? $args['id_prefix'] . '_' : '';
-		$class_base = ! empty( $args['id_prefix'] ) ? 'zyre-button-' . $args['id_prefix'] : 'zyre-button';
+
+		if ( ! empty( $args['class_base'] ) ) {
+			$class_base = $args['class_base'];
+		} else {
+			$class_base = ! empty( $args['id_prefix'] ) ? 'zyre-button-' . $args['id_prefix'] : 'zyre-button';
+		}
 
 		$this->add_responsive_control(
 			$prefix . 'button_icon_size',
