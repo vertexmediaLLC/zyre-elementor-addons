@@ -314,7 +314,7 @@ class FlipBox extends Base {
 			]
 		);
 
-		$this->register_button_style_controls();
+		$this->register_button_style_controls( [ 'class_base' => 'zyre-button-back' ] );
 
 		$this->end_controls_section();
 
@@ -331,7 +331,7 @@ class FlipBox extends Base {
 			]
 		);
 
-		$this->register_button_icon_style_controls();
+		$this->register_button_icon_style_controls( [ 'class_base' => 'zyre-button-back' ] );
 
 		$this->end_controls_section();
 	}

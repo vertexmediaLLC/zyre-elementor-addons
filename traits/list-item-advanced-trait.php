@@ -2704,9 +2704,9 @@ trait List_Item_Advanced_Trait {
 		$instance->add_render_attribute( 'item_link', 'class', "zyre-{$class_base}list-item-link" );
 		$instance->add_render_attribute( 'item', 'class', ! empty( $settings['item_layout'] ) ? "zyre-{$class_base}list-item--content-" . esc_attr( $settings['item_layout'] ) : '' );
 
-		$instance->add_render_attribute( 'icon', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-icon zy-overflow-hidden" );
+		$instance->add_render_attribute( 'icon', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-icon zy-overflow-hidden zy-shrink-0" );
 		$instance->add_render_attribute( 'image', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-image zy-overflow-hidden zy-relative" );
-		$instance->add_render_attribute( 'number', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-num zy-overflow-hidden" );
+		$instance->add_render_attribute( 'number', 'class', "zyre-{$class_base}list-item-type-wrapper zyre-{$class_base}list-item-num zy-overflow-hidden zy-shrink-0" );
 		$instance->add_render_attribute( 'item_content', 'class', "zyre-{$class_base}list-item-content zy-relative" );
 		?>
 
