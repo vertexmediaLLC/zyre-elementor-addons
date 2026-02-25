@@ -181,6 +181,8 @@ class Cache_Manager {
 		$widgets_map = Widgets_Manager::get_active_widgets();
 
 		foreach ( $widgets_map as $widget_key => $data ) {
+			$is_pro = ( isset( $widgets_map[ $widget_key ]['is_pro'] ) && $widgets_map[ $widget_key ]['is_pro'] );
+
 			if ( isset( $data['libs'] ) ) {
 				$libs = $data['libs'];
 
@@ -202,10 +204,15 @@ class Cache_Manager {
 				if ( isset( $data['css'] ) && is_array( $data['css'] ) ) {
 					foreach ( $data['css'] as $stylesheet ) {
 						$file_path = ZYRE_ADDONS_DIR_PATH . "assets/css/widgets/{$widget_key}/{$stylesheet}{$suffix}css";
+						$file_path = apply_filters( 'zyreaddons_get_styles_file_path', $file_path, $stylesheet, $is_pro );
+
 						if ( is_readable( $file_path ) ) {
+							$file_url = ZYRE_ADDONS_ASSETS . "css/widgets/{$widget_key}/{$stylesheet}{$suffix}css";
+							$file_url = apply_filters( 'zyreaddons_get_styles_file_url', $file_url, $stylesheet, $is_pro );
+
 							wp_enqueue_style(
 								"zyre-{$stylesheet}",
-								ZYRE_ADDONS_ASSETS . "css/widgets/{$widget_key}/{$stylesheet}{$suffix}css",
+								$file_url,
 								array( 'zyre-elementor-addons-global-vars', 'zyre-elementor-addons-global', 'zyre-elementor-addons-widgets' ),
 								ZYRE_ADDONS_VERSION
 							);
