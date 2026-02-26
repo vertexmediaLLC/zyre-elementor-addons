@@ -607,6 +607,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'padding':
+					case 'padding_2':
 						$css_values = ! empty( $values['css_values'] ) ? $values['css_values'] : 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};';
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Padding', 'zyre-elementor-addons' ),
@@ -658,6 +659,7 @@ abstract class Base extends Widget_Base {
 					case 'width_ex':
 					case 'min_width':
 					case 'max_width':
+						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';
 						$allowed_props = [ 'width', 'min-width', 'max-width', '--width', 'border-width', '--border-width' ];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'width';
 						$control_args = [
@@ -677,7 +679,7 @@ abstract class Base extends Widget_Base {
 							'default'    => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [],
 							'type'       => Controls_Manager::SLIDER,
 							'selectors'  => [
-								! empty( $values['selector'] ) ? $values['selector'] : $selector => ! empty( $values['css_value'] ) ? esc_html( $values['css_value'] ) : "{$css_property}: {{SIZE}}{{UNIT}};",
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => ! empty( $values['css_value'] ) ? esc_html( $values['css_value'] ) : "{$css_property}: {{SIZE}}{{UNIT}}{$priority};",
 							],
 							'condition'  => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
@@ -689,6 +691,7 @@ abstract class Base extends Widget_Base {
 
 					case 'height':
 					case 'min_height':
+						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';
 						$allowed_props = ['height', 'min-height', 'max-height'];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'height';
 						$control_args = [
@@ -709,7 +712,7 @@ abstract class Base extends Widget_Base {
 							],
 							'type'        => Controls_Manager::SLIDER,
 							'selectors'   => [
-								! empty( $values['selector'] ) ? $values['selector'] : $selector => "{$css_property}: {{SIZE}}{{UNIT}};",
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => "{$css_property}: {{SIZE}}{{UNIT}}{$priority};",
 							],
 							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
@@ -1119,6 +1122,48 @@ abstract class Base extends Widget_Base {
 								'top'     => '-webkit-align-self: flex-start; -ms-flex-item-align: start; align-self: flex-start;',
 								'center'  => '-webkit-align-self: center; -ms-flex-item-align: center; align-self: center;',
 								'bottom'  => '-webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end;',
+							],
+							'selectors'            => [
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => '{{VALUE}}',
+							],
+							'condition'            => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
+						];
+						if ( ! empty( $values['separator'] ) ) {
+							$control_args['separator'] = $values['separator'];
+						}
+						$this->add_responsive_control( $control_name, $control_args );
+						break;
+
+					case 'position':
+						$allowed_defaults = [ 'top', 'left', 'right', 'bottom' ];
+						$control_args = [
+							'label'                => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Position', 'zyre-elementor-addons' ),
+							'type'                 => Controls_Manager::CHOOSE,
+							'default'              => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '',
+							'options'              => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
+								'left'     => [
+									'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-h-align-left',
+								],
+								'right'     => [
+									'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-h-align-right',
+								],
+								'top'     => [
+									'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-v-align-top',
+								],
+								'bottom'  => [
+									'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+									'icon'  => 'eicon-v-align-bottom',
+								],
+							],
+							'toggle'               => ! empty( $values['toggle'] ) ? (bool) $values['toggle'] : true,
+							'selectors_dictionary' => ! empty( $values['selectors_dictionary'] ) && is_array( $values['selectors_dictionary'] ) ? $values['selectors_dictionary'] : [
+								'left'    => 'left: 0;right: auto;',
+								'right'   => 'right: 0;left: auto;',
+								'top'     => 'top: 0;bottom: auto;',
+								'bottom'  => 'bottom: 0;top: auto;',
 							],
 							'selectors'            => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => '{{VALUE}}',
