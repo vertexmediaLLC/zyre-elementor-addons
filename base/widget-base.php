@@ -690,6 +690,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'height':
+					case 'height_2':
 					case 'min_height':
 						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';
 						$allowed_props = ['height', 'min-height', 'max-height'];
@@ -1284,6 +1285,7 @@ abstract class Base extends Widget_Base {
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Z-Index', 'zyre-elementor-addons' ),
 							'type'       => Controls_Manager::NUMBER,
+							'default'    => ! empty( $values['default'] ) ? absint( $values['default'] ) : '',
 							'min'        => ! empty( $values['min'] ) ? absint( $values['min'] ) : -10,
 							'max'        => 100,
 							'selectors'  => [
