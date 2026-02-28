@@ -32,6 +32,11 @@
     opacity: .5;
 }
 
+.elementor-panel .elementor-element .zy-fonticon.zy-Header:before {
+	display: inline-block;
+	transform: rotate(90deg);
+}
+
 .elementor-panel .zyre-element--promotion > .elementor-element > .eicon-lock {
     right: auto;
     left: 5px;
