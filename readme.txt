@@ -1,5 +1,5 @@
 === Zyre Elementor Addons ===
-Contributors: vertexmedia, zyreaddons, elementorin
+Contributors: vertexmediallc
 Tags: elementor, elementor addons, elementor templates, elementor widget, theme builder
 Requires at least: 5.0
 Tested up to: 6.9
