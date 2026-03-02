@@ -333,7 +333,6 @@ class Dashboard {
 	 */
 	public static function get_credentials() {
 		$credentail_map = Credentials_Manager::get_credentials_map();
-		$credentail_map = array_merge( $credentail_map, Credentials_Manager::get_pro_credentials_map() );
 
 		return $credentail_map;
 	}
