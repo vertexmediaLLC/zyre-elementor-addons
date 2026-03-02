@@ -165,7 +165,6 @@ class Cache_Manager {
 
 		wp_enqueue_style( 'zyre-elementor-addons-global-vars' );
 		wp_enqueue_style( 'zyre-elementor-addons-global' );
-		wp_enqueue_style( 'zyre-elementor-addons-widgets' );
 		wp_enqueue_script( 'zyre-elementor-addons' );
 
 		do_action( 'zyreaddons_enqueue_assets', $is_cache = true, $post_id );
@@ -213,7 +212,7 @@ class Cache_Manager {
 							wp_enqueue_style(
 								"zyre-{$stylesheet}",
 								$file_url,
-								array( 'zyre-elementor-addons-global-vars', 'zyre-elementor-addons-global', 'zyre-elementor-addons-widgets' ),
+								[ 'zyre-elementor-addons-global-vars', 'zyre-elementor-addons-global' ],
 								ZYRE_ADDONS_VERSION
 							);
 						}
@@ -224,7 +223,6 @@ class Cache_Manager {
 
 		wp_enqueue_style( 'zyre-elementor-addons-global-vars' );
 		wp_enqueue_style( 'zyre-elementor-addons-global' );
-		wp_enqueue_style( 'zyre-elementor-addons-widgets' );
 		wp_enqueue_script( 'zyre-elementor-addons' );
 
 		do_action( 'zyreaddons_enqueue_assets', $is_cache = false, 0 );
