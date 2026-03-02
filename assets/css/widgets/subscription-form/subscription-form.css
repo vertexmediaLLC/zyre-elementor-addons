@@ -1,4 +1,3 @@
-/* Subscription Form */
 .zyre-addon-subscription-form .zyre-subscription-form-input::placeholder {
     color: var(--zy-gray);
 }

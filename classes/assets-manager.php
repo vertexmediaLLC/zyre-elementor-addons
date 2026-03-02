@@ -82,21 +82,21 @@ class Assets_Manager {
 		wp_register_style(
 			'zyre-icons',
 			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
-			null,
+			[],
 			ZYRE_ADDONS_VERSION
 		);
 
 		wp_register_style(
 			'zyre-icons-bold',
 			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
-			null,
+			[],
 			ZYRE_ADDONS_VERSION
 		);
 
 		wp_register_style(
 			'zyre-elementor-addons-global-vars',
 			ZYRE_ADDONS_ASSETS . 'css/global-vars' . self::$suffix . 'css',
-			null,
+			[],
 			ZYRE_ADDONS_VERSION
 		);
 
@@ -108,16 +108,9 @@ class Assets_Manager {
 		);
 
 		wp_register_style(
-			'zyre-elementor-addons-widgets',
-			ZYRE_ADDONS_ASSETS . 'css/widgets-main' . self::$suffix . 'css',
-			[ 'zyre-elementor-addons-global' ],
-			ZYRE_ADDONS_VERSION
-		);
-
-		wp_register_style(
 			'zyre-elementor-addons-nav-menu',
 			ZYRE_ADDONS_ASSETS . 'css/menu' . self::$suffix . 'css',
-			[ 'zyre-elementor-addons-widgets' ],
+			[ 'zyre-elementor-addons-global' ],
 			ZYRE_ADDONS_VERSION
 		);
 
