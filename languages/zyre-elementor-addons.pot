@@ -1,5 +1,5 @@
 # Copyright (C) 2026 ZyreAddons
-# This file is distributed under the GPLv2.
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Zyre Elementor Addons 1.0.2\n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-19T10:30:42+00:00\n"
+"POT-Creation-Date: 2026-03-02T09:41:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "https://vertexmedia.tech/"
 msgstr ""
 
-#: base/plugin-base.php:188
+#: base/plugin-base.php:184
 #: classes/admin-dashboard.php:183
 msgid "Zyre Addons"
 msgstr ""
@@ -121,8 +121,8 @@ msgid "Line Through"
 msgstr ""
 
 #: base/widget-base.php:213
-#: base/widget-base.php:1224
-#: base/widget-base.php:1332
+#: base/widget-base.php:1270
+#: base/widget-base.php:1379
 #: traits/swiper-trait.php:211
 #: traits/swiper-trait.php:238
 #: widgets/archive-title/archive-title.php:299
@@ -172,7 +172,7 @@ msgid "Text Stroke"
 msgstr ""
 
 #: base/widget-base.php:282
-#: traits/button-trait.php:511
+#: traits/button-trait.php:523
 #: traits/list-item-advanced-trait.php:1298
 #: traits/list-item-advanced-trait.php:2180
 #: traits/social-trait.php:310
@@ -217,10 +217,10 @@ msgstr ""
 
 #: base/widget-base.php:357
 #: classes/widgets-manager.php:255
-#: traits/button-trait.php:334
-#: traits/button-trait.php:380
-#: traits/button-trait.php:591
-#: traits/button-trait.php:623
+#: traits/button-trait.php:340
+#: traits/button-trait.php:386
+#: traits/button-trait.php:603
+#: traits/button-trait.php:635
 #: traits/list-item-advanced-trait.php:688
 #: traits/list-item-advanced-trait.php:725
 #: traits/list-item-advanced-trait.php:1083
@@ -347,7 +347,7 @@ msgid "Text Shadow"
 msgstr ""
 
 #: base/widget-base.php:449
-#: traits/button-trait.php:577
+#: traits/button-trait.php:589
 #: traits/list-item-advanced-trait.php:1406
 #: traits/list-item-advanced-trait.php:1534
 #: traits/list-item-advanced-trait.php:2360
@@ -369,8 +369,8 @@ msgid "Border"
 msgstr ""
 
 #: base/widget-base.php:488
-#: traits/button-trait.php:403
-#: traits/button-trait.php:633
+#: traits/button-trait.php:409
+#: traits/button-trait.php:645
 #: traits/social-trait.php:217
 #: traits/social-trait.php:281
 #: traits/social-trait.php:520
@@ -389,8 +389,8 @@ msgid "Border Width"
 msgstr ""
 
 #: base/widget-base.php:531
-#: traits/button-trait.php:427
-#: traits/button-trait.php:660
+#: traits/button-trait.php:433
+#: traits/button-trait.php:672
 #: traits/list-item-advanced-trait.php:779
 #: traits/list-item-advanced-trait.php:1167
 #: traits/list-item-advanced-trait.php:1639
@@ -428,7 +428,7 @@ msgid "Opacity"
 msgstr ""
 
 #: base/widget-base.php:594
-#: traits/button-trait.php:451
+#: traits/button-trait.php:457
 #: traits/list-item-advanced-trait.php:993
 #: traits/list-item-advanced-trait.php:1249
 #: traits/list-item-advanced-trait.php:2075
@@ -445,8 +445,8 @@ msgstr ""
 msgid "Margin"
 msgstr ""
 
-#: base/widget-base.php:612
-#: traits/button-trait.php:439
+#: base/widget-base.php:613
+#: traits/button-trait.php:445
 #: traits/list-item-advanced-trait.php:824
 #: traits/list-item-advanced-trait.php:1005
 #: traits/list-item-advanced-trait.php:1653
@@ -467,7 +467,7 @@ msgstr ""
 msgid "Padding"
 msgstr ""
 
-#: base/widget-base.php:636
+#: base/widget-base.php:637
 #: widgets/alert/alert.php:229
 #: widgets/archive-title/archive-title.php:346
 #: widgets/call-to-action/call-to-action.php:1086
@@ -495,8 +495,8 @@ msgstr ""
 msgid "Spacing"
 msgstr ""
 
-#: base/widget-base.php:664
-#: traits/button-trait.php:194
+#: base/widget-base.php:666
+#: traits/button-trait.php:200
 #: traits/list-item-advanced-trait.php:576
 #: traits/list-item-advanced-trait.php:925
 #: traits/list-item-advanced-trait.php:1315
@@ -520,8 +520,8 @@ msgstr ""
 msgid "Width"
 msgstr ""
 
-#: base/widget-base.php:695
-#: traits/button-trait.php:216
+#: base/widget-base.php:699
+#: traits/button-trait.php:222
 #: traits/list-item-advanced-trait.php:596
 #: traits/list-item-advanced-trait.php:950
 #: traits/list-item-advanced-trait.php:1342
@@ -538,7 +538,7 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: base/widget-base.php:728
+#: base/widget-base.php:732
 #: traits/list-item-trait.php:239
 #: traits/social-trait.php:798
 #: widgets/alert/alert.php:226
@@ -551,7 +551,7 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: base/widget-base.php:758
+#: base/widget-base.php:762
 #: traits/swiper-trait.php:440
 #: widgets/business-hour/business-hour.php:754
 #: widgets/pdf-view/pdf-view.php:109
@@ -560,21 +560,21 @@ msgstr ""
 msgid "Direction"
 msgstr ""
 
-#: base/widget-base.php:765
+#: base/widget-base.php:769
 #: widgets/business-hour/business-hour.php:759
 #: widgets/post-comments/post-comments.php:1222
 #: widgets/toggle/toggle.php:711
 msgid "Row - horizontal"
 msgstr ""
 
-#: base/widget-base.php:769
+#: base/widget-base.php:773
 #: widgets/business-hour/business-hour.php:763
 #: widgets/post-comments/post-comments.php:1226
 #: widgets/toggle/toggle.php:715
 msgid "Column - vertical"
 msgstr ""
 
-#: base/widget-base.php:795
+#: base/widget-base.php:799
 #: traits/list-item-trait.php:271
 #: widgets/advance-heading/advance-heading.php:143
 #: widgets/author-box/author-box.php:63
@@ -585,15 +585,15 @@ msgstr ""
 msgid "Gap"
 msgstr ""
 
-#: base/widget-base.php:818
+#: base/widget-base.php:822
 msgid "Column Gap"
 msgstr ""
 
-#: base/widget-base.php:839
+#: base/widget-base.php:843
 msgid "Row Gap"
 msgstr ""
 
-#: base/widget-base.php:862
+#: base/widget-base.php:866
 #: traits/list-item-advanced-trait.php:395
 #: traits/list-item-advanced-trait.php:836
 #: traits/list-item-advanced-trait.php:866
@@ -642,11 +642,12 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: base/widget-base.php:867
-#: base/widget-base.php:907
-#: base/widget-base.php:996
-#: base/widget-base.php:1062
-#: traits/button-trait.php:467
+#: base/widget-base.php:871
+#: base/widget-base.php:911
+#: base/widget-base.php:1000
+#: base/widget-base.php:1066
+#: base/widget-base.php:1146
+#: traits/button-trait.php:473
 #: traits/list-item-advanced-trait.php:400
 #: traits/list-item-advanced-trait.php:841
 #: traits/list-item-advanced-trait.php:871
@@ -762,15 +763,15 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: base/widget-base.php:871
-#: base/widget-base.php:911
-#: base/widget-base.php:955
-#: base/widget-base.php:1000
-#: base/widget-base.php:1034
-#: base/widget-base.php:1066
-#: base/widget-base.php:1109
-#: traits/button-trait.php:248
-#: traits/button-trait.php:471
+#: base/widget-base.php:875
+#: base/widget-base.php:915
+#: base/widget-base.php:959
+#: base/widget-base.php:1004
+#: base/widget-base.php:1038
+#: base/widget-base.php:1070
+#: base/widget-base.php:1113
+#: traits/button-trait.php:254
+#: traits/button-trait.php:477
 #: traits/list-item-advanced-trait.php:404
 #: traits/list-item-advanced-trait.php:845
 #: traits/list-item-advanced-trait.php:875
@@ -872,11 +873,12 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
-#: base/widget-base.php:875
-#: base/widget-base.php:915
-#: base/widget-base.php:1004
-#: base/widget-base.php:1070
-#: traits/button-trait.php:475
+#: base/widget-base.php:879
+#: base/widget-base.php:919
+#: base/widget-base.php:1008
+#: base/widget-base.php:1074
+#: base/widget-base.php:1150
+#: traits/button-trait.php:481
 #: traits/list-item-advanced-trait.php:408
 #: traits/list-item-advanced-trait.php:849
 #: traits/list-item-advanced-trait.php:879
@@ -991,7 +993,7 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: base/widget-base.php:879
+#: base/widget-base.php:883
 #: traits/list-item-advanced-trait.php:1033
 #: traits/list-item-advanced-trait.php:2121
 #: widgets/archive-description/archive-description.php:145
@@ -1003,17 +1005,17 @@ msgstr ""
 msgid "Justify"
 msgstr ""
 
-#: base/widget-base.php:901
-#: base/widget-base.php:989
-#: base/widget-base.php:1057
+#: base/widget-base.php:905
+#: base/widget-base.php:993
+#: base/widget-base.php:1061
 #: widgets/animated-text/animated-text.php:1325
 #: widgets/fun-fact/fun-fact.php:187
 msgid "Horizontal Align"
 msgstr ""
 
-#: base/widget-base.php:919
-#: base/widget-base.php:963
-#: traits/button-trait.php:256
+#: base/widget-base.php:923
+#: base/widget-base.php:967
+#: traits/button-trait.php:262
 #: traits/list-item-trait.php:161
 #: traits/social-trait.php:603
 #: traits/swiper-trait.php:344
@@ -1046,9 +1048,9 @@ msgstr ""
 msgid "Space Between"
 msgstr ""
 
-#: base/widget-base.php:923
-#: base/widget-base.php:967
-#: traits/button-trait.php:260
+#: base/widget-base.php:927
+#: base/widget-base.php:971
+#: traits/button-trait.php:266
 #: widgets/business-hour/business-hour.php:912
 #: widgets/pdf-view/pdf-view.php:454
 #: widgets/post-comments/post-comments.php:814
@@ -1057,9 +1059,9 @@ msgstr ""
 msgid "Space Around"
 msgstr ""
 
-#: base/widget-base.php:927
-#: base/widget-base.php:971
-#: traits/button-trait.php:264
+#: base/widget-base.php:931
+#: base/widget-base.php:975
+#: traits/button-trait.php:270
 #: widgets/business-hour/business-hour.php:916
 #: widgets/pdf-view/pdf-view.php:458
 #: widgets/post-comments/post-comments.php:818
@@ -1068,18 +1070,19 @@ msgstr ""
 msgid "Space Evenly"
 msgstr ""
 
-#: base/widget-base.php:945
-#: base/widget-base.php:1025
-#: base/widget-base.php:1100
+#: base/widget-base.php:949
+#: base/widget-base.php:1029
+#: base/widget-base.php:1104
 #: widgets/animated-text/animated-text.php:1355
 #: widgets/author-box/author-box.php:78
 #: widgets/post-comments/post-comments.php:2544
 msgid "Vertical Align"
 msgstr ""
 
-#: base/widget-base.php:951
-#: base/widget-base.php:1030
-#: base/widget-base.php:1105
+#: base/widget-base.php:955
+#: base/widget-base.php:1034
+#: base/widget-base.php:1109
+#: base/widget-base.php:1154
 #: traits/list-item-advanced-trait.php:1050
 #: traits/list-item-advanced-trait.php:1695
 #: traits/list-item-advanced-trait.php:2138
@@ -1114,9 +1117,10 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: base/widget-base.php:959
-#: base/widget-base.php:1038
-#: base/widget-base.php:1113
+#: base/widget-base.php:963
+#: base/widget-base.php:1042
+#: base/widget-base.php:1117
+#: base/widget-base.php:1158
 #: traits/list-item-advanced-trait.php:1058
 #: traits/list-item-advanced-trait.php:1703
 #: traits/list-item-advanced-trait.php:2146
@@ -1148,7 +1152,7 @@ msgstr ""
 msgid "Bottom"
 msgstr ""
 
-#: base/widget-base.php:1074
+#: base/widget-base.php:1078
 #: widgets/business-hour/business-hour.php:832
 #: widgets/fun-fact/fun-fact.php:204
 #: widgets/heading/heading.php:546
@@ -1161,56 +1165,86 @@ msgstr ""
 msgid "Stretch"
 msgstr ""
 
-#: base/widget-base.php:1137
+#: base/widget-base.php:1141
+#: widgets/call-to-action/call-to-action.php:115
+#: widgets/call-to-action/call-to-action.php:301
+#: widgets/call-to-action/call-to-action.php:496
+#: widgets/call-to-action/call-to-action.php:690
+#: widgets/call-to-action/call-to-action.php:1665
+#: widgets/call-to-action/call-to-action.php:1939
+#: widgets/divider/divider.php:348
+#: widgets/divider/divider.php:417
+#: widgets/dual-button/dual-button.php:306
+#: widgets/dual-button/dual-button.php:486
+#: widgets/featured-banner/featured-banner.php:116
+#: widgets/featured-banner/featured-banner.php:318
+#: widgets/featured-banner/featured-banner.php:513
+#: widgets/featured-banner/featured-banner.php:1664
+#: widgets/featured-banner/featured-banner.php:1943
+#: widgets/fun-fact/fun-fact.php:128
+#: widgets/heading/heading.php:675
+#: widgets/heading/heading.php:711
+#: widgets/image-carousel/image-carousel.php:141
+#: widgets/image-heading/image-heading.php:387
+#: widgets/logo-carousel/logo-carousel.php:150
+#: widgets/post-comments/post-comments.php:1048
+#: widgets/post-grid/post-grid.php:487
+#: widgets/team-member/team-member.php:92
+#: widgets/team-member/team-member.php:318
+#: widgets/testimonial/testimonial.php:86
+msgid "Position"
+msgstr ""
+
+#: base/widget-base.php:1183
 #: widgets/animated-text/animated-text.php:264
 #: widgets/call-to-action/call-to-action.php:2092
 #: widgets/infobox/infobox.php:626
 msgid "Rotate"
 msgstr ""
 
-#: base/widget-base.php:1168
+#: base/widget-base.php:1214
 #: widgets/image-carousel/image-carousel.php:104
 #: widgets/logo-carousel/logo-carousel.php:113
 #: widgets/news-ticker/news-ticker.php:341
 msgid "Transition Effect"
 msgstr ""
 
-#: base/widget-base.php:1172
+#: base/widget-base.php:1218
 #: widgets/image-carousel/image-carousel.php:108
 #: widgets/logo-carousel/logo-carousel.php:117
 #: widgets/news-ticker/news-ticker.php:345
 msgid "ease"
 msgstr ""
 
-#: base/widget-base.php:1173
+#: base/widget-base.php:1219
 #: widgets/image-carousel/image-carousel.php:109
 #: widgets/logo-carousel/logo-carousel.php:118
 #: widgets/news-ticker/news-ticker.php:346
 msgid "linear"
 msgstr ""
 
-#: base/widget-base.php:1174
+#: base/widget-base.php:1220
 #: widgets/image-carousel/image-carousel.php:110
 #: widgets/logo-carousel/logo-carousel.php:119
 #: widgets/news-ticker/news-ticker.php:347
 msgid "ease-in"
 msgstr ""
 
-#: base/widget-base.php:1175
+#: base/widget-base.php:1221
 #: widgets/image-carousel/image-carousel.php:111
 #: widgets/logo-carousel/logo-carousel.php:120
 #: widgets/news-ticker/news-ticker.php:348
 msgid "ease-out"
 msgstr ""
 
-#: base/widget-base.php:1176
+#: base/widget-base.php:1222
 #: widgets/image-carousel/image-carousel.php:112
 #: widgets/logo-carousel/logo-carousel.php:121
 #: widgets/news-ticker/news-ticker.php:349
 msgid "ease-in-out"
 msgstr ""
 
-#: base/widget-base.php:1193
+#: base/widget-base.php:1239
 #: traits/swiper-trait.php:256
 #: widgets/call-to-action/call-to-action.php:855
 #: widgets/call-to-action/call-to-action.php:965
@@ -1224,11 +1258,11 @@ msgstr ""
 msgid "Transition Duration"
 msgstr ""
 
-#: base/widget-base.php:1216
+#: base/widget-base.php:1262
 msgid "Object Fit"
 msgstr ""
 
-#: base/widget-base.php:1220
+#: base/widget-base.php:1266
 #: widgets/call-to-action/call-to-action.php:104
 #: widgets/call-to-action/call-to-action.php:182
 #: widgets/featured-banner/featured-banner.php:105
@@ -1236,29 +1270,29 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: base/widget-base.php:1221
+#: base/widget-base.php:1267
 #: widgets/call-to-action/call-to-action.php:183
 #: widgets/featured-banner/featured-banner.php:185
 msgid "Contain"
 msgstr ""
 
-#: base/widget-base.php:1222
+#: base/widget-base.php:1268
 #: widgets/animated-text/animated-text.php:505
 msgid "Fill"
 msgstr ""
 
-#: base/widget-base.php:1223
+#: base/widget-base.php:1269
 msgid "Scale Down"
 msgstr ""
 
-#: base/widget-base.php:1240
+#: base/widget-base.php:1286
 #: traits/list-item-advanced-trait.php:1180
 #: traits/list-item-advanced-trait.php:1717
 #: widgets/image-heading/image-heading.php:607
 msgid "Z-Index"
 msgstr ""
 
-#: base/widget-base.php:1260
+#: base/widget-base.php:1307
 #: widgets/animated-text/animated-text.php:1465
 #: widgets/call-to-action/call-to-action.php:1956
 #: widgets/dual-button/dual-button.php:503
@@ -1269,7 +1303,7 @@ msgstr ""
 msgid "Horizontal Offset"
 msgstr ""
 
-#: base/widget-base.php:1291
+#: base/widget-base.php:1338
 #: widgets/animated-text/animated-text.php:1489
 #: widgets/call-to-action/call-to-action.php:1985
 #: widgets/dual-button/dual-button.php:532
@@ -1280,7 +1314,7 @@ msgstr ""
 msgid "Vertical Offset"
 msgstr ""
 
-#: base/widget-base.php:1320
+#: base/widget-base.php:1367
 #: widgets/animated-text/animated-text.php:163
 #: widgets/heading/heading.php:691
 #: widgets/image-heading/image-heading.php:278
@@ -1288,7 +1322,7 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: base/widget-base.php:1324
+#: base/widget-base.php:1371
 #: traits/list-item-trait.php:46
 #: widgets/advance-heading/advance-heading.php:126
 #: widgets/advance-heading/advance-heading.php:504
@@ -1304,7 +1338,7 @@ msgstr ""
 msgid "Block"
 msgstr ""
 
-#: base/widget-base.php:1325
+#: base/widget-base.php:1372
 #: widgets/call-to-action/call-to-action.php:2146
 #: widgets/dual-color-heading/dual-color-heading.php:246
 #: widgets/featured-banner/featured-banner.php:2050
@@ -1314,7 +1348,7 @@ msgstr ""
 msgid "Inline Block"
 msgstr ""
 
-#: base/widget-base.php:1326
+#: base/widget-base.php:1373
 #: traits/list-item-trait.php:50
 #: widgets/advance-heading/advance-heading.php:130
 #: widgets/advance-heading/advance-heading.php:508
@@ -1329,31 +1363,31 @@ msgstr ""
 msgid "Inline"
 msgstr ""
 
-#: base/widget-base.php:1327
+#: base/widget-base.php:1374
 msgid "Flex"
 msgstr ""
 
-#: base/widget-base.php:1328
+#: base/widget-base.php:1375
 msgid "Inline Flex"
 msgstr ""
 
-#: base/widget-base.php:1329
+#: base/widget-base.php:1376
 msgid "Grid"
 msgstr ""
 
-#: base/widget-base.php:1330
+#: base/widget-base.php:1377
 msgid "Inline Grid"
 msgstr ""
 
-#: base/widget-base.php:1331
+#: base/widget-base.php:1378
 msgid "table"
 msgstr ""
 
-#: base/widget-base.php:1347
+#: base/widget-base.php:1394
 msgid "Options"
 msgstr ""
 
-#: base/widget-base.php:1365
+#: base/widget-base.php:1412
 #: classes/widgets-manager.php:1157
 #: traits/list-item-advanced-trait.php:496
 #: widgets/divider/divider.php:15
@@ -1367,7 +1401,7 @@ msgstr ""
 msgid "Divider"
 msgstr ""
 
-#: base/widget-base.php:1366
+#: base/widget-base.php:1413
 #: traits/list-item-advanced-trait.php:499
 #: widgets/archive-posts/archive-posts.php:350
 #: widgets/archive-posts/archive-posts.php:398
@@ -1392,7 +1426,7 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: base/widget-base.php:1367
+#: base/widget-base.php:1414
 #: traits/list-item-advanced-trait.php:498
 #: widgets/archive-posts/archive-posts.php:351
 #: widgets/archive-posts/archive-posts.php:399
@@ -1419,22 +1453,22 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: base/widget-base.php:1388
+#: base/widget-base.php:1435
 msgid "Show Separators"
 msgstr ""
 
-#: base/widget-base.php:1390
+#: base/widget-base.php:1437
 #: widgets/heading/heading.php:652
 msgid "SHOW"
 msgstr ""
 
-#: base/widget-base.php:1391
+#: base/widget-base.php:1438
 #: widgets/heading/heading.php:653
 msgid "HIDE"
 msgstr ""
 
 #: classes/admin-dashboard.php:140
-#: templates/admin/dashboard-home.php:135
+#: templates/admin/dashboard-home.php:118
 msgid "Save Settings"
 msgstr ""
 
@@ -1460,118 +1494,44 @@ msgid "Integrations"
 msgstr ""
 
 #. translators: %s is the widget name
-#: classes/assets-manager.php:381
+#: classes/assets-manager.php:374
 #, php-format
 msgid "Use %s widget and dozens more pro widgets with pro features to extend your toolbox and build sites faster and better."
 msgstr ""
 
-#: classes/assets-manager.php:382
+#: classes/assets-manager.php:375
 msgid "Upgrade Zyre Addons"
 msgstr ""
 
-#: classes/assets-manager.php:383
+#: classes/assets-manager.php:376
 msgid "No Templates Found"
 msgstr ""
 
-#: classes/assets-manager.php:384
+#: classes/assets-manager.php:377
 msgid "Try different category or sync for new templates."
 msgstr ""
 
-#: classes/assets-manager.php:385
+#: classes/assets-manager.php:378
 msgid "No Results Found"
 msgstr ""
 
-#: classes/assets-manager.php:386
+#: classes/assets-manager.php:379
 msgid "Please make sure your search is spelled correctly or try a different words."
 msgstr ""
 
-#: classes/assets-manager.php:387
+#: classes/assets-manager.php:380
 msgid "No results found."
 msgstr ""
 
 #: classes/credentials-manager.php:47
-msgid "Twitter Feed"
-msgstr ""
-
-#: classes/credentials-manager.php:51
-msgid "User Name. (Use @ sign with your Twitter user name)"
-msgstr ""
-
-#: classes/credentials-manager.php:56
-msgid "Consumer Key"
-msgstr ""
-
-#: classes/credentials-manager.php:60
-msgid "Get Consumer Key"
-msgstr ""
-
-#: classes/credentials-manager.php:65
-msgid "Consumer Secret"
-msgstr ""
-
-#: classes/credentials-manager.php:69
-msgid "Get Consumer Secret"
-msgstr ""
-
-#: classes/credentials-manager.php:77
-msgid "Facebook Feed"
-msgstr ""
-
-#: classes/credentials-manager.php:81
-msgid "Page ID. "
-msgstr ""
-
-#: classes/credentials-manager.php:85
-msgid "Get Page ID"
-msgstr ""
-
-#: classes/credentials-manager.php:90
-#: classes/credentials-manager.php:106
-msgid "Access Token. "
-msgstr ""
-
-#: classes/credentials-manager.php:94
-msgid "Get Access Token."
-msgstr ""
-
-#: classes/credentials-manager.php:102
-msgid "Instagram"
-msgstr ""
-
-#: classes/credentials-manager.php:110
-msgid "Get Access Token"
-msgstr ""
-
-#: classes/credentials-manager.php:118
-msgid "Google Calendar"
-msgstr ""
-
-#: classes/credentials-manager.php:122
-msgid "Google API Key. "
-msgstr ""
-
-#: classes/credentials-manager.php:126
-#: classes/credentials-manager.php:142
-msgid "Get API Key"
-msgstr ""
-
-#: classes/credentials-manager.php:134
-msgid "Google Map"
-msgstr ""
-
-#: classes/credentials-manager.php:138
-msgid "Google Map API Key. "
-msgstr ""
-
-#: classes/credentials-manager.php:160
 msgid "MailChimp"
 msgstr ""
 
-#: classes/credentials-manager.php:164
+#: classes/credentials-manager.php:51
 msgid "Enter API Key. "
 msgstr ""
 
-#: classes/credentials-manager.php:168
+#: classes/credentials-manager.php:55
 msgid "Get your api key here"
 msgstr ""
 
@@ -1604,7 +1564,7 @@ msgstr ""
 msgid "Zyre Library"
 msgstr ""
 
-#: classes/library-source.php:195
+#: classes/library-source.php:191
 msgid "Template does not have any content"
 msgstr ""
 
@@ -1637,24 +1597,24 @@ msgid "Click to reset the Pre-styles"
 msgstr ""
 
 #: classes/select2-handler.php:14
-#: modules/theme-builder/conditions-manager.php:398
+#: modules/theme-builder/conditions-manager.php:311
 msgid "Invalid request"
 msgstr ""
 
 #: classes/select2-handler.php:18
-#: modules/theme-builder/conditions-manager.php:402
-#: modules/theme-builder/conditions-manager.php:411
-#: modules/theme-builder/conditions-manager.php:415
+#: modules/theme-builder/conditions-manager.php:315
+#: modules/theme-builder/conditions-manager.php:324
+#: modules/theme-builder/conditions-manager.php:328
 msgid "Unauthorized request"
 msgstr ""
 
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:500
+#: modules/theme-builder/conditions-manager.php:413
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:98
-#: modules/theme-builder/conditions-manager.php:462
+#: modules/theme-builder/conditions-manager.php:375
 msgid "Invalid taxonomy"
 msgstr ""
 
@@ -1776,8 +1736,8 @@ msgid "Dual Color Heading"
 msgstr ""
 
 #: classes/widgets-manager.php:250
-#: traits/button-trait.php:320
-#: traits/button-trait.php:367
+#: traits/button-trait.php:326
+#: traits/button-trait.php:373
 #: traits/list-item-advanced-trait.php:1237
 #: widgets/alert/alert.php:462
 #: widgets/animated-text/animated-text.php:116
@@ -2202,7 +2162,7 @@ msgid "Subscription Form"
 msgstr ""
 
 #: classes/widgets-manager.php:1238
-#: templates/admin/dashboard-home.php:421
+#: templates/admin/dashboard-home.php:380
 #: widgets/cf7/cf7.php:12
 #: widgets/cf7/cf7.php:34
 msgid "Contact Form 7"
@@ -2342,17 +2302,17 @@ msgstr ""
 msgid "Lottie Animation"
 msgstr ""
 
-#: classes/widgets-manager.php:1718
+#: classes/widgets-manager.php:1708
 msgid "(Inactive)"
 msgstr ""
 
 #. translators: 1: style number, 2: style name, 3: additional text
-#: classes/widgets-manager.php:1720
+#: classes/widgets-manager.php:1710
 #, php-format
 msgid "Style %1$d - %2$s %3$s"
 msgstr ""
 
-#: classes/widgets-manager.php:1755
+#: classes/widgets-manager.php:1745
 msgid "Default - No Style"
 msgstr ""
 
@@ -2365,8 +2325,8 @@ msgid "White Space"
 msgstr ""
 
 #: controls/typography.php:59
-#: traits/button-trait.php:313
-#: traits/button-trait.php:570
+#: traits/button-trait.php:319
+#: traits/button-trait.php:582
 #: traits/list-item-advanced-trait.php:345
 #: traits/list-item-advanced-trait.php:680
 #: traits/list-item-advanced-trait.php:1075
@@ -2483,33 +2443,33 @@ msgstr ""
 msgid "This input field has support for the following HTML tags: %1$s"
 msgstr ""
 
-#: includes/helpers.php:501
+#: includes/helpers.php:491
 msgid "plugin is missing! Please install and activate it."
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:530
+#: includes/helpers.php:520
 #, php-format
 msgid "Activate %s"
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:535
+#: includes/helpers.php:525
 #, php-format
 msgid "Install %s"
 msgstr ""
 
-#: includes/helpers.php:606
+#: includes/helpers.php:596
 msgid "Manual Selection"
 msgstr ""
 
 #. translators: 1: The function name, 2: The argument number, 3: The argument name, 4: The expected type, 5: The provided type.
-#: includes/helpers.php:733
+#: includes/helpers.php:723
 #, php-format
 msgid "Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given."
 msgstr ""
 
-#: includes/helpers.php:772
+#: includes/helpers.php:762
 msgid "&hellip;"
 msgstr ""
 
@@ -2564,120 +2524,29 @@ msgid "Singular"
 msgstr ""
 
 #: modules/theme-builder/conditions-manager.php:229
-#: modules/theme-builder/conditions-manager.php:272
-#: modules/theme-builder/conditions-manager.php:273
+#: modules/theme-builder/conditions-manager.php:252
+#: modules/theme-builder/conditions-manager.php:253
 msgid "All Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:245
-#: modules/theme-builder/conditions-manager.php:246
-msgid "Author Archive"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:250
-#: modules/theme-builder/conditions-manager.php:251
-msgid "Date Archive"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:255
-#: modules/theme-builder/conditions-manager.php:256
-msgid "Search Results"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:260
-#: modules/theme-builder/conditions-manager.php:261
-msgid "Posts Archive"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:277
-#: modules/theme-builder/conditions-manager.php:278
+#: modules/theme-builder/conditions-manager.php:257
+#: modules/theme-builder/conditions-manager.php:258
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:282
-#: modules/theme-builder/conditions-manager.php:283
-#: modules/theme-builder/conditions-manager.php:287
-#: widgets/news-ticker/news-ticker.php:89
-msgid "Posts"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:288
-msgid "All Posts"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:292
-#: modules/theme-builder/conditions-manager.php:297
-msgid "In Category"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:293
-#: modules/theme-builder/conditions-manager.php:298
-#: modules/theme-builder/conditions-manager.php:303
-#: modules/theme-builder/conditions-manager.php:315
-msgid "Site"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:302
-msgid "In Tag"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:307
-#: modules/theme-builder/conditions-manager.php:308
-msgid "Posts By Author"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:314
-msgid "Page"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:320
-#: widgets/news-ticker/news-ticker.php:90
-#: widgets/toggle/toggle.php:240
-msgid "Pages"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:321
-msgid "All Pages"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:325
-#: modules/theme-builder/conditions-manager.php:326
-msgid "Pages By Author"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:332
-#: modules/theme-builder/conditions-manager.php:333
-msgid "Direct Child Of"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:337
-#: modules/theme-builder/conditions-manager.php:338
-msgid "Any Child Of"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:342
-#: modules/theme-builder/conditions-manager.php:343
-msgid "By Author"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:347
-#: modules/theme-builder/conditions-manager.php:348
-msgid "404 Page"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:455
+#: modules/theme-builder/conditions-manager.php:368
 msgid "Categories: "
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:458
+#: modules/theme-builder/conditions-manager.php:371
 msgid "Tags: "
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:634
+#: modules/theme-builder/conditions-manager.php:547
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:790
+#: modules/theme-builder/conditions-manager.php:703
 #: modules/theme-builder/templates/template-conditions.php:76
 msgid "Remove this item"
 msgstr ""
@@ -2838,7 +2707,7 @@ msgid "Conditions"
 msgstr ""
 
 #: modules/theme-builder/module.php:603
-#: templates/admin/dashboard-home.php:554
+#: templates/admin/dashboard-home.php:511
 #: widgets/advance-accordion/advance-accordion.php:383
 #: widgets/advance-accordion/advance-accordion.php:530
 #: widgets/advance-toggle/advance-toggle.php:382
@@ -2971,209 +2840,182 @@ msgid "Exclude"
 msgstr ""
 
 #. translators: %s is the plugin version
-#: templates/admin/dashboard-home.php:54
+#: templates/admin/dashboard-home.php:51
 #, php-format
 msgid "Version %s"
 msgstr ""
 
 #. translators: %s is the plugin version
-#: templates/admin/dashboard-home.php:55
+#: templates/admin/dashboard-home.php:52
 msgid "View Changelog"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:62
-msgid "Looking to unlock more opportunities<br>and elevate your journey?"
-msgstr ""
-
-#: templates/admin/dashboard-home.php:71
-#: templates/template-library/templates.php:69
-msgid "Get Pro"
-msgstr ""
-
-#: templates/admin/dashboard-home.php:81
+#: templates/admin/dashboard-home.php:64
 msgid "Total Widgets"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:85
+#: templates/admin/dashboard-home.php:68
 msgid "In-Use"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:89
+#: templates/admin/dashboard-home.php:72
 msgid "Not In-Use"
 msgstr ""
 
 #. translators: %s is the tab number
-#: templates/admin/dashboard-home.php:125
+#: templates/admin/dashboard-home.php:108
 #, php-format
 msgid "Tab %s"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:154
+#: templates/admin/dashboard-home.php:137
 msgid "Welcome!"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:155
+#: templates/admin/dashboard-home.php:138
 msgid "Build your next stunning, pixel-perfect WordPress site quickly and easily with professional Elementor widgets."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:158
+#: templates/admin/dashboard-home.php:141
 msgid "Explore Elements Library"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:164
+#: templates/admin/dashboard-home.php:147
 msgid "Welcome Image"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:172
+#: templates/admin/dashboard-home.php:155
 msgid "Elements Library"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:175
+#: templates/admin/dashboard-home.php:158
 msgid "Global Control"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:176
+#: templates/admin/dashboard-home.php:159
 msgid "Use toggle button to active or deactive all widgets at once."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:180
+#: templates/admin/dashboard-home.php:163
 msgid "Disable all"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:181
+#: templates/admin/dashboard-home.php:164
 msgid "Enable all"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:191
+#: templates/admin/dashboard-home.php:174
 msgid "Third-Party Credentials & Plugin Integrations"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:192
+#: templates/admin/dashboard-home.php:175
 msgid "Below is the list of credentials and plugins. You can enter credentials and install third-party plugins from this section. After making any changes, be sure to click the \"Save Settings\" button."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:221
-#: templates/admin/dashboard-home.php:532
-#: templates/template-library/templates.php:130
-msgid "Pro"
-msgstr ""
-
-#: templates/admin/dashboard-home.php:263
-msgid "Enhance Elementor experience and elevate your journey by unlocking Pro-Version."
-msgstr ""
-
-#: templates/admin/dashboard-home.php:264
-msgid "Get access to automatic updates & keep your website up-to-dates."
-msgstr ""
-
-#: templates/admin/dashboard-home.php:267
-msgid "Get Pro Now"
-msgstr ""
-
-#: templates/admin/dashboard-home.php:279
+#: templates/admin/dashboard-home.php:238
 msgid "Video Tutorials"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:286
+#: templates/admin/dashboard-home.php:245
 msgid "How to Manage Widgets and Styles"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:293
+#: templates/admin/dashboard-home.php:252
 msgid "How to Design From Scratch"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:300
+#: templates/admin/dashboard-home.php:259
 msgid "How to Import Templates"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:307
+#: templates/admin/dashboard-home.php:266
 msgid "How to Design Header Template"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:313
+#: templates/admin/dashboard-home.php:272
 msgid "View More Videos"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:319
+#: templates/admin/dashboard-home.php:278
 msgid "Happy with ZyreAddons"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:320
+#: templates/admin/dashboard-home.php:279
 msgid "Please rate us"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:335
+#: templates/admin/dashboard-home.php:294
 msgid "Quick Help Links"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:339
+#: templates/admin/dashboard-home.php:298
 msgid "Knowledge Base"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:341
+#: templates/admin/dashboard-home.php:300
 msgid "Explore our comprehensive documentation to familiarize yourself with Zyre."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:344
+#: templates/admin/dashboard-home.php:303
 msgid "Browse Documentation"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:351
+#: templates/admin/dashboard-home.php:310
 msgid "Support Center"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:353
+#: templates/admin/dashboard-home.php:312
 msgid "We may have already answered your question— visit our Support Forum to find the solution."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:356
+#: templates/admin/dashboard-home.php:315
 msgid "Visit Suppport Forum"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:363
+#: templates/admin/dashboard-home.php:322
 msgid "Ask a Question"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:365
+#: templates/admin/dashboard-home.php:324
 msgid "Need further help? Submit a support request for quick assistance."
 msgstr ""
 
-#: templates/admin/dashboard-home.php:368
+#: templates/admin/dashboard-home.php:327
 msgid "Submit a Question"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:379
+#: templates/admin/dashboard-home.php:338
 msgid "ZyreAddons Integrations"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:385
-#: templates/admin/dashboard-home.php:418
+#: templates/admin/dashboard-home.php:344
+#: templates/admin/dashboard-home.php:377
 msgid "Free"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:392
+#: templates/admin/dashboard-home.php:351
 msgid "Free Elementor WordPress<br>theme and addons"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:401
+#: templates/admin/dashboard-home.php:360
 msgid "Install Now"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:425
+#: templates/admin/dashboard-home.php:384
 msgid "Enable your visitors to connect<br>with you"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:437
+#: templates/admin/dashboard-home.php:396
 msgid " Now"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:459
+#: templates/admin/dashboard-home.php:418
 msgid "Widget"
 msgid_plural "Widgets"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard-home.php:462
+#: templates/admin/dashboard-home.php:421
 #: traits/list-item-advanced-trait.php:529
 #: widgets/post-meta/post-meta.php:674
 #: widgets/post-navigation/post-navigation.php:547
@@ -3182,32 +3024,32 @@ msgid_plural "Styles"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard-home.php:481
+#: templates/admin/dashboard-home.php:440
 msgid "Search Widgets"
 msgstr ""
 
 #. translators: %s is the style count
-#: templates/admin/dashboard-home.php:544
+#: templates/admin/dashboard-home.php:501
 #, php-format
 msgid "%s style"
 msgid_plural "%s styles"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard-home.php:552
+#: templates/admin/dashboard-home.php:509
 msgid "Inactive"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:558
+#: templates/admin/dashboard-home.php:515
 msgid "View Demo"
 msgstr ""
 
-#: templates/admin/dashboard-home.php:559
+#: templates/admin/dashboard-home.php:516
 msgid "Documentation"
 msgstr ""
 
 #. translators: %d is the style number
-#: templates/admin/dashboard-home.php:590
+#: templates/admin/dashboard-home.php:547
 #, php-format
 msgid "Style %d"
 msgstr ""
@@ -3240,6 +3082,10 @@ msgstr ""
 msgid "Insert"
 msgstr ""
 
+#: templates/template-library/templates.php:69
+msgid "Get Pro"
+msgstr ""
+
 #: templates/template-library/templates.php:83
 msgid "Loading"
 msgstr ""
@@ -3258,6 +3104,10 @@ msgstr ""
 
 #: templates/template-library/templates.php:113
 msgid "Search"
+msgstr ""
+
+#: templates/template-library/templates.php:130
+msgid "Pro"
 msgstr ""
 
 #: templates/template-library/templates.php:137
@@ -3420,7 +3270,7 @@ msgstr ""
 msgid "onClick Event"
 msgstr ""
 
-#: traits/button-trait.php:238
+#: traits/button-trait.php:244
 #: widgets/business-hour/business-hour.php:891
 #: widgets/call-to-action/call-to-action.php:1637
 #: widgets/dual-button/dual-button.php:282
@@ -3432,7 +3282,7 @@ msgstr ""
 msgid "Justify Content"
 msgstr ""
 
-#: traits/button-trait.php:244
+#: traits/button-trait.php:250
 #: traits/social-trait.php:764
 #: widgets/author-box/author-box.php:1039
 #: widgets/business-hour/business-hour.php:820
@@ -3445,7 +3295,7 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
-#: traits/button-trait.php:252
+#: traits/button-trait.php:258
 #: traits/social-trait.php:772
 #: widgets/author-box/author-box.php:1043
 #: widgets/business-hour/business-hour.php:828
@@ -3458,8 +3308,8 @@ msgstr ""
 msgid "End"
 msgstr ""
 
-#: traits/button-trait.php:360
-#: traits/button-trait.php:603
+#: traits/button-trait.php:366
+#: traits/button-trait.php:615
 #: traits/list-item-advanced-trait.php:717
 #: traits/list-item-advanced-trait.php:1112
 #: traits/list-item-advanced-trait.php:1485
@@ -3543,7 +3393,7 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: traits/button-trait.php:463
+#: traits/button-trait.php:469
 #: widgets/business-hour/business-hour.php:606
 #: widgets/heading/heading.php:396
 #: widgets/heading/heading.php:431
@@ -3558,15 +3408,15 @@ msgstr ""
 msgid "Horizontal Position"
 msgstr ""
 
-#: traits/button-trait.php:532
+#: traits/button-trait.php:544
 msgid "Background Width"
 msgstr ""
 
-#: traits/button-trait.php:550
+#: traits/button-trait.php:562
 msgid "Background Height"
 msgstr ""
 
-#: traits/button-trait.php:610
+#: traits/button-trait.php:622
 msgid "Icon Hover Color"
 msgstr ""
 
@@ -6382,35 +6232,6 @@ msgstr ""
 msgid "Classic"
 msgstr ""
 
-#: widgets/call-to-action/call-to-action.php:115
-#: widgets/call-to-action/call-to-action.php:301
-#: widgets/call-to-action/call-to-action.php:496
-#: widgets/call-to-action/call-to-action.php:690
-#: widgets/call-to-action/call-to-action.php:1665
-#: widgets/call-to-action/call-to-action.php:1939
-#: widgets/divider/divider.php:348
-#: widgets/divider/divider.php:417
-#: widgets/dual-button/dual-button.php:306
-#: widgets/dual-button/dual-button.php:486
-#: widgets/featured-banner/featured-banner.php:116
-#: widgets/featured-banner/featured-banner.php:318
-#: widgets/featured-banner/featured-banner.php:513
-#: widgets/featured-banner/featured-banner.php:1664
-#: widgets/featured-banner/featured-banner.php:1943
-#: widgets/fun-fact/fun-fact.php:128
-#: widgets/heading/heading.php:675
-#: widgets/heading/heading.php:711
-#: widgets/image-carousel/image-carousel.php:141
-#: widgets/image-heading/image-heading.php:387
-#: widgets/logo-carousel/logo-carousel.php:150
-#: widgets/post-comments/post-comments.php:1048
-#: widgets/post-grid/post-grid.php:487
-#: widgets/team-member/team-member.php:92
-#: widgets/team-member/team-member.php:318
-#: widgets/testimonial/testimonial.php:86
-msgid "Position"
-msgstr ""
-
 #: widgets/call-to-action/call-to-action.php:123
 #: widgets/call-to-action/call-to-action.php:309
 #: widgets/featured-banner/featured-banner.php:124
@@ -8012,6 +7833,15 @@ msgstr ""
 
 #: widgets/news-ticker/news-ticker.php:78
 msgid "Show Label Arrow"
+msgstr ""
+
+#: widgets/news-ticker/news-ticker.php:89
+msgid "Posts"
+msgstr ""
+
+#: widgets/news-ticker/news-ticker.php:90
+#: widgets/toggle/toggle.php:240
+msgid "Pages"
 msgstr ""
 
 #: widgets/news-ticker/news-ticker.php:96
