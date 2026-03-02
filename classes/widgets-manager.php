@@ -1615,17 +1615,7 @@ class Widgets_Manager {
 	 * @return array
 	 */
 	public static function get_pro_widget_map() {
-		return [
-			// ToDo: Comment out when pro version is ready.
-			/* 'mega-menu' => [
-				'cat'       => 'general',
-				'is_pro'    => true,
-				'demo'      => 'https://elementorin.com/zyre-addons/demo-info-box',
-				'title'     => __( 'Mega Menu', 'zyre-elementor-addons' ),
-				'icon'      => 'zy-fonticon zy-Mega-menu',
-				'styles'    => [],
-			], */
-		];
+		return [];
 	}
 
 	/**
