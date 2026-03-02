@@ -27,8 +27,6 @@ foreach ($widgets as $widget) {
 
 $widget_style_thumb_ph = ZYRE_ADDONS_ASSETS . 'img/widget-style-thumb-placeholder.png';
 
-$has_pro = zyre_has_pro();
-
 // Get credentials list and data
 $credential_list = self::get_credentials();
 $credential_data = zyre_get_credentials();
@@ -46,7 +44,6 @@ $credential_data = zyre_get_credentials();
 					</div>
 					<div class="zyre-addons-type">
 						<span class="badge-free">Free</span>
-						<!-- <span class="badge-pro"><i class="fa-solid fa-star" style="color: #ffaa19;"></i> <span class="badge-pro-text">Pro</span></span> -->
 					</div>
 				</div>
 				
@@ -55,23 +52,9 @@ $credential_data = zyre_get_credentials();
 					<a href="<?php echo esc_url( 'https://raw.githubusercontent.com/vertexmediaLLC/zyre-elementor-addons/master/changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span></a>
 				</div>
 			</div>
-			<div class="zyre-dashboard-header-right" style="display: none;"> <!---- ToDo: Show this part when pro version is released ---->
-				<p>
-                <?php
-                echo wp_kses(
-                    __('Looking to unlock more opportunities<br>and elevate your journey?', 'zyre-elementor-addons'),
-                    [
-                        'br' => [],
-                    ]
-                );
-                ?>    
-                </p>
-				<a href="#" class="zyre-button-header zyre-button-link">
-					<span class="zyre-button-inner">
-						<span class="zyre-button-text"><?php esc_html_e( 'Get Pro', 'zyre-elementor-addons' ); ?></span>
-					</span>
-				</a>
-			</div>
+
+			<!---- ToDo: Add promotion badge here when pro version is released ---->
+			
 		</div>
 
 		<!-- Widgets Counter -->
@@ -197,29 +180,15 @@ $credential_data = zyre_get_credentials();
 										$label = isset( $credential['title'] ) ? $credential['title'] : '';
 										$help = isset( $credential['help'] ) ? $credential['help'] : '';
 										$icon = isset( $credential['icon'] ) ? $credential['icon'] : '';
-										$is_pro = isset( $credential['is_pro'] ) && $credential['is_pro'] ? true : false;
-										$is_placeholder = $is_pro && ! zyre_has_pro();
 										$item_class = 'zyre-credential__item zyre-credential__item-' . $credential_key;
 
 										$fields = isset( $credential['fields'] ) ? $credential['fields'] : '';
 
-										if ( $is_pro ) {
-											$item_class .= ' item-is-pro';
-										}
-
 										$checked = '';
-
-										if ( $is_placeholder ) {
-											$item_class .= ' item-is-placeholder';
-											$checked = 'disabled';
-										}
 										?>
 
 										<div class="<?php echo esc_attr( $item_class ); ?>">
 											<div class="zyre-credential__item-title-wrap">
-												<?php if ( $is_pro ) : ?>
-													<span class="zyre-credential__item-badge"><?php esc_html_e( 'Pro', 'zyre-elementor-addons' ); ?></span>
-												<?php endif; ?>
 												<span class="zyre-credential__item-icon">
 													<?php if ( 'mailchimp' === $credential_key ) :
 														echo zyre_get_svg_icon( 'mailchimp' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -228,7 +197,7 @@ $credential_data = zyre_get_credentials();
 													<?php endif; ?>
 												</span>
 												<h3 class="zyre-credential__item-title">
-													<label for="zyre-widget-<?php echo esc_attr( $credential_key ); ?>" <?php echo $is_placeholder ? 'data-tooltip="Get pro"' : ''; ?>>
+													<label for="zyre-widget-<?php echo esc_attr( $credential_key ); ?>">
 														<?php echo esc_html( $label ); ?>
 													</label>
 												</h3>
@@ -256,18 +225,8 @@ $credential_data = zyre_get_credentials();
 							</div>
 						</div>
 
-						<!-- Get Pro -->
-						<div id="content-pro" class="zyre-tab-panel content-pro" style="display: none;"> <!-- ToDo: Show this part when pro version is released -->
-							<div class="zyre-tabs-up-content-left">
-								<div class="zyre-tab-content-headings">
-									<p class="zyre-tab-sub-heading"><?php esc_html_e( 'Enhance Elementor experience and elevate your journey by unlocking Pro-Version.', 'zyre-elementor-addons' ); ?></p>
-									<p class="zyre-integration-description"><?php esc_html_e( 'Get access to automatic updates & keep your website up-to-dates.', 'zyre-elementor-addons' ); ?></p>
-								</div>
-								<a href="#" class="zyre-button-pro zyre-button-link">
-									<span class="zyre-button-inner-pro"><?php esc_html_e( 'Get Pro Now', 'zyre-elementor-addons' ); ?></span>
-								</a>
-							</div>
-						</div>
+						<!-- ToDo: Show promotion content here when pro version is released -->
+						
 					</div>
 				</div>
 
@@ -499,7 +458,7 @@ $credential_data = zyre_get_credentials();
 						<div class="zyre-content-main zyre-content-left zyre-dash-widget-content-main">
 							<?php foreach ( $widgets as $widget_key => $widget ) :
 								$is_pro = isset( $widget['is_pro'] ) && $widget['is_pro'] ? true : false;
-								$is_pro_placeholder = $is_pro && ! zyre_has_pro();
+								$is_pro_placeholder = $is_pro;
 								$widget_styles = $widget['styles'];
 								$widget_styles_count = count( $widget_styles );
 								$widget_class = 'zyre-dash-widget-tab';
@@ -527,10 +486,8 @@ $credential_data = zyre_get_credentials();
 								$doc_url = ! empty( $widget['doc'] ) ? $widget['doc'] : '#';
 								?>
 								<div id="<?php echo esc_attr( $widget_key ); ?>-widget-tab" class="<?php echo esc_attr( $widget_class ); ?>">
-									<!-- Pro Badge -->
-									<?php if ( $is_pro_placeholder ) : ?>
-										<div class="zyre-widget-pro-badge"><span class="zyre-widget-pro-badge-text"><?php esc_html_e( 'Pro', 'zyre-elementor-addons' ); ?></span></div>
-									<?php endif; ?>
+
+									<!-- ToDo: Show pro badge here when pro version is released -->
 
 									<!-- Individual widget header -->
 									<div class="zyre-dash-widget-tab-header">
@@ -610,8 +567,8 @@ $credential_data = zyre_get_credentials();
 					</div>
 				</div>
 
-				<!-- Get-Pro part-->
-				<div class="zyre-tab-panel zyre-dash-content content-pro"></div>
+				<!-- ToDo: Show pro content here when pro version is realeased -->
+				
 			</div>
 		</form>
 

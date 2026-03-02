@@ -370,13 +370,13 @@ class Assets_Manager {
 		// Ensures that the dark stylesheet is enqueued at the end otherwise it may not work.
 		self::enqueue_dark_stylesheet();
 
-		$localize_data = array(
+		$localize_data = [
 			'editor_nonce'        => wp_create_nonce( 'zyre_editor_nonce' ),
 			'dark_stylesheet_url' => self::get_dark_stylesheet_url(),
-			'promotion_widgets' => [],
-			'hasPro'              => zyre_has_pro(),
-			'i18n' => [
-				'promotionDialogTitle'     => esc_html( '%s Widget' ),
+			'promotion_widgets'   => [],
+			'hasPro'              => false,
+			'i18n'                => [
+				'promotionDialogTitle'      => esc_html( '%s Widget' ),
 				/* translators: %s is the widget name */
 				'promotionDialogMessage'    => esc_html__( 'Use %s widget and dozens more pro widgets with pro features to extend your toolbox and build sites faster and better.', 'zyre-elementor-addons' ),
 				'promotionDialogBtnText'    => esc_html__( 'Upgrade Zyre Addons', 'zyre-elementor-addons' ),
@@ -384,13 +384,9 @@ class Assets_Manager {
 				'templatesEmptyMessage'     => esc_html__( 'Try different category or sync for new templates.', 'zyre-elementor-addons' ),
 				'templatesNoResultsTitle'   => esc_html__( 'No Results Found', 'zyre-elementor-addons' ),
 				'templatesNoResultsMessage' => esc_html__( 'Please make sure your search is spelled correctly or try a different words.', 'zyre-elementor-addons' ),
-				'NoResultsMessage' => esc_html__( 'No results found.', 'zyre-elementor-addons' ),
+				'NoResultsMessage'          => esc_html__( 'No results found.', 'zyre-elementor-addons' ),
 			],
-		);
-
-		if ( ! zyre_has_pro() ) {
-			$localize_data['promotion_widgets'] = Widgets_Manager::get_pro_widget_map();
-		}
+		];
 
 		wp_localize_script(
 			'zyre-elementor-addons-editor',

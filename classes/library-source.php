@@ -151,12 +151,8 @@ class Library_Source extends Source_Base {
 		$body = [
 			'home_url' => trailingslashit( home_url() ),
 			'version' => ZYRE_ADDONS_VERSION,
+			'has_pro' => 0,
 		];
-
-		if ( zyre_has_pro() ) {
-			$body['has_pro'] = 1;
-			$body['pro_version'] = ZYRE_ADDONS_PRO_VERSION;
-		}
 
 		$response = wp_remote_get(
 			self::TEMPLATE_DATA_API_URL . $template_id,
