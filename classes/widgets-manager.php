@@ -875,7 +875,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'sharer-js' ],
+					'js'  => [ 'zyre-sharer' ],
 					'css' => [],
 				],
 			],
@@ -965,7 +965,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'jquery-numerator' ],
+					'js'  => [ 'zyre-jquery-numerator' ],
 					'css' => [],
 				],
 			],
@@ -986,7 +986,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'alert-handler' ],
+					'js'  => [ 'zyre-alert-handler' ],
 					'css' => [],
 				],
 			],
@@ -1012,7 +1012,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'jquery-numerator' ],
+					'js'  => [ 'zyre-jquery-numerator' ],
 					'css' => [],
 				],
 			],
@@ -1113,7 +1113,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs'      => [
-					'js' => [ 'zyre-animated-text', 'zyre-typed', 'zyre-vticker' ],
+					'js' => [ 'zyre-animated-text', 'zyre-typed', 'zyre-jquery-vticker' ],
 					'css' => [],
 				],
 			],
@@ -1580,7 +1580,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs'      => [
-					'js' => [ 'zyre-pdf-js' ],
+					'js' => [ 'zyre-pdfobject' ],
 					'css' => [],
 				],
 			],
@@ -1601,7 +1601,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs'      => [
-					'js' => [ 'zyre-lottie-js' ],
+					'js' => [ 'zyre-lottie' ],
 					'css' => [],
 				],
 			],

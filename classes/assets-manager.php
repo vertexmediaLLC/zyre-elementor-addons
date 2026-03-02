@@ -116,7 +116,7 @@ class Assets_Manager {
 
 		// Sharer JS
 		wp_register_script(
-			'sharer-js',
+			'zyre-sharer',
 			ZYRE_ADDONS_ASSETS . 'js/sharer' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRE_ADDONS_VERSION,
@@ -125,7 +125,7 @@ class Assets_Manager {
 
 		// Alert Handler
 		wp_register_script(
-			'alert-handler',
+			'zyre-alert-handler',
 			ZYRE_ADDONS_ASSETS . 'js/alert' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRE_ADDONS_VERSION,
@@ -134,7 +134,7 @@ class Assets_Manager {
 
 		// Number animation
 		wp_register_script(
-			'jquery-numerator',
+			'zyre-jquery-numerator',
 			ZYRE_ADDONS_ASSETS . 'libs/jquery-numerator/jquery-numerator.min.js',
 			[ 'jquery' ],
 			ZYRE_ADDONS_VERSION,
@@ -144,7 +144,7 @@ class Assets_Manager {
 		// Typed JS
 		wp_register_script(
 			'zyre-typed',
-			ZYRE_ADDONS_ASSETS . 'js/typed' . self::$suffix . 'js',
+			ZYRE_ADDONS_ASSETS . 'js/typed.min.js',
 			[],
 			ZYRE_ADDONS_VERSION,
 			true
@@ -152,8 +152,8 @@ class Assets_Manager {
 
 		// vTicker JS
 		wp_register_script(
-			'zyre-vticker',
-			ZYRE_ADDONS_ASSETS . 'js/jquery.vticker' . self::$suffix . 'js',
+			'zyre-jquery-vticker',
+			ZYRE_ADDONS_ASSETS . 'js/jquery.vticker.min.js',
 			[],
 			ZYRE_ADDONS_VERSION,
 			true
@@ -163,23 +163,14 @@ class Assets_Manager {
 		wp_register_script(
 			'zyre-animated-text',
 			ZYRE_ADDONS_ASSETS . 'js/animated-text' . self::$suffix . 'js',
-			[ 'jquery', 'zyre-typed', 'zyre-vticker' ],
-			ZYRE_ADDONS_VERSION,
-			true
-		);
-
-		// Animated Text JS
-		wp_register_script(
-			'zyre-animated-text',
-			ZYRE_ADDONS_ASSETS . 'js/animated-text' . self::$suffix . 'js',
-			[ 'jquery', 'zyre-typed', 'zyre-vticker' ],
+			[ 'jquery', 'zyre-typed', 'zyre-jquery-vticker' ],
 			ZYRE_ADDONS_VERSION,
 			true
 		);
 
 		// View PDF JS
 		wp_register_script(
-			'zyre-pdf-js',
+			'zyre-pdfobject',
 			ZYRE_ADDONS_ASSETS . 'js/pdfobject.min.js',
 			[],
 			ZYRE_ADDONS_VERSION,
@@ -188,7 +179,7 @@ class Assets_Manager {
 
 		// Lottie
 		wp_register_script(
-			'zyre-lottie-js',
+			'zyre-lottie',
 			ZYRE_ADDONS_ASSETS . 'js/lottie.min.js',
 			[],
 			ZYRE_ADDONS_VERSION,
@@ -198,7 +189,7 @@ class Assets_Manager {
 		// jQuery DownCount.
 		wp_register_script(
 			'zyre-jquery-downcount',
-			ZYRE_ADDONS_ASSETS . 'js/jquery-downcount.js',
+			ZYRE_ADDONS_ASSETS . 'js/jquery-downcount' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRE_ADDONS_VERSION,
 			true
