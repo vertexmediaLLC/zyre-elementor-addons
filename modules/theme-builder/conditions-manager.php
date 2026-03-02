@@ -241,26 +241,6 @@ class Conditions_Manager {
 				'all_label' => __( 'All Archives', 'zyre-elementor-addons' ),
 				'is_pro' => false,
 			],
-			'author' => [
-				'title' => __( 'Author Archive', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Author Archive', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
-			'date' => [
-				'title' => __( 'Date Archive', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Date Archive', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
-			'search' => [
-				'title' => __( 'Search Results', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Search Results', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
-			'post_archive' => [
-				'title' => __( 'Posts Archive', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Posts Archive', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
 		];
 
 		return apply_filters( 'zyreaddons/conditions/archive', $conditions );
@@ -278,87 +258,24 @@ class Conditions_Manager {
 				'all_label' => __( 'Front Page', 'zyre-elementor-addons' ),
 				'is_pro' => false,
 			],
-			'post_group' => [
-				'title' => __( 'Posts', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Posts', 'zyre-elementor-addons' ),
-				'type' => 'condition-group',
-				'conditions' => [
-					'post' => [
-						'title' => __( 'Posts', 'zyre-elementor-addons' ),
-						'all_label' => __( 'All Posts', 'zyre-elementor-addons' ),
-						'is_pro' => true,
-					],
-					'in_category' => [
-						'title' => __( 'In Category', 'zyre-elementor-addons' ),
-						'all_label' => __( 'Site', 'zyre-elementor-addons' ),
-						'is_pro' => true,
-					],
-					'in_category_children' => [
-						'title' => __( 'In Category', 'zyre-elementor-addons' ),
-						'all_label' => __( 'Site', 'zyre-elementor-addons' ),
-						'is_pro' => true,
-					],
-					'in_post_tag' => [
-						'title' => __( 'In Tag', 'zyre-elementor-addons' ),
-						'all_label' => __( 'Site', 'zyre-elementor-addons' ),
-						'is_pro' => true,
-					],
-					'post_by_author' => [
-						'title' => __( 'Posts By Author', 'zyre-elementor-addons' ),
-						'all_label' => __( 'Posts By Author', 'zyre-elementor-addons' ),
-						'is_pro' => true,
-					],
-				],
-			],
-			'page_group' => [
-				'title' => __( 'Page', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Site', 'zyre-elementor-addons' ),
-				'type' => 'condition-group',
-				'is_pro' => true,
-				'conditions' => [
-					'page' => [
-						'title' => __( 'Pages', 'zyre-elementor-addons' ),
-						'all_label' => __( 'All Pages', 'zyre-elementor-addons' ),
-						'is_pro' => true,
-					],
-					'page_by_author' => [
-						'title' => __( 'Pages By Author', 'zyre-elementor-addons' ),
-						'all_label' => __( 'Pages By Author', 'zyre-elementor-addons' ),
-						'is_pro' => true,
-					],
-				],
-			],
-			'child_of' => [
-				'title' => __( 'Direct Child Of', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Direct Child Of', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
-			'any_child_of' => [
-				'title' => __( 'Any Child Of', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Any Child Of', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
-			'by_author' => [
-				'title' => __( 'By Author', 'zyre-elementor-addons' ),
-				'all_label' => __( 'By Author', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
-			'not_found404' => [
-				'title' => __( '404 Page', 'zyre-elementor-addons' ),
-				'all_label' => __( '404 Page', 'zyre-elementor-addons' ),
-				'is_pro' => true,
-			],
 		];
 
 		return apply_filters( 'zyreaddons/conditions/singular', $conditions );
 	}
 
 	protected function flatten_singular_array( $arr ) {
-		$post_sub_cond = array_keys( $arr['post_group']['conditions'] );
-		$page_sub_cond = array_keys( $arr['page_group']['conditions'] );
+		$post_sub_cond = [];
+		$page_sub_cond = [];
 
-		unset( $arr['post_group'] );
-		unset( $arr['page_group'] );
+		if ( isset( $arr['post_group']['conditions'] ) ) {
+			$post_sub_cond = array_keys( $arr['post_group']['conditions'] );
+			unset( $arr['post_group'] );
+		}
+
+		if ( isset( $arr['page_group']['conditions'] ) ) {
+			$page_sub_cond = array_keys( $arr['page_group']['conditions'] );
+			unset( $arr['page_group'] );
+		}
 
 		$keys = array_keys( $arr );
 		$keys = array_merge( $keys, $post_sub_cond, $page_sub_cond );
@@ -376,13 +293,9 @@ class Conditions_Manager {
 		);
 
 		$tmp_singular = $this->singular_conditions();
-		$tmp_post = $tmp_singular['post_group']['conditions'];
-		$tmp_page = $tmp_singular['page_group']['conditions'];
+		$singular_conditions = $this->flatten_singular_array( $tmp_singular );
 
-		unset( $tmp_singular['post_group'] );
-		unset( $tmp_singular['page_group'] );
-
-		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular + $tmp_post + $tmp_page;
+		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular + $singular_conditions;
 
 		$this->all_conds_list = $all_cond_list;
 		$this->all_conds = $conditions;
