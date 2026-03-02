@@ -425,16 +425,6 @@ function zyre_get_b64_3dicon_white() {
 }
 
 /**
- * Check whether pro version is defined.
- *
- * @since 1.0.0
- * @return bool whether pro version is active
- */
-function zyre_has_pro() {
-	return defined( 'ZYRE_ADDONS_PRO_VERSION' );
-}
-
-/**
  * Sanitize array recursively.
  *
  * @since 1.0.0

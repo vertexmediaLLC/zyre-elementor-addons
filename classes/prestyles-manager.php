@@ -58,7 +58,7 @@ class PreStyles_Manager {
 		$json_file = is_rtl() ? $widget_name . '-rtl.json' : $widget_name . '.json';
 
 		$dir = ZYRE_ADDONS_DIR_PATH;
-		if ( zyre_has_pro() && $is_pro ) {
+		if ( $is_pro ) {
 			$dir = ZYRE_ADDONS_PRO_DIR_PATH;
 		}
 

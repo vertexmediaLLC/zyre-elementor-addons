@@ -99,10 +99,6 @@ class Plugin {
 		// Active insights
 		$this->appsero->insights()
 			->add_plugin_data()
-			->add_extra([
-				'pro_installed' => zyre_has_pro() ? 'Yes' : 'No',
-				'pro_version' => zyre_has_pro() ? ZYRE_ADDONS_PRO_VERSION : '',
-			])
 			->init();
 	}
 
