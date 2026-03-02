@@ -153,7 +153,7 @@ class Assets_Manager {
 		// vTicker JS
 		wp_register_script(
 			'zyre-vticker',
-			ZYRE_ADDONS_ASSETS . 'js/vticker' . self::$suffix . 'js',
+			ZYRE_ADDONS_ASSETS . 'js/jquery.vticker' . self::$suffix . 'js',
 			[],
 			ZYRE_ADDONS_VERSION,
 			true
