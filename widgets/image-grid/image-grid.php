@@ -1199,8 +1199,14 @@ class Image_Grid extends Base {
 						$this->_default_filter = '.' . $category_slugs[ $active_tab ];
 					}
 				}
-
 				?>
+
+				<?php if ( \Elementor\Plugin::instance()->editor->is_edit_mode() ) : ?>
+					<div class="zy-bg-light-gray zy-p-3 zy-mb-3 zy-border-1 zy-border-solid zy-border-color-light">
+						<p class="zy-text-center zy-m-0 zy-color-black"><?php esc_html_e( 'Please check the filter in preview or live mode to see the effect.', 'zyre-elementor-addons' ); ?></p>
+					</div>
+				<?php endif; ?>
+
 				<div class="zyre-image-grid-filter-tabs zy-flex zy-align-center zy-gap-3">
 					<?php if ( ( 'yes' === $settings['filter_tabs_separator'] ) && ( '' === $spr_position || 'left' === $spr_position ) ) : ?>
 						<span class="zyre-image-grid-filter-separator zy-grow-1 zy-h-1 zy-bg-black"></span>
@@ -1428,14 +1434,5 @@ class Image_Grid extends Base {
 		</div>
 		
 		<?php
-		/**
-		 * Zyre Isotope adjustment.
-		 *
-		 * This code may look unnecessary,
-		 * but it resolves a critical issue.
-		 */
-		/* if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) :
-			printf( '<script>jQuery(".zyre-isotope-%s").isotope();</script>', esc_html( $this->get_id() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		endif; */
 	}
 }
