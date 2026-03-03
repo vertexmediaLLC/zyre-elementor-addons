@@ -38,6 +38,7 @@
 .zyre-addon .zy-bg-transparent {background: transparent;}
 .zyre-addon .zy-bg-black {background-color: #000000;}
 .zyre-addon .zy-bg-white {background-color: #FFFFFF;}
+.zyre-addon .zy-bg-light-gray {background-color: #f8f8f8;}
 .zyre-addon .zy-bg-50 {background-position: 50%;}
 .zyre-addon .zy-bg-center {background-position: center;}
 .zyre-addon .zy-bg-cover {background-size: cover;}
@@ -226,6 +227,9 @@
 .zyre-addon .zy-outline-none {outline: none;}
 .zyre-addon .zy-border-none {border: none;}
 .zyre-addon .zy-border-t-1 {border-top: 1px solid;}
+.zyre-addon .zy-border-1 {border-width: 1px;}
+.zyre-addon .zy-border-solid {border-style: solid;}
+.zyre-addon .zy-border-color-light {border-color: #f2f2f2;}
 .zyre-addon .zy-radius-0 {border-radius: 0;}
 .zyre-addon .zy-shadow-none {box-shadow: none;}
 
