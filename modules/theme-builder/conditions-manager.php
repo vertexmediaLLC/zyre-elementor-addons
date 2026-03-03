@@ -306,26 +306,15 @@ class Conditions_Manager {
 		return ( get_current_user_id() == $author_id );
 	}
 
-	protected function validate_reqeust() {
-		if ( ! wp_verify_nonce( $_REQUEST['nonce'], 'zyre_editor_nonce' ) ) {
-			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
-		}
-
+	protected function validate_reqeust( $nonce = '' ) {
 		if ( ! current_user_can( 'edit_posts' ) ) {
 			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 		}
 
-		$template_id = isset( $_REQUEST['template_id'] ) ? absint( $_REQUEST['template_id'] ) : null;
+		$nonce = sanitize_text_field( wp_unslash( $nonce ?: $_GET['nonce'] ) );
 
-		$post_status = get_post_status( $template_id );
-		$same_author = self::is_the_same_author( $template_id );
-
-		if ( ( 'private' === $post_status || 'draft' === $post_status ) && ! $same_author ) {
-			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
-		}
-
-		if ( post_password_required( $template_id ) && ! $same_author ) {
-			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
+		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
+			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
 		}
 	}
 
@@ -407,7 +396,7 @@ class Conditions_Manager {
 		try {
 			$this->validate_reqeust();
 
-			$object_type = ! empty( $_REQUEST['object_type'] ) ? sanitize_text_field( trim( $_REQUEST['object_type'] ) ) : '';
+			$object_type = ! empty( $_GET['object_type'] ) ? sanitize_text_field( trim( wp_unslash( $_GET['object_type'] ) ) ) : '';
 
 			if ( ! in_array( $object_type, [ 'post', 'tax', 'author', 'archive', 'singular' ], true ) ) {
 				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );
@@ -519,9 +508,22 @@ class Conditions_Manager {
 
 	public function condition_update() {
 		try {
-			$this->validate_reqeust();
-			$template_id = isset( $_REQUEST['template_id'] ) ? absint( $_REQUEST['template_id'] ) : null;
-			$request_conditions = isset( $_REQUEST['conds'] ) ? zyre_sanitize_array_recursively( $_REQUEST['conds'] ) : [];
+			$this->validate_reqeust( $_POST['nonce'] );
+
+			$template_id = isset( $_POST['template_id'] ) ? absint( $_POST['template_id'] ) : null;
+
+			$post_status = get_post_status( $template_id );
+			$same_author = self::is_the_same_author( $template_id );
+
+			if ( ( 'private' === $post_status || 'draft' === $post_status ) && ! $same_author ) {
+				throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
+			}
+
+			if ( post_password_required( $template_id ) && ! $same_author ) {
+				throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
+			}
+
+			$request_conditions = isset( $_POST['conds'] ) ? zyre_sanitize_array_recursively( $_POST['conds'] ) : [];
 
 			$exits_conditions = get_post_meta( $template_id, '_zyre_display_cond', true );
 			$merged_conditions = ! empty( $exits_conditions ) ? array_diff( $request_conditions, $exits_conditions ) : $request_conditions;
@@ -556,7 +558,9 @@ class Conditions_Manager {
 
 	public function get_template_type() {
 		try {
-			$id = isset( $_REQUEST['post_id'] ) ? absint( $_REQUEST['post_id'] ) : null;
+			self::validate_reqeust();
+
+			$id = isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : null;
 			if ( $id ) {
 				$tpl_type = get_post_meta( $id, '_zyre_library_type', true );
 				wp_send_json_success( $tpl_type );
@@ -570,7 +574,9 @@ class Conditions_Manager {
 
 	public function get_current_condition() {
 		try {
-			$template_id = isset( $_REQUEST['template_id'] ) ? absint( $_REQUEST['template_id'] ) : null;
+			self::validate_reqeust();
+
+			$template_id = isset( $_GET['template_id'] ) ? absint( $_GET['template_id'] ) : null;
 			if ( $template_id ) {
 				$cond = get_post_meta( $template_id, '_zyre_display_cond', true );
 				if ( $cond ) {

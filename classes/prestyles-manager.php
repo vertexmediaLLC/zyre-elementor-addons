@@ -14,7 +14,11 @@ class PreStyles_Manager {
 	}
 
 	public static function set_prestyle() {
-		if ( ! check_ajax_referer( self::NONCE, 'security' ) ) {
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error( __( 'Permission denied', 'zyre-elementor-addons' ), 403 );
+		}
+
+		if ( ! check_ajax_referer( self::NONCE, 'security', false ) ) {
 			wp_send_json_error( __( 'Invalid prestyle request', 'zyre-elementor-addons' ), 403 );
 		}
 
@@ -51,7 +55,6 @@ class PreStyles_Manager {
 
 		// Got the widget prestyle
 		wp_send_json_success( $styles, 200 );
-		exit;
 	}
 
 	protected static function get_prestyles( $widget_name, $is_pro = false ) {
