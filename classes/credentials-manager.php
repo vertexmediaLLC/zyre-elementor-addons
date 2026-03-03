@@ -57,7 +57,7 @@ class Credentials_Manager {
 						],
 					],
 				],
-				'demo' => 'https://happyaddons.com/mailchimp/',
+				'demo' => 'https://zyreaddons.com/demos/subscription-form/',
 				'is_pro' => false,
 			],
 		];

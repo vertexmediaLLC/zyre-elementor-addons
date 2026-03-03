@@ -49,7 +49,7 @@ $credential_data = zyre_get_credentials();
 				
 				<div class="zyre-version">
 					<span class="version-number"><?php /* translators: %s is the plugin version */ printf( esc_html__( 'Version %s', 'zyre-elementor-addons' ), esc_html( ZYRE_ADDONS_VERSION ) ); ?></span>
-					<a href="<?php echo esc_url( 'https://raw.githubusercontent.com/vertexmediaLLC/zyre-elementor-addons/master/changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span></a>
+					<a href="<?php echo esc_url( ZYRE_ADDONS_DIR_URL . 'changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span></a>
 				</div>
 			</div>
 
