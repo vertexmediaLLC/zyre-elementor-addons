@@ -43,7 +43,7 @@ class Dashboard {
 			return;
 		}
 
-		if ( ! check_ajax_referer( self::DASHBOARD_NONCE, 'nonce' ) ) {
+		if ( ! check_ajax_referer( self::DASHBOARD_NONCE, 'nonce', false ) ) {
 			wp_send_json_error();
 		}
 
@@ -355,11 +355,13 @@ class Dashboard {
 	 * Mark user as subscribed via ajax
 	 */
 	public static function user_subscribed() {
-		if ( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_send_json_error();
 		}
 
-		check_ajax_referer( self::DASHBOARD_NONCE, 'nonce' );
+		if ( ! check_ajax_referer( self::DASHBOARD_NONCE, 'nonce', false ) ) {
+			wp_send_json_error();
+		}
 
 		update_user_meta(
 			get_current_user_id(),

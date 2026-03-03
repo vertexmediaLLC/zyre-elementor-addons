@@ -8,14 +8,14 @@ use Exception;
 class Select2_Handler {
 
 	protected static function validate_reqeust() {
-		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( $_POST['nonce'] ) : '';
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
+		}
+
+		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
 
 		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
 			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
-		}
-
-		if ( ! current_user_can( 'edit_posts' ) ) {
-			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 		}
 	}
 
@@ -23,7 +23,7 @@ class Select2_Handler {
 		try {
 			self::validate_reqeust();
 
-			$object_type = ! empty( $_REQUEST['object_type'] ) ? sanitize_text_field( trim( $_REQUEST['object_type'] ) ) : '';
+			$object_type = ! empty( $_POST['object_type'] ) ? sanitize_text_field( trim( $_POST['object_type'] ) ) : '';
 
 			if ( ! in_array( $object_type, [ 'post', 'term', 'user', 'mailchimp_list' ], true ) ) {
 				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );
