@@ -124,9 +124,9 @@ All layouts are built directly inside Elementor with live preview support.
 
 ZyreAddons Pro is currently under development and will include advanced widgets, extended Theme Builder features, and premium templates.
 
-### Privacy-Policy
+### Privacy Policy
 
-Zyre Elementor Addons may collect limited, non-sensitive telemetry data only with user consent.
+This plugin may display an optional newsletter subscription form in the WordPress dashboard. If a user voluntarily submits their email address, it is sent to Mailchimp for newsletter subscription purposes. No email data is collected or transmitted without user action.
 
 Privacy Policy: https://zyreaddons.com/privacy-policy/
 Terms of Use: https://zyreaddons.com/terms-of-use/
@@ -150,121 +150,51 @@ Yes. Updates are designed to be safe. We recommend backups as a best practice.
 Yes! **Zyre Addons** is fully compatible with other Elementor Addons and also adds extra features to enhance your overall experience.
 
 
-== External services ==
+== Third Party Libraries ==
 
-This plugin includes a social share feature that connects to third-party social media and web services when a user clicks a share button. 
-No data is sent automatically. Data is only transmitted after a user interaction (click).
+This plugin includes the following third-party libraries:
 
-When a share button is clicked, the plugin may send:
-- The current page URL
-- The page title
-- Optional image, description, hashtags, or other share-related parameters (if configured)
+- Lottie (https://github.com/airbnb/lottie-web)
+- PDFObject (https://github.com/pipwerks/PDFObject)
+- Micromodal (https://github.com/ghosh/Micromodal)
+─ Isotope (https://isotope.metafizzy.co)
+─ Typed.js (https://github.com/mattboldt/typed.js)
+─ jQuery.vTicker (https://github.com/richhollis/vticker)
+─ jQuery Numerator (https://github.com/garethdn/jquery-numerator)
+─ jQuery countdown (https://github.com/sonnyt/downCount)
 
-The data is sent directly from the user’s browser to the selected service.
+Unminified source files are included inside the plugin directory.
 
-Below is a list of the external services used:
 
-Facebook  
-https://www.facebook.com/privacy/policy/  
-https://www.facebook.com/legal/terms/
+== External Services ==
 
-X (Twitter)  
-https://twitter.com/en/privacy  
-https://twitter.com/en/tos  
+This plugin connects to third-party services in the following cases:
 
-LinkedIn  
-https://www.linkedin.com/legal/privacy-policy  
-https://www.linkedin.com/legal/user-agreement  
+1. Social Sharing Services
 
-WhatsApp  
-https://www.whatsapp.com/legal/privacy-policy  
-https://www.whatsapp.com/legal/terms-of-service  
+The plugin includes a social share feature that connects to third-party social media platforms only when a user clicks a share button.
 
-Telegram  
-https://telegram.org/privacy  
-https://telegram.org/tos  
+No data is sent automatically. Data is transmitted only after explicit user interaction.
 
-Pinterest  
-https://policy.pinterest.com/en/privacy-policy  
-https://policy.pinterest.com/en/terms-of-service  
+When a share button is clicked, the following data may be sent directly from the user's browser to the selected service:
+- Current page URL
+- Page title
+- Optional image, description, hashtags, or other share parameters (if configured)
 
-Reddit  
-https://www.redditinc.com/policies/privacy-policy  
-https://www.redditinc.com/policies/user-agreement  
+The plugin does not store or process this data on its own servers.
 
-Tumblr  
-https://www.tumblr.com/privacy  
-https://www.tumblr.com/terms-of-service  
+2. Mailchimp API
 
-Buffer  
-https://buffer.com/privacy  
-https://buffer.com/terms  
+If the site administrator enables the newsletter subscription feature, and a user voluntarily submits their email via the subscription form widget, the submitted email and any additional provided fields are sent to Mailchimp for newsletter subscription only.
 
-Pocket  
-https://getpocket.com/privacy  
-https://getpocket.com/tos  
+Endpoint: https://*.api.mailchimp.com/3.0/
+Privacy Policy: https://mailchimp.com/legal/privacy/
 
-Xing  
-https://privacy.xing.com/en/privacy-policy  
-https://www.xing.com/terms  
+3. Appsero
 
-VK  
-https://vk.com/privacy  
-https://vk.com/terms  
+This plugin uses the Appsero SDK for a feedback modal on plugin deactivation and optional telemetry collection. Data (site URL, plugin & WordPress version, PHP version, activation status) is collected only after explicit opt-in. No personal user data is collected without consent.
 
-Weibo  
-https://weibo.com/signup/v5/privacy  
-https://weibo.com/signup/v5/terms  
-
-Odnoklassniki  
-https://ok.ru/regulations  
-https://ok.ru/help/terms  
-
-Mail.ru  
-https://help.mail.ru/legal/terms  
-
-Line  
-https://line.me/en/terms/policy/
-
-Skype  
-https://privacy.microsoft.com/en-us/privacystatement  
-https://www.microsoft.com/en-us/servicesagreement  
-
-Threads  
-https://privacycenter.instagram.com/policy  
-https://help.instagram.com/581066165581870  
-
-WordPress.com  
-https://automattic.com/privacy/  
-https://wordpress.com/tos/  
-
-Amazon  
-https://www.amazon.com/privacy  
-https://www.amazon.com/conditionsofuse  
-
-Google Bookmarks  
-https://policies.google.com/privacy  
-https://policies.google.com/terms  
-
-Trello  
-https://www.atlassian.com/legal/privacy-policy  
-https://www.atlassian.com/legal/cloud-terms-of-service  
-
-Quora  
-https://www.quora.com/about/privacy  
-https://www.quora.com/about/tos  
-
-Evernote  
-https://evernote.com/legal/privacy.php  
-https://evernote.com/legal/terms-of-service  
-
-Yahoo Mail  
-https://legal.yahoo.com/us/en/yahoo/privacy/index.html  
-https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html  
-
-Other listed services (e.g., Hacker News, Digg, Mix, Flipboard, etc.) operate under their respective privacy policies and terms of service. Data is transmitted only when the user actively chooses to share content.
-
-The plugin does not store, collect, or process personal user data on its own servers. All sharing actions are handled directly between the user's browser and the selected third-party service.
+Privacy Policy: https://appsero.com/privacy-policy/
 
 
 == Installation ==
