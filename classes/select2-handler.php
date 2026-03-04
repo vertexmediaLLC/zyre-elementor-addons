@@ -23,7 +23,7 @@ class Select2_Handler {
 		try {
 			self::validate_reqeust();
 
-			$object_type = ! empty( $_POST['object_type'] ) ? sanitize_text_field( trim( $_POST['object_type'] ) ) : '';
+			$object_type = ! empty( $_POST['object_type'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['object_type'] ) ) ) : '';
 
 			if ( ! in_array( $object_type, [ 'post', 'term', 'user', 'mailchimp_list' ], true ) ) {
 				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );
