@@ -3106,8 +3106,11 @@ class Post_Comments extends Base {
 		if ( 'yes' === $settings['show_comments_order'] && 'desc' === $settings['comments_order'] ) {
 			$order = 'desc';
 		}
-		if ( ! empty( $_GET['order'] ) && ( 'asc' === $_GET['order'] || 'desc' === $_GET['order'] ) ) {
-			$order = sanitize_key( $_GET['order'] );
+		if ( isset( $_GET['order'] ) ) {
+			$order_param = sanitize_key( wp_unslash( $_GET['order'] ) );
+			if ( in_array( $order_param, [ 'asc', 'desc' ], true ) ) {
+				$order = $order_param;
+			}
 		}
 		return $order;
 	}
@@ -3668,9 +3671,23 @@ class Post_Comments extends Base {
 					echo wp_kses_post( $paginate_links );
 				} elseif ( 'next_prev' === $settings['pagination_type'] ) {
 					global $wp_rewrite;
-					$order_params = ! empty( $_GET['order']) ? '?order=' . sanitize_key( $_GET['order'] ) : '';
-					$prev_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page - 1 ) . $order_params . '#comments';
-					$next_page_url = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-' . ( $page + 1 ) . $order_params . '#comments';
+					$base = trailingslashit( get_permalink() ) . $wp_rewrite->comments_pagination_base . '-';
+
+					$prev_page = max( 1, $page - 1 );
+					$next_page = $page + 1;
+
+					$prev_page_url = $base . $prev_page;
+					$next_page_url = $base . $next_page;
+
+					if ( ! empty( $_GET['order'] ) ) {
+						$order = sanitize_key( wp_unslash( $_GET['order'] ) );
+
+						$prev_page_url = add_query_arg( 'order', $order, $prev_page_url );
+						$next_page_url = add_query_arg( 'order', $order, $next_page_url );
+					}
+
+					$prev_page_url .= '#comments';
+					$next_page_url .= '#comments';
 					?>
 					<div class="nav-links zy-flex zy-align-center zy-justify-between zy-w-100 zy-gap-6">
 						<?php if ( get_previous_comments_link() ) : ?>
