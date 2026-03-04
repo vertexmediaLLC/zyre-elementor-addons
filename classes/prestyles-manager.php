@@ -29,10 +29,9 @@ class PreStyles_Manager {
 		$widget_name = sanitize_text_field( substr( wp_unslash( $_GET['widget'] ), 5 ) );
 		$widget_id = sanitize_text_field( wp_unslash( $_GET['widgetID'] ) );
 		$post_id = intval( $_GET['post_id'] );
-		$is_pro = isset( $_GET['isPro'] ) ? filter_var( $_GET['isPro'], FILTER_VALIDATE_BOOLEAN ) : false;
 
-		// Check if the reset parameter is set
-		$is_reset = isset( $_GET['reset'] ) && 'true' === $_GET['reset'];
+		$is_pro    = isset( $_GET['isPro'] ) ? filter_var( $_GET['isPro'], FILTER_VALIDATE_BOOLEAN ) : false;
+		$is_reset  = isset( $_GET['reset'] ) ? filter_var( $_GET['reset'], FILTER_VALIDATE_BOOLEAN ) : false;
 
 		$styles = self::get_prestyles( $widget_name, $is_pro);
 		if ( ! $styles ) {
