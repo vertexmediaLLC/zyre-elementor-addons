@@ -263,6 +263,28 @@ class Conditions_Manager {
 		return apply_filters( 'zyreaddons/conditions/singular', $conditions );
 	}
 
+	protected function process_condition() {
+		$conditions = array(
+			'name' => array_keys( $this->initial_conditions() ),
+			'sub_name' => array(
+				'archive' => array_keys( $this->archive_conditions() ),
+				'singular' => $this->flatten_singular_array( $this->singular_conditions() ),
+			),
+		);
+
+		$tmp_singular = $this->singular_conditions();
+		$tmp_post = $tmp_singular['post_group']['conditions'];
+        $tmp_page = $tmp_singular['page_group']['conditions'];
+
+		unset($tmp_singular['post_group']);
+        unset($tmp_singular['page_group']);
+
+		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular + $tmp_post + $tmp_page;
+
+		$this->all_conds_list = $all_cond_list;
+		$this->all_conds = $conditions;
+	}
+
 	protected function flatten_singular_array( $arr ) {
 		$post_sub_cond = [];
 		$page_sub_cond = [];
@@ -283,24 +305,6 @@ class Conditions_Manager {
 		return $keys;
 	}
 
-	protected function process_condition() {
-		$conditions = array(
-			'name' => array_keys( $this->initial_conditions() ),
-			'sub_name' => array(
-				'archive' => array_keys( $this->archive_conditions() ),
-				'singular' => $this->flatten_singular_array( $this->singular_conditions() ),
-			),
-		);
-
-		$tmp_singular = $this->singular_conditions();
-		$singular_conditions = $this->flatten_singular_array( $tmp_singular );
-
-		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular + $singular_conditions;
-
-		$this->all_conds_list = $all_cond_list;
-		$this->all_conds = $conditions;
-	}
-
 	public static function is_the_same_author( $post_id ) {
 		$author_id = get_post_field( 'post_author', $post_id );
 		return ( get_current_user_id() == $author_id );
@@ -319,8 +323,8 @@ class Conditions_Manager {
 	}
 
 	private function process_post() {
-		$post_type    = ! empty( $_REQUEST['object_term'] ) ? sanitize_text_field( $_REQUEST['object_term'] ) : 'any';
-		$query_term   = ! empty( $_REQUEST['q'] ) ? sanitize_text_field( $_REQUEST['q'] ) : '';
+		$post_type  = sanitize_text_field( wp_unslash( $_GET['object_term'] ?? 'any' ) );
+    	$query_term = sanitize_text_field( wp_unslash( $_GET['q'] ?? '' ) );
 
 		$args = [
 			'post_type'        => $post_type,
@@ -344,25 +348,21 @@ class Conditions_Manager {
 		$out = [];
 
 		foreach ( $posts as $post ) {
-			$out[ "{$post->ID}" ] = esc_html( $post->post_title );
+			$out[ (string) $post->ID ] = esc_html( $post->post_title );
 		}
 
 		return $out;
 	}
 
 	public function process_term() {
-		$term_taxonomy = ! empty( $_REQUEST['object_term'] ) ? sanitize_text_field( $_REQUEST['object_term'] ) : '';
-		$query_term    = ! empty( $_REQUEST['q'] ) ? sanitize_text_field( $_REQUEST['q'] ) : '';
-
-		$prefix = __( 'Categories: ', 'zyre-elementor-addons' );
-
-		if ( 'post_tag' === $term_taxonomy ) {
-			$prefix = __( 'Tags: ', 'zyre-elementor-addons' );
-		}
+		$term_taxonomy = sanitize_text_field( wp_unslash( $_GET['object_term'] ?? '' ) );
+    	$query_term    = sanitize_text_field( wp_unslash( $_GET['q'] ?? '' ) );
 
 		if ( empty( $term_taxonomy ) ) {
 			throw new Exception( esc_html__( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
 		}
+
+		$prefix = 'post_tag' === $term_taxonomy ? __( 'Tag: ', 'zyre-elementor-addons' ) : __( 'Category: ', 'zyre-elementor-addons' );
 
 		$args = [
 			'taxonomy'   => $term_taxonomy,
@@ -383,10 +383,8 @@ class Conditions_Manager {
 		}
 
 		$out = [];
-
 		foreach ( $terms as $term ) {
-			$title = ! empty( $query_term ) ? $prefix . $term->name : $prefix . $term->name;
-			$out[ "{$term->term_id}" ] = $title;
+			$out[ (string) $term->term_id ] = $prefix . $term->name;
 		}
 
 		return $out;
@@ -557,7 +555,7 @@ class Conditions_Manager {
 				throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 			}
 
-			$request_conditions = isset( $_POST['conds'] ) ? zyre_sanitize_array_recursively( $_POST['conds'] ) : [];
+			$request_conditions = isset( $_POST['conds'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['conds'] ) ) : [];
 
 			$exits_conditions = get_post_meta( $template_id, '_zyre_display_cond', true );
 			$merged_conditions = ! empty( $exits_conditions ) ? array_diff( $request_conditions, $exits_conditions ) : $request_conditions;

@@ -17,63 +17,63 @@ class Mailchimp_Api {
 	public static $list_id;
 
 	/**
-	 * request
+	 * Insert subscriber into Mailchimp
 	 *
 	 * @param array $submitted_data
-	 * @return array | int error
+	 * @return array
 	 */
 	public static function insert_subscriber_to_mailchimp( $submitted_data ) {
 		$return = [];
 
 		self::$credentials = zyre_get_credentials( 'mailchimp' );
+		self::$api_key = self::$credentials['api'] ?? '';
 
-		self::$api_key = isset( self::$credentials['api'] ) ? self::$credentials['api'] : '';
+		$post_id   = absint( $_POST['post_id'] ?? 0 );
+		$widget_id = sanitize_text_field( wp_unslash( $_POST['widget_id'] ?? '' ) );
+		$widget_settings = zyre_get_el_post_widget_settings( $post_id, $widget_id );
 
-		$widget_settings = zyre_get_el_post_widget_settings( absint( $_POST['post_id'] ), sanitize_text_field( $_POST['widget_id'] ) );
-
-		$tags = '';
-		if ( ! empty( $widget_settings ) ) {
-			$str_tags = isset( $widget_settings['mailchimp_list_tags'] ) ? $widget_settings['mailchimp_list_tags'] : '';
-			$tags = explode( ', ', $str_tags );
+		// Tags
+		$tags = [];
+		if ( ! empty( $widget_settings['mailchimp_list_tags'] ) ) {
+			$tags = explode( ', ', $widget_settings['mailchimp_list_tags'] );
 		}
 
 		$auth = [
 			'api_key' => self::$api_key,
-			'list_id' => sanitize_text_field( $_POST['list_id'] ),
+			'list_id' => sanitize_text_field( wp_unslash( $_POST['list_id'] ?? '' ) ),
 		];
 
+		$status = ( ! empty( $widget_settings['enable_double_opt_in'] ) && 'yes' === $widget_settings['enable_double_opt_in'] ) ? 'pending' : 'subscribed';
+
 		$data = [
-			'email_address' => ( isset( $submitted_data['email'] ) ? $submitted_data['email'] : '' ),
-			'status'        => ( ( isset( $widget_settings['enable_double_opt_in'] ) && 'yes' === $widget_settings['enable_double_opt_in'] ) ? 'pending' : 'subscribed' ),
-			'status_if_new' => ( ( isset( $widget_settings['enable_double_opt_in'] ) && 'yes' === $widget_settings['enable_double_opt_in'] ) ? 'pending' : 'subscribed' ),
+			'email_address' => $submitted_data['email'] ?? '',
+			'status'        => $status,
+			'status_if_new' => $status,
 			'merge_fields'  => [
-				'FNAME' => ( isset( $submitted_data['fname'] ) ? $submitted_data['fname'] : '' ),
-				'LNAME' => ( isset( $submitted_data['lname'] ) ? $submitted_data['lname'] : '' ),
-				'PHONE' => ( isset( $submitted_data['phone'] ) ? $submitted_data['phone'] : '' ),
+				'FNAME' => $submitted_data['fname'] ?? '',
+				'LNAME' => $submitted_data['lname'] ?? '',
+				'PHONE' => $submitted_data['phone'] ?? '',
 			],
 		];
 
-		if ( ! empty( $str_tags ) ) {
+		if ( $tags ) {
 			$data['tags'] = $tags;
 		}
 
+		// Validate API key
 		$server = explode( '-', $auth['api_key'] );
-
-		if ( ! isset( $server[1] ) ) {
+		if ( empty( $server[1] ) || strpos( $server[1], 'us' ) === false ) {
 			return [
 				'status' => 0,
-				'msg' => esc_html__( 'Invalid API key.', 'zyre-elementor-addons' ),
+				'msg'    => esc_html__( 'Invalid API key.', 'zyre-elementor-addons' ),
 			];
 		}
 
-		if ( strpos( $server[1], 'us' ) === false ) {
-			return [
-				'status' => 0,
-				'msg' => esc_html__( 'Invalid API key.', 'zyre-elementor-addons' ),
-			];
-		}
-
-		$url = 'https://' . $server[1] . '.api.mailchimp.com/3.0/lists/' . $auth['list_id'] . '/members/';
+		$url = sprintf(
+			'https://%s.api.mailchimp.com/3.0/lists/%s/members/',
+			$server[1],
+			$auth['list_id']
+		);
 
 		$response = wp_remote_post(
 			$url,
@@ -85,57 +85,57 @@ class Mailchimp_Api {
 					'Authorization' => 'apikey ' . $auth['api_key'],
 					'Content-Type'  => 'application/json; charset=utf-8',
 				],
-				'body'        => json_encode( $data ),
+				'body'        => wp_json_encode( $data ),
 			]
 		);
 
 		if ( is_wp_error( $response ) ) {
-			$error_message = $response->get_error_message();
 			$return['status'] = 0;
-			$return['msg'] = esc_html__( 'Something went wrong: ', 'zyre-elementor-addons' ) . esc_html( $error_message );
+			$return['msg']    = esc_html__( 'Something went wrong: ', 'zyre-elementor-addons' ) . esc_html( $response->get_error_message() );
+			return $return;
+		}
+
+		$http_code = wp_remote_retrieve_response_code( $response );
+		$body      = json_decode( wp_remote_retrieve_body( $response ), true );
+
+		if ( is_wp_error( $response ) || $http_code >= 400 ) {
+			$return['status'] = 0;
+			$return['msg']    = $body['title'] ?? esc_html__( 'Something went wrong.', 'zyre-elementor-addons' );
+		} elseif ( 'subscribed' === ( $body['status'] ?? '' ) ) {
+			$return['status'] = 1;
+			$return['msg']    = $widget_settings['mailchimp_success_message'] ?? '';
+		} elseif ( 'pending' === ( $body['status'] ?? '' ) ) {
+			$return['status'] = 1;
+			$return['msg']    = esc_html__( 'Confirm your subscription from your email.', 'zyre-elementor-addons' );
 		} else {
-			$body = (array) json_decode( $response['body'] );
-			$return['body'] = $body;
-			if ( $body['status'] > 399 && $body['status'] < 600 ) {
-				$return['status'] = 0;
-				$return['msg'] = $body['title'];
-			} elseif ( 'subscribed' === $body['status'] ) {
-				$return['status'] = 1;
-				$return['msg'] = isset( $widget_settings['mailchimp_success_message'] ) ? $widget_settings['mailchimp_success_message'] : '';
-			} elseif ( 'pending' === $body['status'] ) {
-				$return['status'] = 1;
-				$return['msg'] = esc_html__( 'Confirm your subscription from your email.', 'zyre-elementor-addons' );
-			} else {
-				$return['status'] = 0;
-				$return['msg'] = esc_html__( 'Something went wrong. Try again later.', 'zyre-elementor-addons' );
-			}
+			$return['status'] = 0;
+			$return['msg']    = esc_html__( 'Something went wrong. Try again later.', 'zyre-elementor-addons' );
 		}
 
 		return $return;
 	}
 
 	/**
-	 * Get request
+	 * Get all Mailchimp lists
 	 *
-	 * @return array all list
+	 * @param string|null $api
+	 * @return array
 	 */
 	public static function get_mailchimp_lists( $api = null ) {
-
-		self::$api_key = isset( self::$credentials['api'] ) ? self::$credentials['api'] : '';
-
-		$options = [];
-
-		if ( null !== $api ) {
+		if ( $api ) {
 			self::$api_key = $api;
+		} elseif ( ! empty( self::$credentials['api'] ) ) {
+			self::$api_key = self::$credentials['api'];
+		} else {
+			return [];
 		}
 
 		$server = explode( '-', self::$api_key );
-
-		if ( ! isset( $server[1] ) ) {
-			return 0;
+		if ( empty( $server[1] ) ) {
+			return [];
 		}
 
-		$url = 'https://' . $server[1] . '.api.mailchimp.com/3.0/lists';
+		$url = sprintf( 'https://%s.api.mailchimp.com/3.0/lists', $server[1] );
 
 		$response = wp_remote_post(
 			$url,
@@ -144,7 +144,6 @@ class Mailchimp_Api {
 				'data_format' => 'body',
 				'timeout'     => 45,
 				'headers'     => [
-
 					'Authorization' => 'apikey ' . self::$api_key,
 					'Content-Type'  => 'application/json; charset=utf-8',
 				],
@@ -152,22 +151,16 @@ class Mailchimp_Api {
 			]
 		);
 
-		if ( is_array( $response ) && ! is_wp_error( $response ) ) {
+		$options = [];
+		if ( ! is_wp_error( $response ) ) {
+			$body   = json_decode( wp_remote_retrieve_body( $response ) );
+			$lists  = $body->lists ?? [];
 
-			$body   = (array) json_decode( $response['body'] );
-			$listed = isset( $body['lists'] ) ? $body['lists'] : [];
-
-			if ( is_array( $listed ) && count( $listed ) > 0 ) {
-
-				$options = array_reduce(
-					$listed,
-					function ( $result, $item ) {
-						// extra space is needed to maintain order in elementor control
-						$result[ ' ' . $item->id ] = $item->name;
-						return $result;
-					},
-					array()
-				);
+			if ( $lists && is_array( $lists ) ) {
+				foreach ( $lists as $list ) {
+					// extra space to maintain order in Elementor control
+					$options[ ' ' . $list->id ] = $list->name;
+				}
 			}
 		}
 

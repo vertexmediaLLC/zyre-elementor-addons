@@ -457,33 +457,32 @@ class Module {
 		flush_rewrite_rules();
 	}
 
-	/**
-	 * Set custom meta query parameters to posts query.
-	 */
 	public function set_meta_query_to_posts_query( $query ) {
-		if ( ! is_admin() || empty( $query->query['post_type'] ) ) {
+		/**
+		 * No use on front
+		 * pre get posts runs everywhere
+		 * even if you test $pagenow after, bail as soon as possible
+		 */
+		if ( ! is_admin() ) {
 			return;
 		}
-
-        $post_type = $query->get( 'post_type' );
-
-        if ( empty( $post_type ) ) {
-            return;
-        }
 
 		global $pagenow;
 
 		// use $query parameter instead of global $post_type
-		if ( 'edit.php' === $pagenow && self::POST_TYPE === $post_type ) {
+		if ( 'edit.php' === $pagenow && self::POST_TYPE === $query->query['post_type'] ) {
 
 			if ( isset( $_GET['zyre_library_type'] ) ) {
+				$library_type = sanitize_text_field( wp_unslash( $_GET['zyre_library_type'] ) );
+
 				$meta_query = array(
 					array(
 						'key' => '_zyre_library_type',
-						'value' => sanitize_text_field( $_GET['zyre_library_type'] ),
-						'compare' => '==',
+						'value' => $library_type,
+						'compare' => '=',
 					),
 				);
+
 				$query->set( 'meta_query', $meta_query );
 				$query->set( 'meta_key', '_zyre_library_type' );
 			}
@@ -621,12 +620,14 @@ class Module {
 				if ( ! empty( $document_conditions ) ) {
 					foreach ( $document_conditions as $key => $condition ) {
 						if ( 'include' === $condition['type'] ) {
-							$sub_page_id            = ! empty( $condition['sub_id'] ) ? '#' . get_the_title( $condition['sub_id'] ) : '';
-							$con_label              = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_page_id : Conditions_Manager::instance()->get_all_name( $condition['name'] );
-							$include_conditions[]    = $con_label;
+							$title = $this->get_condition_title( $condition['sub_name'], $condition['sub_id'] );
+							$sub_page_id = $title ? '#' . $title : '';
+							$con_label = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_page_id : Conditions_Manager::instance()->get_all_name( $condition['name'] );
+							$include_conditions[] = $con_label;
 						} elseif ( 'exclude' === $condition['type'] ) {
-							$sub_page_id        = ! empty( $condition['sub_id'] ) ? '#' . get_the_title( $condition['sub_id'] ) : '';
-							$con_label          = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_page_id : Conditions_Manager::instance()->get_all_name( $condition['name'] );
+							$title = $this->get_condition_title( $condition['sub_name'], $condition['sub_id'] );
+							$sub_page_id = $title ? '#' . $title : '';
+							$con_label = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_page_id : Conditions_Manager::instance()->get_all_name( $condition['name'] );
 							$exclude_conditions[] = $con_label;
 						}
 					}
@@ -648,6 +649,34 @@ class Module {
 				echo '<b>' . esc_html__( 'Not Applicable', 'zyre-elementor-addons' ) . '</b>';
 			}
 		}
+	}
+
+	private function get_condition_title( $sub_name, $sub_id ) {
+		if ( empty( $sub_id ) ) {
+			return '';
+		}
+
+		// Category
+		if ( in_array( $sub_name, [ 'in_category', 'in_category_children' ], true ) ) {
+			$term = get_term( $sub_id, 'category' );
+			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
+		}
+
+		// Tag
+		if ( 'in_post_tag' === $sub_name ) {
+			$term = get_term( $sub_id, 'post_tag' );
+			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
+		}
+
+		// Author
+		if ( in_array( $sub_name, [ 'post_by_author', 'page_by_author' ], true ) ) {
+			$user = get_userdata( $sub_id );
+			return $user ? $user->display_name : '';
+		}
+
+		// Default → Post/Page
+		$title = get_the_title( $sub_id );
+		return $title ? $title : '';
 	}
 
 	protected function create_or_update_post( $type, $post_data, $meta ) {
@@ -737,42 +766,36 @@ class Module {
 
 		check_admin_referer( 'zyre_library_new_post_nonce' );
 
-		if ( empty( $_GET['post_type'] ) ) {
-			$post_type = 'post';
-		} else {
-			$post_type = sanitize_text_field( $_GET['post_type'] );
-		}
+		$post_type = empty( $_GET['post_type'] ) ? 'post' : sanitize_text_field( wp_unslash( $_GET['post_type'] ) );
 
 		$post_type_object = get_post_type_object( $post_type );
 
+		if ( ! $post_type_object ) {
+			wp_die( esc_html__( 'Invalid post type.', 'zyre-elementor-addons' ) );
+		}
+
 		if ( ! current_user_can( $post_type_object->cap->edit_posts ) ) {
-			return;
+			wp_die( esc_html__( 'Permission denied.', 'zyre-elementor-addons' ) );
 		}
 
-		if ( empty( $_GET['template_type'] ) ) {
-			$type = 'post';
-		} else {
-			$type = sanitize_text_field( wp_unslash( $_GET['template_type'] ) );
-		}
+		$type = empty( $_GET['template_type'] ) ? 'post' : sanitize_text_field( wp_unslash( $_GET['template_type'] ) );
 
-		$post_data = isset( $_GET['post_data'] ) ? zyre_sanitize_array_recursively( $_GET['post_data'] ) : [];
+		$post_data = isset( $_GET['post_data'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_GET['post_data'] ) ) : [];
 
-		$conditions = [];
-
-		$meta = [];
-
-		$meta['display_conditions'] = $conditions;
+		$meta = [
+			'display_conditions' => [],
+		];
+	
 		$post_data['post_type'] = $post_type;
 
 		$post_id = $this->create_or_update_post( $type, $post_data, $meta );
 
 		if ( is_wp_error( $post_id ) ) {
-			wp_die( esc_html( $post_id ) );
+			wp_die( esc_html( $post_id->get_error_message() ) );
 		}
 
 		wp_safe_redirect( $this->get_edit_url( $post_id ) );
-
-		die;
+    	exit;
 	}
 
 	private function check_elementor_content( $post_id ) {

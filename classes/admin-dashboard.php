@@ -21,7 +21,7 @@ class Dashboard {
 	protected static $menu_slug = '';
 
 	public static function is_page() {
-		return ( isset( $_GET['page'] ) && ( wp_unslash( $_GET['page'] ) === self::PAGE_SLUG ) );
+		return isset( $_GET['page'] ) && sanitize_text_field( wp_unslash( $_GET['page'] ) ) === self::PAGE_SLUG;
 	}
 
 	public static function add_body_class( $classes ) {
@@ -47,9 +47,11 @@ class Dashboard {
 			wp_send_json_error();
 		}
 
-		$posted_data = ! empty( $_POST['formData'] ) ? zyre_sanitize_array_recursively( $_POST['formData'] ) : '';
 		$data = [];
-		parse_str( $posted_data, $data );
+		if ( ! empty( $_POST['formData'] ) ) {
+			parse_str( wp_unslash( $_POST['formData'] ), $data );
+			$data = zyre_sanitize_array_recursively( $data );
+		}
 
 		do_action( 'zyreaddons_save_dashboard_settings', $data );
 
@@ -216,7 +218,8 @@ class Dashboard {
 
 	public static function update_submenu_file( $submenu_file ) {
 		if ( isset( $_GET['t'] ) ) {
-			$submenu_file = self::PAGE_SLUG . '&t=' . sanitize_text_field( $_GET['t'] );
+			$t = sanitize_text_field( wp_unslash( $_GET['t'] ) );
+			$submenu_file = self::PAGE_SLUG . '&t=' . $t;
 		}
 		return $submenu_file;
 	}

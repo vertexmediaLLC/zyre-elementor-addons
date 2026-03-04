@@ -12,7 +12,7 @@ class Select2_Handler {
 			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 		}
 
-		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['nonce'] ) ) ) : '';
 
 		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
 			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
@@ -50,9 +50,9 @@ class Select2_Handler {
 	}
 
 	public static function process_post() {
-		$post_type = ! empty( $_REQUEST['post_type'] ) ? sanitize_text_field( $_REQUEST['post_type'] ) : 'any';
-		$query_term = ! empty( $_REQUEST['query_term'] ) ? sanitize_text_field( $_REQUEST['query_term'] ) : '';
-		$saved_values = ! empty( $_REQUEST['saved_values'] ) ? zyre_sanitize_array_recursively( $_REQUEST['saved_values'] ) : 0;
+		$post_type  = ! empty( $_POST['post_type'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['post_type'] ) ) ) : 'any';
+		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['query_term'] ) ) ) : '';
+		$saved_values = ! empty( $_POST['saved_values'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
 		$args = [
 			'post_type'        => $post_type,
@@ -90,9 +90,9 @@ class Select2_Handler {
 	}
 
 	public static function process_term() {
-		$term_taxonomy = ! empty( $_REQUEST['term_taxonomy'] ) ? $_REQUEST['term_taxonomy'] : '';
-		$query_term = ! empty( $_REQUEST['query_term'] ) ? sanitize_text_field( $_REQUEST['query_term'] ) : '';
-		$saved_values = ! empty( $_REQUEST['saved_values'] ) ? zyre_sanitize_array_recursively( $_REQUEST['saved_values'] ) : 0;
+		$term_taxonomy = ! empty( $_POST['term_taxonomy'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['term_taxonomy'] ) ) ) : '';
+		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['query_term'] ) ) ) : '';
+		$saved_values = ! empty( $_POST['saved_values'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
 		if ( empty( $term_taxonomy ) ) {
 			throw new Exception( esc_html__( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
@@ -135,9 +135,8 @@ class Select2_Handler {
 	}
 
 	public static function process_mailchimp_list() {
-		$global_api = ! empty( $_REQUEST['global_api'] ) ? sanitize_text_field( $_REQUEST['global_api'] ) : '';
-
-		$saved_values = ! empty( $_REQUEST['saved_values'] ) ? zyre_sanitize_array_recursively( $_REQUEST['saved_values'] ) : 0;
+		$global_api   = ! empty( $_POST['global_api'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['global_api'] ) ) ) : '';
+		$saved_values = ! empty( $_POST['saved_values'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
 		if ( empty( $global_api ) ) {
 			throw new Exception( esc_html__( 'Invalid API key', 'zyre-elementor-addons' ) );
