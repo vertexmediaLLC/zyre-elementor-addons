@@ -392,6 +392,36 @@ class Conditions_Manager {
 		return $out;
 	}
 
+	public function process_author() {
+		$query_term = ! empty( $_GET['q'] ) ? sanitize_text_field( wp_unslash( $_GET['q'] ) ) : '';
+
+		$args = [
+			'who' => 'authors',
+			'orderby' => 'display_name',
+			'order' => 'ASC',
+			'number' => -1,
+		];
+
+		if ( $query_term ) {
+			$args['search'] = "*{$query_term}*";
+			$args['search_columns'] = [ 'user_nicename', 'user_login', 'display_name' ];
+		}
+
+		$authors = get_users( $args );
+
+		if ( empty( $authors ) ) {
+			return [];
+		}
+
+		$out = [];
+
+		foreach ( $authors as $author ) {
+			$out[ "{$author->ID}" ] = esc_html( $author->display_name );
+		}
+
+		return $out;
+	}
+
 	public function condition_autocomplete() {
 		try {
 			$this->validate_reqeust();
@@ -410,6 +440,10 @@ class Conditions_Manager {
 
 			if ( 'tax' === $object_type ) {
 				$response = $this->process_term();
+			}
+
+			if ( 'author' === $object_type ) {
+				$response = $this->process_author();
 			}
 
 			if ( 'singular' === $object_type ) {
@@ -606,6 +640,25 @@ class Conditions_Manager {
 			$sub_name = $parsed_condition['sub_name'];
 			$sub_id   = $parsed_condition['sub_id'];
 
+			$title = get_the_title( $sub_id );
+
+			 if ( in_array( $sub_name, [ 'in_category', 'in_category_children' ], true ) ) {
+				$term = get_term( $sub_id, 'category' );
+				if ( $term && ! is_wp_error( $term ) ) {
+					$title = $term->name;
+				}
+			} elseif ( 'in_post_tag' === $sub_name ) {
+				$term = get_term( $sub_id, 'post_tag' );
+				if ( $term && ! is_wp_error( $term ) ) {
+					$title = $term->name;
+				}
+			} elseif ( in_array( $sub_name, [ 'post_by_author', 'page_by_author' ], true ) ) {
+				$user = get_userdata( $sub_id );
+				if ( $user ) {
+					$title = $user->display_name;
+				}
+			}
+
 			$uuid = uniqid();
 
 			$sub_name_html = $sub_name
@@ -613,7 +666,7 @@ class Conditions_Manager {
 				: '';
 
 			$sub_id_html = $sub_id
-				? '<option value="' . esc_attr( $sub_id ) . '" selected="selected">' . esc_html( get_the_title( $sub_id ) ) . '</option>'
+				? '<option value="' . esc_attr( $sub_id ) . '" selected="selected">' . esc_html( $title ) . '</option>'
 				: '';
 
 			$icon = zyre_get_svg_icon( 'trash-can' );

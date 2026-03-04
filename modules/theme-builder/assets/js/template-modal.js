@@ -250,7 +250,7 @@ function _checkIfArray(r) {
 							url: ajaxurl,
 							dataType: "json",
 							delay: 250,
-							data: function data(params) {
+							data: function (params) {
 								var query = {
 									nonce: ZyreAddonsEditor.editor_nonce,
 									action: "zyre_condition_autocomplete",
@@ -260,7 +260,7 @@ function _checkIfArray(r) {
 								};
 								return query;
 							},
-							processResults: function processResults(response) {
+							processResults: function (response) {
 								if (!response.success || response.data.length === 0) {
 									return {
 										results: [
