@@ -756,7 +756,7 @@ class Conditions_Manager {
 				</div>
 
 				<div class="zyre-template-condition-remove">
-					<?php echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo wp_kses( $icon, zyre_allowed_icon_html() ); ?>
 					<span class="elementor-screen-only"><?php esc_html_e( 'Remove this item', 'zyre-elementor-addons' ); ?></span>
 				</div>
 			</div>

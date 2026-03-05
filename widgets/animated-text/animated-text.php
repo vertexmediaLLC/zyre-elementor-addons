@@ -1759,6 +1759,6 @@ class Animated_Text extends Base {
 			'cross'     => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M497.4,23.9C301.6,40,155.9,80.6,4,144.4"></path><path d="M14.1,27.6c204.5,20.3,393.8,74,467.3,111.7"></path></svg>',
 		];
 
-		echo $shapes_array[ $shape ]; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses( $shapes_array[ $shape ], zyre_allowed_icon_html() );
 	}
 }

@@ -3554,7 +3554,7 @@ class Post_Comments extends Base {
 										esc_url( get_comment_link( $comment, $args ) ),
 										! empty( $settings['comment_time_icon']['value'] ) ? sprintf(
 											'<span class="time-icon">%s</span>',
-											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+											wp_kses( zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ), zyre_allowed_icon_html() ),
 										) : '',
 										esc_attr( get_comment_time( 'c' ) ),
                                         esc_html(
@@ -3568,7 +3568,7 @@ class Post_Comments extends Base {
 										esc_url( get_comment_link( $comment, $args ) ),
 										! empty( $settings['comment_time_icon']['value'] ) ? sprintf(
 											'<span class="time-icon">%s</span>',
-											zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+											wp_kses( zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ), zyre_allowed_icon_html() ),
 										) : '',
                                         esc_attr( get_comment_time( 'c' ) ),
                                         sprintf(
@@ -3612,7 +3612,7 @@ class Post_Comments extends Base {
 								'<div class="comments-total zy-inline-flex zy-align-center zy-gap-2">%s<span class="comments-total-text">%s</span></div>',
 								! empty( $settings['comment_count_icon']['value'] ) ? sprintf(
 									'<span class="comments-total-icon">%s</span>',
-									zyre_get_icon_html( $settings, 'icon', 'comment_count_icon' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									wp_kses( zyre_get_icon_html( $settings, 'icon', 'comment_count_icon' ), zyre_allowed_icon_html() ),
 								) : '',
 								esc_html( $comment_count )
 							);

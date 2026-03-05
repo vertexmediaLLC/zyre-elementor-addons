@@ -725,13 +725,23 @@ class Advance_Toggle extends Base {
 					</div>
 					<?php elseif ( isset( $accordion[ $content_type ] ) && 'saved_section' === $accordion[ $content_type ] && 'publish' === get_post_status( $accordion[ $saved_section ] ) ) : ?>
 					<div <?php $this->print_render_attribute_string( $content_key ); ?>>
-						<?php $accordion[ $saved_section ] = apply_filters( 'wpml_object_id', $accordion[ $saved_section ], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-						echo zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_section ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php
+						$accordion[ $saved_section ] = apply_filters( 'wpml_object_id', $accordion[ $saved_section ], 'elementor_library' );
+						echo wp_kses(
+							zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_section ] ),
+							zyre_kses_allowed_html()
+						);
+						?>
 					</div>
 					<?php elseif ( isset( $accordion[ $content_type ] ) && 'saved_container' === $accordion[ $content_type ] && 'publish' === get_post_status( $accordion[ $saved_container ] ) ) : ?>
 					<div <?php $this->print_render_attribute_string( $content_key ); ?>>
-						<?php $accordion[ $saved_container ] = apply_filters( 'wpml_object_id', $accordion[ $saved_container ], 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-						echo zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_container ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php
+						$accordion[ $saved_container ] = apply_filters( 'wpml_object_id', $accordion[ $saved_container ], 'elementor_library' );
+						echo wp_kses(
+							zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_container ] ),
+							zyre_kses_allowed_html()
+						);
+						?>
 					</div>
 					<?php endif; ?>
 				</div>

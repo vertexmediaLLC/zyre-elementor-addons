@@ -49,7 +49,7 @@ $credential_data = zyre_get_credentials();
 				
 				<div class="zyre-version">
 					<span class="version-number"><?php /* translators: %s is the plugin version */ printf( esc_html__( 'Version %s', 'zyre-elementor-addons' ), esc_html( ZYRE_ADDONS_VERSION ) ); ?></span>
-					<a href="<?php echo esc_url( ZYRE_ADDONS_DIR_URL . 'changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span></a>
+					<a href="<?php echo esc_url( ZYRE_ADDONS_DIR_URL . 'changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_allowed_icon_html() ); ?></span></a>
 				</div>
 			</div>
 
@@ -110,12 +110,12 @@ $credential_data = zyre_get_credentials();
 									)
 								);
 
-								++$tab_count; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								++$tab_count;
 							endforeach;
 							?>
 						</div>
 						<div class="zyre-save-button">
-							<button class="zyre-save-settings" type="submit" disabled><span class="zyre-icon-svg"><?php echo zyre_get_svg_icon( 'floppy-disk' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>&nbsp; <span class="zyre-save-text"><?php esc_html_e( 'Save Settings', 'zyre-elementor-addons' ); ?></span></button>
+							<button class="zyre-save-settings" type="submit" disabled><span class="zyre-icon-svg"><?php echo wp_kses( zyre_get_svg_icon( 'floppy-disk' ), zyre_allowed_icon_html() ); ?></span>&nbsp; <span class="zyre-save-text"><?php esc_html_e( 'Save Settings', 'zyre-elementor-addons' ); ?></span></button>
 						</div>
 					</div>
 
@@ -191,7 +191,7 @@ $credential_data = zyre_get_credentials();
 											<div class="zyre-credential__item-title-wrap">
 												<span class="zyre-credential__item-icon">
 													<?php if ( 'mailchimp' === $credential_key ) :
-														echo zyre_get_svg_icon( 'mailchimp' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+														echo wp_kses( zyre_get_svg_icon( 'mailchimp' ), zyre_allowed_icon_html() );
 															else : ?>
 															<i class="<?php echo esc_attr( $icon ); ?>"></i>
 													<?php endif; ?>
@@ -512,8 +512,8 @@ $credential_data = zyre_get_credentials();
 										</div>
 
 										<div class="zyre-widget-help-links">
-											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank"><?php esc_html_e( 'View Demo', 'zyre-elementor-addons' ); ?> <?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
-											<a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'zyre-elementor-addons' ); ?> <?php echo zyre_get_svg_icon( 'up-right-from-square' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
+											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank"><?php esc_html_e( 'View Demo', 'zyre-elementor-addons' ); ?> <?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_allowed_icon_html() ); ?></a>
+											<a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'zyre-elementor-addons' ); ?> <?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_allowed_icon_html() ); ?></a>
 										</div>
 									</div>
 
