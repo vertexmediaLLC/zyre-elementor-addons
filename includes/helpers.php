@@ -192,6 +192,320 @@ function zyre_get_allowed_html( $level = 'basic' ) {
 }
 
 /**
+ * Get a list of all the allowed html tags for icons.
+ * 
+ * @return array
+ */
+function zyre_allowed_icon_html() {
+	return [
+		'i' => [
+			'class'       => true,
+			'id'          => true,
+			'aria-hidden' => true,
+		],
+		'span' => [
+			'class'       => true,
+			'id'          => true,
+			'aria-hidden' => true,
+		],
+		'svg' => [
+			'class' => true,
+			'id' => true,
+			'xmlns' => true,
+			'xmlns:xlink' => true,
+			'width' => true,
+			'height' => true,
+			'viewbox' => true,
+			'fill' => true,
+			'stroke' => true,
+			'role' => true,
+			'focusable' => true,
+			'aria-hidden' => true,
+			'preserveaspectratio' => true,
+		],
+		'g' => [
+			'class' => true,
+			'id' => true,
+			'data-name' => true,
+			'fill' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+			'stroke-linejoin' => true,
+			'transform' => true,
+			'opacity' => true,
+		],
+		'path' => [
+			'd' => true,
+			'class' => true,
+			'id' => true,
+			'fill' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+			'stroke-linecap' => true,
+			'stroke-linejoin' => true,
+			'stroke-miterlimit' => true,
+			'fill-rule' => true,
+			'clip-rule' => true,
+			'opacity' => true,
+			'transform' => true,
+		],
+		'circle' => [
+			'cx' => true,
+			'cy' => true,
+			'r' => true,
+			'fill' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+			'opacity' => true,
+		],
+		'image' => [
+			'href' => true,
+			'xlink:href' => true,
+			'x' => true,
+			'y' => true,
+			'width' => true,
+			'height' => true,
+			'transform' => true,
+			'class' => true,
+			'id' => true,
+			'style' => true,
+			'alt' => true,
+		],
+		'rect' => [
+			'x' => true,
+			'y' => true,
+			'width' => true,
+			'height' => true,
+			'rx' => true,
+			'ry' => true,
+			'fill' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+			'opacity' => true,
+		],
+		'polygon' => [
+			'points' => true,
+			'fill' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+		],
+		'polyline' => [
+			'points' => true,
+			'fill' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+		],
+		'line' => [
+			'x1' => true,
+			'y1' => true,
+			'x2' => true,
+			'y2' => true,
+			'stroke' => true,
+			'stroke-width' => true,
+		],
+		'ellipse' => [
+			'cx' => true,
+			'cy' => true,
+			'rx' => true,
+			'ry' => true,
+			'fill' => true,
+			'stroke' => true,
+		],
+		'defs' => [],
+		'symbol' => [
+			'id' => true,
+			'viewbox' => true,
+		],
+		'clippath' => [
+			'id' => true,
+			'clippathunits' => true,
+		],
+		'mask' => [
+			'id' => true,
+			'x' => true,
+			'y' => true,
+			'width' => true,
+			'height' => true,
+			'maskunits' => true,
+		],
+		'use' => [
+			'href' => true,
+			'xlink:href' => true,
+			'x' => true,
+			'y' => true,
+			'width' => true,
+			'height' => true,
+		],
+		'lineargradient' => [
+			'id' => true,
+			'x1' => true,
+			'x2' => true,
+			'y1' => true,
+			'y2' => true,
+			'gradientunits' => true,
+		],
+		'radialgradient' => [
+			'id' => true,
+			'cx' => true,
+			'cy' => true,
+			'r' => true,
+			'fx' => true,
+			'fy' => true,
+			'gradientunits' => true,
+		],
+		'stop' => [
+			'offset' => true,
+			'stop-color' => true,
+			'stop-opacity' => true,
+		],
+		'title' => [],
+		'desc'  => [],
+	];
+}
+
+/**
+ * Get a list of all the allowed html tags for forms.
+ * 
+ * @return array
+ */
+function zyre_allowed_form_html() {
+	return [
+		'form' => [
+			'action' => true,
+			'method' => true,
+			'id' => true,
+			'class' => true,
+			'accept-charset' => true,
+			'enctype' => true,
+			'novalidate' => true,
+			'autocomplete' => true,
+			'name' => true,
+			'rel' => true,
+			'target' => true,
+			'aria-label' => true,
+			'data-*' => true,
+		],
+		'span' => [
+			'class' => true,
+			'id' => true,
+			'style' => true,
+			'data-*' => true,
+		],
+		'div' => [
+			'class' => true,
+			'id' => true,
+			'style' => true,
+			'data-*' => true,
+		],
+		'label' => [
+			'id' => true,
+			'class' => true,
+			'for' => true,
+			'form' => true,
+		],
+		'input' => [
+			'type' => true,
+			'name' => true,
+			'value' => true,
+			'id' => true,
+			'class' => true,
+			'placeholder' => true,
+			'checked' => true,
+			'required' => true,
+			'readonly' => true,
+			'min' => true,
+			'minlength' => true,
+			'max' => true,
+			'maxlength' => true,
+			'step' => true,
+			'type' => true,
+			'multiple' => true,
+			'autocomplete' => true,
+			'autofocus' => true,
+			'disabled' => true,
+			'accept' => true,
+			'size' => true,
+			'aria-required' => true,
+			'aria-invalid' => true,
+		],
+		'select' => [
+			'name' => true,
+			'id' => true,
+			'class' => true,
+			'multiple' => true,
+			'required' => true,
+			'autofocus' => true,
+			'disabled' => true,
+			'size' => true,
+			'aria-required' => true,
+			'aria-invalid' => true,
+		],
+		'option' => [
+			'value' => true,
+    		'selected' => true,
+    		'disabled' => true,
+    		'label' => true,
+		],
+		'optgroup' => [
+    		'disabled' => true,
+    		'label' => true,
+		],
+		'textarea' => [
+			'name' => true,
+			'id' => true,
+			'class' => true,
+			'rows' => true,
+			'cols' => true,
+			'placeholder' => true,
+			'required' => true,
+			'autofocus' => true,
+			'disabled' => true,
+			'maxlength' => true,
+			'readonly' => true,
+			'aria-required' => true,
+			'aria-invalid' => true,
+		],
+		'fieldset' => [
+			'id' => true,
+			'class' => true,
+			'disabled' => true,
+			'form' => true,
+			'name' => true,
+		],
+		'legend' => [
+			'id' => true,
+			'class' => true,
+		],
+		'button' => [
+			'type' => true,
+			'name' => true,
+			'value' => true,
+			'id' => true,
+			'class' => true,
+			'autofocus' => true,
+			'disabled' => true,
+		],
+	];
+}
+
+/**
+ * Get a list of all the allowed html tags for post.
+ * 
+ * @return array
+ */
+function zyre_kses_allowed_html() {
+	$wp_allowed_tags = wp_kses_allowed_html( 'post' );
+
+	$wp_allowed_tags['style'] = [
+		'type' => true,
+		'id' => true,
+		'media' => true,
+	];
+
+	return array_merge( $wp_allowed_tags, zyre_allowed_icon_html(), zyre_allowed_form_html() );
+}
+
+/**
  * Strip all the tags except allowed html tags
  *
  * The name is based on inline editing toolbar name
@@ -327,7 +641,8 @@ function zyre_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_icon_id
  * @param array $attributes
  */
 function zyre_render_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
-	echo zyre_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	$icon_html = zyre_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes );
+	echo wp_kses( $icon_html, zyre_allowed_icon_html() );
 }
 
 /**

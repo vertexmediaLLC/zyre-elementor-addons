@@ -339,8 +339,7 @@ class Module {
 		if ( self::POST_TYPE === get_post_type() ) {
 			ob_start();
 			include ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/template-conditions.php';
-			$template = ob_get_clean();
-			echo $template; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 
@@ -496,7 +495,7 @@ class Module {
 			<div class="zyre-admin-top-bar">
 				<div class="zyre-admin-top-bar-branding">
 					<div class="zyre-admin-top-bar-branding-logo">
-						<img src="<?php echo zyre_get_b64_3dicon(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" alt="" width="46">
+						<img src="<?php echo esc_attr( zyre_get_b64_3dicon() ); ?>" alt="" width="46">
 					</div>
 					<h1 class="zyre-admin-top-bar-branding-title"><?php esc_html_e( 'Theme Builder', 'zyre-elementor-addons' ); ?></h1>
 				</div>
@@ -522,8 +521,7 @@ class Module {
 	public function add_new_template() {
 		ob_start();
 		include ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/new-template.php';
-		$template = ob_get_clean();
-		echo $template; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	// Render tabs in the edit page
@@ -915,7 +913,7 @@ class Module {
 		if ( ( 'internal' === get_option( 'elementor_css_print_method' ) ) || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$has_css = true;
 		}
-		$content_id = apply_filters( 'wpml_object_id', $content_id, 'elementor_library' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		$content_id = apply_filters( 'wpml_object_id', $content_id, 'elementor_library' );
 		return $_elementor->frontend->get_builder_content_for_display( $content_id, $has_css );
 	}
 
@@ -930,7 +928,7 @@ class Module {
 	public function single_blog_content_elementor( $post ) {
 		$templates = $this->singular_template;
 		if ( ! empty( $templates ) ) {
-            echo self::render_builder_data( $templates ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo wp_kses( self::render_builder_data( $templates ), zyre_kses_allowed_html() );
 		} else {
 			the_content();
 		}

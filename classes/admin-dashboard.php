@@ -213,7 +213,7 @@ class Dashboard {
 		global $submenu;
 		$menu = $submenu[ self::PAGE_SLUG ];
 		array_shift( $menu );
-		$submenu[ self::PAGE_SLUG ] = $menu; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		$submenu[ self::PAGE_SLUG ] = $menu;
 	}
 
 	public static function update_submenu_file( $submenu_file ) {
