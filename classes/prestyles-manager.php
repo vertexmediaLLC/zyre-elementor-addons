@@ -30,8 +30,8 @@ class PreStyles_Manager {
 		$widget_id = sanitize_text_field( wp_unslash( $_GET['widgetID'] ) );
 		$post_id = isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : 0;
 
-		$is_pro    = isset( $_GET['isPro'] ) ? filter_var( $_GET['isPro'], FILTER_VALIDATE_BOOLEAN ) : false;
-		$is_reset  = isset( $_GET['reset'] ) ? filter_var( $_GET['reset'], FILTER_VALIDATE_BOOLEAN ) : false;
+		$is_pro    = isset( $_GET['isPro'] ) ? filter_var( wp_unslash( $_GET['isPro'] ), FILTER_VALIDATE_BOOLEAN ) : false;
+		$is_reset  = isset( $_GET['reset'] ) ? filter_var( wp_unslash( $_GET['reset'] ), FILTER_VALIDATE_BOOLEAN ) : false;
 
 		$styles = self::get_prestyles( $widget_name, $is_pro);
 		if ( ! $styles ) {

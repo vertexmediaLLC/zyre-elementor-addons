@@ -424,7 +424,7 @@ class Conditions_Manager {
 		try {
 			$this->validate_reqeust();
 
-			$object_type = ! empty( $_GET['object_type'] ) ? sanitize_text_field( trim( wp_unslash( $_GET['object_type'] ) ) ) : '';
+			$object_type = ! empty( $_GET['object_type'] ) ? sanitize_text_field( wp_unslash( $_GET['object_type'] ) ) : '';
 
 			if ( ! in_array( $object_type, [ 'post', 'tax', 'author', 'archive', 'singular' ], true ) ) {
 				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );

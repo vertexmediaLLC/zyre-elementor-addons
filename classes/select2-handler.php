@@ -12,7 +12,7 @@ class Select2_Handler {
 			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 		}
 
-		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['nonce'] ) ) ) : '';
+		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
 
 		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
 			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
@@ -23,7 +23,7 @@ class Select2_Handler {
 		try {
 			self::validate_reqeust();
 
-			$object_type = ! empty( $_POST['object_type'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['object_type'] ) ) ) : '';
+			$object_type = ! empty( $_POST['object_type'] ) ? sanitize_text_field( wp_unslash( $_POST['object_type'] ) ) : '';
 
 			if ( ! in_array( $object_type, [ 'post', 'term', 'user', 'mailchimp_list' ], true ) ) {
 				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );
@@ -50,8 +50,8 @@ class Select2_Handler {
 	}
 
 	public static function process_post() {
-		$post_type  = ! empty( $_POST['post_type'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['post_type'] ) ) ) : 'any';
-		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['query_term'] ) ) ) : '';
+		$post_type  = ! empty( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'any';
+		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( wp_unslash( $_POST['query_term'] ) ) : '';
 		$saved_values = ! empty( $_POST['saved_values'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
 		$args = [
@@ -90,8 +90,8 @@ class Select2_Handler {
 	}
 
 	public static function process_term() {
-		$term_taxonomy = ! empty( $_POST['term_taxonomy'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['term_taxonomy'] ) ) ) : '';
-		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['query_term'] ) ) ) : '';
+		$term_taxonomy = ! empty( $_POST['term_taxonomy'] ) ? sanitize_text_field( wp_unslash( $_POST['term_taxonomy'] ) ) : '';
+		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( wp_unslash( $_POST['query_term'] ) ) : '';
 		$saved_values = ! empty( $_POST['saved_values'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
 		if ( empty( $term_taxonomy ) ) {
@@ -135,7 +135,7 @@ class Select2_Handler {
 	}
 
 	public static function process_mailchimp_list() {
-		$global_api   = ! empty( $_POST['global_api'] ) ? sanitize_text_field( trim( wp_unslash( $_POST['global_api'] ) ) ) : '';
+		$global_api   = ! empty( $_POST['global_api'] ) ? sanitize_text_field( wp_unslash( $_POST['global_api'] ) ) : '';
 		$saved_values = ! empty( $_POST['saved_values'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
 		if ( empty( $global_api ) ) {
