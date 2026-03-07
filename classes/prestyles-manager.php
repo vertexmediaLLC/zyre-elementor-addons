@@ -59,9 +59,9 @@ class PreStyles_Manager {
 	protected static function get_prestyles( $widget_name, $is_pro = false ) {
 		$json_file = is_rtl() ? $widget_name . '-rtl.json' : $widget_name . '.json';
 
-		$dir = ZYRE_ADDONS_DIR_PATH;
+		$dir = ZYRELADDONS_DIR_PATH;
 		if ( $is_pro ) {
-			$dir = ZYRE_ADDONS_PRO_DIR_PATH;
+			$dir = ZYRELADDONS_PRO_DIR_PATH;
 		}
 
 		$style = $dir . 'assets/pre-styles/' . $widget_name . '/' . $json_file;
@@ -117,9 +117,9 @@ class PreStyles_Manager {
 	public static function enqueue_editor_scripts() {
 		wp_enqueue_script(
 			'zyre-pre-styles',
-			ZYRE_ADDONS_ASSETS . 'admin/js/pre-styles.js',
+			ZYRELADDONS_ASSETS . 'admin/js/pre-styles.js',
 			[ 'elementor-editor' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 

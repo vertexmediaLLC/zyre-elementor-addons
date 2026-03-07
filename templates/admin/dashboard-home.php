@@ -25,7 +25,7 @@ foreach ($widgets as $widget) {
     }
 }
 
-$widget_style_thumb_ph = ZYRE_ADDONS_ASSETS . 'img/widget-style-thumb-placeholder.png';
+$widget_style_thumb_ph = ZYRELADDONS_ASSETS . 'img/widget-style-thumb-placeholder.png';
 
 // Get credentials list and data
 $credential_list = self::get_credentials();
@@ -40,7 +40,7 @@ $credential_data = zyreladdons_get_credentials();
 			<div class="zyre-dashboard-header-left">
 				<div class="zyre-logo-wrapper">
 					<div class="zyre-logo">
-						<img src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/logo-dashboard.svg' ); ?>" alt="<?php echo esc_attr( 'Zyre Logo' ); ?>" width="190">
+						<img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/logo-dashboard.svg' ); ?>" alt="<?php echo esc_attr( 'Zyre Logo' ); ?>" width="190">
 					</div>
 					<div class="zyre-addons-type">
 						<span class="badge-free">Free</span>
@@ -48,8 +48,8 @@ $credential_data = zyreladdons_get_credentials();
 				</div>
 				
 				<div class="zyre-version">
-					<span class="version-number"><?php /* translators: %s is the plugin version */ printf( esc_html__( 'Version %s', 'zyre-elementor-addons' ), esc_html( ZYRE_ADDONS_VERSION ) ); ?></span>
-					<a href="<?php echo esc_url( ZYRE_ADDONS_DIR_URL . 'changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_allowed_icon_html() ); ?></span></a>
+					<span class="version-number"><?php /* translators: %s is the plugin version */ printf( esc_html__( 'Version %s', 'zyre-elementor-addons' ), esc_html( ZYRELADDONS_VERSION ) ); ?></span>
+					<a href="<?php echo esc_url( ZYRELADDONS_DIR_URL . 'changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_allowed_icon_html() ); ?></span></a>
 				</div>
 			</div>
 
@@ -126,11 +126,11 @@ $credential_data = zyreladdons_get_credentials();
 								<div class="zyre-tabs-up-content-left">
 									<div class="zyre-up-logos">
 										<div class="zyre-logo">
-											<img src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/logo-dashboard.svg' ); ?>" alt="<?php echo esc_attr( 'Zyre Logo' ); ?>" width="76">
+											<img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/logo-dashboard.svg' ); ?>" alt="<?php echo esc_attr( 'Zyre Logo' ); ?>" width="76">
 										</div>
 										<span class="zyre-vertical-line"></span>
 										<div class="elementor-logo">
-											<img src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/elementor-logo.png' ); ?>" alt="<?php echo esc_attr( 'Elementor Logo' ); ?>" width="140">
+											<img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/elementor-logo.png' ); ?>" alt="<?php echo esc_attr( 'Elementor Logo' ); ?>" width="140">
 										</div>
 									</div>
 									<div class="zyre-up-content-welcome">
@@ -144,7 +144,7 @@ $credential_data = zyreladdons_get_credentials();
 								</div>
 								<div class="zyre-tabs-up-content-right">
 									<figure class="zyre-elements">
-										<img src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/welcome-image.png' ); ?>" alt="<?php echo esc_attr_e( 'Welcome Image', 'zyre-elementor-addons' ); ?>">
+										<img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/welcome-image.png' ); ?>" alt="<?php echo esc_attr_e( 'Welcome Image', 'zyre-elementor-addons' ); ?>">
 									</figure>
 								</div>
 							</div>
@@ -239,28 +239,28 @@ $credential_data = zyreladdons_get_credentials();
 							<div class="zyre-video-wrapper">
 								<a class="zyre-video-item" href="<?php echo esc_url('https://www.youtube.com/watch?v=im5FkD2gvUQ'); ?>">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/manage-widgets-styles.jpg' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/manage-widgets-styles.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
 									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Manage Widgets and Styles', 'zyre-elementor-addons' ); ?></h3>
 								</a>
 								<a class="zyre-video-item" href="<?php echo esc_url('https://www.youtube.com/watch?v=aPPgxrB-8Bw'); ?>">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/design-from-scratch.jpg' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/design-from-scratch.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
 									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Design From Scratch', 'zyre-elementor-addons' ); ?></h3>
 								</a>
 								<a class="zyre-video-item" href="<?php echo esc_url('https://www.youtube.com/watch?v=cPH6I2ancMI'); ?>">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/import-templates.jpg' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/import-templates.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
 									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Import Templates', 'zyre-elementor-addons' ); ?></h3>
 								</a>
 								<a class="zyre-video-item" href="<?php echo esc_url('https://www.youtube.com/watch?v=KhoMkFSeGE4'); ?>">
 									<div class="zyre-video zyre-flex-center">
-										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/build-header-template.jpg' ); ?>" alt="">
+										<img class="zyre-video-bg" src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/build-header-template.jpg' ); ?>" alt="">
 										<div class="zyre-video-play-btn"></div>
 									</div>
 									<h3 class="zyre-video-title"><?php esc_html_e( 'How to Design Header Template', 'zyre-elementor-addons' ); ?></h3>
@@ -340,7 +340,7 @@ $credential_data = zyreladdons_get_credentials();
 							<!-- Elementorin Theme -->
 							<div class="zyre-each-plugin" style="display: none;">
 								<div class="zyre-each-plugin-header">
-									<div><img src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/integration-elementorin.png' ); ?>" alt=""></div>
+									<div><img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/integration-elementorin.png' ); ?>" alt=""></div>
 									<p><?php esc_html_e( 'Free', 'zyre-elementor-addons' ); ?></p>
 								</div>
 								<div class="zyre-each-plugin-body">
@@ -373,7 +373,7 @@ $credential_data = zyreladdons_get_credentials();
 								?>
 								<div class="zyre-each-plugin">
 									<div class="zyre-each-plugin-header">
-										<div><img src="<?php echo esc_url( ZYRE_ADDONS_ASSETS . 'img/integration-cf7.png' ); ?>" alt=""></div>
+										<div><img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/integration-cf7.png' ); ?>" alt=""></div>
 										<p><?php esc_html_e( 'Free', 'zyre-elementor-addons' ); ?></p>
 									</div>
 									<div class="zyre-each-plugin-body">
@@ -575,7 +575,7 @@ $credential_data = zyreladdons_get_credentials();
 		<?php
 		// Subscription Modal
 		if ( ! self::is_user_subscribed() ) {
-			include_once ZYRE_ADDONS_DIR_PATH . 'templates/admin/subscription-modal.php';
+			include_once ZYRELADDONS_DIR_PATH . 'templates/admin/subscription-modal.php';
 		}
 		?>
 	</div> <!-- .zyre-dashboard-wrapper -->

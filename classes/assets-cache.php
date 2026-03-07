@@ -210,7 +210,7 @@ class Assets_Cache {
 				'zyre-elementor-addons-' . $this->get_post_id(),
 				$this->get_file_url(),
 				[ 'elementor-frontend', 'zyre-elementor-addons-global-vars', 'zyre-elementor-addons-global' ],
-				ZYRE_ADDONS_VERSION . '.' . get_post_modified_time()
+				ZYRELADDONS_VERSION . '.' . get_post_modified_time()
 			);
 		}
 	}
@@ -349,7 +349,7 @@ class Assets_Cache {
 
 		foreach ( $file_names as $file_name ) {
 			$widget_name = ! empty( $widget_key ) ? $widget_key : $file_name;
-			$file_path = ZYRE_ADDONS_DIR_PATH . "assets/css/widgets/{$widget_name}/{$file_name}{$suffix}css";
+			$file_path = ZYRELADDONS_DIR_PATH . "assets/css/widgets/{$widget_name}/{$file_name}{$suffix}css";
 			$file_path = apply_filters( 'zyreaddons_get_styles_file_path', $file_path, $file_name, $is_pro );
 
 			if ( is_readable( $file_path ) ) {

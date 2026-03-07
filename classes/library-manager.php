@@ -22,7 +22,7 @@ class Library_Manager {
 	}
 
 	public static function print_template_views() {
-		include_once ZYRE_ADDONS_DIR_PATH . 'templates/template-library/templates.php';
+		include_once ZYRELADDONS_DIR_PATH . 'templates/template-library/templates.php';
 	}
 
 	public static function enqueue_scripts() {
@@ -30,21 +30,21 @@ class Library_Manager {
 
 		wp_enqueue_style(
 			'zyre-addons-templates-library',
-			ZYRE_ADDONS_ASSETS . 'admin/css/template-library' . $suffix . 'css',
+			ZYRELADDONS_ASSETS . 'admin/css/template-library' . $suffix . 'css',
 			[
 				'elementor-editor',
 			],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_enqueue_script(
 			'zyre-addons-templates-library',
-			ZYRE_ADDONS_ASSETS . 'admin/js/template-library' . $suffix . 'js',
+			ZYRELADDONS_ASSETS . 'admin/js/template-library' . $suffix . 'js',
 			[
 				'zyre-elementor-addons-editor',
 				'jquery-hover-intent',
 			],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 	}

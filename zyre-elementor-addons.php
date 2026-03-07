@@ -48,17 +48,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'ZYRE_ADDONS_VERSION', '1.0.2' );
-define( 'ZYRE_ADDONS__FILE__', __FILE__ );
-define( 'ZYRE_ADDONS_DIR_PATH', plugin_dir_path( ZYRE_ADDONS__FILE__ ) );
-define( 'ZYRE_ADDONS_DIR_URL', plugin_dir_url( ZYRE_ADDONS__FILE__ ) );
-define( 'ZYRE_ADDONS_ASSETS', trailingslashit( ZYRE_ADDONS_DIR_URL . 'assets' ) );
+define( 'ZYRELADDONS_VERSION', '1.0.2' );
+define( 'ZYRELADDONS__FILE__', __FILE__ );
+define( 'ZYRELADDONS_DIR_PATH', plugin_dir_path( ZYRELADDONS__FILE__ ) );
+define( 'ZYRELADDONS_DIR_URL', plugin_dir_url( ZYRELADDONS__FILE__ ) );
+define( 'ZYRELADDONS_ASSETS', trailingslashit( ZYRELADDONS_DIR_URL . 'assets' ) );
 
-define( 'ZYRE_ADDONS_REDIRECTION_FLAG', 'zyreaddons_do_activation_direct' );
-define( 'ZYRE_ADDONS_WIZARD_REDIRECTION_FLAG', 'zyreaddons_do_wizard_direct' );
+define( 'ZYRELADDONS_REDIRECTION_FLAG', 'zyreaddons_do_activation_direct' );
+define( 'ZYRELADDONS_WIZARD_REDIRECTION_FLAG', 'zyreaddons_do_wizard_direct' );
 
-define( 'ZYRE_ADDONS_MINIMUM_ELEMENTOR_VERSION', '3.7.0' );
-define( 'ZYRE_ADDONS_MINIMUM_PHP_VERSION', '7.4' );
+define( 'ZYRELADDONS_MINIMUM_ELEMENTOR_VERSION', '3.7.0' );
+define( 'ZYRELADDONS_MINIMUM_PHP_VERSION', '7.4' );
 
 /**
  * The initial setups.
@@ -66,10 +66,10 @@ define( 'ZYRE_ADDONS_MINIMUM_PHP_VERSION', '7.4' );
  * @return void Not all voids are really void!
  */
 function zyreladdons_init() {
-	require ZYRE_ADDONS_DIR_PATH . 'includes/helpers.php';
+	require ZYRELADDONS_DIR_PATH . 'includes/helpers.php';
 
 	// Check for required PHP version.
-	if ( version_compare( PHP_VERSION, ZYRE_ADDONS_MINIMUM_PHP_VERSION, '<' ) ) {
+	if ( version_compare( PHP_VERSION, ZYRELADDONS_MINIMUM_PHP_VERSION, '<' ) ) {
 		add_action( 'admin_notices', 'zyreladdons_required_php_version_missing_notice' );
 		return;
 	}
@@ -81,12 +81,12 @@ function zyreladdons_init() {
 	}
 
 	// Check for required Elementor version.
-	if ( ! version_compare( ELEMENTOR_VERSION, ZYRE_ADDONS_MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
+	if ( ! version_compare( ELEMENTOR_VERSION, ZYRELADDONS_MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
 		add_action( 'admin_notices', 'zyreladdons_required_elementor_version_missing_notice' );
 		return;
 	}
 
-	require ZYRE_ADDONS_DIR_PATH . 'base/plugin-base.php';
+	require ZYRELADDONS_DIR_PATH . 'base/plugin-base.php';
 	\ZyreAddons\Elementor\Plugin::instance()->init();
 }
 
@@ -104,7 +104,7 @@ function zyreladdons_required_php_version_missing_notice() {
 		esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'zyre-elementor-addons' ),
 		'<strong>' . esc_html__( 'Zyre Elementor Addons', 'zyre-elementor-addons' ) . '</strong>',
 		'<strong>' . esc_html__( 'PHP', 'zyre-elementor-addons' ) . '</strong>',
-		ZYRE_ADDONS_MINIMUM_PHP_VERSION
+		ZYRELADDONS_MINIMUM_PHP_VERSION
 	);
 
 	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html() ) );
@@ -157,7 +157,7 @@ function zyreladdons_required_elementor_version_missing_notice() {
 		'<strong>' . esc_html__( 'Zyre Elementor Addons', 'zyre-elementor-addons' ) . '</strong>',
 		'<strong>' . esc_html__( 'Elementor', 'zyre-elementor-addons' ) . '</strong>',
 		'<a href="' . esc_url( $notice_url ) . '">' . $notice_title . '</a>',
-		ZYRE_ADDONS_MINIMUM_ELEMENTOR_VERSION
+		ZYRELADDONS_MINIMUM_ELEMENTOR_VERSION
 	);
 
 	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html( 'advanced' ) ) );

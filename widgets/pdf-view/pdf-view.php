@@ -63,7 +63,7 @@ class PDF_View extends Base {
 					'file_type' => 'url',
 				],
 				'default'       => [
-					'url' => ZYRE_ADDONS_ASSETS . 'pdf/sample.pdf',
+					'url' => ZYRELADDONS_ASSETS . 'pdf/sample.pdf',
 				],
 				'ai'            => false,
 			]
@@ -798,7 +798,7 @@ class PDF_View extends Base {
 		}
 
 		if ( empty( $pdf_url_i ) ) {
-			$pdf_url_i = ZYRE_ADDONS_ASSETS . 'pdf/sample.pdf';
+			$pdf_url_i = ZYRELADDONS_ASSETS . 'pdf/sample.pdf';
 		}
 
 		$json_settings = [

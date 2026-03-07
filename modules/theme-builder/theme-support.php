@@ -27,7 +27,7 @@ class Theme_Support {
 	}
 
 	public function get_header( $name ) {
-		require ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-header.php';
+		require ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-header.php';
 
 		$templates = [];
 		$name = (string) $name;
@@ -45,7 +45,7 @@ class Theme_Support {
 	}
 
 	public function get_footer( $name ) {
-		require ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-footer.php';
+		require ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-footer.php';
 
 		$templates = [];
 		$name = (string) $name;

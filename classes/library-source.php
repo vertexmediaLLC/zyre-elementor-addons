@@ -150,7 +150,7 @@ class Library_Source extends Source_Base {
 
 		$body = [
 			'home_url' => trailingslashit( home_url() ),
-			'version' => ZYRE_ADDONS_VERSION,
+			'version' => ZYRELADDONS_VERSION,
 			'has_pro' => 0,
 		];
 

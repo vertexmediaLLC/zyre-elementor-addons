@@ -6,7 +6,7 @@ use Elementor\Controls_Manager;
 
 defined( 'ABSPATH' ) || die();
 
-require ZYRE_ADDONS_DIR_PATH . 'classes/walker-nav-menu.php';
+require ZYRELADDONS_DIR_PATH . 'classes/walker-nav-menu.php';
 
 class Menu extends Base {
 
