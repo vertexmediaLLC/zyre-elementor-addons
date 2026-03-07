@@ -273,13 +273,17 @@ class Conditions_Manager {
 		);
 
 		$tmp_singular = $this->singular_conditions();
-		$tmp_post = $tmp_singular['post_group']['conditions'];
-        $tmp_page = $tmp_singular['page_group']['conditions'];
+		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular;
 
-		unset($tmp_singular['post_group']);
-        unset($tmp_singular['page_group']);
+		if ( isset( $tmp_singular['post_group']['conditions'] ) ) {
+			$all_cond_list += $tmp_singular['post_group']['conditions'];
+			unset($tmp_singular['post_group']);
+		}
 
-		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular + $tmp_post + $tmp_page;
+		if ( isset( $tmp_singular['page_group']['conditions'] ) ) {
+			$all_cond_list += $tmp_singular['page_group']['conditions'];
+			unset($tmp_singular['page_group']);
+		}
 
 		$this->all_conds_list = $all_cond_list;
 		$this->all_conds = $conditions;
