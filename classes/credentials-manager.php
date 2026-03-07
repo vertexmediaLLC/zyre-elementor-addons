@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || die();
  */
 class Credentials_Manager {
 
-	const CREDENTIALS_DB_KEY = 'zyreaddons_credentials';
+	const CREDENTIALS_DB_KEY = 'zyreladdons_credentials';
 
 	/**
 	 * Get credentials map
@@ -25,7 +25,7 @@ class Credentials_Manager {
 		$local_credentials_map = self::get_local_credentials_map();
 		$credentials_map = array_merge( $credentials_map, $local_credentials_map );
 
-		return apply_filters( 'zyreaddons_get_credentials_map', $credentials_map );
+		return apply_filters( 'zyreladdons_get_credentials_map', $credentials_map );
 	}
 
 	public static function get_saved_credentials() {

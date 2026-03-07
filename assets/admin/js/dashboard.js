@@ -116,7 +116,7 @@
 				url: ZyreAddonsDashboard.ajaxUrl,
 				type: 'POST',
 				data: {
-					action: 'zyreaddons_user_subscribed',
+					action: 'zyreladdons_user_subscribed',
 					nonce: ZyreAddonsDashboard.nonce
 				}
 			});

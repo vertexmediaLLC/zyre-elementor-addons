@@ -14,8 +14,8 @@ defined( 'ABSPATH' ) || die();
  */
 class Widgets_Manager {
 
-	const WIDGETS_KEY_INACTIVE = 'zyreaddons_inactive_widgets';
-	const WIDGETS_STYLES_KEY_ACTIVE = 'zyreaddons_widgets_active_styles';
+	const WIDGETS_KEY_INACTIVE = 'zyreladdons_inactive_widgets';
+	const WIDGETS_STYLES_KEY_ACTIVE = 'zyreladdons_widgets_active_styles';
 
 	/**
 	 * Initialize
@@ -74,7 +74,7 @@ class Widgets_Manager {
 	 * @return string The base widget key.
 	 */
 	public static function get_base_widget_key() {
-		return apply_filters( 'zyreaddons_get_base_widget_key', '_zyreaddons_base' );
+		return apply_filters( 'zyreladdons_get_base_widget_key', 'zyreladdons_base' );
 	}
 
 	/**
@@ -1641,7 +1641,7 @@ class Widgets_Manager {
 		$free_widgets_map = self::get_free_widgets_map();
 		$widgets_map = array_merge( $widgets_map, $free_widgets_map );
 
-		return apply_filters( 'zyreaddons_get_widgets_map', $widgets_map );
+		return apply_filters( 'zyreladdons_get_widgets_map', $widgets_map );
 	}
 
 	/**
@@ -1834,7 +1834,7 @@ class Widgets_Manager {
 		 * @since 1.0.0
 		 * @param Widgets_Manager $widgets_manager The widgets manager.
 		 */
-		do_action( 'zyreaddons/widgets/register', $widgets_manager );
+		do_action( 'zyreladdons/widgets/register', $widgets_manager );
 	}
 
 	/**

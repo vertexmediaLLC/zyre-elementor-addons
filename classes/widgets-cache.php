@@ -12,9 +12,9 @@ defined( 'ABSPATH' ) || die();
  */
 class Widgets_Cache {
 
-	const OPTION_KEY = 'zyreaddons_data_cache';
+	const OPTION_KEY = 'zyreladdons_data_cache';
 
-	const META_KEY = '_zyreaddons_data_cache';
+	const META_KEY = 'zyreladdons_data_cache';
 
 	/**
 	 * The ID of the post associated with this cache.

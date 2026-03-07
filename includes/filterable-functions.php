@@ -17,6 +17,6 @@ if ( ! function_exists( 'zyreladdons_is_on_demand_cache_enabled' ) ) {
 	 * @return bool Whether on-demand cache feature is enabled.
 	 */
 	function zyreladdons_is_on_demand_cache_enabled() {
-		return apply_filters( 'zyreaddons/features/on_demand_cache', true );
+		return apply_filters( 'zyreladdons/features/on_demand_cache', true );
 	}
 }
