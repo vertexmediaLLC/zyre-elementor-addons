@@ -143,7 +143,7 @@ class Select2_Handler {
 		}
 
 		if ( ! class_exists( 'ZyreAddons\Elementor\Widget\Mailchimp\Mailchimp_Api' ) ) {
-			include_once ZYRE_ADDONS_DIR_PATH . 'widgets/subscription-form/mailchimp-api.php';
+			include_once ZYRELADDONS_DIR_PATH . 'widgets/subscription-form/mailchimp-api.php';
 		}
 
 		$options = Widget\Mailchimp\Mailchimp_Api::get_mailchimp_lists( $global_api );

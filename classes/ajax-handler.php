@@ -27,7 +27,7 @@ class Ajax_Handler {
 		}
 
 		if ( ! class_exists( 'ZyreAddons\Elementor\Widget\Mailchimp\Mailchimp_Api' ) ) {
-			include_once ZYRE_ADDONS_DIR_PATH . 'widgets/subscription-form/mailchimp-api.php';
+			include_once ZYRELADDONS_DIR_PATH . 'widgets/subscription-form/mailchimp-api.php';
 		}
 
 		$response = Widget\Mailchimp\Mailchimp_Api::insert_subscriber_to_mailchimp( $subscriber );

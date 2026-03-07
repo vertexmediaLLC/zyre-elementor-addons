@@ -85,13 +85,13 @@ class Plugin {
 	 */
 	protected function appsero_tracking_init() {
 		if ( ! class_exists( 'Appsero\Client' ) ) {
-			include_once ZYRE_ADDONS_DIR_PATH . 'vendor/appsero/client/src/Client.php';
+			include_once ZYRELADDONS_DIR_PATH . 'vendor/appsero/client/src/Client.php';
 		}
 
 		$this->appsero = new \Appsero\Client(
 			'c621f52b-1ed2-4455-9977-7f020bff6564',
 			'Zyre Elementor Addons',
-			ZYRE_ADDONS__FILE__
+			ZYRELADDONS__FILE__
 		);
 
 		$this->appsero->set_textdomain( 'zyre-elementor-addons' );
@@ -109,23 +109,23 @@ class Plugin {
 	 * @access public
 	 */
 	public function include_files() {
-		include_once ZYRE_ADDONS_DIR_PATH . 'includes/functions.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'includes/filterable-functions.php';
+		include_once ZYRELADDONS_DIR_PATH . 'includes/functions.php';
+		include_once ZYRELADDONS_DIR_PATH . 'includes/filterable-functions.php';
 
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/icons-manager.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/widgets-manager.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/assets-manager.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/cache-manager.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/widgets-cache.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/assets-cache.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/icons-manager.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/widgets-manager.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/assets-manager.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/cache-manager.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/widgets-cache.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/assets-cache.php';
 
 		if ( is_admin() ) {
 			// select2
-			include_once ZYRE_ADDONS_DIR_PATH . 'classes/select2-handler.php';
+			include_once ZYRELADDONS_DIR_PATH . 'classes/select2-handler.php';
 			add_action( 'wp_ajax_zyreladdons_process_dynamic_select', [ Select2_Handler::class, 'process_select_request' ] );
 
 			// Dashboard
-			include_once ZYRE_ADDONS_DIR_PATH . 'classes/admin-dashboard.php';
+			include_once ZYRELADDONS_DIR_PATH . 'classes/admin-dashboard.php';
 			add_action( 'admin_menu', [ Dashboard::class, 'add_menu' ], 21 );
 			add_action( 'admin_menu', [ Dashboard::class, 'update_menu_items' ], 99 );
 			add_filter( 'submenu_file', [ Dashboard::class, 'update_submenu_file' ] );
@@ -143,30 +143,30 @@ class Plugin {
 
 			// Include the Credentials_Manager class if it doesn't exist.
 			if ( ! class_exists( 'ZyreAddons\Elementor\Credentials_Manager' ) ) {
-				include_once ZYRE_ADDONS_DIR_PATH . 'classes/credentials-manager.php';
+				include_once ZYRELADDONS_DIR_PATH . 'classes/credentials-manager.php';
 			}
 		}
 
 		if ( is_user_logged_in() ) {
-			include_once ZYRE_ADDONS_DIR_PATH . 'classes/library-manager.php';
-			include_once ZYRE_ADDONS_DIR_PATH . 'classes/library-source.php';
+			include_once ZYRELADDONS_DIR_PATH . 'classes/library-manager.php';
+			include_once ZYRELADDONS_DIR_PATH . 'classes/library-source.php';
 
-			include_once ZYRE_ADDONS_DIR_PATH . 'classes/prestyles-manager.php';
+			include_once ZYRELADDONS_DIR_PATH . 'classes/prestyles-manager.php';
 		}
 
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/ajax-handler.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/ajax-handler.php';
 
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/conditions-cache.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/module.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/conditions-manager.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/theme-support.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-cache.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/module.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-manager.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/theme-support.php';
 
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/compatibility/astra.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/compatibility/bbtheme.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/compatibility/generatepress.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/compatibility/genesis.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/compatibility/oceanwp.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/compatibility/twenty-nineteen.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/astra.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/bbtheme.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/generatepress.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/genesis.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/oceanwp.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/twenty-nineteen.php';
 	}
 
 	/**
@@ -195,9 +195,9 @@ class Plugin {
 	 * @access public
 	 */
 	public function register_controls( Controls_Manager $controls_manager ) {
-		include_once ZYRE_ADDONS_DIR_PATH . 'controls/select2.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'controls/style-select.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'controls/typography.php';
+		include_once ZYRELADDONS_DIR_PATH . 'controls/select2.php';
+		include_once ZYRELADDONS_DIR_PATH . 'controls/style-select.php';
+		include_once ZYRELADDONS_DIR_PATH . 'controls/typography.php';
 
 		$select = __NAMESPACE__ . '\Controls\Select2';
 		zyreladdons_elementor()->controls_manager->register( new $select() );

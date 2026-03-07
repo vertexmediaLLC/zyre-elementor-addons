@@ -64,7 +64,7 @@ function zyreladdons_get_el_post_widget_settings( $post_id, $widget_id ) {
  */
 function zyreladdons_get_credentials( $key = '' ) {
 	if ( ! class_exists( 'ZyreAddons\Elementor\Credentials_Manager' ) ) {
-		include_once ZYRE_ADDONS_DIR_PATH . 'classes/credentials-manager.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/credentials-manager.php';
 	}
 
 	$credentials = \ZyreAddons\Elementor\Credentials_Manager::get_saved_credentials();

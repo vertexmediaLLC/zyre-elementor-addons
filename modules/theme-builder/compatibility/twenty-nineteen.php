@@ -28,7 +28,7 @@ class TwentyNineteen {
 			echo '<div id="content" class="site-content">';
 		} );
 
-		require ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-header.php';
+		require ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-header.php';
 
 		$templates = [];
 		$name = (string) $name;
@@ -51,7 +51,7 @@ class TwentyNineteen {
 			echo '</div></div>';
 		} );
 
-		require ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-footer.php';
+		require ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/theme-support-footer.php';
 
 		$templates = [];
 		$name = (string) $name;

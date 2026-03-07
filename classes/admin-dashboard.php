@@ -97,16 +97,16 @@ class Dashboard {
 
 		wp_enqueue_style(
 			'zyre-icons',
-			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . $suffix . 'css',
+			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . $suffix . 'css',
 			[],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_enqueue_style(
 			'zyre-elementor-addons-global-vars',
-			ZYRE_ADDONS_ASSETS . 'css/global-vars' . $suffix . 'css',
+			ZYRELADDONS_ASSETS . 'css/global-vars' . $suffix . 'css',
 			[],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		// Google fonts for dashboard only
@@ -119,16 +119,16 @@ class Dashboard {
 
 		wp_enqueue_style(
 			'zyre-elementor-addons-dashboard',
-			ZYRE_ADDONS_ASSETS . 'admin/css/dashboard' . $suffix . 'css',
+			ZYRELADDONS_ASSETS . 'admin/css/dashboard' . $suffix . 'css',
 			[],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_enqueue_script(
 			'zyre-elementor-addons-dashboard',
-			ZYRE_ADDONS_ASSETS . 'admin/js/dashboard' . $suffix . 'js',
+			ZYRELADDONS_ASSETS . 'admin/js/dashboard' . $suffix . 'js',
 			[ 'jquery' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
@@ -310,7 +310,7 @@ class Dashboard {
 	}
 
 	private static function load_template( $template ) {
-		$file = ZYRE_ADDONS_DIR_PATH . 'templates/admin/dashboard-' . $template . '.php';
+		$file = ZYRELADDONS_DIR_PATH . 'templates/admin/dashboard-' . $template . '.php';
 		if ( is_readable( $file ) ) {
 			include $file;
 		}

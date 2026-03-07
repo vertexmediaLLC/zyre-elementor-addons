@@ -126,8 +126,8 @@ class Widgets_Manager {
 		$file_name = basename( $file_name );
 		$relative_path = 'img/widgets-thumbs/' . $widget_id . '/' . $file_name;
 
-		$file_path = trailingslashit( ZYRE_ADDONS_DIR_PATH . 'assets' ) . $relative_path;
-		$file_url = ZYRE_ADDONS_ASSETS . $relative_path;
+		$file_path = trailingslashit( ZYRELADDONS_DIR_PATH . 'assets' ) . $relative_path;
+		$file_url = ZYRELADDONS_ASSETS . $relative_path;
 
 		return file_exists( $file_path ) ? $file_url : '';
 	}
@@ -1813,12 +1813,12 @@ class Widgets_Manager {
 	 * @access public
 	 */
 	public static function register( $widgets_manager = null ) {
-		include_once ZYRE_ADDONS_DIR_PATH . 'base/widget-base.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'traits/button-trait.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'traits/list-item-trait.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'traits/list-item-advanced-trait.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'traits/social-trait.php';
-		include_once ZYRE_ADDONS_DIR_PATH . 'traits/swiper-trait.php';
+		include_once ZYRELADDONS_DIR_PATH . 'base/widget-base.php';
+		include_once ZYRELADDONS_DIR_PATH . 'traits/button-trait.php';
+		include_once ZYRELADDONS_DIR_PATH . 'traits/list-item-trait.php';
+		include_once ZYRELADDONS_DIR_PATH . 'traits/list-item-advanced-trait.php';
+		include_once ZYRELADDONS_DIR_PATH . 'traits/social-trait.php';
+		include_once ZYRELADDONS_DIR_PATH . 'traits/swiper-trait.php';
 
 		$inactive_widgets = self::get_inactive_widgets();
 
@@ -1846,7 +1846,7 @@ class Widgets_Manager {
 	 * @return void
 	 */
 	protected static function register_widget( $widget_key, $widgets_manager = null ) {
-		$widget_file = ZYRE_ADDONS_DIR_PATH . 'widgets/' . $widget_key . '/' . $widget_key . '.php';
+		$widget_file = ZYRELADDONS_DIR_PATH . 'widgets/' . $widget_key . '/' . $widget_key . '.php';
 
 		if ( is_readable( $widget_file ) ) {
 

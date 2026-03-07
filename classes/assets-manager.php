@@ -81,135 +81,135 @@ class Assets_Manager {
 
 		wp_register_style(
 			'zyre-icons',
-			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
+			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
 			[],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_register_style(
 			'zyre-icons-bold',
-			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
+			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
 			[],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_register_style(
 			'zyre-elementor-addons-global-vars',
-			ZYRE_ADDONS_ASSETS . 'css/global-vars' . self::$suffix . 'css',
+			ZYRELADDONS_ASSETS . 'css/global-vars' . self::$suffix . 'css',
 			[],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_register_style(
 			'zyre-elementor-addons-global',
-			ZYRE_ADDONS_ASSETS . 'css/global' . self::$suffix . 'css',
+			ZYRELADDONS_ASSETS . 'css/global' . self::$suffix . 'css',
 			[ 'zyre-elementor-addons-global-vars' ],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_register_style(
 			'zyre-elementor-addons-nav-menu',
-			ZYRE_ADDONS_ASSETS . 'css/menu' . self::$suffix . 'css',
+			ZYRELADDONS_ASSETS . 'css/menu' . self::$suffix . 'css',
 			[ 'zyre-elementor-addons-global' ],
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		// Sharer JS
 		wp_register_script(
 			'zyre-sharer',
-			ZYRE_ADDONS_ASSETS . 'js/sharer' . self::$suffix . 'js',
+			ZYRELADDONS_ASSETS . 'js/sharer' . self::$suffix . 'js',
 			[ 'jquery' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// Alert Handler
 		wp_register_script(
 			'zyre-alert-handler',
-			ZYRE_ADDONS_ASSETS . 'js/alert' . self::$suffix . 'js',
+			ZYRELADDONS_ASSETS . 'js/alert' . self::$suffix . 'js',
 			[ 'jquery' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// Number animation
 		wp_register_script(
 			'zyre-jquery-numerator',
-			ZYRE_ADDONS_ASSETS . 'libs/jquery-numerator/jquery-numerator.min.js',
+			ZYRELADDONS_ASSETS . 'libs/jquery-numerator/jquery-numerator.min.js',
 			[ 'jquery' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// Typed JS
 		wp_register_script(
 			'zyre-typed',
-			ZYRE_ADDONS_ASSETS . 'js/typed.min.js',
+			ZYRELADDONS_ASSETS . 'js/typed.min.js',
 			[],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// vTicker JS
 		wp_register_script(
 			'zyre-jquery-vticker',
-			ZYRE_ADDONS_ASSETS . 'js/jquery.vticker.min.js',
+			ZYRELADDONS_ASSETS . 'js/jquery.vticker.min.js',
 			[],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// Animated Text JS
 		wp_register_script(
 			'zyre-animated-text',
-			ZYRE_ADDONS_ASSETS . 'js/animated-text' . self::$suffix . 'js',
+			ZYRELADDONS_ASSETS . 'js/animated-text' . self::$suffix . 'js',
 			[ 'jquery', 'zyre-typed', 'zyre-jquery-vticker' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// View PDF JS
 		wp_register_script(
 			'zyre-pdfobject',
-			ZYRE_ADDONS_ASSETS . 'js/pdfobject.min.js',
+			ZYRELADDONS_ASSETS . 'js/pdfobject.min.js',
 			[],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			false
 		);
 
 		// Lottie
 		wp_register_script(
 			'zyre-lottie',
-			ZYRE_ADDONS_ASSETS . 'js/lottie.min.js',
+			ZYRELADDONS_ASSETS . 'js/lottie.min.js',
 			[],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			false
 		);
 
 		// jQuery DownCount.
 		wp_register_script(
 			'zyre-jquery-downcount',
-			ZYRE_ADDONS_ASSETS . 'js/jquery-downcount' . self::$suffix . 'js',
+			ZYRELADDONS_ASSETS . 'js/jquery-downcount' . self::$suffix . 'js',
 			[ 'jquery' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// Isotope
 		wp_register_script(
 			'zyre-isotope',
-			ZYRE_ADDONS_ASSETS . 'js/isotope.pkgd.min.js',
+			ZYRELADDONS_ASSETS . 'js/isotope.pkgd.min.js',
 			[ 'jquery' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// Zyre addons script.
 		wp_register_script(
 			'zyre-elementor-addons',
-			ZYRE_ADDONS_ASSETS . 'js/zyre-addons' . self::$suffix . 'js',
+			ZYRELADDONS_ASSETS . 'js/zyre-addons' . self::$suffix . 'js',
 			[ 'jquery' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
@@ -289,7 +289,7 @@ class Assets_Manager {
 	 * @return string The URL of the dark stylesheet.
 	 */
 	public static function get_dark_stylesheet_url() {
-		return ZYRE_ADDONS_ASSETS . 'admin/css/editor-dark' . self::$suffix . 'css';
+		return ZYRELADDONS_ASSETS . 'admin/css/editor-dark' . self::$suffix . 'css';
 	}
 
 	/**
@@ -313,7 +313,7 @@ class Assets_Manager {
 				array(
 					'elementor-editor',
 				),
-				ZYRE_ADDONS_VERSION,
+				ZYRELADDONS_VERSION,
 				$media_queries
 			);
 		}
@@ -329,23 +329,23 @@ class Assets_Manager {
 
 		wp_enqueue_style(
 			'zyre-font-icons',
-			ZYRE_ADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
+			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
 			null,
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 		
 		wp_enqueue_style(
 			'zyre-elementor-addons-editor',
-			ZYRE_ADDONS_ASSETS . 'admin/css/editor' . self::$suffix . 'css',
+			ZYRELADDONS_ASSETS . 'admin/css/editor' . self::$suffix . 'css',
 			null,
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_enqueue_script(
 			'zyre-elementor-addons-editor',
-			ZYRE_ADDONS_ASSETS . 'admin/js/editor' . self::$suffix . 'js',
+			ZYRELADDONS_ASSETS . 'admin/js/editor' . self::$suffix . 'js',
 			array( 'elementor-editor', 'jquery' ),
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 

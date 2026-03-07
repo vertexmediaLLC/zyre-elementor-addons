@@ -1652,7 +1652,7 @@ class Animated_Text extends Base {
 		);
 
 		if ( 'reveal' === $settings['single_eff_type'] ) {
-			$image_url = ZYRE_ADDONS_ASSETS . 'css/widgets/animated-text/reveal_background.jpg';
+			$image_url = ZYRELADDONS_ASSETS . 'css/widgets/animated-text/reveal_background.jpg';
 			$this->add_render_attribute( 'anim_text', 'style', "background-image: url('$image_url')" );
 		}
 

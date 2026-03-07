@@ -39,7 +39,7 @@ class Module {
 		add_action( 'admin_menu', [ $this, 'modify_menu' ], 90 );
 		add_filter( 'query_vars', [ $this, 'add_query_vars' ] );
 		add_action( 'init', [ $this, 'create_post_type' ], 99 );
-		register_activation_hook( ZYRE_ADDONS__FILE__, [ $this, 'on_plugin_activation' ] );
+		register_activation_hook( ZYRELADDONS__FILE__, [ $this, 'on_plugin_activation' ] );
 		add_action( 'pre_get_posts', [ $this, 'set_meta_query_to_posts_query' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 
@@ -313,24 +313,24 @@ class Module {
 
 		wp_enqueue_style(
 			'zyre-elementor-addons-admin',
-			ZYRE_ADDONS_ASSETS . 'admin/css/admin.css',
+			ZYRELADDONS_ASSETS . 'admin/css/admin.css',
 			null,
-			ZYRE_ADDONS_VERSION
+			ZYRELADDONS_VERSION
 		);
 
 		wp_enqueue_script(
 			'micromodal',
-			ZYRE_ADDONS_ASSETS . 'libs/micromodal/micromodal.min.js',
+			ZYRELADDONS_ASSETS . 'libs/micromodal/micromodal.min.js',
 			[],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 
 		wp_enqueue_script(
 			'zyre-elementor-addons-admin',
-			ZYRE_ADDONS_ASSETS . 'admin/js/admin.js',
+			ZYRELADDONS_ASSETS . 'admin/js/admin.js',
 			[ 'jquery', 'micromodal' ],
-			ZYRE_ADDONS_VERSION,
+			ZYRELADDONS_VERSION,
 			true
 		);
 	}
@@ -338,7 +338,7 @@ class Module {
 	public function edit_template_condition_modal() {
 		if ( self::POST_TYPE === get_post_type() ) {
 			ob_start();
-			include ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/template-conditions.php';
+			include ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/template-conditions.php';
 			echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
@@ -347,9 +347,9 @@ class Module {
 		if ( self::POST_TYPE === get_post_type() ) {
 			wp_enqueue_style(
 				'zyre-addons-template-modal',
-				ZYRE_ADDONS_DIR_URL . 'modules/theme-builder/assets/css/template-modal.css',
+				ZYRELADDONS_DIR_URL . 'modules/theme-builder/assets/css/template-modal.css',
 				[ 'elementor-editor' ],
-				ZYRE_ADDONS_VERSION
+				ZYRELADDONS_VERSION
 			);
 
 			$theme = Manager::get_settings_managers( 'editorPreferences' )->get_model()->get_settings( 'ui_theme' );
@@ -363,18 +363,18 @@ class Module {
 
 				wp_enqueue_style(
 					'zyre-addons-template-modal-dark',
-					ZYRE_ADDONS_DIR_URL . 'modules/theme-builder/assets/css/template-modal-dark.css',
+					ZYRELADDONS_DIR_URL . 'modules/theme-builder/assets/css/template-modal-dark.css',
 					[ 'zyre-addons-template-modal' ],
-					ZYRE_ADDONS_VERSION,
+					ZYRELADDONS_VERSION,
 					$media_queries
 				);
 			}
 
 			wp_enqueue_script(
 				'zyre-addons-template-modal',
-				ZYRE_ADDONS_DIR_URL . 'modules/theme-builder/assets/js/template-modal.js',
+				ZYRELADDONS_DIR_URL . 'modules/theme-builder/assets/js/template-modal.js',
 				[ 'jquery', 'zyre-elementor-addons-editor' ],
-				ZYRE_ADDONS_VERSION,
+				ZYRELADDONS_VERSION,
 				true
 			);
 
@@ -386,9 +386,9 @@ class Module {
 
 			wp_enqueue_script(
 				'micromodal',
-				ZYRE_ADDONS_ASSETS . 'libs/micromodal/micromodal.min.js',
+				ZYRELADDONS_ASSETS . 'libs/micromodal/micromodal.min.js',
 				[],
-				ZYRE_ADDONS_VERSION,
+				ZYRELADDONS_VERSION,
 				true
 			);
 		}
@@ -520,7 +520,7 @@ class Module {
 
 	public function add_new_template() {
 		ob_start();
-		include ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/new-template.php';
+		include ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/new-template.php';
 		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
@@ -890,13 +890,13 @@ class Module {
 				if ( $theme_document ) {
 					switch ( $template_type ) {
 						case 'elementor_canvas':
-							$template = ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/singular/canvas.php';
+							$template = ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/singular/canvas.php';
 							break;
 						case 'elementor_header_footer':
-							$template = ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/singular/fullwidth.php';
+							$template = ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/singular/fullwidth.php';
 							break;
 						default:
-							$template = ZYRE_ADDONS_DIR_PATH . 'modules/theme-builder/templates/singular/fullwidth.php';
+							$template = ZYRELADDONS_DIR_PATH . 'modules/theme-builder/templates/singular/fullwidth.php';
 							break;
 					}
 				}

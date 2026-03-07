@@ -208,7 +208,7 @@ class Image_Heading extends Base {
 				'label'     => esc_html__( 'Overlay Image', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => [
-					'url' => ZYRE_ADDONS_ASSETS . 'css/widgets/image-heading/overlay.png',
+					'url' => ZYRELADDONS_ASSETS . 'css/widgets/image-heading/overlay.png',
 				],
 				'condition' => [
 					'enable_overlay' => 'yes',
