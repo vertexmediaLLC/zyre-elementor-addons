@@ -312,7 +312,7 @@ class Module {
 		}
 
 		wp_enqueue_style(
-			'zyre-elementor-addons-admin',
+			'zyreladdons-admin',
 			ZYRELADDONS_ASSETS . 'admin/css/admin.css',
 			null,
 			ZYRELADDONS_VERSION
@@ -327,7 +327,7 @@ class Module {
 		);
 
 		wp_enqueue_script(
-			'zyre-elementor-addons-admin',
+			'zyreladdons-admin',
 			ZYRELADDONS_ASSETS . 'admin/js/admin.js',
 			[ 'jquery', 'micromodal' ],
 			ZYRELADDONS_VERSION,
@@ -373,7 +373,7 @@ class Module {
 			wp_enqueue_script(
 				'zyre-addons-template-modal',
 				ZYRELADDONS_DIR_URL . 'modules/theme-builder/assets/js/template-modal.js',
-				[ 'jquery', 'zyre-elementor-addons-editor' ],
+				[ 'jquery', 'zyreladdons-editor' ],
 				ZYRELADDONS_VERSION,
 				true
 			);

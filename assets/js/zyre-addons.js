@@ -354,7 +354,7 @@ function haObserveTarget(target, callback) {
 				cssResponsive += `${widgetClass}.zyre-menu__mobile ul.menu li:${settings.mobile_menu_item_rm_border} {border: none !important;}`;
 			}
 
-			var cssOutput = `<style id="zyre-elementor-addons-nav-menu-${widgetId}-inline">`;
+			var cssOutput = `<style id="zyreladdons-nav-menu-${widgetId}-inline">`;
 				if ( breakpoint && '-1' == breakpoint ) {
 					cssOutput += cssResponsive;
 				} else if ( breakpoint && breakpoint > 0 ) {

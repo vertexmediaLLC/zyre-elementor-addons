@@ -94,23 +94,23 @@ class Assets_Manager {
 		);
 
 		wp_register_style(
-			'zyre-elementor-addons-global-vars',
+			'zyreladdons-global-vars',
 			ZYRELADDONS_ASSETS . 'css/global-vars' . self::$suffix . 'css',
 			[],
 			ZYRELADDONS_VERSION
 		);
 
 		wp_register_style(
-			'zyre-elementor-addons-global',
+			'zyreladdons-global',
 			ZYRELADDONS_ASSETS . 'css/global' . self::$suffix . 'css',
-			[ 'zyre-elementor-addons-global-vars' ],
+			[ 'zyreladdons-global-vars' ],
 			ZYRELADDONS_VERSION
 		);
 
 		wp_register_style(
-			'zyre-elementor-addons-nav-menu',
+			'zyreladdons-nav-menu',
 			ZYRELADDONS_ASSETS . 'css/menu' . self::$suffix . 'css',
-			[ 'zyre-elementor-addons-global' ],
+			[ 'zyreladdons-global' ],
 			ZYRELADDONS_VERSION
 		);
 
@@ -335,14 +335,14 @@ class Assets_Manager {
 		);
 		
 		wp_enqueue_style(
-			'zyre-elementor-addons-editor',
+			'zyreladdons-editor',
 			ZYRELADDONS_ASSETS . 'admin/css/editor' . self::$suffix . 'css',
 			null,
 			ZYRELADDONS_VERSION
 		);
 
 		wp_enqueue_script(
-			'zyre-elementor-addons-editor',
+			'zyreladdons-editor',
 			ZYRELADDONS_ASSETS . 'admin/js/editor' . self::$suffix . 'js',
 			array( 'elementor-editor', 'jquery' ),
 			ZYRELADDONS_VERSION,
@@ -373,7 +373,7 @@ class Assets_Manager {
 		];
 
 		wp_localize_script(
-			'zyre-elementor-addons-editor',
+			'zyreladdons-editor',
 			'ZyreAddonsEditor',
 			$localize_data
 		);
@@ -413,7 +413,7 @@ class Assets_Manager {
 		.elementor-add-new-section .elementor-add-zyre-button:hover img {
 			filter: grayscale(0.7);
 		';
-		wp_add_inline_style( 'zyre-elementor-addons-global', $data );
+		wp_add_inline_style( 'zyreladdons-global', $data );
 	}
 }
 
