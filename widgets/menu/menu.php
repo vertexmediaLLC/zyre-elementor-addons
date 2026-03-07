@@ -1,6 +1,6 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
 
@@ -1354,7 +1354,7 @@ class Menu extends Base {
 		$humberger_html = ob_get_clean();
 
 		// Generate Menu
-		$walker = ( class_exists( '\ZyreAddons\Elementor\Zyre_Walker_Nav_Menu' ) ? new \ZyreAddons\Elementor\Zyre_Walker_Nav_Menu() : '' );
+		$walker = ( class_exists( '\VertexMediaLLC\ZyreElementorAddons\Zyre_Walker_Nav_Menu' ) ? new \VertexMediaLLC\ZyreElementorAddons\Zyre_Walker_Nav_Menu() : '' );
 		$args = [
 			'items_wrap'      => $humberger_html . '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			'menu'            => $settings['menu_list'],

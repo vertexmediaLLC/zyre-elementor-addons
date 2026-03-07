@@ -1,8 +1,8 @@
 <?php
 
-namespace ZyreAddons\Elementor\ThemeBuilder\Compatibility;
+namespace VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Compatibility;
 
-use ZyreAddons\Elementor\ThemeBuilder\Module;
+use VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Module;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Icons_Manager;
 use Elementor\Utils;
-use ZyreAddons\Elementor\Traits\Button_Trait;
+use VertexMediaLLC\ZyreElementorAddons\Traits\Button_Trait;
 
 defined( 'ABSPATH' ) || die();
 

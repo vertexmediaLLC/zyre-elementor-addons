@@ -63,11 +63,11 @@ function zyreladdons_get_el_post_widget_settings( $post_id, $widget_id ) {
  * @since 1.0.0
  */
 function zyreladdons_get_credentials( $key = '' ) {
-	if ( ! class_exists( 'ZyreAddons\Elementor\Credentials_Manager' ) ) {
+	if ( ! class_exists( 'VertexMediaLLC\ZyreElementorAddons\Credentials_Manager' ) ) {
 		include_once ZYRELADDONS_DIR_PATH . 'classes/credentials-manager.php';
 	}
 
-	$credentials = \ZyreAddons\Elementor\Credentials_Manager::get_saved_credentials();
+	$credentials = \VertexMediaLLC\ZyreElementorAddons\Credentials_Manager::get_saved_credentials();
 	if ( ! empty( $key ) ) {
 		return isset( $credentials[ $key ] ) ? $credentials[ $key ] : esc_html__( 'invalid key', 'zyre-elementor-addons' );
 	}

@@ -1,5 +1,5 @@
 <?php
-namespace ZyreAddons\Elementor;
+namespace VertexMediaLLC\ZyreElementorAddons;
 
 defined( 'ABSPATH' ) || die();
 

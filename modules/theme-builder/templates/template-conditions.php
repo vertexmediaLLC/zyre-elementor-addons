@@ -1,6 +1,6 @@
 <?php
 
-use ZyreAddons\Elementor\ThemeBuilder\Module;
+use VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

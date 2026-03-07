@@ -87,7 +87,7 @@ function zyreladdons_init() {
 	}
 
 	require ZYRELADDONS_DIR_PATH . 'base/plugin-base.php';
-	\ZyreAddons\Elementor\Plugin::instance()->init();
+	\VertexMediaLLC\ZyreElementorAddons\Plugin::instance()->init();
 }
 
 add_action( 'plugins_loaded', 'zyreladdons_init' );

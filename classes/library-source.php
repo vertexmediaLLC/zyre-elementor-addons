@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-namespace ZyreAddons\Elementor;
+namespace VertexMediaLLC\ZyreElementorAddons;
 
 use Elementor\TemplateLibrary\Source_Base;
 

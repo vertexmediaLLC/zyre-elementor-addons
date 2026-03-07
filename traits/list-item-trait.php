@@ -1,5 +1,5 @@
 <?php
-namespace ZyreAddons\Elementor\Traits;
+namespace VertexMediaLLC\ZyreElementorAddons\Traits;
 
 use Elementor\Controls_Manager;
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;

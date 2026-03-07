@@ -1,6 +1,6 @@
 <?php
 
-namespace ZyreAddons\Elementor;
+namespace VertexMediaLLC\ZyreElementorAddons;
 
 use Elementor\Core\Files\CSS\Post as Post_CSS;
 use Elementor\Core\Settings\Manager as SettingsManager;

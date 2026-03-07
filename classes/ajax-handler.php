@@ -1,6 +1,6 @@
 <?php
 
-namespace ZyreAddons\Elementor;
+namespace VertexMediaLLC\ZyreElementorAddons;
 
 defined( 'ABSPATH' ) || die();
 
@@ -26,7 +26,7 @@ class Ajax_Handler {
 			wp_send_json_error( 'Invalid email', 400 );
 		}
 
-		if ( ! class_exists( 'ZyreAddons\Elementor\Widget\Mailchimp\Mailchimp_Api' ) ) {
+		if ( ! class_exists( 'VertexMediaLLC\ZyreElementorAddons\Widget\Mailchimp\Mailchimp_Api' ) ) {
 			include_once ZYRELADDONS_DIR_PATH . 'widgets/subscription-form/mailchimp-api.php';
 		}
 

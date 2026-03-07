@@ -1,6 +1,6 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
@@ -11,8 +11,8 @@ use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Text_Stroke;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
-use ZyreAddons\Elementor\Controls\Style_Control;
-use ZyreAddons\Elementor\Widgets_Manager;
+use VertexMediaLLC\ZyreElementorAddons\Controls\Style_Control;
+use VertexMediaLLC\ZyreElementorAddons\Widgets_Manager;
 
 defined( 'ABSPATH' ) || die();
 

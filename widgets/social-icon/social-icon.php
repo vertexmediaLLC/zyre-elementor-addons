@@ -1,9 +1,9 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
-use ZyreAddons\Elementor\Traits\Social_Trait;
+use VertexMediaLLC\ZyreElementorAddons\Traits\Social_Trait;
 
 defined( 'ABSPATH' ) || die();
 

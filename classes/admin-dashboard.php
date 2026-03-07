@@ -6,7 +6,7 @@
  * Package: ZyreAddons
  * @since 1.0.0
  */
-namespace ZyreAddons\Elementor;
+namespace VertexMediaLLC\ZyreElementorAddons;
 
 defined( 'ABSPATH' ) || die();
 

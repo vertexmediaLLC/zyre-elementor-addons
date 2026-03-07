@@ -1,5 +1,5 @@
 <?php
-namespace ZyreAddons\Elementor\Traits;
+namespace VertexMediaLLC\ZyreElementorAddons\Traits;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
