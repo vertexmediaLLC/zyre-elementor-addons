@@ -651,13 +651,13 @@ class Advance_Accordion extends Base {
 					<h4 class="zyre-accordion-toggle zy-flex zy-align-center zy-m-0 zy-transition zy-c-pointer">
 						<?php if ( isset( $settings['open_icon']['value'] ) && '' !== $settings['open_icon']['value'] ) : ?>
 							<span class="toggle-icon toggle-icon-closed zy-self-center">
-								<?php zyre_render_icon( $settings, 'icon', 'open_icon' ); ?>
+								<?php zyreladdons_render_icon( $settings, 'icon', 'open_icon' ); ?>
 							</span>
 						<?php endif; ?>
 
 						<?php if ( isset( $settings['collapse_icon']['value'] ) && '' !== $settings['collapse_icon']['value'] ) : ?>
 							<span class="toggle-icon toggle-icon-opened zy-self-center">
-								<?php zyre_render_icon( $settings, 'icon', 'collapse_icon' ); ?>
+								<?php zyreladdons_render_icon( $settings, 'icon', 'collapse_icon' ); ?>
 							</span>
 						<?php endif; ?>
 						<?php echo esc_html( $accordion['accordion_title'] ); ?>
@@ -674,8 +674,8 @@ class Advance_Accordion extends Base {
 						<?php
 						$accordion[ $saved_section ] = apply_filters( 'wpml_object_id', $accordion[ $saved_section ], 'elementor_library' );
 						echo wp_kses(
-							zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_section ] ),
-							zyre_kses_allowed_html()
+							zyreladdons_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_section ] ),
+							zyreladdons_kses_allowed_html()
 						);
 						?>
 					</div>
@@ -684,8 +684,8 @@ class Advance_Accordion extends Base {
 						<?php
 						$accordion[ $saved_container ] = apply_filters( 'wpml_object_id', $accordion[ $saved_container ], 'elementor_library' );
 						echo wp_kses(
-							zyre_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_container ] ),
-							zyre_kses_allowed_html()
+							zyreladdons_elementor()->frontend->get_builder_content_for_display( $accordion[ $saved_container ] ),
+							zyreladdons_kses_allowed_html()
 						);
 						?>
 					</div>

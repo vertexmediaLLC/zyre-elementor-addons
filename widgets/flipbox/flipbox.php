@@ -512,7 +512,7 @@ class FlipBox extends Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'zyre-elementor-addons' ),
 				'placeholder' => esc_html__( 'Enter your description', 'zyre-elementor-addons' ),
-				'description' => zyre_get_allowed_html_desc( 'basic' ),
+				'description' => zyreladdons_get_allowed_html_desc( 'basic' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -979,7 +979,7 @@ class FlipBox extends Base {
 				</div>
 			<?php elseif ( 'icon' === $settings[ $media_type ] && ! empty( $settings[ $icon ]['value'] ) ) : ?>
 				<div class="zyre-flipbox-icon-wrapper">
-					<span class="zyre-flipbox-icon zy-inline-flex zy-align-center zy-justify-center"><?php zyre_render_icon( $settings, null, $icon ); ?></span>
+					<span class="zyre-flipbox-icon zy-inline-flex zy-align-center zy-justify-center"><?php zyreladdons_render_icon( $settings, null, $icon ); ?></span>
 				</div>
 			<?php endif; ?>
 
@@ -999,14 +999,14 @@ class FlipBox extends Base {
 		} elseif ( 'saved_section' === $settings[ $content_type ] && 'publish' === get_post_status( $settings[ $saved_section ] ) ) {
 			$settings[ $saved_section ] = apply_filters( 'wpml_object_id', $settings[ $saved_section ], 'elementor_library' );
 			echo wp_kses(
-				zyre_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_section ] ),
-				zyre_kses_allowed_html()
+				zyreladdons_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_section ] ),
+				zyreladdons_kses_allowed_html()
 			);
 		} elseif ( 'saved_container' === $settings[ $content_type ] && 'publish' === get_post_status( $settings[ $saved_container ] ) ) {
 			$settings[ $saved_container ] = apply_filters( 'wpml_object_id', $settings[ $saved_container ], 'elementor_library' );
 			echo wp_kses(
-				zyre_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_container ] ),
-				zyre_kses_allowed_html()
+				zyreladdons_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_container ] ),
+				zyreladdons_kses_allowed_html()
 			);
 		}
 	}

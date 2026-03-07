@@ -14,7 +14,7 @@ class Subscription_Form extends Base {
 	public function __construct( $data = [], $args = null ) {
 		parent::__construct( $data, $args );
 
-		$this->settings = zyre_get_credentials( 'mailchimp' );
+		$this->settings = zyreladdons_get_credentials( 'mailchimp' );
 	}
 
 	public function get_title() {

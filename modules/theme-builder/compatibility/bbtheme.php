@@ -58,7 +58,7 @@ class Bbtheme {
 
 		<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
 			<div class="ekit-template-content-markup ekit-template-content-header">
-				<?php echo wp_kses( Module::render_builder_data( $this->header ), zyre_kses_allowed_html() ); ?>
+				<?php echo wp_kses( Module::render_builder_data( $this->header ), zyreladdons_kses_allowed_html() ); ?>
 			</div>
 		</header>
 
@@ -74,7 +74,7 @@ class Bbtheme {
 		do_action( 'zyreaddons/template/before_footer' ); ?>
 
 		<footer itemscope="itemscope" itemtype="https://schema.org/WPFooter">
-		<?php echo wp_kses( Module::render_builder_data( $this->footer ), zyre_kses_allowed_html() ); ?>
+		<?php echo wp_kses( Module::render_builder_data( $this->footer ), zyreladdons_kses_allowed_html() ); ?>
 		</footer>
 
 		<?php do_action( 'zyreaddons/template/after_footer' );

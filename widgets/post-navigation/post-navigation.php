@@ -739,10 +739,10 @@ class Post_Navigation extends Base {
 		$next_arrow = '';
 		if ( 'yes' === $settings['show_arrow'] ) {
 			if ( '' !== $settings['prev_arrow_icon']['value'] ) {
-				$prev_arrow = '<span class="zyre-post-navigation__prev--arrow">' . zyre_get_icon_html( $settings, 'icon', 'prev_arrow_icon' ) . '</span>';
+				$prev_arrow = '<span class="zyre-post-navigation__prev--arrow">' . zyreladdons_get_icon_html( $settings, 'icon', 'prev_arrow_icon' ) . '</span>';
 			}
 			if ( '' !== $settings['next_arrow_icon']['value'] ) {
-				$next_arrow = '<span class="zyre-post-navigation__next--arrow">' . zyre_get_icon_html( $settings, 'icon', 'next_arrow_icon' ) . '</span>';
+				$next_arrow = '<span class="zyre-post-navigation__next--arrow">' . zyreladdons_get_icon_html( $settings, 'icon', 'next_arrow_icon' ) . '</span>';
 			}
 		}
 

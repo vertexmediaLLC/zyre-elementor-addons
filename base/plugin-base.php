@@ -70,8 +70,8 @@ class Plugin {
 		// Register custom controls.
 		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
 
-		add_action( 'wp_ajax_zyre_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
-		add_action( 'wp_ajax_nopriv_zyre_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
+		add_action( 'wp_ajax_zyreladdons_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
+		add_action( 'wp_ajax_nopriv_zyreladdons_mailchimp_ajax', [ Ajax_Handler::class, 'mailchimp_prepare_ajax' ] );
 
 		$this->appsero_tracking_init();
 
@@ -122,7 +122,7 @@ class Plugin {
 		if ( is_admin() ) {
 			// select2
 			include_once ZYRE_ADDONS_DIR_PATH . 'classes/select2-handler.php';
-			add_action( 'wp_ajax_zyre_process_dynamic_select', [ Select2_Handler::class, 'process_select_request' ] );
+			add_action( 'wp_ajax_zyreladdons_process_dynamic_select', [ Select2_Handler::class, 'process_select_request' ] );
 
 			// Dashboard
 			include_once ZYRE_ADDONS_DIR_PATH . 'classes/admin-dashboard.php';
@@ -179,7 +179,7 @@ class Plugin {
 	 */
 	public function add_category( Elements_Manager $elements_manager ) {
 		$elements_manager->add_category(
-			'zyre_addons_category',
+			'zyreladdons_category',
 			array(
 				'title' => __( 'Zyre Addons', 'zyre-elementor-addons' ),
 				'icon'  => 'fa fa-plug',
@@ -200,13 +200,13 @@ class Plugin {
 		include_once ZYRE_ADDONS_DIR_PATH . 'controls/typography.php';
 
 		$select = __NAMESPACE__ . '\Controls\Select2';
-		zyre_elementor()->controls_manager->register( new $select() );
+		zyreladdons_elementor()->controls_manager->register( new $select() );
 
 		$select = __NAMESPACE__ . '\Controls\Style_Control';
-		zyre_elementor()->controls_manager->register( new $select() );
+		zyreladdons_elementor()->controls_manager->register( new $select() );
 
 		$typography = __NAMESPACE__ . '\Controls\Group_Control_Typography_Extended';
-		zyre_elementor()->controls_manager->add_group_control(
+		zyreladdons_elementor()->controls_manager->add_group_control(
 			$typography::get_type(),
 			new $typography()
 		);

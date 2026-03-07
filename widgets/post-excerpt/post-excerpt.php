@@ -368,7 +368,7 @@ class Post_Excerpt extends Base {
 
 		if ( 'custom' === $settings['source_type'] ) {
 			$post_id = is_array( $settings['source_custom'] ) ? (int) $settings['source_custom'][0] : (int) $settings['source_custom'];
-			zyre_elementor()->db->switch_to_post( $post_id );
+			zyreladdons_elementor()->db->switch_to_post( $post_id );
 		}
 
 		$post = get_post();
@@ -384,7 +384,7 @@ class Post_Excerpt extends Base {
 
 		$settings = $this->get_settings_for_display();
 		$length = ! empty( $settings['excerpt_length'] ) ? (int) $settings['excerpt_length'] : 55;
-		$wp_excerpt = apply_filters( 'get_the_excerpt', zyre_trim_words( get_the_excerpt(), $length ) );
+		$wp_excerpt = apply_filters( 'get_the_excerpt', zyreladdons_trim_words( get_the_excerpt(), $length ) );
 
 		$this->add_render_attribute( 'read_more', 'class', 'zyre-post-read-more-link zy-inline-flex zy-align-center zy-justify-center' );
 		if ( 'custom' === $settings['link'] && ! empty( $settings['custom_link']['url'] ) ) {
@@ -404,7 +404,7 @@ class Post_Excerpt extends Base {
 					<a <?php $this->print_render_attribute_string( 'read_more' ); ?>>
 						<?php if ( 'before' === $settings['icon_position'] ) : ?>
 							<span class="zyre-post-read-more-icon zyre-post-read-more-icon--before">
-								<?php zyre_render_icon( $settings, 'icon', 'read_more_icon' ); ?>
+								<?php zyreladdons_render_icon( $settings, 'icon', 'read_more_icon' ); ?>
 							</span>
 						<?php endif; ?>
 
@@ -414,7 +414,7 @@ class Post_Excerpt extends Base {
 
 						<?php if ( 'after' === $settings['icon_position'] ) : ?>
 							<span class="zyre-post-read-more-icon zyre-post-read-more-icon--after">
-								<?php zyre_render_icon( $settings, 'icon', 'read_more_icon' ); ?>
+								<?php zyreladdons_render_icon( $settings, 'icon', 'read_more_icon' ); ?>
 							</span>
 						<?php endif; ?>	
 					</a>							
@@ -423,7 +423,7 @@ class Post_Excerpt extends Base {
 		}
 
 		if ( 'custom' === $settings['source_type'] ) {
-			zyre_elementor()->db->restore_current_post();
+			zyreladdons_elementor()->db->restore_current_post();
 		}
 	}
 }

@@ -755,7 +755,7 @@ trait Button_Trait {
 					<?php endif; ?>
 
 					<?php if ( $settings[ $button_text ] ) : ?>
-						<span <?php $instance->print_render_attribute_string( $button_text ); ?>><?php echo wp_kses( $settings[ $button_text ], zyre_get_allowed_html() ); ?></span>
+						<span <?php $instance->print_render_attribute_string( $button_text ); ?>><?php echo wp_kses( $settings[ $button_text ], zyreladdons_get_allowed_html() ); ?></span>
 					<?php endif; ?>
 				</span>
 			</<?php Utils::print_validated_html_tag( $html_tag ); ?>>

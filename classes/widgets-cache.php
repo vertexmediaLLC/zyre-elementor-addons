@@ -90,7 +90,7 @@ class Widgets_Cache {
 	 * @return string Global widget type, or empty if not found.
 	 */
 	protected function get_global_widget_type( $template_id ) {
-		$template_data = zyre_elementor()->templates_manager->get_template_data(
+		$template_data = zyreladdons_elementor()->templates_manager->get_template_data(
 			[
 				'source'      => 'local',
 				'template_id' => $template_id,
@@ -105,7 +105,7 @@ class Widgets_Cache {
 			return '';
 		}
 
-		$original_widget_type = zyre_elementor()->widgets_manager->get_widget_types( $template_data['content'][0]['widgetType'] );
+		$original_widget_type = zyreladdons_elementor()->widgets_manager->get_widget_types( $template_data['content'][0]['widgetType'] );
 
 		return $original_widget_type ? $template_data['content'][0]['widgetType'] : '';
 	}
@@ -238,7 +238,7 @@ class Widgets_Cache {
 		}
 
 		if ( is_null( $this->elementor_data ) ) {
-			$document = zyre_elementor()->documents->get( $this->get_post_id() );
+			$document = zyreladdons_elementor()->documents->get( $this->get_post_id() );
 			$data = $document ? $document->get_elements_data() : [];
 		} else {
 			$data = $this->elementor_data;
@@ -265,7 +265,7 @@ class Widgets_Cache {
 
 		$cache = [];
 		$styles = [ 'one' ];
-		zyre_elementor()->db->iterate_data(
+		zyreladdons_elementor()->db->iterate_data(
 			$data,
 			function ( $element ) use ( &$cache, &$styles ) {
 				$type = $this->get_widget_type( $element );

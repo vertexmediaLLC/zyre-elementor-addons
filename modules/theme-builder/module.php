@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || die();
 class Module {
 	public static $instance = null;
 
-	const POST_TYPE = 'zyre_library';
+	const POST_TYPE = 'zyreladdons_library';
 	const TAB_BASE = 'edit.php?post_type=' . self::POST_TYPE;
 
 	private $cache;
@@ -60,7 +60,7 @@ class Module {
 		add_filter( 'views_edit-' . self::POST_TYPE, [ $this, 'render_admin_tabs' ] );
 
 		add_filter( 'elementor/document/config', [ $this, 'document_config_title' ], 10, 2 );
-		add_action( 'admin_action_zyre_library_new_post', [ $this, 'admin_action_new_post' ] );
+		add_action( 'admin_action_zyreladdons_library_new_post', [ $this, 'admin_action_new_post' ] );
 
 		add_action( 'manage_' . self::POST_TYPE . '_posts_columns', [ $this, 'admin_columns_headers' ] );
 		add_action( 'manage_' . self::POST_TYPE . '_posts_custom_column', [ $this, 'admin_columns_content' ], 10, 2 );
@@ -82,8 +82,8 @@ class Module {
 
 	protected function get_full_data( $post ) {
 		if ( null !== $post ) {
-			$tmpl_type = get_post_meta( $post->ID, '_zyre_library_type', true );
-			$tpl_cond = get_post_meta( $post->ID, '_zyre_display_cond', true );
+			$tmpl_type = get_post_meta( $post->ID, 'zyreladdons_library_type', true );
+			$tpl_cond = get_post_meta( $post->ID, 'zyreladdons_display_cond', true );
 
 			$parsed_cond = $this->parse_condition( $tpl_cond );
 			$conditions = [];
@@ -214,7 +214,7 @@ class Module {
 	}
 
 	public static function template_ids() {
-		$cached = wp_cache_get( 'zyre_template_ids' );
+		$cached = wp_cache_get( 'zyreladdons_template_ids' );
 		if ( false !== $cached ) {
 			return $cached;
 		}
@@ -242,7 +242,7 @@ class Module {
 			}
 		}
 
-		wp_cache_set( 'zyre_template_ids', $ids );
+		wp_cache_set( 'zyreladdons_template_ids', $ids );
 		return $ids;
 	}
 
@@ -302,7 +302,7 @@ class Module {
 	}
 
 	public function add_query_vars( $vars ) {
-		$vars[] = 'zyre_library_type';
+		$vars[] = 'zyreladdons_library_type';
 		return $vars;
 	}
 
@@ -380,7 +380,7 @@ class Module {
 
 			wp_localize_script('zyre-addons-template-modal', 'zyreTemplateInfo', [
 				'postType' => self::POST_TYPE,
-				'templateType' => get_post_meta( get_the_ID(), '_zyre_library_type', true ),
+				'templateType' => get_post_meta( get_the_ID(), 'zyreladdons_library_type', true ),
 				'postId' => get_the_ID(),
 			]);
 
@@ -471,19 +471,19 @@ class Module {
 		// use $query parameter instead of global $post_type
 		if ( 'edit.php' === $pagenow && self::POST_TYPE === $query->query['post_type'] ) {
 
-			if ( isset( $_GET['zyre_library_type'] ) ) {
-				$library_type = sanitize_text_field( wp_unslash( $_GET['zyre_library_type'] ) );
+			if ( isset( $_GET['zyreladdons_library_type'] ) ) {
+				$library_type = sanitize_text_field( wp_unslash( $_GET['zyreladdons_library_type'] ) );
 
 				$meta_query = array(
 					array(
-						'key' => '_zyre_library_type',
+						'key' => 'zyreladdons_library_type',
 						'value' => $library_type,
 						'compare' => '=',
 					),
 				);
 
 				$query->set( 'meta_query', $meta_query );
-				$query->set( 'meta_key', '_zyre_library_type' );
+				$query->set( 'meta_key', 'zyreladdons_library_type' );
 			}
 		}
 	}
@@ -495,12 +495,12 @@ class Module {
 			<div class="zyre-admin-top-bar">
 				<div class="zyre-admin-top-bar-branding">
 					<div class="zyre-admin-top-bar-branding-logo">
-						<img src="<?php echo esc_attr( zyre_get_b64_3dicon() ); ?>" alt="" width="46">
+						<img src="<?php echo esc_attr( zyreladdons_get_b64_3dicon() ); ?>" alt="" width="46">
 					</div>
 					<h1 class="zyre-admin-top-bar-branding-title"><?php esc_html_e( 'Theme Builder', 'zyre-elementor-addons' ); ?></h1>
 				</div>
 				<div class="zyre-admin-top-bar-buttons">
-					<a class="button-secondary button-large" id="zyre-template-library-add-new" href="<?php echo esc_url( admin_url( 'post-new.php?post_type=zyre_library' ) ); ?>"><?php esc_html_e( 'Add New', 'zyre-elementor-addons' ); ?></a>
+					<a class="button-secondary button-large" id="zyre-template-library-add-new" href="<?php echo esc_url( admin_url( 'post-new.php?post_type=zyreladdons_library' ) ); ?>"><?php esc_html_e( 'Add New', 'zyre-elementor-addons' ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -526,14 +526,14 @@ class Module {
 
 	// Render tabs in the edit page
 	public function render_admin_tabs( $views ) {
-		$get_active = get_query_var( 'zyre_library_type' );
+		$get_active = get_query_var( 'zyreladdons_library_type' );
 		?>
 		<div id="zyre-template-library-tabs-wrapper" class="nav-tab-wrapper">
 			<a class="nav-tab <?php echo ! $get_active ? 'nav-tab-active' : ''; ?>" href="<?php echo esc_url( admin_url( self::TAB_BASE ) ); ?>"><?php esc_html_e( 'All', 'zyre-elementor-addons' ); ?></a>
 			<?php
 			foreach ( self::get_template_types() as $key => $value ) {
 				$active = ( $get_active === $key ) ? 'nav-tab-active' : '';
-				$admin_filter_url = admin_url( self::TAB_BASE . '&zyre_library_type=' . $key );
+				$admin_filter_url = admin_url( self::TAB_BASE . '&zyreladdons_library_type=' . $key );
                 $nav_tab_link = '<a class="nav-tab ' . $active . '" href="' . esc_url( $admin_filter_url ) . '">' . esc_html( $value ) . '</a>';
 				echo wp_kses_post( $nav_tab_link );
 			}
@@ -555,7 +555,7 @@ class Module {
 	 * @return array
 	 */
 	public function get_document_conditions( $post_id ) {
-		$saved_conditions = get_post_meta( $post_id, '_zyre_display_cond', true );
+		$saved_conditions = get_post_meta( $post_id, 'zyreladdons_display_cond', true );
 
 		$conditions = [];
 
@@ -589,8 +589,8 @@ class Module {
 
 		if ( 'type' === $column_name ) {
 
-			$type       = get_post_meta( $post_id, '_zyre_library_type', true );
-			$is_active   = get_post_meta( $post_id, '_zyre_template_active', true );
+			$type       = get_post_meta( $post_id, 'zyreladdons_library_type', true );
+			$is_active   = get_post_meta( $post_id, 'zyreladdons_template_active', true );
 
             echo esc_html( ucwords( str_replace( '-', ' ', $type ) ) );
 
@@ -605,7 +605,7 @@ class Module {
 
 		if ( 'condition' === $column_name ) {
 
-			$type       = get_post_meta( $post_id, '_zyre_library_type', true );
+			$type       = get_post_meta( $post_id, 'zyreladdons_library_type', true );
 
 			if ( 'loop-template' != $type ) {
 				// generate display condition from document conditions
@@ -685,8 +685,8 @@ class Module {
 
 		$meta_data['_elementor_edit_mode'] = 'builder';
 
-		$meta_data['_zyre_library_type']  = $type;
-		$meta_data['_zyre_display_cond']  = $meta['display_conditions'];
+		$meta_data['zyreladdons_library_type']  = $type;
+		$meta_data['zyreladdons_display_cond']  = $meta['display_conditions'];
 		$meta_data['_wp_page_template'] = 'elementor_canvas';
 
 		$post_data['meta_input'] = $meta_data;
@@ -719,7 +719,7 @@ class Module {
 	}
 
 	public function document_config_title( $config, $post_id ) {
-		$tmpl_type = get_post_meta( $post_id, '_zyre_library_type', true );
+		$tmpl_type = get_post_meta( $post_id, 'zyreladdons_library_type', true );
 
 		if ( self::POST_TYPE === get_post_type( $post_id ) ) {
 			$title = '';
@@ -755,14 +755,14 @@ class Module {
 	 *
 	 * When a new post action is fired, the title is set to 'Elementor' followed by the post ID.
 	 *
-	 * Fired by `admin_action_zyre_library_new_post` action.
+	 * Fired by `admin_action_zyreladdons_library_new_post` action.
 	 *
 	 * @since 1.0.0
 	 * @access public
 	 */
 	public function admin_action_new_post() {
 
-		check_admin_referer( 'zyre_library_new_post_nonce' );
+		check_admin_referer( 'zyreladdons_library_new_post_nonce' );
 
 		$post_type = empty( $_GET['post_type'] ) ? 'post' : sanitize_text_field( wp_unslash( $_GET['post_type'] ) );
 
@@ -778,7 +778,7 @@ class Module {
 
 		$type = empty( $_GET['template_type'] ) ? 'post' : sanitize_text_field( wp_unslash( $_GET['template_type'] ) );
 
-		$post_data = isset( $_GET['post_data'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_GET['post_data'] ) ) : [];
+		$post_data = isset( $_GET['post_data'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_GET['post_data'] ) ) : [];
 
 		$meta = [
 			'display_conditions' => [],
@@ -928,7 +928,7 @@ class Module {
 	public function single_blog_content_elementor( $post ) {
 		$templates = $this->singular_template;
 		if ( ! empty( $templates ) ) {
-            echo wp_kses( self::render_builder_data( $templates ), zyre_kses_allowed_html() );
+            echo wp_kses( self::render_builder_data( $templates ), zyreladdons_kses_allowed_html() );
 		} else {
 			the_content();
 		}
@@ -937,9 +937,9 @@ class Module {
 	public function add_elementor_widget_categories( $elements_manager ) {
 		if ( self::POST_TYPE === get_post_type() ) {
 			$elements_manager->add_category(
-				'zyre_addons_theme_builder',
+				'zyreladdons_theme_builder',
 				[
-					'title' => esc_html__( 'Happy Theme Builder', 'zyre-elementor-addons' ),
+					'title' => esc_html__( 'Zyre Theme Builder', 'zyre-elementor-addons' ),
 					'icon' => 'fa fa-plug',
 				]
 			);

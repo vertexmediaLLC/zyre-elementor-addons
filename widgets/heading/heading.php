@@ -177,7 +177,7 @@ class Heading extends Base {
 				'label'       => esc_html__( 'Description', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'default'     => esc_html( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore' ),
-				'description' => zyre_get_allowed_html_desc(),
+				'description' => zyreladdons_get_allowed_html_desc(),
 			]
 		);
 	}
@@ -914,13 +914,13 @@ class Heading extends Base {
 		<div class="zyre-headings zy-flex zy-flex-wrap">
 			<?php if ( ! empty( $settings['subtitle'] ) ) : ?>
 				<<?php Utils::print_validated_html_tag( $settings['heading_subtitle_tag'] ); ?> <?php $this->print_render_attribute_string( 'heading_subtitle' ); ?>>
-					<span <?php $this->print_render_attribute_string( 'subtitle' ); ?>><?php echo wp_kses( $settings['subtitle'], zyre_get_allowed_html() ); ?></span>
+					<span <?php $this->print_render_attribute_string( 'subtitle' ); ?>><?php echo wp_kses( $settings['subtitle'], zyreladdons_get_allowed_html() ); ?></span>
 				</<?php Utils::print_validated_html_tag( $settings['heading_subtitle_tag'] ); ?>>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_title'] ) ) : ?>
 				<<?php Utils::print_validated_html_tag( $settings['heading_title_tag'] ); ?> <?php $this->print_render_attribute_string( 'heading_main_title' ); ?>>
-					<span <?php $this->print_render_attribute_string( 'heading_title' ); ?>><?php echo wp_kses( $settings['heading_title'], zyre_get_allowed_html() ); ?></span>
+					<span <?php $this->print_render_attribute_string( 'heading_title' ); ?>><?php echo wp_kses( $settings['heading_title'], zyreladdons_get_allowed_html() ); ?></span>
 					<?php if ( $settings['heading_suffix'] ) : ?>
 						<span <?php $this->print_render_attribute_string( 'heading_suffix' ); ?>><?php echo esc_html( $settings['heading_suffix'] ); ?></span>
 					<?php endif; ?>
@@ -928,7 +928,7 @@ class Heading extends Base {
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['heading_description'] ) ) : ?>
-				<p <?php $this->print_render_attribute_string( 'heading_description_wrap' ); ?>><span <?php $this->print_render_attribute_string( 'heading_description' ); ?>><?php echo wp_kses( $settings['heading_description'], zyre_get_allowed_html() ); ?></span></p>
+				<p <?php $this->print_render_attribute_string( 'heading_description_wrap' ); ?>><span <?php $this->print_render_attribute_string( 'heading_description' ); ?>><?php echo wp_kses( $settings['heading_description'], zyreladdons_get_allowed_html() ); ?></span></p>
 			<?php endif; ?>
 		</div>
 		<?php

@@ -26,7 +26,7 @@ class Library_Manager {
 	}
 
 	public static function enqueue_scripts() {
-		$suffix = zyre_is_script_debug_enabled() ? '.' : '.min.';
+		$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 
 		wp_enqueue_style(
 			'zyre-addons-templates-library',
@@ -78,7 +78,7 @@ class Library_Manager {
 	}
 
 	public static function register_ajax_actions( Ajax $ajax ) {
-		$ajax->register_ajax_action( 'get_zyre_library_data', function ( $data ) {
+		$ajax->register_ajax_action( 'get_zyreladdons_library_data', function ( $data ) {
 			if ( ! current_user_can( 'edit_posts' ) ) {
 				throw new \Exception( esc_html__( 'Access Denied', 'zyre-elementor-addons' ) );
 			}
@@ -90,7 +90,7 @@ class Library_Manager {
 					throw new \Exception( esc_html__( 'Post not found.', 'zyre-elementor-addons' ) );
 				}
 
-				zyre_elementor()->db->switch_to_post( $editor_post_id );
+				zyreladdons_elementor()->db->switch_to_post( $editor_post_id );
 			}
 
 			$result = self::get_library_data( $data );
@@ -98,7 +98,7 @@ class Library_Manager {
 			return $result;
 		} );
 
-		$ajax->register_ajax_action( 'get_zyre_template_data', function ( $data ) {
+		$ajax->register_ajax_action( 'get_zyreladdons_template_data', function ( $data ) {
 			if ( ! current_user_can( 'edit_posts' ) ) {
 				throw new \Exception( esc_html__( 'Access Denied', 'zyre-elementor-addons' ) );
 			}
@@ -110,7 +110,7 @@ class Library_Manager {
 					throw new \Exception( esc_html__( 'Post not found', 'zyre-elementor-addons' ) );
 				}
 
-				zyre_elementor()->db->switch_to_post( $editor_post_id );
+				zyreladdons_elementor()->db->switch_to_post( $editor_post_id );
 			}
 
 			if ( empty( $data['template_id'] ) ) {

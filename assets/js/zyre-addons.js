@@ -450,7 +450,7 @@ function haObserveTarget(target, callback) {
 		mcForm.on('submit', function (e) {
 			e.preventDefault();
 			var data = {
-				action: 'zyre_mailchimp_ajax',
+				action: 'zyreladdons_mailchimp_ajax',
 				security: ZyreLocalize.nonce,
 				subscriber_info: mcForm.serialize(),
 				list_id: mcForm.data('list-id'),

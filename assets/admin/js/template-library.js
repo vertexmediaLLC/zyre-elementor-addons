@@ -664,7 +664,7 @@ function _typeof(o) {
       if (options.forceSync) {
         ajaxOptions.data.sync = true;
       }
-      elementorCommon.ajax.addRequest("get_zyre_library_data", ajaxOptions);
+      elementorCommon.ajax.addRequest("get_zyreladdons_library_data", ajaxOptions);
     };
     this.requestTemplateData = function (template_id, ajaxOptions) {
       var options = {
@@ -678,7 +678,7 @@ function _typeof(o) {
       if (ajaxOptions) {
         jQuery.extend(true, options, ajaxOptions);
       }
-      elementorCommon.ajax.addRequest("get_zyre_template_data", options);
+      elementorCommon.ajax.addRequest("get_zyreladdons_template_data", options);
     };
     this.insertTemplate = function (args) {
       var model = args.model,

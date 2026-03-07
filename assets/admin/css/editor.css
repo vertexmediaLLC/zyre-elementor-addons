@@ -55,29 +55,29 @@
 	font-size: 1.1em;
 }
 
-.elementor-control-type-zyre_style_select .elementor-control-field {
+.elementor-control-type-zyreladdons_style_select .elementor-control-field {
 	justify-content: space-between;
 }
 
-.elementor-control-type-zyre_style_select .elementor-control-title,
-.elementor-control-type-zyre_style_select .zyre-reset-style {
+.elementor-control-type-zyreladdons_style_select .elementor-control-title,
+.elementor-control-type-zyreladdons_style_select .zyre-reset-style {
 	cursor: pointer;
 	transition: opacity 0.2s;
 }
 
-.elementor-control-type-zyre_style_select .zyre-reset-style {
+.elementor-control-type-zyreladdons_style_select .zyre-reset-style {
 	background: none;
 	outline: none;
 	border: none;
 }
 
-.elementor-control-type-zyre_style_select .zyre-reset-style[disabled] {
+.elementor-control-type-zyreladdons_style_select .zyre-reset-style[disabled] {
 	cursor: not-allowed;
 }
 
-.elementor-control-type-zyre_style_select .zyre-reset-style:not([disabled]):hover,
-.elementor-control-type-zyre_style_select .zyre-reset-style:not([disabled]):focus,
-.elementor-control-type-zyre_style_select .elementor-control-title:hover {
+.elementor-control-type-zyreladdons_style_select .zyre-reset-style:not([disabled]):hover,
+.elementor-control-type-zyreladdons_style_select .zyre-reset-style:not([disabled]):focus,
+.elementor-control-type-zyreladdons_style_select .elementor-control-title:hover {
 	opacity: 0.8;
 }
 
@@ -98,11 +98,11 @@
 }
 
 /* Tooltip */
-.elementor-control-type-zyre_style_select .elementor-control-input-wrapper {
+.elementor-control-type-zyreladdons_style_select .elementor-control-input-wrapper {
 	position: relative;
 }
 
-.elementor-control-type-zyre_style_select .elementor-control-input-wrapper .zyre-tooltip {
+.elementor-control-type-zyreladdons_style_select .elementor-control-input-wrapper .zyre-tooltip {
 	visibility: hidden;
 	background-color: #000000;
 	color: #c69500;
@@ -115,7 +115,7 @@
 	line-height: 1.3;
 }
 
-.elementor-control-type-zyre_style_select .elementor-control-input-wrapper:hover .zyre-tooltip {
+.elementor-control-type-zyreladdons_style_select .elementor-control-input-wrapper:hover .zyre-tooltip {
   visibility: visible;
 }
 

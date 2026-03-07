@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		echo wp_kses(
 			\ZyreAddons\Elementor\ThemeBuilder\Module::instance()->render_builder_data_location( 'header' ),
-			zyre_kses_allowed_html()
+			zyreladdons_kses_allowed_html()
 		);
 		?>
 	</div>

@@ -2782,7 +2782,7 @@ trait List_Item_Advanced_Trait {
 							?>
 
 							<?php if ( ( 'image' === $id_base || 'feature' === $id_base ) && ! empty( $item['media_caption'] ) ) : ?>
-								<div <?php $instance->print_render_attribute_string( $repeater_caption_wrap_key ); ?>><span <?php $instance->print_render_attribute_string( $repeater_caption_key ); ?>><?php echo wp_kses( $item['media_caption'], zyre_get_allowed_html() ); ?></span></div>
+								<div <?php $instance->print_render_attribute_string( $repeater_caption_wrap_key ); ?>><span <?php $instance->print_render_attribute_string( $repeater_caption_key ); ?>><?php echo wp_kses( $item['media_caption'], zyreladdons_get_allowed_html() ); ?></span></div>
 							<?php endif; ?>
 						</div>
 					<?php endif; ?>

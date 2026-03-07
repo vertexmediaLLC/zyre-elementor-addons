@@ -561,7 +561,7 @@ class Site_Title extends Base {
 		}
 		?>
 		<span class="zyre-site-title-icon zyre-site-title-icon--<?php echo esc_attr( $icon_position ); ?>">
-			<?php zyre_render_icon( $settings, 'icon', 'site_title_icon' ); ?>
+			<?php zyreladdons_render_icon( $settings, 'icon', 'site_title_icon' ); ?>
 		</span>
 		<?php
 	}

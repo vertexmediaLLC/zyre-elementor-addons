@@ -42,7 +42,7 @@ class Drop_Cap extends Base {
 				'label'     => esc_html__( 'Content', 'zyre-elementor-addons' ),
 				'type'      => Controls_Manager::TEXTAREA,
 				'default'   => __( 'New york lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod lipsum dolor-sit tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.<br>Uis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'zyre-elementor-addons' ),
-				'description' => zyre_get_allowed_html_desc(),
+				'description' => zyreladdons_get_allowed_html_desc(),
 			]
 		);
 
@@ -149,7 +149,7 @@ class Drop_Cap extends Base {
 		?>
 	
 		<p <?php $this->print_render_attribute_string( 'dropcap_content' ); ?>>
-			<?php echo wp_kses( html_entity_decode( $settings['dropcap_content'] ), zyre_get_allowed_html() ); ?>
+			<?php echo wp_kses( html_entity_decode( $settings['dropcap_content'] ), zyreladdons_get_allowed_html() ); ?>
 		</p>
 	
 		<?php

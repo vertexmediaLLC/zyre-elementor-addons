@@ -3142,7 +3142,7 @@ class Post_Comments extends Base {
 
 		if ( 'custom' === $settings['source_type'] ) {
 			$post_id = is_array( $settings['source_custom'] ) ? (int) $settings['source_custom'][0] : (int) $settings['source_custom'];
-			zyre_elementor()->db->switch_to_post( $post_id );
+			zyreladdons_elementor()->db->switch_to_post( $post_id );
 		}
 
 		if ( ! comments_open() ) {
@@ -3158,7 +3158,7 @@ class Post_Comments extends Base {
 
 			$icon_html = '';
 			if ( ! empty( $settings['submit_btn_icon']['value'] ) ) {
-				$icon_html = '<span class="zyre-comment-form-submit-btn-icon">' . zyre_get_icon_html( $settings, 'icon', 'submit_btn_icon' ) . '</span>';
+				$icon_html = '<span class="zyre-comment-form-submit-btn-icon">' . zyreladdons_get_icon_html( $settings, 'icon', 'submit_btn_icon' ) . '</span>';
 			}
 
 			$button = sprintf(
@@ -3181,7 +3181,7 @@ class Post_Comments extends Base {
 			$defaults['class_form'] = 'zyre-comment-form zy-flex zy-flex-wrap zy-gap-3';
 
 			// Title Reply
-			$reply_title_tag = zyre_escape_tags( $settings['title_reply_tag'], 'h3' );
+			$reply_title_tag = zyreladdons_escape_tags( $settings['title_reply_tag'], 'h3' );
 			$defaults['title_reply'] = ! empty( $settings['title_reply'] ) ? esc_html( $settings['title_reply'] ) : '';
 			$defaults['title_reply_before'] = '<' . $reply_title_tag . ' id="reply-title" class="zyre-comment-form-reply-title">';
 			$defaults['title_reply_after'] = '</' . $reply_title_tag . '>';
@@ -3450,7 +3450,7 @@ class Post_Comments extends Base {
 						[
 							'style'       => 'ol',
 							'short_ping'  => true,
-							'callback' => [ $this, 'zyre_list_comments' ],
+							'callback' => [ $this, 'zyreladdons_list_comments' ],
 						],
 						$comments
 					);
@@ -3476,14 +3476,14 @@ class Post_Comments extends Base {
 
 		<?php
 		if ( 'custom' === $settings['source_type'] ) {
-			zyre_elementor()->db->restore_current_post();
+			zyreladdons_elementor()->db->restore_current_post();
 		}
 	}
 
 	/**
 	 * Render Comments List
 	 */
-	public function zyre_list_comments( $comment, $args, $depth ) {
+	public function zyreladdons_list_comments( $comment, $args, $depth ) {
 		$settings = $this->get_settings_for_display();
 		$commenter = wp_get_current_commenter();
 		$show_pending_links = ! empty( $commenter['comment_author'] );
@@ -3533,9 +3533,9 @@ class Post_Comments extends Base {
 							$says_text = ! empty( $settings['comment_says_text'] ) ? $settings['comment_says_text'] : '';
 							printf(
 								'%s <span class="says">%s</span> %s',
-								is_rtl() ? '' : sprintf( '<b class="fn">%s</b>', wp_kses( $comment_author, zyre_get_allowed_html( 'advanced' ) ) ),
+								is_rtl() ? '' : sprintf( '<b class="fn">%s</b>', wp_kses( $comment_author, zyreladdons_get_allowed_html( 'advanced' ) ) ),
 								esc_html( $says_text ),
-								is_rtl() ? sprintf( '<b class="fn">%s</b>', wp_kses( $comment_author, zyre_get_allowed_html( 'advanced' ) ) ) : '',
+								is_rtl() ? sprintf( '<b class="fn">%s</b>', wp_kses( $comment_author, zyreladdons_get_allowed_html( 'advanced' ) ) ) : '',
 							);
 							?>
 						</div><!-- .comment-author -->
@@ -3554,7 +3554,7 @@ class Post_Comments extends Base {
 										esc_url( get_comment_link( $comment, $args ) ),
 										! empty( $settings['comment_time_icon']['value'] ) ? sprintf(
 											'<span class="time-icon">%s</span>',
-											wp_kses( zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ), zyre_allowed_icon_html() ),
+											wp_kses( zyreladdons_get_icon_html( $settings, 'icon', 'comment_time_icon' ), zyreladdons_allowed_icon_html() ),
 										) : '',
 										esc_attr( get_comment_time( 'c' ) ),
                                         esc_html(
@@ -3568,7 +3568,7 @@ class Post_Comments extends Base {
 										esc_url( get_comment_link( $comment, $args ) ),
 										! empty( $settings['comment_time_icon']['value'] ) ? sprintf(
 											'<span class="time-icon">%s</span>',
-											wp_kses( zyre_get_icon_html( $settings, 'icon', 'comment_time_icon' ), zyre_allowed_icon_html() ),
+											wp_kses( zyreladdons_get_icon_html( $settings, 'icon', 'comment_time_icon' ), zyreladdons_allowed_icon_html() ),
 										) : '',
                                         esc_attr( get_comment_time( 'c' ) ),
                                         sprintf(
@@ -3612,7 +3612,7 @@ class Post_Comments extends Base {
 								'<div class="comments-total zy-inline-flex zy-align-center zy-gap-2">%s<span class="comments-total-text">%s</span></div>',
 								! empty( $settings['comment_count_icon']['value'] ) ? sprintf(
 									'<span class="comments-total-icon">%s</span>',
-									wp_kses( zyre_get_icon_html( $settings, 'icon', 'comment_count_icon' ), zyre_allowed_icon_html() ),
+									wp_kses( zyreladdons_get_icon_html( $settings, 'icon', 'comment_count_icon' ), zyreladdons_allowed_icon_html() ),
 								) : '',
 								esc_html( $comment_count )
 							);

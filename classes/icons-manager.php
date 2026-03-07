@@ -6,10 +6,10 @@ defined( 'ABSPATH' ) || die();
 class Icons_Manager {
 
 	public static function init() {
-		add_filter( 'elementor/icons_manager/additional_tabs', [ __CLASS__, 'add_zyre_icons_tab' ] );
+		add_filter( 'elementor/icons_manager/additional_tabs', [ __CLASS__, 'add_zyreladdons_icons_tab' ] );
 	}
 
-	public static function add_zyre_icons_tab( $tabs ) {
+	public static function add_zyreladdons_icons_tab( $tabs ) {
 		$tabs['zyre-icons'] = [
 			'name'          => 'zyre-icons',
 			'label'         => __( 'Zyre Icons - Regular', 'zyre-elementor-addons' ),
@@ -44,7 +44,7 @@ class Icons_Manager {
 	 *
 	 * @return array
 	 */
-	public static function get_zyre_icons() {
+	public static function get_zyreladdons_icons() {
 		return [
 			'zy-fonticon zy-5G' => '5G',
 			'zy-fonticon zy-Hour-process' => 'Hour-process',

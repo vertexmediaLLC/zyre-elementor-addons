@@ -168,7 +168,7 @@ function _checkIfArray(r) {
 		var uniqify = generateUniqeDom(conditionTemplate.innerHTML);
 		conditionContainer.append(uniqify);
 		elementor.trigger("zyre:templateConditionChange");
-		// zyre_check_contradictory_condition();
+		// zyreladdons_check_contradictory_condition();
 	});
 
 	$(document).on("click", ".zyre-template-condition-remove", function () {
@@ -253,7 +253,7 @@ function _checkIfArray(r) {
 							data: function (params) {
 								var query = {
 									nonce: ZyreAddonsEditor.editor_nonce,
-									action: "zyre_condition_autocomplete",
+									action: "zyreladdons_condition_autocomplete",
 									q: params.term,
 									object_type: dataType,
 									object_term: dataVal,
@@ -328,7 +328,7 @@ function _checkIfArray(r) {
 			dataType: "json",
 			data: {
 				nonce: ZyreAddonsEditor.editor_nonce,
-				action: "zyre_condition_template_type", // AJAX action for admin-ajax.php
+				action: "zyreladdons_condition_template_type", // AJAX action for admin-ajax.php
 				post_id: id,
 			},
 			success: function ( response ) {
@@ -346,7 +346,7 @@ function _checkIfArray(r) {
 			dataType: "json",
 			data: {
 				nonce: ZyreAddonsEditor.editor_nonce,
-				action: "zyre_condition_current",
+				action: "zyreladdons_condition_current",
 				// AJAX action for admin-ajax.php
 				template_id: id,
 			},
@@ -365,7 +365,7 @@ function _checkIfArray(r) {
 			dataType: "json",
 			data: {
 				nonce: ZyreAddonsEditor.editor_nonce,
-				action: "zyre_condition_autocomplete",
+				action: "zyreladdons_condition_autocomplete",
 				// AJAX action for admin-ajax.php
 				object_type: dataType,
 			},
@@ -456,7 +456,7 @@ function _checkIfArray(r) {
 			dataType: "json",
 			data: {
 				nonce: ZyreAddonsEditor.editor_nonce,
-				action: "zyre_condition_update",
+				action: "zyreladdons_condition_update",
 				// AJAX action for admin-ajax.php
 				conds: newConditions,
 				template_id: postId,

@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || die();
  * @param string $level Allowed levels are basic, advanced and all.
  * @return array
  */
-function zyre_get_allowed_html( $level = 'basic' ) {
+function zyreladdons_get_allowed_html( $level = 'basic' ) {
 
 	$allowed_html = array(
 		'b'      => array(
@@ -196,7 +196,7 @@ function zyre_get_allowed_html( $level = 'basic' ) {
  * 
  * @return array
  */
-function zyre_allowed_icon_html() {
+function zyreladdons_allowed_icon_html() {
 	return [
 		'i' => [
 			'class'       => true,
@@ -368,7 +368,7 @@ function zyre_allowed_icon_html() {
  * 
  * @return array
  */
-function zyre_allowed_form_html() {
+function zyreladdons_allowed_form_html() {
 	return [
 		'form' => [
 			'action' => true,
@@ -493,7 +493,7 @@ function zyre_allowed_form_html() {
  * 
  * @return array
  */
-function zyre_kses_allowed_html() {
+function zyreladdons_kses_allowed_html() {
 	$wp_allowed_tags = wp_kses_allowed_html( 'post' );
 
 	$wp_allowed_tags['style'] = [
@@ -502,7 +502,7 @@ function zyre_kses_allowed_html() {
 		'media' => true,
 	];
 
-	return array_merge( $wp_allowed_tags, zyre_allowed_icon_html(), zyre_allowed_form_html() );
+	return array_merge( $wp_allowed_tags, zyreladdons_allowed_icon_html(), zyreladdons_allowed_form_html() );
 }
 
 /**
@@ -514,8 +514,8 @@ function zyre_kses_allowed_html() {
  * @param string $str
  * @return string
  */
-function zyre_kses_basic( $str = '' ) {
-	return wp_kses( $str, zyre_get_allowed_html() );
+function zyreladdons_kses_basic( $str = '' ) {
+	return wp_kses( $str, zyreladdons_get_allowed_html() );
 }
 
 /**
@@ -527,8 +527,8 @@ function zyre_kses_basic( $str = '' ) {
  * @param string $str
  * @return string
  */
-function zyre_kses_advanced( $str = '' ) {
-	return wp_kses( $str, zyre_get_allowed_html( 'advanced' ) );
+function zyreladdons_kses_advanced( $str = '' ) {
+	return wp_kses( $str, zyreladdons_get_allowed_html( 'advanced' ) );
 }
 
 /**
@@ -539,7 +539,7 @@ function zyre_kses_advanced( $str = '' ) {
  * @param string $version Elementor Version.
  * @return bool
  */
-function zyre_is_elementor_version( $operator = '<', $version = '2.6.0' ) {
+function zyreladdons_is_elementor_version( $operator = '<', $version = '2.6.0' ) {
 	return defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, $version, $operator );
 }
 
@@ -549,7 +549,7 @@ function zyre_is_elementor_version( $operator = '<', $version = '2.6.0' ) {
  * @since 1.0.0
  * @return \Elementor\Plugin
  */
-function zyre_elementor() {
+function zyreladdons_elementor() {
 	return \Elementor\Plugin::instance();
 }
 
@@ -559,7 +559,7 @@ function zyre_elementor() {
  * @since 1.0.0
  * @return bool True if script debugging is enabled, false otherwise.
  */
-function zyre_is_script_debug_enabled() {
+function zyreladdons_is_script_debug_enabled() {
 	return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG );
 }
 
@@ -570,12 +570,12 @@ function zyre_is_script_debug_enabled() {
  * @param string $level Allowed levels are basic and intermediate.
  * @return string
  */
-function zyre_get_allowed_html_desc( $level = 'basic' ) {
+function zyreladdons_get_allowed_html_desc( $level = 'basic' ) {
 	if ( ! in_array( $level, array( 'basic', 'advanced' ), true ) ) {
 		$level = 'basic';
 	}
 
-	$tags_str = '<' . implode( '>,<', array_keys( zyre_get_allowed_html( $level ) ) ) . '>';
+	$tags_str = '<' . implode( '>,<', array_keys( zyreladdons_get_allowed_html( $level ) ) ) . '>';
 
 	// Translators: translate with allowed HTML tags.
 	return sprintf( __( 'This input field has support for the following HTML tags: %1$s', 'zyre-elementor-addons' ), '<code>' . esc_html( $tags_str ) . '</code>' );
@@ -587,7 +587,7 @@ function zyre_get_allowed_html_desc( $level = 'basic' ) {
  * @param string $tag input string of title tag.
  * @return string $default_tag default tag will be return during no matches.
  */
-function zyre_escape_tags( $tag, $default_tag = 'span', $extra = array() ) {
+function zyreladdons_escape_tags( $tag, $default_tag = 'span', $extra = array() ) {
 	$supports = array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p' );
 
 	$supports = array_merge( $supports, $extra );
@@ -608,7 +608,7 @@ function zyre_escape_tags( $tag, $default_tag = 'span', $extra = array() ) {
  * @param string $new_icon_id
  * @param array $attributes
  */
-function zyre_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
+function zyreladdons_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
 	// Check if its already migrated.
 	$migrated = isset( $settings['__fa4_migrated'][ $new_icon_id ] );
 	// Check if its a new widget without previously selected icon using the old Icon control.
@@ -617,7 +617,7 @@ function zyre_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_icon_id
 
 	$attributes['aria-hidden'] = 'true';
 
-	if ( zyre_is_elementor_version( '>=', '2.6.0' ) && ( $is_new || $migrated ) ) {
+	if ( zyreladdons_is_elementor_version( '>=', '2.6.0' ) && ( $is_new || $migrated ) ) {
 		return \Elementor\Icons_Manager::try_get_icon_html( $settings[ $new_icon_id ], $attributes );
 	} else {
 		if ( empty( $attributes['class'] ) ) {
@@ -640,9 +640,9 @@ function zyre_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_icon_id
  * @param string $new_icon_id
  * @param array $attributes
  */
-function zyre_render_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
-	$icon_html = zyre_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes );
-	echo wp_kses( $icon_html, zyre_allowed_icon_html() );
+function zyreladdons_render_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
+	$icon_html = zyreladdons_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes );
+	echo wp_kses( $icon_html, zyreladdons_allowed_icon_html() );
 }
 
 /**
@@ -654,8 +654,8 @@ function zyre_render_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id =
  * @param string $new_icon_id
  * @param array $attributes
  */
-function zyre_get_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
-	return zyre_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes );
+function zyreladdons_get_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
+	return zyreladdons_get_icon_html( $settings, $old_icon_id, $new_icon_id, $attributes );
 }
 
 /**
@@ -664,7 +664,7 @@ function zyre_get_icon( $settings = [], $old_icon_id = 'icon', $new_icon_id = 's
  * @since 1.0.0
  * @return array The array of SVG Icons.
  */
-function zyre_get_svg_icons() {
+function zyreladdons_get_svg_icons() {
 	return array(
 		'up-right-from-square' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6l0-128c0-17.7-14.3-32-32-32L352 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>',
 		'home' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.4 148.3L96 300.1V464a16 16 0 0 0 16 16l112.1-.3a16 16 0 0 0 15.9-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.6a16 16 0 0 0 16 16.1L464 480a16 16 0 0 0 16-16V300L295.7 148.3a12.2 12.2 0 0 0 -15.3 0zM571.6 251.5L488 182.6V44.1a12 12 0 0 0 -12-12h-56a12 12 0 0 0 -12 12v72.6L318.5 43a48 48 0 0 0 -61 0L4.3 251.5a12 12 0 0 0 -1.6 16.9l25.5 31A12 12 0 0 0 45.2 301l235.2-193.7a12.2 12.2 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0 -1.7-16.9z"/></svg>',
@@ -689,12 +689,12 @@ function zyre_get_svg_icons() {
  * @param string $id The icon ID
  * @return string The selected icon
  */
-function zyre_get_svg_icon( $icon_id ) {
+function zyreladdons_get_svg_icon( $icon_id ) {
 	if ( empty( $icon_id ) && ! isset( $icons[ $icon_id ] ) ) {
 		return;
 	}
 
-	$icons = zyre_get_svg_icons();
+	$icons = zyreladdons_get_svg_icons();
 
 	return $icons[ $icon_id ];
 }
@@ -705,7 +705,7 @@ function zyre_get_svg_icon( $icon_id ) {
  * @since 1.0.0
  * @return string Base64 code of zyre icon
  */
-function zyre_get_b64_icon() {
+function zyreladdons_get_b64_icon() {
 	return 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNkZGRkZGQiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjQwIiB2aWV3Qm94PSIwIDAgMjAwIDI0MCI+PHBhdGggZD0ibTEyOC4zNyw2My4zOWwtLjEtLjAyLTUwLjksNy4xMy00LjI5LDEuMDIsMi41NSwxMS44TC40Nyw5MC4zNGw0LjEyLDc0LjIxLDgzLjU3LDU2Ljk2LjE5LjEzLDY5LjItMTguMDEsMS4yMS01NC4wN2guMDl2LTFsMzUuNDQtMTAuNjMsMy40OC0zNy44MywxLjc3LTE4LjQ2LTcxLjE2LTE4LjI1Wm0yOS42OSw2NC41N2wtNTMuMTUtMjMuMDgsODYuMDMtMTUuNTMtMy45Niw0Mi41OS0yOC4xNCw4LjQ0di0xMi4zNGwtLjc4LS4xWm0tNjUuNDYsMTMuODlsNTguNDItNy4yOHYxMS4wMmwtMS4xNiw1MS45Ni01Ni45LDE0LjgxLS4zNi03MC41Wm0tNy40OC01MS42Mmw0NS4wOS00LjU3LDMuNzUtMy4wMy0zNS4xLTcuMjYsMjguOTctNC4wNSw0OS4xNiwxMi42MS05OS4wMSwxNy44Nyw2MS40NCwyNi40NS00OS45OSw2LjEyTDE4LjI5LDk2LjUzbDY2LjI4LTYuMi41NS0uMDloMFptMTUuMTEtNy45OGwtMTYuNDgsMS42Mi0xLjE0LTUuMjYsMTcuNjEsMy42NFptLTE1LjEsMTI3LjczTDEyLjE4LDE2MC4yNmwtMy4zMy01OS44OSw3NS45Miw0MC4zOS4zNSw2OS4yMloiIHN0cm9rZS13aWR0aD0iMCIvPjwvc3ZnPg==';
 }
 
@@ -715,7 +715,7 @@ function zyre_get_b64_icon() {
  * @since 1.0.0
  * @return string Base64 code of zyre circle icon
  */
-function zyre_get_b64_icon_circle() {
+function zyreladdons_get_b64_icon_circle() {
 	return 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MCA5MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJXb3JrcyI+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjUxLjM2IDMxLjY1IDQ2LjE0IDMyLjM0IDIwLjQgMzUuMjggNDEuMDEgNDcuNTIgNTYuOSA0NC43IDQwLjAzIDM3LjEzIDY3LjI1IDMxLjYgNTIuOCAyNy42NyA0My40NSAyOS4wOSA1MS4zNiAzMS42NSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ1LDBBNDUsNDUsMCwxLDAsOTAsNDUsNDUsNDUsMCwwLDAsNDUsMFpNNzMuNTQsMzMuMTJsLTEsMTEuMUw2MS4yNiw0Ny41OWwtLjM4LDE3LjMyLTIwLjM3LDUuM2gwTDE1LjA4LDUyLjg3bC0uODQtMTUuMTgtLjM2LTYuNDFMMzcuNzcsMjlsLS44NC0zLjkuMDgsMGgwbDE1Ljc4LTIuMjJMNzQsMjguMzVaIi8+PC9nPjwvZz48L3N2Zz4=';
 }
 
@@ -725,7 +725,7 @@ function zyre_get_b64_icon_circle() {
  * @since 1.0.0
  * @return string Base64 code of zyre 3d icon
  */
-function zyre_get_b64_3dicon() {
+function zyreladdons_get_b64_3dicon() {
 	return 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgODMuNDIgNjYuOTkiPjxkZWZzPjxzdHlsZT4uY2xzLTF7aXNvbGF0aW9uOmlzb2xhdGU7fS5jbHMtMTMsLmNscy0yLC5jbHMtMjR7bWl4LWJsZW5kLW1vZGU6bXVsdGlwbHk7fS5jbHMtMntvcGFjaXR5OjAuNDt9LmNscy0ze2ZpbGw6I2I3NWUxNTt9LmNscy00e2ZpbGw6IzgxM2IxNTt9LmNscy01e2ZpbGw6IzQyMDAwMDt9LmNscy02e2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQpO30uY2xzLTd7ZmlsbDp1cmwoI3JhZGlhbC1ncmFkaWVudC0yKTt9LmNscy04e2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtMyk7fS5jbHMtOXtmaWxsOnVybCgjcmFkaWFsLWdyYWRpZW50LTQpO30uY2xzLTEwe2ZpbGw6Izg0MmYwZjt9LmNscy0xMXtmaWxsOnVybCgjcmFkaWFsLWdyYWRpZW50LTUpO30uY2xzLTEye2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtNik7fS5jbHMtMTMsLmNscy0yNHtvcGFjaXR5OjAuNDU7fS5jbHMtMTN7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCk7fS5jbHMtMTR7ZmlsbDp1cmwoI3JhZGlhbC1ncmFkaWVudC03KTt9LmNscy0xNXtmaWxsOnVybCgjcmFkaWFsLWdyYWRpZW50LTgpO30uY2xzLTE2e2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtOSk7fS5jbHMtMTd7ZmlsbDojZjViNDAwO30uY2xzLTE4e2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtMTApO30uY2xzLTE5e2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtMTEpO30uY2xzLTIwe2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtMTIpO30uY2xzLTIxe2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtMTMpO30uY2xzLTIye2ZpbGw6dXJsKCNyYWRpYWwtZ3JhZGllbnQtMTQpO30uY2xzLTIze2ZpbGw6I2NjNmQxNTt9LmNscy0yNHtmaWxsOiNiNzRhMDA7fTwvc3R5bGU+PHJhZGlhbEdyYWRpZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQiIGN4PSIwLjYzIiBjeT0iMjUuMDEiIHI9IjM2LjY2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZTk5NzAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjY2M2ZDE1Ii8+PC9yYWRpYWxHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9InJhZGlhbC1ncmFkaWVudC0yIiBjeD0iMzUuNjIiIGN5PSI1MC4xOSIgcj0iMjYuNjQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4yMyAwLjc0KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2VmOWUwMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2RkOGEyNSIvPjwvcmFkaWFsR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQtMyIgY3g9IjgwLjMyIiBjeT0iMjEuMjQiIHI9IjI0LjgiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4yMyAwLjc0KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2I5NTExOCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2E2NDEzMSIvPjwvcmFkaWFsR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQtNCIgY3g9IjM0LjQ3IiBjeT0iMy40NSIgcj0iNi4wMSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgxLjIzIDAuNzQpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYzg1ZDE4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOTY0MzI4Ii8+PC9yYWRpYWxHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9InJhZGlhbC1ncmFkaWVudC01IiBjeD0iMC42MyIgY3k9IjI1LjAxIiByPSIzNi42NiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y0YTUwMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2QzN2YwMCIvPjwvcmFkaWFsR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQtNiIgY3g9IjgwLjkiIGN5PSI3LjMxIiByPSIzNi41OSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgxLjIzIDAuNzQpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDU3MTE1Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYjA1NzE4Ii8+PC9yYWRpYWxHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjU3Ljc2IiB5MT0iMjkuNDEiIHgyPSI2NS43NSIgeTI9IjEzLjY4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwLjQ2IiBzdG9wLWNvbG9yPSIjNjYzNTAwIi8+PHN0b3Agb2Zmc2V0PSIwLjQ3IiBzdG9wLWNvbG9yPSIjNzQzYjAwIiBzdG9wLW9wYWNpdHk9IjAuOSIvPjxzdG9wIG9mZnNldD0iMC41NCIgc3RvcC1jb2xvcj0iI2QxNjAwMSIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSIwLjU3IiBzdG9wLWNvbG9yPSIjZjU2ZTAyIiBzdG9wLW9wYWNpdHk9IjAiLz48L2xpbmVhckdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50LTciIGN4PSIzNS4zMiIgY3k9IjMyLjIyIiByPSIzMC4zMyIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgxLjIzIDAuNzQpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjZiMTAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZWY5ZTAwIi8+PC9yYWRpYWxHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9InJhZGlhbC1ncmFkaWVudC04IiBjeD0iNDUuODciIGN5PSIxMy44MSIgcj0iNDguNDUiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4yMyAwLjc0KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTAwMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1YmIwMiIvPjwvcmFkaWFsR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQtOSIgY3g9IjE4MDAuOTkiIGN5PSIxMDY4IiByPSIxNi4yOSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgtMzAwNS4zNyAtMTgxMS4yNykgc2NhbGUoMS43MSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmY1NzgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmNWI1MDAiLz48L3JhZGlhbEdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50LTEwIiBjeD0iMzUuMzQiIGN5PSI0MC44OSIgcj0iMTcuODYiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4yMyAwLjc0KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmY2QzYSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2VjYTYxNSIvPjwvcmFkaWFsR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJyYWRpYWwtZ3JhZGllbnQtMTEiIGN4PSIxNzYyLjA4IiBjeT0iMTA3OS43NSIgcj0iOC4wNCIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgtMzAwNS4zNyAtMTgxMS4yNykgc2NhbGUoMS43MSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM5YTRkMDAiLz48c3RvcCBvZmZzZXQ9IjAuNjEiIHN0b3AtY29sb3I9IiNhNDU3MDAiLz48c3RvcCBvZmZzZXQ9IjAuODEiIHN0b3AtY29sb3I9IiNhZTVlMDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNiZDY4MDAiLz48L3JhZGlhbEdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50LTEyIiBjeD0iMTc5OS44NiIgY3k9IjEwOTAuOCIgcj0iOS43NCIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgtMzAwNS4zNyAtMTgxMS4yNykgc2NhbGUoMS43MSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNjMzVmMTYiLz48c3RvcCBvZmZzZXQ9IjAuNTIiIHN0b3AtY29sb3I9IiNkMjc0MDAiLz48c3RvcCBvZmZzZXQ9IjAuNzEiIHN0b3AtY29sb3I9IiNkYTdlMDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNlZDk4MDAiLz48L3JhZGlhbEdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50LTEzIiBjeD0iMTgwOS4zNyIgY3k9IjEwNzYuNjIiIHI9IjguNCIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgtMzAwNS4zNyAtMTgxMS4yNykgc2NhbGUoMS43MSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM3OTI2MDAiLz48c3RvcCBvZmZzZXQ9IjAuNjEiIHN0b3AtY29sb3I9IiM3ZjNhMDAiLz48c3RvcCBvZmZzZXQ9IjAuNzUiIHN0b3AtY29sb3I9IiM4OTNmMDAiLz48c3RvcCBvZmZzZXQ9IjAuOTgiIHN0b3AtY29sb3I9IiNhNTRkMDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNhODRlMDAiLz48L3JhZGlhbEdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50LTE0IiBjeD0iMTc4Mi43MSIgY3k9IjEwODEuMDIiIHI9IjIwLjYiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMwMDUuMzcgLTE4MTEuMjcpIHNjYWxlKDEuNzEpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmNTc4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZjNjJjIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGcgY2xhc3M9ImNscy0xIj48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iV29ya3MiPjxnIGNsYXNzPSJjbHMtMiI+PHBvbHlnb24gcG9pbnRzPSI4Mi42NiAxNS43OSA0MC43MiAyNi4zOCA1Ni4yNiAzNi41MiAzNi41NiA0MC4xOSAzNi41NiA0MC4wNCAwLjU3IDIxLjk1IDEuNzQgNDIuOTggMzYuOTggNjYuOTkgMzYuOTggNjYuOTcgNjUuMTkgNTkuNjMgNjUuNzMgMzUuNzkgODEuMjUgMzEuMTQgODIuNjYgMTUuNzkiLz48L2c+PHBvbHlnb24gY2xhc3M9ImNscy0zIiBwb2ludHM9IjY1Ljc1IDM0LjE2IDM2LjU2IDM5LjYgMzYuOTggNjYuMzggNjUuMTkgNTkuMDMgNjUuNzUgMzQuMTYiLz48cG9seWdvbiBjbGFzcz0iY2xzLTQiIHBvaW50cz0iMzYuNTYgMzkuNDQgMC41NyAyMS4zNiAxLjc0IDQyLjM5IDM2Ljk4IDY2LjQgMzYuNTYgMzkuNDQiLz48cG9seWdvbiBjbGFzcz0iY2xzLTUiIHBvaW50cz0iNDAuNzIgMjUuNzkgNTguNDggMzcuMzcgODEuMjUgMzAuNTQgODIuNjYgMTUuMiA0MC43MiAyNS43OSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtNiIgcG9pbnRzPSIzNi41NiAzOC43NyAwLjU3IDIwLjY5IDEuNzQgNDEuNzIgMzYuOTggNjUuNzMgMzYuNTYgMzguNzciLz48cG9seWdvbiBjbGFzcz0iY2xzLTciIHBvaW50cz0iNjUuNzUgMzMuNTEgMzYuNTYgMzguOTUgMzYuOTggNjUuNzMgNjUuMTkgNTguMzkgNjUuNzUgMzMuNTEiLz48cG9seWdvbiBjbGFzcz0iY2xzLTgiIHBvaW50cz0iNDAuNzIgMjQuOTYgNTguNTEgMzYuNTcgODEuMzIgMjkuNzMgODIuNzMgMTQuMzUgNDAuNzIgMjQuOTYiLz48cG9seWdvbiBjbGFzcz0iY2xzLTkiIHBvaW50cz0iMzIuMDcgMy4yOCAzMy42IDkuNjUgMzcuNjMgMTEuMyA0NS44OSA3LjUxIDMyLjA3IDMuMjgiLz48cG9seWdvbiBjbGFzcz0iY2xzLTEwIiBwb2ludHM9IjMyLjEyIDMuMjcgMzMuODEgOS42MSAzMy40IDkuNzEgMzIuMDEgMy4zIDMyLjEyIDMuMjcgMzIuMTIgMy4yNyIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMTEiIHBvaW50cz0iMzYuNDcgMzMuMDYgMzYuNzkgNTMuODIgMS4wNiAyOS40OCAwLjA4IDExLjggMzYuNDcgMzMuMDYiLz48cG9seWdvbiBjbGFzcz0iY2xzLTEyIiBwb2ludHM9IjQwLjMzIDE2LjM2IDUyLjcgMjkuMjggODIuMTUgMjAuNDQgODMuMzYgNy43OCA4Mi45MSA3Ljg0IDQwLjMzIDE2LjM2Ii8+PHBvbHlnb24gY2xhc3M9ImNscy0xMyIgcG9pbnRzPSI4Mi43MyAxNC4zNSA4My4zNiA3Ljc4IDgyLjU0IDcuOTEgNDAuMzMgMTYuMzYgNDcuMDMgMjMuMzYgNDAuNzIgMjQuOTYgNDEuNjMgMjUuNTUgNDAuNzIgMjUuNzkgNTguNDggMzcuMzcgODEuMjUgMzAuNTQgODIuNjYgMTUuMiA4Mi42NSAxNS4yIDgyLjczIDE0LjM1IDgyLjczIDE0LjM1Ii8+PHBvbHlnb24gY2xhc3M9ImNscy0xNCIgcG9pbnRzPSI2NS40NiA0Ni4zNiAzNi43OSA1My44MiAzNi40NyAzMy4wNiA2NS44NyAyNy44NiA2NS40NiA0Ni4zNiIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMTUiIHBvaW50cz0iNDAuMzMgMTYuMzYgODMuMzEgNy43OCA4My4zNiA3Ljc0IDUzLjk5IDAuMjEgMzIuMDcgMy4yOCA0NS44OSA3LjUxIDAuMDggMTEuOCAzNi40NyAzMy4wNiA2NS44NyAyNy44NiA0MC4zMyAxNi4zNiIvPjxwYXRoIGNsYXNzPSJjbHMtMTYiIGQ9Ik04My4zNyw3Ljc4Yy4yLS4yNy00My42LDguNDUtNDMuNjIsOC4zN2EuMjEuMjEsMCwwLDAsMCwuNEw2NS44NiwyNy45Yy4yNy0uMS0yMS4xMi05LjcxLTI0Ljg4LTExLjQ2WiIvPjxwYXRoIGNsYXNzPSJjbHMtMTciIGQ9Ik00Ni44OCw3LjMxLDMyLjA4LDMuMjRjLS4yNy4xMyw5LjcsMy4xNywxMi44Miw0LjE2QzM4LjMxLDguMDYsMCwxMS42OSwwLDExLjhzNDYuNzUtNC4xMiw0Ni44LTQuMDhBLjIxLjIxLDAsMCwwLDQ2Ljg4LDcuMzFaIi8+PHBhdGggY2xhc3M9ImNscy0xNyIgZD0iTTgzLjM5LDcuNjZDODMuMzEsNy42Nyw1NCwwLDU0LDBMMzIuMDUsMy4yYy0uMTEsMC0uMDguMTksMCwuMTdMNTQsLjU5Yy0uMzUsMCwyOS4zNiw3LjIzLDI5LjM1LDcuMjRhLjExLjExLDAsMCwwLC4wOC0uMDhBLjExLjExLDAsMCwwLDgzLjM5LDcuNjZaIi8+PHBhdGggY2xhc3M9ImNscy0xOCIgZD0iTTM2LjU3LDMzLjA2Yy4zNCwxMC44OS42NywyMS43OC41MSwzMi42N2gtLjJjLS4yNy01LjQ1LS4zOC0xMC44OS0uNDMtMTYuMzRzLS4xMS0xMC44OS0uMDktMTYuMzRaIi8+PHBhdGggY2xhc3M9ImNscy0xOSIgZD0iTTEuNzQsNDIuMzlDMSwzMi40My40MywyMS43OCwwLDExLjhILjEzYy41MSw3LjQ3LDEsMTUsMS4zNywyMi40My4xMywyLjQ5LjI1LDUsLjMyLDcuNDhsLS4wOC42OFoiLz48cGF0aCBjbGFzcz0iY2xzLTIwIiBkPSJNNjUuMTIsNTguMzljMC0xMC4xOC4zMy0yMC4zNi42OC0zMC41M0g2NmMwLDUuMDktLjE0LDEwLjE4LS4yMiwxNS4yN3MtLjIyLDEwLjE4LS40NiwxNS4yNloiLz48cGF0aCBjbGFzcz0iY2xzLTIxIiBkPSJNODEuMTcsMzAuNTZjLjIxLTMuNjguNjItOC4xOCwxLTExLjg0cy43LTcuMjYsMS4xNC0xMC45MWwuMTQtLjA2Yy0uMjQsMy42Ny0uNTQsNy4zNC0uODcsMTFzLS44LDguMTMtMS4yOCwxMS43OGwtLjEsMFoiLz48cGF0aCBjbGFzcz0iY2xzLTIyIiBkPSJNLjEzLDExLjhjLS4wOCwwLDM3LjIxLDIxLDM2LjM5LDIwLjczbDI5LjM0LTQuNzQsMCwuMTRMMzYuNDIsMzMuMzZDMzYuMzksMzMuMjEtLjIsMTIsLjEzLDExLjhaIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yMyIgcG9pbnRzPSIwLjEzIDExLjggMC41NCAxMi4xMyAyLjI4IDQyLjA4IDEuODEgNDEuNzggMC4xMyAxMS44Ii8+PHBhdGggY2xhc3M9ImNscy0yNCIgZD0iTTgzLjI4LDcuODEsODIuMSwxOS4xNWwtLjg5LDEwLjYxLS4zLjA4LjgyLTEwLjYzTDgzLDcuODVBLjgzLjgzLDAsMCwxLDgzLjI4LDcuODFaIi8+PC9nPjwvZz48L2c+PC9zdmc+';
 }
 
@@ -735,7 +735,7 @@ function zyre_get_b64_3dicon() {
  * @since 1.0.0
  * @return string Base64 code of zyre 3d white icon
  */
-function zyre_get_b64_3dicon_white() {
+function zyreladdons_get_b64_3dicon_white() {
 	return 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI4LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9ImEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIxNzcuOXB4IiB2aWV3Qm94PSIwIDAgMjAwIDE3Ny45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMDAgMTc3Ljk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTEyOC40LDBMNzcuNCwxMS40djE5LjJMMCw0MS40djcxLjVsODUuOSw2NC45bDcwLjctMjAuN1Y5OS42TDIwMCw4NS45VjI2LjJMMTI4LjQsMHogTTgyLjgsMTY1LjFMNy43LDExMC4zCglWNDguOGw3NS4xLDQxLjRMODIuOCwxNjUuMUw4Mi44LDE2NS4xeiBNODIuNCwxNS43bDI5LjQsMTAuNmwtMjkuNCwzLjVWMTUuN3ogTTE0OS45LDE1MmwtNTguNiwxNi41VjkxLjlsNTguNi03LjJWMTUyTDE0OS45LDE1MnoKCSBNMTkyLjgsODEuM0wxNTcuMyw5MlY3OS4xbC01MS43LTIyLjdsODcuMS0yMy45QzE5Mi44LDMyLjQsMTkyLjgsODEuMywxOTIuOCw4MS4zeiIvPgo8L3N2Zz4K';
 }
 
@@ -745,11 +745,11 @@ function zyre_get_b64_3dicon_white() {
  * @since 1.0.0
  * @return array with sanitization
  */
-function zyre_sanitize_array_recursively( $arr ) {
+function zyreladdons_sanitize_array_recursively( $arr ) {
 
 	foreach ( $arr as $key => &$value ) {
 		if ( is_array( $value ) ) {
-			$value = zyre_sanitize_array_recursively( $value );
+			$value = zyreladdons_sanitize_array_recursively( $value );
 		} else {
 			$value = sanitize_text_field( $value );
 		}
@@ -762,7 +762,7 @@ function zyre_sanitize_array_recursively( $arr ) {
  * Check contact form 7 plugin activated
  *
  */
-function zyre_is_cf7_activated() {
+function zyreladdons_is_cf7_activated() {
 	return class_exists( '\WPCF7' );
 }
 
@@ -771,10 +771,10 @@ function zyre_is_cf7_activated() {
  *
  * @return array
  */
-function zyre_get_cf7_forms(): array {
+function zyreladdons_get_cf7_forms(): array {
 	$forms = [];
 
-	if ( zyre_is_cf7_activated() ) {
+	if ( zyreladdons_is_cf7_activated() ) {
 		$_forms = get_posts( [
 			'post_type'      => 'wpcf7_contact_form',
 			'post_status'    => 'publish',
@@ -797,7 +797,7 @@ function zyre_get_cf7_forms(): array {
  * @param string $plugin_name Name of the plugin that is missing.
  * @return void
  */
-function zyre_show_plugin_missing_alert( $plugin_name ) {
+function zyreladdons_show_plugin_missing_alert( $plugin_name ) {
 	if ( current_user_can( 'activate_plugins' ) && ! empty( $plugin_name ) ) {
 		printf(
 			'<div %1$s><strong>%2$s</strong> %3$s</div>',
@@ -817,7 +817,7 @@ function zyre_show_plugin_missing_alert( $plugin_name ) {
  * @since 1.0.0
  * @return array
  */
-function zyre_get_plugin_missing_info( $args = [] ) {
+function zyreladdons_get_plugin_missing_info( $args = [] ) {
 	$elementor_info = [
 		'installed' => false,
 	];
@@ -847,7 +847,7 @@ function zyre_get_plugin_missing_info( $args = [] ) {
 /**
  * All Page List
  */
-function zyre_get_all_pages() {
+function zyreladdons_get_all_pages() {
 	$page_list = get_posts( [
 		'post_type'      => 'page',
 		'orderby'        => 'date',
@@ -866,7 +866,7 @@ function zyre_get_all_pages() {
 /**
  * All Post List
  */
-function zyre_get_all_posts() {
+function zyreladdons_get_all_posts() {
 	$post_list = get_posts( [
 		'post_type'      => 'post',
 		'orderby'        => 'date',
@@ -885,7 +885,7 @@ function zyre_get_all_posts() {
 /**
  * Get All Post Types
  */
-function zyre_get_post_types() {
+function zyreladdons_get_post_types() {
 	// Get all public post types that are shown in nav menus
 	$post_types = get_post_types(
 		[
@@ -916,7 +916,7 @@ function zyre_get_post_types() {
 /**
  * Get All Post Types post
  */
-function zyre_get_all_type_posts() {
+function zyreladdons_get_all_type_posts() {
 	$post_list = get_posts( [
 		'post_type'      => 'any',
 		'orderby'        => 'date',
@@ -938,7 +938,7 @@ function zyre_get_all_type_posts() {
  *
  * @return array Array of authors with user ID as key and display name as value.
  */
-function zyre_get_all_author() {
+function zyreladdons_get_all_author() {
 	$allowed_roles = [ 'contributor', 'author', 'editor', 'administrator' ];
 
 	$users = get_users( [
@@ -958,7 +958,7 @@ function zyre_get_all_author() {
  *
  * @return array
  */
-function zyre_get_category_list( $taxonomy = 'category', $key = 'term_id' ) {
+function zyreladdons_get_category_list( $taxonomy = 'category', $key = 'term_id' ) {
 	$options = [];
 	$terms = get_terms([
 		'taxonomy' => $taxonomy,
@@ -979,7 +979,7 @@ function zyre_get_category_list( $taxonomy = 'category', $key = 'term_id' ) {
  *
  * @return array
  */
-function zyre_get_tags_list( $args = [] ) {
+function zyreladdons_get_tags_list( $args = [] ) {
 	$options = [];
 	$tags = get_tags( $args );
 	if ( ! is_wp_error( $tags ) && ! empty( $tags ) ) {
@@ -993,7 +993,7 @@ function zyre_get_tags_list( $args = [] ) {
 /**
  * Get all taxonomy list
  */
-function zyre_get_texonomy_list( $taxonomy = 'category', $key = 'term_id' ) {
+function zyreladdons_get_texonomy_list( $taxonomy = 'category', $key = 'term_id' ) {
 	$options = [];
 	$terms = get_terms( [
 		'taxonomy'   => $taxonomy,
@@ -1012,7 +1012,7 @@ function zyre_get_texonomy_list( $taxonomy = 'category', $key = 'term_id' ) {
  *
  * This differs from strip_tags() because it removes the contents of
  * the `<script>` and `<style>` tags. E.g. `strip_tags( '<script>something</script>' )`
- * will return 'something'. zyre_strip_all_tags() will return an empty string.
+ * will return 'something'. zyreladdons_strip_all_tags() will return an empty string.
  *
  * @since 1.0.0
  *
@@ -1020,7 +1020,7 @@ function zyre_get_texonomy_list( $taxonomy = 'category', $key = 'term_id' ) {
  * @param bool   $remove_breaks Optional. Whether to remove left over line breaks and white space chars
  * @return string The processed string.
  */
-function zyre_strip_all_tags( $text, $remove_breaks = false ) {
+function zyreladdons_strip_all_tags( $text, $remove_breaks = false ) {
 	if ( is_null( $text ) ) {
 		return '';
 	}
@@ -1072,13 +1072,13 @@ function zyre_strip_all_tags( $text, $remove_breaks = false ) {
  * @param string $more      Optional. What to append if $text needs to be trimmed. Default '&hellip;'.
  * @return string Trimmed text.
  */
-function zyre_trim_words( $text, $num_words = 55, $more = null ) {
+function zyreladdons_trim_words( $text, $num_words = 55, $more = null ) {
 	if ( null === $more ) {
 		$more = __( '&hellip;', 'zyre-elementor-addons' );
 	}
 
 	$original_text = $text;
-	$text          = zyre_strip_all_tags( $text );
+	$text          = zyreladdons_strip_all_tags( $text );
 	$text_count = str_replace( '<br>', ' ', $text ); // Make sure <br> does NOT count as a word
 	$num_words     = (int) $num_words;
 
@@ -1110,5 +1110,5 @@ function zyre_trim_words( $text, $num_words = 55, $more = null ) {
 	 * @param string $more          An optional string to append to the end of the trimmed text, e.g. &hellip;.
 	 * @param string $original_text The text before it was trimmed.
 	 */
-	return apply_filters( 'zyre_trim_words', $text, $num_words, $more, $original_text );
+	return apply_filters( 'zyreladdons_trim_words', $text, $num_words, $more, $original_text );
 }

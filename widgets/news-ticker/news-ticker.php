@@ -121,7 +121,7 @@ class News_Ticker extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
-				'options' => zyre_get_all_posts(),
+				'options' => zyreladdons_get_all_posts(),
 				'condition' => [
 					'query_source' => 'post',
 					'query_selection' => 'manual',
@@ -137,7 +137,7 @@ class News_Ticker extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Page', 'zyre-elementor-addons' ),
-				'options' => zyre_get_all_pages(),
+				'options' => zyreladdons_get_all_pages(),
 				'condition' => [
 					'query_source' => 'page',
 					'query_selection' => 'manual',

@@ -47,13 +47,13 @@
 		});
 
 		zyreCategoryIndex = zyreCategoriesCollection.findIndex({
-			name: "zyre_addons_category",
+			name: "zyreladdons_category",
 		});
 
 		zyreCategoryIndex &&
 			zyreCategoriesCollection.add(
 				{
-					name: "zyre_addons_pro_category",
+					name: "zyreladdons_pro_category",
 					title: "Zyre Addons Pro",
 					icon: "eicon-lock",
 					defaultActive: false,
@@ -158,7 +158,7 @@
 	/**
 	 * Select2 Control
 	 * 
-	 * Ajax Request to: zyre_process_dynamic_select
+	 * Ajax Request to: zyreladdons_process_dynamic_select
 	 */
 	var ZyreSelect2 = elementor.modules.controls.BaseData.extend({
 		getSelect2Placeholder: function getSelect2Placeholder() {
@@ -195,7 +195,7 @@
 					data: function data(params) {
 						var defaults = {
 							nonce: ZyreAddonsEditor.editor_nonce,
-							action: "zyre_process_dynamic_select",
+							action: "zyreladdons_process_dynamic_select",
 							object_type: "post",
 							query_term: params.term,
 						};
@@ -260,7 +260,7 @@
 			}
 			var defaults = {
 				nonce: ZyreAddonsEditor.editor_nonce,
-				action: "zyre_process_dynamic_select",
+				action: "zyreladdons_process_dynamic_select",
 				object_type: "post",
 				saved_values: savedValues,
 			};
@@ -338,6 +338,6 @@
 			this.$el.remove();
 		},
 	});
-	elementor.addControlView("zyre_select2", ZyreSelect2);
+	elementor.addControlView("zyreladdons_select2", ZyreSelect2);
 
 })(jQuery);

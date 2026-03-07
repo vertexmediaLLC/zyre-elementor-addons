@@ -187,7 +187,7 @@ class Toggle extends Base {
 			[
 				'label'       => esc_html__( 'Plain/ HTML Text', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'description' => zyre_get_allowed_html_desc( 'intermediate' ),
+				'description' => zyreladdons_get_allowed_html_desc( 'intermediate' ),
 				'rows'        => 16,
 				'condition'   => [
 					'content_type' => 'plain_content',
@@ -1401,7 +1401,7 @@ class Toggle extends Base {
 									</div>
 								<?php endif; ?>
 								<?php if ( ! empty( $item['icon']['value'] ) ) : ?>
-									<div class="zyre-toggle-switch-icon-wrapper"><?php zyre_render_icon( $item, null, 'icon' ); ?></div>
+									<div class="zyre-toggle-switch-icon-wrapper"><?php zyreladdons_render_icon( $item, null, 'icon' ); ?></div>
 								<?php endif; ?>
 								<?php if ( ! empty( $item['title'] ) ) : ?>
 									<span class="zyre-toggle-switch-title"><?php echo esc_html( $item['title'] ); ?></span>
@@ -1416,7 +1416,7 @@ class Toggle extends Base {
 						?>
 						<div class="zyre-toggle-switch-text zyre-toggle-switch-text-primary zy-flex zy-align-center zy-justify-center zy-nowrap zy-gap-1 <?php echo esc_attr( ( 'yes' === $primary['active'] ) ? 'active' : '' ); ?> elementor-repeater-item-<?php echo esc_attr( $primary['_id'] ); ?>" data-content-id="<?php echo esc_attr( $primary['_id'] ); ?>">
 							<?php if ( ! empty( $primary['icon']['value'] ) ) : ?>
-								<div class="zyre-toggle-icon-wrapper"><?php zyre_render_icon( $primary, null, 'icon' ); ?></div>
+								<div class="zyre-toggle-icon-wrapper"><?php zyreladdons_render_icon( $primary, null, 'icon' ); ?></div>
 							<?php endif; ?>
 							<?php if ( ! empty( $primary['title'] ) ) : ?>
 								<span class="zyre-toggle-switch-title"><?php echo esc_html( $primary['title'] ); ?></span>
@@ -1433,7 +1433,7 @@ class Toggle extends Base {
 
 						<div class="zyre-toggle-switch-text zyre-toggle-switch-text-secondary zy-flex zy-align-center zy-justify-center zy-nowrap zy-gap-1 <?php echo esc_attr( ( 'yes' === $secondary['active'] ) ? 'active' : '' ); ?> elementor-repeater-item-<?php echo esc_attr( $secondary['_id'] ); ?>" data-content-id="<?php echo esc_attr( $secondary['_id'] ); ?>">
 							<?php if ( ! empty( $secondary['icon']['value'] ) ) : ?>
-								<div class="zyre-toggle-icon-wrapper"><?php zyre_render_icon( $secondary, null, 'icon' ); ?></div>
+								<div class="zyre-toggle-icon-wrapper"><?php zyreladdons_render_icon( $secondary, null, 'icon' ); ?></div>
 							<?php endif; ?>
 							<?php if ( ! empty( $secondary['title'] ) ) : ?>
 								<span class="zyre-toggle-switch-title"><?php echo esc_html( $secondary['title'] ); ?></span>
@@ -1453,24 +1453,24 @@ class Toggle extends Base {
 							<div id="<?php echo esc_attr( $item['_id'] ); ?>" class="zyre-toggle-content-section <?php echo esc_attr( ( 'yes' === $item['active'] ) ? 'active' : '' ); ?>">
 								<?php
 								if ( 'plain_content' === $item['content_type'] ) {
-									echo wp_kses( $item['plain_content'], zyre_get_allowed_html('advanced') );
+									echo wp_kses( $item['plain_content'], zyreladdons_get_allowed_html('advanced') );
 								} elseif ( 'saved_section' === $item['content_type'] && 'publish' === get_post_status( $item['saved_section'] ) ) {
 									$item['saved_section'] = apply_filters( 'wpml_object_id', $item['saved_section'], 'elementor_library' );
 									echo wp_kses(
-										zyre_elementor()->frontend->get_builder_content_for_display( $item['saved_section'] ),
-										zyre_kses_allowed_html()
+										zyreladdons_elementor()->frontend->get_builder_content_for_display( $item['saved_section'] ),
+										zyreladdons_kses_allowed_html()
 									);
 								} elseif ( 'saved_container' === $item['content_type'] && 'publish' === get_post_status( $item['saved_container'] ) ) {
 									$item['saved_container'] = apply_filters( 'wpml_object_id', $item['saved_container'], 'elementor_library' ); 
 									echo wp_kses(
-										zyre_elementor()->frontend->get_builder_content_for_display( $item['saved_container'] ),
-										zyre_kses_allowed_html()
+										zyreladdons_elementor()->frontend->get_builder_content_for_display( $item['saved_container'] ),
+										zyreladdons_kses_allowed_html()
 									);
 								} elseif ( 'saved_page' === $item['content_type'] && 'publish' === get_post_status( $item['saved_pages'] ) ) {
 									$item['saved_pages'] = apply_filters( 'wpml_object_id', $item['saved_pages'], 'elementor_library' );
 									echo wp_kses(
-										zyre_elementor()->frontend->get_builder_content_for_display( $item['saved_pages'] ),
-										zyre_kses_allowed_html()
+										zyreladdons_elementor()->frontend->get_builder_content_for_display( $item['saved_pages'] ),
+										zyreladdons_kses_allowed_html()
 									);
 								}
 								?>
@@ -1482,24 +1482,24 @@ class Toggle extends Base {
 						<div id="<?php echo esc_attr( $primary['_id'] ); ?>" class="zyre-toggle-content-section zyre-toggle-content-primary <?php echo esc_attr( ( 'yes' === $primary['active'] ) ? 'active' : '' ); ?>">
 							<?php
 							if ( 'plain_content' === $primary['content_type'] ) {
-								echo wp_kses( $primary['plain_content'], zyre_get_allowed_html('advanced') );
+								echo wp_kses( $primary['plain_content'], zyreladdons_get_allowed_html('advanced') );
 							} elseif ( 'saved_section' === $primary['content_type'] && 'publish' === get_post_status( $primary['saved_section'] ) ) {
 								$primary['saved_section'] = apply_filters( 'wpml_object_id', $primary['saved_section'], 'elementor_library' );
 								echo wp_kses(
-									zyre_elementor()->frontend->get_builder_content_for_display( $primary['saved_section'] ),
-									zyre_kses_allowed_html()
+									zyreladdons_elementor()->frontend->get_builder_content_for_display( $primary['saved_section'] ),
+									zyreladdons_kses_allowed_html()
 								);
 							} elseif ( 'saved_container' === $primary['content_type'] && 'publish' === get_post_status( $primary['saved_container'] ) ) {
 								$primary['saved_container'] = apply_filters( 'wpml_object_id', $primary['saved_container'], 'elementor_library' );
 								echo wp_kses(
-									zyre_elementor()->frontend->get_builder_content_for_display( $primary['saved_container'] ),
-									zyre_kses_allowed_html()
+									zyreladdons_elementor()->frontend->get_builder_content_for_display( $primary['saved_container'] ),
+									zyreladdons_kses_allowed_html()
 								);
 							} elseif ( 'saved_page' === $primary['content_type'] && 'publish' === get_post_status( $primary['saved_pages'] ) ) {
 								$primary['saved_pages'] = apply_filters( 'wpml_object_id', $primary['saved_pages'], 'elementor_library' );
 								echo wp_kses(
-									zyre_elementor()->frontend->get_builder_content_for_display( $primary['saved_pages'] ),
-									zyre_kses_allowed_html()
+									zyreladdons_elementor()->frontend->get_builder_content_for_display( $primary['saved_pages'] ),
+									zyreladdons_kses_allowed_html()
 								);
 							}
 							?>
@@ -1508,24 +1508,24 @@ class Toggle extends Base {
 						<div id="<?php echo esc_attr( $secondary['_id'] ); ?>" class="zyre-toggle-content-section zyre-toggle-content-secondary <?php echo esc_attr( ( 'yes' === $secondary['active'] ) ? 'active' : '' ); ?>">
 							<?php
 							if ( 'plain_content' === $secondary['content_type'] ) {
-								echo wp_kses( $secondary['plain_content'], zyre_get_allowed_html('advanced') );
+								echo wp_kses( $secondary['plain_content'], zyreladdons_get_allowed_html('advanced') );
 							} elseif ( 'saved_section' === $secondary['content_type'] && 'publish' === get_post_status( $secondary['saved_section'] ) ) {
 								$secondary['saved_section'] = apply_filters( 'wpml_object_id', $secondary['saved_section'], 'elementor_library' );
 								echo wp_kses(
-									zyre_elementor()->frontend->get_builder_content_for_display( $secondary['saved_section'] ),
-									zyre_kses_allowed_html()
+									zyreladdons_elementor()->frontend->get_builder_content_for_display( $secondary['saved_section'] ),
+									zyreladdons_kses_allowed_html()
 								);
 							} elseif ( 'saved_container' === $secondary['content_type'] && 'publish' === get_post_status( $secondary['saved_container'] ) ) {
 								$secondary['saved_container'] = apply_filters( 'wpml_object_id', $secondary['saved_container'], 'elementor_library' );
 								echo wp_kses(
-									zyre_elementor()->frontend->get_builder_content_for_display( $secondary['saved_container'] ),
-									zyre_kses_allowed_html()
+									zyreladdons_elementor()->frontend->get_builder_content_for_display( $secondary['saved_container'] ),
+									zyreladdons_kses_allowed_html()
 								);
 							} elseif ( 'saved_page' === $secondary['content_type'] && 'publish' === get_post_status( $secondary['saved_pages'] ) ) {
 								$secondary['saved_pages'] = apply_filters( 'wpml_object_id', $secondary['saved_pages'], 'elementor_library' );
 								echo wp_kses(
-									zyre_elementor()->frontend->get_builder_content_for_display( $secondary['saved_pages'] ),
-									zyre_kses_allowed_html()
+									zyreladdons_elementor()->frontend->get_builder_content_for_display( $secondary['saved_pages'] ),
+									zyreladdons_kses_allowed_html()
 								);
 							}
 							?>

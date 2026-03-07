@@ -87,7 +87,7 @@ class Menu extends Base {
 			'widescreen',
 		];
 
-		foreach ( zyre_elementor()->breakpoints->get_active_breakpoints() as $breakpoint_key => $breakpoint_instance ) {
+		foreach ( zyreladdons_elementor()->breakpoints->get_active_breakpoints() as $breakpoint_key => $breakpoint_instance ) {
 			// Do not include laptop and widscreen in the options since this feature is for mobile devices.
 			if ( in_array( $breakpoint_key, $excluded_breakpoints, true ) ) {
 				continue;
@@ -1318,7 +1318,7 @@ class Menu extends Base {
 			$breakpoint = $settings['breakpoint'];
 
 			$breakpoint_values = [];
-			foreach ( zyre_elementor()->breakpoints->get_active_breakpoints() as $breakpoint_key => $breakpoint_instance ) {
+			foreach ( zyreladdons_elementor()->breakpoints->get_active_breakpoints() as $breakpoint_key => $breakpoint_instance ) {
 				$breakpoint_values[ $breakpoint_key ] = $breakpoint_instance->get_value();
 			}
 
@@ -1338,14 +1338,14 @@ class Menu extends Base {
 			<span class="zyre-menu-open-icon zyre-menu-toggler zy-c-pointer zy-p-4" data-humberger="open">
 				<?php
 				if ( '' !== $settings['hamburger_icon']['value'] ) {
-					zyre_render_icon( $settings, 'icon', 'hamburger_icon' );
+					zyreladdons_render_icon( $settings, 'icon', 'hamburger_icon' );
 				}
 				?>
 			</span>
 			<span class="zyre-menu-close-icon zyre-menu-toggler zy-c-pointer zy-p-4 zy-icon-hide" data-humberger="close">
 				<?php
 				if ( '' !== $settings['hamburger_close_icon']['value'] ) {
-					zyre_render_icon( $settings, 'icon', 'hamburger_close_icon' );
+					zyreladdons_render_icon( $settings, 'icon', 'hamburger_close_icon' );
 				}
 				?>
 			</span>

@@ -116,7 +116,7 @@
 
 			// Prepare the AJAX request data
 			var requestData = {
-				action: "zyre_widget_set_prestyle",
+				action: "zyreladdons_widget_set_prestyle",
 				widget: this.getWidgetName(),
 				widgetID: this.getWidgetID(),
 				isPro: this.isProWidget(),
@@ -306,5 +306,5 @@
         }
     });
 
-    elementor.addControlView("zyre_style_select", ZyreStyleSelectControl);
+    elementor.addControlView("zyreladdons_style_select", ZyreStyleSelectControl);
 })(jQuery, window.elementor);

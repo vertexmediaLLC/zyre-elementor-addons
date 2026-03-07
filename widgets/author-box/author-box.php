@@ -1099,7 +1099,7 @@ class Author_Box extends Base {
 		<div <?php $this->print_render_attribute_string( 'author_box' ); ?>>
 			<?php if ( 'yes' === $settings['show_avatar'] ) : ?>
 				<<?php Utils::print_validated_html_tag( $author_img_tag ); ?> <?php $this->print_render_attribute_string( 'author_img' ); ?>>
-					<?php echo wp_kses( $avatar, zyre_get_allowed_html( 'all' ) ); ?>
+					<?php echo wp_kses( $avatar, zyreladdons_get_allowed_html( 'all' ) ); ?>
 				</<?php Utils::print_validated_html_tag( $author_img_tag ); ?>>
 			<?php endif; ?>
 

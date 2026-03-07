@@ -45,7 +45,7 @@ class Image_Heading extends Base {
 				'default'     => esc_html__( 'Title Text', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [ 'active' => true ],
-				'description' => zyre_get_allowed_html_desc(),
+				'description' => zyreladdons_get_allowed_html_desc(),
 			]
 		);
 
@@ -118,7 +118,7 @@ class Image_Heading extends Base {
 				'label'       => esc_html__( 'Title Suffix', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [ 'active' => true ],
-				'description' => zyre_get_allowed_html_desc(),
+				'description' => zyreladdons_get_allowed_html_desc(),
 			]
 		);
 
@@ -719,8 +719,8 @@ class Image_Heading extends Base {
 		$subtitle_text = $settings['text_subtitle'];
 		$subtitle_position = $settings['subtitle_position']; // Get the new setting value
 
-		$title_tag = ! empty( $settings['title_tag'] ) ? zyre_escape_tags( $settings['title_tag'], 'h2' ) : 'h2';
-		$subtitle_tag = ! empty( $settings['subtitle_tag'] ) ? zyre_escape_tags( $settings['subtitle_tag'], 'h3' ) : 'h3';
+		$title_tag = ! empty( $settings['title_tag'] ) ? zyreladdons_escape_tags( $settings['title_tag'], 'h2' ) : 'h2';
+		$subtitle_tag = ! empty( $settings['subtitle_tag'] ) ? zyreladdons_escape_tags( $settings['subtitle_tag'], 'h3' ) : 'h3';
 		$overlay_image = ( ! empty( $settings['overlay_image']['url'] ) && 'yes' === $settings['enable_overlay'] ) ? $settings['overlay_image']['url'] : '';
 
 		// --- Add Inline Editing & Render Attributes ---
@@ -738,10 +738,10 @@ class Image_Heading extends Base {
 		if ( ! empty( $title_text ) || ! empty( $title_suffix ) ) { // Check if there's anything to wrap in the title tag
 			$title_html .= sprintf( '<%s class="zyre-image-heading-title zy-m-0 zy-lh-normal">', Utils::validate_html_tag( $title_tag ) );
 			if ( ! empty( $title_text ) ) {
-				$title_html .= sprintf( '<span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_text' ), wp_kses( $title_text, zyre_get_allowed_html() ) );
+				$title_html .= sprintf( '<span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_text' ), wp_kses( $title_text, zyreladdons_get_allowed_html() ) );
 			}
 			if ( ! empty( $title_suffix ) ) {
-				$title_html .= sprintf( ' <span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_suffix' ), wp_kses( $title_suffix, zyre_get_allowed_html() ) ); // Added space before suffix span
+				$title_html .= sprintf( ' <span %1$s>%2$s</span>', $this->get_render_attribute_string( 'title_suffix' ), wp_kses( $title_suffix, zyreladdons_get_allowed_html() ) ); // Added space before suffix span
 			}
 			$title_html .= sprintf( '</%s>', Utils::validate_html_tag( $title_tag ) );
 		}
@@ -753,7 +753,7 @@ class Image_Heading extends Base {
 				'<%1$s %2$s>%3$s</%1$s>',
 				Utils::validate_html_tag( $subtitle_tag ),
 				$this->get_render_attribute_string( 'text_subtitle' ),
-				wp_kses( $subtitle_text, zyre_get_allowed_html() ),
+				wp_kses( $subtitle_text, zyreladdons_get_allowed_html() ),
 			);
 		}
 

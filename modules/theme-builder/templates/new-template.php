@@ -5,7 +5,7 @@ use ZyreAddons\Elementor\ThemeBuilder\Module;
 defined( 'ABSPATH' ) || die();
 
 $types = Module::get_template_types();
-$selected = get_query_var( 'zyre_library_type' );
+$selected = get_query_var( 'zyreladdons_library_type' );
 
 ?>
 
@@ -15,7 +15,7 @@ $selected = get_query_var( 'zyre_library_type' );
 			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-login-title">
 				<header class="modal__header">
 					<h3 class="modal__title">
-						<img src="<?php echo esc_attr( zyre_get_b64_3dicon() ); ?>" width="40" alt="">
+						<img src="<?php echo esc_attr( zyreladdons_get_b64_3dicon() ); ?>" width="40" alt="">
 						<span><?php esc_html_e( 'Create New Template', 'zyre-elementor-addons' ); ?></span>
 					</h3>
 					<button class="modal__close" aria-label="<?php esc_attr_e( 'Close modal', 'zyre-elementor-addons' ); ?>" data-micromodal-close=""></button>
@@ -27,9 +27,9 @@ $selected = get_query_var( 'zyre_library_type' );
 						<div class="modal__info-message"><?php esc_html_e( 'Easily build reusable site components, such as headers and footers, and deploy them effortlessly across your projects', 'zyre-elementor-addons' ); ?></div>
 					</div>
 					<form id="zyre-new-template-form" action="">
-						<input type="hidden" name="post_type" value="zyre_library">
-						<input type="hidden" name="action" value="zyre_library_new_post">
-						<input type="hidden" name="_wpnonce" value="<?php echo esc_attr( wp_create_nonce( 'zyre_library_new_post_nonce' ) ); ?>">
+						<input type="hidden" name="post_type" value="zyreladdons_library">
+						<input type="hidden" name="action" value="zyreladdons_library_new_post">
+						<input type="hidden" name="_wpnonce" value="<?php echo esc_attr( wp_create_nonce( 'zyreladdons_library_new_post_nonce' ) ); ?>">
 						<div id="zyre-new-template-form__template-type-wrapper" class="elementor-form-field">
 							<div class="zyre-new-template-form__select-wrapper">
 								<select id="zyre-new-template-form__template-type" class="elementor-form-field__select" name="template_type" required>

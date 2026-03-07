@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $types    = Module::get_template_types();
-$selected = get_query_var( 'zyre_library_type' );
+$selected = get_query_var( 'zyreladdons_library_type' );
 ?>
 
 <script type="text/template" id="tmpl-modal-template-condition">
@@ -16,7 +16,7 @@ $selected = get_query_var( 'zyre_library_type' );
 			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-login-title">
 				<header class="modal__header">
 					<h3 class="modal__title">
-						<img src="<?php echo esc_attr( zyre_get_b64_3dicon() ); ?>" width="40" alt="">
+						<img src="<?php echo esc_attr( zyreladdons_get_b64_3dicon() ); ?>" width="40" alt="">
 						<span><?php esc_html_e( 'Template Elements Condition', 'zyre-elementor-addons' ); ?></span>
 					</h3>
 					<button class="modal__close" aria-label="<?php esc_attr_e( 'Close modal', 'zyre-elementor-addons' ); ?>" data-micromodal-close=""></button>
@@ -72,7 +72,7 @@ $selected = get_query_var( 'zyre_library_type' );
 			</div>
 		</div>
 		<div class="zyre-template-condition-remove">
-			<?php echo wp_kses( zyre_get_svg_icon( 'trash-can' ), zyre_allowed_icon_html() ); ?>
+			<?php echo wp_kses( zyreladdons_get_svg_icon( 'trash-can' ), zyreladdons_allowed_icon_html() ); ?>
 			<span class="elementor-screen-only"><?php esc_html_e( 'Remove this item', 'zyre-elementor-addons' ); ?></span>
 		</div>
 	</div>

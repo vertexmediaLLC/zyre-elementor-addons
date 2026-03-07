@@ -303,7 +303,7 @@ class InfoBox extends Base {
 			'infobox_description',
 			[
 				'label'       => esc_html__( 'Description', 'zyre-elementor-addons' ),
-				'description' => zyre_get_allowed_html_desc( 'advanced' ),
+				'description' => zyreladdons_get_allowed_html_desc( 'advanced' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'default'     => esc_html__( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.', 'zyre-elementor-addons' ),
 				'placeholder' => esc_html__( 'Type info box description', 'zyre-elementor-addons' ),
@@ -881,7 +881,7 @@ class InfoBox extends Base {
 			<?php if ( $settings['infobox_description'] ) :
 				?>
 				<div <?php $this->print_render_attribute_string( 'description' ); ?>>
-					<p class="zy-m-0"><?php echo wp_kses( $settings['infobox_description'], zyre_get_allowed_html( 'advanced' ) ); ?></p>
+					<p class="zy-m-0"><?php echo wp_kses( $settings['infobox_description'], zyreladdons_get_allowed_html( 'advanced' ) ); ?></p>
 				</div>
 				<?php
 			endif; ?>

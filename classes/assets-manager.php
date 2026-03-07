@@ -20,7 +20,7 @@ class Assets_Manager {
 	 * Bind hook and run internal methods here
 	 */
 	public static function init() {
-		self::$suffix = zyre_is_script_debug_enabled() ? '.' : '.min.';
+		self::$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 
 		// Frontend scripts.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'frontend_register' ) );
@@ -219,7 +219,7 @@ class Assets_Manager {
 			'ZyreLocalize',
 			array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
-				'nonce'    => wp_create_nonce( 'zyre_addons_nonce' ),
+				'nonce'    => wp_create_nonce( 'zyreladdons_nonce' ),
 			)
 		);
 	}
@@ -355,7 +355,7 @@ class Assets_Manager {
 		self::enqueue_dark_stylesheet();
 
 		$localize_data = [
-			'editor_nonce'        => wp_create_nonce( 'zyre_editor_nonce' ),
+			'editor_nonce'        => wp_create_nonce( 'zyreladdons_editor_nonce' ),
 			'dark_stylesheet_url' => self::get_dark_stylesheet_url(),
 			'promotion_widgets'   => [],
 			'hasPro'              => false,

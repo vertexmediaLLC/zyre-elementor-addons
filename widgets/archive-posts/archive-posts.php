@@ -125,7 +125,7 @@ class Archive_Posts extends Base {
 				'type'        => Controls_Manager::SELECT2,
 				'label_block' => true,
 				'multiple'    => true,
-				'options'     => zyre_get_all_posts(),
+				'options'     => zyreladdons_get_all_posts(),
 				'condition'   => array(
 					'query_source' => 'manual',
 				),
@@ -1527,7 +1527,7 @@ class Archive_Posts extends Base {
 			$this->query = $wp_query;
 		}
 
-		$is_editor = zyre_elementor()->editor->is_edit_mode() || is_preview();
+		$is_editor = zyreladdons_elementor()->editor->is_edit_mode() || is_preview();
 
 			/**
 			 * ARCHIVE SOURCE (frontend only)
@@ -1691,7 +1691,7 @@ class Archive_Posts extends Base {
 				Utils::validate_html_tag( $title_tag ),
 				'class="zyre-archive-post-title zy-m-0"',
 				esc_url( get_the_permalink( get_the_ID() ) ),
-				wp_kses( get_the_title(), zyre_get_allowed_html() )
+				wp_kses( get_the_title(), zyreladdons_get_allowed_html() )
 			);
 
 			echo wp_kses_post( $title_html );
@@ -1720,17 +1720,17 @@ class Archive_Posts extends Base {
 			switch ( $meta_item ['post_meta_select'] ) {
 				case 'author':
 					$this->render_author( $meta_item );
-					echo wp_kses( $cur_separator, zyre_get_allowed_html() );
+					echo wp_kses( $cur_separator, zyreladdons_get_allowed_html() );
 					break;
 
 				case 'date':
 					$this->render_date( $meta_item );
-					echo wp_kses( $cur_separator, zyre_get_allowed_html() );
+					echo wp_kses( $cur_separator, zyreladdons_get_allowed_html() );
 					break;
 
 				case 'comments':
 					$this->render_comments( $meta_item );
-					echo wp_kses( $cur_separator, zyre_get_allowed_html() );
+					echo wp_kses( $cur_separator, zyreladdons_get_allowed_html() );
 					break;
 
 				case 'category':
@@ -1766,7 +1766,7 @@ class Archive_Posts extends Base {
 		<<?php Utils::print_validated_html_tag( $author_tag ); ?> <?php $this->print_render_attribute_string( 'post_author' ); ?> class="<?php echo esc_attr( $author_class ); ?>">
 			<?php if ( '' !== $meta_item['author_meta_icon']['value'] ) : ?>
 				<span class="zyre-archive-post-meta-item-icon">
-					<?php zyre_render_icon( $meta_item, 'icon', 'author_meta_icon' ); ?>
+					<?php zyreladdons_render_icon( $meta_item, 'icon', 'author_meta_icon' ); ?>
 				</span>
 			<?php endif; ?>
 
@@ -1791,7 +1791,7 @@ class Archive_Posts extends Base {
 		<<?php Utils::print_validated_html_tag( $date_tag ); ?> <?php $this->print_render_attribute_string( 'post_date' ); ?> class="<?php echo esc_attr( $date_class ); ?>">
 			<?php if ( '' !== $meta_item['date_meta_icon']['value'] ) : ?>
 				<span class="zyre-archive-post-meta-item-icon">
-					<?php zyre_render_icon( $meta_item, 'icon', 'date_meta_icon' ); ?>
+					<?php zyreladdons_render_icon( $meta_item, 'icon', 'date_meta_icon' ); ?>
 				</span>
 			<?php endif; ?>
 			<?php echo esc_html( get_the_date( get_option( 'date_format' ) ) ); ?>
@@ -1832,7 +1832,7 @@ class Archive_Posts extends Base {
 		<<?php Utils::print_validated_html_tag( $comment_tag ); ?> <?php $this->print_render_attribute_string( 'post_comment' ); ?> class="<?php echo esc_attr( $comment_class ); ?>">
 			<?php if ( '' !== $meta_item['comment_meta_icon']['value'] ) : ?>
 				<span class="zyre-archive-post-meta-item-icon">
-					<?php zyre_render_icon( $meta_item, 'icon', 'comment_meta_icon' ); ?>
+					<?php zyreladdons_render_icon( $meta_item, 'icon', 'comment_meta_icon' ); ?>
 				</span>
 			<?php endif; ?>
 			<?php echo esc_html( $text ); ?>
@@ -1856,7 +1856,7 @@ class Archive_Posts extends Base {
 				if ( '' !== $meta_item['category_meta_icon']['value'] ) :
 					?>
 					<span class="zyre-archive-post-meta-item-icon">
-						<?php zyre_render_icon( $meta_item, 'icon', 'category_meta_icon' ); ?>
+						<?php zyreladdons_render_icon( $meta_item, 'icon', 'category_meta_icon' ); ?>
 					</span>
 					<?php
 				endif;
@@ -1889,7 +1889,7 @@ class Archive_Posts extends Base {
 				if ( '' !== $meta_item['tag_meta_icon']['value'] ) :
 					?>
 					<span class="zyre-archive-post-meta-item-icon">
-						<?php zyre_render_icon( $meta_item, 'icon', 'tag_meta_icon' ); ?>
+						<?php zyreladdons_render_icon( $meta_item, 'icon', 'tag_meta_icon' ); ?>
 					</span>
 					<?php
 				endif;
@@ -1916,7 +1916,7 @@ class Archive_Posts extends Base {
 			if ( '' !== $meta_item['edit_meta_icon']['value'] ) :
 				?>
 				<span class="zyre-archive-post-meta-item-icon">
-					<?php zyre_render_icon( $meta_item, 'icon', 'edit_meta_icon' ); ?>
+					<?php zyreladdons_render_icon( $meta_item, 'icon', 'edit_meta_icon' ); ?>
 				</span>
 				<?php
 			endif;
@@ -1943,7 +1943,7 @@ class Archive_Posts extends Base {
 		$excerpt = apply_filters( 'get_the_excerpt', wp_trim_words( get_the_excerpt(), $excerpt_length ) );
 		if ( $excerpt ) :
 			?>
-			<p class="zyre-archive-post-excerpt zy-m-0"><?php echo wp_kses( $excerpt, zyre_get_allowed_html() ); ?></p>
+			<p class="zyre-archive-post-excerpt zy-m-0"><?php echo wp_kses( $excerpt, zyreladdons_get_allowed_html() ); ?></p>
 			<?php
 		endif;
 	}
@@ -1993,7 +1993,7 @@ class Archive_Posts extends Base {
 
 		printf(
 			'<div class="zyre-archive-post-pagination">%s</div>',
-			wp_kses( $html, zyre_get_allowed_html( 'advanced' ) )
+			wp_kses( $html, zyreladdons_get_allowed_html( 'advanced' ) )
 		);
 	}
 }

@@ -195,7 +195,7 @@ class Testimonial extends Base {
 			'content',
 			[
 				'label'       => esc_html__( 'Content', 'zyre-elementor-addons' ),
-				'description' => zyre_get_allowed_html_desc( 'advanced' ),
+				'description' => zyreladdons_get_allowed_html_desc( 'advanced' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'default' => esc_html__( 'Nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam lorem ipsum dolor sit amet.', 'zyre-elementor-addons' ),
 				'placeholder' => esc_html__( 'Write something amazing about the zyre addons', 'zyre-elementor-addons' ),
@@ -1119,7 +1119,7 @@ class Testimonial extends Base {
 			endif; ?>
 			
 			<?php if ( ! empty( $settings['content'] ) && 'above' === $content_position ) : ?>
-				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo wp_kses( $settings['content'], zyre_get_allowed_html( 'advanced' ) ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo wp_kses( $settings['content'], zyreladdons_get_allowed_html( 'advanced' ) ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['author'] ) || ! empty( $settings['designation'] ) ) : ?>
@@ -1134,13 +1134,13 @@ class Testimonial extends Base {
 				endif; ?>
 
 				<?php if ( ! empty( $settings['designation'] ) ) : ?>
-					<div <?php $this->print_render_attribute_string( 'designation' ); ?>><?php echo wp_kses( $settings['designation'], zyre_get_allowed_html() ); ?></div>
+					<div <?php $this->print_render_attribute_string( 'designation' ); ?>><?php echo wp_kses( $settings['designation'], zyreladdons_get_allowed_html() ); ?></div>
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['content'] ) && 'below' === $content_position ) : ?>
-				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo wp_kses( $settings['content'], zyre_get_allowed_html( 'advanced' ) ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'content' ); ?>><?php echo wp_kses( $settings['content'], zyreladdons_get_allowed_html( 'advanced' ) ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $settings['logo']['url'] || $settings['logo']['id'] ) : ?>
