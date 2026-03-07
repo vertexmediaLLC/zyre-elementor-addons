@@ -41,7 +41,7 @@ class Library_Manager {
 			'zyre-addons-templates-library',
 			ZYRELADDONS_ASSETS . 'admin/js/template-library' . $suffix . 'js',
 			[
-				'zyre-elementor-addons-editor',
+				'zyreladdons-editor',
 				'jquery-hover-intent',
 			],
 			ZYRELADDONS_VERSION,

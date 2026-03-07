@@ -27,7 +27,7 @@ class Menu extends Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'zyre-elementor-addons-nav-menu' ];
+		return [ 'zyreladdons-nav-menu' ];
 	}
 
 	/**

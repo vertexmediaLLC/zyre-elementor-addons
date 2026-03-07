@@ -207,9 +207,9 @@ class Assets_Cache {
 
 		if ( $this->has() ) {
 			wp_enqueue_style(
-				'zyre-elementor-addons-' . $this->get_post_id(),
+				'zyreladdons-' . $this->get_post_id(),
 				$this->get_file_url(),
-				[ 'elementor-frontend', 'zyre-elementor-addons-global-vars', 'zyre-elementor-addons-global' ],
+				[ 'elementor-frontend', 'zyreladdons-global-vars', 'zyreladdons-global' ],
 				ZYRELADDONS_VERSION . '.' . get_post_modified_time()
 			);
 		}

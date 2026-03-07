@@ -16,7 +16,7 @@
     line-height: 1;
 }
 
-body.zyre-elementor-addons-dashboard {
+body.zyreladdons-dashboard {
 	font-family: "Inter", serif;
 	background-color: #f7f9fb;
 	font-optical-sizing: auto;
@@ -24,11 +24,11 @@ body.zyre-elementor-addons-dashboard {
 	color: #000;
 }
 
-body.zyre-elementor-addons-dashboard i {
+body.zyreladdons-dashboard i {
     font-size: 1em;
 }
 
-body.zyre-elementor-addons-dashboard svg {
+body.zyreladdons-dashboard svg {
     width: 1em;
 	height: 1em;
 	display: block;
@@ -89,8 +89,8 @@ h2.zyre-dash-widget-header,
 	margin: 0;
 }
 
-.zyre-elementor-addons-dashboard a:focus,
-.zyre-elementor-addons-dashboard a:visited {
+.zyreladdons-dashboard a:focus,
+.zyreladdons-dashboard a:visited {
 	outline: none;
 	box-shadow: none;
 }
@@ -914,7 +914,7 @@ body.rtl .zyre-subscription-modal .zyre-modal-close {
 	margin-top: 60px;
 }
 
-body.zyre-elementor-addons-dashboard .zyre-rating-stars svg {
+body.zyreladdons-dashboard .zyre-rating-stars svg {
 	width: 136px;
 	height: auto;
 }
@@ -1125,7 +1125,7 @@ p.zyre-tab-sub-heading {
 	font-size: 16px;
 }
 
-.zyre-elementor-addons-dashboard input[type="checkbox"] {
+.zyreladdons-dashboard input[type="checkbox"] {
 	position: relative;
 	width: 90px;
 	min-width: 90px;
@@ -1142,11 +1142,11 @@ p.zyre-tab-sub-heading {
 	cursor: pointer;
 }
 
-.zyre-elementor-addons-dashboard .widget-pro-placeholder input[type="checkbox"] {
+.zyreladdons-dashboard .widget-pro-placeholder input[type="checkbox"] {
 	cursor: not-allowed;
 }
 
-.zyre-elementor-addons-dashboard input[type="checkbox"]::before {
+.zyreladdons-dashboard input[type="checkbox"]::before {
 	content: "";
 	width: 32px;
 	height: 32px;
@@ -1165,7 +1165,7 @@ p.zyre-tab-sub-heading {
 	left: 3px;
 }
 
-.zyre-elementor-addons-dashboard input[type="checkbox"]:checked::before {
+.zyreladdons-dashboard input[type="checkbox"]:checked::before {
 	transform: translateX(50px);
 	background: #ebedf0;
 }
@@ -1174,12 +1174,12 @@ p.zyre-tab-sub-heading {
 	transform: translateX(30px);
 }
 
-.zyre-elementor-addons-dashboard input[type="checkbox"]:checked {
+.zyreladdons-dashboard input[type="checkbox"]:checked {
 	background: #bec5cf;
 }
 
-.zyre-elementor-addons-dashboard .widgets-control input[type="checkbox"]:checked,
-.zyre-elementor-addons-dashboard .zyre-widget-active input[type="checkbox"]:checked {
+.zyreladdons-dashboard .widgets-control input[type="checkbox"]:checked,
+.zyreladdons-dashboard .zyre-widget-active input[type="checkbox"]:checked {
 	background: #41c83c;
 }
 
@@ -1191,14 +1191,14 @@ p.zyre-tab-sub-heading {
 	color: #BEC5CF;
 }
 
-.zyre-elementor-addons-dashboard .zyre-widget-help-links {
+.zyreladdons-dashboard .zyre-widget-help-links {
 	width: 100%;
 	display: flex;
 	gap: 38px;
 	align-items: center;
 }
 
-.zyre-elementor-addons-dashboard .zyre-widget-help-links a {
+.zyreladdons-dashboard .zyre-widget-help-links a {
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
@@ -1215,30 +1215,30 @@ p.zyre-tab-sub-heading {
 	padding-bottom: 13px;
 }
 
-.zyre-elementor-addons-dashboard .zyre-widget-help-links a i {
+.zyreladdons-dashboard .zyre-widget-help-links a i {
 	color: inherit;
 	font-size: 0.8em;
     margin-bottom: 3px;
 }
 
-.zyre-elementor-addons-dashboard .zyre-widget-help-links a svg {
+.zyreladdons-dashboard .zyre-widget-help-links a svg {
 	fill: #6E7378;
 	width: 0.8em;
 	margin-bottom: 3px;
 }
 
-.zyre-elementor-addons-dashboard .zyre-widget-help-links a:hover {
+.zyreladdons-dashboard .zyre-widget-help-links a:hover {
 	background-color: #EBEDF0;
 	color: #000;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
-.zyre-elementor-addons-dashboard .zyre-widget-help-links a:hover svg {
+.zyreladdons-dashboard .zyre-widget-help-links a:hover svg {
 	fill: #000;
 }
 
-.zyre-elementor-addons-dashboard .zyre-widget-help-links a:hover i {
+.zyreladdons-dashboard .zyre-widget-help-links a:hover i {
 	color: #000;
 }
 
@@ -1409,8 +1409,8 @@ p.zyre-tab-sub-heading {
 	display: block;
 }
 
-.zyre-elementor-addons-dashboard .widget-pro-placeholder .zyre-dash-widget-tab-header,
-.zyre-elementor-addons-dashboard .widget-pro-placeholder .zyre-dash-widget-tab-body {
+.zyreladdons-dashboard .widget-pro-placeholder .zyre-dash-widget-tab-header,
+.zyreladdons-dashboard .widget-pro-placeholder .zyre-dash-widget-tab-body {
 	opacity: 0.6;
 }
 
@@ -1613,7 +1613,7 @@ p.zyre-tab-sub-heading {
 }
 
 @media (max-width: 1023px) {
-	.zyre-elementor-addons-dashboard input[type="checkbox"] {
+	.zyreladdons-dashboard input[type="checkbox"] {
 		margin: 0px 15px;	
 	}
 	.zyre-tab-up-content {

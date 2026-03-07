@@ -26,7 +26,7 @@ class Dashboard {
 
 	public static function add_body_class( $classes ) {
 		if ( self::is_page() ) {
-			$classes .= ' zyre-elementor-addons-dashboard';
+			$classes .= ' zyreladdons-dashboard';
 		}
 		return $classes;
 	}
@@ -103,7 +103,7 @@ class Dashboard {
 		);
 
 		wp_enqueue_style(
-			'zyre-elementor-addons-global-vars',
+			'zyreladdons-global-vars',
 			ZYRELADDONS_ASSETS . 'css/global-vars' . $suffix . 'css',
 			[],
 			ZYRELADDONS_VERSION
@@ -111,21 +111,21 @@ class Dashboard {
 
 		// Google fonts for dashboard only
 		wp_enqueue_style(
-			'zyre-elementor-addons-google-fonts',
+			'zyreladdons-google-fonts',
 			'https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
 			[],
 			null
 		);
 
 		wp_enqueue_style(
-			'zyre-elementor-addons-dashboard',
+			'zyreladdons-dashboard',
 			ZYRELADDONS_ASSETS . 'admin/css/dashboard' . $suffix . 'css',
 			[],
 			ZYRELADDONS_VERSION
 		);
 
 		wp_enqueue_script(
-			'zyre-elementor-addons-dashboard',
+			'zyreladdons-dashboard',
 			ZYRELADDONS_ASSETS . 'admin/js/dashboard' . $suffix . 'js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -133,7 +133,7 @@ class Dashboard {
 		);
 
 		wp_localize_script(
-			'zyre-elementor-addons-dashboard',
+			'zyreladdons-dashboard',
 			'ZyreAddonsDashboard',
 			[
 				'nonce' => wp_create_nonce( self::DASHBOARD_NONCE ),
