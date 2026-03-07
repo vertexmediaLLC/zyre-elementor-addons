@@ -1,12 +1,12 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Box_Shadow;
-use ZyreAddons\Elementor\Controls\Select2;
+use VertexMediaLLC\ZyreElementorAddons\Controls\Select2;
 
 defined( 'ABSPATH' ) || die();
 

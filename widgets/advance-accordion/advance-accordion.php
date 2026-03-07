@@ -1,6 +1,6 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Repeater;
 use Elementor\Controls_Manager;

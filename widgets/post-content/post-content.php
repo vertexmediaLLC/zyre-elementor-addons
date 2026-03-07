@@ -1,9 +1,9 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
-use ZyreAddons\Elementor\Controls\Select2;
+use VertexMediaLLC\ZyreElementorAddons\Controls\Select2;
 
 defined( 'ABSPATH' ) || die();
 

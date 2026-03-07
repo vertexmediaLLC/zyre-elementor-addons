@@ -6,7 +6,7 @@
  * @package ZyreAddons
  */
 
-namespace ZyreAddons\Elementor\Widget\Mailchimp;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget\Mailchimp;
 
 defined( 'ABSPATH' ) || die();
 

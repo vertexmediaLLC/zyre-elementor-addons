@@ -6,7 +6,7 @@
  * @package ZyreAddons
  */
 
-namespace ZyreAddons\Elementor\Controls;
+namespace VertexMediaLLC\ZyreElementorAddons\Controls;
 
 use Elementor\Control_Select2;
 

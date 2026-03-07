@@ -1,6 +1,6 @@
 <?php
 
-namespace ZyreAddons\Elementor;
+namespace VertexMediaLLC\ZyreElementorAddons;
 
 use Elementor\Controls_Manager;
 use Elementor\Elements_Manager;
@@ -142,7 +142,7 @@ class Plugin {
 			add_filter( 'admin_body_class', [ Dashboard::class, 'add_body_class' ] );
 
 			// Include the Credentials_Manager class if it doesn't exist.
-			if ( ! class_exists( 'ZyreAddons\Elementor\Credentials_Manager' ) ) {
+			if ( ! class_exists( 'VertexMediaLLC\ZyreElementorAddons\Credentials_Manager' ) ) {
 				include_once ZYRELADDONS_DIR_PATH . 'classes/credentials-manager.php';
 			}
 		}

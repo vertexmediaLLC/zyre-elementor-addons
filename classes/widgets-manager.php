@@ -1,6 +1,6 @@
 <?php
 
-namespace ZyreAddons\Elementor;
+namespace VertexMediaLLC\ZyreElementorAddons;
 
 use Elementor\Element_Base;
 
@@ -1852,7 +1852,7 @@ class Widgets_Manager {
 
 			include_once $widget_file;
 
-			$widget_class = '\ZyreAddons\Elementor\Widget\\' . str_replace( '-', '_', $widget_key );
+			$widget_class = '\VertexMediaLLC\ZyreElementorAddons\Widget\\' . str_replace( '-', '_', $widget_key );
 			if ( class_exists( $widget_class ) ) {
 				$widgets_manager->register( new $widget_class() );
 			}

@@ -1,5 +1,5 @@
 <?php
-namespace ZyreAddons\Elementor\Traits;
+namespace VertexMediaLLC\ZyreElementorAddons\Traits;
 
 use Elementor\Control_Media;
 use Elementor\Controls_Manager;

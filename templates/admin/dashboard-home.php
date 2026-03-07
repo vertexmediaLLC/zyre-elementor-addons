@@ -10,8 +10,8 @@ $widget_key_first = array_key_first( $widgets );
 $used_widgets = self::get_widgets_raw_usage();
 $unused_widgets = self::get_widgets_unusage();
 
-$inactive_widgets = \ZyreAddons\Elementor\Widgets_Manager::get_inactive_widgets();
-$active_styles = \ZyreAddons\Elementor\Widgets_Manager::get_widgets_active_styles();
+$inactive_widgets = \VertexMediaLLC\ZyreElementorAddons\Widgets_Manager::get_inactive_widgets();
+$active_styles = \VertexMediaLLC\ZyreElementorAddons\Widgets_Manager::get_widgets_active_styles();
 
 $total_widgets_count = count( $widgets );
 $total_used_widgets_count = count( $used_widgets );

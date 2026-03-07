@@ -1,6 +1,6 @@
 <?php
 
-use ZyreAddons\Elementor\ThemeBuilder\Module;
+use VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Module;
 
 defined( 'ABSPATH' ) || die();
 

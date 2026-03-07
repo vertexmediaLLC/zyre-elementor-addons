@@ -1,9 +1,9 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
-use ZyreAddons\Elementor\Traits\Swiper_Trait;
+use VertexMediaLLC\ZyreElementorAddons\Traits\Swiper_Trait;
 
 defined( 'ABSPATH' ) || die();
 

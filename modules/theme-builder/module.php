@@ -7,9 +7,9 @@
  * @since 1.0.0
  */
 
-namespace ZyreAddons\Elementor\ThemeBuilder;
+namespace VertexMediaLLC\ZyreElementorAddons\ThemeBuilder;
 
-use ZyreAddons\Elementor\Dashboard;
+use VertexMediaLLC\ZyreElementorAddons\Dashboard;
 use Elementor\Core\Settings\Manager;
 
 defined( 'ABSPATH' ) || die();

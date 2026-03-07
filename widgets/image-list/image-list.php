@@ -1,9 +1,9 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
-use ZyreAddons\Elementor\Traits\List_Item_Advanced_Trait;
+use VertexMediaLLC\ZyreElementorAddons\Traits\List_Item_Advanced_Trait;
 
 defined( 'ABSPATH' ) || die();
 

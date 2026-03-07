@@ -1,14 +1,14 @@
 <?php
 
-namespace ZyreAddons\Elementor\Widget;
+namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Icons_Manager;
 use Elementor\Utils;
 use ParagonIE\Sodium\Core\Util;
-use ZyreAddons\Elementor\Traits\Button_Trait;
-use ZyreAddons\Elementor\Traits\List_Item_Trait;
+use VertexMediaLLC\ZyreElementorAddons\Traits\Button_Trait;
+use VertexMediaLLC\ZyreElementorAddons\Traits\List_Item_Trait;
 
 defined( 'ABSPATH' ) || die();
 
