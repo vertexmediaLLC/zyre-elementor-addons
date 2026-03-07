@@ -21,7 +21,7 @@ get_header();
 do_action( 'elementor/page_templates/header-footer/before_content' );
 
 if ( ! \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
-	do_action( 'zyreaddons_theme_builder_render' );
+	do_action( 'zyreladdons_theme_builder_render' );
 } else {
 	the_content();
 }

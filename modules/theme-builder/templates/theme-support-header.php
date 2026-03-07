@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	<?php do_action( 'zyreaddons/template/before_header' ); ?>
+	<?php do_action( 'zyreladdons/template/before_header' ); ?>
 
 	<div class="zyre-template-content-markup zyre-template-content-header zyre-template-content-theme-support">
 		<?php
@@ -32,4 +32,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 	</div>
 
-	<?php do_action( 'zyreaddons/template/after_header' ); ?>
+	<?php do_action( 'zyreladdons/template/after_header' ); ?>

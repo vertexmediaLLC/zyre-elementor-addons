@@ -23,7 +23,7 @@ class TwentyNineteen {
 	}
 
 	public function get_header( $name ) {
-		add_action( 'zyreaddons/template/after_header', function () {
+		add_action( 'zyreladdons/template/after_header', function () {
 			echo '<div id="page" class="site">';
 			echo '<div id="content" class="site-content">';
 		} );
@@ -47,7 +47,7 @@ class TwentyNineteen {
 	}
 
 	public function get_footer( $name ) {
-		add_action( 'zyreaddons/template/after_footer', function () {
+		add_action( 'zyreladdons/template/after_footer', function () {
 			echo '</div></div>';
 		} );
 

@@ -75,7 +75,7 @@ class Plugin {
 
 		$this->appsero_tracking_init();
 
-		do_action( 'zyreaddons_loaded' );
+		do_action( 'zyreladdons_loaded' );
 	}
 
 	/**
@@ -133,9 +133,9 @@ class Plugin {
 			add_action( 'admin_enqueue_scripts', [ Dashboard::class, 'dequeue_scripts' ], 100 );
 
 			add_action( 'wp_ajax_' . Dashboard::DASHBOARD_NONCE, [ Dashboard::class, 'save_settings' ] );
-			add_action( 'zyreaddons_save_dashboard_settings', [ Dashboard::class, 'save_widgets' ], 1 );
-			add_action( 'zyreaddons_save_dashboard_settings', [ Dashboard::class, 'save_widgets_styles' ] );
-			add_action( 'zyreaddons_save_dashboard_settings', [ Dashboard::class, 'save_credentials' ] );
+			add_action( 'zyreladdons_save_dashboard_settings', [ Dashboard::class, 'save_widgets' ], 1 );
+			add_action( 'zyreladdons_save_dashboard_settings', [ Dashboard::class, 'save_widgets_styles' ] );
+			add_action( 'zyreladdons_save_dashboard_settings', [ Dashboard::class, 'save_credentials' ] );
 
 			add_action( 'in_admin_header', [ Dashboard::class, 'remove_admin_notices' ], PHP_INT_MAX );
 

@@ -54,8 +54,8 @@ define( 'ZYRELADDONS_DIR_PATH', plugin_dir_path( ZYRELADDONS__FILE__ ) );
 define( 'ZYRELADDONS_DIR_URL', plugin_dir_url( ZYRELADDONS__FILE__ ) );
 define( 'ZYRELADDONS_ASSETS', trailingslashit( ZYRELADDONS_DIR_URL . 'assets' ) );
 
-define( 'ZYRELADDONS_REDIRECTION_FLAG', 'zyreaddons_do_activation_direct' );
-define( 'ZYRELADDONS_WIZARD_REDIRECTION_FLAG', 'zyreaddons_do_wizard_direct' );
+define( 'ZYRELADDONS_REDIRECTION_FLAG', 'zyreladdons_do_activation_direct' );
+define( 'ZYRELADDONS_WIZARD_REDIRECTION_FLAG', 'zyreladdons_do_wizard_direct' );
 
 define( 'ZYRELADDONS_MINIMUM_ELEMENTOR_VERSION', '3.7.0' );
 define( 'ZYRELADDONS_MINIMUM_PHP_VERSION', '7.4' );

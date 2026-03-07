@@ -67,7 +67,7 @@ class Module {
 
 		// Override Single Post Template
 		add_filter( 'template_include', [ $this, 'template_include' ], 999 );
-		add_action( 'zyreaddons_theme_builder_render', [ $this, 'single_blog_content_elementor' ], 999 );
+		add_action( 'zyreladdons_theme_builder_render', [ $this, 'single_blog_content_elementor' ], 999 );
 
 		add_action( 'elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories' ] );
 	}
@@ -515,7 +515,7 @@ class Module {
 			'archive' => esc_html__( 'Archive', 'zyre-elementor-addons' ),
 		];
 
-		return apply_filters( 'zyreaddons/theme-builder/template-types', $template_types );
+		return apply_filters( 'zyreladdons/theme-builder/template-types', $template_types );
 	}
 
 	public function add_new_template() {

@@ -54,7 +54,7 @@ class Bbtheme {
 			}
 		}
 
-		do_action( 'zyreaddons/template/before_header' ); ?>
+		do_action( 'zyreladdons/template/before_header' ); ?>
 
 		<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
 			<div class="ekit-template-content-markup ekit-template-content-header">
@@ -62,7 +62,7 @@ class Bbtheme {
 			</div>
 		</header>
 
-		<?php do_action( 'zyreaddons/template/after_header' );
+		<?php do_action( 'zyreladdons/template/after_header' );
 	}
 
 	// footer actions
@@ -71,12 +71,12 @@ class Bbtheme {
 			return;
 		}
 
-		do_action( 'zyreaddons/template/before_footer' ); ?>
+		do_action( 'zyreladdons/template/before_footer' ); ?>
 
 		<footer itemscope="itemscope" itemtype="https://schema.org/WPFooter">
 		<?php echo wp_kses( Module::render_builder_data( $this->footer ), zyreladdons_kses_allowed_html() ); ?>
 		</footer>
 
-		<?php do_action( 'zyreaddons/template/after_footer' );
+		<?php do_action( 'zyreladdons/template/after_footer' );
 	}
 }

@@ -16,7 +16,7 @@ class Dashboard {
 
 	const DASHBOARD_NONCE = 'zyreladdons_save_dashboard_settings';
 
-	const SUBSCRIBED_META_KEY = 'zyreaddons_subscribed';
+	const SUBSCRIBED_META_KEY = 'zyreladdons_subscribed';
 
 	protected static $menu_slug = '';
 
@@ -53,7 +53,7 @@ class Dashboard {
 			$data = zyreladdons_sanitize_array_recursively( $data );
 		}
 
-		do_action( 'zyreaddons_save_dashboard_settings', $data );
+		do_action( 'zyreladdons_save_dashboard_settings', $data );
 
 		wp_send_json_success();
 	}
@@ -164,7 +164,7 @@ class Dashboard {
 
 	public static function get_widgets() {
 		$widgets_map = Widgets_Manager::get_real_widgets_map();
-		$widgets_map = apply_filters( 'zyreaddons_dashboard_get_widgets', $widgets_map );
+		$widgets_map = apply_filters( 'zyreladdons_dashboard_get_widgets', $widgets_map );
 
 		uksort( $widgets_map, [ __CLASS__, 'sort_widgets' ] );
 		return $widgets_map;
@@ -306,7 +306,7 @@ class Dashboard {
 			],
 		];
 
-		return apply_filters( 'zyreaddons_dashboard_get_tabs', $tabs );
+		return apply_filters( 'zyreladdons_dashboard_get_tabs', $tabs );
 	}
 
 	private static function load_template( $template ) {
@@ -368,7 +368,7 @@ class Dashboard {
 
 		update_user_meta(
 			get_current_user_id(),
-			'zyreaddons_subscribed',
+			'zyreladdons_subscribed',
 			'yes'
 		);
 
@@ -380,6 +380,6 @@ class Dashboard {
  * Ajax action to mark user as subscribed
  */
 add_action(
-    'wp_ajax_zyreaddons_user_subscribed',
+    'wp_ajax_zyreladdons_user_subscribed',
     [ __NAMESPACE__ . '\Dashboard', 'user_subscribed' ]
 );

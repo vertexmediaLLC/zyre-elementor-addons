@@ -167,7 +167,7 @@ class Cache_Manager {
 		wp_enqueue_style( 'zyre-elementor-addons-global' );
 		wp_enqueue_script( 'zyre-elementor-addons' );
 
-		do_action( 'zyreaddons_enqueue_assets', $is_cache = true, $post_id );
+		do_action( 'zyreladdons_enqueue_assets', $is_cache = true, $post_id );
 	}
 
 	/**
@@ -203,11 +203,11 @@ class Cache_Manager {
 				if ( isset( $data['css'] ) && is_array( $data['css'] ) ) {
 					foreach ( $data['css'] as $stylesheet ) {
 						$file_path = ZYRELADDONS_DIR_PATH . "assets/css/widgets/{$widget_key}/{$stylesheet}{$suffix}css";
-						$file_path = apply_filters( 'zyreaddons_get_styles_file_path', $file_path, $stylesheet, $is_pro );
+						$file_path = apply_filters( 'zyreladdons_get_styles_file_path', $file_path, $stylesheet, $is_pro );
 
 						if ( is_readable( $file_path ) ) {
 							$file_url = ZYRELADDONS_ASSETS . "css/widgets/{$widget_key}/{$stylesheet}{$suffix}css";
-							$file_url = apply_filters( 'zyreaddons_get_styles_file_url', $file_url, $stylesheet, $is_pro );
+							$file_url = apply_filters( 'zyreladdons_get_styles_file_url', $file_url, $stylesheet, $is_pro );
 
 							wp_enqueue_style(
 								"zyre-{$stylesheet}",
@@ -225,7 +225,7 @@ class Cache_Manager {
 		wp_enqueue_style( 'zyre-elementor-addons-global' );
 		wp_enqueue_script( 'zyre-elementor-addons' );
 
-		do_action( 'zyreaddons_enqueue_assets', $is_cache = false, 0 );
+		do_action( 'zyreladdons_enqueue_assets', $is_cache = false, 0 );
 	}
 }
 

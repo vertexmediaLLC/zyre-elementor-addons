@@ -88,15 +88,15 @@ abstract class Base extends Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-		do_action( 'zyreaddons_before_register_content_controls', $this );
+		do_action( 'zyreladdons_before_register_content_controls', $this );
 
 		$this->register_content_controls();
 
-		do_action( 'zyreaddons_after_register_content_controls', $this );
+		do_action( 'zyreladdons_after_register_content_controls', $this );
 
 		$this->register_style_controls();
 
-		do_action( 'zyreaddons_after_register_style_controls', $this );
+		do_action( 'zyreladdons_after_register_style_controls', $this );
 	}
 
 	/**

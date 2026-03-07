@@ -66,7 +66,7 @@ class Conditions_Manager {
 			}
 			return false;
 		}
-		return apply_filters( 'zyreaddons/conditions/check/sub_name', $sub_name, $parsed_condition );
+		return apply_filters( 'zyreladdons/conditions/check/sub_name', $sub_name, $parsed_condition );
 	}
 
 	private function get_priority_by_key( $key ) {
@@ -243,7 +243,7 @@ class Conditions_Manager {
 			],
 		];
 
-		return apply_filters( 'zyreaddons/conditions/archive', $conditions );
+		return apply_filters( 'zyreladdons/conditions/archive', $conditions );
 	}
 
 	private function singular_conditions() {
@@ -260,7 +260,7 @@ class Conditions_Manager {
 			],
 		];
 
-		return apply_filters( 'zyreaddons/conditions/singular', $conditions );
+		return apply_filters( 'zyreladdons/conditions/singular', $conditions );
 	}
 
 	protected function process_condition() {
