@@ -776,7 +776,7 @@ class Post_Meta extends Base {
 	protected function render_post_item_before( $item ) {
 		if ( 'yes' === $item['icon_switcher'] && '' !== $item['post_meta_icon']['value'] ) : ?>
 		<span class="zyre-post-meta-icon">
-			<?php zyre_render_icon( $item, 'icon', 'post_meta_icon' ); ?>
+			<?php zyreladdons_render_icon( $item, 'icon', 'post_meta_icon' ); ?>
 		</span>
 		<?php endif; ?>
 		<?php if ( '' !== $item['post_meta_prefix'] ) : ?>

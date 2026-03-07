@@ -53,7 +53,7 @@ abstract class Base extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return array( 'zyre_addons_category' );
+		return array( 'zyreladdons_category' );
 	}
 
 	/**
@@ -1456,7 +1456,7 @@ abstract class Base extends Widget_Base {
 	 * Elementor 2.6.0 no longer supports the render_edit_tools method.
 	 */
 	protected function render_edit_tools() {
-		if ( zyre_is_elementor_version( '<=', '2.5.16' ) ) {
+		if ( zyreladdons_is_elementor_version( '<=', '2.5.16' ) ) {
 			parent::render_edit_tools();
 		}
 	}
@@ -1484,7 +1484,7 @@ abstract class Base extends Widget_Base {
 	 * @param string $setting_key Additional settings key in case $key != $setting_key.
 	 */
 	public function add_inline_editing_attributes( $key, $toolbar = 'basic', $setting_key = '' ) {
-		if ( ! zyre_elementor()->editor->is_edit_mode() ) {
+		if ( ! zyreladdons_elementor()->editor->is_edit_mode() ) {
 			return;
 		}
 
@@ -1532,7 +1532,7 @@ abstract class Base extends Widget_Base {
 	 */
 	public function add_link_attributes( $element, array $url_control, $overwrite = false ) {
 		// The add_link_attributes method is available starting from Elementor version 2.8.0.
-		if ( zyre_is_elementor_version( '>=', '2.8.0' ) ) {
+		if ( zyreladdons_is_elementor_version( '>=', '2.8.0' ) ) {
 			return parent::add_link_attributes( $element, $url_control, $overwrite );
 		}
 

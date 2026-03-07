@@ -53,7 +53,7 @@ class Oceanwp {
 	public function add_plugin_header_markup() {
 		do_action( 'zyreaddons/template/before_header' );
 		echo '<div class="ekit-template-content-markup ekit-template-content-header">';
-		echo wp_kses( Module::render_builder_data( $this->header ), zyre_kses_allowed_html() );
+		echo wp_kses( Module::render_builder_data( $this->header ), zyreladdons_kses_allowed_html() );
 		echo '</div>';
 		do_action( 'zyreaddons/template/after_header' );
 	}
@@ -66,7 +66,7 @@ class Oceanwp {
 	public function add_plugin_footer_markup() {
 		do_action( 'zyreaddons/template/before_footer' );
 		echo '<div class="ekit-template-content-markup ekit-template-content-footer">';
-		echo wp_kses( Module::render_builder_data( $this->footer ), zyre_kses_allowed_html() );
+		echo wp_kses( Module::render_builder_data( $this->footer ), zyreladdons_kses_allowed_html() );
 		echo '</div>';
 		do_action( 'zyreaddons/template/after_footer' );
 	}

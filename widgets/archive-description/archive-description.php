@@ -234,7 +234,7 @@ class Archive_Description extends Base {
 				<<?php Utils::print_validated_html_tag( $settings ['tag'] ); ?> <?php $this->print_render_attribute_string( 'archive_desc' ); ?>>
 					<?php echo esc_html( $archive_desc ); ?>
 				</<?php Utils::print_validated_html_tag( $settings ['tag'] ); ?>>
-				<?php echo wp_kses( $archive_desc_separator, zyre_get_allowed_html() ); ?>
+				<?php echo wp_kses( $archive_desc_separator, zyreladdons_get_allowed_html() ); ?>
 			</div>
 			<?php
 		}

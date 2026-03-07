@@ -31,13 +31,13 @@ class CF7 extends Base {
 		$this->start_controls_section(
 			'section_cf7_content',
 			[
-				'label' => zyre_is_cf7_activated() ? esc_html__( 'Contact Form 7', 'zyre-elementor-addons' ) : esc_html__( 'Warning!', 'zyre-elementor-addons' ),
+				'label' => zyreladdons_is_cf7_activated() ? esc_html__( 'Contact Form 7', 'zyre-elementor-addons' ) : esc_html__( 'Warning!', 'zyre-elementor-addons' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
-		if ( ! zyre_is_cf7_activated() ) {
-			$cf7_missing_info = zyre_get_plugin_missing_info(
+		if ( ! zyreladdons_is_cf7_activated() ) {
+			$cf7_missing_info = zyreladdons_get_plugin_missing_info(
 				[
 					'plugin_name' => 'contact-form-7',
 					'plugin_file' => 'contact-form-7/wp-contact-form-7.php',
@@ -88,7 +88,7 @@ class CF7 extends Base {
 					'label' => esc_html__( 'Select Your Form', 'zyre-elementor-addons' ),
 					'type' => Controls_Manager::SELECT,
 					'label_block' => true,
-					'options' => zyre_get_cf7_forms(),
+					'options' => zyreladdons_get_cf7_forms(),
 				]
 			);
 
@@ -103,7 +103,7 @@ class CF7 extends Base {
 				]
 			);
 
-			$ms_plugin_info = zyre_get_plugin_missing_info(
+			$ms_plugin_info = zyreladdons_get_plugin_missing_info(
 				[
 					'plugin_name' => 'cf7-multi-step',
 					'plugin_file' => 'cf7-multi-step/cf7-multi-step.php',
@@ -739,8 +739,8 @@ class CF7 extends Base {
 	 * Register render display controls
 	 */
 	protected function render() {
-		if ( ! zyre_is_cf7_activated() ) {
-			zyre_show_plugin_missing_alert( 'Contact Forms 7' );
+		if ( ! zyreladdons_is_cf7_activated() ) {
+			zyreladdons_show_plugin_missing_alert( 'Contact Forms 7' );
 			return;
 		}
 

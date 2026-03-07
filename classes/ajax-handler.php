@@ -11,7 +11,7 @@ class Ajax_Handler {
 	 */
 	public static function mailchimp_prepare_ajax() {
 
-		if ( ! check_ajax_referer( 'zyre_addons_nonce', 'security', false ) ) {
+		if ( ! check_ajax_referer( 'zyreladdons_nonce', 'security', false ) ) {
 			wp_send_json_error( 'Invalid request', 403 );
 		}
 
@@ -20,7 +20,7 @@ class Ajax_Handler {
 		}
 
 		parse_str( wp_unslash( $_POST['subscriber_info'] ), $subscriber );
-    	$subscriber = zyre_sanitize_array_recursively( $subscriber );
+    	$subscriber = zyreladdons_sanitize_array_recursively( $subscriber );
 
 		if ( empty( $subscriber['email'] ) || ! is_email( $subscriber['email'] ) ) {
 			wp_send_json_error( 'Invalid email', 400 );

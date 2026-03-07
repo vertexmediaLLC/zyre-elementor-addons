@@ -572,7 +572,7 @@ class Page_Title extends Base {
 		}
 		?>
 		<<?php Utils::print_validated_html_tag( $html_tag ); ?> <?php $this->print_render_attribute_string( 'title' ); ?>>
-			<?php echo wp_kses( get_the_title(), zyre_get_allowed_html() ); ?>
+			<?php echo wp_kses( get_the_title(), zyreladdons_get_allowed_html() ); ?>
 		</<?php Utils::print_validated_html_tag( $html_tag ); ?>>
 	<?php }
 
@@ -599,7 +599,7 @@ class Page_Title extends Base {
 		<?php endif; ?>
 		<?php if ( 'icon' === $settings[ $prefix . '_types' ] ) : ?>
 			<span class="zyre-page-title-<?php echo esc_attr( $prefix ); ?> zyre-page-title-icon-<?php echo esc_attr( $class_base ); ?>">
-				<?php zyre_render_icon( $settings, 'icon', $prefix . '_icon' ); ?>
+				<?php zyreladdons_render_icon( $settings, 'icon', $prefix . '_icon' ); ?>
 			</span>
 		<?php endif;
 	}

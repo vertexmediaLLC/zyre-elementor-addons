@@ -343,7 +343,7 @@ class Dual_Color_Heading extends Base {
 		<<?php Utils::print_validated_html_tag( $settings['title_tag'] ); ?> class="zyre-dual-color-heading-title zy-m-0">
 			<?php if ( ! empty( $settings['title_prefix'] ) ) : ?>
 				<span <?php $this->print_render_attribute_string( 'title_prefix' ); ?>>
-					<?php echo wp_kses( $settings['title_prefix'], zyre_get_allowed_html() ); ?>
+					<?php echo wp_kses( $settings['title_prefix'], zyreladdons_get_allowed_html() ); ?>
 				</span>
 			<?php endif; ?>
 	

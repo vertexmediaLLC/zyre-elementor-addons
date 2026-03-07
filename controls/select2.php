@@ -17,7 +17,7 @@ class Select2 extends Control_Select2 {
 	/**
 	 * Control identifier
 	 */
-	const TYPE = 'zyre_select2';
+	const TYPE = 'zyreladdons_select2';
 
 	/**
 	 * Set control type.

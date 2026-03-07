@@ -351,7 +351,7 @@ class Site_Tagline extends Base {
 			<<?php Utils::print_validated_html_tag( $html_tag ); ?> class="zyre-site-tagline zy-flex zy-align-center zy-m-0">
 				<?php if ( 'before' === $icon_position ) : ?>
 					<span class="zyre-site-tagline-icon zyre-site-tagline-icon--<?php echo esc_attr( $icon_position ); ?>">
-						<?php zyre_render_icon( $settings, 'icon', 'site_tagline_icon' ); ?>
+						<?php zyreladdons_render_icon( $settings, 'icon', 'site_tagline_icon' ); ?>
 					</span>
 				<?php endif; ?>	
 
@@ -368,7 +368,7 @@ class Site_Tagline extends Base {
 
 				<?php if ( 'after' === $icon_position ) : ?>
 					<span class="zyre-site-tagline-icon zyre-site-tagline-icon--<?php echo esc_attr( $icon_position ); ?>">
-						<?php zyre_render_icon( $settings, 'icon', 'site_tagline_icon' ); ?>					
+						<?php zyreladdons_render_icon( $settings, 'icon', 'site_tagline_icon' ); ?>					
 					</span>
 				<?php endif; ?>
 			</<?php Utils::print_validated_html_tag( $html_tag ); ?>>

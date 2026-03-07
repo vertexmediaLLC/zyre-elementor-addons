@@ -568,13 +568,13 @@ trait Swiper_Trait {
 					if ( ! empty( $slide['title'] ) ) {
 						$title_html = sprintf( '<%1$s class="zyre-carousel-title zy-m-0 zy-fs-1.5">%2$s</%1$s>',
 							Utils::validate_html_tag( $settings['title_tag'] ),
-							wp_kses( $slide['title'], zyre_get_allowed_html() )
+							wp_kses( $slide['title'], zyreladdons_get_allowed_html() )
 						);
 						echo wp_kses_post( $title_html );
 					}
 					?>
 					<?php if ( ! empty( $slide['subtitle'] ) ) : ?>
-						<p class="zyre-carousel-subtitle zy-m-0"><?php echo wp_kses( $slide['subtitle'], zyre_get_allowed_html() ); ?></p>
+						<p class="zyre-carousel-subtitle zy-m-0"><?php echo wp_kses( $slide['subtitle'], zyreladdons_get_allowed_html() ); ?></p>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>

@@ -73,8 +73,8 @@ class Cache_Manager {
 	 */
 	public static function is_editing_mode() {
 		return (
-			zyre_elementor()->editor->is_edit_mode() ||
-			zyre_elementor()->preview->is_preview_mode() ||
+			zyreladdons_elementor()->editor->is_edit_mode() ||
+			zyreladdons_elementor()->preview->is_preview_mode() ||
 			is_preview()
 		);
 	}
@@ -89,7 +89,7 @@ class Cache_Manager {
 	public static function is_built_with_elementor( $post_id ) {
 		$post = get_post( $post_id );
 		if ( ! empty( $post ) && isset( $post->ID ) ) {
-			return zyre_elementor()->documents->get( $post->ID )->is_built_with_elementor();
+			return zyreladdons_elementor()->documents->get( $post->ID )->is_built_with_elementor();
 		}
 
 		return false;
@@ -102,7 +102,7 @@ class Cache_Manager {
 	 */
 	public static function should_enqueue( $post_id ) {
 		return (
-			zyre_is_on_demand_cache_enabled() &&
+			zyreladdons_is_on_demand_cache_enabled() &&
 			self::is_built_with_elementor( $post_id ) &&
 			self::is_published( $post_id ) &&
 			! self::is_editing_mode()
@@ -120,7 +120,7 @@ class Cache_Manager {
 		return (
 			self::is_built_with_elementor( $post_id ) &&
 			(
-				! zyre_is_on_demand_cache_enabled() ||
+				! zyreladdons_is_on_demand_cache_enabled() ||
 				! self::is_published( $post_id ) ||
 				self::is_editing_mode()
 			)
@@ -146,7 +146,7 @@ class Cache_Manager {
 					continue;
 				}
 
-				zyre_elementor()->frontend->enqueue_font( $icon_font );
+				zyreladdons_elementor()->frontend->enqueue_font( $icon_font );
 			}
 		}
 	}
@@ -176,7 +176,7 @@ class Cache_Manager {
 	 * @since 1.0.0
 	 */
 	public static function enqueue_raw() {
-		$suffix = zyre_is_script_debug_enabled() ? '.' : '.min.';
+		$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 		$widgets_map = Widgets_Manager::get_active_widgets();
 
 		foreach ( $widgets_map as $widget_key => $data ) {

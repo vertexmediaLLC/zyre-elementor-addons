@@ -158,7 +158,7 @@ class Team_Member extends Base {
 			'bio',
 			[
 				'label'       => esc_html__( 'Short Bio', 'zyre-elementor-addons' ),
-				'description' => zyre_get_allowed_html_desc( 'advanced' ),
+				'description' => zyreladdons_get_allowed_html_desc( 'advanced' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'placeholder' => esc_html__( 'Write something amazing about the team member', 'zyre-elementor-addons' ),
 				'rows'        => 5,
@@ -1088,11 +1088,11 @@ class Team_Member extends Base {
 			endif; ?>
 
 			<?php if ( ! empty( $settings['job_title'] ) ) : ?>
-				<div <?php $this->print_render_attribute_string( 'job_title' ); ?>><?php echo wp_kses( $settings['job_title'], zyre_get_allowed_html() ); ?></div>
+				<div <?php $this->print_render_attribute_string( 'job_title' ); ?>><?php echo wp_kses( $settings['job_title'], zyreladdons_get_allowed_html() ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['bio'] ) ) : ?>
-				<p <?php $this->print_render_attribute_string( 'bio' ); ?>><?php echo wp_kses( $settings['bio'], zyre_get_allowed_html('advanced') ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'bio' ); ?>><?php echo wp_kses( $settings['bio'], zyreladdons_get_allowed_html('advanced') ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $show_button && 'before' === $button_position ) :
@@ -1129,7 +1129,7 @@ class Team_Member extends Base {
 					$saved_template_list = apply_filters( 'wpml_object_id', $settings['saved_template_list'], 'elementor_library' );
 					echo wp_kses(
 						\Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_template_list ),
-						zyre_kses_allowed_html()
+						zyreladdons_kses_allowed_html()
 					);
 					?>
 				</div>

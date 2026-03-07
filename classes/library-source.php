@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || die();
 
 class Library_Source extends Source_Base {
 
-	const LIBRARY_CACHE_KEY = 'zyre_library_cache';
+	const LIBRARY_CACHE_KEY = 'zyreladdons_library_cache';
 
 	const TEMPLATES_INFO_API_URL = 'https://templates.zyreaddons.com/wp-json/zyre/v1/templates';
 
@@ -195,7 +195,7 @@ class Library_Source extends Source_Base {
 		$data['content'] = $this->process_export_import_content( $data['content'], 'on_import' );
 
 		$post_id = $args['editor_post_id'];
-		$document = zyre_elementor()->documents->get( $post_id );
+		$document = zyreladdons_elementor()->documents->get( $post_id );
 
 		if ( $document ) {
 			$data['content'] = $document->get_elements_raw_data( $data['content'], true );

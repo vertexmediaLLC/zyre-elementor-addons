@@ -707,7 +707,7 @@ class Archive_Title extends Base {
 		<?php endif; ?>
 		<?php if ( 'icon' === $settings[ $prefix . '_types' ] ) : ?>
 			<span class="zyre-archive-title-<?php echo esc_attr( $prefix ); ?> zyre-archive-title-icon-<?php echo esc_attr( $class_base ); ?>">
-				<?php zyre_render_icon( $settings, 'icon', $prefix . '_icon' ); ?>
+				<?php zyreladdons_render_icon( $settings, 'icon', $prefix . '_icon' ); ?>
 			</span>
 		<?php endif;
 	}
@@ -830,7 +830,7 @@ class Archive_Title extends Base {
 			$title = $prefix . '<span class="zyre-archive-title-text">' . $title . '</span>';
 		}
 
-		$title = apply_filters( 'zyre/widgets/get_the_archive_title', wp_kses( $title, zyre_get_allowed_html() ) );
+		$title = apply_filters( 'zyre/widgets/get_the_archive_title', wp_kses( $title, zyreladdons_get_allowed_html() ) );
 
 		/**
 		 * Archive title.

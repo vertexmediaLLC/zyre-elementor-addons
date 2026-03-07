@@ -17,10 +17,10 @@ class Conditions_Manager {
 	public function __construct() {
 		$this->cache = new Conditions_Cache();
 
-		add_action( 'wp_ajax_zyre_condition_autocomplete', [ $this, 'condition_autocomplete' ] );
-		add_action( 'wp_ajax_zyre_condition_update', [ $this, 'condition_update' ] );
-		add_action( 'wp_ajax_zyre_condition_template_type', [ $this, 'get_template_type' ] );
-		add_action( 'wp_ajax_zyre_condition_current', [ $this, 'get_current_condition' ] );
+		add_action( 'wp_ajax_zyreladdons_condition_autocomplete', [ $this, 'condition_autocomplete' ] );
+		add_action( 'wp_ajax_zyreladdons_condition_update', [ $this, 'condition_update' ] );
+		add_action( 'wp_ajax_zyreladdons_condition_template_type', [ $this, 'get_template_type' ] );
+		add_action( 'wp_ajax_zyreladdons_condition_current', [ $this, 'get_current_condition' ] );
 
 		$this->process_condition();
 	}
@@ -321,7 +321,7 @@ class Conditions_Manager {
 
 		$nonce = sanitize_text_field( wp_unslash( $nonce ?: $_GET['nonce'] ) );
 
-		if ( ! wp_verify_nonce( $nonce, 'zyre_editor_nonce' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'zyreladdons_editor_nonce' ) ) {
 			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
 		}
 	}
@@ -467,14 +467,14 @@ class Conditions_Manager {
 
 		// WP_Query arguments
 		$args = array(
-			'post_type'              => array( 'zyre_library' ),
+			'post_type'              => array( 'zyreladdons_library' ),
 			'post_status'            => array( 'publish' ),
 			'posts_per_page'         => -1,
 			'order'                  => 'DESC',
 			'orderby'                => 'date',
 			'meta_query'             => array(
 				array(
-					'key' => '_zyre_display_cond',
+					'key' => 'zyreladdons_display_cond',
 					'compare' => 'EXISTS',
 				),
 			),
@@ -488,8 +488,8 @@ class Conditions_Manager {
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
-				$saved_conditions = get_post_meta( get_the_ID(), '_zyre_display_cond', true );
-				$tpl_type = get_post_meta( get_the_ID(), '_zyre_library_type', true );
+				$saved_conditions = get_post_meta( get_the_ID(), 'zyreladdons_display_cond', true );
+				$tpl_type = get_post_meta( get_the_ID(), 'zyreladdons_library_type', true );
 
 				if ( is_array( $saved_conditions ) ) {
 					foreach ( $saved_conditions as $condition ) {
@@ -559,21 +559,21 @@ class Conditions_Manager {
 				throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 			}
 
-			$request_conditions = isset( $_POST['conds'] ) ? zyre_sanitize_array_recursively( wp_unslash( $_POST['conds'] ) ) : [];
+			$request_conditions = isset( $_POST['conds'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['conds'] ) ) : [];
 
-			$exits_conditions = get_post_meta( $template_id, '_zyre_display_cond', true );
+			$exits_conditions = get_post_meta( $template_id, 'zyreladdons_display_cond', true );
 			$merged_conditions = ! empty( $exits_conditions ) ? array_diff( $request_conditions, $exits_conditions ) : $request_conditions;
 
 			if ( $template_id ) {
 
 				$all_extits_condition = $this->get_all_conditions();
-				$template_type = get_post_meta( $template_id, '_zyre_library_type', true );
+				$template_type = get_post_meta( $template_id, 'zyreladdons_library_type', true );
 
 				$duplicate = $this->check_template_conditions( $template_type, $request_conditions, $merged_conditions, $all_extits_condition );
 
 				if ( ! $duplicate ) {
-					$cond = update_post_meta( $template_id, '_zyre_display_cond', array_unique( $request_conditions ) );
-					$updates = get_post_meta( $template_id, '_zyre_display_cond' );
+					$cond = update_post_meta( $template_id, 'zyreladdons_display_cond', array_unique( $request_conditions ) );
+					$updates = get_post_meta( $template_id, 'zyreladdons_display_cond' );
 
 					if ( null !== $cond ) {
 						$this->cache->regenerate();
@@ -598,7 +598,7 @@ class Conditions_Manager {
 
 			$id = isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : null;
 			if ( $id ) {
-				$tpl_type = get_post_meta( $id, '_zyre_library_type', true );
+				$tpl_type = get_post_meta( $id, 'zyreladdons_library_type', true );
 				wp_send_json_success( $tpl_type );
 			} else {
 				wp_send_json_error();
@@ -614,7 +614,7 @@ class Conditions_Manager {
 
 			$template_id = isset( $_GET['template_id'] ) ? absint( $_GET['template_id'] ) : null;
 			if ( $template_id ) {
-				$cond = get_post_meta( $template_id, '_zyre_display_cond', true );
+				$cond = get_post_meta( $template_id, 'zyreladdons_display_cond', true );
 				if ( $cond ) {
 					ob_start();
 					$this->cond_to_html( $cond );
@@ -671,7 +671,7 @@ class Conditions_Manager {
 				? '<option value="' . esc_attr( $sub_id ) . '" selected="selected">' . esc_html( $title ) . '</option>'
 				: '';
 
-			$icon = zyre_get_svg_icon( 'trash-can' );
+			$icon = zyreladdons_get_svg_icon( 'trash-can' );
 
 			ob_start();
 			?>
@@ -760,7 +760,7 @@ class Conditions_Manager {
 				</div>
 
 				<div class="zyre-template-condition-remove">
-					<?php echo wp_kses( $icon, zyre_allowed_icon_html() ); ?>
+					<?php echo wp_kses( $icon, zyreladdons_allowed_icon_html() ); ?>
 					<span class="elementor-screen-only"><?php esc_html_e( 'Remove this item', 'zyre-elementor-addons' ); ?></span>
 				</div>
 			</div>

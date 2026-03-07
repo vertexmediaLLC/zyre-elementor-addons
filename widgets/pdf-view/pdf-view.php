@@ -837,7 +837,7 @@ class PDF_View extends Base {
 											</span>
 										<?php elseif ( 'icon' === $settings['pdf_icon_media'] && ( ! empty( $settings['pdf_icon']['value'] ) ) ) : ?>
 											<span class="zyre-pdf-view-icon zy-inline-flex zy-align-center zy-justify-center zy-shrink-0">
-												<?php zyre_render_icon( $settings, 'icon', 'pdf_icon' ); ?>
+												<?php zyreladdons_render_icon( $settings, 'icon', 'pdf_icon' ); ?>
 											</span>										
 										<?php endif; ?>
 
@@ -869,7 +869,7 @@ class PDF_View extends Base {
 								<a href="<?php echo esc_url( $pdf_url_i ); ?>" class="zyre-pdf-view-btn zy-transition zy-flex zy-align-center" download title="<?php echo esc_attr( $settings['pdf_title'] ); ?>">
 									<?php if ( ! empty( $settings['download_icon']['value'] ) ) : ?>
 										<span class="zyre-pdf-download-icon zy-inline-block">
-											<?php zyre_render_icon( $settings, 'icon', 'download_icon', [ 'class' => 'zy-transition' ] ); ?>
+											<?php zyreladdons_render_icon( $settings, 'icon', 'download_icon', [ 'class' => 'zy-transition' ] ); ?>
 										</span>									
 									<?php endif; ?>
 									<?php if ( ! empty( $settings['download_button_text'] ) ) : ?>

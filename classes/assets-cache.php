@@ -344,7 +344,7 @@ class Assets_Cache {
 	 * @return string             The concatenated CSS content.
 	 */
 	protected function get_css( $file_names, $is_pro = false, $widget_key = '' ) {
-		$suffix = zyre_is_script_debug_enabled() ? '.' : '.min.';
+		$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 		$css = '';
 
 		foreach ( $file_names as $file_name ) {

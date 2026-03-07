@@ -14,7 +14,7 @@ class Dashboard {
 
 	const PAGE_SLUG = 'zyre-addons';
 
-	const DASHBOARD_NONCE = 'zyre_save_dashboard_settings';
+	const DASHBOARD_NONCE = 'zyreladdons_save_dashboard_settings';
 
 	const SUBSCRIBED_META_KEY = 'zyreaddons_subscribed';
 
@@ -50,7 +50,7 @@ class Dashboard {
 		$data = [];
 		if ( ! empty( $_POST['formData'] ) ) {
 			parse_str( wp_unslash( $_POST['formData'] ), $data );
-			$data = zyre_sanitize_array_recursively( $data );
+			$data = zyreladdons_sanitize_array_recursively( $data );
 		}
 
 		do_action( 'zyreaddons_save_dashboard_settings', $data );
@@ -93,7 +93,7 @@ class Dashboard {
 			return;
 		}
 
-		$suffix = zyre_is_script_debug_enabled() ? '.' : '.min.';
+		$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 
 		wp_enqueue_style(
 			'zyre-icons',
@@ -186,7 +186,7 @@ class Dashboard {
 			'manage_options',
 			self::PAGE_SLUG,
 			[ __CLASS__, 'render_home' ],
-			zyre_get_b64_3dicon_white(),
+			zyreladdons_get_b64_3dicon_white(),
 			58.6
 		);
 
@@ -294,15 +294,15 @@ class Dashboard {
 		$tabs = [
 			'dashboard' => [
 				'title' => esc_html__( 'Dashboard', 'zyre-elementor-addons' ),
-				'icon' => zyre_get_svg_icon( 'home' ),
+				'icon' => zyreladdons_get_svg_icon( 'home' ),
 			],
 			'widgets' => [
 				'title' => esc_html__( 'Widgets', 'zyre-elementor-addons' ),
-				'icon' => zyre_get_svg_icon( 'cube' ),
+				'icon' => zyreladdons_get_svg_icon( 'cube' ),
 			],
 			'integrations' => [
 				'title' => esc_html__( 'Integrations', 'zyre-elementor-addons' ),
-				'icon' => zyre_get_svg_icon( 'cog' ),
+				'icon' => zyreladdons_get_svg_icon( 'cog' ),
 			],
 		];
 

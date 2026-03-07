@@ -6,11 +6,11 @@ defined( 'ABSPATH' ) || die();
 
 class PreStyles_Manager {
 
-	const NONCE = 'zyre_widget_prestyles_nonce';
+	const NONCE = 'zyreladdons_widget_prestyles_nonce';
 
 	public static function init() {
 		add_action( 'elementor/editor/after_enqueue_scripts', [ __CLASS__, 'enqueue_editor_scripts' ] );
-		add_action( 'wp_ajax_zyre_widget_set_prestyle', [ __CLASS__, 'set_prestyle' ] );
+		add_action( 'wp_ajax_zyreladdons_widget_set_prestyle', [ __CLASS__, 'set_prestyle' ] );
 	}
 
 	public static function set_prestyle() {
@@ -73,7 +73,7 @@ class PreStyles_Manager {
 	}
 
 	public static function get_elementor_data( $post_id, $widget_id ) {
-		$document = zyre_elementor()->documents->get( $post_id );
+		$document = zyreladdons_elementor()->documents->get( $post_id );
 
 		if ( ! $document->is_built_with_elementor() ) {
 			return [];
@@ -90,7 +90,7 @@ class PreStyles_Manager {
 				return [];
 			}
 
-			zyre_elementor()->db->iterate_data(
+			zyreladdons_elementor()->db->iterate_data(
 				$data,
 				function ( $element ) use ( &$cache, $style_key_default, $widgets_cache, $widget_id ) {
 					$type = $widgets_cache->get_widget_type( $element );

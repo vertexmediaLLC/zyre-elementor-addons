@@ -116,7 +116,7 @@ class Post_Grid extends Base {
 			]
 		);
 
-		$post_types = zyre_get_post_types();
+		$post_types = zyreladdons_get_post_types();
 		$post_types['archive'] = esc_html__( 'Archive Posts', 'zyre-elementor-addons' );
 
 		$this->add_control(
@@ -136,7 +136,7 @@ class Post_Grid extends Base {
 				'type' => Controls_Manager::SELECT2,
 				'label_block' => true,
 				'multiple' => true,
-				'options' => zyre_get_all_type_posts(),
+				'options' => zyreladdons_get_all_type_posts(),
 				'condition' => [
 					'query_source' => 'manual',
 				],
@@ -151,7 +151,7 @@ class Post_Grid extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
-				'options' => zyre_get_all_author(),
+				'options' => zyreladdons_get_all_author(),
 				'condition' => [
 					'query_source!' => [ 'manual', 'archive' ],
 				],
@@ -174,7 +174,7 @@ class Post_Grid extends Base {
 					'type' => Controls_Manager::SELECT2,
 					'label_block' => true,
 					'multiple' => true,
-					'options' => zyre_get_category_list( $taxonomy ), // Use your existing helper to get terms
+					'options' => zyreladdons_get_category_list( $taxonomy ), // Use your existing helper to get terms
 					'condition' => [
 						'query_source' => $object->object_type,
 						'query_source!' => 'manual',
@@ -227,7 +227,7 @@ class Post_Grid extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
-				'options' => zyre_get_all_posts(),
+				'options' => zyreladdons_get_all_posts(),
 				'condition' => [
 					'query_source!' => [ 'manual', 'archive' ],
 				],
@@ -319,7 +319,7 @@ class Post_Grid extends Base {
 			]
 		);
 
-		$pv_plugin_info = zyre_get_plugin_missing_info(
+		$pv_plugin_info = zyreladdons_get_plugin_missing_info(
 			[
 				'plugin_name' => 'post-views-counter',
 				'plugin_file' => 'post-views-counter/post-views-counter.php',
@@ -2031,7 +2031,7 @@ class Post_Grid extends Base {
 			]
 		);
 
-		$cc_plugin_info = zyre_get_plugin_missing_info(
+		$cc_plugin_info = zyreladdons_get_plugin_missing_info(
 			[
 				'plugin_name' => 'colorful-categories',
 				'plugin_file' => 'colorful-categories/colorful-categories.php',
@@ -2220,7 +2220,7 @@ class Post_Grid extends Base {
 	protected function render() {
 		$this->settings = $this->get_settings_for_display();
 		global $wp_query;
-		$is_editor = zyre_elementor()->editor->is_edit_mode() || is_preview();
+		$is_editor = zyreladdons_elementor()->editor->is_edit_mode() || is_preview();
 		$editor_notice = '';
 
 		// Determine if sticky posts should be ignored
@@ -2427,7 +2427,7 @@ class Post_Grid extends Base {
 				if ( empty( $this->settings['title_length'] ) ) {
 					echo esc_html( get_the_title() );
 				} else {
-					echo wp_kses( implode( ' ', array_slice( explode( ' ', get_the_title() ), 0, $this->settings['title_length'] ) ), zyre_get_allowed_html() );
+					echo wp_kses( implode( ' ', array_slice( explode( ' ', get_the_title() ), 0, $this->settings['title_length'] ) ), zyreladdons_get_allowed_html() );
 				}
 				?>
 			</a>
@@ -2448,7 +2448,7 @@ class Post_Grid extends Base {
 		$excerpt = wp_trim_words( $excerpt, $excerpt_length, $excerpt_more );
 
 		if ( $excerpt ) : ?>
-			<p class="zyre-post-excerpt zy-m-0"><?php echo wp_kses( $excerpt, zyre_get_allowed_html() ); ?></p>
+			<p class="zyre-post-excerpt zy-m-0"><?php echo wp_kses( $excerpt, zyreladdons_get_allowed_html() ); ?></p>
 		<?php endif;
 	}
 
@@ -2563,7 +2563,7 @@ class Post_Grid extends Base {
 		/** This filter is documented in wp-includes/general-template.php */
         echo wp_kses(
             apply_filters( 'the_date', $date, get_option( 'date_format' ), '', '' ),
-            zyre_get_allowed_html()
+            zyreladdons_get_allowed_html()
         );
 
 		echo $in_meta ? '</span>' : '</div>';
@@ -2576,7 +2576,7 @@ class Post_Grid extends Base {
 			$comments_icon_key = $type . '_comments_icon';
 			if ( '' !== $this->settings[ $comments_icon_key ]['value'] ) : ?>
 				<span class="zyre-post-comments-icon zyre-post-meta-icon zy-mie-2">
-					<?php zyre_render_icon( $this->settings, 'icon', $comments_icon_key ); ?>
+					<?php zyreladdons_render_icon( $this->settings, 'icon', $comments_icon_key ); ?>
 				</span>
 			<?php endif; ?>
 
@@ -2622,7 +2622,7 @@ class Post_Grid extends Base {
 				}
 
 				if ( ! is_rtl() ) {
-					echo wp_kses( $category_prefix, zyre_get_allowed_html() );
+					echo wp_kses( $category_prefix, zyreladdons_get_allowed_html() );
 				}
 
 				foreach ( $categories as $category ) {
@@ -2647,7 +2647,7 @@ class Post_Grid extends Base {
 				echo wp_kses_post( implode( $category_separator, $names ) );
 
 				if ( is_rtl() ) {
-					echo wp_kses( $category_prefix, zyre_get_allowed_html() );
+					echo wp_kses( $category_prefix, zyreladdons_get_allowed_html() );
 				}
 
 				echo '</span>';
@@ -2674,7 +2674,7 @@ class Post_Grid extends Base {
 				}
 
 				if ( ! is_rtl() ) {
-					echo wp_kses( $tag_prefix, zyre_get_allowed_html() );
+					echo wp_kses( $tag_prefix, zyreladdons_get_allowed_html() );
 				}
 
 				foreach ( $tags as $tag ) {
@@ -2684,7 +2684,7 @@ class Post_Grid extends Base {
 				echo wp_kses_post( implode( $tag_separator, $names ) );
 
 				if ( is_rtl() ) {
-					echo wp_kses( $tag_prefix, zyre_get_allowed_html() );
+					echo wp_kses( $tag_prefix, zyreladdons_get_allowed_html() );
 				}
 
 				echo '</span>';
@@ -2799,7 +2799,7 @@ class Post_Grid extends Base {
 		if ( ! empty( $html ) ) {
 			printf(
 				'<div class="zyre-post-grid-pagination">%s</div>',
-				wp_kses( $html, zyre_get_allowed_html( 'advanced' ) )
+				wp_kses( $html, zyreladdons_get_allowed_html( 'advanced' ) )
 			);
 		}
 	}

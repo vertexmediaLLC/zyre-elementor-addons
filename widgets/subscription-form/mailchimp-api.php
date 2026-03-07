@@ -25,12 +25,12 @@ class Mailchimp_Api {
 	public static function insert_subscriber_to_mailchimp( $submitted_data ) {
 		$return = [];
 
-		self::$credentials = zyre_get_credentials( 'mailchimp' );
+		self::$credentials = zyreladdons_get_credentials( 'mailchimp' );
 		self::$api_key = self::$credentials['api'] ?? '';
 
 		$post_id   = absint( $_POST['post_id'] ?? 0 );
 		$widget_id = sanitize_text_field( wp_unslash( $_POST['widget_id'] ?? '' ) );
-		$widget_settings = zyre_get_el_post_widget_settings( $post_id, $widget_id );
+		$widget_settings = zyreladdons_get_el_post_widget_settings( $post_id, $widget_id );
 
 		// Tags
 		$tags = [];

@@ -701,7 +701,7 @@ class Post_Content extends Base {
 
 		if ( 'custom' === $settings['source_type'] ) {
 			$post_id = is_array( $settings['source_custom'] ) ? (int) $settings['source_custom'][0] : (int) $settings['source_custom'];
-			zyre_elementor()->db->switch_to_post( $post_id );
+			zyreladdons_elementor()->db->switch_to_post( $post_id );
 		}
 
 		static $have_posts = [];
@@ -731,7 +731,7 @@ class Post_Content extends Base {
 
 		<?php
 		if ( 'custom' === $settings['source_type'] ) {
-			zyre_elementor()->db->restore_current_post();
+			zyreladdons_elementor()->db->restore_current_post();
 		}
 	}
 }

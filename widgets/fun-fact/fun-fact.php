@@ -844,7 +844,7 @@ class Fun_Fact extends Base {
 		<div class="zyre-fun-fact-wrapper zy-flex zy-gap-3 zy-break-word zy-overflow-break-word zy-text-center">
 			<?php if ( ! empty( $settings['selected_icon']['value'] ) ) : ?>
 				<div class="zyre-fun-fact-media zyre-fun-fact-icon zy-content-center zy-justify-items-center zy-inline-block">
-					<?php zyre_render_icon( $settings ); ?>
+					<?php zyreladdons_render_icon( $settings ); ?>
 				</div>
 			<?php elseif ( isset( $settings['image'] ) && isset( $settings['image']['url'] ) && isset( $settings['image']['id'] ) ) : ?>
 				<div class="zyre-fun-fact-media zyre-fun-fact-image zy-inline-block">
@@ -873,10 +873,10 @@ class Fun_Fact extends Base {
 					<div class="zyre-fun-fact-title-wrap">
 						<div class="zyre-fun-fact-title-inner zy-inline-flex zy-align-center zy-gap-1">
 							<?php if ( ! empty( $settings['ff_title_icon']['value'] ) ) : ?>
-								<span class="zyre-fun-fact-title-icon"><?php zyre_render_icon( $settings, 'icon', 'ff_title_icon' ); ?></span>
+								<span class="zyre-fun-fact-title-icon"><?php zyreladdons_render_icon( $settings, 'icon', 'ff_title_icon' ); ?></span>
 							<?php endif; ?>
 							<<?php Utils::print_validated_html_tag( $settings['ff_title_tag'] ); ?> <?php $this->print_render_attribute_string( 'ff_title' ); ?>>
-								<?php echo wp_kses( $settings['ff_title'], zyre_get_allowed_html() ); ?>
+								<?php echo wp_kses( $settings['ff_title'], zyreladdons_get_allowed_html() ); ?>
 							</<?php Utils::print_validated_html_tag( $settings['ff_title_tag'] ); ?>>
 						</div>
 					</div>

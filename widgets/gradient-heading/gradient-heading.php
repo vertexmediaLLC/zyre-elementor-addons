@@ -416,7 +416,7 @@ class Gradient_Heading extends Base {
 		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-gradient-heading-title-suffix zy-inline-block zy-lh-1' );
 		$this->add_render_attribute( 'title_prefix', 'class', 'zyre-gradient-heading-title-prefix zy-inline-block zy-lh-1' );
 
-		$title_tag = ! empty( $settings['title_tag'] ) ? zyre_escape_tags( $settings['title_tag'], 'h2' ) : 'h2';
+		$title_tag = ! empty( $settings['title_tag'] ) ? zyreladdons_escape_tags( $settings['title_tag'], 'h2' ) : 'h2';
 
 		$title_html = '<' . Utils::validate_html_tag( $title_tag ) . ' class="zyre-gradient-heading-title zy-relative zy-color-transparent zy-m-0">';
 
@@ -425,7 +425,7 @@ class Gradient_Heading extends Base {
 		}
 
 		if ( ! empty( $settings['title_text'] ) ) {
-			$title_html .= '<span ' . $this->get_render_attribute_string( 'title_text' ) . '>' . wp_kses( $settings['title_text'], zyre_get_allowed_html() ) . '</span>';
+			$title_html .= '<span ' . $this->get_render_attribute_string( 'title_text' ) . '>' . wp_kses( $settings['title_text'], zyreladdons_get_allowed_html() ) . '</span>';
 		}
 
 		if ( ! empty( $settings['title_suffix'] ) ) {
@@ -436,7 +436,7 @@ class Gradient_Heading extends Base {
 
 		$subtitle_html = '';
 		if ( ! empty( $settings['text_subtitle'] ) ) {
-			$subtitle_html = '<p ' . $this->get_render_attribute_string( 'text_subtitle' ) . '>' . wp_kses( $settings['text_subtitle'], zyre_get_allowed_html() ) . '</p>';
+			$subtitle_html = '<p ' . $this->get_render_attribute_string( 'text_subtitle' ) . '>' . wp_kses( $settings['text_subtitle'], zyreladdons_get_allowed_html() ) . '</p>';
 		}
 
 		// Get the order from settings

@@ -5,7 +5,7 @@ namespace ZyreAddons\Elementor\ThemeBuilder;
 defined( 'ABSPATH' ) || die();
 
 class Conditions_Cache {
-	const OPTION_NAME = 'zyre_theme_builder_conditions';
+	const OPTION_NAME = 'zyreladdons_theme_builder_conditions';
 
 	protected $conditions = [];
 
@@ -78,12 +78,12 @@ class Conditions_Cache {
 			'posts_per_page' => -1,
 			'post_type' => $post_type,
 			'fields' => 'ids',
-			'meta_key' => '_zyre_display_cond',
+			'meta_key' => 'zyreladdons_display_cond',
 		]);
 
 		foreach ( $query->posts as $post_id ) {
-			$conditions = get_post_meta( $post_id, '_zyre_display_cond', true );
-			$location = get_post_meta( $post_id, '_zyre_library_type', true );
+			$conditions = get_post_meta( $post_id, 'zyreladdons_display_cond', true );
+			$location = get_post_meta( $post_id, 'zyreladdons_library_type', true );
 
 			$this->add( $location, $post_id, $conditions );
 		}

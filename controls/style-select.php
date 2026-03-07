@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || die();
 
 class Style_Control extends Base_Data_Control {
 
-	const TYPE = 'zyre_style_select';
+	const TYPE = 'zyreladdons_style_select';
 
 	public function get_type() {
 		return self::TYPE;

@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || die();
  * @param string $widget_id
  * @param array $value
  */
-function zyre_get_elementor_widget_settings( $elements, $widget_id ) {
+function zyreladdons_get_elementor_widget_settings( $elements, $widget_id ) {
 
 	if ( is_array( $elements ) ) {
 		foreach ( $elements as $element ) {
@@ -24,7 +24,7 @@ function zyre_get_elementor_widget_settings( $elements, $widget_id ) {
 				return $element;
 			}
 			if ( $element && ! empty( $element['elements'] ) && is_array( $element['elements'] ) ) {
-				$value = zyre_get_elementor_widget_settings( $element['elements'], $widget_id );
+				$value = zyreladdons_get_elementor_widget_settings( $element['elements'], $widget_id );
 				if ( $value ) {
 					return $value;
 				}
@@ -42,12 +42,12 @@ function zyre_get_elementor_widget_settings( $elements, $widget_id ) {
  * @param string $widget_id
  * @param array
  */
-function zyre_get_el_post_widget_settings( $post_id, $widget_id ) {
+function zyreladdons_get_el_post_widget_settings( $post_id, $widget_id ) {
 
 	$elementor_data = @json_decode( get_post_meta( $post_id, '_elementor_data', true ), true );
 
 	if ( $elementor_data ) {
-		$element = zyre_get_elementor_widget_settings( $elementor_data, $widget_id );
+		$element = zyreladdons_get_elementor_widget_settings( $elementor_data, $widget_id );
 		return isset( $element['settings'] ) ? $element['settings'] : '';
 	}
 
@@ -62,7 +62,7 @@ function zyre_get_el_post_widget_settings( $post_id, $widget_id ) {
  * @return void
  * @since 1.0.0
  */
-function zyre_get_credentials( $key = '' ) {
+function zyreladdons_get_credentials( $key = '' ) {
 	if ( ! class_exists( 'ZyreAddons\Elementor\Credentials_Manager' ) ) {
 		include_once ZYRE_ADDONS_DIR_PATH . 'classes/credentials-manager.php';
 	}
@@ -78,7 +78,7 @@ function zyre_get_credentials( $key = '' ) {
 /**
  * @param $suffix. e.g. &t=dashboard
  */
-function zyre_get_dashboard_link( $suffix = 'dashboard' ) {
+function zyreladdons_get_dashboard_link( $suffix = 'dashboard' ) {
 	$params = [
 		'page' => 'zyre-addons',
 		't'    => $suffix,

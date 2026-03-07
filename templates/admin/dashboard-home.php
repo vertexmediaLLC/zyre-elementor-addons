@@ -29,7 +29,7 @@ $widget_style_thumb_ph = ZYRE_ADDONS_ASSETS . 'img/widget-style-thumb-placeholde
 
 // Get credentials list and data
 $credential_list = self::get_credentials();
-$credential_data = zyre_get_credentials();
+$credential_data = zyreladdons_get_credentials();
 ?>
 
 <div class="wrap">
@@ -49,7 +49,7 @@ $credential_data = zyre_get_credentials();
 				
 				<div class="zyre-version">
 					<span class="version-number"><?php /* translators: %s is the plugin version */ printf( esc_html__( 'Version %s', 'zyre-elementor-addons' ), esc_html( ZYRE_ADDONS_VERSION ) ); ?></span>
-					<a href="<?php echo esc_url( ZYRE_ADDONS_DIR_URL . 'changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_allowed_icon_html() ); ?></span></a>
+					<a href="<?php echo esc_url( ZYRE_ADDONS_DIR_URL . 'changelog.txt' ); ?>" class="changelog" target="_blank"><span class="changelog-text"><?php esc_html_e( 'View Changelog', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg changelog-icon"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_allowed_icon_html() ); ?></span></a>
 				</div>
 			</div>
 
@@ -102,7 +102,7 @@ $credential_data = zyre_get_credentials();
 									esc_url( $href ),
 									esc_attr( $key ),
 									esc_attr( $class ),
-									isset( $value['icon'] ) ? '<span class="zyre-icon-svg">' . wp_kses( $value['icon'], zyre_get_allowed_html() ) . '</span>' : '',
+									isset( $value['icon'] ) ? '<span class="zyre-icon-svg">' . wp_kses( $value['icon'], zyreladdons_get_allowed_html() ) . '</span>' : '',
 									isset( $value['title'] ) ? esc_html( $value['title'] ) : sprintf(
 										/* translators: %s is the tab number */
 										esc_html__( 'Tab %s', 'zyre-elementor-addons' ),
@@ -115,7 +115,7 @@ $credential_data = zyre_get_credentials();
 							?>
 						</div>
 						<div class="zyre-save-button">
-							<button class="zyre-save-settings" type="submit" disabled><span class="zyre-icon-svg"><?php echo wp_kses( zyre_get_svg_icon( 'floppy-disk' ), zyre_allowed_icon_html() ); ?></span>&nbsp; <span class="zyre-save-text"><?php esc_html_e( 'Save Settings', 'zyre-elementor-addons' ); ?></span></button>
+							<button class="zyre-save-settings" type="submit" disabled><span class="zyre-icon-svg"><?php echo wp_kses( zyreladdons_get_svg_icon( 'floppy-disk' ), zyreladdons_allowed_icon_html() ); ?></span>&nbsp; <span class="zyre-save-text"><?php esc_html_e( 'Save Settings', 'zyre-elementor-addons' ); ?></span></button>
 						</div>
 					</div>
 
@@ -191,7 +191,7 @@ $credential_data = zyre_get_credentials();
 											<div class="zyre-credential__item-title-wrap">
 												<span class="zyre-credential__item-icon">
 													<?php if ( 'mailchimp' === $credential_key ) :
-														echo wp_kses( zyre_get_svg_icon( 'mailchimp' ), zyre_allowed_icon_html() );
+														echo wp_kses( zyreladdons_get_svg_icon( 'mailchimp' ), zyreladdons_allowed_icon_html() );
 															else : ?>
 															<i class="<?php echo esc_attr( $icon ); ?>"></i>
 													<?php endif; ?>
@@ -269,14 +269,14 @@ $credential_data = zyre_get_credentials();
 			
 							<a href="<?php echo esc_url( 'https://www.youtube.com/watch?v=dVWxTTj64F8&list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj' ); ?>" target="_blank" class="zyre-button-header zyre-browse-button">
 								<span class="zyre-button-inner">
-									<span class="zyre-button-text"><?php esc_html_e( 'View More Videos', 'zyre-elementor-addons' ); ?> <span class="zyre-icon-svg"><?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_get_allowed_html() ); ?></span></span>
+									<span class="zyre-button-text"><?php esc_html_e( 'View More Videos', 'zyre-elementor-addons' ); ?> <span class="zyre-icon-svg"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_get_allowed_html() ); ?></span></span>
 								</span>
 							</a>
 			
 							<div class="zyre-rating">
-								<div class="zyre-rating-stars"><?php echo wp_kses( zyre_get_svg_icon( '5stars' ), zyre_get_allowed_html() ); ?></div>
+								<div class="zyre-rating-stars"><?php echo wp_kses( zyreladdons_get_svg_icon( '5stars' ), zyreladdons_get_allowed_html() ); ?></div>
 								<h2 class="zyre-rating-heading"><?php esc_html_e( 'Happy with ZyreAddons', 'zyre-elementor-addons' ); ?></h2>
-								<a href="#" class="zyre-rating-link" target="_blank"><span class="rate-us-link-text"><?php esc_html_e( 'Please rate us', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg"><?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_get_allowed_html() ); ?></span></a>
+								<a href="#" class="zyre-rating-link" target="_blank"><span class="rate-us-link-text"><?php esc_html_e( 'Please rate us', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_get_allowed_html() ); ?></span></a>
 							</div>
 			
 							<!-- Modal -->
@@ -294,7 +294,7 @@ $credential_data = zyre_get_credentials();
 							<h3><?php esc_html_e( 'Quick Help Links', 'zyre-elementor-addons' ); ?></h3>
 							<div class="zyre-sidebar-content">
 								<div class="zyre-sidebar-header">
-									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyre_get_svg_icon( 'knowledge-base' ), zyre_get_allowed_html() ); ?></div>
+									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyreladdons_get_svg_icon( 'knowledge-base' ), zyreladdons_get_allowed_html() ); ?></div>
 									<h2 class="zyre-sidebar-header-heading"><?php esc_html_e( 'Knowledge Base', 'zyre-elementor-addons' ); ?></h2>
 								</div>
 								<p class="zyre-sidebar-description"><?php esc_html_e( 'Explore our comprehensive documentation to familiarize yourself with Zyre.', 'zyre-elementor-addons' ); ?></p>
@@ -306,7 +306,7 @@ $credential_data = zyre_get_credentials();
 							</div>
 							<div class="zyre-sidebar-content" style="display: none;"> <!-- ToDo: show when support center is available -->
 								<div class="zyre-sidebar-header">
-									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyre_get_svg_icon( 'support-center' ), zyre_get_allowed_html() ); ?></div>
+									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyreladdons_get_svg_icon( 'support-center' ), zyreladdons_get_allowed_html() ); ?></div>
 									<h2 class="zyre-sidebar-header-heading"><?php esc_html_e( 'Support Center', 'zyre-elementor-addons' ); ?></h2>
 								</div>
 								<p class="zyre-sidebar-description"><?php esc_html_e( 'We may have already answered your question— visit our Support Forum to find the solution.', 'zyre-elementor-addons' ); ?></p>
@@ -318,7 +318,7 @@ $credential_data = zyre_get_credentials();
 							</div>
 							<div class="zyre-sidebar-content">
 								<div class="zyre-sidebar-header">
-									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyre_get_svg_icon( 'ask-question' ), zyre_get_allowed_html() ); ?></div>
+									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyreladdons_get_svg_icon( 'ask-question' ), zyreladdons_get_allowed_html() ); ?></div>
 									<h2 class="zyre-sidebar-header-heading"><?php esc_html_e( 'Ask a Question', 'zyre-elementor-addons' ); ?></h2>
 								</div>
 								<p class="zyre-sidebar-description"><?php esc_html_e( 'Need further help? Submit a support request for quick assistance.', 'zyre-elementor-addons' ); ?></p>
@@ -332,7 +332,7 @@ $credential_data = zyre_get_credentials();
 					</div>
 				</div>
 
-				<?php if ( ! zyre_is_cf7_activated() ) : // ToDo: Update this condition when the Elementor theme is released. ?>
+				<?php if ( ! zyreladdons_is_cf7_activated() ) : // ToDo: Update this condition when the Elementor theme is released. ?>
 				<div class="zyre-tab-panel zyre-tab-panel-active content-integrations content-dashboard">
 					<div class="zyre-dash-plugin-install">
 						<h2 class="zyre-dash-widget-install-header"><?php esc_html_e( 'ZyreAddons Integrations', 'zyre-elementor-addons' ); ?></h2>
@@ -361,8 +361,8 @@ $credential_data = zyre_get_credentials();
 								</a>
 							</div>
 							<!-- Contact Form 7 -->
-							<?php if ( ! zyre_is_cf7_activated() ) :
-								$cf7_missing_info = zyre_get_plugin_missing_info(
+							<?php if ( ! zyreladdons_is_cf7_activated() ) :
+								$cf7_missing_info = zyreladdons_get_plugin_missing_info(
 									[
 										'plugin_name' => 'contact-form-7',
 										'plugin_file' => 'contact-form-7/wp-contact-form-7.php',
@@ -439,7 +439,7 @@ $credential_data = zyre_get_credentials();
 								<div class="zyre-search-box">
 									<input type="search" class="zyre-search-box-input" id="zyre-sidebar-search" placeholder="<?php esc_attr_e( 'Search Widgets', 'zyre-elementor-addons' ); ?>">
 									<button class="zyre-search-box-button" type="submit">
-										<?php echo wp_kses( zyre_get_svg_icon( 'search' ), zyre_get_allowed_html() ); ?>
+										<?php echo wp_kses( zyreladdons_get_svg_icon( 'search' ), zyreladdons_get_allowed_html() ); ?>
 									</button>
 								</div>
 							</form>
@@ -512,8 +512,8 @@ $credential_data = zyre_get_credentials();
 										</div>
 
 										<div class="zyre-widget-help-links">
-											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank"><?php esc_html_e( 'View Demo', 'zyre-elementor-addons' ); ?> <?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_allowed_icon_html() ); ?></a>
-											<a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'zyre-elementor-addons' ); ?> <?php echo wp_kses( zyre_get_svg_icon( 'up-right-from-square' ), zyre_allowed_icon_html() ); ?></a>
+											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank"><?php esc_html_e( 'View Demo', 'zyre-elementor-addons' ); ?> <?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_allowed_icon_html() ); ?></a>
+											<a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'zyre-elementor-addons' ); ?> <?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_allowed_icon_html() ); ?></a>
 										</div>
 									</div>
 

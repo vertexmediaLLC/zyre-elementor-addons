@@ -65,24 +65,24 @@ define( 'ZYRE_ADDONS_MINIMUM_PHP_VERSION', '7.4' );
  *
  * @return void Not all voids are really void!
  */
-function zyre_init() {
+function zyreladdons_init() {
 	require ZYRE_ADDONS_DIR_PATH . 'includes/helpers.php';
 
 	// Check for required PHP version.
 	if ( version_compare( PHP_VERSION, ZYRE_ADDONS_MINIMUM_PHP_VERSION, '<' ) ) {
-		add_action( 'admin_notices', 'zyre_required_php_version_missing_notice' );
+		add_action( 'admin_notices', 'zyreladdons_required_php_version_missing_notice' );
 		return;
 	}
 
 	// Check if Elementor installed and activated.
 	if ( ! did_action( 'elementor/loaded' ) ) {
-		add_action( 'admin_notices', 'zyre_elementor_missing_notice' );
+		add_action( 'admin_notices', 'zyreladdons_elementor_missing_notice' );
 		return;
 	}
 
 	// Check for required Elementor version.
 	if ( ! version_compare( ELEMENTOR_VERSION, ZYRE_ADDONS_MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
-		add_action( 'admin_notices', 'zyre_required_elementor_version_missing_notice' );
+		add_action( 'admin_notices', 'zyreladdons_required_elementor_version_missing_notice' );
 		return;
 	}
 
@@ -90,7 +90,7 @@ function zyre_init() {
 	\ZyreAddons\Elementor\Plugin::instance()->init();
 }
 
-add_action( 'plugins_loaded', 'zyre_init' );
+add_action( 'plugins_loaded', 'zyreladdons_init' );
 
 /**
  * Admin notice for required php version
@@ -98,7 +98,7 @@ add_action( 'plugins_loaded', 'zyre_init' );
  * @since 1.0.0
  * @return void
  */
-function zyre_required_php_version_missing_notice() {
+function zyreladdons_required_php_version_missing_notice() {
 	$notice = sprintf(
 		/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
 		esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'zyre-elementor-addons' ),
@@ -107,7 +107,7 @@ function zyre_required_php_version_missing_notice() {
 		ZYRE_ADDONS_MINIMUM_PHP_VERSION
 	);
 
-	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyre_get_allowed_html() ) );
+	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html() ) );
 }
 
 /**
@@ -116,9 +116,9 @@ function zyre_required_php_version_missing_notice() {
  * @since 1.0.0
  * @return void
  */
-function zyre_elementor_missing_notice() {
+function zyreladdons_elementor_missing_notice() {
 
-	$missing_info = zyre_get_plugin_missing_info(
+	$missing_info = zyreladdons_get_plugin_missing_info(
 		[
 			'plugin_title' => __( 'Elementor', 'zyre-elementor-addons' ),
 			'plugin_name'  => 'elementor',
@@ -137,7 +137,7 @@ function zyre_elementor_missing_notice() {
 		'<a href="' . esc_url( $missing_info_url ) . '">' . esc_html( $missing_info_title ) . '</a>'
 	);
 
-	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyre_get_allowed_html( 'advanced' ) ) );
+	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html( 'advanced' ) ) );
 }
 
 /**
@@ -146,7 +146,7 @@ function zyre_elementor_missing_notice() {
  * @since 1.0.0
  * @return void
  */
-function zyre_required_elementor_version_missing_notice() {
+function zyreladdons_required_elementor_version_missing_notice() {
 
 	$notice_title = __( 'Update Elementor', 'zyre-elementor-addons' );
 	$notice_url = wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=elementor/elementor.php' ), 'upgrade-plugin_elementor/elementor.php' );
@@ -160,7 +160,7 @@ function zyre_required_elementor_version_missing_notice() {
 		ZYRE_ADDONS_MINIMUM_ELEMENTOR_VERSION
 	);
 
-	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyre_get_allowed_html( 'advanced' ) ) );
+	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html( 'advanced' ) ) );
 }
 
 /**
@@ -168,8 +168,8 @@ function zyre_required_elementor_version_missing_notice() {
  *
  * @since 1.0.0
  */
-add_action( 'before_woocommerce_init', 'zyre_declare_wc_hpos_compatibility' );
-function zyre_declare_wc_hpos_compatibility() {
+add_action( 'before_woocommerce_init', 'zyreladdons_declare_wc_hpos_compatibility' );
+function zyreladdons_declare_wc_hpos_compatibility() {
 	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
 		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
 	}

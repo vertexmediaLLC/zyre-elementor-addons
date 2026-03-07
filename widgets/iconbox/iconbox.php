@@ -134,7 +134,7 @@ class IconBox extends Base {
 			'description',
 			[
 				'label'       => esc_html__( 'Description', 'zyre-elementor-addons' ),
-				'description' => zyre_get_allowed_html_desc(),
+				'description' => zyreladdons_get_allowed_html_desc(),
 				'type'        => Controls_Manager::TEXTAREA,
 				'placeholder' => esc_html__( 'Type info box description', 'zyre-elementor-addons' ),
 				'rows'        => 5,
@@ -934,8 +934,8 @@ class IconBox extends Base {
 								( 'title' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
 									$this->get_render_attribute_string( 'link' ),
-									wp_kses( $settings['title'], zyre_get_allowed_html() )
-								) : wp_kses( $settings['title'], zyre_get_allowed_html() )
+									wp_kses( $settings['title'], zyreladdons_get_allowed_html() )
+								) : wp_kses( $settings['title'], zyreladdons_get_allowed_html() )
 							)
 						);
 						echo wp_kses_post( $title_html );
@@ -950,8 +950,8 @@ class IconBox extends Base {
 								( 'subtitle' === $settings['link_to'] && $has_link ) ? sprintf(
 									'<a %1$s>%2$s</a>',
 									$this->get_render_attribute_string( 'link' ),
-									wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
-								) : wp_kses( $settings['subtitle'], zyre_get_allowed_html() )
+									wp_kses( $settings['subtitle'], zyreladdons_get_allowed_html() )
+								) : wp_kses( $settings['subtitle'], zyreladdons_get_allowed_html() )
 							);
 							echo wp_kses_post( $subtitle_html );
 							?>
@@ -961,7 +961,7 @@ class IconBox extends Base {
 			<?php endif; ?>
 
 			<?php if ( $settings['description'] ) : ?>
-				<p <?php $this->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses( $settings['description'], zyre_get_allowed_html() ); ?></p>
+				<p <?php $this->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses( $settings['description'], zyreladdons_get_allowed_html() ); ?></p>
 			<?php endif; ?>
 
 			<?php $this->render_button(); ?>
