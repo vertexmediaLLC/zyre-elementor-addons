@@ -30,10 +30,9 @@ class PreStyles_Manager {
 		$widget_id = sanitize_text_field( wp_unslash( $_GET['widgetID'] ) );
 		$post_id = isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : 0;
 
-		$is_pro    = isset( $_GET['isPro'] ) ? filter_var( wp_unslash( $_GET['isPro'] ), FILTER_VALIDATE_BOOLEAN ) : false;
 		$is_reset  = isset( $_GET['reset'] ) ? filter_var( wp_unslash( $_GET['reset'] ), FILTER_VALIDATE_BOOLEAN ) : false;
 
-		$styles = self::get_prestyles( $widget_name, $is_pro);
+		$styles = self::get_prestyles( $widget_name );
 		if ( ! $styles ) {
 			wp_send_json_error( __( 'Prestyle not found', 'zyre-elementor-addons' ), 404 );
 		}
@@ -56,15 +55,10 @@ class PreStyles_Manager {
 		wp_send_json_success( $styles, 200 );
 	}
 
-	protected static function get_prestyles( $widget_name, $is_pro = false ) {
+	protected static function get_prestyles( $widget_name ) {
 		$json_file = is_rtl() ? $widget_name . '-rtl.json' : $widget_name . '.json';
 
-		$dir = ZYRELADDONS_DIR_PATH;
-		if ( $is_pro ) {
-			$dir = ZYRELADDONS_PRO_DIR_PATH;
-		}
-
-		$style = $dir . 'assets/pre-styles/' . $widget_name . '/' . $json_file;
+		$style = ZYRELADDONS_DIR_PATH . 'assets/pre-styles/' . $widget_name . '/' . $json_file;
 		if ( ! is_readable( $style ) ) {
 			return false;
 		}
@@ -116,7 +110,7 @@ class PreStyles_Manager {
 
 	public static function enqueue_editor_scripts() {
 		wp_enqueue_script(
-			'zyre-pre-styles',
+			'zyreladdons-pre-styles',
 			ZYRELADDONS_ASSETS . 'admin/js/pre-styles.js',
 			[ 'elementor-editor' ],
 			ZYRELADDONS_VERSION,
@@ -124,7 +118,7 @@ class PreStyles_Manager {
 		);
 
 		wp_localize_script(
-			'zyre-pre-styles',
+			'zyreladdons-pre-styles',
 			'zyrePreStyles',
 			[
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),

@@ -319,7 +319,7 @@ class Module {
 		);
 
 		wp_enqueue_script(
-			'micromodal',
+			'zyreladdons-micromodal',
 			ZYRELADDONS_ASSETS . 'libs/micromodal/micromodal.min.js',
 			[],
 			ZYRELADDONS_VERSION,
@@ -329,7 +329,7 @@ class Module {
 		wp_enqueue_script(
 			'zyreladdons-admin',
 			ZYRELADDONS_ASSETS . 'admin/js/admin.js',
-			[ 'jquery', 'micromodal' ],
+			[ 'jquery', 'zyreladdons-micromodal' ],
 			ZYRELADDONS_VERSION,
 			true
 		);
@@ -346,7 +346,7 @@ class Module {
 	public function template_element_scripts() {
 		if ( self::POST_TYPE === get_post_type() ) {
 			wp_enqueue_style(
-				'zyre-addons-template-modal',
+				'zyreladdons-template-modal',
 				ZYRELADDONS_DIR_URL . 'modules/theme-builder/assets/css/template-modal.css',
 				[ 'elementor-editor' ],
 				ZYRELADDONS_VERSION
@@ -362,30 +362,30 @@ class Module {
 				}
 
 				wp_enqueue_style(
-					'zyre-addons-template-modal-dark',
+					'zyreladdons-template-modal-dark',
 					ZYRELADDONS_DIR_URL . 'modules/theme-builder/assets/css/template-modal-dark.css',
-					[ 'zyre-addons-template-modal' ],
+					[ 'zyreladdons-template-modal' ],
 					ZYRELADDONS_VERSION,
 					$media_queries
 				);
 			}
 
 			wp_enqueue_script(
-				'zyre-addons-template-modal',
+				'zyreladdons-template-modal',
 				ZYRELADDONS_DIR_URL . 'modules/theme-builder/assets/js/template-modal.js',
 				[ 'jquery', 'zyreladdons-editor' ],
 				ZYRELADDONS_VERSION,
 				true
 			);
 
-			wp_localize_script('zyre-addons-template-modal', 'zyreTemplateInfo', [
+			wp_localize_script('zyreladdons-template-modal', 'zyreTemplateInfo', [
 				'postType' => self::POST_TYPE,
 				'templateType' => get_post_meta( get_the_ID(), 'zyreladdons_library_type', true ),
 				'postId' => get_the_ID(),
 			]);
 
 			wp_enqueue_script(
-				'micromodal',
+				'zyreladdons-micromodal',
 				ZYRELADDONS_ASSETS . 'libs/micromodal/micromodal.min.js',
 				[],
 				ZYRELADDONS_VERSION,

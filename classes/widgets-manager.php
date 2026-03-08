@@ -784,7 +784,7 @@ class Widgets_Manager {
 				'js'        => [],
 				'libs'      => [
 					'css'   => [ 'e-swiper' ],
-					'js'    => [ 'zyre-isotope', 'imagesloaded' ]
+					'js'    => [ 'zyreladdons-isotope', 'imagesloaded' ]
 				],
 			],
 			'logo-grid'  => [
@@ -875,7 +875,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'zyre-sharer' ],
+					'js'  => [ 'zyreladdons-sharer' ],
 					'css' => [],
 				],
 			],
@@ -965,7 +965,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'zyre-jquery-numerator' ],
+					'js'  => [ 'zyreladdons-numerator' ],
 					'css' => [],
 				],
 			],
@@ -986,7 +986,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'zyre-alert-handler' ],
+					'js'  => [ 'zyreladdons-alert-handler' ],
 					'css' => [],
 				],
 			],
@@ -1012,7 +1012,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'zyre-jquery-numerator' ],
+					'js'  => [ 'zyreladdons-numerator' ],
 					'css' => [],
 				],
 			],
@@ -1033,7 +1033,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs' => [
-					'js'  => [ 'zyre-jquery-downcount' ],
+					'js'  => [ 'zyreladdons-downcount' ],
 					'css' => [],
 				],
 			],
@@ -1113,7 +1113,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs'      => [
-					'js' => [ 'zyre-animated-text', 'zyre-typed', 'zyre-jquery-vticker' ],
+					'js' => [ 'zyreladdons-animated-text', 'zyreladdons-typed', 'zyreladdons-vticker' ],
 					'css' => [],
 				],
 			],
@@ -1580,7 +1580,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs'      => [
-					'js' => [ 'zyre-pdfobject' ],
+					'js' => [ 'zyreladdons-pdfobject' ],
 					'css' => [],
 				],
 			],
@@ -1601,7 +1601,7 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 				'libs'      => [
-					'js' => [ 'zyre-lottie' ],
+					'js' => [ 'zyreladdons-lottie' ],
 					'css' => [],
 				],
 			],

@@ -80,14 +80,14 @@ class Assets_Manager {
 	public static function frontend_register() {
 
 		wp_register_style(
-			'zyre-icons',
+			'zyreladdons-icons',
 			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
 			[],
 			ZYRELADDONS_VERSION
 		);
 
 		wp_register_style(
-			'zyre-icons-bold',
+			'zyreladdons-icons-bold',
 			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
 			[],
 			ZYRELADDONS_VERSION
@@ -123,7 +123,7 @@ class Assets_Manager {
 
 		// Sharer JS
 		wp_register_script(
-			'zyre-sharer',
+			'zyreladdons-sharer',
 			ZYRELADDONS_ASSETS . 'js/sharer' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -132,7 +132,7 @@ class Assets_Manager {
 
 		// Alert Handler
 		wp_register_script(
-			'zyre-alert-handler',
+			'zyreladdons-alert-handler',
 			ZYRELADDONS_ASSETS . 'js/alert' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -141,7 +141,7 @@ class Assets_Manager {
 
 		// Number animation
 		wp_register_script(
-			'zyre-jquery-numerator',
+			'zyreladdons-numerator',
 			ZYRELADDONS_ASSETS . 'libs/jquery-numerator/jquery-numerator.min.js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -150,7 +150,7 @@ class Assets_Manager {
 
 		// Typed JS
 		wp_register_script(
-			'zyre-typed',
+			'zyreladdons-typed',
 			ZYRELADDONS_ASSETS . 'js/typed.min.js',
 			[],
 			ZYRELADDONS_VERSION,
@@ -159,7 +159,7 @@ class Assets_Manager {
 
 		// vTicker JS
 		wp_register_script(
-			'zyre-jquery-vticker',
+			'zyreladdons-vticker',
 			ZYRELADDONS_ASSETS . 'js/jquery.vticker.min.js',
 			[],
 			ZYRELADDONS_VERSION,
@@ -168,16 +168,16 @@ class Assets_Manager {
 
 		// Animated Text JS
 		wp_register_script(
-			'zyre-animated-text',
+			'zyreladdons-animated-text',
 			ZYRELADDONS_ASSETS . 'js/animated-text' . self::$suffix . 'js',
-			[ 'jquery', 'zyre-typed', 'zyre-jquery-vticker' ],
+			[ 'jquery', 'zyreladdons-typed', 'zyreladdons-vticker' ],
 			ZYRELADDONS_VERSION,
 			true
 		);
 
 		// View PDF JS
 		wp_register_script(
-			'zyre-pdfobject',
+			'zyreladdons-pdfobject',
 			ZYRELADDONS_ASSETS . 'js/pdfobject.min.js',
 			[],
 			ZYRELADDONS_VERSION,
@@ -186,7 +186,7 @@ class Assets_Manager {
 
 		// Lottie
 		wp_register_script(
-			'zyre-lottie',
+			'zyreladdons-lottie',
 			ZYRELADDONS_ASSETS . 'js/lottie.min.js',
 			[],
 			ZYRELADDONS_VERSION,
@@ -195,7 +195,7 @@ class Assets_Manager {
 
 		// jQuery DownCount.
 		wp_register_script(
-			'zyre-jquery-downcount',
+			'zyreladdons-downcount',
 			ZYRELADDONS_ASSETS . 'js/jquery-downcount' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -204,7 +204,7 @@ class Assets_Manager {
 
 		// Isotope
 		wp_register_script(
-			'zyre-isotope',
+			'zyreladdons-isotope',
 			ZYRELADDONS_ASSETS . 'js/isotope.pkgd.min.js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -213,7 +213,7 @@ class Assets_Manager {
 
 		// Zyre addons script.
 		wp_register_script(
-			'zyre-elementor-addons',
+			'zyreladdons-addons',
 			ZYRELADDONS_ASSETS . 'js/zyre-addons' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -222,7 +222,7 @@ class Assets_Manager {
 
 		// Localize scripts.
 		wp_localize_script(
-			'zyre-elementor-addons',
+			'zyreladdons-addons',
 			'ZyreLocalize',
 			array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -289,7 +289,10 @@ class Assets_Manager {
 			if ( zyreladdons_is_script_debug_enabled() ) {
 				Cache_Manager::enqueue_raw( $post_id );
 			} else {
+				wp_enqueue_style( 'zyreladdons-global-vars' );
+				wp_enqueue_style( 'zyreladdons-global' );
 				wp_enqueue_style( 'zyreladdons-widgets' );
+				wp_enqueue_script( 'zyreladdons-addons' );
 			}
 		}
 	}
@@ -319,7 +322,7 @@ class Assets_Manager {
 			}
 
 			wp_enqueue_style(
-				'zyre-addons-editor-dark',
+				'zyreladdons-editor-dark',
 				self::get_dark_stylesheet_url(),
 				array(
 					'elementor-editor',
@@ -339,7 +342,7 @@ class Assets_Manager {
 	public static function elementor_editor_enqueue() {
 
 		wp_enqueue_style(
-			'zyre-font-icons',
+			'zyreladdons-icons',
 			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . self::$suffix . 'css',
 			null,
 			ZYRELADDONS_VERSION

@@ -24,7 +24,7 @@ class Icons_Manager {
 		];
 
 		$tabs['zyre-icons-bold'] = [
-			'name'          => 'zyre-icons-bold',
+			'name'          => 'zyreladdons-icons-bold',
 			'label'         => __( 'Zyre Icons - Bold', 'zyre-elementor-addons' ),
 			'url'           => ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons-b.css',
 			'enqueue'       => [ ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons.min.css' ],

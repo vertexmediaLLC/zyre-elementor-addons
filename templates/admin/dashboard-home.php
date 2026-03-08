@@ -457,8 +457,6 @@ $credential_data = zyreladdons_get_credentials();
 						<!-- All Widgets Content -->
 						<div class="zyre-content-main zyre-content-left zyre-dash-widget-content-main">
 							<?php foreach ( $widgets as $widget_key => $widget ) :
-								$is_pro = isset( $widget['is_pro'] ) && $widget['is_pro'] ? true : false;
-								$is_pro_placeholder = $is_pro;
 								$widget_styles = $widget['styles'];
 								$widget_styles_count = count( $widget_styles );
 								$widget_class = 'zyre-dash-widget-tab';
@@ -467,7 +465,7 @@ $credential_data = zyreladdons_get_credentials();
 								$default_style_key = self::get_widget_default_style_key( $widget_key );
 								$checked = '';
 
-								if ( ! $is_pro_placeholder && ! in_array( $widget_key, $inactive_widgets, true ) ) {
+								if ( ! in_array( $widget_key, $inactive_widgets, true ) ) {
 									$widget_active = true;
 									$checked = 'checked';
 									$widget_class .= ' zyre-widget-active';
@@ -475,11 +473,6 @@ $credential_data = zyreladdons_get_credentials();
 
 								if ( $widget_key === $widget_key_first ) {
 									$widget_class .= ' active';
-								}
-
-								if ( $is_pro_placeholder ) {
-									$widget_class .= ' widget-pro-placeholder';
-									$checked = 'disabled';
 								}
 
 								$demo_url = ! empty( $widget['demo'] ) ? $widget['demo'] : '#';
@@ -527,10 +520,6 @@ $credential_data = zyreladdons_get_credentials();
 
 											$is_active = isset( $active_styles[ $widget_key ] ) && ! empty( $active_styles[ $widget_key ] ) ? in_array( $style_key, $active_styles[ $widget_key ], true ) : $style['is_active'];
 											$checked_style = $is_active ? 'checked' : '';
-
-											if ( $is_pro_placeholder ) {
-												$checked_style = 'disabled';
-											}
 											?>
 											<div class="zyre-dash-each-widget-style <?php echo $is_default_style ? 'widget-style--active-default' : ''; ?>">
 												<figure>

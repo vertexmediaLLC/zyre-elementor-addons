@@ -58,7 +58,6 @@ class Credentials_Manager {
 					],
 				],
 				'demo' => 'https://zyreaddons.com/demos/subscription-form/',
-				'is_pro' => false,
 			],
 		];
 	}
