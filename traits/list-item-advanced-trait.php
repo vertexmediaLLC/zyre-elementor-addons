@@ -359,7 +359,7 @@ trait List_Item_Advanced_Trait {
 					'type'    => Controls_Manager::ICONS,
 					'default' => [
 						'value'   => is_rtl() ? 'zy-fonticon-b zy-Arrow-left' : 'zy-fonticon-b zy-Arrow-right',
-						'library' => 'zyre-icons-bold',
+						'library' => 'zyreladdons-icons-bold',
 					],
 				]
 			);

@@ -96,7 +96,7 @@ class Dashboard {
 		$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 
 		wp_enqueue_style(
-			'zyre-icons',
+			'zyreladdons-icons',
 			ZYRELADDONS_ASSETS . 'fonts/zyre-icons/zyre-icons' . $suffix . 'css',
 			[],
 			ZYRELADDONS_VERSION

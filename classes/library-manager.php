@@ -29,7 +29,7 @@ class Library_Manager {
 		$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 
 		wp_enqueue_style(
-			'zyre-addons-templates-library',
+			'zyreladdons-templates-library',
 			ZYRELADDONS_ASSETS . 'admin/css/template-library' . $suffix . 'css',
 			[
 				'elementor-editor',
@@ -38,7 +38,7 @@ class Library_Manager {
 		);
 
 		wp_enqueue_script(
-			'zyre-addons-templates-library',
+			'zyreladdons-templates-library',
 			ZYRELADDONS_ASSETS . 'admin/js/template-library' . $suffix . 'js',
 			[
 				'zyreladdons-editor',

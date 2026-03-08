@@ -315,8 +315,7 @@ class Assets_Cache {
 				continue;
 			}
 
-			$is_pro = ( isset( $widgets_map[ $widget_key ]['is_pro'] ) && $widgets_map[ $widget_key ]['is_pro'] );
-			$css .= $this->get_css( $widgets_map[ $widget_key ]['css'], $is_pro );
+			$css .= $this->get_css( $widgets_map[ $widget_key ]['css'] );
 
 			$widgets_processed[ $widget_key ] = true;
 		}
@@ -339,18 +338,17 @@ class Assets_Cache {
 	 *
 	 * @since 1.0.0
 	 * @param array   $file_names The names of the CSS files.
-	 * @param boolean $is_pro     Indicates if the widget is a pro version.
 	 * @param string  $widget_key The key of the widget.
 	 * @return string             The concatenated CSS content.
 	 */
-	protected function get_css( $file_names, $is_pro = false, $widget_key = '' ) {
+	protected function get_css( $file_names, $widget_key = '' ) {
 		$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 		$css = '';
 
 		foreach ( $file_names as $file_name ) {
 			$widget_name = ! empty( $widget_key ) ? $widget_key : $file_name;
 			$file_path = ZYRELADDONS_DIR_PATH . "assets/css/widgets/{$widget_name}/{$file_name}{$suffix}css";
-			$file_path = apply_filters( 'zyreladdons_get_styles_file_path', $file_path, $file_name, $is_pro );
+			$file_path = apply_filters( 'zyreladdons_get_styles_file_path', $file_path, $file_name );
 
 			if ( is_readable( $file_path ) ) {
 				$css .= file_get_contents( $file_path );

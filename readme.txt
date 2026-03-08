@@ -1,6 +1,6 @@
 === Zyre Elementor Addons ===
 Contributors: vertexmediallc
-Tags: elementor, elementor addons, elementor templates, elementor widget, theme builder
+Tags: elementor, elementor addons, elementor widgets, elementor templates, theme builder
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -8,7 +8,7 @@ Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight Elementor addon with Theme Builder, Header & Footer Builder, and 57+ free widgets.
+Lightweight Elementor addon with Theme Builder, Header & Footer Builder, 57+ free widgets, templates, and advanced design tools.
 
 == Description ==
 
@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=QoDlnYgSWcE
 
 ## Useful Links
 
-[Didgets Demo](https://zyreaddons.com/all-widgets/) | [Documentation](https://zyreaddons.com/docs/) | [Videos](https://www.youtube.com/watch?v=dVWxTTj64F8&list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj)
+[Widgets Demo](https://zyreaddons.com/all-widgets/) | [Documentation](https://zyreaddons.com/docs/) | [Videos](https://www.youtube.com/watch?v=dVWxTTj64F8&list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj)
 
 ## Key Features
 
@@ -49,7 +49,7 @@ Below is the complete list of widgets included in the free version.
 * **[Image Heading](https://zyreaddons.com/demos/image-heading/)**: Image-filled text headings with advanced styling.
 * **[Button](https://zyreaddons.com/demos/button/)**: Customizable buttons with onClick actions.
 * **[Dual Button](https://zyreaddons.com/demos/dual-button/)**: Two-button layouts with connectors and onClick functionality.
-* **[Info box](https://zyreaddons.com/demos/info-box/)**: Icon or image boxes with title, description, lists, and CTA.
+* **[Info Box](https://zyreaddons.com/demos/info-box/)**: Icon or image boxes with title, description, lists, and CTA.
 * **[Icon Box](https://zyreaddons.com/demos/icon-box/)**: Feature boxes with icons, text, and call-to-action buttons.
 * **[Flip Box](https://zyreaddons.com/demos/flip-box/)**: Front and back content with smooth flip animations.
 * **[Call to Action](https://zyreaddons.com/demos/call-to-action/)**: CTA blocks with icons, ribbons, and connectors.
@@ -149,6 +149,9 @@ Yes. Updates are designed to be safe. We recommend backups as a best practice.
 = Does it work with other Elementor Addons? =
 Yes! **Zyre Addons** is fully compatible with other Elementor Addons and also adds extra features to enhance your overall experience.
 
+= Does it slow down my website? =
+No. Zyre Elementor Addons is lightweight and allows you to disable unused widgets and features for better performance.
+
 
 == Third Party Libraries ==
 
@@ -157,11 +160,11 @@ This plugin includes the following third-party libraries:
 - Lottie (https://github.com/airbnb/lottie-web)
 - PDFObject (https://github.com/pipwerks/PDFObject)
 - Micromodal (https://github.com/ghosh/Micromodal)
-─ Isotope (https://isotope.metafizzy.co)
-─ Typed.js (https://github.com/mattboldt/typed.js)
-─ jQuery.vTicker (https://github.com/richhollis/vticker)
-─ jQuery Numerator (https://github.com/garethdn/jquery-numerator)
-─ jQuery countdown (https://github.com/sonnyt/downCount)
+- Isotope (https://isotope.metafizzy.co)
+- Typed.js (https://github.com/mattboldt/typed.js)
+- jQuery.vTicker (https://github.com/richhollis/vticker)
+- jQuery Numerator (https://github.com/garethdn/jquery-numerator)
+- jQuery countdown (https://github.com/sonnyt/downCount)
 
 Unminified source files are included inside the plugin directory.
 
@@ -172,7 +175,7 @@ This plugin connects to third-party services in the following cases:
 
 1. Social Sharing Services
 
-The plugin includes a social share feature that connects to third-party social media platforms only when a user clicks a share button.
+The plugin includes a social share feature that allows users to share content on third-party platforms such as Facebook, Twitter/X, LinkedIn, Pinterest, and others depending on configuration.
 
 No data is sent automatically. Data is transmitted only after explicit user interaction.
 
@@ -205,26 +208,24 @@ Privacy Policy: https://appsero.com/privacy-policy/
 3. Install and activate the plugin.
 4. Start using widgets inside Elementor.
 
-☞ [**How to Install Zyre Elementor Addons**](#)
-
 
 == Screenshots ==
 
-1. Drag & Drop widget & Edit
-2. ZyreAddons Admin Dashboard
-3. ZyreAddons Admin Dashboard → Widgets
-4. Image Grid Widget with Filters
-5. Info Box Widget
-6. Team Member Widget with Social Links
-7. Feature List Widget based Block Design
-8. Featured Banner Widget based Block Design
-9. Navigation Menu Widget
-10. Hero Section Template Design 1
-11. Hero Section Template Design 2
-12. Hero Section Template Design 3
-13. Hero Section Template Design 4
-14. Page Template Design 1
-15. Page Template Design 2
+1. Editing widgets in Elementor
+2. ZyreAddons dashboard
+3. Widget control panel
+4. Image Grid widget
+5. Info Box widget
+6. Team Member widget
+7. Feature List widget
+8. Featured Banner widget
+9. Navigation Menu widget
+10. Hero template example
+11. Hero template example 2
+12. Hero template example 3
+13. Hero template example 4
+14. Page template example
+15. Page template example 2
 
 
 == Changelog ==
@@ -244,5 +245,3 @@ Privacy Policy: https://appsero.com/privacy-policy/
 = 1.0.0 - 29 January 2026 =
 
 - Initial release with 57 free Elementor widgets.
-
-[See changelog for all versions.](https://raw.githubusercontent.com/vertexmediaLLC/zyre-elementor-addons/master/changelog.txt)

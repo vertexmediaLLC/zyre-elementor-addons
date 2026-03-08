@@ -217,17 +217,14 @@ class Conditions_Manager {
 			'general' => [
 				'title' => __( 'General', 'zyre-elementor-addons' ),
 				'all_label' => __( 'Entire Site', 'zyre-elementor-addons' ),
-				'is_pro' => false,
 			],
 			'archive' => [
 				'title' => __( 'Archives', 'zyre-elementor-addons' ),
 				'all_label' => __( 'All Archives', 'zyre-elementor-addons' ),
-				'is_pro' => false,
 			],
 			'singular' => [
 				'title' => __( 'Singular', 'zyre-elementor-addons' ),
 				'all_label' => __( 'All Singular', 'zyre-elementor-addons' ),
-				'is_pro' => false,
 			],
 		];
 
@@ -239,7 +236,6 @@ class Conditions_Manager {
 			'all' => [
 				'title' => __( 'All Archives', 'zyre-elementor-addons' ),
 				'all_label' => __( 'All Archives', 'zyre-elementor-addons' ),
-				'is_pro' => false,
 			],
 		];
 
@@ -251,12 +247,10 @@ class Conditions_Manager {
 			'all' => [
 				'title' => __( 'All Singular', 'zyre-elementor-addons' ),
 				'all_label' => __( 'All Singular', 'zyre-elementor-addons' ),
-				'is_pro' => false,
 			],
 			'front_page' => [
 				'title' => __( 'Front Page', 'zyre-elementor-addons' ),
 				'all_label' => __( 'Front Page', 'zyre-elementor-addons' ),
-				'is_pro' => false,
 			],
 		];
 

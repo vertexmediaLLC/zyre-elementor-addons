@@ -400,15 +400,10 @@ function _checkIfArray(r) {
 					var _Object$entries2$_i = _sliceIterable(_Object$entries2[_i2], 2),
 						subkey = _Object$entries2$_i[0],
 						suboption = _Object$entries2$_i[1];
-					var isPro = suboption.is_pro;
 					var optionTitle = suboption.title;
 					var optionKey = subkey;
 					var isDisabled = "";
 					var isSelected = selectedVal == optionKey ? " selected" : "";
-					if (isPro) {
-						optionTitle = optionTitle + " [Pro]";
-						isDisabled = " disabled";
-					}
 					optionHTML +=
 						"<option value='" +
 						optionKey +
@@ -421,15 +416,10 @@ function _checkIfArray(r) {
 				}
 				optionHTML += "</optgroup>";
 			} else {
-				var isPro = option.is_pro;
 				var optionTitle = option.title;
 				var optionKey = key;
 				var isDisabled = "";
 				var isSelected = selectedVal == optionKey ? " selected" : "";
-				if (isPro) {
-					optionTitle = optionTitle + " [Pro]";
-					isDisabled = " disabled";
-				}
 				optionHTML +=
 					"<option value='" +
 					optionKey +

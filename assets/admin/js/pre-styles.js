@@ -100,11 +100,6 @@
 			return this.container.model.id;
 		},
 
-		isProWidget: function () {
-			var widgetHTML = this.container.view.el;
-			return $(widgetHTML).hasClass('zyre-addon-pro');
-		},
-
         fetchStyles: function (applyInitial = false, isReset = false) {
             var self = this;
 
@@ -119,7 +114,6 @@
 				action: "zyreladdons_widget_set_prestyle",
 				widget: this.getWidgetName(),
 				widgetID: this.getWidgetID(),
-				isPro: this.isProWidget(),
 				post_id: postId,
 				security: zyrePreStyles.security
 			};
