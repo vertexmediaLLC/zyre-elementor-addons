@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor templates, elementor widget, theme 
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -188,6 +188,7 @@ The plugin does not store or process this data on its own servers.
 If the site administrator enables the newsletter subscription feature, and a user voluntarily submits their email via the subscription form widget, the submitted email and any additional provided fields are sent to Mailchimp for newsletter subscription only.
 
 Endpoint: https://*.api.mailchimp.com/3.0/
+Terms of Use: https://mailchimp.com/legal/terms/
 Privacy Policy: https://mailchimp.com/legal/privacy/
 
 3. Appsero
@@ -228,16 +229,20 @@ Privacy Policy: https://appsero.com/privacy-policy/
 
 == Changelog ==
 
-= 1.0.0 - 29 January 2026 =
+= 1.0.3 - 08 March 2026 =
 
-- Initial release with 57 free Elementor widgets.
+- The plugin has been carefully reviewed and the issues fixed.
+
+= 1.0.2 - 22 February 2026 =
+
+- Some escaping outputs, enqueues, assets, and widgets issues are fixed.
 
 = 1.0.1 - 29 January 2026 =
 
 - Some escaping issues are fixed.
 
-= 1.0.2 - 22 February 2026 =
+= 1.0.0 - 29 January 2026 =
 
-- Some escaping outputs, enqueues, assets, and widgets issues are fixed.
+- Initial release with 57 free Elementor widgets.
 
 [See changelog for all versions.](https://raw.githubusercontent.com/vertexmediaLLC/zyre-elementor-addons/master/changelog.txt)

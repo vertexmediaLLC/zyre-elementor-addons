@@ -5,7 +5,7 @@
  * Plugin Name: Zyre Elementor Addons
  * Description: <a href="https://zyreaddons.com/">Zyre Elementor Addons</a> is a powerful Elementor Addons with 56+ free widgets, including Accordion, Business Hour, CTA, Countdown, Flip Box, Carousel, Menu, News Ticker, Post Grid, Subscription Form, Testimonial, & more, along with a robust Theme Builder.
  * Plugin URI: https://zyreaddons.com/
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: VertexMediaLLC
  * Author URI: https://vertexmedia.tech/
  * Text Domain: zyre-elementor-addons
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'ZYRELADDONS_VERSION', '1.0.2' );
+define( 'ZYRELADDONS_VERSION', '1.0.3' );
 define( 'ZYRELADDONS__FILE__', __FILE__ );
 define( 'ZYRELADDONS_DIR_PATH', plugin_dir_path( ZYRELADDONS__FILE__ ) );
 define( 'ZYRELADDONS_DIR_URL', plugin_dir_url( ZYRELADDONS__FILE__ ) );

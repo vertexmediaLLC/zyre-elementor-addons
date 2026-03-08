@@ -1,15 +1,15 @@
-# Copyright (C) 2026 ZyreAddons
+# Copyright (C) 2026 VertexMediaLLC
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zyre Elementor Addons 1.0.2\n"
+"Project-Id-Version: Zyre Elementor Addons 1.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zyre-elementor-addons\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-02T09:41:29+00:00\n"
+"POT-Creation-Date: 2026-03-08T06:02:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -34,7 +34,7 @@ msgstr ""
 
 #. Author of the plugin
 #: zyre-elementor-addons.php
-msgid "ZyreAddons"
+msgid "VertexMediaLLC"
 msgstr ""
 
 #. Author URI of the plugin
@@ -43,7 +43,7 @@ msgid "https://vertexmedia.tech/"
 msgstr ""
 
 #: base/plugin-base.php:184
-#: classes/admin-dashboard.php:183
+#: classes/admin-dashboard.php:185
 msgid "Zyre Addons"
 msgstr ""
 
@@ -1467,59 +1467,59 @@ msgstr ""
 msgid "HIDE"
 msgstr ""
 
-#: classes/admin-dashboard.php:140
+#: classes/admin-dashboard.php:142
 #: templates/admin/dashboard-home.php:118
 msgid "Save Settings"
 msgstr ""
 
-#: classes/admin-dashboard.php:141
+#: classes/admin-dashboard.php:143
 msgid "Settings Saved"
 msgstr ""
 
-#: classes/admin-dashboard.php:182
+#: classes/admin-dashboard.php:184
 msgid "Zyre Elementor Addons Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:293
+#: classes/admin-dashboard.php:296
 msgid "Dashboard"
 msgstr ""
 
-#: classes/admin-dashboard.php:297
+#: classes/admin-dashboard.php:300
 msgid "Widgets"
 msgstr ""
 
-#: classes/admin-dashboard.php:301
+#: classes/admin-dashboard.php:304
 #: widgets/subscription-form/subscription-form.php:58
 msgid "Integrations"
 msgstr ""
 
 #. translators: %s is the widget name
-#: classes/assets-manager.php:374
+#: classes/assets-manager.php:365
 #, php-format
 msgid "Use %s widget and dozens more pro widgets with pro features to extend your toolbox and build sites faster and better."
 msgstr ""
 
-#: classes/assets-manager.php:375
+#: classes/assets-manager.php:366
 msgid "Upgrade Zyre Addons"
 msgstr ""
 
-#: classes/assets-manager.php:376
+#: classes/assets-manager.php:367
 msgid "No Templates Found"
 msgstr ""
 
-#: classes/assets-manager.php:377
+#: classes/assets-manager.php:368
 msgid "Try different category or sync for new templates."
 msgstr ""
 
-#: classes/assets-manager.php:378
+#: classes/assets-manager.php:369
 msgid "No Results Found"
 msgstr ""
 
-#: classes/assets-manager.php:379
+#: classes/assets-manager.php:370
 msgid "Please make sure your search is spelled correctly or try a different words."
 msgstr ""
 
-#: classes/assets-manager.php:380
+#: classes/assets-manager.php:371
 msgid "No results found."
 msgstr ""
 
@@ -1569,56 +1569,60 @@ msgid "Template does not have any content"
 msgstr ""
 
 #: classes/prestyles-manager.php:18
-msgid "Invalid prestyle request"
+msgid "Permission denied"
 msgstr ""
 
 #: classes/prestyles-manager.php:22
+msgid "Invalid prestyle request"
+msgstr ""
+
+#: classes/prestyles-manager.php:26
 msgid "Incomplete prestyle request"
 msgstr ""
 
-#: classes/prestyles-manager.php:35
+#: classes/prestyles-manager.php:38
 msgid "Prestyle not found"
 msgstr ""
 
-#: classes/prestyles-manager.php:130
+#: classes/prestyles-manager.php:132
 msgid ""
 "This action will remove the current preset permanently.\n"
 "Do you wish to proceed?"
 msgstr ""
 
-#: classes/prestyles-manager.php:131
+#: classes/prestyles-manager.php:133
 msgid ""
 "This action will revert the Pre-styles to its default state.\n"
 "Do you wish to proceed?"
 msgstr ""
 
-#: classes/prestyles-manager.php:132
+#: classes/prestyles-manager.php:134
 msgid "Click to reset the Pre-styles"
 msgstr ""
 
-#: classes/select2-handler.php:14
-#: modules/theme-builder/conditions-manager.php:311
-msgid "Invalid request"
-msgstr ""
-
-#: classes/select2-handler.php:18
-#: modules/theme-builder/conditions-manager.php:315
-#: modules/theme-builder/conditions-manager.php:324
-#: modules/theme-builder/conditions-manager.php:328
+#: classes/select2-handler.php:12
+#: modules/theme-builder/conditions-manager.php:319
+#: modules/theme-builder/conditions-manager.php:555
+#: modules/theme-builder/conditions-manager.php:559
 msgid "Unauthorized request"
 msgstr ""
 
+#: classes/select2-handler.php:18
+#: modules/theme-builder/conditions-manager.php:325
+msgid "Invalid request"
+msgstr ""
+
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:413
+#: modules/theme-builder/conditions-manager.php:434
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:98
-#: modules/theme-builder/conditions-manager.php:375
+#: modules/theme-builder/conditions-manager.php:366
 msgid "Invalid taxonomy"
 msgstr ""
 
-#: classes/select2-handler.php:143
+#: classes/select2-handler.php:142
 msgid "Invalid API key"
 msgstr ""
 
@@ -2438,38 +2442,38 @@ msgid "invalid key"
 msgstr ""
 
 #. Translators: translate with allowed HTML tags.
-#: includes/helpers.php:267
+#: includes/helpers.php:581
 #, php-format
 msgid "This input field has support for the following HTML tags: %1$s"
 msgstr ""
 
-#: includes/helpers.php:491
+#: includes/helpers.php:806
 msgid "plugin is missing! Please install and activate it."
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:520
+#: includes/helpers.php:835
 #, php-format
 msgid "Activate %s"
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:525
+#: includes/helpers.php:840
 #, php-format
 msgid "Install %s"
 msgstr ""
 
-#: includes/helpers.php:596
+#: includes/helpers.php:911
 msgid "Manual Selection"
 msgstr ""
 
 #. translators: 1: The function name, 2: The argument number, 3: The argument name, 4: The expected type, 5: The provided type.
-#: includes/helpers.php:723
+#: includes/helpers.php:1038
 #, php-format
 msgid "Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given."
 msgstr ""
 
-#: includes/helpers.php:762
+#: includes/helpers.php:1077
 msgid "&hellip;"
 msgstr ""
 
@@ -2534,179 +2538,179 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:368
-msgid "Categories: "
+#: modules/theme-builder/conditions-manager.php:369
+msgid "Tag: "
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:371
-msgid "Tags: "
+#: modules/theme-builder/conditions-manager.php:369
+msgid "Category: "
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:547
+#: modules/theme-builder/conditions-manager.php:585
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:703
+#: modules/theme-builder/conditions-manager.php:764
 #: modules/theme-builder/templates/template-conditions.php:76
 msgid "Remove this item"
 msgstr ""
 
 #: modules/theme-builder/module.php:296
 #: modules/theme-builder/module.php:297
-#: modules/theme-builder/module.php:431
-#: modules/theme-builder/module.php:502
+#: modules/theme-builder/module.php:430
+#: modules/theme-builder/module.php:500
 msgid "Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:401
+#: modules/theme-builder/module.php:400
 msgctxt "Post Type General Name"
 msgid "Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:402
+#: modules/theme-builder/module.php:401
 msgctxt "Post Type Singular Name"
 msgid "Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:403
+#: modules/theme-builder/module.php:402
 msgctxt "Admin Menu text"
 msgid "Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:404
+#: modules/theme-builder/module.php:403
 msgctxt "Add New on Toolbar"
 msgid "Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:405
+#: modules/theme-builder/module.php:404
 msgid "Theme Builder Archives"
 msgstr ""
 
-#: modules/theme-builder/module.php:406
+#: modules/theme-builder/module.php:405
 msgid "Theme Builder Attributes"
 msgstr ""
 
-#: modules/theme-builder/module.php:407
+#: modules/theme-builder/module.php:406
 msgid "Parent Theme Builder:"
 msgstr ""
 
-#: modules/theme-builder/module.php:408
+#: modules/theme-builder/module.php:407
 msgid "All Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:409
+#: modules/theme-builder/module.php:408
 msgid "Add New Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:410
-#: modules/theme-builder/module.php:505
+#: modules/theme-builder/module.php:409
+#: modules/theme-builder/module.php:503
 msgid "Add New"
 msgstr ""
 
-#: modules/theme-builder/module.php:411
+#: modules/theme-builder/module.php:410
 msgid "New Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:412
+#: modules/theme-builder/module.php:411
 msgid "Edit Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:413
+#: modules/theme-builder/module.php:412
 msgid "Update Theme Builder"
 msgstr ""
 
+#: modules/theme-builder/module.php:413
 #: modules/theme-builder/module.php:414
-#: modules/theme-builder/module.php:415
 msgid "View Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:416
+#: modules/theme-builder/module.php:415
 msgid "Search Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:417
+#: modules/theme-builder/module.php:416
 msgid "Not found"
 msgstr ""
 
-#: modules/theme-builder/module.php:418
+#: modules/theme-builder/module.php:417
 msgid "Not found in Trash"
 msgstr ""
 
-#: modules/theme-builder/module.php:419
+#: modules/theme-builder/module.php:418
 msgid "Featured Image"
 msgstr ""
 
-#: modules/theme-builder/module.php:420
+#: modules/theme-builder/module.php:419
 msgid "Set featured image"
 msgstr ""
 
-#: modules/theme-builder/module.php:421
+#: modules/theme-builder/module.php:420
 msgid "Remove featured image"
 msgstr ""
 
-#: modules/theme-builder/module.php:422
+#: modules/theme-builder/module.php:421
 msgid "Use as featured image"
 msgstr ""
 
-#: modules/theme-builder/module.php:423
+#: modules/theme-builder/module.php:422
 msgid "Insert into Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:424
+#: modules/theme-builder/module.php:423
 msgid "Uploaded to this Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:425
+#: modules/theme-builder/module.php:424
 msgid "Theme Builder list"
 msgstr ""
 
-#: modules/theme-builder/module.php:426
+#: modules/theme-builder/module.php:425
 msgid "Theme Builder list navigation"
 msgstr ""
 
-#: modules/theme-builder/module.php:427
+#: modules/theme-builder/module.php:426
 msgid "Filter Theme Builder list"
 msgstr ""
 
-#: modules/theme-builder/module.php:432
+#: modules/theme-builder/module.php:431
 msgid "Build your website header, footer, single page/post template and more."
 msgstr ""
 
-#: modules/theme-builder/module.php:514
+#: modules/theme-builder/module.php:512
 #: widgets/business-hour/business-hour.php:458
 msgid "Header"
 msgstr ""
 
-#: modules/theme-builder/module.php:515
+#: modules/theme-builder/module.php:513
 msgid "Footer"
 msgstr ""
 
-#: modules/theme-builder/module.php:516
+#: modules/theme-builder/module.php:514
 #: widgets/animated-text/animated-text.php:68
 msgid "Single"
 msgstr ""
 
-#: modules/theme-builder/module.php:517
+#: modules/theme-builder/module.php:515
 msgid "Archive"
 msgstr ""
 
-#: modules/theme-builder/module.php:535
+#: modules/theme-builder/module.php:532
 #: widgets/image-grid/image-grid.php:300
 msgid "All"
 msgstr ""
 
-#: modules/theme-builder/module.php:584
+#: modules/theme-builder/module.php:581
 #: traits/list-item-advanced-trait.php:100
 #: widgets/alert/alert.php:44
 #: widgets/toggle/toggle.php:173
 msgid "Type"
 msgstr ""
 
-#: modules/theme-builder/module.php:585
+#: modules/theme-builder/module.php:582
 msgid "Conditions"
 msgstr ""
 
-#: modules/theme-builder/module.php:603
+#: modules/theme-builder/module.php:600
 #: templates/admin/dashboard-home.php:511
 #: widgets/advance-accordion/advance-accordion.php:383
 #: widgets/advance-accordion/advance-accordion.php:530
@@ -2728,45 +2732,53 @@ msgid "Active"
 msgstr ""
 
 #. translators: 1: included conditions, 2: excluded conditions
-#: modules/theme-builder/module.php:638
+#: modules/theme-builder/module.php:637
 #, php-format
 msgid "<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s"
 msgstr ""
 
-#: modules/theme-builder/module.php:648
+#: modules/theme-builder/module.php:647
 msgid "Not Applicable"
 msgstr ""
 
-#: modules/theme-builder/module.php:655
+#: modules/theme-builder/module.php:682
 #: zyre-elementor-addons.php:123
 #: zyre-elementor-addons.php:136
 #: zyre-elementor-addons.php:158
 msgid "Elementor"
 msgstr ""
 
-#: modules/theme-builder/module.php:701
+#: modules/theme-builder/module.php:728
 msgid "Header Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:705
+#: modules/theme-builder/module.php:732
 msgid "Footer Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:709
+#: modules/theme-builder/module.php:736
 #: widgets/animated-text/animated-text.php:490
 msgid "Single Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:713
+#: modules/theme-builder/module.php:740
 msgid "Archive Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:717
+#: modules/theme-builder/module.php:744
 msgid "Loop Template"
 msgstr ""
 
-#: modules/theme-builder/module.php:921
-msgid "Happy Theme Builder"
+#: modules/theme-builder/module.php:772
+msgid "Invalid post type."
+msgstr ""
+
+#: modules/theme-builder/module.php:776
+msgid "Permission denied."
+msgstr ""
+
+#: modules/theme-builder/module.php:942
+msgid "Zyre Theme Builder"
 msgstr ""
 
 #: modules/theme-builder/templates/new-template.php:19
@@ -5364,8 +5376,8 @@ msgid "Tag"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:362
-#: widgets/post-comments/post-comments.php:3387
-#: widgets/post-comments/post-comments.php:3652
+#: widgets/post-comments/post-comments.php:3390
+#: widgets/post-comments/post-comments.php:3655
 #: widgets/post-grid/post-grid.php:869
 #: widgets/post-meta/post-meta.php:61
 msgid "Comments"
@@ -7497,6 +7509,10 @@ msgstr ""
 msgid "Lightbox Button"
 msgstr ""
 
+#: widgets/image-grid/image-grid.php:1206
+msgid "Please check the filter in preview or live mode to see the effect."
+msgstr ""
+
 #: widgets/image-heading/image-heading.php:33
 msgid "Image Heading Content"
 msgstr ""
@@ -8127,12 +8143,12 @@ msgid "Comments Order"
 msgstr ""
 
 #: widgets/post-comments/post-comments.php:166
-#: widgets/post-comments/post-comments.php:3420
+#: widgets/post-comments/post-comments.php:3423
 msgid "Latest"
 msgstr ""
 
 #: widgets/post-comments/post-comments.php:167
-#: widgets/post-comments/post-comments.php:3421
+#: widgets/post-comments/post-comments.php:3424
 msgid "Oldest"
 msgstr ""
 
@@ -8559,25 +8575,25 @@ msgstr ""
 msgid "Enable Border to Parent Only"
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3212
+#: widgets/post-comments/post-comments.php:3215
 msgid "Your email address will not be published."
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3316
+#: widgets/post-comments/post-comments.php:3319
 msgid "Save my name, email, and website in this browser for the next time I comment."
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3385
+#: widgets/post-comments/post-comments.php:3388
 msgctxt "comments title"
 msgid "One Comment"
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3386
+#: widgets/post-comments/post-comments.php:3389
 msgid "Comment"
 msgstr ""
 
 #. translators: %1$s: number of comments
-#: widgets/post-comments/post-comments.php:3397
+#: widgets/post-comments/post-comments.php:3400
 #, php-format
 msgctxt "comments title"
 msgid "%1$s comment"
@@ -8585,29 +8601,29 @@ msgid_plural "%1$s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widgets/post-comments/post-comments.php:3496
+#: widgets/post-comments/post-comments.php:3499
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3498
+#: widgets/post-comments/post-comments.php:3501
 msgid "Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved."
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3560
+#: widgets/post-comments/post-comments.php:3563
 msgid " ago"
 msgstr ""
 
 #. translators: 1: Comment date, 2: Comment time.
-#: widgets/post-comments/post-comments.php:3573
+#: widgets/post-comments/post-comments.php:3576
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3583
+#: widgets/post-comments/post-comments.php:3586
 msgid "Edit"
 msgstr ""
 
-#: widgets/post-comments/post-comments.php:3653
+#: widgets/post-comments/post-comments.php:3656
 msgid "Comments navigation"
 msgstr ""
 
@@ -9383,20 +9399,23 @@ msgstr ""
 msgid "Icon and Text"
 msgstr ""
 
-#: widgets/subscription-form/mailchimp-api.php:65
-#: widgets/subscription-form/mailchimp-api.php:72
+#: widgets/subscription-form/mailchimp-api.php:68
 msgid "Invalid API key."
 msgstr ""
 
-#: widgets/subscription-form/mailchimp-api.php:95
+#: widgets/subscription-form/mailchimp-api.php:94
 msgid "Something went wrong: "
 msgstr ""
 
-#: widgets/subscription-form/mailchimp-api.php:107
+#: widgets/subscription-form/mailchimp-api.php:103
+msgid "Something went wrong."
+msgstr ""
+
+#: widgets/subscription-form/mailchimp-api.php:109
 msgid "Confirm your subscription from your email."
 msgstr ""
 
-#: widgets/subscription-form/mailchimp-api.php:110
+#: widgets/subscription-form/mailchimp-api.php:112
 msgid "Something went wrong. Try again later."
 msgstr ""
 
