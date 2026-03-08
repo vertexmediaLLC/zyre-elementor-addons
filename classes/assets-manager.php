@@ -108,6 +108,13 @@ class Assets_Manager {
 		);
 
 		wp_register_style(
+			'zyreladdons-widgets',
+			ZYRELADDONS_ASSETS . 'css/widgets-editor.min.css',
+			[ 'zyreladdons-global' ],
+			ZYRELADDONS_VERSION
+		);
+
+		wp_register_style(
 			'zyreladdons-nav-menu',
 			ZYRELADDONS_ASSETS . 'css/menu' . self::$suffix . 'css',
 			[ 'zyreladdons-global' ],
@@ -279,7 +286,11 @@ class Assets_Manager {
 
 		// Only for edit & preview mode.
 		if ( Cache_Manager::should_enqueue_raw( $post_id ) ) {
-			Cache_Manager::enqueue_raw( $post_id );
+			if ( zyreladdons_is_script_debug_enabled() ) {
+				Cache_Manager::enqueue_raw( $post_id );
+			} else {
+				wp_enqueue_style( 'zyreladdons-widgets' );
+			}
 		}
 	}
 
