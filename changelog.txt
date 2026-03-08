@@ -9,3 +9,7 @@
 = 1.0.2 - 2026-02-22 =
 
 - Some escaping outputs, enqueues, assets, and widgets issues are fixed.
+
+= 1.0.3 - 2026-03-08 =
+
+- The plugin has been carefully reviewed and the issues fixed.
