@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-08T10:13:02+00:00\n"
+"POT-Creation-Date: 2026-03-09T05:48:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -319,7 +319,7 @@ msgstr ""
 #: widgets/dual-button/dual-button.php:384
 #: widgets/dual-color-heading/dual-color-heading.php:45
 #: widgets/featured-banner/featured-banner.php:1843
-#: widgets/fun-fact/fun-fact.php:720
+#: widgets/fun-fact/fun-fact.php:721
 #: widgets/image-carousel/image-carousel.php:308
 #: widgets/logo-carousel/logo-carousel.php:317
 #: widgets/post-comments/post-comments.php:1872
@@ -477,7 +477,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1100
 #: widgets/featured-banner/featured-banner.php:1644
 #: widgets/featured-banner/featured-banner.php:2093
-#: widgets/fun-fact/fun-fact.php:169
+#: widgets/fun-fact/fun-fact.php:170
 #: widgets/heading/heading.php:859
 #: widgets/iconbox/iconbox.php:228
 #: widgets/infobox/infobox.php:520
@@ -614,7 +614,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1176
 #: widgets/featured-banner/featured-banner.php:810
 #: widgets/featured-banner/featured-banner.php:1184
-#: widgets/fun-fact/fun-fact.php:733
+#: widgets/fun-fact/fun-fact.php:734
 #: widgets/infobox/infobox.php:588
 #: widgets/lottie-animation/lottie-animation.php:86
 #: widgets/menu/menu.php:209
@@ -705,10 +705,10 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1668
 #: widgets/featured-banner/featured-banner.php:1901
 #: widgets/flipbox/flipbox.php:228
-#: widgets/fun-fact/fun-fact.php:133
-#: widgets/fun-fact/fun-fact.php:192
-#: widgets/fun-fact/fun-fact.php:373
-#: widgets/fun-fact/fun-fact.php:737
+#: widgets/fun-fact/fun-fact.php:134
+#: widgets/fun-fact/fun-fact.php:193
+#: widgets/fun-fact/fun-fact.php:374
+#: widgets/fun-fact/fun-fact.php:738
 #: widgets/gradient-heading/gradient-heading.php:192
 #: widgets/heading/heading.php:400
 #: widgets/heading/heading.php:435
@@ -819,9 +819,9 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1192
 #: widgets/featured-banner/featured-banner.php:1672
 #: widgets/featured-banner/featured-banner.php:1905
-#: widgets/fun-fact/fun-fact.php:196
-#: widgets/fun-fact/fun-fact.php:377
-#: widgets/fun-fact/fun-fact.php:741
+#: widgets/fun-fact/fun-fact.php:197
+#: widgets/fun-fact/fun-fact.php:378
+#: widgets/fun-fact/fun-fact.php:742
 #: widgets/gradient-heading/gradient-heading.php:196
 #: widgets/heading/heading.php:404
 #: widgets/heading/heading.php:439
@@ -936,10 +936,10 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1676
 #: widgets/featured-banner/featured-banner.php:1909
 #: widgets/flipbox/flipbox.php:232
-#: widgets/fun-fact/fun-fact.php:141
-#: widgets/fun-fact/fun-fact.php:200
-#: widgets/fun-fact/fun-fact.php:381
-#: widgets/fun-fact/fun-fact.php:745
+#: widgets/fun-fact/fun-fact.php:142
+#: widgets/fun-fact/fun-fact.php:201
+#: widgets/fun-fact/fun-fact.php:382
+#: widgets/fun-fact/fun-fact.php:746
 #: widgets/gradient-heading/gradient-heading.php:200
 #: widgets/heading/heading.php:408
 #: widgets/heading/heading.php:443
@@ -1009,7 +1009,7 @@ msgstr ""
 #: base/widget-base.php:993
 #: base/widget-base.php:1061
 #: widgets/animated-text/animated-text.php:1325
-#: widgets/fun-fact/fun-fact.php:187
+#: widgets/fun-fact/fun-fact.php:188
 msgid "Horizontal Align"
 msgstr ""
 
@@ -1096,7 +1096,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:748
 #: widgets/flipbox/flipbox.php:236
 #: widgets/flipbox/flipbox.php:630
-#: widgets/fun-fact/fun-fact.php:137
+#: widgets/fun-fact/fun-fact.php:138
 #: widgets/heading/heading.php:574
 #: widgets/heading/heading.php:719
 #: widgets/heading/heading.php:795
@@ -1154,7 +1154,7 @@ msgstr ""
 
 #: base/widget-base.php:1078
 #: widgets/business-hour/business-hour.php:832
-#: widgets/fun-fact/fun-fact.php:204
+#: widgets/fun-fact/fun-fact.php:205
 #: widgets/heading/heading.php:546
 #: widgets/heading/heading.php:586
 #: widgets/heading/heading.php:767
@@ -1181,7 +1181,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:513
 #: widgets/featured-banner/featured-banner.php:1664
 #: widgets/featured-banner/featured-banner.php:1943
-#: widgets/fun-fact/fun-fact.php:128
+#: widgets/fun-fact/fun-fact.php:129
 #: widgets/heading/heading.php:675
 #: widgets/heading/heading.php:711
 #: widgets/image-carousel/image-carousel.php:141
@@ -1393,7 +1393,7 @@ msgstr ""
 #: widgets/divider/divider.php:15
 #: widgets/divider/divider.php:73
 #: widgets/divider/divider.php:162
-#: widgets/fun-fact/fun-fact.php:693
+#: widgets/fun-fact/fun-fact.php:694
 #: widgets/news-ticker/news-ticker.php:526
 #: widgets/post-meta/post-meta.php:631
 #: widgets/post-meta/post-meta.php:639
@@ -1412,8 +1412,8 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:630
 #: widgets/drop-cap/drop-cap.php:55
 #: widgets/flipbox/flipbox.php:261
-#: widgets/fun-fact/fun-fact.php:261
-#: widgets/fun-fact/fun-fact.php:593
+#: widgets/fun-fact/fun-fact.php:262
+#: widgets/fun-fact/fun-fact.php:594
 #: widgets/image-grid/image-grid.php:249
 #: widgets/image-grid/image-grid.php:290
 #: widgets/image-grid/image-grid.php:326
@@ -1437,8 +1437,8 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:631
 #: widgets/drop-cap/drop-cap.php:56
 #: widgets/flipbox/flipbox.php:262
-#: widgets/fun-fact/fun-fact.php:262
-#: widgets/fun-fact/fun-fact.php:594
+#: widgets/fun-fact/fun-fact.php:263
+#: widgets/fun-fact/fun-fact.php:595
 #: widgets/image-grid/image-grid.php:250
 #: widgets/image-grid/image-grid.php:291
 #: widgets/image-grid/image-grid.php:327
@@ -1494,32 +1494,32 @@ msgid "Integrations"
 msgstr ""
 
 #. translators: %s is the widget name
-#: classes/assets-manager.php:379
+#: classes/assets-manager.php:389
 #, php-format
 msgid "Use %s widget and dozens more pro widgets with pro features to extend your toolbox and build sites faster and better."
 msgstr ""
 
-#: classes/assets-manager.php:380
+#: classes/assets-manager.php:390
 msgid "Upgrade Zyre Addons"
 msgstr ""
 
-#: classes/assets-manager.php:381
+#: classes/assets-manager.php:391
 msgid "No Templates Found"
 msgstr ""
 
-#: classes/assets-manager.php:382
+#: classes/assets-manager.php:392
 msgid "Try different category or sync for new templates."
 msgstr ""
 
-#: classes/assets-manager.php:383
+#: classes/assets-manager.php:393
 msgid "No Results Found"
 msgstr ""
 
-#: classes/assets-manager.php:384
+#: classes/assets-manager.php:394
 msgid "Please make sure your search is spelled correctly or try a different words."
 msgstr ""
 
-#: classes/assets-manager.php:385
+#: classes/assets-manager.php:395
 msgid "No results found."
 msgstr ""
 
@@ -2442,38 +2442,38 @@ msgid "invalid key"
 msgstr ""
 
 #. Translators: translate with allowed HTML tags.
-#: includes/helpers.php:581
+#: includes/helpers.php:583
 #, php-format
 msgid "This input field has support for the following HTML tags: %1$s"
 msgstr ""
 
-#: includes/helpers.php:806
+#: includes/helpers.php:813
 msgid "plugin is missing! Please install and activate it."
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:835
+#: includes/helpers.php:842
 #, php-format
 msgid "Activate %s"
 msgstr ""
 
 #. translators: %s is the plugin name
-#: includes/helpers.php:840
+#: includes/helpers.php:847
 #, php-format
 msgid "Install %s"
 msgstr ""
 
-#: includes/helpers.php:911
+#: includes/helpers.php:918
 msgid "Manual Selection"
 msgstr ""
 
 #. translators: 1: The function name, 2: The argument number, 3: The argument name, 4: The expected type, 5: The provided type.
-#: includes/helpers.php:1038
+#: includes/helpers.php:1045
 #, php-format
 msgid "Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given."
 msgstr ""
 
-#: includes/helpers.php:1077
+#: includes/helpers.php:1084
 msgid "&hellip;"
 msgstr ""
 
@@ -3185,7 +3185,7 @@ msgstr ""
 #: widgets/flipbox/flipbox.php:714
 #: widgets/fun-fact/fun-fact.php:58
 #: widgets/fun-fact/fun-fact.php:112
-#: widgets/fun-fact/fun-fact.php:639
+#: widgets/fun-fact/fun-fact.php:640
 #: widgets/iconbox/iconbox.php:56
 #: widgets/iconbox/iconbox.php:328
 #: widgets/infobox/infobox.php:93
@@ -3458,8 +3458,8 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:60
 #: traits/list-item-advanced-trait.php:84
 #: traits/list-item-advanced-trait.php:137
-#: widgets/fun-fact/fun-fact.php:221
-#: widgets/fun-fact/fun-fact.php:536
+#: widgets/fun-fact/fun-fact.php:222
+#: widgets/fun-fact/fun-fact.php:537
 #: widgets/testimonial/testimonial.php:187
 msgid "Number"
 msgstr ""
@@ -3486,8 +3486,8 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1546
 #: widgets/flipbox/flipbox.php:493
 #: widgets/flipbox/flipbox.php:866
-#: widgets/fun-fact/fun-fact.php:305
-#: widgets/fun-fact/fun-fact.php:626
+#: widgets/fun-fact/fun-fact.php:306
+#: widgets/fun-fact/fun-fact.php:627
 #: widgets/gradient-heading/gradient-heading.php:174
 #: widgets/heading/heading.php:63
 #: widgets/heading/heading.php:65
@@ -3527,7 +3527,7 @@ msgstr ""
 #: widgets/dual-color-heading/dual-color-heading.php:73
 #: widgets/featured-banner/featured-banner.php:419
 #: widgets/flipbox/flipbox.php:529
-#: widgets/fun-fact/fun-fact.php:317
+#: widgets/fun-fact/fun-fact.php:318
 #: widgets/gradient-heading/gradient-heading.php:82
 #: widgets/heading/heading.php:85
 #: widgets/iconbox/iconbox.php:86
@@ -3708,7 +3708,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:61
 #: widgets/featured-banner/featured-banner.php:1137
 #: widgets/flipbox/flipbox.php:851
-#: widgets/fun-fact/fun-fact.php:522
+#: widgets/fun-fact/fun-fact.php:523
 #: widgets/iconbox/iconbox.php:625
 #: widgets/image-carousel/image-carousel.php:419
 #: widgets/image-grid/image-grid.php:225
@@ -3954,7 +3954,7 @@ msgstr ""
 #: traits/swiper-trait.php:399
 #: widgets/business-hour/business-hour.php:229
 #: widgets/cf7/cf7.php:100
-#: widgets/fun-fact/fun-fact.php:413
+#: widgets/fun-fact/fun-fact.php:414
 #: widgets/image-heading/image-heading.php:197
 #: widgets/news-ticker/news-ticker.php:217
 #: widgets/post-comments/post-comments.php:200
@@ -3992,7 +3992,7 @@ msgstr ""
 #: traits/swiper-trait.php:400
 #: widgets/business-hour/business-hour.php:230
 #: widgets/cf7/cf7.php:101
-#: widgets/fun-fact/fun-fact.php:414
+#: widgets/fun-fact/fun-fact.php:415
 #: widgets/image-heading/image-heading.php:198
 #: widgets/news-ticker/news-ticker.php:218
 #: widgets/post-comments/post-comments.php:201
@@ -4405,7 +4405,7 @@ msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:439
 #: widgets/advance-toggle/advance-toggle.php:525
-#: widgets/fun-fact/fun-fact.php:356
+#: widgets/fun-fact/fun-fact.php:357
 msgid "Title Icon"
 msgstr ""
 
@@ -4476,7 +4476,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:273
 #: widgets/dual-color-heading/dual-color-heading.php:77
 #: widgets/flipbox/flipbox.php:533
-#: widgets/fun-fact/fun-fact.php:321
+#: widgets/fun-fact/fun-fact.php:322
 #: widgets/gradient-heading/gradient-heading.php:86
 #: widgets/heading/heading.php:89
 #: widgets/heading/heading.php:140
@@ -4501,7 +4501,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:277
 #: widgets/dual-color-heading/dual-color-heading.php:81
 #: widgets/flipbox/flipbox.php:534
-#: widgets/fun-fact/fun-fact.php:325
+#: widgets/fun-fact/fun-fact.php:326
 #: widgets/gradient-heading/gradient-heading.php:90
 #: widgets/heading/heading.php:93
 #: widgets/heading/heading.php:144
@@ -4526,7 +4526,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:281
 #: widgets/dual-color-heading/dual-color-heading.php:85
 #: widgets/flipbox/flipbox.php:535
-#: widgets/fun-fact/fun-fact.php:329
+#: widgets/fun-fact/fun-fact.php:330
 #: widgets/gradient-heading/gradient-heading.php:94
 #: widgets/heading/heading.php:97
 #: widgets/heading/heading.php:148
@@ -4551,7 +4551,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:285
 #: widgets/dual-color-heading/dual-color-heading.php:89
 #: widgets/flipbox/flipbox.php:536
-#: widgets/fun-fact/fun-fact.php:333
+#: widgets/fun-fact/fun-fact.php:334
 #: widgets/gradient-heading/gradient-heading.php:98
 #: widgets/heading/heading.php:101
 #: widgets/heading/heading.php:152
@@ -4576,7 +4576,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:289
 #: widgets/dual-color-heading/dual-color-heading.php:93
 #: widgets/flipbox/flipbox.php:537
-#: widgets/fun-fact/fun-fact.php:337
+#: widgets/fun-fact/fun-fact.php:338
 #: widgets/gradient-heading/gradient-heading.php:102
 #: widgets/heading/heading.php:105
 #: widgets/heading/heading.php:156
@@ -4601,7 +4601,7 @@ msgstr ""
 #: widgets/author-box/author-box.php:293
 #: widgets/dual-color-heading/dual-color-heading.php:97
 #: widgets/flipbox/flipbox.php:538
-#: widgets/fun-fact/fun-fact.php:341
+#: widgets/fun-fact/fun-fact.php:342
 #: widgets/gradient-heading/gradient-heading.php:106
 #: widgets/heading/heading.php:109
 #: widgets/heading/heading.php:160
@@ -4721,7 +4721,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:603
 #: widgets/dual-button/dual-button.php:112
 #: widgets/featured-banner/featured-banner.php:620
-#: widgets/fun-fact/fun-fact.php:399
+#: widgets/fun-fact/fun-fact.php:400
 #: widgets/news-ticker/news-ticker.php:232
 #: widgets/news-ticker/news-ticker.php:244
 #: widgets/post-comments/post-comments.php:108
@@ -4771,7 +4771,7 @@ msgstr ""
 #: widgets/dual-button/dual-button.php:113
 #: widgets/featured-banner/featured-banner.php:491
 #: widgets/featured-banner/featured-banner.php:621
-#: widgets/fun-fact/fun-fact.php:400
+#: widgets/fun-fact/fun-fact.php:401
 #: widgets/news-ticker/news-ticker.php:233
 #: widgets/news-ticker/news-ticker.php:245
 #: widgets/post-comments/post-comments.php:109
@@ -6173,7 +6173,7 @@ msgstr ""
 
 #: widgets/business-hour/business-hour.php:1004
 #: widgets/dual-color-heading/dual-color-heading.php:109
-#: widgets/fun-fact/fun-fact.php:369
+#: widgets/fun-fact/fun-fact.php:370
 #: widgets/heading/heading.php:231
 #: widgets/image-heading/image-heading.php:636
 msgid "Text Alignment"
@@ -7021,69 +7021,69 @@ msgstr ""
 msgid "Fun Fact Content"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:222
+#: widgets/fun-fact/fun-fact.php:223
 msgid "Numbers Only (e.g. 12345)"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:235
+#: widgets/fun-fact/fun-fact.php:236
 msgid "Number of Decimal"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:247
+#: widgets/fun-fact/fun-fact.php:248
 msgid "Place Decimal"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:259
+#: widgets/fun-fact/fun-fact.php:260
 msgid "Show Delimiter"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:274
+#: widgets/fun-fact/fun-fact.php:275
 msgid "Number Prefix"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:276
+#: widgets/fun-fact/fun-fact.php:277
 msgid "1"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:289
+#: widgets/fun-fact/fun-fact.php:290
 msgid "Number Suffix"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:291
 #: widgets/fun-fact/fun-fact.php:292
+#: widgets/fun-fact/fun-fact.php:293
 msgid "+"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:310
+#: widgets/fun-fact/fun-fact.php:311
 msgid "Zyre customers"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:397
+#: widgets/fun-fact/fun-fact.php:398
 #: widgets/post-navigation/post-navigation.php:136
 msgid "Show Divider"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:410
+#: widgets/fun-fact/fun-fact.php:411
 msgid "Animate"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:411
+#: widgets/fun-fact/fun-fact.php:412
 msgid "Only number is animatable"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:426
+#: widgets/fun-fact/fun-fact.php:427
 msgid "Duration"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:457
+#: widgets/fun-fact/fun-fact.php:458
 #: widgets/infobox/infobox.php:76
 #: widgets/infobox/infobox.php:470
 #: widgets/pdf-view/pdf-view.php:428
 msgid "Icon / Image"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:549
-#: widgets/fun-fact/fun-fact.php:724
+#: widgets/fun-fact/fun-fact.php:550
+#: widgets/fun-fact/fun-fact.php:725
 #: widgets/pdf-view/pdf-view.php:391
 #: widgets/team-member/team-member.php:1003
 #: widgets/testimonial/testimonial.php:430
@@ -7092,19 +7092,19 @@ msgstr ""
 msgid "Bottom Spacing"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:561
+#: widgets/fun-fact/fun-fact.php:562
 msgid "Prefix Spacing"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:576
+#: widgets/fun-fact/fun-fact.php:577
 msgid "Suffix Spacing"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:591
+#: widgets/fun-fact/fun-fact.php:592
 msgid "Set Gradient Background"
 msgstr ""
 
-#: widgets/fun-fact/fun-fact.php:819
+#: widgets/fun-fact/fun-fact.php:820
 msgid ","
 msgstr ""
 
