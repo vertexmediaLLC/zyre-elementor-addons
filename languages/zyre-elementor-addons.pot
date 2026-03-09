@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-09T05:48:39+00:00\n"
+"POT-Creation-Date: 2026-03-09T07:47:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -3118,19 +3118,15 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: templates/template-library/templates.php:130
-msgid "Pro"
-msgstr ""
-
-#: templates/template-library/templates.php:137
+#: templates/template-library/templates.php:134
 msgid "Preview"
 msgstr ""
 
-#: templates/template-library/templates.php:149
+#: templates/template-library/templates.php:146
 msgid "Want to learn more about the Zyre Library?"
 msgstr ""
 
-#: templates/template-library/templates.php:150
+#: templates/template-library/templates.php:147
 msgid "Click here"
 msgstr ""
 

@@ -126,9 +126,6 @@ defined( 'ABSPATH' ) || exit;
 			<i class="eicon-zoom-in-bold" aria-hidden="true"></i>
 		</div>
 		<img class="zyre-TemplateLibrary_template-thumbnail" src="{{ thumbnail }}">
-		<# if ( obj.isPro ) { #>
-		<span class="zyre-TemplateLibrary_template-badge"><?php esc_html_e( 'Pro', 'zyre-elementor-addons' ); ?></span>
-		<# } #>
 	</div>
 	<div class="zyre-TemplateLibrary_template-footer">
 		{{{ zyre.library.getModal().getTemplateActionButton( obj ) }}}
