@@ -701,7 +701,7 @@ class Conditions_Manager {
 						</select>
 					</div>
 
-					<div class="zyre-tce-sub_name" <?php echo $sub_name ? '' : 'style="display:none"'; ?>>
+					<div class="zyre-tce-sub_name<?php echo $sub_name ? '' : ' zyre-d-none'; ?>">
 						<select
 							id="sub_name-<?php echo esc_attr( $uuid ); ?>"
 							data-id="sub_name-<?php echo esc_attr( $uuid ); ?>"
@@ -726,7 +726,7 @@ class Conditions_Manager {
 						</select>
 					</div>
 
-                    <div class="zyre-tce-sub_id" <?php echo $sub_id ? '' : 'style="display:none"'; ?>>
+                    <div class="zyre-tce-sub_id<?php echo $sub_id ? '' : ' zyre-d-none'; ?>">
 						<select
 							id="sub_id-<?php echo esc_attr( $uuid ); ?>"
 							data-id="sub_id-<?php echo esc_attr( $uuid ); ?>"

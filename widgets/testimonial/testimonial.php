@@ -1111,7 +1111,7 @@ class Testimonial extends Base {
 							<span class="zyre-testimonial-rating-icon"><i class="fas fa-star" aria-hidden="true"></i></span>
 						<?php else : ?>
 							<span class="zyre-testimonial-rating"><?php echo esc_html( '★★★★★' ); ?></span>
-							<span class="zyre-testimonial-rated zy-absolute zy-left-0 zy-top-0 zy-bottom-0 zy-index-1 zy-overflow-hidden" style="width:<?php echo esc_attr( ( $rating_count / 5 ) * 100 ); ?>%"><?php echo esc_html( '★★★★★' ); ?></span>
+							<span class="zyre-testimonial-rated zy-absolute zy-left-0 zy-top-0 zy-bottom-0 zy-index-1 zy-overflow-hidden" data-width="<?php echo esc_attr( ( $rating_count / 5 ) * 100 ); ?>"><?php echo esc_html( '★★★★★' ); ?></span>
 						<?php endif; ?>
 					</div>
 				</div>

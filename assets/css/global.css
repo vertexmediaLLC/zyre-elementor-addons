@@ -232,6 +232,7 @@
 .zyre-addon .zy-border-color-light {border-color: #f2f2f2;}
 .zyre-addon .zy-radius-0 {border-radius: 0;}
 .zyre-addon .zy-shadow-none {box-shadow: none;}
+.zyre-border-b-color-inherit {border-bottom-color: inherit;}
 
 /* cursor */
 .zyre-addon .zy-c-pointer {cursor: pointer;}
@@ -416,4 +417,22 @@
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
     box-shadow: 0 0 0 1000px white inset !important;
     -webkit-text-fill-color: #000 !important;
+}
+
+/* Notices */
+.zyreladdons-notice-warning {
+	margin: 1rem;
+	padding: 1rem 1.25rem;
+	border-left: 5px solid #f5c848;
+	color: #856404;
+	background-color: #fff3cd;
+}
+
+.zyreladdons-notice-warning-2 {
+	background-color: #fff0d4;
+	color: #9f6800;
+	border: 1px solid #ffdc9b;
+	text-align: center;
+	margin-bottom: 15px;
+	padding: 15px 20px;
 }

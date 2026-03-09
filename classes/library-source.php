@@ -74,7 +74,6 @@ class Library_Source extends Source_Base {
 			'thumbnail'   => $template_data['thumbnail'],
 			'date'        => $template_data['created_at'],
 			'tags'        => $template_data['tags'],
-			'isPro'       => $template_data['is_pro'],
 			'url'         => $template_data['url'],
 		];
 	}

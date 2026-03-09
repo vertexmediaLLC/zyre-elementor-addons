@@ -112,8 +112,7 @@ class FlipBox extends Base {
 		$this->add_control(
 			'_separator_before_button',
 			[
-				'type'      => Controls_Manager::RAW_HTML,
-				'raw'       => '<div style="border-block-start: var(--e-a-border);border-block-start-width: 1px;"></div>',
+				'type' => Controls_Manager::DIVIDER,
 			]
 		);
 

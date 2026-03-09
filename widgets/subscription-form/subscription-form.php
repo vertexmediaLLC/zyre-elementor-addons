@@ -51,13 +51,13 @@ class Subscription_Form extends Base {
 			'mailchimp_api_check',
 			[
 				'raw'             => sprintf(
-					'<strong>%s</strong> %s <a style="border-bottom-color: inherit;" href="%s" target="_blank">%s</a> %s %s',
+					'<strong>%s</strong> %s <a class="zyre-border-b-color-inherit" href="%s" target="_blank">%s</a> %s %s',
 					esc_html__( 'Please note!', 'zyre-elementor-addons' ),
 					esc_html__( 'You must set MailChimp API Key in Zyre Addons Dashboard → ', 'zyre-elementor-addons' ),
 					esc_url( admin_url( 'admin.php?page=zyre-addons&t=integrations#integrations' ) ),
 					esc_html__( 'Integrations', 'zyre-elementor-addons' ),
 					sprintf(
-						' %s <a style="border-bottom-color: inherit;" href="%s" target="_blank">%s</a>',
+						' %s <a class="zyre-border-b-color-inherit" href="%s" target="_blank">%s</a>',
 						esc_html__( 'and', 'zyre-elementor-addons' ),
 						esc_url( 'https://mailchimp.com/help/create-audience/' ),
 						esc_html__( 'Create Audience.', 'zyre-elementor-addons' )

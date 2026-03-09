@@ -107,7 +107,7 @@ function zyreladdons_required_php_version_missing_notice() {
 		ZYRELADDONS_MINIMUM_PHP_VERSION
 	);
 
-	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html() ) );
+	printf( '<div class="notice notice-warning is-dismissible"><p class="zyre-py-3">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html() ) );
 }
 
 /**
@@ -137,7 +137,7 @@ function zyreladdons_elementor_missing_notice() {
 		'<a href="' . esc_url( $missing_info_url ) . '">' . esc_html( $missing_info_title ) . '</a>'
 	);
 
-	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html( 'advanced' ) ) );
+	printf( '<div class="notice notice-warning is-dismissible"><p class="zyre-py-3">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html( 'advanced' ) ) );
 }
 
 /**
@@ -160,7 +160,7 @@ function zyreladdons_required_elementor_version_missing_notice() {
 		ZYRELADDONS_MINIMUM_ELEMENTOR_VERSION
 	);
 
-	printf( '<div class="notice notice-warning is-dismissible"><p style="padding: 13px 0">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html( 'advanced' ) ) );
+	printf( '<div class="notice notice-warning is-dismissible"><p class="zyre-py-3">%1$s</p></div>', wp_kses( $notice, zyreladdons_get_allowed_html( 'advanced' ) ) );
 }
 
 /**

@@ -62,11 +62,11 @@ $selected = get_query_var( 'zyreladdons_library_type' );
 					</optgroup>
 				</select>
 			</div>
-			<div class="zyre-tce-sub_name" style="display:none">
+			<div class="zyre-tce-sub_name zyre-d-none">
 				<select id="sub_name-{{uniqeID}}" data-id="sub_name-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="sub_name" class="modal__form-select">
 				</select>
 			</div>
-			<div class="zyre-tce-sub_id" style="display:none">
+			<div class="zyre-tce-sub_id zyre-d-none">
 				<select id="sub_id-{{uniqeID}}" data-id="sub_id-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="sub_id" class="modal__form-select">
 				</select>
 			</div>
