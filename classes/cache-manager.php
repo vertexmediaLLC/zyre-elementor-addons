@@ -158,14 +158,14 @@ class Cache_Manager {
 	 * @param int $post_id The ID of the post.
 	 */
 	public static function enqueue( $post_id ) {
+		wp_enqueue_style( 'zyreladdons-global-vars' );
+		wp_enqueue_style( 'zyreladdons-global' );
+		wp_enqueue_script( 'zyreladdons-addons' );
+
 		$assets_cache = new Assets_Cache( $post_id, self::$widgets_cache );
 		$assets_cache->enqueue_libraries();
 		$assets_cache->enqueue();
 		self::enqueue_fa5_fonts( $post_id );
-
-		wp_enqueue_style( 'zyreladdons-global-vars' );
-		wp_enqueue_style( 'zyreladdons-global' );
-		wp_enqueue_script( 'zyreladdons-addons' );
 
 		do_action( 'zyreladdons_enqueue_assets', $is_cache = true, $post_id );
 	}
@@ -183,17 +183,7 @@ class Cache_Manager {
 			if ( isset( $data['libs'] ) ) {
 				$libs = $data['libs'];
 
-				if ( isset( $libs['css'] ) && is_array( $libs['css'] ) ) {
-					foreach ( $libs['css'] as $libs_css_handle ) {
-						wp_enqueue_style( $libs_css_handle );
-					}
-				}
-
-				if ( isset( $libs['js'] ) && is_array( $libs['js'] ) ) {
-					foreach ( $libs['js'] as $libs_js_handle ) {
-						wp_enqueue_script( $libs_js_handle );
-					}
-				}
+				self::enqueue_raw_libs( $libs );
 			}
 
 			// Enqueue widget-specific stylesheets.
@@ -219,11 +209,26 @@ class Cache_Manager {
 			}
 		}
 
-		wp_enqueue_style( 'zyreladdons-global-vars' );
-		wp_enqueue_style( 'zyreladdons-global' );
-		wp_enqueue_script( 'zyreladdons-addons' );
-
 		do_action( 'zyreladdons_enqueue_assets', $is_cache = false, 0 );
+	}
+
+	/**
+	 * Enqueues library assets directly without caching.
+	 *
+	 * @since 1.0.0
+	 */
+	public static function enqueue_raw_libs( $libs ) {
+		if ( isset( $libs['css'] ) && is_array( $libs['css'] ) ) {
+			foreach ( $libs['css'] as $libs_css_handle ) {
+				wp_enqueue_style( $libs_css_handle );
+			}
+		}
+
+		if ( isset( $libs['js'] ) && is_array( $libs['js'] ) ) {
+			foreach ( $libs['js'] as $libs_js_handle ) {
+				wp_enqueue_script( $libs_js_handle );
+			}
+		}
 	}
 }
 
