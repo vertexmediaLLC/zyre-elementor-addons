@@ -39,7 +39,6 @@ function _typeof(o) {
       thumbnail: "",
       url: "",
       tags: [],
-      isPro: false,
     },
   });
 
@@ -400,10 +399,7 @@ function _typeof(o) {
       };
     },
     getTemplateActionButton: function getTemplateActionButton(templateData) {
-      var templateName =
-          templateData.isPro && !ZyreAddonsEditor.hasPro
-            ? "pro-button"
-            : "insert-button",
+      var templateName = "insert-button",
         viewId = "#tmpl-zyre-TemplateLibrary_" + templateName,
         template = Marionette.TemplateCache.get(viewId);
       return Marionette.Renderer.render(template);
