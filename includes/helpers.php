@@ -5,6 +5,8 @@
  * @package ZyreAddons
  */
 
+use Elementor\Icons_Manager;
+
 defined( 'ABSPATH' ) || die();
 
 /**
@@ -609,6 +611,11 @@ function zyreladdons_escape_tags( $tag, $default_tag = 'span', $extra = array() 
  * @param array $attributes
  */
 function zyreladdons_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_icon_id = 'selected_icon', $attributes = [] ) {
+	if ( ! isset( $settings[ $old_icon_id ] ) && ! Icons_Manager::is_migration_allowed() ) {
+			// add old default
+		$settings[ $old_icon_id ] = '';
+	}
+
 	// Check if its already migrated.
 	$migrated = isset( $settings['__fa4_migrated'][ $new_icon_id ] );
 	// Check if its a new widget without previously selected icon using the old Icon control.
@@ -618,7 +625,7 @@ function zyreladdons_get_icon_html( $settings = [], $old_icon_id = 'icon', $new_
 	$attributes['aria-hidden'] = 'true';
 
 	if ( zyreladdons_is_elementor_version( '>=', '2.6.0' ) && ( $is_new || $migrated ) ) {
-		return \Elementor\Icons_Manager::try_get_icon_html( $settings[ $new_icon_id ], $attributes );
+		return Icons_Manager::try_get_icon_html( $settings[ $new_icon_id ], $attributes );
 	} else {
 		if ( empty( $attributes['class'] ) ) {
 			$attributes['class'] = $settings[ $old_icon_id ];

@@ -109,14 +109,15 @@ class Fun_Fact extends Base {
 		$this->add_control(
 			'selected_icon',
 			[
-				'label'      => esc_html__( 'Icon', 'zyre-elementor-addons' ),
-				'type'       => Controls_Manager::ICONS,
-				'show_label' => true,
-				'default'    => [
+				'label'            => esc_html__( 'Icon', 'zyre-elementor-addons' ),
+				'type'             => Controls_Manager::ICONS,
+				'fa4compatibility' => 'icon',
+				'show_label'       => true,
+				'default'          => [
 					'value'   => 'far fa-thumbs-up',
-					'library' => 'solid',
+					'library' => 'fa-regular',
 				],
-				'condition'  => [
+				'condition'        => [
 					'media_type' => 'icon',
 				],
 			]
