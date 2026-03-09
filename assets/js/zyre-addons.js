@@ -694,6 +694,15 @@ function haObserveTarget(target, callback) {
 		adjustInputHeight( $comment );
 	};
 
+	// Testimonial
+	var Testimonial = function Testimonial($scope) {
+		var $rated = $scope.find('.zyre-testimonial-rated'),
+			ratedW = $rated.data('width');
+		if ( $rated.length && ratedW ) {
+			$rated.css('width', ratedW + '%');
+		}
+	};
+
     // Function Handlers
     var fnHanlders = {
       "zyre-toggle.default": Toggle_Switcher,
@@ -709,6 +718,7 @@ function haObserveTarget(target, callback) {
 	  "zyre-advance-toggle.default": ZyreAccordion,
 	  "zyre-cf7.default": ZyreCF7,
 	  "zyre-post-comments.default": PostComments,
+	  "zyre-testimonial.default": Testimonial,
     };
     $.each(fnHanlders, function (widgetName, handlerFn) {
       elementorFrontend.hooks.addAction(

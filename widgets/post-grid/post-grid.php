@@ -2237,7 +2237,7 @@ class Post_Grid extends Base {
 		if ( 'archive' === $this->settings['query_source'] && $is_editor ) {
 			$post_type = 'post';
 			$editor_notice = sprintf(
-				'<div class="zy-py-3 zy-px-4 zy-text-center zy-mb-3" style="background-color: #fff0d4;color: #9f6800;border: 1px solid #ffdc9b;">%s</div>',
+				'<div class="zyreladdons-notice-warning-2">%s</div>',
 				esc_html__( 'Posts are displayed in the preview panel for design purposes only. Check your archive pages for the real view.', 'zyre-elementor-addons' )
 			);
 		}

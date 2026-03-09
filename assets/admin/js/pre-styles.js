@@ -32,7 +32,7 @@
             var self = this,
 				$preStyleTitle = this.ui.select.closest('.elementor-control-field').find('.elementor-control-title');
 
-            $preStyleTitle.attr('title', zyrePreStyles.syncTitleText).prepend( '<span class="zyre-sync-button">' + '<i class="eicon-sync" aria-hidden="true" style="font-size: 1.15em;"></i>' + '</span>' );
+            $preStyleTitle.attr('title', zyrePreStyles.syncTitleText).prepend( '<span class="zyre-sync-button">' + '<i class="eicon-sync" aria-hidden="true"></i>' + '</span>' );
 
             $preStyleTitle.on("click", function () {
                 self.onSyncClick();

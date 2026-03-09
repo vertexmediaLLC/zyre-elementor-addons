@@ -16,6 +16,10 @@
     line-height: 1;
 }
 
+.zyre-fs-6 {
+	font-size: 30px;
+}
+
 body.zyreladdons-dashboard {
 	font-family: "Inter", serif;
 	background-color: #f7f9fb;
@@ -786,6 +790,10 @@ a.zyre-button-pro:focus {
 	right: 0;
 }
 
+.zyre-subscription-modal iframe {
+	min-height: 190px;
+	width: 100%;
+}
 body.rtl .zyre-modal-close,
 body.rtl .zyre-subscription-modal .zyre-modal-close {
 	right: auto;
@@ -1867,11 +1875,20 @@ p.zyre-tab-sub-heading {
 	display: none;
 	position: absolute;
 	top: 10px;
-	right: 15px;
+	right: 5px;
 	font-size: 24px;
 	cursor: pointer;
+	z-index: 1;
 }
 
+.zyre-sidebar-close svg {
+	fill: #bec5cf;
+	transition: fill 0.2s;
+}
+
+.zyre-sidebar-close:hover svg {
+	fill: #000;
+}
 
 /* Sidebar overlay styles */
 .zyre-dashboard-overlay {

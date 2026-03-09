@@ -304,7 +304,7 @@ $credential_data = zyreladdons_get_credentials();
 									</span>
 								</a>
 							</div>
-							<div class="zyre-sidebar-content" style="display: none;"> <!-- ToDo: show when support center is available -->
+							<div class="zyre-sidebar-content zyre-d-none"> <!-- ToDo: show when support center is available -->
 								<div class="zyre-sidebar-header">
 									<div class="zyre-help-knowledge-logo"><?php echo wp_kses( zyreladdons_get_svg_icon( 'support-center' ), zyreladdons_get_allowed_html() ); ?></div>
 									<h2 class="zyre-sidebar-header-heading"><?php esc_html_e( 'Support Center', 'zyre-elementor-addons' ); ?></h2>
@@ -338,7 +338,7 @@ $credential_data = zyreladdons_get_credentials();
 						<h2 class="zyre-dash-widget-install-header"><?php esc_html_e( 'ZyreAddons Integrations', 'zyre-elementor-addons' ); ?></h2>
 						<div class="zyre-plugin-install">
 							<!-- Elementorin Theme -->
-							<div class="zyre-each-plugin" style="display: none;">
+							<div class="zyre-each-plugin zyre-d-none">
 								<div class="zyre-each-plugin-header">
 									<div><img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/integration-elementorin.png' ); ?>" alt=""></div>
 									<p><?php esc_html_e( 'Free', 'zyre-elementor-addons' ); ?></p>
@@ -408,7 +408,7 @@ $credential_data = zyreladdons_get_credentials();
 					<div class="zyre-widget-header-part">
 						<!-- Sidebar Toggle -->
 						<div class="zyre-sidebar-toggle">
-							<span><i class="fa-solid fa-bars" style="font-size: 30px;"></i></span>
+							<span class="zyre-fs-6"><?php echo wp_kses( zyreladdons_get_svg_icon( 'bars' ), zyreladdons_allowed_icon_html() ); ?></span>
 						</div>
 
 						<h2 class="zyre-widget-title">
@@ -430,8 +430,8 @@ $credential_data = zyreladdons_get_credentials();
 
 						<!-- Widgets Sidebar -->
 						<div class="zyre-sidebar zyre-dash-widget-sidebar">
-							<div class="zyre-sidebar-close" style="color: #bec5cf;">
-								<span><i class="fa-solid fa-xmark"></i></span>
+							<div class="zyre-sidebar-close">
+								<span class="zyre-fs-6"><?php echo wp_kses( zyreladdons_get_svg_icon('xmark'), zyreladdons_allowed_icon_html() ); ?></span>
 							</div>
 
 							<!-- Widgets Search Box -->

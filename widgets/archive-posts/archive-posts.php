@@ -1369,10 +1369,9 @@ class Archive_Posts extends Base {
 
 		$this->add_control(
 			'_separator_line',
-			array(
-				'type' => Controls_Manager::RAW_HTML,
-				'raw'  => '<div style="border-block-start: var(--e-a-border);border-block-start-width: 1px;"></div>',
-			)
+			[
+				'type' => Controls_Manager::DIVIDER,
+			]
 		);
 
 		$this->set_style_controls(

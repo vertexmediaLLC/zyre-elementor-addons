@@ -1705,8 +1705,10 @@ class Animated_Text extends Base {
 
 		if ( 'typing' === $effect ) : ?>
 			<span <?php $this->print_render_attribute_string( 'text' ); ?>></span>
-		<?php else : ?>
-			<div <?php $this->print_render_attribute_string( 'text' ); ?> style='display: inline-block; text-align: center'>
+		<?php else :
+			$this->add_render_attribute( 'text', 'class', 'zy-inline-block zy-text-center' );
+			?>
+			<div <?php $this->print_render_attribute_string( 'text' ); ?>>
 				<ul class="zyre-animated-text-items">
 					<?php
 					foreach ( $settings['switch_text_items'] as $index => $item ) :

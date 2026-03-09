@@ -11,6 +11,10 @@
 	padding-bottom: 10px !important;
 }
 
+.zyre-d-none {
+	display: none;
+}
+
 .elementor-panel .elementor-control-type-heading .elementor-control-title {
 	font-size: 1.1em;
 }
@@ -79,6 +83,10 @@
 .elementor-control-type-zyreladdons_style_select .zyre-reset-style:not([disabled]):focus,
 .elementor-control-type-zyreladdons_style_select .elementor-control-title:hover {
 	opacity: 0.8;
+}
+
+.elementor-control-type-zyreladdons_style_select .zyre-sync-button i {
+	font-size: 1.15em;
 }
 
 /* Fix icon rotation based on selected direction */
