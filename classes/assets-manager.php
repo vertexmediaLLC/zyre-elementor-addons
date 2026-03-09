@@ -286,13 +286,23 @@ class Assets_Manager {
 
 		// Only for edit & preview mode.
 		if ( Cache_Manager::should_enqueue_raw( $post_id ) ) {
+			wp_enqueue_style( 'zyreladdons-global-vars' );
+			wp_enqueue_style( 'zyreladdons-global' );
+			wp_enqueue_script( 'zyreladdons-addons' );
+
 			if ( zyreladdons_is_script_debug_enabled() ) {
 				Cache_Manager::enqueue_raw( $post_id );
 			} else {
-				wp_enqueue_style( 'zyreladdons-global-vars' );
-				wp_enqueue_style( 'zyreladdons-global' );
 				wp_enqueue_style( 'zyreladdons-widgets' );
-				wp_enqueue_script( 'zyreladdons-addons' );
+
+				$widgets_map = Widgets_Manager::get_active_widgets();
+				foreach ( $widgets_map as $widget_key => $data ) {
+					if ( isset( $data['libs'] ) ) {
+						$libs = $data['libs'];
+
+						Cache_Manager::enqueue_raw_libs( $libs );
+					}
+				}
 			}
 		}
 	}
