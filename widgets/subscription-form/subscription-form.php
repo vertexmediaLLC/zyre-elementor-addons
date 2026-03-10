@@ -54,7 +54,7 @@ class Subscription_Form extends Base {
 					'<strong>%s</strong> %s <a class="zyre-border-b-color-inherit" href="%s" target="_blank">%s</a> %s %s',
 					esc_html__( 'Please note!', 'zyre-elementor-addons' ),
 					esc_html__( 'You must set MailChimp API Key in Zyre Addons Dashboard → ', 'zyre-elementor-addons' ),
-					esc_url( admin_url( 'admin.php?page=zyre-addons&t=integrations#integrations' ) ),
+					esc_url( admin_url( 'admin.php?page=zyreladdons&t=integrations#integrations' ) ),
 					esc_html__( 'Integrations', 'zyre-elementor-addons' ),
 					sprintf(
 						' %s <a class="zyre-border-b-color-inherit" href="%s" target="_blank">%s</a>',

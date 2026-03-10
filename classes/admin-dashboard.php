@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || die();
 
 class Dashboard {
 
-	const PAGE_SLUG = 'zyre-addons';
+	const PAGE_SLUG = 'zyreladdons';
 
 	const DASHBOARD_NONCE = 'zyreladdons_save_dashboard_settings';
 

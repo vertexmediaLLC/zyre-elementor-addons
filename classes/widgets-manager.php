@@ -62,7 +62,7 @@ class Widgets_Manager {
 		return sprintf(
 			/* translators: %s is the widget URL */
 			__( '<a href="%s" target="_blank">Click here</a> to make Active / Inactive Styles', 'zyre-elementor-addons' ),
-			esc_url( admin_url( 'admin.php?page=zyre-addons&t=widgets&widget=' . $widget_id ) )
+			esc_url( admin_url( 'admin.php?page=zyreladdons&t=widgets&widget=' . $widget_id ) )
 		);
 	}
 
