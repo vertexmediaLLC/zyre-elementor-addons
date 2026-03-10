@@ -213,7 +213,7 @@ class Assets_Manager {
 
 		// Zyre addons script.
 		wp_register_script(
-			'zyreladdons-addons',
+			'zyreladdons',
 			ZYRELADDONS_ASSETS . 'js/zyre-addons' . self::$suffix . 'js',
 			[ 'jquery' ],
 			ZYRELADDONS_VERSION,
@@ -222,7 +222,7 @@ class Assets_Manager {
 
 		// Localize scripts.
 		wp_localize_script(
-			'zyreladdons-addons',
+			'zyreladdons',
 			'ZyreLocalize',
 			array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -288,7 +288,7 @@ class Assets_Manager {
 		if ( Cache_Manager::should_enqueue_raw( $post_id ) ) {
 			wp_enqueue_style( 'zyreladdons-global-vars' );
 			wp_enqueue_style( 'zyreladdons-global' );
-			wp_enqueue_script( 'zyreladdons-addons' );
+			wp_enqueue_script( 'zyreladdons' );
 
 			if ( zyreladdons_is_script_debug_enabled() ) {
 				Cache_Manager::enqueue_raw( $post_id );
