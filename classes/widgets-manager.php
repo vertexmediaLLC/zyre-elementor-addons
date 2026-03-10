@@ -1326,7 +1326,7 @@ class Widgets_Manager {
 				'js'        => [],
 				'libs' => [
 					'js'  => [],
-					'css' => [ 'zyreladdons-nav-menu' ],
+					'css' => [],
 				],
 			],
 			'post-title'  => [
