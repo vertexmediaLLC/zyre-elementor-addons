@@ -160,7 +160,7 @@ class Cache_Manager {
 	public static function enqueue( $post_id ) {
 		wp_enqueue_style( 'zyreladdons-global-vars' );
 		wp_enqueue_style( 'zyreladdons-global' );
-		wp_enqueue_script( 'zyreladdons-addons' );
+		wp_enqueue_script( 'zyreladdons' );
 
 		$assets_cache = new Assets_Cache( $post_id, self::$widgets_cache );
 		$assets_cache->enqueue_libraries();
