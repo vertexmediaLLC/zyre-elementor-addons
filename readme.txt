@@ -230,7 +230,7 @@ Privacy Policy: https://appsero.com/privacy-policy/
 
 == Changelog ==
 
-= 1.0.3 - 08 March 2026 =
+= 1.0.3 - 10 March 2026 =
 
 - The plugin has been carefully reviewed and the issues fixed.
 

@@ -1,15 +1,15 @@
-= 1.0.0 - 2026-01-29 =
+= 1.0.3 - 2026-03-10 =
 
-* Initial release
-
-= 1.0.1 - 2026-01-29 =
-
-* Some escaping issues are fixed.
+- The plugin has been carefully reviewed and the issues fixed.
 
 = 1.0.2 - 2026-02-22 =
 
 - Some escaping outputs, enqueues, assets, and widgets issues are fixed.
 
-= 1.0.3 - 2026-03-08 =
+= 1.0.1 - 2026-01-29 =
 
-- The plugin has been carefully reviewed and the issues fixed.
+* Some escaping issues are fixed.
+
+= 1.0.0 - 2026-01-29 =
+
+* Initial release
