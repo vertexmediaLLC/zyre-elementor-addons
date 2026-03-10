@@ -354,18 +354,26 @@ function haObserveTarget(target, callback) {
 				cssResponsive += `${widgetClass}.zyre-menu__mobile ul.menu li:${settings.mobile_menu_item_rm_border} {border: none !important;}`;
 			}
 
-			var cssOutput = `<style id="zyreladdons-nav-menu-${widgetId}-inline">`;
-				if ( breakpoint && '-1' == breakpoint ) {
-					cssOutput += cssResponsive;
-				} else if ( breakpoint && breakpoint > 0 ) {
-					cssOutput += `@media (min-width: ${breakpoint+1}px) { ${cssDesktop} }`;
-					cssOutput += `@media (max-width: ${breakpoint}px) { ${cssResponsive} }`;
-				} else {
-					cssOutput += cssDesktop;
-				}
-				cssOutput += `</style>`;
+			var css = '';
+			if ( breakpoint && '-1' == breakpoint ) {
+				css += cssResponsive;
+			} else if ( breakpoint && breakpoint > 0 ) {
+				css += `@media (min-width: ${breakpoint+1}px) { ${cssDesktop} }`;
+				css += `@media (max-width: ${breakpoint}px) { ${cssResponsive} }`;
+			} else {
+				css += cssDesktop;
+			}
 
-			$(cssOutput).prependTo($scope);
+			var styleEl = document.createElement('style');
+			styleEl.id = `zyreladdons-nav-menu-${widgetId}-inline`;
+			styleEl.textContent = css;
+
+			// detect Elementor edit mode
+			if ( window.elementorFrontend && elementorFrontend.isEditMode() ) {
+				$scope.prepend(styleEl);
+			} else {
+				document.head.appendChild(styleEl);
+			}
 		}
 
 		if(navMenu.length) {
