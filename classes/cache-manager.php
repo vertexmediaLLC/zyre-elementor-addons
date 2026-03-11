@@ -191,11 +191,11 @@ class Cache_Manager {
 				if ( isset( $data['css'] ) && is_array( $data['css'] ) ) {
 					foreach ( $data['css'] as $stylesheet ) {
 						$file_path = ZYRELADDONS_DIR_PATH . "assets/css/widgets/{$widget_key}/{$stylesheet}{$suffix}css";
-						$file_path = apply_filters( 'zyreladdons_get_styles_file_path', $file_path, $stylesheet );
+						$file_path = apply_filters( 'zyreladdons_get_styles_file_path', $file_path, $stylesheet, $widget_key );
 
 						if ( is_readable( $file_path ) ) {
 							$file_url = ZYRELADDONS_ASSETS . "css/widgets/{$widget_key}/{$stylesheet}{$suffix}css";
-							$file_url = apply_filters( 'zyreladdons_get_styles_file_url', $file_url, $stylesheet );
+							$file_url = apply_filters( 'zyreladdons_get_styles_file_url', $file_url, $stylesheet, $widget_key );
 
 							wp_enqueue_style(
 								"zyreladdons-{$stylesheet}",
