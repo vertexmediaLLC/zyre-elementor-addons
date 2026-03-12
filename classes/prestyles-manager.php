@@ -56,14 +56,16 @@ class PreStyles_Manager {
 	}
 
 	protected static function get_prestyles( $widget_name ) {
-		$json_file = is_rtl() ? $widget_name . '-rtl.json' : $widget_name . '.json';
+		$file_name = is_rtl() ? $widget_name . '-rtl.json' : $widget_name . '.json';
 
-		$style = ZYRELADDONS_DIR_PATH . 'assets/pre-styles/' . $widget_name . '/' . $json_file;
-		if ( ! is_readable( $style ) ) {
+		$file_dir = apply_filters( 'zyreladdons_get_prestyles_file_dir', ZYRELADDONS_DIR_PATH, $widget_name );
+		$file = $file_dir . 'assets/pre-styles/' . $widget_name . '/' . $file_name;
+
+		if ( ! is_readable( $file ) ) {
 			return false;
 		}
 
-		return file_get_contents( $style );
+		return file_get_contents( $file );
 	}
 
 	public static function get_elementor_data( $post_id, $widget_id ) {
