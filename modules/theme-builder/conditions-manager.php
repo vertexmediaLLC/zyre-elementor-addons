@@ -45,28 +45,35 @@ class Conditions_Manager {
 
 	private function check_name( $name ) {
 		$conds = $this->get_condition( 'name' );
-		return in_array( $name, $conds );
+		if ( 'general' === $name ) {
+			return in_array( $name, $conds );
+		}
+		return in_array( $name, $conds ) && $this->check_wp_page( $name );
 	}
 
 	private function check_sub_name( $sub_name, $parsed_condition ) {
 		$name = $parsed_condition['name'];
 
 		if ( 'all' === $sub_name ) {
-			if ( 'archive' === $name ) {
-				$is_archive = is_archive() || is_home() || is_search();
-
-				// If installed then let WooCommerce handle it.
-				if ( $is_archive && class_exists( 'woocommerce' ) && \is_woocommerce() ) {
-					$is_archive = false;
-				}
-				return $is_archive;
-			}
-			if ( 'singular' === $name ) {
-				return ( is_singular() && ! is_embed() ) || is_404();
-			}
-			return false;
+			$this->check_wp_page( $name );
 		}
 		return apply_filters( 'zyreladdons/conditions/check/sub_name', $sub_name, $parsed_condition );
+	}
+
+	private function check_wp_page( $name ) {
+		if ( 'archive' === $name ) {
+			$is_archive = is_archive() || is_home() || is_search();
+
+			// If installed then let WooCommerce handle it.
+			if ( $is_archive && class_exists( 'woocommerce' ) && \is_woocommerce() ) {
+				$is_archive = false;
+			}
+			return $is_archive;
+		}
+		if ( 'singular' === $name ) {
+			return ( is_singular() && ! is_embed() ) || is_404();
+		}
+		return false;
 	}
 
 	private function get_priority_by_key( $key ) {
