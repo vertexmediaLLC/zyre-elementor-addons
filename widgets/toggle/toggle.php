@@ -260,6 +260,7 @@ class Toggle extends Base {
 			[
 				'label'                => esc_html__( 'Icon Position', 'zyre-elementor-addons' ),
 				'type'                 => Controls_Manager::CHOOSE,
+				'default'              => is_rtl() ? 'right' : 'left',
 				'options'              => [
 					'left'  => [
 						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
@@ -1394,7 +1395,7 @@ class Toggle extends Base {
 				<div class="zyre-toggle-switch-wrapper zy-inline-flex zy-align-center zy-justify-center zy-gap-4">
 					<?php if ( 'button' === $settings['toggle_type'] ) : ?>
 						<?php foreach ( $settings['content_list'] as $i => $item ) : ?>
-							<button class="zyre-toggle-switch-button zy-relative zy-flex zy-align-center zy-justify-center zy-nowrap zy-gap-1 zy-outline-none zy-shadow-none zy-bg-white zy-lh-normal <?php echo esc_attr( ( 'yes' === $item['active'] ) ? 'active' : '' ); ?> zyre-toggle-switch-icon-<?php echo esc_attr( $item['icon_align'] ); ?> elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>" data-content-id="<?php echo esc_attr( $item['_id'] ); ?>">
+							<button class="zyre-toggle-switch-button zy-relative zy-flex zy-align-center zy-justify-center zy-nowrap zy-gap-1 zy-outline-none zy-shadow-none zy-bg-white zy-lh-normal <?php echo esc_attr( ( 'yes' === $item['active'] ) ? 'active' : '' ); ?> zyre-toggle-switch-icon-<?php echo esc_attr( $item['icon_align'] ?? '' ); ?> elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>" data-content-id="<?php echo esc_attr( $item['_id'] ); ?>">
 								<?php if ( isset( $item['image']['id'] ) ) : ?>
 									<div class="zyre-toggle-switch-image">
 										<?php echo wp_get_attachment_image( $item['image']['id'], 'medium_large' ); ?>
