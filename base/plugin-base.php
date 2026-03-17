@@ -123,6 +123,7 @@ class Plugin {
 			// select2
 			include_once ZYRELADDONS_DIR_PATH . 'classes/select2-handler.php';
 			add_action( 'wp_ajax_zyreladdons_process_dynamic_select', [ Select2_Handler::class, 'process_select_request' ] );
+			add_action( 'wp_ajax_zyreladdons_process_el_dynamic_select', [ Select2_Handler::class, 'process_el_select_request' ] );
 
 			// Dashboard
 			include_once ZYRELADDONS_DIR_PATH . 'classes/admin-dashboard.php';

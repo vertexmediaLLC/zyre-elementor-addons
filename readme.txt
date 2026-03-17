@@ -232,6 +232,7 @@ Privacy Policy: https://appsero.com/privacy-policy/
 
 = 1.0.3 - 10 March 2026 =
 
+- Initial release of Zyre Elementor Addons.
 - The plugin has been carefully reviewed and the issues fixed.
 
 = 1.0.2 - 22 February 2026 =
