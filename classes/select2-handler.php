@@ -155,4 +155,30 @@ class Select2_Handler {
 			return $options;
 		}
 	}
+
+	public static function process_el_select_request() {
+		try {
+			self::validate_reqeust();
+
+			$post_types = ! empty( $_POST['post_types'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['post_types'] ) ) : [];
+
+			$taxonomies = [];
+
+			foreach ( $post_types as $post_type ) {
+
+				$object_taxonomies = get_object_taxonomies( $post_type, 'names' );
+
+				if ( ! empty( $object_taxonomies ) ) {
+					$taxonomies = array_merge( $taxonomies, $object_taxonomies );
+				}
+			}
+
+			$taxonomies = array_unique( $taxonomies );
+
+			wp_send_json_success( $taxonomies );
+
+		} catch ( Exception $e ) {
+			wp_send_json_error( $e->getMessage() );
+		}
+	}
 }
