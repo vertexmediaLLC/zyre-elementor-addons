@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'ZYRELADDONS_VERSION', '1.0.3' );
+define( 'ZYRELADDONS_VERSION', '1.0.4' );
 define( 'ZYRELADDONS__FILE__', __FILE__ );
 define( 'ZYRELADDONS_DIR_PATH', plugin_dir_path( ZYRELADDONS__FILE__ ) );
 define( 'ZYRELADDONS_DIR_URL', plugin_dir_url( ZYRELADDONS__FILE__ ) );

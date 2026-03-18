@@ -1,3 +1,7 @@
+= 1.0.4 - 2026-03-18 =
+
+- Added videos and updated the readme file.
+
 = 1.0.3 - 2026-03-10 =
 
 - Initial release of Zyre Elementor Addons.
