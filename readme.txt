@@ -4,13 +4,15 @@ Tags: elementor, elementor addons, elementor widgets, elementor templates, theme
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Lightweight Elementor addon with Theme Builder, Header & Footer Builder, 57+ free widgets, templates, and advanced design tools.
 
 == Description ==
+
+https://www.youtube.com/watch?v=Qayq9BoOEjQ
 
 [Zyre Elementor Addons](https://zyreaddons.com/) is a lightweight and user-friendly addon for Elementor that helps you build modern WordPress websites faster—without writing any code.
 
@@ -24,7 +26,7 @@ https://www.youtube.com/watch?v=QoDlnYgSWcE
 
 ## Useful Links
 
-[Widgets Demo](https://zyreaddons.com/all-widgets/) | [Documentation](https://zyreaddons.com/docs/) | [Videos](https://www.youtube.com/watch?v=dVWxTTj64F8&list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj)
+[Widgets Demo](https://zyreaddons.com/all-widgets/) | [Documentation](https://zyreaddons.com/docs/) | [Videos](https://www.youtube.com/playlist?list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj)
 
 ## Key Features
 
@@ -208,6 +210,10 @@ Privacy Policy: https://appsero.com/privacy-policy/
 3. Install and activate the plugin.
 4. Start using widgets inside Elementor.
 
+For a more detailed explanation, watch the following video.
+
+https://www.youtube.com/watch?v=k3P1I9MRAEs
+
 
 == Screenshots ==
 
@@ -229,6 +235,10 @@ Privacy Policy: https://appsero.com/privacy-policy/
 
 
 == Changelog ==
+
+= 1.0.4 - 18 March 2026 =
+
+- Added videos and updated the readme file.
 
 = 1.0.3 - 10 March 2026 =
 

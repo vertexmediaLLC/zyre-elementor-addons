@@ -180,7 +180,7 @@
         this.model.get("placeholder")
       );
     },
-    getDependencyArgs: function () {
+    getDependencyArgs: function getDependencyArgs() {
       var self = this,
         args = self.model.get("dynamic_params");
       if (!_.isObject(args)) {
@@ -193,58 +193,9 @@
       }
       return args;
     },
-    initControlDependency: function () {
-      var self = this,
-        dynamicParams = self.model.get("dynamic_params") || {};
-      if (!dynamicParams.control_dependency) {
-        return;
-      }
-
-      var controlDependency = dynamicParams.control_dependency;
-
-      this.container.settings.on("change:" + controlDependency, function () {
-        var postTypes = self.container.settings.get(controlDependency) || [];
-
-        if (!postTypes.length) {
-          return;
-        }
-
-        $.ajax({
-          url: ajaxurl,
-          type: "POST",
-          data: {
-            nonce: ZyreAddonsEditor.editor_nonce,
-            action: "zyreladdons_process_el_dynamic_select",
-            post_types: postTypes,
-          },
-          success: function (response) {
-            if (!response.success) {
-              return;
-            }
-
-            var taxonomies = response.data;
-
-            if (!taxonomies || !taxonomies.length) {
-              return;
-            }
-
-            var params = self.model.get("dynamic_params") || {};
-
-            params.term_taxonomy = taxonomies;
-
-            self.model.set("dynamic_params", params);
-
-            // clear selected terms
-            self.container.settings.set(self.model.get("name"), []);
-
-            // reset select2
-            self.ui.select.val(null).trigger("change");
-          },
-        });
-      });
-    },
-    getControlDependency: function (postTypes) {
+    getControlDependency: function (postTypes, callback) {
       var self = this;
+
       $.ajax({
         url: ajaxurl,
         type: "POST",
@@ -259,20 +210,19 @@
           var taxonomies = response.data;
           if (!taxonomies || !taxonomies.length) return;
 
-          // Update control dynamic_params
           var params = self.model.get("dynamic_params") || {};
           params.term_taxonomy = taxonomies;
 
-          self.model.set("dynamic_params", params);
-
-          // Clear previously selected terms
-          self.container.settings.set(self.model.get("name"), []);
-          self.ui.select.val(null).trigger("change");
+          // callback execute
+          if (typeof callback === "function") {
+            callback(params);
+          }
         },
       });
     },
     getSelect2DefaultOptions: function () {
       var _this = this;
+
       return {
         allowClear: true,
         placeholder: this.getSelect2Placeholder(),
@@ -296,7 +246,7 @@
               _this.getDependencyArgs(),
             );
           },
-          processResults: function processResults(response) {
+          processResults: function (response) {
             if (!response.success || response.data.length === 0) {
               return {
                 results: [
@@ -340,18 +290,43 @@
       if (this.isRendered) {
         return;
       }
-      var savedPostTypes = this.container.settings.get("post_type") || [];
-      if (savedPostTypes.length) {
-        this.getControlDependency(savedPostTypes);
+
+      var _this = this;
+      var savedValues = this.getControlValue();
+      var dynamicParams = this.model.get("dynamic_params") || {};
+
+      // if has dependency then wait
+      if (dynamicParams.select2_dependency) {
+        var postTypes = this.container.settings.get("post_type") || [];
+
+        if (postTypes.length) {
+          this.getControlDependency(postTypes, function (params) {
+            // update first
+            var oldParams = _this.model.get("dynamic_params") || {};
+            _this.model.set("dynamic_params", _.extend({}, oldParams, params));
+
+            // AJAX call
+            _this.loadSavedValues(savedValues);
+          });
+
+          return; // STOP normal flow
+        }
       }
-      var _this = this,
-        savedValues = this.getControlValue();
+
+      // normal flow
+      this.loadSavedValues(savedValues);
+    },
+    loadSavedValues: function (savedValues) {
+      var _this = this;
+
       if (_.isEmpty(savedValues)) {
         return;
       }
+
       if (!_.isArray(savedValues)) {
         savedValues = [savedValues];
       }
+
       var defaults = {
         nonce: ZyreAddonsEditor.editor_nonce,
         action: "zyreladdons_process_dynamic_select",
@@ -385,8 +360,33 @@
         this,
         arguments,
       );
+
       var select2Instance = this.ui.select.data("select2");
+
       if (!select2Instance) {
+        var self = this;
+        var dynamicParams = this.model.get("dynamic_params") || {};
+        var savedValues = this.getControlValue();
+
+        // check if select2_dependency exists
+        if (dynamicParams.select2_dependency) {
+          // override dynamic_params based on select2_dependency
+          var postTypes = this.container.settings.get("post_type") || [];
+          if (postTypes.length) {
+            this.getControlDependency(postTypes, function (params) {
+              // only update taxonomy
+              var oldParams = self.model.get("dynamic_params") || {};
+              self.model.set("dynamic_params", _.extend({}, oldParams, params));
+
+              // DO NOT clear if saved values exist
+              if (_.isEmpty(savedValues)) {
+                self.container.settings.set(self.model.get("name"), []);
+                self.ui.select.val(null).trigger("change");
+              }
+            });
+          }
+        }
+        // Now set select2 options
         this.ui.select.select2(this.getSelect2Options());
         if (this.model.get("sortable")) {
           this.initSortable();

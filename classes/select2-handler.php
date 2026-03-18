@@ -90,9 +90,15 @@ class Select2_Handler {
 	}
 
 	public static function process_term() {
-		$term_taxonomy = ! empty( $_POST['term_taxonomy'] ) ? sanitize_text_field( wp_unslash( $_POST['term_taxonomy'] ) ) : '';
+		$term_taxonomy = ! empty( $_POST['term_taxonomy'] ) ? wp_unslash( $_POST['term_taxonomy'] ) : [];
 		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( wp_unslash( $_POST['query_term'] ) ) : '';
 		$saved_values = ! empty( $_POST['saved_values'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
+
+		// normalize to array
+		if ( ! is_array( $term_taxonomy ) ) {
+			$term_taxonomy = [ $term_taxonomy ];
+		}
+    	$term_taxonomy = zyreladdons_sanitize_array_recursively( $term_taxonomy );
 
 		if ( empty( $term_taxonomy ) ) {
 			throw new Exception( esc_html__( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
