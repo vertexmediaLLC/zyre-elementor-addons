@@ -297,7 +297,25 @@
 
       // if has dependency then wait
       if (dynamicParams.select2_dependency) {
-        var postTypes = this.container.settings.get("post_type") || [];
+        var dependencyValue = dynamicParams.select2_dependency;
+        var postTypes = this.container.settings.get(dependencyValue) || [];
+        var settings = this.container.settings;
+
+        settings.on(`change:${dependencyValue}`, function () {
+          var savedValues = _this.getControlValue();
+          var postTypes = settings.get(dependencyValue);
+
+          _this.getControlDependency(postTypes, function (params) {
+            // update first
+            var oldParams = _this.model.get("dynamic_params") || {};
+            _this.model.set("dynamic_params", _.extend({}, oldParams, params));
+
+            // AJAX call
+            _this.loadSavedValues(savedValues);
+          });
+
+          return; // STOP normal flow
+        });
 
         if (postTypes.length) {
           this.getControlDependency(postTypes, function (params) {
@@ -370,8 +388,9 @@
 
         // check if select2_dependency exists
         if (dynamicParams.select2_dependency) {
+          var dependencyValue = dynamicParams.select2_dependency;
           // override dynamic_params based on select2_dependency
-          var postTypes = this.container.settings.get("post_type") || [];
+          var postTypes = this.container.settings.get(dependencyValue) || [];
           if (postTypes.length) {
             this.getControlDependency(postTypes, function (params) {
               // only update taxonomy
