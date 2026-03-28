@@ -92,6 +92,7 @@ class Select2_Handler {
 	public static function process_term() {
 		$term_taxonomy = ! empty( $_POST['term_taxonomy'] ) ? wp_unslash( $_POST['term_taxonomy'] ) : [];
 		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( wp_unslash( $_POST['query_term'] ) ) : '';
+		$object_count = ! empty( $_POST['object_count'] ) && $_POST['object_count'] === 'yes';
 		$saved_values = ! empty( $_POST['saved_values'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
 		// normalize to array
@@ -132,7 +133,10 @@ class Select2_Handler {
 		$out = [];
 
 		foreach ( $terms as $term ) {
-			$title = ! empty( $query_term ) ? "{$term->name} ({$term->count})" : $term->name;
+			$title = $term->name;
+			if ( $object_count ) {
+				$title = "{$term->name} ({$term->count})";
+			}
 			// extra space is needed to maintain order in elementor control
 			$out[ " {$term->term_id}" ] = $title;
 		}
