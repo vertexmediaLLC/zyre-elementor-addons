@@ -711,6 +711,28 @@ function haObserveTarget(target, callback) {
 		}
 	};
 
+	// Search Box
+	var SearchBox = function SearchBox($scope) {
+		var $searchCat = $scope.find('.zyre-search-form-select'),
+			$postTypes = $scope.find('#post-types');
+
+		$searchCat.on('change', function () {
+			var selectedCat = $(this).val();
+			if (selectedCat) {
+				$(this).attr('name', 'cat_id');
+			} else {
+				$(this).removeAttr('name');
+			}
+
+			var selectedPostType = $(this).find(':selected').attr('data-post_type');
+			if (selectedPostType) {
+				$postTypes.attr('name', 'post_types').val(selectedPostType);
+			} else {
+				$postTypes.removeAttr('name').val('');
+			}
+		});
+	};
+
     // Function Handlers
     var fnHanlders = {
       "zyre-toggle.default": Toggle_Switcher,
@@ -727,6 +749,7 @@ function haObserveTarget(target, callback) {
 	  "zyre-cf7.default": ZyreCF7,
 	  "zyre-post-comments.default": PostComments,
 	  "zyre-testimonial.default": Testimonial,
+	  "zyre-search-box.default": SearchBox,
     };
     $.each(fnHanlders, function (widgetName, handlerFn) {
       elementorFrontend.hooks.addAction(
