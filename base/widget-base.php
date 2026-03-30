@@ -276,7 +276,8 @@ abstract class Base extends Widget_Base {
 
 					case 'font_size':
 					case 'icon_size':
-						$allowed_props = [ 'font-size', '--icon-size' ];
+					case 'arrow_size':
+						$allowed_props = [ 'font-size', '--icon-size', '--arrow-size' ];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'font-size';
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Icon Size', 'zyre-elementor-addons' ),
@@ -418,12 +419,14 @@ abstract class Base extends Widget_Base {
 					case 'color_hover':
 					case 'text_color':
 						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';
+						$allowed_props = [ 'color', 'fill', '--text-color', '--color', '--arrow-color' ];
+						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'color';
 						$control_args = [
 							'label' => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Color', 'zyre-elementor-addons' ), //priority
 							'type' => Controls_Manager::COLOR,
 							'default' => ! empty( $values['default'] ) ? sanitize_hex_color( $values['default'] ) : '',
 							'selectors' => [
-								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'color: {{VALUE}}' . $priority,
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => "{$css_property}: {{VALUE}}{$priority}",
 							],
 							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];

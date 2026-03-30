@@ -101,7 +101,11 @@
 #elementor-controls:has(.elementor-control-avatar_direction_mobile input[value="top"]:checked) .elementor-control-avatar_position_mobile .elementor-choices [class^="eicon-v-align-"],
 #elementor-controls:has(.elementor-control-avatar_direction input[value="bottom"]:checked) .elementor-control-avatar_position .elementor-choices [class^="eicon-v-align-"],
 #elementor-controls:has(.elementor-control-avatar_direction_tablet input[value="bottom"]:checked) .elementor-control-avatar_position_tablet .elementor-choices [class^="eicon-v-align-"],
-#elementor-controls:has(.elementor-control-avatar_direction_mobile input[value="bottom"]:checked) .elementor-control-avatar_position_mobile .elementor-choices [class^="eicon-v-align-"] {
+#elementor-controls:has(.elementor-control-avatar_direction_mobile input[value="bottom"]:checked) .elementor-control-avatar_position_mobile .elementor-choices [class^="eicon-v-align-"],
+#elementor-controls:has(.elementor-control-layout input[value="block"]:not(:checked)) .elementor-control-terms_position .elementor-choices [class^="eicon-v-align-"],
+#elementor-controls:has(.elementor-control-layout_laptop input[value="block"]:not(:checked)) .elementor-control-terms_position_laptop .elementor-choices [class^="eicon-v-align-"],
+#elementor-controls:has(.elementor-control-layout_tablet input[value="block"]:not(:checked)) .elementor-control-terms_position_tablet .elementor-choices [class^="eicon-v-align-"],
+#elementor-controls:has(.elementor-control-layout_mobile input[value="block"]:not(:checked)) .elementor-control-terms_position_mobile .elementor-choices [class^="eicon-v-align-"] {
 	transform: rotate(270deg);
 }
 

@@ -784,9 +784,7 @@ function haObserveTarget(target, callback) {
 
     // Search Box
     var SearchBox = function SearchBox($scope) {
-      var $searchForm = $scope.find(".zyre-search-form"),
-        $searchBtn = $scope.find(".zyre-search-button"),
-        $searchToggle = $scope.find(".zyre-search-toggle"),
+      var $searchToggle = $scope.find(".zyre-search-toggle"),
         $searchCat = $scope.find(".zyre-search-form-select"),
         $searchField = $scope.find(".zyre-search-field"),
         $postTypes = $scope.find("#post-types");
