@@ -1447,6 +1447,20 @@ abstract class Base extends Widget_Base {
 						}
 						$this->add_control( $control_name, $control_args );
 						break;
+
+					case 'html':
+						$control_args = [
+							'label'           => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : '',
+							'description'     => ! empty( $values['description'] ) ? esc_html( $values['description'] ) : '',
+							'type'            => Controls_Manager::RAW_HTML,
+							'raw'             => ! empty( $values['raw'] ) ? wp_kses_post( $values['raw'] ) : '',
+							'content_classes' => isset( $values['classes'] ) ? esc_html( $values['classes'] ) : 'elementor-panel-alert elementor-panel-alert-info',
+						];
+						if ( ! empty( $values['separator'] ) ) {
+							$control_args['separator'] = $values['separator'];
+						}
+						$this->add_control( $control_name, $control_args );
+						break;
 				}
 			}
 		}
