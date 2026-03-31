@@ -452,12 +452,16 @@ abstract class Base extends Widget_Base {
 							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Icon Color', 'zyre-elementor-addons' ),
 							'type'      => Controls_Manager::COLOR,
 							'default'   => ! empty( $values['default'] ) ? sanitize_hex_color( $values['default'] ) : '',
-							'selectors' => [
-								! empty( $values['selector'] ) ? $values['selector'] . ' i' : $selector . ' i'     => 'color: {{VALUE}}',
-								! empty( $values['selector'] ) ? $values['selector'] . ' svg' : $selector . ' svg' => 'fill: {{VALUE}}',
-							],
 							'condition' => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
+						if ( ! empty( $values['selectors'] ) && is_array( $values['selectors'] ) ) {
+							$control_args['selectors'] = $values['selectors'];
+						} else {
+							$control_args['selectors'] = [
+								! empty( $values['selector'] ) ? $values['selector'] . ' i' : $selector . ' i'     => 'color: {{VALUE}}',
+								! empty( $values['selector'] ) ? $values['selector'] . ' svg' : $selector . ' svg' => 'fill: {{VALUE}}',
+							];
+						}
 						if ( ! empty( $values['separator'] ) ) {
 							$control_args['separator'] = $values['separator'];
 						}
