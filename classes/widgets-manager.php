@@ -1329,6 +1329,82 @@ class Widgets_Manager {
 					'css' => [],
 				],
 			],
+			'mega-menu' => [
+				'title'  => __( 'Mega Menu', 'zyre-elementor-addons' ),
+				'icon'   => 'zy-fonticon zy-Mega-menu',
+				'cat'    => 'general',
+				'is_active' => true,
+				'demo'   => 'https://zyreaddons.com/demos/mega-menu/',
+				'doc'    => 'https://zyreaddons.com/docs/zyre-elementor-addons/theme-builder/mega-menu/',
+				'css'    => [],
+				'js'     => [],
+				'styles'    => [
+					'one'   => [
+						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+				],
+			],
+			'off-canvas' => [
+				'title'  => __( 'Off Canvas', 'zyre-elementor-addons' ),
+				'icon'   => 'zy-fonticon zy-Header',
+				'is_active' => true,
+				'cat'    => 'general',
+				'demo'   => 'https://zyreaddons.com/demos/off-canvas/',
+				'doc'    => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/off-canvas/',
+				'css'    => [ 'off-canvas' ],
+				'js'     => [],
+				'styles'    => [
+					'one'   => [
+						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+				],
+			],
+			'search-box' => [
+				'title'  => __( 'Search Box', 'zyre-elementor-addons' ),
+				'icon'   => 'zy-fonticon zy-Search-box',
+				'cat'    => 'general',
+				'is_active' => true,
+				'demo'   => 'https://zyreaddons.com/demos/search-box/',
+				'doc'    => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/search-box/',
+				'css'    => [ 'search-box' ],
+				'js'     => [],
+				'styles'    => [
+					'one'   => [
+						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+					'two'   => [
+						'name'      => esc_html__( 'Simple-2', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+					'three'   => [
+						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+					'four'   => [
+						'name'      => esc_html__( 'Standard-2', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+					'five'   => [
+						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+					'six'   => [
+						'name'      => esc_html__( 'Advance-2', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => '',
+					],
+				],
+			],
 			'post-title'  => [
 				'cat'       => 'general',
 				'is_active' => true,

@@ -22,7 +22,7 @@ class Query_Manager {
 				$options[$id] = $name;
 			}
 		} else {
-			$options['no_template'] = __( 'No saved templates found!', 'zyre-elementor-addons-pro' );
+			$options['no_template'] = __( 'No saved templates found!', 'zyre-elementor-addons' );
 		}
 
 		return $options;
@@ -93,40 +93,64 @@ class Query_Manager {
      */
 	public static function get_query_post_list( $post_type = 'any', $limit = -1, $search = '' ) {
 		global $wpdb;
-		$where = '';
-		$data  = [];
+		$data = [];
 
-		if ( -1 == $limit ) {
-			$limit = '';
-		} elseif ( 0 == $limit ) {
-			$limit = "limit 0,1";
-		} else {
-			$limit = $wpdb->prepare( " limit 0,%d", esc_sql( $limit ) );
-		}
+		$where  = "WHERE post_status = 'publish'";
+		$params = [];
 
+		// POST TYPE
 		if ( 'any' === $post_type ) {
-			$in_search_post_types = get_post_types( ['exclude_from_search' => false] );
-			if ( empty( $in_search_post_types ) ) {
-				$where .= ' AND 1=0 ';
+			$types = get_post_types( [ 'exclude_from_search' => false ] );
+
+			if ( empty( $types ) ) {
+				$where .= " AND 1=0";
 			} else {
-				$where .= " AND {$wpdb->posts}.post_type IN ('" . join( "', '",
-					array_map( 'esc_sql', $in_search_post_types ) ) . "')";
+				$placeholders = implode( ',', array_fill( 0, count( $types ), '%s' ) );
+				$where       .= " AND post_type IN ($placeholders)";
+				$params       = array_merge( $params, $types );
 			}
 		} elseif ( ! empty( $post_type ) ) {
-			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_type = %s", esc_sql( $post_type ) );
+			$where   .= " AND post_type = %s";
+			$params[] = $post_type;
 		}
 
+		// SEARCH
 		if ( ! empty( $search ) ) {
-			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_title LIKE %s", '%' . esc_sql( $search ) . '%' );
+			$where   .= " AND post_title LIKE %s";
+			$params[] = '%' . $wpdb->esc_like( $search ) . '%';
 		}
 
-		$query   = "select post_title,ID  from $wpdb->posts where post_status = 'publish' $where $limit";
-		$results = $wpdb->get_results( $query );
+		// LIMIT
+		if ( -1 == $limit ) {
+			$limit_sql = '';
+		} elseif ( 0 == $limit ) {
+			$limit_sql = ' LIMIT 0,1';
+		} else {
+			$limit_sql = ' LIMIT %d';
+			$params[]  = $limit;
+		}
+
+		// BUILD + EXECUTE IN ONE PLACE (important)
+		if ( ! empty( $params ) ) {
+			$results = $wpdb->get_results(
+				$wpdb->prepare(
+					"SELECT post_title, ID FROM {$wpdb->posts} $where $limit_sql",
+					$params
+				)
+			);
+		} else {
+			// no dynamic input → safe static query
+			$results = $wpdb->get_results(
+				"SELECT post_title, ID FROM {$wpdb->posts} WHERE post_status = 'publish'"
+			);
+		}
+
 		if ( ! empty( $results ) ) {
 			foreach ( $results as $row ) {
-				$data[$row->ID] = $row->post_title;
+				$data[ $row->ID ] = $row->post_title;
 			}
 		}
+
 		return $data;
 	}
 
