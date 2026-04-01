@@ -2,6 +2,72 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:opsz@14..32,300&display=swap');
 
+.zyre-color-orange {
+	color: #ffaa19;
+}
+
+.zyre-color-orange-2 {
+	color: #d16007;
+}
+
+.zyre-color-bold {
+	font-weight: bold;
+}
+
+.zyre-color-white {
+	color: #fff;
+}
+
+.zyre-lh-1\.1 {
+	line-height: 1.1;
+}
+
+.zyre-text-r,
+th.zyre-text-r {
+	text-align: right;
+}
+
+.zyre-v-middle,
+th.zyre-v-middle {
+	vertical-align: middle;
+}
+
+.zyre-mw-60 {
+	max-width: 60px;
+}
+
+.zyre-pl-0 {
+	padding-left: 0;
+}
+
+.zyre-pr-0 {
+	padding-right: 0;
+}
+
+.zyre-pt-0 {
+	padding-top: 0;
+}
+
+.zyre-mr-0 {
+	margin-right: 0;
+}
+
+.zyre-ml--6 {
+	margin-left: -30px;
+}
+
+.zyre-fw-600 {
+	font-weight: 600;
+}
+
+.zyre-d-none, i.zyre-d-none {
+	display: none;
+}
+
+.zyre-fs-11 {
+	font-size: 11px;
+}
+
 .zyre-py-3 {
 	padding-top: 15px;
 	padding-bottom: 15px;

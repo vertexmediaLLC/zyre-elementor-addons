@@ -162,6 +162,7 @@ class Plugin {
 
 		include_once ZYRELADDONS_DIR_PATH . 'classes/ajax-handler.php';
 
+		// Theme Builder
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-cache.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/module.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-manager.php';
@@ -173,6 +174,10 @@ class Plugin {
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/genesis.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/oceanwp.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/twenty-nineteen.php';
+
+		// Mega Menu
+		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/mega-menu.php';
+		Modules\Mega_Menu::instance();
 	}
 
 	/**
