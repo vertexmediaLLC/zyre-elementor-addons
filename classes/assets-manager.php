@@ -121,6 +121,13 @@ class Assets_Manager {
 			ZYRELADDONS_VERSION
 		);
 
+		wp_register_style(
+			'zyreladdons-mega-menu',
+			ZYRELADDONS_ASSETS . 'css/mega-menu' . self::$suffix . 'css',
+			[ 'zyreladdons-global' ],
+			ZYRELADDONS_VERSION
+		);
+
 		// Sharer JS
 		wp_register_script(
 			'zyreladdons-sharer',

@@ -1,0 +1,100 @@
+.zyre-mega-menu {
+	overflow: hidden;
+}
+
+.zyre-mega-menu:not(.initialized) {
+	display: none
+}
+
+.zyre-mega-menu:hover {
+	overflow: visible;
+}
+
+.zyre-mega-menu ul.menu,
+.zyre-mega-menu ul.sub-menu {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.zyre-mega-menu ul.menu li.menu-item {
+	position: relative;
+	display: flex;
+	align-self: stretch;
+	align-content: center;
+	align-items: center;
+	transition: var(--zy-transition);
+}
+
+.zyre-mega-menu ul.menu li.menu-item a {
+	color: #000;
+	text-decoration: none;
+	transition: var(--zy-transition);
+	position: relative;
+}
+
+.zyre-mega-menu ul.menu li.menu-item .zy-menu-badge,
+.zyre-mega-menu ul.menu li.menu-item .zy-menu-badge>.zy-menu-badge-arrow {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.zyre-mega-menu ul.menu li.menu-item .zy-menu-badge {
+	top: 5px;
+	z-index: 10;
+	padding: 4px 8px;
+	border-radius: 3px;
+	background-color: #bbb;
+	color: #fff;
+	font-size: 8px;
+	line-height: 1;
+}
+
+.zyre-mega-menu ul.menu li.menu-item .zy-menu-badge>.zy-menu-badge-arrow {
+	bottom: -6px;
+	border-width: 6px;
+	border-top: solid #bbb;
+	border-right: solid transparent;
+	border-bottom: solid transparent;
+	border-left: solid transparent;
+}
+
+.zyre-mega-menu ul.menu li.menu-item .zy-menu-icon {
+	display: inline-block;
+	margin-inline-end: 8px;
+}
+
+.zyre-mega-menu ul.menu li.menu-item .menu-item-description {
+	font-size: 0.9em;
+	display: block;
+}
+
+.zyre-mega-menu ul.menu li.menu-item .submenu-indicator {
+	font-size: 0.8em;
+}
+
+.zyre-mega-menu ul.sub-menu>li.menu-item {
+	justify-content: space-between;
+}
+
+.zyre-mega-menu ul.sub-menu li.menu-item:not(:last-child) {
+	border-bottom: 1px solid var(--zy-hue2);
+}
+
+.zyre-mega-menu ul.sub-menu>li.menu-item>a {
+	flex-grow: 1;
+}
+
+/* Hamburger */
+.zyre-mega-menu .zyre-menu-toggler {
+	fill: #fff;
+	background-color: var(--zy-gray);
+	border-radius: 3px;
+}
+
+.zyre-mega-menu .zyre-menu-toggler.zy-icon-hide {
+	display: none;
+}

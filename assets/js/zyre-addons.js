@@ -449,6 +449,257 @@ function haObserveTarget(target, callback) {
       }
     };
 
+    // Mega Menu
+    var ZyreMegaMenu = function ZyreMegaMenu($scope) {
+      var widgetId = $scope.data("id");
+      var widgetClass = widgetId
+        ? ".elementor-element.elementor-element-" + widgetId
+        : ".zyre-mega-menu";
+      var navMenu = $scope.find(".zyre-mega-menu");
+      var navMenuHasVr = navMenu.hasClass("zyre-mega-menu--vr");
+      var $menu = navMenu.find("ul.menu");
+      var $openIcon = navMenu.find(".zyre-menu-open-icon");
+      var $closeIcon = navMenu.find(".zyre-menu-close-icon");
+      var humBurgerBtn = navMenu.find(".zyre-menu-toggler");
+      var classAttr = navMenu.attr("class");
+      var match = classAttr.match(/breakpoint-(-?\d+)/);
+      var breakpoint = match ? Math.round(match[1]) : null;
+      var megaMenu = navMenu.find(".zy-megamenu-has");
+      var mobileMenuClass = "zyre-menu__mobile";
+      var dataCss = navMenu.find("[data-css]");
+
+      function addMegaMenuCSS(breakpoint) {
+        var settings = $scope.data("settings");
+
+        var cssDesktop = `
+			${widgetClass} .zyre-hamburger-wrapper,
+			${widgetClass} .zy-megamenu-has ul.sub-menu:not(.zy-megamenu-panel) {display: none}
+			${widgetClass} ul.menu{--flex-grow: 0;display:flex;flex-wrap:wrap;align-items:center;column-gap:20px;row-gap:20px}
+			${widgetClass} .zyre-mega-menu--vr ul.menu{row-gap: 0;width: 280px;}
+			${widgetClass} .zyre-mega-menu--vr.submenu--pos_top ul.menu{position:relative}
+			${widgetClass} ul.menu > li.menu-item {justify-content: center;flex-grow:var(--flex-grow)}
+			${widgetClass} .zyre-mega-menu--vr ul.menu > li.menu-item {width:100%;justify-content: space-between;column-gap: 15px;}
+			${widgetClass} .zyre-mega-menu--vr.submenu--pos_top ul.menu li.menu-item-has-children {position:static;}
+			${widgetClass} ul.menu > li.menu-item > a {padding: 20px 0;}
+			${widgetClass} ul.menu li.menu-item .submenu-indicator{display:inline-block; vertical-align:middle;margin:auto 0;margin-inline-start:5px;text-align:center;cursor:pointer}
+			${widgetClass} ul.sub-menu{position:absolute;transform:translateY(20px);transition:.3s;visibility:hidden;opacity:0;z-index:9999;background-color:#fff;min-width:260px;top:100%}
+			body:not(.rtl) ${widgetClass} ul.sub-menu{left:0;box-shadow:4px 6px 12px rgba(0,0,0,.1);}
+			body.rtl ${widgetClass} ul.sub-menu{right:0;box-shadow:4px 6px 12px rgba(0,0,0,.1);}
+			${widgetClass} .zyre-mega-menu--vr.submenu--pos_top ul.sub-menu{transform:translateY(0)}
+			${widgetClass} .zyre-mega-menu--vr.submenu--pos_top.submenu--h_full ul.sub-menu:not(.zy-megamenu-panel) {bottom: 0;}
+			${widgetClass} .zyre-mega-menu--vr ul.sub-menu{top: 0;}
+			body:not(.rtl) ${widgetClass} .zyre-mega-menu--vr ul.sub-menu{left:100%;}
+			body.rtl ${widgetClass} .zyre-mega-menu--vr ul.sub-menu{right:100%;}
+			${widgetClass} .zyre-mega-menu ul.sub-menu li.menu-item .submenu-indicator svg,
+			${widgetClass} .zyre-mega-menu ul.sub-menu li.menu-item .submenu-indicator i,
+			${widgetClass} .zyre-mega-menu--vr ul.menu > li.menu-item .submenu-indicator svg,
+			${widgetClass} .zyre-mega-menu--vr ul.menu > li.menu-item .submenu-indicator i{transform:rotate(-90deg)}
+			${widgetClass} ul.menu li.menu-item-has-children:hover>ul.sub-menu,
+			${widgetClass} ul.menu li.zy-megamenu-has:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1}
+			${widgetClass} ul.sub-menu li.menu-item a{padding:18px 20px}
+			body:not(.rtl) ${widgetClass} ul.sub-menu ul.sub-menu{left:100%}
+			body.rtl ${widgetClass} ul.sub-menu ul.sub-menu{right:100%}
+			${widgetClass} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{transform:translateY(0);visibility:visible;opacity:1;top:0;}
+			body:not(.rtl) ${widgetClass} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{left:100%}
+			body.rtl ${widgetClass} ul.sub-menu li.menu-item-has-children:hover>ul.sub-menu{right:100%}
+				`;
+
+        if (settings && settings.menu_item_rm_border) {
+          cssDesktop += `${widgetClass}:not(.zyre-menu__mobile) ul.menu>li.menu-item:${settings.menu_item_rm_border} {border: none;}`;
+        }
+
+        if (settings && settings.submenu_item_rm_border) {
+          cssDesktop += `${widgetClass}:not(.zyre-menu__mobile) ul.sub-menu>li.menu-item:${settings.submenu_item_rm_border} {border: none;}`;
+        }
+
+        var cssResponsive = `
+			${widgetClass} .zyre-hamburger-wrapper{display:flex}
+			${widgetClass} ul.menu,
+			${widgetClass} .zy-megamenu-has.zy-mobile-submenu-items ul.zy-megamenu-panel,
+			${widgetClass} ul.menu ul.sub-menu{display:none}
+			${widgetClass} ul.menu ul.sub-menu{width:100%;z-index:10;margin-inline-start:15px}
+			${widgetClass} ul.menu > li.menu-item {justify-content: space-between}
+			${widgetClass} ul.menu li.menu-item{flex-wrap: wrap;}
+			${widgetClass} ul.menu li.menu-item:not(:last-child){border-bottom:1px solid var(--zy-hue2)}
+			${widgetClass} ul.menu li.menu-item a{padding: 15px 0}
+			${widgetClass} ul.menu li.menu-item .submenu-indicator{cursor:pointer;padding-left:20px;padding-right:20px;align-content:center;align-self: stretch}
+			${widgetClass} ul.menu li.menu-item .submenu-indicator svg{fill:#8C919B;transition:transform var(--zy-transition-duration),color var(--zy-transition-duration)}
+			${widgetClass} ul.menu li.menu-item .submenu-indicator.active svg{transform:rotate(-180deg)}
+			${widgetClass} ul.menu li.menu-item .submenu-indicator.active svg,
+			${widgetClass} ul.menu li.menu-item .submenu-indicator:hover svg{fill:#000}
+			${widgetClass} ul.sub-menu li.menu-item a{padding-left: 0;padding-right: 0}
+				`;
+
+        if (settings && settings.mobile_menu_item_rm_border) {
+          cssResponsive += `${widgetClass}.zyre-menu__mobile ul.menu li.menu-item:${settings.mobile_menu_item_rm_border} {border: none !important;}`;
+        }
+
+        var css = "";
+        if (breakpoint && "-1" == breakpoint) {
+          css += cssResponsive;
+        } else if (breakpoint && breakpoint > 0) {
+          css += `@media (min-width: ${breakpoint + 1}px) { ${cssDesktop} }`;
+          css += `@media (max-width: ${breakpoint}px) { ${cssResponsive} }`;
+        } else {
+          css += cssDesktop;
+        }
+
+        var styleEl = document.createElement("style");
+        styleEl.id = `zyreladdons-mega-menu-${widgetId}-inline`;
+        styleEl.textContent = css;
+
+        // detect Elementor edit mode
+        if (window.elementorFrontend && elementorFrontend.isEditMode()) {
+          $scope.prepend(styleEl);
+        } else {
+          document.head.appendChild(styleEl);
+        }
+      }
+
+      if (navMenu.length) {
+        navMenu.addClass("initialized");
+        addMegaMenuCSS(breakpoint);
+      }
+
+      if (dataCss.length > 0) {
+        dataCss.each(function () {
+          var css = $(this).attr("data-css");
+          $(this).attr("style", css).removeAttr("data-css");
+        });
+      }
+
+      humBurgerBtn.on("click", function (e) {
+        var $icon = $(this);
+
+        var humberger = $icon.data("humberger");
+        var $menu = navMenu.find("ul.menu");
+
+        if ("open" == humberger) {
+          $openIcon.removeClass("zy-icon-hide");
+          $openIcon.addClass("zy-icon-hide");
+          $closeIcon.removeClass("zy-icon-hide");
+          $menu.slideDown();
+        } else {
+          $closeIcon.removeClass("zy-icon-hide");
+          $closeIcon.addClass("zy-icon-hide");
+          $openIcon.removeClass("zy-icon-hide");
+          $menu.slideUp();
+        }
+      });
+
+      function childrenToggle() {
+        $scope.addClass(mobileMenuClass);
+        var subMenuIndicator = navMenu.find(".submenu-indicator");
+        subMenuIndicator.off("click").on("click", function () {
+          $(this).toggleClass("active");
+          var $parentEl = $(this).parent("li.menu-item");
+          var hasMegaMenu = $parentEl.hasClass("zy-megamenu-has");
+
+          if (hasMegaMenu && $parentEl.hasClass("zy-mobile-builder-content")) {
+            $parentEl.children("ul.sub-menu.zy-megamenu-panel").slideToggle();
+          } else if (
+            hasMegaMenu &&
+            $parentEl.hasClass("zy-mobile-submenu-items")
+          ) {
+            $parentEl
+              .children("ul.sub-menu:not(.zy-megamenu-panel)")
+              .slideToggle();
+          } else if ($parentEl.hasClass("menu-item-has-children")) {
+            $parentEl.children("ul.sub-menu").slideToggle();
+          }
+        });
+      }
+
+      if ("-1" == breakpoint) {
+        childrenToggle();
+      } else {
+        function burgerClsAdd() {
+          if (breakpoint && jQuery(window).outerWidth() <= breakpoint) {
+            childrenToggle();
+          } else {
+            $scope.removeClass(mobileMenuClass);
+            navMenu.find("ul.menu").removeAttr("style");
+            navMenu.find("ul.sub-menu").css("display", "");
+            $closeIcon.addClass("zy-icon-hide");
+            $openIcon.removeClass("zy-icon-hide");
+          }
+        }
+
+        burgerClsAdd();
+        $window.on("resize", debounce(burgerClsAdd, 100));
+      }
+
+      if (megaMenu.length) {
+        megaMenu.each(function () {
+          var $megaMenuItem = $(this);
+          var mmWidth = $megaMenuItem.attr("data-megamenu-width");
+          var mmPanel = $megaMenuItem.children(".zy-megamenu-panel");
+          var mmIsFullWidth =
+            $megaMenuItem.hasClass("zy-dropdown-menu-full_width") &&
+            $megaMenuItem.hasClass("position_default");
+          var mmIsFullWidthRel =
+            $megaMenuItem.hasClass("zy-dropdown-menu-full_width") &&
+            $megaMenuItem.hasClass("position_relative");
+
+          if (mmWidth && mmWidth !== undefined) {
+            if ("string" == typeof mmWidth) {
+              if (/^[0-9]/.test(mmWidth)) {
+                mmWidth = parseFloat(mmWidth);
+                $(window)
+                  .on(
+                    "resize",
+                    debounce(function () {
+                      var hasMobileMenu = $scope.hasClass(mobileMenuClass);
+                      if (hasMobileMenu) {
+                        mmPanel.css("width", "");
+                      } else {
+                        mmPanel.css({
+                          width: mmWidth + "px",
+                        });
+                      }
+                    }, 150),
+                  )
+                  .trigger("resize");
+              }
+            }
+          } else if (!navMenuHasVr && mmIsFullWidth) {
+            $(window)
+              .on(
+                "resize",
+                debounce(function () {
+                  var posleft = Math.floor(
+                    $megaMenuItem.position().left - $megaMenuItem.offset().left,
+                  );
+                  mmPanel.css({
+                    width: $(window).width() + "px",
+                    left: posleft + "px",
+                  });
+                }, 150),
+              )
+              .trigger("resize");
+          } else if (!navMenuHasVr && mmIsFullWidthRel) {
+            $(window)
+              .on(
+                "resize",
+                debounce(function () {
+                  var menuWidth = $menu.outerWidth();
+                  var hasMobileMenu = $scope.hasClass(mobileMenuClass);
+
+                  if (hasMobileMenu) {
+                    mmPanel.css("width", "");
+                  } else {
+                    mmPanel.css({
+                      width: menuWidth + "px",
+                    });
+                  }
+                }, 150),
+              )
+              .trigger("resize");
+          }
+        });
+      }
+    };
+
     // Count Down
     var ZyreCountDown = function ZyreCountDown($scope) {
       const $countdown = $scope.find(".zyre-addons-countdown");
@@ -827,6 +1078,7 @@ function haObserveTarget(target, callback) {
       "zyre-pdf-view.default": PDF_View,
       "zyre-lottie-animation.default": LottieAnimations,
       "zyre-menu.default": ZyreMenu,
+      "zyre-mega-menu.default": ZyreMegaMenu,
       "zyre-countdown.default": ZyreCountDown,
       "zyre-subscription-form.default": ZyreMailChimp,
       "zyre-advance-accordion.default": ZyreAccordion,
@@ -843,6 +1095,7 @@ function haObserveTarget(target, callback) {
       );
     });
 
+    // Class Handlers
     var classHandlers = {
       "zyre-image-grid.default": ImageGrid,
     };
@@ -856,5 +1109,249 @@ function haObserveTarget(target, callback) {
         },
       );
     });
+
+    // Off Canvas
+    var $trigger;
+    var OffCanvas = function OffCanvas($scope) {
+      this.node = $scope;
+      this.wrap = $scope.find(".zyre-offcanvas-content-wrap");
+      this.cart_wrap = $scope.find(".zyre-offcanvas-cart-container");
+      this.content = $scope.find(".zyre-offcanvas-content");
+      this.button = $scope.find(".zyre-offcanvas-toggle");
+      this.settings = this.wrap.data("settings");
+      this.toggle_source = this.settings.toggle_source;
+      this.id = this.settings.content_id;
+      this.toggle_id = this.settings.toggle_id;
+      this.toggle_class = this.settings.toggle_class;
+      this.transition = this.settings.transition;
+      this.esc_close = this.settings.esc_close;
+      this.body_click_close = this.settings.body_click_close;
+      this.direction = this.settings.direction;
+      this.duration = 500;
+      this.destroy();
+      this.init();
+    };
+    OffCanvas.prototype = {
+      id: "",
+      node: "",
+      wrap: "",
+      content: "",
+      button: "",
+      settings: {},
+      transition: "",
+      duration: 400,
+      initialized: false,
+      animations: ["slide", "slide-along", "reveal", "push"],
+      init: function init() {
+        if (!this.wrap.length) {
+          return;
+        }
+        $("html").addClass("zyre-offcanvas-content-widget");
+        if ($(".zyre-offcanvas-container").length === 0) {
+          $("body").wrapInner('<div class="zyre-offcanvas-container" />');
+
+          this.content.insertBefore(".zyre-offcanvas-container");
+        }
+        if (this.wrap.find(".zyre-offcanvas-content").length > 0) {
+          if (
+            $(".zyre-offcanvas-container > .zyre-offcanvas-content-" + this.id)
+              .length > 0
+          ) {
+            $(
+              ".zyre-offcanvas-container > .zyre-offcanvas-content-" + this.id,
+            ).remove();
+          }
+          if ($("body > .zyre-offcanvas-content-" + this.id).length > 0) {
+            $("body > .zyre-offcanvas-content-" + this.id).remove();
+          }
+          $("body").prepend(this.wrap.find(".zyre-offcanvas-content"));
+        }
+        this.bindEvents();
+      },
+      destroy: function destroy() {
+        this.close();
+        this.animations.forEach(function (animation) {
+          if ($("html").hasClass("zyre-offcanvas-content-" + animation)) {
+            $("html").removeClass("zyre-offcanvas-content-" + animation);
+          }
+        });
+        if ($("body > .zyre-offcanvas-content-" + this.id).length > 0) {
+        }
+      },
+      setTrigger: function setTrigger() {
+        var $trigger = false;
+        if (this.toggle_source == "element-id" && this.toggle_id != "") {
+          $trigger = $("#" + this.toggle_id);
+        } else if (
+          this.toggle_source == "element-class" &&
+          this.toggle_class != ""
+        ) {
+          $trigger = $("." + this.toggle_class);
+        } else {
+          $trigger = this.node.find(".zyre-offcanvas-toggle");
+        }
+        return $trigger;
+      },
+      bindEvents: function bindEvents() {
+        $trigger = this.setTrigger();
+        if ($trigger) {
+          $trigger.on("click", $.proxy(this.toggleContent, this));
+        }
+        $("body").delegate(
+          ".zyre-offcanvas-content .zyre-offcanvas-close",
+          "click",
+          $.proxy(this.close, this),
+        );
+        if (this.esc_close === "yes") {
+          this.closeESC();
+        }
+        if (this.body_click_close === "yes") {
+          this.closeClick();
+        }
+        $(window).resize($.proxy(this._resize, this));
+      },
+      toggleContent: function toggleContent(e) {
+        e.preventDefault();
+        if (!$("html").hasClass("zyre-offcanvas-content-open")) {
+          this.show();
+        } else {
+          this.close();
+        }
+        this._resize();
+      },
+      show: function show() {
+        $(".zyre-offcanvas-content-" + this.id).addClass(
+          "zyre-offcanvas-content-visible",
+        );
+        // init animation class.
+        $("html").addClass("zyre-offcanvas-content-" + this.transition);
+        $("html").addClass("zyre-offcanvas-content-" + this.direction);
+        $("html").addClass("zyre-offcanvas-content-open");
+        $("html").addClass("zyre-offcanvas-content-" + this.id + "-open");
+        $("html").addClass("zyre-offcanvas-content-reset");
+        this.button.addClass("zyre-is-active");
+        this._resize();
+      },
+      close: function close() {
+        $("html").removeClass("zyre-offcanvas-content-open");
+        $("html").removeClass("zyre-offcanvas-content-" + this.id + "-open");
+        setTimeout(
+          $.proxy(function () {
+            $("html").removeClass("zyre-offcanvas-content-reset");
+            $("html").removeClass("zyre-offcanvas-content-" + this.transition);
+            $("html").removeClass("zyre-offcanvas-content-" + this.direction);
+            $(".zyre-offcanvas-content-" + this.id).removeClass(
+              "zyre-offcanvas-content-visible",
+            );
+          }, this),
+          500,
+        );
+        this.button.removeClass("zyre-is-active");
+      },
+      closeESC: function closeESC() {
+        var self = this;
+        if ("" === self.settings.esc_close) {
+          return;
+        }
+        // menu close on ESC key
+        $(document).on("keydown", function (e) {
+          if (e.keyCode === 27) {
+            self.close();
+          }
+        });
+      },
+      closeClick: function closeClick() {
+        var self = this;
+        if (this.toggle_source == "element-id" && this.toggle_id != "") {
+          $trigger = "#" + this.toggle_id;
+        } else if (
+          this.toggle_source == "element-class" &&
+          this.toggle_class != ""
+        ) {
+          $trigger = "." + this.toggle_class;
+        } else {
+          $trigger = ".zyre-offcanvas-toggle";
+        }
+        $(document).on("click", function (e) {
+          if (
+            $(e.target).is(".zyre-offcanvas-content") ||
+            $(e.target).parents(".zyre-offcanvas-content").length > 0 ||
+            $(e.target).is(".zyre-offcanvas-toggle") ||
+            $(e.target).parents(".zyre-offcanvas-toggle").length > 0 ||
+            $(e.target).is($trigger) ||
+            $(e.target).parents($trigger).length > 0 ||
+            !$(e.target).is(".zyre-offcanvas-container")
+          ) {
+            return;
+          } else {
+            self.close();
+          }
+        });
+      },
+      _resize: function _resize() {
+        if (!this.cart_wrap.length) {
+          return;
+        }
+        var off_canvas = $(".zyre-offcanvas-content-" + this.id);
+        if (off_canvas && off_canvas.length > 0) {
+          if (this.buttons_position === "bottom") {
+            var winHeight = window.innerHeight;
+            var offset = 0;
+            if ($("body").hasClass("admin-bar")) {
+              offset = 32;
+            }
+            winHeight = winHeight - offset;
+            off_canvas.find(".zyre-offcanvas-inner").css({
+              height: winHeight + "px",
+              top: offset,
+            });
+            headerHeight = off_canvas
+              .find(".zyre-offcanvas-cart-header")
+              .outerHeight(true);
+            wrapHeight = off_canvas.find(".zyre-offcanvas-wrap").outerHeight();
+            cartTotalHeight = off_canvas
+              .find(".woocommerce-mini-cart__total")
+              .outerHeight();
+            cartButtonsHeight = off_canvas
+              .find(".woocommerce-mini-cart__buttons")
+              .outerHeight();
+            cartMessageHeight = off_canvas
+              .find(".zyre-woo-menu-cart-message")
+              .outerHeight();
+            itemsHeight =
+              winHeight -
+              (headerHeight +
+                cartTotalHeight +
+                cartButtonsHeight +
+                cartMessageHeight);
+            finalItemsHeight = itemsHeight - (winHeight - wrapHeight);
+            finalItemsHeight += "px";
+          } else {
+            finalItemsHeight = "auto";
+          }
+          var style = '<style id="zyre-woo-style-' + this.id + '">';
+          style +=
+            "#" + off_canvas.attr("id") + " .woocommerce-mini-cart.cart_list {";
+          style += "height: " + finalItemsHeight;
+          style += "}";
+          style += "</style>";
+          if ($("#zyre-woopack-style-" + this.id).length > 0) {
+            $("#zyre-woopack-style-" + this.id).remove();
+          }
+          $("head").append(style);
+        }
+      },
+    };
+
+    var initOffCanvas = function initOffCanvas($scope, $) {
+      var content_wrap = $scope.find(".zyre-offcanvas-content-wrap");
+      if ($(content_wrap).length > 0) {
+        new OffCanvas($scope);
+      }
+    };
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/zyre-off-canvas.default",
+      initOffCanvas,
+    );
   });
 })(jQuery);

@@ -118,6 +118,7 @@ class Plugin {
 		include_once ZYRELADDONS_DIR_PATH . 'classes/cache-manager.php';
 		include_once ZYRELADDONS_DIR_PATH . 'classes/widgets-cache.php';
 		include_once ZYRELADDONS_DIR_PATH . 'classes/assets-cache.php';
+		include_once ZYRELADDONS_DIR_PATH . 'classes/query-manager.php';
 
 		if ( ! in_array( 'search-box', Widgets_Manager::get_inactive_widgets(), true ) ) {
 			include_once ZYRELADDONS_DIR_PATH . 'classes/search-handler.php';
