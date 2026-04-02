@@ -1,6 +1,6 @@
 <?php
 
-namespace VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Compatibility;
+namespace VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Compatibility;
 
 defined( 'ABSPATH' ) || exit;
 

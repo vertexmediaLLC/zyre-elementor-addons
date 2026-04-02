@@ -163,17 +163,8 @@ class Plugin {
 		include_once ZYRELADDONS_DIR_PATH . 'classes/ajax-handler.php';
 
 		// Theme Builder
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-cache.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/module.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-manager.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/theme-support.php';
-
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/astra.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/bbtheme.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/generatepress.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/genesis.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/oceanwp.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/twenty-nineteen.php';
+		Modules\ThemeBuilder\Module::instance();
 
 		// Mega Menu
 		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/mega-menu.php';
