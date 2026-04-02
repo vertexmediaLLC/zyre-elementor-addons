@@ -167,8 +167,8 @@ class Plugin {
 		Modules\ThemeBuilder\Module::instance();
 
 		// Mega Menu
-		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/mega-menu.php';
-		Modules\Mega_Menu::instance();
+		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/module.php';
+		Modules\Mega_Menu\Module::instance();
 	}
 
 	/**

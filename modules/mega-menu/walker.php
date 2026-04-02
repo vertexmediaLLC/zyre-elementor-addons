@@ -3,7 +3,7 @@
 namespace VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu;
 
 use Elementor\Icons_Manager;
-use VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu as Mega_Menu;
+use VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu\Module as Mega_Menu;
 
 class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 

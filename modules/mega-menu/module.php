@@ -5,14 +5,11 @@
  * @package ZyreAddons
  */
 
-namespace VertexMediaLLC\ZyreElementorAddons\Modules;
-
-use VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu\Cpt;
-use VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu\Options;
+namespace VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu;
 
 defined( 'ABSPATH' ) || die();
 
-class Mega_Menu {
+class Module {
 
 	public $dir;
 	public $url;
