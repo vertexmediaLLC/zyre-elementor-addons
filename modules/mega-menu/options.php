@@ -1,7 +1,7 @@
 <?php
 namespace VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu;
 
-use VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu as Mega_Menu;
+use VertexMediaLLC\ZyreElementorAddons\Modules\Mega_Menu\Module as Mega_Menu;
 
 defined( 'ABSPATH' ) || exit;
 
