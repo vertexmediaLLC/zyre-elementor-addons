@@ -1386,6 +1386,11 @@ p.zyre-tab-sub-heading {
 	margin-right: 10px;
 }
 
+.zyre-dash-widget-sidebar-item[data-tab="off-canvas-widget-tab"] i {
+	transform: rotate(90deg);
+    display: inline-block;
+}
+
 .zyre-dash-widget-content-main {
 	padding-left: 370px;
 	padding-right: 0;

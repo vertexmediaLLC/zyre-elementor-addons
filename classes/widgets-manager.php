@@ -1342,12 +1342,12 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'mega-menu', 'style-one.jpg' ),
 					],
 				],
 			],
 			'off-canvas' => [
-				'title'  => __( 'Off Canvas', 'zyre-elementor-addons' ),
+				'title'  => __( 'Off-Canvas', 'zyre-elementor-addons' ),
 				'icon'   => 'zy-fonticon zy-Header',
 				'is_active' => true,
 				'cat'    => 'general',
@@ -1359,7 +1359,7 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'off-canvas', 'style-one.jpg' ),
 					],
 				],
 			],
@@ -1376,32 +1376,32 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Simple-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-two.jpg' ),
 					],
 					'three'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-three.jpg' ),
 					],
 					'four'   => [
 						'name'      => esc_html__( 'Standard-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-four.jpg' ),
 					],
 					'five'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-five.jpg' ),
 					],
 					'six'   => [
 						'name'      => esc_html__( 'Advance-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => '',
+						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-six.jpg' ),
 					],
 				],
 			],
