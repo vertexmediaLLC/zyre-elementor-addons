@@ -943,7 +943,7 @@ class Module {
 	public function single_blog_content_elementor( $post ) {
 		$templates = $this->singular_template;
 		if ( ! empty( $templates ) ) {
-            echo wp_kses( self::render_builder_data( $templates ), zyreladdons_kses_allowed_html() );
+            echo self::render_builder_data( $templates ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			the_content();
 		}

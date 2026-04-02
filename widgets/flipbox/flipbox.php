@@ -997,16 +997,10 @@ class FlipBox extends Base {
 			<?php endif;
 		} elseif ( 'saved_section' === $settings[ $content_type ] && 'publish' === get_post_status( $settings[ $saved_section ] ) ) {
 			$settings[ $saved_section ] = apply_filters( 'wpml_object_id', $settings[ $saved_section ], 'elementor_library' );
-			echo wp_kses(
-				zyreladdons_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_section ] ),
-				zyreladdons_kses_allowed_html()
-			);
+			echo zyreladdons_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_section ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} elseif ( 'saved_container' === $settings[ $content_type ] && 'publish' === get_post_status( $settings[ $saved_container ] ) ) {
 			$settings[ $saved_container ] = apply_filters( 'wpml_object_id', $settings[ $saved_container ], 'elementor_library' );
-			echo wp_kses(
-				zyreladdons_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_container ] ),
-				zyreladdons_kses_allowed_html()
-			);
+			echo zyreladdons_elementor()->frontend->get_builder_content_for_display( $settings[ $saved_container ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 }
