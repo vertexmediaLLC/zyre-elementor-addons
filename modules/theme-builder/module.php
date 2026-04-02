@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-namespace VertexMediaLLC\ZyreElementorAddons\ThemeBuilder;
+namespace VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder;
 
 use VertexMediaLLC\ZyreElementorAddons\Dashboard;
 use Elementor\Core\Settings\Manager;
@@ -32,7 +32,17 @@ class Module {
 	public $footer_template;
 	protected $current_template;
 
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
 	public function __construct() {
+		$this->include_files();
+
 		add_action( 'wp', [ $this, 'hooks' ] );
 		$this->cache = new Conditions_Cache();
 
@@ -72,12 +82,17 @@ class Module {
 		add_action( 'elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories' ] );
 	}
 
-	public static function instance() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
+	public function include_files() {
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-cache.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/module.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-manager.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/theme-support.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/astra.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/bbtheme.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/generatepress.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/genesis.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/oceanwp.php';
+		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/twenty-nineteen.php';
 	}
 
 	protected function get_full_data( $post ) {
@@ -946,5 +961,3 @@ class Module {
 		}
 	}
 }
-
-Module::instance();

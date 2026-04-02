@@ -1,5 +1,4 @@
 <?php
-use Elementor\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -11,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<?php echo wp_kses( Utils::get_meta_viewport( 'theme-builder' ), [ 'meta' => [ 'name' => true, 'content' => true ] ] ); ?>
+	<?php echo wp_kses( \Elementor\Utils::get_meta_viewport( 'theme-builder' ), [ 'meta' => [ 'name' => true, 'content' => true ] ] ); ?>
 	<?php if ( ! current_theme_supports( 'title-tag' ) ) : ?>
 		<title><?php echo esc_html( wp_get_document_title() ); ?></title>
 	<?php endif; ?>
@@ -26,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="zyre-template-content-markup zyre-template-content-header zyre-template-content-theme-support">
 		<?php
 		echo wp_kses(
-			\VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Module::instance()->render_builder_data_location( 'header' ),
+			\VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module::instance()->render_builder_data_location( 'header' ),
 			zyreladdons_kses_allowed_html()
 		);
 		?>

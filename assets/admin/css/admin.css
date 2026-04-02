@@ -125,13 +125,13 @@ th.zyre-v-middle {
 	}
 }
 
-.post-type-zyre_library #wpbody .wrap {
+.post-type-zyreladdons_library #wpbody .wrap {
 	clear: both;
 	padding-top: 10px;
 }
 
-.post-type-zyre_library .wp-heading-inline,
-.post-type-zyre_library .wp-heading-inline+a {
+.post-type-zyreladdons_library .wp-heading-inline,
+.post-type-zyreladdons_library .wp-heading-inline+a {
 	display: none !important;
 }
 

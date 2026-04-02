@@ -1,12 +1,10 @@
 <?php
 
-use VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Module;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$types    = Module::get_template_types();
+$types    = \VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module::get_template_types();
 $selected = get_query_var( 'zyreladdons_library_type' );
 ?>
 

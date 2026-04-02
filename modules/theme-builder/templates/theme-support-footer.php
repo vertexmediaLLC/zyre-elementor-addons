@@ -7,7 +7,7 @@ do_action( 'zyreladdons/template/before_footer' );
 <div class="ekit-template-content-markup ekit-template-content-footer ekit-template-content-theme-support">
 <?php
 echo wp_kses(
-	\VertexMediaLLC\ZyreElementorAddons\ThemeBuilder\Module::instance()->render_builder_data_location( 'footer' ),
+	\VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module::instance()->render_builder_data_location( 'footer' ),
 	zyreladdons_kses_allowed_html()
 );
 ?>
