@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<?php echo wp_kses( \Elementor\Utils::get_meta_viewport( 'theme-builder' ), [ 'meta' => [ 'name' => true, 'content' => true ] ] ); ?>
+	<?php echo \Elementor\Utils::get_meta_viewport( 'theme-builder' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	<?php if ( ! current_theme_supports( 'title-tag' ) ) : ?>
 		<title><?php echo esc_html( wp_get_document_title() ); ?></title>
 	<?php endif; ?>
@@ -23,12 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'zyreladdons/template/before_header' ); ?>
 
 	<div class="zyre-template-content-markup zyre-template-content-header zyre-template-content-theme-support">
-		<?php
-		echo wp_kses(
-			\VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module::instance()->render_builder_data_location( 'header' ),
-			zyreladdons_kses_allowed_html()
-		);
-		?>
+		<?php echo \VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module::instance()->render_builder_data_location( 'header' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</div>
 
 	<?php do_action( 'zyreladdons/template/after_header' ); ?>

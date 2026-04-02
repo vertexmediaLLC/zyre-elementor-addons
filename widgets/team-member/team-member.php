@@ -1127,10 +1127,7 @@ class Team_Member extends Base {
 					<div class="zyre-member-lightbox-close">&times;</div>
 					<?php
 					$saved_template_list = apply_filters( 'wpml_object_id', $settings['saved_template_list'], 'elementor_library' );
-					echo wp_kses(
-						\Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_template_list ),
-						zyreladdons_kses_allowed_html()
-					);
+					echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_template_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?>
 				</div>
 			</div>
