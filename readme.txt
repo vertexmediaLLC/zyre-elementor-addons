@@ -1,14 +1,14 @@
 === Zyre Elementor Addons ===
 Contributors: vertexmediallc
-Tags: elementor, elementor addons, elementor widgets, elementor templates, theme builder
+Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.5
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight Elementor addon with Theme Builder, Header & Footer Builder, 57+ free widgets, templates, and advanced design tools.
+Lightweight Elementor addon with Theme Builder, Header & Footer Builder, 60+ free widgets, templates, and advanced design tools.
 
 == Description ==
 
@@ -18,7 +18,7 @@ https://www.youtube.com/watch?v=Qayq9BoOEjQ
 
 The plugin includes a free **Theme Builder** with **Header & Footer Builder**, **Single Post/Page templates**, and **Archive page layouts**, giving you full control over your site structure inside Elementor.
 
-Zyre Elementor Addons also provides **57+ free widgets**, **ready-made page templates**, and **template blocks** to help you design professional layouts with ease.
+Zyre Elementor Addons also provides **60+ free widgets**, **ready-made page templates**, and **template blocks** to help you design professional layouts with ease.
 
 ### Complete Demo & Walkthrough
 
@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=QoDlnYgSWcE
 ## Key Features
 
 * Free Theme Builder (Header, Footer, Single, Archive)
-* 57+ free Elementor widgets
+* 60+ free Elementor widgets
 * Pre-built widget styles
 * Widget & pre-style control panel
 * Lightweight and performance optimized
@@ -40,7 +40,7 @@ https://www.youtube.com/watch?v=QoDlnYgSWcE
 * Compatible with Elementor & Elementor Pro
 * Support RTL
 
-## 57+ Free Elementor Widgets
+## 60+ Free Elementor Widgets
 
 Below is the complete list of widgets included in the free version.
 
@@ -87,6 +87,9 @@ Below is the complete list of widgets included in the free version.
 * **[Site Tagline](https://zyreaddons.com/demos/site-tagline/)**: Display site tagline with styling.
 * **[Site Logo](https://zyreaddons.com/demos/site-logo/)**: Show logo or custom image.
 * **[Navigation Menu](https://zyreaddons.com/demos/menu/)**: Advanced responsive menu builder.
+* **[Mega Menu](https://zyreaddons.com/demos/mega-menu/)**: Design mega menus with full Elementor control.
+* **[Off-Canvas](https://zyreaddons.com/demos/off-canvas/)**: Responsive off-canvas panels with smooth toggles.
+* **[Search Box](htthttps://zyreaddons.com/demos/search-box/)**: Advanced Search box with category filters.
 * **[Post Title](https://zyreaddons.com/demos/post-title/)**: Display post titles dynamically.
 * **[Page Title](https://zyreaddons.com/demos/page-title/)**: Display page titles dynamically.
 * **[Post Excerpt](https://zyreaddons.com/demos/post-excerpt/)**: Excerpt with read-more option.
@@ -236,9 +239,13 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 == Changelog ==
 
+= 2.0.0 - 02 April 2026 =
+
+- Mega Menu, Off-Canvas, and Search Box widgets included.
+
 = 1.0.5 - 18 March 2026 =
 
-- AUpdated the readme file for version 1.0.5.
+- Updated the readme file for version 1.0.5.
 
 = 1.0.4 - 18 March 2026 =
 
