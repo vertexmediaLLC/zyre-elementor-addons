@@ -276,7 +276,7 @@ $credential_data = zyreladdons_get_credentials();
 							<div class="zyre-rating">
 								<div class="zyre-rating-stars"><?php echo wp_kses( zyreladdons_get_svg_icon( '5stars' ), zyreladdons_get_allowed_html() ); ?></div>
 								<h2 class="zyre-rating-heading"><?php esc_html_e( 'Happy with ZyreAddons', 'zyre-elementor-addons' ); ?></h2>
-								<a href="#" class="zyre-rating-link" target="_blank"><span class="rate-us-link-text"><?php esc_html_e( 'Please rate us', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_get_allowed_html() ); ?></span></a>
+								<a href="<?php echo esc_url( 'https://wordpress.org/support/plugin/zyre-elementor-addons/reviews/#new-post' ); ?>" class="zyre-rating-link" target="_blank"><span class="rate-us-link-text"><?php esc_html_e( 'Please rate us', 'zyre-elementor-addons' ); ?></span> <span class="zyre-icon-svg"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_get_allowed_html() ); ?></span></a>
 							</div>
 			
 							<!-- Modal -->

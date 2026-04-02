@@ -3877,6 +3877,13 @@ body.rtl .zyre-addon-search-box .zyre-search-form-select-wrapper::after {
 	mask-position: left;
 }
 
+.zyre-addon-search-box .zyre-search-form-select,
+.zyre-addon-search-box .zyre-search-field,
+.zyre-addon-search-box .zyre-search-button,
+.zyre-addon-search-box .zyre-search-toggle {
+	box-shadow: none;
+}
+
 .zyre-addon-search-box .zyre-search-form-select {
 	appearance: none;
 	-webkit-appearance: none;
