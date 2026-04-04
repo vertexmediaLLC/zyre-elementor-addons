@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-02T11:27:59+00:00\n"
+"POT-Creation-Date: 2026-04-04T05:55:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -565,7 +565,7 @@ msgstr ""
 #: base/widget-base.php:769
 #: traits/swiper-trait.php:440
 #: widgets/business-hour/business-hour.php:754
-#: widgets/off-canvas/off-canvas.php:458
+#: widgets/off-canvas/off-canvas.php:473
 #: widgets/pdf-view/pdf-view.php:109
 #: widgets/post-comments/post-comments.php:1217
 #: widgets/toggle/toggle.php:708
@@ -744,10 +744,10 @@ msgstr ""
 #: widgets/menu/menu.php:897
 #: widgets/news-ticker/news-ticker.php:398
 #: widgets/news-ticker/news-ticker.php:461
-#: widgets/off-canvas/off-canvas.php:425
-#: widgets/off-canvas/off-canvas.php:465
-#: widgets/off-canvas/off-canvas.php:766
-#: widgets/off-canvas/off-canvas.php:1040
+#: widgets/off-canvas/off-canvas.php:440
+#: widgets/off-canvas/off-canvas.php:480
+#: widgets/off-canvas/off-canvas.php:781
+#: widgets/off-canvas/off-canvas.php:1055
 #: widgets/page-title/page-title.php:119
 #: widgets/pdf-view/pdf-view.php:114
 #: widgets/post-comments/post-comments.php:893
@@ -865,8 +865,8 @@ msgstr ""
 #: widgets/menu/menu.php:901
 #: widgets/news-ticker/news-ticker.php:402
 #: widgets/news-ticker/news-ticker.php:465
-#: widgets/off-canvas/off-canvas.php:429
-#: widgets/off-canvas/off-canvas.php:770
+#: widgets/off-canvas/off-canvas.php:444
+#: widgets/off-canvas/off-canvas.php:785
 #: widgets/page-title/page-title.php:123
 #: widgets/post-comments/post-comments.php:802
 #: widgets/post-comments/post-comments.php:897
@@ -989,10 +989,10 @@ msgstr ""
 #: widgets/menu/menu.php:905
 #: widgets/news-ticker/news-ticker.php:406
 #: widgets/news-ticker/news-ticker.php:469
-#: widgets/off-canvas/off-canvas.php:433
-#: widgets/off-canvas/off-canvas.php:469
-#: widgets/off-canvas/off-canvas.php:774
-#: widgets/off-canvas/off-canvas.php:1044
+#: widgets/off-canvas/off-canvas.php:448
+#: widgets/off-canvas/off-canvas.php:484
+#: widgets/off-canvas/off-canvas.php:789
+#: widgets/off-canvas/off-canvas.php:1059
 #: widgets/page-title/page-title.php:127
 #: widgets/post-comments/post-comments.php:901
 #: widgets/post-comments/post-comments.php:951
@@ -1064,8 +1064,8 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:908
 #: widgets/business-hour/business-hour.php:988
 #: widgets/news-ticker/news-ticker.php:738
-#: widgets/off-canvas/off-canvas.php:790
-#: widgets/off-canvas/off-canvas.php:939
+#: widgets/off-canvas/off-canvas.php:805
+#: widgets/off-canvas/off-canvas.php:954
 #: widgets/pdf-view/pdf-view.php:450
 #: widgets/post-comments/post-comments.php:810
 #: widgets/post-comments/post-comments.php:832
@@ -1151,7 +1151,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:172
 #: widgets/infobox/infobox.php:197
 #: widgets/lottie-animation/lottie-animation.php:215
-#: widgets/off-canvas/off-canvas.php:473
+#: widgets/off-canvas/off-canvas.php:488
 #: widgets/post-comments/post-comments.php:350
 #: widgets/post-comments/post-comments.php:2547
 #: widgets/post-grid/post-grid.php:495
@@ -1186,7 +1186,7 @@ msgstr ""
 #: widgets/image-heading/image-heading.php:520
 #: widgets/infobox/infobox.php:205
 #: widgets/lottie-animation/lottie-animation.php:214
-#: widgets/off-canvas/off-canvas.php:477
+#: widgets/off-canvas/off-canvas.php:492
 #: widgets/pdf-view/pdf-view.php:118
 #: widgets/post-comments/post-comments.php:351
 #: widgets/post-comments/post-comments.php:2555
@@ -1233,7 +1233,7 @@ msgstr ""
 #: widgets/image-carousel/image-carousel.php:141
 #: widgets/image-heading/image-heading.php:387
 #: widgets/logo-carousel/logo-carousel.php:150
-#: widgets/off-canvas/off-canvas.php:179
+#: widgets/off-canvas/off-canvas.php:194
 #: widgets/post-comments/post-comments.php:1048
 #: widgets/post-grid/post-grid.php:487
 #: widgets/team-member/team-member.php:92
@@ -1406,7 +1406,7 @@ msgstr ""
 #: widgets/dual-color-heading/dual-color-heading.php:247
 #: widgets/featured-banner/featured-banner.php:2051
 #: widgets/image-heading/image-heading.php:282
-#: widgets/off-canvas/off-canvas.php:183
+#: widgets/off-canvas/off-canvas.php:198
 #: widgets/post-grid/post-grid.php:1567
 #: widgets/search-box/search-box.php:98
 #: widgets/testimonial/testimonial.php:1032
@@ -1820,10 +1820,10 @@ msgstr ""
 #: widgets/heading/heading.php:511
 #: widgets/image-heading/image-heading.php:658
 #: widgets/image-heading/image-heading.php:684
-#: widgets/off-canvas/off-canvas.php:828
-#: widgets/off-canvas/off-canvas.php:864
-#: widgets/off-canvas/off-canvas.php:977
-#: widgets/off-canvas/off-canvas.php:1013
+#: widgets/off-canvas/off-canvas.php:843
+#: widgets/off-canvas/off-canvas.php:879
+#: widgets/off-canvas/off-canvas.php:992
+#: widgets/off-canvas/off-canvas.php:1028
 #: widgets/pdf-view/pdf-view.php:590
 #: widgets/pdf-view/pdf-view.php:622
 #: widgets/pdf-view/pdf-view.php:721
@@ -1891,7 +1891,7 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:227
 #: widgets/infobox/infobox.php:350
 #: widgets/infobox/infobox.php:811
-#: widgets/off-canvas/off-canvas.php:168
+#: widgets/off-canvas/off-canvas.php:183
 #: widgets/toggle/toggle.php:75
 msgid "Button"
 msgstr ""
@@ -2094,7 +2094,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:894
 #: widgets/flipbox/flipbox.php:586
 #: widgets/image-grid/image-grid.php:278
-#: widgets/off-canvas/off-canvas.php:580
+#: widgets/off-canvas/off-canvas.php:595
 msgid "Overlay"
 msgstr ""
 
@@ -2221,8 +2221,8 @@ msgid "Dotted"
 msgstr ""
 
 #: classes/widgets-manager.php:1179
-#: widgets/off-canvas/off-canvas.php:157
-#: widgets/off-canvas/off-canvas.php:750
+#: widgets/off-canvas/off-canvas.php:172
+#: widgets/off-canvas/off-canvas.php:765
 #: widgets/toggle/toggle.php:15
 msgid "Toggle"
 msgstr ""
@@ -2487,9 +2487,9 @@ msgstr ""
 #: widgets/menu/menu.php:1238
 #: widgets/news-ticker/news-ticker.php:640
 #: widgets/news-ticker/news-ticker.php:757
-#: widgets/off-canvas/off-canvas.php:691
-#: widgets/off-canvas/off-canvas.php:811
-#: widgets/off-canvas/off-canvas.php:960
+#: widgets/off-canvas/off-canvas.php:706
+#: widgets/off-canvas/off-canvas.php:826
+#: widgets/off-canvas/off-canvas.php:975
 #: widgets/page-title/page-title.php:384
 #: widgets/pdf-view/pdf-view.php:689
 #: widgets/post-comments/post-comments.php:1404
@@ -2891,7 +2891,7 @@ msgstr ""
 #: widgets/logo-grid/logo-grid.php:232
 #: widgets/numeric-list/numeric-list.php:60
 #: widgets/off-canvas/off-canvas.php:39
-#: widgets/off-canvas/off-canvas.php:543
+#: widgets/off-canvas/off-canvas.php:558
 #: widgets/post-content/post-content.php:98
 #: widgets/post-grid/post-grid.php:48
 #: widgets/post-grid/post-grid.php:1164
@@ -3535,7 +3535,7 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:154
 #: widgets/iconbox/iconbox.php:363
 #: widgets/infobox/infobox.php:553
-#: widgets/off-canvas/off-canvas.php:316
+#: widgets/off-canvas/off-canvas.php:331
 #: widgets/post-excerpt/post-excerpt.php:154
 #: widgets/search-box/search-box.php:289
 #: widgets/site-tagline/site-tagline.php:121
@@ -3546,8 +3546,8 @@ msgid "Icon Position"
 msgstr ""
 
 #: traits/button-trait.php:104
-#: widgets/off-canvas/off-canvas.php:320
-#: widgets/off-canvas/off-canvas.php:401
+#: widgets/off-canvas/off-canvas.php:335
+#: widgets/off-canvas/off-canvas.php:416
 #: widgets/post-excerpt/post-excerpt.php:157
 #: widgets/search-box/search-box.php:125
 #: widgets/site-tagline/site-tagline.php:127
@@ -3556,8 +3556,8 @@ msgid "Before"
 msgstr ""
 
 #: traits/button-trait.php:105
-#: widgets/off-canvas/off-canvas.php:321
-#: widgets/off-canvas/off-canvas.php:402
+#: widgets/off-canvas/off-canvas.php:336
+#: widgets/off-canvas/off-canvas.php:417
 #: widgets/post-excerpt/post-excerpt.php:158
 #: widgets/search-box/search-box.php:129
 #: widgets/site-tagline/site-tagline.php:128
@@ -3704,9 +3704,9 @@ msgstr ""
 #: widgets/menu/menu.php:1123
 #: widgets/news-ticker/news-ticker.php:660
 #: widgets/news-ticker/news-ticker.php:778
-#: widgets/off-canvas/off-canvas.php:718
-#: widgets/off-canvas/off-canvas.php:845
-#: widgets/off-canvas/off-canvas.php:994
+#: widgets/off-canvas/off-canvas.php:733
+#: widgets/off-canvas/off-canvas.php:860
+#: widgets/off-canvas/off-canvas.php:1009
 #: widgets/page-title/page-title.php:404
 #: widgets/pdf-view/pdf-view.php:732
 #: widgets/post-comments/post-comments.php:1470
@@ -3838,9 +3838,9 @@ msgstr ""
 #: widgets/list-group/list-group.php:106
 #: widgets/news-ticker/news-ticker.php:201
 #: widgets/numeric-list/numeric-list.php:106
-#: widgets/off-canvas/off-canvas.php:122
-#: widgets/off-canvas/off-canvas.php:125
-#: widgets/off-canvas/off-canvas.php:628
+#: widgets/off-canvas/off-canvas.php:137
+#: widgets/off-canvas/off-canvas.php:140
+#: widgets/off-canvas/off-canvas.php:643
 #: widgets/page-title/page-title.php:362
 #: widgets/pdf-view/pdf-view.php:575
 #: widgets/post-grid/post-grid.php:290
@@ -3898,8 +3898,8 @@ msgstr ""
 #: widgets/infobox/infobox.php:729
 #: widgets/list-group/list-group.php:126
 #: widgets/numeric-list/numeric-list.php:126
-#: widgets/off-canvas/off-canvas.php:138
-#: widgets/off-canvas/off-canvas.php:647
+#: widgets/off-canvas/off-canvas.php:153
+#: widgets/off-canvas/off-canvas.php:662
 msgid "Description"
 msgstr ""
 
@@ -4054,7 +4054,7 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:225
 #: widgets/image-grid/image-grid.php:702
 #: widgets/infobox/infobox.php:677
-#: widgets/off-canvas/off-canvas.php:599
+#: widgets/off-canvas/off-canvas.php:614
 #: widgets/testimonial/testimonial.php:197
 #: widgets/toggle/toggle.php:1328
 msgid "Content"
@@ -4309,9 +4309,9 @@ msgstr ""
 #: widgets/fun-fact/fun-fact.php:414
 #: widgets/image-heading/image-heading.php:197
 #: widgets/news-ticker/news-ticker.php:217
-#: widgets/off-canvas/off-canvas.php:354
-#: widgets/off-canvas/off-canvas.php:508
-#: widgets/off-canvas/off-canvas.php:520
+#: widgets/off-canvas/off-canvas.php:369
+#: widgets/off-canvas/off-canvas.php:523
+#: widgets/off-canvas/off-canvas.php:535
 #: widgets/post-comments/post-comments.php:200
 #: widgets/post-comments/post-comments.php:220
 #: widgets/post-comments/post-comments.php:274
@@ -4350,9 +4350,9 @@ msgstr ""
 #: widgets/fun-fact/fun-fact.php:415
 #: widgets/image-heading/image-heading.php:198
 #: widgets/news-ticker/news-ticker.php:218
-#: widgets/off-canvas/off-canvas.php:355
-#: widgets/off-canvas/off-canvas.php:509
-#: widgets/off-canvas/off-canvas.php:521
+#: widgets/off-canvas/off-canvas.php:370
+#: widgets/off-canvas/off-canvas.php:524
+#: widgets/off-canvas/off-canvas.php:536
 #: widgets/post-comments/post-comments.php:201
 #: widgets/post-comments/post-comments.php:221
 #: widgets/post-comments/post-comments.php:275
@@ -4546,7 +4546,7 @@ msgstr ""
 #: traits/swiper-trait.php:301
 #: widgets/animated-text/animated-text.php:262
 #: widgets/news-ticker/news-ticker.php:279
-#: widgets/off-canvas/off-canvas.php:492
+#: widgets/off-canvas/off-canvas.php:507
 msgid "Slide"
 msgstr ""
 
@@ -4649,6 +4649,7 @@ msgstr ""
 #: widgets/advance-accordion/advance-accordion.php:91
 #: widgets/advance-toggle/advance-toggle.php:91
 #: widgets/flipbox/flipbox.php:378
+#: widgets/off-canvas/off-canvas.php:56
 #: widgets/toggle/toggle.php:178
 msgid "Saved Container"
 msgstr ""
@@ -5401,7 +5402,7 @@ msgid "Pop"
 msgstr ""
 
 #: widgets/animated-text/animated-text.php:510
-#: widgets/off-canvas/off-canvas.php:493
+#: widgets/off-canvas/off-canvas.php:508
 msgid "Reveal"
 msgstr ""
 
@@ -5892,8 +5893,8 @@ msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:1230
 #: widgets/archive-posts/archive-posts.php:1252
-#: widgets/off-canvas/off-canvas.php:701
-#: widgets/off-canvas/off-canvas.php:728
+#: widgets/off-canvas/off-canvas.php:716
+#: widgets/off-canvas/off-canvas.php:743
 #: widgets/post-comments/post-comments.php:1600
 #: widgets/post-comments/post-comments.php:2477
 #: widgets/post-comments/post-comments.php:2499
@@ -6686,39 +6687,39 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:206
 #: widgets/featured-banner/featured-banner.php:207
-#: widgets/off-canvas/off-canvas.php:200
+#: widgets/off-canvas/off-canvas.php:215
 msgid "Top Center"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:207
 #: widgets/featured-banner/featured-banner.php:208
-#: widgets/off-canvas/off-canvas.php:199
+#: widgets/off-canvas/off-canvas.php:214
 #: widgets/team-member/team-member.php:390
 msgid "Top Left"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:208
 #: widgets/featured-banner/featured-banner.php:209
-#: widgets/off-canvas/off-canvas.php:201
+#: widgets/off-canvas/off-canvas.php:216
 #: widgets/team-member/team-member.php:391
 msgid "Top Right"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:209
 #: widgets/featured-banner/featured-banner.php:210
-#: widgets/off-canvas/off-canvas.php:205
+#: widgets/off-canvas/off-canvas.php:220
 msgid "Bottom Center"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:210
 #: widgets/featured-banner/featured-banner.php:211
-#: widgets/off-canvas/off-canvas.php:206
+#: widgets/off-canvas/off-canvas.php:221
 msgid "Bottom Left"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:211
 #: widgets/featured-banner/featured-banner.php:212
-#: widgets/off-canvas/off-canvas.php:204
+#: widgets/off-canvas/off-canvas.php:219
 msgid "Bottom Right"
 msgstr ""
 
@@ -7316,7 +7317,7 @@ msgstr ""
 
 #: widgets/flipbox/flipbox.php:123
 #: widgets/image-grid/image-grid.php:388
-#: widgets/off-canvas/off-canvas.php:263
+#: widgets/off-canvas/off-canvas.php:278
 #: widgets/post-comments/post-comments.php:715
 #: widgets/search-box/search-box.php:263
 msgid "Button Text"
@@ -7329,14 +7330,14 @@ msgstr ""
 #: widgets/flipbox/flipbox.php:125
 #: widgets/iconbox/iconbox.php:879
 #: widgets/infobox/infobox.php:831
-#: widgets/off-canvas/off-canvas.php:279
+#: widgets/off-canvas/off-canvas.php:294
 #: widgets/search-box/search-box.php:275
 #: widgets/team-member/team-member.php:768
 msgid "Button Icon"
 msgstr ""
 
 #: widgets/flipbox/flipbox.php:142
-#: widgets/off-canvas/off-canvas.php:451
+#: widgets/off-canvas/off-canvas.php:466
 msgid "Settings"
 msgstr ""
 
@@ -8170,7 +8171,7 @@ msgstr ""
 
 #: widgets/mega-menu/mega-menu.php:175
 #: widgets/menu/menu.php:133
-#: widgets/off-canvas/off-canvas.php:363
+#: widgets/off-canvas/off-canvas.php:378
 msgid "Close Icon"
 msgstr ""
 
@@ -8181,7 +8182,7 @@ msgstr ""
 
 #: widgets/mega-menu/mega-menu.php:225
 #: widgets/menu/menu.php:164
-#: widgets/off-canvas/off-canvas.php:268
+#: widgets/off-canvas/off-canvas.php:283
 msgid "Menu"
 msgstr ""
 
@@ -8459,138 +8460,142 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:56
+#: widgets/off-canvas/off-canvas.php:57
 msgid "Saved Widget"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:57
+#: widgets/off-canvas/off-canvas.php:58
 msgid "Saved Page Template"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:66
+#: widgets/off-canvas/off-canvas.php:67
 msgid "Choose Sidebar"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:80
+#: widgets/off-canvas/off-canvas.php:81
 msgid "Choose Widget"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:94
+#: widgets/off-canvas/off-canvas.php:95
 msgid "Choose Section"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:108
+#: widgets/off-canvas/off-canvas.php:109
+msgid "Choose Container"
+msgstr ""
+
+#: widgets/off-canvas/off-canvas.php:123
 msgid "Choose Template"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:140
+#: widgets/off-canvas/off-canvas.php:155
 msgid "Text box description goes here"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:164
+#: widgets/off-canvas/off-canvas.php:179
 msgid "Toggle Source"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:169
+#: widgets/off-canvas/off-canvas.php:184
 msgid "Element Class"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:170
+#: widgets/off-canvas/off-canvas.php:185
 msgid "Element ID"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:184
+#: widgets/off-canvas/off-canvas.php:199
 msgid "Floating"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:195
+#: widgets/off-canvas/off-canvas.php:210
 msgid "Placement"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:202
+#: widgets/off-canvas/off-canvas.php:217
 msgid "Middle Left"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:203
+#: widgets/off-canvas/off-canvas.php:218
 msgid "Middle Right"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:231
+#: widgets/off-canvas/off-canvas.php:246
 msgid "Toggle CSS Class"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:247
+#: widgets/off-canvas/off-canvas.php:262
 msgid "Toggle CSS ID"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:297
+#: widgets/off-canvas/off-canvas.php:312
 msgid "Button Close Icon"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:344
-#: widgets/off-canvas/off-canvas.php:905
+#: widgets/off-canvas/off-canvas.php:359
+#: widgets/off-canvas/off-canvas.php:920
 msgid "Close Bar"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:351
+#: widgets/off-canvas/off-canvas.php:366
 msgid "Overlapping Close Button"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:387
+#: widgets/off-canvas/off-canvas.php:402
 msgid "Close Icon Title"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:397
+#: widgets/off-canvas/off-canvas.php:412
 #: widgets/team-member/team-member.php:387
 msgid "Close Icon Position"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:421
+#: widgets/off-canvas/off-canvas.php:436
 msgid "Close Button Alignment"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:488
+#: widgets/off-canvas/off-canvas.php:503
 msgid "Content Transition"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:494
+#: widgets/off-canvas/off-canvas.php:509
 msgid "Push"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:495
+#: widgets/off-canvas/off-canvas.php:510
 msgid "Slide Along"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:505
+#: widgets/off-canvas/off-canvas.php:520
 msgid "Esc to Close"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:517
+#: widgets/off-canvas/off-canvas.php:532
 msgid "Click anywhere to Close"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:559
+#: widgets/off-canvas/off-canvas.php:574
 msgid "Body Height"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:665
+#: widgets/off-canvas/off-canvas.php:680
 #: widgets/post-content/post-content.php:269
 msgid "Links"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:884
+#: widgets/off-canvas/off-canvas.php:899
 msgid "Floating Styles"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:1033
+#: widgets/off-canvas/off-canvas.php:1048
 msgid "Button Wrapper"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:1125
+#: widgets/off-canvas/off-canvas.php:1140
 msgid "You have chosen to open the off canvas using a different element."
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:1130
+#: widgets/off-canvas/off-canvas.php:1145
 msgid "You’ve set the offcanvas toggle to float, keeping it fixed on the screen."
 msgstr ""
 
