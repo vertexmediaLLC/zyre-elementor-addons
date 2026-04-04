@@ -1,4 +1,4 @@
-= 2.0.0 - 2026-04-02 =
+= 2.0.0 - 2026-04-04 =
 
 - Mega Menu, Off-Canvas, and Search Box widgets included.
 
