@@ -53,6 +53,7 @@ class Off_Canvas extends Base {
 					'sidebar'  => __( 'Sidebar', 'zyre-elementor-addons' ),
 					'custom'   => __( 'Custom Content', 'zyre-elementor-addons' ),
 					'section'  => __( 'Saved Section', 'zyre-elementor-addons' ),
+					'container' => __( 'Saved Container', 'zyre-elementor-addons' ),
 					'widget'   => __( 'Saved Widget', 'zyre-elementor-addons' ),
 					'template' => __( 'Saved Page Template', 'zyre-elementor-addons' ),
 				],
@@ -98,6 +99,20 @@ class Off_Canvas extends Base {
 				'options'     => Query_Manager::get_page_template_options( 'section' ),
 				'condition'   => [
 					'content_type' => 'section',
+				],
+			]
+		);
+
+		$this->add_control(
+			'saved_container',
+			[
+				'label'       => __( 'Choose Container', 'zyre-elementor-addons' ),
+				'type'        => Controls_Manager::SELECT2,
+				'label_block' => true,
+				'multiple'    => false,
+				'options'     => Query_Manager::get_page_template_options( 'container' ),
+				'condition'   => [
+					'content_type' => 'container',
 				],
 			]
 		);
@@ -1173,6 +1188,11 @@ class Off_Canvas extends Base {
 						$saved_section = apply_filters('wpml_object_id', $settings['saved_section'], 'elementor_library');
 
 						echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_section ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+					} elseif ( 'container' === $settings['content_type'] && ! empty( $settings['saved_container'] ) ) {
+						$saved_container = apply_filters('wpml_object_id', $settings['saved_container'], 'elementor_library');
+
+						echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $saved_container ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 					} elseif ( 'template' === $settings['content_type'] && ! empty( $settings['templates'] ) ) {
 						$templates = apply_filters('wpml_object_id', $settings['templates'], 'elementor_library');
