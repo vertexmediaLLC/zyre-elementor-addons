@@ -239,7 +239,7 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 == Changelog ==
 
-= 2.0.0 - 02 April 2026 =
+= 2.0.0 - 04 April 2026 =
 
 - Mega Menu, Off-Canvas, and Search Box widgets included.
 
