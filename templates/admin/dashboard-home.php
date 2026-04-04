@@ -267,7 +267,7 @@ $credential_data = zyreladdons_get_credentials();
 								</a>
 							</div>
 			
-							<a href="<?php echo esc_url( 'https://www.youtube.com/watch?v=dVWxTTj64F8&list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj' ); ?>" target="_blank" class="zyre-button-header zyre-browse-button">
+							<a href="<?php echo esc_url( 'https://www.youtube.com/playlist?list=PLtZBNkN6i7pBSeD6oblNEeJhZ2jGkE4Sj' ); ?>" target="_blank" class="zyre-button-header zyre-browse-button">
 								<span class="zyre-button-inner">
 									<span class="zyre-button-text"><?php esc_html_e( 'View More Videos', 'zyre-elementor-addons' ); ?> <span class="zyre-icon-svg"><?php echo wp_kses( zyreladdons_get_svg_icon( 'up-right-from-square' ), zyreladdons_get_allowed_html() ); ?></span></span>
 								</span>
