@@ -1,3 +1,7 @@
+= 2.0.1 - 2026-04-06 =
+
+- Updated Toggle and Off-Canvas Widgets.
+
 = 2.0.0 - 2026-04-04 =
 
 - Mega Menu, Off-Canvas, and Search Box widgets included.
