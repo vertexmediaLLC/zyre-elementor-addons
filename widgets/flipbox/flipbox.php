@@ -2,9 +2,11 @@
 
 namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
+use Automattic\WooCommerce\Admin\API\Reports\Query;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use VertexMediaLLC\ZyreElementorAddons\Query_Manager;
 use VertexMediaLLC\ZyreElementorAddons\Traits\Button_Trait;
 
 defined( 'ABSPATH' ) || die();
@@ -35,32 +37,6 @@ class FlipBox extends Base {
 
 	protected function is_dynamic_content(): bool {
 		return false;
-	}
-
-	public function select_elementor_page( $type ) {
-		$args  = [
-			'tax_query'      => [
-				[
-					'taxonomy' => 'elementor_library_type',
-					'field'    => 'slug',
-					'terms'    => $type,
-				],
-			],
-			'post_type'      => 'elementor_library',
-			'posts_per_page' => -1,
-		];
-		$query = new \WP_Query( $args );
-
-		$posts = $query->posts;
-		foreach ( $posts as $post ) {
-			$items[ $post->ID ] = $post->post_title;
-		}
-
-		if ( empty( $items ) ) {
-			$items = [];
-		}
-
-		return $items;
 	}
 
 	protected function register_content_controls() {
@@ -382,7 +358,7 @@ class FlipBox extends Base {
 		);
 
 		$saved_sections = [ '0' => esc_html__( '--- Select Section ---', 'zyre-elementor-addons' ) ];
-		$saved_sections = $saved_sections + $this->select_elementor_page( 'section' );
+		$saved_sections = $saved_sections + Query_Manager::get_page_template_options( 'section' );
 
 		$this->add_control(
 			$prefix . '_saved_section',
@@ -398,7 +374,7 @@ class FlipBox extends Base {
 		);
 
 		$saved_container = [ '0' => esc_html__( '--- Select Container ---', 'zyre-elementor-addons' ) ];
-		$saved_container = $saved_container + $this->select_elementor_page( 'container' );
+		$saved_container = $saved_container + Query_Manager::get_page_template_options( 'container' );
 
 		$this->add_control(
 			$prefix . '_saved_container',

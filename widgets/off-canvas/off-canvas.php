@@ -19,7 +19,7 @@ class Off_Canvas extends Base {
 	}
 
 	public function get_keywords() {
-		return [ 'off canvas', 'offcanvas', 'canvas', 'popup', 'floating elements', 'mobile menu' ];
+		return [ 'off canvas', 'offcanvas', 'canvas', 'popup', 'floating elements', 'mobile menu', 'side panel', 'side menu' ];
 	}
 
 	/**
