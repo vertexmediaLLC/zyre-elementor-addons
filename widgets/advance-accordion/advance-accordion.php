@@ -4,6 +4,7 @@ namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Repeater;
 use Elementor\Controls_Manager;
+use VertexMediaLLC\ZyreElementorAddons\Query_Manager;
 
 defined( 'ABSPATH' ) || die();
 
@@ -23,35 +24,6 @@ class Advance_Accordion extends Base {
 
 	public function get_custom_help_url() {
 		return $this->set_help_url();
-	}
-
-	/**
-	 * Elementor Library Container & Section
-	 */
-	public function select_elementor_page( $type ) {
-		$args  = [
-			'tax_query'      => [
-				[
-					'taxonomy' => 'elementor_library_type',
-					'field'    => 'slug',
-					'terms'    => $type,
-				],
-			],
-			'post_type'      => 'elementor_library',
-			'posts_per_page' => -1,
-		];
-		$query = new \WP_Query( $args );
-
-		$posts = $query->posts;
-		foreach ( $posts as $post ) {
-			$items[ $post->ID ] = $post->post_title;
-		}
-
-		if ( empty( $items ) ) {
-			$items = [];
-		}
-
-		return $items;
 	}
 
 	/**
@@ -95,7 +67,7 @@ class Advance_Accordion extends Base {
 		);
 
 		$saved_sections = [ '0' => esc_html__( '--- Select Section ---', 'zyre-elementor-addons' ) ];
-		$saved_sections = $saved_sections + $this->select_elementor_page( 'section' );
+		$saved_sections = $saved_sections + Query_Manager::get_page_template_options( 'section' );
 
 		$repeater->add_control(
 			'_saved_section',
@@ -111,7 +83,7 @@ class Advance_Accordion extends Base {
 		);
 
 		$saved_container = [ '0' => esc_html__( '--- Select Container ---', 'zyre-elementor-addons' ) ];
-		$saved_container = $saved_container + $this->select_elementor_page( 'container' );
+		$saved_container = $saved_container + Query_Manager::get_page_template_options( 'container' );
 
 		$repeater->add_control(
 			'_saved_container',

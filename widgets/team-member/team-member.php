@@ -1,9 +1,11 @@
 <?php
 namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
+use Automattic\WooCommerce\Admin\API\Reports\Query;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use VertexMediaLLC\ZyreElementorAddons\Query_Manager;
 use VertexMediaLLC\ZyreElementorAddons\Traits\Button_Trait;
 use VertexMediaLLC\ZyreElementorAddons\Traits\Social_Trait;
 
@@ -355,13 +357,16 @@ class Team_Member extends Base {
 			]
 		);
 
+		$saved_contents = [ '0' => esc_html__( '--- Select Content ---', 'zyre-elementor-addons' ) ];
+		$saved_contents += Query_Manager::get_page_template_options( [ 'page', 'section' ] );
+
 		$this->add_control(
 			'saved_template_list',
 			[
 				'label'       => esc_html__( 'Content Source', 'zyre-elementor-addons' ),
 				'description' => esc_html__( 'Select a saved section to show in popup window.', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => $this->get_saved_content( [ 'page', 'section' ] ),
+				'options'     => $saved_contents,
 				'default'     => '0',
 			]
 		);
@@ -1005,50 +1010,6 @@ class Team_Member extends Base {
 				],
 			]
 		);
-	}
-
-	protected function get_post_template( $term = 'page' ) {
-		$posts = get_posts(
-			[
-				'post_type'      => 'elementor_library',
-				'orderby'        => 'title',
-				'order'          => 'ASC',
-				'posts_per_page' => '-1',
-				'tax_query'      => [
-					[
-						'taxonomy' => 'elementor_library_type',
-						'field'    => 'slug',
-						'terms'    => $term,
-					],
-				],
-			]
-		);
-
-		$templates = [];
-		foreach ( $posts as $post ) {
-			$templates[] = [
-				'id'   => $post->ID,
-				'name' => $post->post_title,
-			];
-		}
-
-		return $templates;
-	}
-
-	protected function get_saved_content( $term = 'section' ) {
-		$saved_contents = $this->get_post_template( $term );
-
-		if ( count( $saved_contents ) > 0 ) {
-			$options['0'] = esc_html__( 'None', 'zyre-elementor-addons' );
-			foreach ( $saved_contents as $saved_content ) {
-				$content_id             = $saved_content['id'];
-				$options[ $content_id ] = $saved_content['name'];
-			}
-		} else {
-			$options['no_template'] = esc_html__( 'Nothing Found', 'zyre-elementor-addons' );
-		}
-
-		return $options;
 	}
 
 	protected function render() {

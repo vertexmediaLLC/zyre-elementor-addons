@@ -12,8 +12,8 @@ class Query_Manager {
 	 * @param  string $type
 	 * @return array
 	 */
-	public static function get_page_template_options( $type = '' ) {
-		$page_templates = self::get_elementor_templates( $type );
+	public static function get_page_template_options( $type = '', $args = [] ) {
+		$page_templates = self::get_elementor_templates( $type, $args );
 
 		$options = [];
 
@@ -29,46 +29,31 @@ class Query_Manager {
 	}
 
 	/**
-	 * Get all WordPress registered widgets
-	 *
-	 * @return array
-	 */
-	public static function get_registered_sidebars() {
-		global $wp_registered_sidebars;
-		$options = [];
-
-		if ( ! empty( $wp_registered_sidebars ) && is_array( $wp_registered_sidebars ) ) {
-			foreach ( $wp_registered_sidebars as $sidebar_id => $sidebar ) {
-				$options[$sidebar_id] = $sidebar['name'];
-			}
-		}
-
-		return $options;
-	}
-
-	/**
 	 * Get all elementor page templates
 	 *
 	 * @param  null    $type
+	 * @param  array   $args
 	 * @return array
 	 */
-	public static function get_elementor_templates( $type = null ) {
+	public static function get_elementor_templates( $type = null, $args = [] ) {
 		$options = [];
 
 		if ( $type ) {
-			$args = [
+			$defaults = [
 				'post_type'      => 'elementor_library',
 				'posts_per_page' => -1,
-			];
-			$args['tax_query'] = [
-				[
-					'taxonomy' => 'elementor_library_type',
-					'field'    => 'slug',
-					'terms'    => $type,
+				'tax_query'      => [
+					[
+						'taxonomy' => 'elementor_library_type',
+						'field'    => 'slug',
+						'terms'    => $type,
+					],
 				],
 			];
 
-			$page_templates = get_posts( $args );
+			$parsed_args = wp_parse_args( $args, $defaults );
+
+			$page_templates = get_posts( $parsed_args );
 
 			if ( ! empty( $page_templates ) && ! is_wp_error( $page_templates ) ) {
 				foreach ( $page_templates as $post ) {
@@ -152,6 +137,24 @@ class Query_Manager {
 		}
 
 		return $data;
+	}
+
+	/**
+	 * Get all WordPress registered widgets
+	 *
+	 * @return array
+	 */
+	public static function get_registered_sidebars() {
+		global $wp_registered_sidebars;
+		$options = [];
+
+		if ( ! empty( $wp_registered_sidebars ) && is_array( $wp_registered_sidebars ) ) {
+			foreach ( $wp_registered_sidebars as $sidebar_id => $sidebar ) {
+				$options[$sidebar_id] = $sidebar['name'];
+			}
+		}
+
+		return $options;
 	}
 
 	/**
