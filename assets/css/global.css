@@ -162,6 +162,7 @@
 
 /* text wrap */
 .zyre-addon .zy-nowrap {white-space: nowrap;}
+.zyre-addon .zy-white-space-normal {white-space: normal;}
 .zyre-addon .zy-break-word {word-wrap: break-word;}
 .zyre-addon .zy-break-all {word-break: break-all;}
 .zyre-addon .zy-overflow-break-word {overflow-wrap: break-word;}

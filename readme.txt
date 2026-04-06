@@ -31,6 +31,7 @@ https://www.youtube.com/watch?v=QoDlnYgSWcE
 ## Key Features
 
 * Free Theme Builder (Header, Footer, Single, Archive)
+* Free Mega Menu Builder, Off-Canvas Menu, and Advanced Search Box with Filters—rarely available in other free plugins.
 * 60+ free Elementor widgets
 * Pre-built widget styles
 * Widget & pre-style control panel
@@ -178,7 +179,7 @@ Unminified source files are included inside the plugin directory.
 
 This plugin connects to third-party services in the following cases:
 
-1. Social Sharing Services
+**1. Social Sharing Services**
 
 The plugin includes a social share feature that allows users to share content on third-party platforms such as Facebook, Twitter/X, LinkedIn, Pinterest, and others depending on configuration.
 
@@ -191,7 +192,7 @@ When a share button is clicked, the following data may be sent directly from the
 
 The plugin does not store or process this data on its own servers.
 
-2. Mailchimp API
+**2. Mailchimp API**
 
 If the site administrator enables the newsletter subscription feature, and a user voluntarily submits their email via the subscription form widget, the submitted email and any additional provided fields are sent to Mailchimp for newsletter subscription only.
 
@@ -199,7 +200,7 @@ Endpoint: https://*.api.mailchimp.com/3.0/
 Terms of Use: https://mailchimp.com/legal/terms/
 Privacy Policy: https://mailchimp.com/legal/privacy/
 
-3. Appsero
+**3. Appsero**
 
 This plugin uses the Appsero SDK for a feedback modal on plugin deactivation and optional telemetry collection. Data (site URL, plugin & WordPress version, PHP version, activation status) is collected only after explicit opt-in. No personal user data is collected without consent.
 

@@ -11,8 +11,8 @@
  * Text Domain: zyre-elementor-addons
  * Domain Path: /languages/
  * Requires Plugins: elementor
- * Elementor tested up to: 3.35
- * Elementor Pro tested up to: 3.35
+ * Elementor tested up to: 4.0
+ * Elementor Pro tested up to: 4.0
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *

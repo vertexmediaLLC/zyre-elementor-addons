@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-04T05:55:26+00:00\n"
+"POT-Creation-Date: 2026-04-06T06:17:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -122,8 +122,8 @@ msgid "Line Through"
 msgstr ""
 
 #: base/widget-base.php:213
-#: base/widget-base.php:1277
-#: base/widget-base.php:1386
+#: base/widget-base.php:1278
+#: base/widget-base.php:1387
 #: traits/swiper-trait.php:211
 #: traits/swiper-trait.php:238
 #: widgets/archive-title/archive-title.php:299
@@ -189,7 +189,7 @@ msgstr ""
 #: widgets/post-meta/post-meta.php:355
 #: widgets/site-title/site-title.php:327
 #: widgets/social-share/social-share.php:501
-#: widgets/toggle/toggle.php:663
+#: widgets/toggle/toggle.php:797
 msgid "Icon Size"
 msgstr ""
 
@@ -299,6 +299,12 @@ msgstr ""
 #: widgets/skill-bar/skill-bar.php:571
 #: widgets/social-share/social-share.php:393
 #: widgets/social-share/social-share.php:459
+#: widgets/toggle/toggle.php:584
+#: widgets/toggle/toggle.php:632
+#: widgets/toggle/toggle.php:680
+#: widgets/toggle/toggle.php:1126
+#: widgets/toggle/toggle.php:1159
+#: widgets/toggle/toggle.php:1192
 msgid "Background Color"
 msgstr ""
 
@@ -345,6 +351,12 @@ msgstr ""
 #: widgets/social-share/social-share.php:444
 #: widgets/social-share/social-share.php:705
 #: widgets/social-share/social-share.php:755
+#: widgets/toggle/toggle.php:1114
+#: widgets/toggle/toggle.php:1147
+#: widgets/toggle/toggle.php:1180
+#: widgets/toggle/toggle.php:1371
+#: widgets/toggle/toggle.php:1394
+#: widgets/toggle/toggle.php:1417
 msgid "Color"
 msgstr ""
 
@@ -397,7 +409,7 @@ msgstr ""
 msgid "Border Width"
 msgstr ""
 
-#: base/widget-base.php:538
+#: base/widget-base.php:539
 #: traits/button-trait.php:433
 #: traits/button-trait.php:672
 #: traits/list-item-advanced-trait.php:779
@@ -416,29 +428,29 @@ msgstr ""
 #: widgets/pdf-view/pdf-view.php:326
 #: widgets/post-comments/post-comments.php:2995
 #: widgets/skill-bar/skill-bar.php:249
-#: widgets/toggle/toggle.php:1127
-#: widgets/toggle/toggle.php:1243
+#: widgets/toggle/toggle.php:1501
+#: widgets/toggle/toggle.php:1617
 msgid "Border Radius"
 msgstr ""
 
-#: base/widget-base.php:557
+#: base/widget-base.php:558
 msgid "Box Shadow"
 msgstr ""
 
-#: base/widget-base.php:571
+#: base/widget-base.php:572
 #: traits/list-item-advanced-trait.php:1428
 #: traits/list-item-advanced-trait.php:1558
 #: traits/list-item-advanced-trait.php:1900
 #: traits/list-item-advanced-trait.php:1974
 #: widgets/lottie-animation/lottie-animation.php:359
 #: widgets/lottie-animation/lottie-animation.php:409
-#: widgets/toggle/toggle.php:491
-#: widgets/toggle/toggle.php:528
-#: widgets/toggle/toggle.php:565
+#: widgets/toggle/toggle.php:603
+#: widgets/toggle/toggle.php:651
+#: widgets/toggle/toggle.php:699
 msgid "Opacity"
 msgstr ""
 
-#: base/widget-base.php:601
+#: base/widget-base.php:602
 #: traits/button-trait.php:457
 #: traits/list-item-advanced-trait.php:993
 #: traits/list-item-advanced-trait.php:1249
@@ -456,7 +468,7 @@ msgstr ""
 msgid "Margin"
 msgstr ""
 
-#: base/widget-base.php:620
+#: base/widget-base.php:621
 #: traits/button-trait.php:445
 #: traits/list-item-advanced-trait.php:824
 #: traits/list-item-advanced-trait.php:1005
@@ -478,7 +490,7 @@ msgstr ""
 msgid "Padding"
 msgstr ""
 
-#: base/widget-base.php:644
+#: base/widget-base.php:645
 #: widgets/alert/alert.php:229
 #: widgets/archive-title/archive-title.php:346
 #: widgets/call-to-action/call-to-action.php:1086
@@ -506,7 +518,7 @@ msgstr ""
 msgid "Spacing"
 msgstr ""
 
-#: base/widget-base.php:673
+#: base/widget-base.php:674
 #: traits/button-trait.php:200
 #: traits/list-item-advanced-trait.php:576
 #: traits/list-item-advanced-trait.php:925
@@ -528,10 +540,11 @@ msgstr ""
 #: widgets/team-member/team-member.php:437
 #: widgets/testimonial/testimonial.php:408
 #: widgets/testimonial/testimonial.php:844
+#: widgets/toggle/toggle.php:1234
 msgid "Width"
 msgstr ""
 
-#: base/widget-base.php:706
+#: base/widget-base.php:707
 #: traits/button-trait.php:222
 #: traits/list-item-advanced-trait.php:596
 #: traits/list-item-advanced-trait.php:950
@@ -546,10 +559,11 @@ msgstr ""
 #: widgets/post-meta/post-meta.php:741
 #: widgets/post-navigation/post-navigation.php:612
 #: widgets/skill-bar/skill-bar.php:212
+#: widgets/toggle/toggle.php:1249
 msgid "Height"
 msgstr ""
 
-#: base/widget-base.php:739
+#: base/widget-base.php:740
 #: traits/list-item-trait.php:239
 #: traits/social-trait.php:798
 #: widgets/alert/alert.php:226
@@ -559,34 +573,35 @@ msgstr ""
 #: widgets/post-navigation/post-navigation.php:340
 #: widgets/social-share/social-share.php:971
 #: widgets/team-member/team-member.php:823
+#: widgets/toggle/toggle.php:1264
 msgid "Size"
 msgstr ""
 
-#: base/widget-base.php:769
+#: base/widget-base.php:770
 #: traits/swiper-trait.php:440
 #: widgets/business-hour/business-hour.php:754
 #: widgets/off-canvas/off-canvas.php:473
 #: widgets/pdf-view/pdf-view.php:109
 #: widgets/post-comments/post-comments.php:1217
-#: widgets/toggle/toggle.php:708
+#: widgets/toggle/toggle.php:842
 msgid "Direction"
 msgstr ""
 
-#: base/widget-base.php:776
+#: base/widget-base.php:777
 #: widgets/business-hour/business-hour.php:759
 #: widgets/post-comments/post-comments.php:1222
-#: widgets/toggle/toggle.php:712
+#: widgets/toggle/toggle.php:846
 msgid "Row - horizontal"
 msgstr ""
 
-#: base/widget-base.php:780
+#: base/widget-base.php:781
 #: widgets/business-hour/business-hour.php:763
 #: widgets/post-comments/post-comments.php:1226
-#: widgets/toggle/toggle.php:716
+#: widgets/toggle/toggle.php:850
 msgid "Column - vertical"
 msgstr ""
 
-#: base/widget-base.php:806
+#: base/widget-base.php:807
 #: traits/list-item-trait.php:271
 #: widgets/advance-heading/advance-heading.php:143
 #: widgets/author-box/author-box.php:63
@@ -597,15 +612,15 @@ msgstr ""
 msgid "Gap"
 msgstr ""
 
-#: base/widget-base.php:829
+#: base/widget-base.php:830
 msgid "Column Gap"
 msgstr ""
 
-#: base/widget-base.php:850
+#: base/widget-base.php:851
 msgid "Row Gap"
 msgstr ""
 
-#: base/widget-base.php:873
+#: base/widget-base.php:874
 #: traits/list-item-advanced-trait.php:395
 #: traits/list-item-advanced-trait.php:836
 #: traits/list-item-advanced-trait.php:866
@@ -656,11 +671,11 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: base/widget-base.php:878
-#: base/widget-base.php:918
-#: base/widget-base.php:1007
-#: base/widget-base.php:1073
-#: base/widget-base.php:1153
+#: base/widget-base.php:879
+#: base/widget-base.php:919
+#: base/widget-base.php:1008
+#: base/widget-base.php:1074
+#: base/widget-base.php:1154
 #: traits/button-trait.php:473
 #: traits/list-item-advanced-trait.php:400
 #: traits/list-item-advanced-trait.php:841
@@ -781,18 +796,18 @@ msgstr ""
 #: widgets/testimonial/testimonial.php:494
 #: widgets/testimonial/testimonial.php:679
 #: widgets/testimonial/testimonial.php:702
-#: widgets/toggle/toggle.php:266
-#: widgets/toggle/toggle.php:363
+#: widgets/toggle/toggle.php:242
+#: widgets/toggle/toggle.php:455
 msgid "Left"
 msgstr ""
 
-#: base/widget-base.php:882
-#: base/widget-base.php:922
-#: base/widget-base.php:966
-#: base/widget-base.php:1011
-#: base/widget-base.php:1045
-#: base/widget-base.php:1077
-#: base/widget-base.php:1120
+#: base/widget-base.php:883
+#: base/widget-base.php:923
+#: base/widget-base.php:967
+#: base/widget-base.php:1012
+#: base/widget-base.php:1046
+#: base/widget-base.php:1078
+#: base/widget-base.php:1121
 #: traits/button-trait.php:254
 #: traits/button-trait.php:477
 #: traits/list-item-advanced-trait.php:404
@@ -897,15 +912,15 @@ msgstr ""
 #: widgets/testimonial/testimonial.php:318
 #: widgets/testimonial/testimonial.php:498
 #: widgets/testimonial/testimonial.php:706
-#: widgets/toggle/toggle.php:367
+#: widgets/toggle/toggle.php:459
 msgid "Center"
 msgstr ""
 
-#: base/widget-base.php:886
-#: base/widget-base.php:926
-#: base/widget-base.php:1015
-#: base/widget-base.php:1081
-#: base/widget-base.php:1157
+#: base/widget-base.php:887
+#: base/widget-base.php:927
+#: base/widget-base.php:1016
+#: base/widget-base.php:1082
+#: base/widget-base.php:1158
 #: traits/button-trait.php:481
 #: traits/list-item-advanced-trait.php:408
 #: traits/list-item-advanced-trait.php:849
@@ -1025,12 +1040,12 @@ msgstr ""
 #: widgets/testimonial/testimonial.php:502
 #: widgets/testimonial/testimonial.php:683
 #: widgets/testimonial/testimonial.php:710
-#: widgets/toggle/toggle.php:270
-#: widgets/toggle/toggle.php:371
+#: widgets/toggle/toggle.php:246
+#: widgets/toggle/toggle.php:463
 msgid "Right"
 msgstr ""
 
-#: base/widget-base.php:890
+#: base/widget-base.php:891
 #: traits/list-item-advanced-trait.php:1033
 #: traits/list-item-advanced-trait.php:2121
 #: widgets/archive-description/archive-description.php:145
@@ -1043,16 +1058,16 @@ msgstr ""
 msgid "Justify"
 msgstr ""
 
-#: base/widget-base.php:912
-#: base/widget-base.php:1000
-#: base/widget-base.php:1068
+#: base/widget-base.php:913
+#: base/widget-base.php:1001
+#: base/widget-base.php:1069
 #: widgets/animated-text/animated-text.php:1325
 #: widgets/fun-fact/fun-fact.php:188
 msgid "Horizontal Align"
 msgstr ""
 
-#: base/widget-base.php:930
-#: base/widget-base.php:974
+#: base/widget-base.php:931
+#: base/widget-base.php:975
 #: traits/button-trait.php:262
 #: traits/list-item-trait.php:161
 #: traits/social-trait.php:603
@@ -1083,15 +1098,17 @@ msgstr ""
 #: widgets/post-meta/post-meta.php:527
 #: widgets/search-box/search-box.php:203
 #: widgets/search-box/search-box.php:582
-#: widgets/toggle/toggle.php:377
-#: widgets/toggle/toggle.php:420
-#: widgets/toggle/toggle.php:686
-#: widgets/toggle/toggle.php:1038
+#: widgets/toggle/toggle.php:348
+#: widgets/toggle/toggle.php:469
+#: widgets/toggle/toggle.php:517
+#: widgets/toggle/toggle.php:820
+#: widgets/toggle/toggle.php:920
+#: widgets/toggle/toggle.php:942
 msgid "Space Between"
 msgstr ""
 
-#: base/widget-base.php:934
-#: base/widget-base.php:978
+#: base/widget-base.php:935
+#: base/widget-base.php:979
 #: traits/button-trait.php:266
 #: widgets/business-hour/business-hour.php:912
 #: widgets/pdf-view/pdf-view.php:454
@@ -1102,8 +1119,8 @@ msgstr ""
 msgid "Space Around"
 msgstr ""
 
-#: base/widget-base.php:938
-#: base/widget-base.php:982
+#: base/widget-base.php:939
+#: base/widget-base.php:983
 #: traits/button-trait.php:270
 #: widgets/business-hour/business-hour.php:916
 #: widgets/pdf-view/pdf-view.php:458
@@ -1114,19 +1131,19 @@ msgstr ""
 msgid "Space Evenly"
 msgstr ""
 
-#: base/widget-base.php:956
-#: base/widget-base.php:1036
-#: base/widget-base.php:1111
+#: base/widget-base.php:957
+#: base/widget-base.php:1037
+#: base/widget-base.php:1112
 #: widgets/animated-text/animated-text.php:1355
 #: widgets/author-box/author-box.php:78
 #: widgets/post-comments/post-comments.php:2543
 msgid "Vertical Align"
 msgstr ""
 
-#: base/widget-base.php:962
-#: base/widget-base.php:1041
-#: base/widget-base.php:1116
-#: base/widget-base.php:1161
+#: base/widget-base.php:963
+#: base/widget-base.php:1042
+#: base/widget-base.php:1117
+#: base/widget-base.php:1162
 #: traits/list-item-advanced-trait.php:1050
 #: traits/list-item-advanced-trait.php:1695
 #: traits/list-item-advanced-trait.php:2138
@@ -1162,10 +1179,10 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: base/widget-base.php:970
-#: base/widget-base.php:1049
-#: base/widget-base.php:1124
-#: base/widget-base.php:1165
+#: base/widget-base.php:971
+#: base/widget-base.php:1050
+#: base/widget-base.php:1125
+#: base/widget-base.php:1166
 #: traits/list-item-advanced-trait.php:1058
 #: traits/list-item-advanced-trait.php:1703
 #: traits/list-item-advanced-trait.php:2146
@@ -1198,7 +1215,7 @@ msgstr ""
 msgid "Bottom"
 msgstr ""
 
-#: base/widget-base.php:1085
+#: base/widget-base.php:1086
 #: widgets/business-hour/business-hour.php:832
 #: widgets/fun-fact/fun-fact.php:205
 #: widgets/heading/heading.php:546
@@ -1211,7 +1228,7 @@ msgstr ""
 msgid "Stretch"
 msgstr ""
 
-#: base/widget-base.php:1148
+#: base/widget-base.php:1149
 #: widgets/call-to-action/call-to-action.php:115
 #: widgets/call-to-action/call-to-action.php:301
 #: widgets/call-to-action/call-to-action.php:496
@@ -1242,56 +1259,57 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: base/widget-base.php:1190
+#: base/widget-base.php:1191
 #: widgets/animated-text/animated-text.php:264
 #: widgets/call-to-action/call-to-action.php:2092
 #: widgets/infobox/infobox.php:626
+#: widgets/toggle/toggle.php:1338
 msgid "Rotate"
 msgstr ""
 
-#: base/widget-base.php:1221
+#: base/widget-base.php:1222
 #: widgets/image-carousel/image-carousel.php:104
 #: widgets/logo-carousel/logo-carousel.php:113
 #: widgets/news-ticker/news-ticker.php:341
 msgid "Transition Effect"
 msgstr ""
 
-#: base/widget-base.php:1225
+#: base/widget-base.php:1226
 #: widgets/image-carousel/image-carousel.php:108
 #: widgets/logo-carousel/logo-carousel.php:117
 #: widgets/news-ticker/news-ticker.php:345
 msgid "ease"
 msgstr ""
 
-#: base/widget-base.php:1226
+#: base/widget-base.php:1227
 #: widgets/image-carousel/image-carousel.php:109
 #: widgets/logo-carousel/logo-carousel.php:118
 #: widgets/news-ticker/news-ticker.php:346
 msgid "linear"
 msgstr ""
 
-#: base/widget-base.php:1227
+#: base/widget-base.php:1228
 #: widgets/image-carousel/image-carousel.php:110
 #: widgets/logo-carousel/logo-carousel.php:119
 #: widgets/news-ticker/news-ticker.php:347
 msgid "ease-in"
 msgstr ""
 
-#: base/widget-base.php:1228
+#: base/widget-base.php:1229
 #: widgets/image-carousel/image-carousel.php:111
 #: widgets/logo-carousel/logo-carousel.php:120
 #: widgets/news-ticker/news-ticker.php:348
 msgid "ease-out"
 msgstr ""
 
-#: base/widget-base.php:1229
+#: base/widget-base.php:1230
 #: widgets/image-carousel/image-carousel.php:112
 #: widgets/logo-carousel/logo-carousel.php:121
 #: widgets/news-ticker/news-ticker.php:349
 msgid "ease-in-out"
 msgstr ""
 
-#: base/widget-base.php:1246
+#: base/widget-base.php:1247
 #: traits/swiper-trait.php:256
 #: widgets/call-to-action/call-to-action.php:855
 #: widgets/call-to-action/call-to-action.php:965
@@ -1301,15 +1319,15 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1504
 #: widgets/logo-grid/logo-grid.php:473
 #: widgets/lottie-animation/lottie-animation.php:377
-#: widgets/toggle/toggle.php:1256
+#: widgets/toggle/toggle.php:1630
 msgid "Transition Duration"
 msgstr ""
 
-#: base/widget-base.php:1269
+#: base/widget-base.php:1270
 msgid "Object Fit"
 msgstr ""
 
-#: base/widget-base.php:1273
+#: base/widget-base.php:1274
 #: widgets/call-to-action/call-to-action.php:104
 #: widgets/call-to-action/call-to-action.php:182
 #: widgets/featured-banner/featured-banner.php:105
@@ -1317,29 +1335,29 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: base/widget-base.php:1274
+#: base/widget-base.php:1275
 #: widgets/call-to-action/call-to-action.php:183
 #: widgets/featured-banner/featured-banner.php:185
 msgid "Contain"
 msgstr ""
 
-#: base/widget-base.php:1275
+#: base/widget-base.php:1276
 #: widgets/animated-text/animated-text.php:505
 msgid "Fill"
 msgstr ""
 
-#: base/widget-base.php:1276
+#: base/widget-base.php:1277
 msgid "Scale Down"
 msgstr ""
 
-#: base/widget-base.php:1293
+#: base/widget-base.php:1294
 #: traits/list-item-advanced-trait.php:1180
 #: traits/list-item-advanced-trait.php:1717
 #: widgets/image-heading/image-heading.php:607
 msgid "Z-Index"
 msgstr ""
 
-#: base/widget-base.php:1314
+#: base/widget-base.php:1315
 #: widgets/animated-text/animated-text.php:1465
 #: widgets/call-to-action/call-to-action.php:1956
 #: widgets/dual-button/dual-button.php:503
@@ -1347,21 +1365,22 @@ msgstr ""
 #: widgets/skill-bar/skill-bar.php:449
 #: widgets/team-member/team-member.php:904
 #: widgets/testimonial/testimonial.php:609
+#: widgets/toggle/toggle.php:1282
 msgid "Horizontal Offset"
 msgstr ""
 
-#: base/widget-base.php:1345
+#: base/widget-base.php:1346
 #: widgets/animated-text/animated-text.php:1489
 #: widgets/call-to-action/call-to-action.php:1985
 #: widgets/dual-button/dual-button.php:532
 #: widgets/featured-banner/featured-banner.php:1989
 #: widgets/team-member/team-member.php:931
 #: widgets/testimonial/testimonial.php:642
-#: widgets/toggle/toggle.php:831
+#: widgets/toggle/toggle.php:1298
 msgid "Vertical Offset"
 msgstr ""
 
-#: base/widget-base.php:1374
+#: base/widget-base.php:1375
 #: widgets/animated-text/animated-text.php:163
 #: widgets/heading/heading.php:691
 #: widgets/image-heading/image-heading.php:278
@@ -1369,7 +1388,7 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: base/widget-base.php:1378
+#: base/widget-base.php:1379
 #: traits/list-item-trait.php:46
 #: widgets/advance-heading/advance-heading.php:126
 #: widgets/advance-heading/advance-heading.php:504
@@ -1383,10 +1402,11 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:1563
 #: widgets/search-box/search-box.php:102
 #: widgets/testimonial/testimonial.php:1030
+#: widgets/toggle/toggle.php:330
 msgid "Block"
 msgstr ""
 
-#: base/widget-base.php:1379
+#: base/widget-base.php:1380
 #: widgets/call-to-action/call-to-action.php:2146
 #: widgets/dual-color-heading/dual-color-heading.php:246
 #: widgets/featured-banner/featured-banner.php:2050
@@ -1396,7 +1416,7 @@ msgstr ""
 msgid "Inline Block"
 msgstr ""
 
-#: base/widget-base.php:1380
+#: base/widget-base.php:1381
 #: traits/list-item-trait.php:50
 #: widgets/advance-heading/advance-heading.php:130
 #: widgets/advance-heading/advance-heading.php:508
@@ -1410,34 +1430,35 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:1567
 #: widgets/search-box/search-box.php:98
 #: widgets/testimonial/testimonial.php:1032
+#: widgets/toggle/toggle.php:334
 msgid "Inline"
 msgstr ""
 
-#: base/widget-base.php:1381
+#: base/widget-base.php:1382
 msgid "Flex"
 msgstr ""
 
-#: base/widget-base.php:1382
+#: base/widget-base.php:1383
 msgid "Inline Flex"
 msgstr ""
 
-#: base/widget-base.php:1383
+#: base/widget-base.php:1384
 msgid "Grid"
 msgstr ""
 
-#: base/widget-base.php:1384
+#: base/widget-base.php:1385
 msgid "Inline Grid"
 msgstr ""
 
-#: base/widget-base.php:1385
+#: base/widget-base.php:1386
 msgid "table"
 msgstr ""
 
-#: base/widget-base.php:1401
+#: base/widget-base.php:1402
 msgid "Options"
 msgstr ""
 
-#: base/widget-base.php:1419
+#: base/widget-base.php:1420
 #: classes/widgets-manager.php:1157
 #: traits/list-item-advanced-trait.php:496
 #: widgets/divider/divider.php:15
@@ -1451,7 +1472,7 @@ msgstr ""
 msgid "Divider"
 msgstr ""
 
-#: base/widget-base.php:1420
+#: base/widget-base.php:1421
 #: traits/list-item-advanced-trait.php:499
 #: widgets/archive-posts/archive-posts.php:350
 #: widgets/archive-posts/archive-posts.php:398
@@ -1476,7 +1497,7 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: base/widget-base.php:1421
+#: base/widget-base.php:1422
 #: traits/list-item-advanced-trait.php:498
 #: widgets/archive-posts/archive-posts.php:351
 #: widgets/archive-posts/archive-posts.php:399
@@ -1503,16 +1524,16 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: base/widget-base.php:1442
+#: base/widget-base.php:1443
 msgid "Show Separators"
 msgstr ""
 
-#: base/widget-base.php:1444
+#: base/widget-base.php:1445
 #: widgets/heading/heading.php:652
 msgid "SHOW"
 msgstr ""
 
-#: base/widget-base.php:1445
+#: base/widget-base.php:1446
 #: widgets/heading/heading.php:653
 msgid "HIDE"
 msgstr ""
@@ -1864,12 +1885,12 @@ msgstr ""
 #: widgets/skill-bar/skill-bar.php:561
 #: widgets/team-member/team-member.php:999
 #: widgets/testimonial/testimonial.php:1049
-#: widgets/toggle/toggle.php:617
-#: widgets/toggle/toggle.php:887
-#: widgets/toggle/toggle.php:936
-#: widgets/toggle/toggle.php:985
-#: widgets/toggle/toggle.php:1290
-#: widgets/toggle/toggle.php:1340
+#: widgets/toggle/toggle.php:751
+#: widgets/toggle/toggle.php:979
+#: widgets/toggle/toggle.php:1014
+#: widgets/toggle/toggle.php:1049
+#: widgets/toggle/toggle.php:1664
+#: widgets/toggle/toggle.php:1714
 msgid "Text Color"
 msgstr ""
 
@@ -1892,7 +1913,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:350
 #: widgets/infobox/infobox.php:811
 #: widgets/off-canvas/off-canvas.php:183
-#: widgets/toggle/toggle.php:75
+#: widgets/toggle/toggle.php:49
 msgid "Button"
 msgstr ""
 
@@ -2517,11 +2538,13 @@ msgstr ""
 #: widgets/social-share/social-share.php:698
 #: widgets/subscription-form/subscription-form.php:443
 #: widgets/team-member/team-member.php:857
-#: widgets/toggle/toggle.php:476
-#: widgets/toggle/toggle.php:856
-#: widgets/toggle/toggle.php:880
-#: widgets/toggle/toggle.php:1090
-#: widgets/toggle/toggle.php:1206
+#: widgets/toggle/toggle.php:577
+#: widgets/toggle/toggle.php:972
+#: widgets/toggle/toggle.php:1107
+#: widgets/toggle/toggle.php:1318
+#: widgets/toggle/toggle.php:1364
+#: widgets/toggle/toggle.php:1464
+#: widgets/toggle/toggle.php:1580
 msgid "Normal"
 msgstr ""
 
@@ -2820,7 +2843,7 @@ msgstr ""
 #: widgets/social-icon/social-icon.php:78
 #: widgets/social-share/social-share.php:578
 #: widgets/social-share/social-share.php:960
-#: widgets/toggle/toggle.php:253
+#: widgets/toggle/toggle.php:227
 msgid "Icon"
 msgstr ""
 
@@ -3072,7 +3095,7 @@ msgstr ""
 #: modules/theme-builder/module.php:596
 #: traits/list-item-advanced-trait.php:100
 #: widgets/alert/alert.php:44
-#: widgets/toggle/toggle.php:173
+#: widgets/toggle/toggle.php:147
 msgid "Type"
 msgstr ""
 
@@ -3097,11 +3120,13 @@ msgstr ""
 #: widgets/menu/menu.php:811
 #: widgets/menu/menu.php:1166
 #: widgets/menu/menu.php:1270
-#: widgets/toggle/toggle.php:296
-#: widgets/toggle/toggle.php:550
-#: widgets/toggle/toggle.php:978
-#: widgets/toggle/toggle.php:1114
-#: widgets/toggle/toggle.php:1230
+#: widgets/toggle/toggle.php:272
+#: widgets/toggle/toggle.php:673
+#: widgets/toggle/toggle.php:1042
+#: widgets/toggle/toggle.php:1173
+#: widgets/toggle/toggle.php:1410
+#: widgets/toggle/toggle.php:1488
+#: widgets/toggle/toggle.php:1604
 msgid "Active"
 msgstr ""
 
@@ -3541,7 +3566,7 @@ msgstr ""
 #: widgets/site-tagline/site-tagline.php:121
 #: widgets/site-title/site-title.php:123
 #: widgets/testimonial/testimonial.php:139
-#: widgets/toggle/toggle.php:261
+#: widgets/toggle/toggle.php:237
 msgid "Icon Position"
 msgstr ""
 
@@ -3733,10 +3758,12 @@ msgstr ""
 #: widgets/social-share/social-share.php:748
 #: widgets/subscription-form/subscription-form.php:464
 #: widgets/team-member/team-member.php:877
-#: widgets/toggle/toggle.php:513
-#: widgets/toggle/toggle.php:929
-#: widgets/toggle/toggle.php:1102
-#: widgets/toggle/toggle.php:1218
+#: widgets/toggle/toggle.php:625
+#: widgets/toggle/toggle.php:1007
+#: widgets/toggle/toggle.php:1140
+#: widgets/toggle/toggle.php:1387
+#: widgets/toggle/toggle.php:1476
+#: widgets/toggle/toggle.php:1592
 msgid "Hover"
 msgstr ""
 
@@ -3751,7 +3778,7 @@ msgstr ""
 #: widgets/skill-bar/skill-bar.php:413
 #: widgets/skill-bar/skill-bar.php:519
 #: widgets/subscription-form/subscription-form.php:406
-#: widgets/toggle/toggle.php:1166
+#: widgets/toggle/toggle.php:1540
 msgid "Horizontal Position"
 msgstr ""
 
@@ -3786,7 +3813,6 @@ msgstr ""
 #: widgets/pdf-view/pdf-view.php:179
 #: widgets/testimonial/testimonial.php:63
 #: widgets/testimonial/testimonial.php:465
-#: widgets/toggle/toggle.php:448
 msgid "Image"
 msgstr ""
 
@@ -3849,8 +3875,8 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:1593
 #: widgets/post-title/post-title.php:352
 #: widgets/site-title/site-title.php:285
-#: widgets/toggle/toggle.php:150
-#: widgets/toggle/toggle.php:152
+#: widgets/toggle/toggle.php:124
+#: widgets/toggle/toggle.php:126
 msgid "Title"
 msgstr ""
 
@@ -4056,7 +4082,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:677
 #: widgets/off-canvas/off-canvas.php:614
 #: widgets/testimonial/testimonial.php:197
-#: widgets/toggle/toggle.php:1328
+#: widgets/toggle/toggle.php:1702
 msgid "Content"
 msgstr ""
 
@@ -4132,6 +4158,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1628
 #: widgets/mega-menu/mega-menu.php:69
 #: widgets/search-box/search-box.php:93
+#: widgets/toggle/toggle.php:325
 msgid "Layout"
 msgstr ""
 
@@ -4338,7 +4365,7 @@ msgstr ""
 #: widgets/subscription-form/subscription-form.php:235
 #: widgets/subscription-form/subscription-form.php:247
 #: widgets/testimonial/testimonial.php:596
-#: widgets/toggle/toggle.php:299
+#: widgets/toggle/toggle.php:275
 msgid "Yes"
 msgstr ""
 
@@ -4379,7 +4406,7 @@ msgstr ""
 #: widgets/subscription-form/subscription-form.php:236
 #: widgets/subscription-form/subscription-form.php:248
 #: widgets/testimonial/testimonial.php:597
-#: widgets/toggle/toggle.php:300
+#: widgets/toggle/toggle.php:276
 msgid "No"
 msgstr ""
 
@@ -4479,7 +4506,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1529
 #: widgets/heading/heading.php:128
 #: widgets/image-carousel/image-carousel.php:473
-#: widgets/toggle/toggle.php:162
+#: widgets/toggle/toggle.php:136
 msgid "Sub Title"
 msgstr ""
 
@@ -4565,6 +4592,7 @@ msgstr ""
 
 #: traits/swiper-trait.php:305
 #: widgets/animated-text/animated-text.php:507
+#: widgets/toggle/toggle.php:1314
 msgid "Flip"
 msgstr ""
 
@@ -4642,7 +4670,7 @@ msgstr ""
 #: widgets/advance-toggle/advance-toggle.php:90
 #: widgets/flipbox/flipbox.php:377
 #: widgets/off-canvas/off-canvas.php:55
-#: widgets/toggle/toggle.php:177
+#: widgets/toggle/toggle.php:151
 msgid "Saved Section"
 msgstr ""
 
@@ -4650,28 +4678,28 @@ msgstr ""
 #: widgets/advance-toggle/advance-toggle.php:91
 #: widgets/flipbox/flipbox.php:378
 #: widgets/off-canvas/off-canvas.php:56
-#: widgets/toggle/toggle.php:178
+#: widgets/toggle/toggle.php:152
 msgid "Saved Container"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:97
 #: widgets/advance-toggle/advance-toggle.php:97
 #: widgets/flipbox/flipbox.php:384
-#: widgets/toggle/toggle.php:202
+#: widgets/toggle/toggle.php:176
 msgid "--- Select Section ---"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:103
 #: widgets/advance-toggle/advance-toggle.php:103
 #: widgets/flipbox/flipbox.php:390
-#: widgets/toggle/toggle.php:208
+#: widgets/toggle/toggle.php:182
 msgid "Sections"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:113
 #: widgets/advance-toggle/advance-toggle.php:113
 #: widgets/flipbox/flipbox.php:400
-#: widgets/toggle/toggle.php:218
+#: widgets/toggle/toggle.php:192
 msgid "--- Select Container ---"
 msgstr ""
 
@@ -4679,7 +4707,7 @@ msgstr ""
 #: widgets/advance-toggle/advance-toggle.php:119
 #: widgets/flipbox/flipbox.php:406
 #: widgets/testimonial/testimonial.php:359
-#: widgets/toggle/toggle.php:224
+#: widgets/toggle/toggle.php:198
 msgid "Container"
 msgstr ""
 
@@ -5008,7 +5036,7 @@ msgid "Toggle Title"
 msgstr ""
 
 #: widgets/advance-toggle/advance-toggle.php:132
-#: widgets/toggle/toggle.php:60
+#: widgets/toggle/toggle.php:34
 msgid "Toggle Content"
 msgstr ""
 
@@ -6849,7 +6877,7 @@ msgstr ""
 #: widgets/team-member/team-member.php:607
 #: widgets/testimonial/testimonial.php:516
 #: widgets/testimonial/testimonial.php:872
-#: widgets/toggle/toggle.php:1184
+#: widgets/toggle/toggle.php:1558
 msgid "Vertical Position"
 msgstr ""
 
@@ -6913,10 +6941,10 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1421
 #: widgets/featured-banner/featured-banner.php:1294
 #: widgets/featured-banner/featured-banner.php:1419
-#: widgets/toggle/toggle.php:641
-#: widgets/toggle/toggle.php:899
-#: widgets/toggle/toggle.php:948
-#: widgets/toggle/toggle.php:997
+#: widgets/toggle/toggle.php:775
+#: widgets/toggle/toggle.php:991
+#: widgets/toggle/toggle.php:1026
+#: widgets/toggle/toggle.php:1061
 msgid "Sub Title Color"
 msgstr ""
 
@@ -7570,14 +7598,16 @@ msgid "Show Title Text Styles"
 msgstr ""
 
 #: widgets/heading/heading.php:293
-#: widgets/toggle/toggle.php:134
-#: widgets/toggle/toggle.php:788
+#: widgets/toggle/toggle.php:108
+#: widgets/toggle/toggle.php:310
+#: widgets/toggle/toggle.php:406
 msgid "YES"
 msgstr ""
 
 #: widgets/heading/heading.php:294
-#: widgets/toggle/toggle.php:135
-#: widgets/toggle/toggle.php:789
+#: widgets/toggle/toggle.php:109
+#: widgets/toggle/toggle.php:311
+#: widgets/toggle/toggle.php:407
 msgid "NO"
 msgstr ""
 
@@ -8251,9 +8281,6 @@ msgstr ""
 #: widgets/menu/menu.php:852
 #: widgets/news-ticker/news-ticker.php:506
 #: widgets/search-box/search-box.php:432
-#: widgets/toggle/toggle.php:912
-#: widgets/toggle/toggle.php:961
-#: widgets/toggle/toggle.php:1010
 msgid "Arrow Color"
 msgstr ""
 
@@ -8283,7 +8310,7 @@ msgstr ""
 #: widgets/mega-menu/mega-menu.php:1088
 #: widgets/menu/menu.php:920
 #: widgets/search-box/search-box.php:672
-#: widgets/toggle/toggle.php:750
+#: widgets/toggle/toggle.php:884
 msgid "Toggle Button"
 msgstr ""
 
@@ -8321,7 +8348,7 @@ msgid "Posts"
 msgstr ""
 
 #: widgets/news-ticker/news-ticker.php:90
-#: widgets/toggle/toggle.php:240
+#: widgets/toggle/toggle.php:214
 msgid "Pages"
 msgstr ""
 
@@ -9426,7 +9453,7 @@ msgid "Ensure %1$s Plugin By dFactory is Installed & Activated."
 msgstr ""
 
 #: widgets/post-grid/post-grid.php:362
-#: widgets/toggle/toggle.php:309
+#: widgets/toggle/toggle.php:285
 msgid "Contents"
 msgstr ""
 
@@ -9792,12 +9819,12 @@ msgid "Enable Collapsible Search"
 msgstr ""
 
 #: widgets/search-box/search-box.php:167
+#: widgets/toggle/toggle.php:1082
 msgid "Toggle Icon"
 msgstr ""
 
 #: widgets/search-box/search-box.php:185
-#: widgets/toggle/toggle.php:360
-#: widgets/toggle/toggle.php:1356
+#: widgets/toggle/toggle.php:452
 msgid "Toggle Alignment"
 msgstr ""
 
@@ -10021,7 +10048,6 @@ msgid "Arrow"
 msgstr ""
 
 #: widgets/skill-bar/skill-bar.php:484
-#: widgets/toggle/toggle.php:786
 msgid "Show Arrow"
 msgstr ""
 
@@ -10110,7 +10136,7 @@ msgid "Something went wrong. Try again later."
 msgstr ""
 
 #: widgets/subscription-form/subscription-form.php:55
-#: widgets/toggle/toggle.php:84
+#: widgets/toggle/toggle.php:58
 msgid "Please note!"
 msgstr ""
 
@@ -10488,148 +10514,168 @@ msgstr ""
 msgid "Rated %s out of 5"
 msgstr ""
 
-#: widgets/toggle/toggle.php:71
+#: widgets/toggle/toggle.php:45
 msgid "Toggle Type"
 msgstr ""
 
-#: widgets/toggle/toggle.php:74
-#: widgets/toggle/toggle.php:1064
+#: widgets/toggle/toggle.php:48
+#: widgets/toggle/toggle.php:1438
 msgid "Switch"
 msgstr ""
 
-#: widgets/toggle/toggle.php:84
+#: widgets/toggle/toggle.php:58
 msgid "only the first two items are applicable to this toggle type."
 msgstr ""
 
-#: widgets/toggle/toggle.php:97
+#: widgets/toggle/toggle.php:71
 msgid "Controls Text"
 msgstr ""
 
-#: widgets/toggle/toggle.php:108
+#: widgets/toggle/toggle.php:82
 msgid "Active Text"
 msgstr ""
 
-#: widgets/toggle/toggle.php:120
+#: widgets/toggle/toggle.php:94
 msgid "Inactive Text"
 msgstr ""
 
-#: widgets/toggle/toggle.php:132
+#: widgets/toggle/toggle.php:106
 msgid "Show text above the switcher"
 msgstr ""
 
-#: widgets/toggle/toggle.php:176
-#: widgets/toggle/toggle.php:188
+#: widgets/toggle/toggle.php:150
+#: widgets/toggle/toggle.php:162
 msgid "Plain/ HTML Text"
 msgstr ""
 
-#: widgets/toggle/toggle.php:179
+#: widgets/toggle/toggle.php:153
 msgid "Saved Page"
 msgstr ""
 
-#: widgets/toggle/toggle.php:198
+#: widgets/toggle/toggle.php:172
 msgid "Add some content here."
 msgstr ""
 
-#: widgets/toggle/toggle.php:234
+#: widgets/toggle/toggle.php:208
 msgid "--- Select Page ---"
 msgstr ""
 
-#: widgets/toggle/toggle.php:287
+#: widgets/toggle/toggle.php:263
 msgid "Add Image"
 msgstr ""
 
-#: widgets/toggle/toggle.php:288
+#: widgets/toggle/toggle.php:264
 msgid "Shows only for Toggle Type → Button"
 msgstr ""
 
-#: widgets/toggle/toggle.php:298
+#: widgets/toggle/toggle.php:274
 msgid "Active on Load"
 msgstr ""
 
-#: widgets/toggle/toggle.php:316
+#: widgets/toggle/toggle.php:292
 msgid "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, natus! Facere suscipit doloremque, ea animi debitis quas nihil beatae nobis autem cupiditate sequi doloribus voluptate magnam ipsum provident magni officiis exercitationem aliquam. Iure, minima id consectetur recusandae laudantium nam aperiam delectus. Temporibus optio doloremque nesciunt rerum atque fugit cumque aspernatur excepturi odio minus earum sunt deleniti iste magnam eum nam voluptates porro dolores autem fuga, ad, nobis in minima quod."
 msgstr ""
 
-#: widgets/toggle/toggle.php:322
+#: widgets/toggle/toggle.php:298
 msgid "Non possimus cumque consequuntur sunt est alias quae nisi voluptas dolorum nesciunt iste maiores deserunt dignissimos placeat pariatur, vitae molestias numquam, porro natus, magnam officiis nostrum sint? Amet, et porro minus corporis, asperiores labore, molestiae culpa pariatur alias expedita ea voluptatem hic? Mollitia culpa odio sequi dolore nesciunt recusandae accusantium rerum harum praesentium eos est explicabo debitis rem, iusto, iure pariatur quaerat enim? Fugiat rem, exercitationem ipsa deleniti eius libero, itaque quia, porro eaque minima quibusdam? Hic quaerat blanditiis similique aliquam corrupti eos nemo molestiae dicta tempora."
 msgstr ""
 
-#: widgets/toggle/toggle.php:349
+#: widgets/toggle/toggle.php:308
+msgid "Content Display on Hover"
+msgstr ""
+
+#: widgets/toggle/toggle.php:375
+msgid "Button Indicator"
+msgstr ""
+
+#: widgets/toggle/toggle.php:404
+msgid "Enable Custom Indicator"
+msgstr ""
+
+#: widgets/toggle/toggle.php:441
 msgid "Toggle Bar"
 msgstr ""
 
-#: widgets/toggle/toggle.php:378
+#: widgets/toggle/toggle.php:470
 msgid "Set Space between toggle bar and content section"
 msgstr ""
 
-#: widgets/toggle/toggle.php:406
+#: widgets/toggle/toggle.php:498
 msgid "Toggle Bar Inner"
 msgstr ""
 
-#: widgets/toggle/toggle.php:417
+#: widgets/toggle/toggle.php:509
 msgid "Switch Direction"
 msgstr ""
 
-#: widgets/toggle/toggle.php:421
+#: widgets/toggle/toggle.php:518
 msgid "Set Space between toggles"
 msgstr ""
 
-#: widgets/toggle/toggle.php:592
+#: widgets/toggle/toggle.php:545
+msgid "Toggle Image"
+msgstr ""
+
+#: widgets/toggle/toggle.php:726
 msgid "Toggle Text"
 msgstr ""
 
-#: widgets/toggle/toggle.php:607
-#: widgets/toggle/toggle.php:765
+#: widgets/toggle/toggle.php:741
+#: widgets/toggle/toggle.php:899
 msgid "Sub Title Typography"
 msgstr ""
 
-#: widgets/toggle/toggle.php:629
-#: widgets/toggle/toggle.php:1312
+#: widgets/toggle/toggle.php:763
+#: widgets/toggle/toggle.php:1686
 msgid "Active Text Color"
 msgstr ""
 
-#: widgets/toggle/toggle.php:652
+#: widgets/toggle/toggle.php:786
 msgid "Sub Title Active Color"
 msgstr ""
 
-#: widgets/toggle/toggle.php:733
-#: widgets/toggle/toggle.php:1047
+#: widgets/toggle/toggle.php:867
+#: widgets/toggle/toggle.php:955
 msgid "Title Order"
 msgstr ""
 
-#: widgets/toggle/toggle.php:778
-msgid "Arrow Style"
+#: widgets/toggle/toggle.php:916
+msgid "Direction the Elements"
 msgstr ""
 
-#: widgets/toggle/toggle.php:801
-msgid "Arrow Width"
+#: widgets/toggle/toggle.php:932
+msgid "Direction Titles"
 msgstr ""
 
-#: widgets/toggle/toggle.php:816
-msgid "Arrow Height"
+#: widgets/toggle/toggle.php:935
+msgid "Align Titles"
 msgstr ""
 
-#: widgets/toggle/toggle.php:852
-msgid "Flip Arrow"
+#: widgets/toggle/toggle.php:945
+msgid "Text Align"
 msgstr ""
 
-#: widgets/toggle/toggle.php:860
+#: widgets/toggle/toggle.php:1211
+msgid "Toggle Indicator"
+msgstr ""
+
+#: widgets/toggle/toggle.php:1322
 msgid "Flipped"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1144
+#: widgets/toggle/toggle.php:1518
 msgid "Switch Handle"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1258
+#: widgets/toggle/toggle.php:1632
 msgid "Set Transition Duration in Millisecond"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1275
+#: widgets/toggle/toggle.php:1649
 msgid "Switch Handle Text"
 msgstr ""
 
-#: widgets/toggle/toggle.php:1301
+#: widgets/toggle/toggle.php:1675
 msgid "Hover Text Color"
 msgstr ""
 
