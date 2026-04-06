@@ -80,9 +80,12 @@ function haObserveTarget(target, callback) {
         toggleType = parent.data("toggle-type");
       if (toggleType == "button") {
         var buttons = parent.find(".zyre-toggle-switch-button"),
+          hoverContentDisplay = $scope.hasClass("zyre-toggle-content-display-hover--yes"),
+		  eventType = hoverContentDisplay ? "mouseenter" : "click",
           contents = parent.find(".zyre-toggle-content-section");
+		  
         buttons.each(function (inx, btn) {
-          $(this).on("click", function (e) {
+          $(this).on(eventType, function (e) {
             e.preventDefault();
 
             if ($(this).hasClass("active")) {

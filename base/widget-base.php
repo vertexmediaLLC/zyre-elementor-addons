@@ -534,6 +534,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'border_radius':
+					case 'border_radius_2':
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Border Radius', 'zyre-elementor-addons' ),
 							'type'       => Controls_Manager::DIMENSIONS,
@@ -1071,19 +1072,19 @@ abstract class Base extends Widget_Base {
 							'options'              => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
 								'left'    => [
 									'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
-									'icon'  => 'eicon-text-align-left',
+									'icon'  => 'eicon-align-start-h',
 								],
 								'center'  => [
 									'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
-									'icon'  => 'eicon-text-align-center',
+									'icon'  => 'eicon-align-center-h',
 								],
 								'right'   => [
 									'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
-									'icon'  => 'eicon-text-align-right',
+									'icon'  => 'eicon-align-end-h',
 								],
 								'stretch' => [
 									'title' => esc_html__( 'Stretch', 'zyre-elementor-addons' ),
-									'icon'  => 'eicon-text-align-justify',
+									'icon'  => 'eicon-align-stretch-h',
 								],
 							],
 							'toggle'               => ! empty( $values['toggle'] ) ? (bool) $values['toggle'] : true,
