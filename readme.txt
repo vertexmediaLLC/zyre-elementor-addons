@@ -8,17 +8,19 @@ Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight Elementor addon with Theme Builder, Header & Footer Builder, 60+ free widgets, templates, and advanced design tools.
+Lightweight Elementor addon with Theme Builder, Header/Footer Builder, Mega Menu Builder, 60+ widgets including Off-Canvas, and pre-built templates.
 
 == Description ==
 
 https://www.youtube.com/watch?v=Qayq9BoOEjQ
 
-[Zyre Elementor Addons](https://zyreaddons.com/) is a lightweight and user-friendly addon for Elementor that helps you build modern WordPress websites faster—without writing any code.
+[Zyre Elementor Addons](https://zyreaddons.com/) is a lightweight and user-friendly Elementor addon that helps you build modern WordPress websites faster—without writing any code.
 
-The plugin includes a free **Theme Builder** with **Header & Footer Builder**, **Single Post/Page templates**, and **Archive page layouts**, giving you full control over your site structure inside Elementor.
+The plugin includes a powerful Theme Builder with Header/Footer Builder, allowing you to design complete website layouts directly inside Elementor with full control and live preview.
 
-Zyre Elementor Addons also provides **60+ free widgets**, **ready-made page templates**, and **template blocks** to help you design professional layouts with ease.
+It also features a built-in Mega Menu Builder and provides 60+ free widgets, including the Off-Canvas Menu and Advanced Search Box with filters. Every widget comes with multiple pre-designed styles, so you can quickly achieve professional designs without extra effort.
+
+In addition, Zyre Elementor Addons includes pre-built templates and template blocks, enabling you to design stunning pages faster without starting from scratch.
 
 ### Complete Demo & Walkthrough
 
