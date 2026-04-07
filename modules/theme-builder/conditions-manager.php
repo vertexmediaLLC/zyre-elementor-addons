@@ -219,10 +219,28 @@ class Conditions_Manager {
 		return $this->all_conds_list[ $cond ]['all_label'] ?? '';
 	}
 
+	public function get_conditions_list( $type = 'initial' ) {
+		$conditions = [];
+
+		switch ( $type ) {
+			case 'initial':
+				$conditions = $this->initial_conditions();
+				break;
+			case 'archive':
+				$conditions = $this->archive_conditions();
+				break;
+			case 'singular':
+				$conditions = $this->singular_conditions();
+				break;
+		}
+
+		return $conditions;
+	}
+
 	private function initial_conditions() {
 		$conditions = [
 			'general' => [
-				'title' => __( 'General', 'zyre-elementor-addons' ),
+				'title' => __( 'Entire Site', 'zyre-elementor-addons' ),
 				'all_label' => __( 'Entire Site', 'zyre-elementor-addons' ),
 			],
 			'archive' => [
@@ -235,33 +253,7 @@ class Conditions_Manager {
 			],
 		];
 
-		return $conditions;
-	}
-
-	private function archive_conditions() {
-		$conditions = [
-			'all' => [
-				'title' => __( 'All Archives', 'zyre-elementor-addons' ),
-				'all_label' => __( 'All Archives', 'zyre-elementor-addons' ),
-			],
-		];
-
-		return apply_filters( 'zyreladdons/conditions/archive', $conditions );
-	}
-
-	private function singular_conditions() {
-		$conditions = [
-			'all' => [
-				'title' => __( 'All Singular', 'zyre-elementor-addons' ),
-				'all_label' => __( 'All Singular', 'zyre-elementor-addons' ),
-			],
-			'front_page' => [
-				'title' => __( 'Front Page', 'zyre-elementor-addons' ),
-				'all_label' => __( 'Front Page', 'zyre-elementor-addons' ),
-			],
-		];
-
-		return apply_filters( 'zyreladdons/conditions/singular', $conditions );
+		return apply_filters( 'zyreladdons/conditions/initial', $conditions );
 	}
 
 	protected function process_condition() {
@@ -327,6 +319,49 @@ class Conditions_Manager {
 		}
 	}
 
+	public function condition_autocomplete() {
+		try {
+			$this->validate_reqeust();
+
+			$object_type = ! empty( $_GET['object_type'] ) ? sanitize_text_field( wp_unslash( $_GET['object_type'] ) ) : '';
+
+			$object_types = [ 'post', 'singular', 'tax', 'archive', 'author' ];
+			$object_types = apply_filters( 'zyreladdons/conditions/autocomplete/object_types', $object_types );
+
+			if ( ! in_array( $object_type, $object_types, true ) ) {
+				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );
+			}
+
+			$response = [];
+
+			if ( 'post' === $object_type ) {
+				$response = $this->process_post();
+			}
+
+			if ( 'singular' === $object_type ) {
+				$response = $this->singular_conditions();
+			}
+
+			if ( 'tax' === $object_type ) {
+				$response = $this->process_term();
+			}
+
+			if ( 'archive' === $object_type ) {
+				$response = $this->archive_conditions();
+			}
+
+			if ( 'author' === $object_type ) {
+				$response = $this->process_author();
+			}
+
+			$response = apply_filters( 'zyreladdons/conditions/autocomplete', $response, $object_type );
+
+			wp_send_json_success( $response );
+		} catch ( Exception $e ) {
+			wp_send_json_error( $e->getMessage() );
+		}
+	}
+
 	private function process_post() {
 		$post_type  = sanitize_text_field( wp_unslash( $_GET['object_term'] ?? 'any' ) );
     	$query_term = sanitize_text_field( wp_unslash( $_GET['q'] ?? '' ) );
@@ -357,6 +392,21 @@ class Conditions_Manager {
 		}
 
 		return $out;
+	}
+
+	private function singular_conditions() {
+		$conditions = [
+			'all' => [
+				'title' => __( 'All Singular', 'zyre-elementor-addons' ),
+				'all_label' => __( 'All Singular', 'zyre-elementor-addons' ),
+			],
+			'front_page' => [
+				'title' => __( 'Front Page', 'zyre-elementor-addons' ),
+				'all_label' => __( 'Front Page', 'zyre-elementor-addons' ),
+			],
+		];
+
+		return apply_filters( 'zyreladdons/conditions/singular', $conditions );
 	}
 
 	public function process_term() {
@@ -395,6 +445,17 @@ class Conditions_Manager {
 		return $out;
 	}
 
+	private function archive_conditions() {
+		$conditions = [
+			'all' => [
+				'title' => __( 'All Archives', 'zyre-elementor-addons' ),
+				'all_label' => __( 'All Archives', 'zyre-elementor-addons' ),
+			],
+		];
+
+		return apply_filters( 'zyreladdons/conditions/archive', $conditions );
+	}
+
 	public function process_author() {
 		$query_term = ! empty( $_GET['q'] ) ? sanitize_text_field( wp_unslash( $_GET['q'] ) ) : '';
 
@@ -423,44 +484,6 @@ class Conditions_Manager {
 		}
 
 		return $out;
-	}
-
-	public function condition_autocomplete() {
-		try {
-			$this->validate_reqeust();
-
-			$object_type = ! empty( $_GET['object_type'] ) ? sanitize_text_field( wp_unslash( $_GET['object_type'] ) ) : '';
-
-			if ( ! in_array( $object_type, [ 'post', 'tax', 'author', 'archive', 'singular' ], true ) ) {
-				throw new Exception( esc_html__( 'Invalid object type', 'zyre-elementor-addons' ) );
-			}
-
-			$response = [];
-
-			if ( 'post' === $object_type ) {
-				$response = $this->process_post();
-			}
-
-			if ( 'tax' === $object_type ) {
-				$response = $this->process_term();
-			}
-
-			if ( 'author' === $object_type ) {
-				$response = $this->process_author();
-			}
-
-			if ( 'singular' === $object_type ) {
-				$response = $this->singular_conditions();
-			}
-
-			if ( 'archive' === $object_type ) {
-				$response = $this->archive_conditions();
-			}
-
-			wp_send_json_success( $response );
-		} catch ( Exception $e ) {
-			wp_send_json_error( $e->getMessage() );
-		}
 	}
 
 	public function get_all_conditions() {
@@ -700,11 +723,13 @@ class Conditions_Manager {
 							data-setting="name"
 							data-selected="<?php echo esc_attr( $name ); ?>"
 							class="modal__form-select">
+							<?php if ( ! empty( $this->get_conditions_list() ) ) : ?>
 							<optgroup label="General">
-								<option value="general" <?php selected( $name, 'general' ); ?>>Entire Site</option>
-								<option value="archive" <?php selected( $name, 'archive' ); ?>>Archives</option>
-								<option value="singular" <?php selected( $name, 'singular' ); ?>>Singular</option>
+								<?php foreach ( $this->get_conditions_list() as $key => $cond ) : ?>
+									<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $name, $key ); ?>><?php echo esc_html( $cond['title'] ); ?></option>
+								<?php endforeach; ?>
 							</optgroup>
+							<?php endif; ?>
 						</select>
 					</div>
 

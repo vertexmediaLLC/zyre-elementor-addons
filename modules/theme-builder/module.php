@@ -832,13 +832,19 @@ class Module {
 			unset( $args['post_type'] );
 		}
 
-		$post_type_args = wp_parse_args( $post_type_args );
+		$post_type_args = wp_parse_args( $post_type_args, $args );
+
 		$_post_types = get_post_types( $post_type_args, 'objects' );
 
 		$post_types = [];
 
 		foreach ( $_post_types as $post_type => $object ) {
 			$post_types[ $post_type ] = $object->label;
+		}
+
+		// Product form WooCommerce are handled separately.
+		if ( class_exists( 'woocommerce' ) ) {
+			unset( $post_types['product'] );
 		}
 
 		return $post_types;
