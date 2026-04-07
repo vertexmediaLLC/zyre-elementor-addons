@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $types    = \VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module::get_template_types();
+$initial_conditions = \VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Conditions_Manager::instance()->get_conditions_list();
 $selected = get_query_var( 'zyreladdons_library_type' );
 ?>
 
@@ -53,11 +54,13 @@ $selected = get_query_var( 'zyreladdons_library_type' );
 			</div>
 			<div class="zyre-tce-name">
 				<select id="name-{{uniqeID}}" data-id="name-{{uniqeID}}" data-parent="{{uniqeID}}" data-setting="name" class="modal__form-select">
-					<optgroup label="<?php esc_attr_e( 'General', 'zyre-elementor-addons' ); ?>">
-						<option value="general"><?php esc_html_e( 'Entire Site', 'zyre-elementor-addons' ); ?></option>
-						<option value="archive"><?php esc_html_e( 'Archives', 'zyre-elementor-addons' ); ?></option>
-						<option value="singular"><?php esc_html_e( 'Singular', 'zyre-elementor-addons' ); ?></option>
-					</optgroup>
+					<?php if ( ! empty( $initial_conditions ) && is_array( $initial_conditions ) ) : ?>
+						<optgroup label="<?php esc_attr_e( 'General', 'zyre-elementor-addons' ); ?>">
+						<?php foreach ( $initial_conditions as $key => $cond ) : ?>
+							<option value="<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $cond['title'] ); ?></option>
+						<?php endforeach; ?>
+						</optgroup>
+					<?php endif; ?>
 				</select>
 			</div>
 			<div class="zyre-tce-sub_name zyre-d-none">
