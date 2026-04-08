@@ -821,7 +821,7 @@ class Module {
 		return false;
 	}
 
-	public function get_public_post_types( $args = [] ) {
+	public static function get_public_post_types( $args = [] ) {
 		$post_type_args = [
 			'show_in_nav_menus' => true,
 		];
@@ -853,7 +853,7 @@ class Module {
 	public function template_include( $template ) {
 		$location = '';
 
-		if ( is_singular( array_keys( $this->get_public_post_types() ) ) || is_404() ) {
+		if ( is_singular( array_keys( self::get_public_post_types() ) ) || is_404() ) {
 			$location = 'single';
 
 			$is_built_with_elementor = $this->check_elementor_content( get_the_ID() );
