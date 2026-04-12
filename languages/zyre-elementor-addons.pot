@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-06T10:21:37+00:00\n"
+"POT-Creation-Date: 2026-04-12T11:50:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -760,8 +760,8 @@ msgstr ""
 #: widgets/news-ticker/news-ticker.php:461
 #: widgets/off-canvas/off-canvas.php:440
 #: widgets/off-canvas/off-canvas.php:480
-#: widgets/off-canvas/off-canvas.php:781
-#: widgets/off-canvas/off-canvas.php:1055
+#: widgets/off-canvas/off-canvas.php:785
+#: widgets/off-canvas/off-canvas.php:1059
 #: widgets/page-title/page-title.php:119
 #: widgets/pdf-view/pdf-view.php:114
 #: widgets/post-comments/post-comments.php:893
@@ -880,7 +880,7 @@ msgstr ""
 #: widgets/news-ticker/news-ticker.php:402
 #: widgets/news-ticker/news-ticker.php:465
 #: widgets/off-canvas/off-canvas.php:444
-#: widgets/off-canvas/off-canvas.php:785
+#: widgets/off-canvas/off-canvas.php:789
 #: widgets/page-title/page-title.php:123
 #: widgets/post-comments/post-comments.php:802
 #: widgets/post-comments/post-comments.php:897
@@ -1005,8 +1005,8 @@ msgstr ""
 #: widgets/news-ticker/news-ticker.php:469
 #: widgets/off-canvas/off-canvas.php:448
 #: widgets/off-canvas/off-canvas.php:484
-#: widgets/off-canvas/off-canvas.php:789
-#: widgets/off-canvas/off-canvas.php:1059
+#: widgets/off-canvas/off-canvas.php:793
+#: widgets/off-canvas/off-canvas.php:1063
 #: widgets/page-title/page-title.php:127
 #: widgets/post-comments/post-comments.php:901
 #: widgets/post-comments/post-comments.php:951
@@ -1078,8 +1078,8 @@ msgstr ""
 #: widgets/business-hour/business-hour.php:908
 #: widgets/business-hour/business-hour.php:988
 #: widgets/news-ticker/news-ticker.php:738
-#: widgets/off-canvas/off-canvas.php:805
-#: widgets/off-canvas/off-canvas.php:954
+#: widgets/off-canvas/off-canvas.php:809
+#: widgets/off-canvas/off-canvas.php:958
 #: widgets/pdf-view/pdf-view.php:450
 #: widgets/post-comments/post-comments.php:810
 #: widgets/post-comments/post-comments.php:832
@@ -1676,25 +1676,25 @@ msgid "No saved templates found!"
 msgstr ""
 
 #: classes/select2-handler.php:12
-#: modules/theme-builder/conditions-manager.php:320
-#: modules/theme-builder/conditions-manager.php:556
-#: modules/theme-builder/conditions-manager.php:560
+#: modules/theme-builder/conditions-manager.php:326
+#: modules/theme-builder/conditions-manager.php:584
+#: modules/theme-builder/conditions-manager.php:588
 msgid "Unauthorized request"
 msgstr ""
 
 #: classes/select2-handler.php:18
 #: modules/mega-menu/module.php:185
-#: modules/theme-builder/conditions-manager.php:326
+#: modules/theme-builder/conditions-manager.php:332
 msgid "Invalid request"
 msgstr ""
 
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:435
+#: modules/theme-builder/conditions-manager.php:346
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:105
-#: modules/theme-builder/conditions-manager.php:367
+#: modules/theme-builder/conditions-manager.php:431
 msgid "Invalid taxonomy"
 msgstr ""
 
@@ -1840,10 +1840,10 @@ msgstr ""
 #: widgets/heading/heading.php:511
 #: widgets/image-heading/image-heading.php:658
 #: widgets/image-heading/image-heading.php:684
-#: widgets/off-canvas/off-canvas.php:843
-#: widgets/off-canvas/off-canvas.php:879
-#: widgets/off-canvas/off-canvas.php:992
-#: widgets/off-canvas/off-canvas.php:1028
+#: widgets/off-canvas/off-canvas.php:847
+#: widgets/off-canvas/off-canvas.php:883
+#: widgets/off-canvas/off-canvas.php:996
+#: widgets/off-canvas/off-canvas.php:1032
 #: widgets/pdf-view/pdf-view.php:590
 #: widgets/pdf-view/pdf-view.php:622
 #: widgets/pdf-view/pdf-view.php:721
@@ -2114,7 +2114,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:894
 #: widgets/flipbox/flipbox.php:562
 #: widgets/image-grid/image-grid.php:278
-#: widgets/off-canvas/off-canvas.php:595
+#: widgets/off-canvas/off-canvas.php:599
 msgid "Overlay"
 msgstr ""
 
@@ -2242,7 +2242,7 @@ msgstr ""
 
 #: classes/widgets-manager.php:1179
 #: widgets/off-canvas/off-canvas.php:172
-#: widgets/off-canvas/off-canvas.php:765
+#: widgets/off-canvas/off-canvas.php:769
 #: widgets/toggle/toggle.php:15
 msgid "Toggle"
 msgstr ""
@@ -2507,9 +2507,9 @@ msgstr ""
 #: widgets/menu/menu.php:1238
 #: widgets/news-ticker/news-ticker.php:640
 #: widgets/news-ticker/news-ticker.php:757
-#: widgets/off-canvas/off-canvas.php:706
-#: widgets/off-canvas/off-canvas.php:826
-#: widgets/off-canvas/off-canvas.php:975
+#: widgets/off-canvas/off-canvas.php:710
+#: widgets/off-canvas/off-canvas.php:830
+#: widgets/off-canvas/off-canvas.php:979
 #: widgets/page-title/page-title.php:384
 #: widgets/pdf-view/pdf-view.php:689
 #: widgets/post-comments/post-comments.php:1404
@@ -2895,84 +2895,43 @@ msgstr ""
 msgid "No content found"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:225
-#: modules/theme-builder/templates/template-conditions.php:56
-#: widgets/animated-text/animated-text.php:54
-#: widgets/archive-posts/archive-posts.php:56
-#: widgets/archive-posts/archive-posts.php:884
-#: widgets/cf7/cf7.php:157
-#: widgets/countdown/countdown.php:170
-#: widgets/dual-button/dual-button.php:256
-#: widgets/dual-color-heading/dual-color-heading.php:160
-#: widgets/feature-list/feature-list.php:60
-#: widgets/flipbox/flipbox.php:318
-#: widgets/image-grid/image-grid.php:43
-#: widgets/image-list/image-list.php:62
-#: widgets/infobox/infobox.php:381
-#: widgets/list-group/list-group.php:61
-#: widgets/logo-grid/logo-grid.php:232
-#: widgets/numeric-list/numeric-list.php:60
-#: widgets/off-canvas/off-canvas.php:39
-#: widgets/off-canvas/off-canvas.php:558
-#: widgets/post-content/post-content.php:98
-#: widgets/post-grid/post-grid.php:48
-#: widgets/post-grid/post-grid.php:1164
-#: widgets/post-meta/post-meta.php:512
-#: widgets/post-navigation/post-navigation.php:166
-#: widgets/search-box/search-box.php:37
-#: widgets/social-icon/social-icon.php:65
-#: widgets/social-share/social-share.php:684
-#: widgets/subscription-form/subscription-form.php:264
-msgid "General"
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:226
-#: modules/theme-builder/templates/template-conditions.php:57
+#: modules/theme-builder/conditions-manager.php:243
+#: modules/theme-builder/conditions-manager.php:244
 msgid "Entire Site"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:229
-#: modules/theme-builder/templates/template-conditions.php:58
+#: modules/theme-builder/conditions-manager.php:247
 #: widgets/archive-title/archive-title.php:819
 msgid "Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:230
-#: modules/theme-builder/conditions-manager.php:244
-#: modules/theme-builder/conditions-manager.php:245
+#: modules/theme-builder/conditions-manager.php:248
+#: modules/theme-builder/conditions-manager.php:262
+#: modules/theme-builder/conditions-manager.php:263
 msgid "All Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:233
-#: modules/theme-builder/templates/template-conditions.php:59
+#: modules/theme-builder/conditions-manager.php:251
 msgid "Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:234
-#: modules/theme-builder/conditions-manager.php:255
-#: modules/theme-builder/conditions-manager.php:256
+#: modules/theme-builder/conditions-manager.php:252
+#: modules/theme-builder/conditions-manager.php:414
+#: modules/theme-builder/conditions-manager.php:415
 msgid "All Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:259
-#: modules/theme-builder/conditions-manager.php:260
+#: modules/theme-builder/conditions-manager.php:418
+#: modules/theme-builder/conditions-manager.php:419
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:370
-msgid "Tag: "
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:370
-msgid "Category: "
-msgstr ""
-
-#: modules/theme-builder/conditions-manager.php:586
+#: modules/theme-builder/conditions-manager.php:614
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:765
-#: modules/theme-builder/templates/template-conditions.php:74
+#: modules/theme-builder/conditions-manager.php:778
+#: modules/theme-builder/templates/template-conditions.php:77
 msgid "Remove this item"
 msgstr ""
 
@@ -3139,43 +3098,43 @@ msgstr ""
 msgid "Not Applicable"
 msgstr ""
 
-#: modules/theme-builder/module.php:697
+#: modules/theme-builder/module.php:707
 #: zyre-elementor-addons.php:123
 #: zyre-elementor-addons.php:136
 #: zyre-elementor-addons.php:158
 msgid "Elementor"
 msgstr ""
 
-#: modules/theme-builder/module.php:743
+#: modules/theme-builder/module.php:753
 msgid "Header Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:747
+#: modules/theme-builder/module.php:757
 msgid "Footer Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:751
+#: modules/theme-builder/module.php:761
 #: widgets/animated-text/animated-text.php:490
 msgid "Single Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:755
+#: modules/theme-builder/module.php:765
 msgid "Archive Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:759
+#: modules/theme-builder/module.php:769
 msgid "Loop Template"
 msgstr ""
 
-#: modules/theme-builder/module.php:787
+#: modules/theme-builder/module.php:797
 msgid "Invalid post type."
 msgstr ""
 
-#: modules/theme-builder/module.php:791
+#: modules/theme-builder/module.php:801
 msgid "Permission denied."
 msgstr ""
 
-#: modules/theme-builder/module.php:957
+#: modules/theme-builder/module.php:973
 msgid "Zyre Theme Builder"
 msgstr ""
 
@@ -3184,8 +3143,8 @@ msgid "Create New Template"
 msgstr ""
 
 #: modules/theme-builder/templates/new-template.php:19
-#: modules/theme-builder/templates/template-conditions.php:20
-#: modules/theme-builder/templates/template-conditions.php:37
+#: modules/theme-builder/templates/template-conditions.php:21
+#: modules/theme-builder/templates/template-conditions.php:38
 msgid "Close modal"
 msgstr ""
 
@@ -3213,40 +3172,70 @@ msgstr ""
 msgid "Create Template"
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:18
+#: modules/theme-builder/templates/template-conditions.php:19
 msgid "Template Elements Condition"
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:25
+#: modules/theme-builder/templates/template-conditions.php:26
 msgid "Set Condition"
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:26
+#: modules/theme-builder/templates/template-conditions.php:27
 msgid "Select where to show your template."
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:27
+#: modules/theme-builder/templates/template-conditions.php:28
 msgid "For example, select 'Entire Site' to display it everywhere."
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:32
+#: modules/theme-builder/templates/template-conditions.php:33
 msgid "+ Add More"
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:37
+#: modules/theme-builder/templates/template-conditions.php:38
 msgid "&times; Cancel"
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:38
+#: modules/theme-builder/templates/template-conditions.php:39
 msgid "Save & Close"
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:50
+#: modules/theme-builder/templates/template-conditions.php:51
 msgid "Include"
 msgstr ""
 
-#: modules/theme-builder/templates/template-conditions.php:51
+#: modules/theme-builder/templates/template-conditions.php:52
 msgid "Exclude"
+msgstr ""
+
+#: modules/theme-builder/templates/template-conditions.php:58
+#: widgets/animated-text/animated-text.php:54
+#: widgets/archive-posts/archive-posts.php:56
+#: widgets/archive-posts/archive-posts.php:884
+#: widgets/cf7/cf7.php:157
+#: widgets/countdown/countdown.php:170
+#: widgets/dual-button/dual-button.php:256
+#: widgets/dual-color-heading/dual-color-heading.php:160
+#: widgets/feature-list/feature-list.php:60
+#: widgets/flipbox/flipbox.php:318
+#: widgets/image-grid/image-grid.php:43
+#: widgets/image-list/image-list.php:62
+#: widgets/infobox/infobox.php:381
+#: widgets/list-group/list-group.php:61
+#: widgets/logo-grid/logo-grid.php:232
+#: widgets/numeric-list/numeric-list.php:60
+#: widgets/off-canvas/off-canvas.php:39
+#: widgets/off-canvas/off-canvas.php:558
+#: widgets/post-content/post-content.php:98
+#: widgets/post-grid/post-grid.php:48
+#: widgets/post-grid/post-grid.php:1164
+#: widgets/post-meta/post-meta.php:512
+#: widgets/post-navigation/post-navigation.php:166
+#: widgets/search-box/search-box.php:37
+#: widgets/social-icon/social-icon.php:65
+#: widgets/social-share/social-share.php:684
+#: widgets/subscription-form/subscription-form.php:264
+msgid "General"
 msgstr ""
 
 #. translators: %s is the plugin version
@@ -3728,9 +3717,9 @@ msgstr ""
 #: widgets/menu/menu.php:1123
 #: widgets/news-ticker/news-ticker.php:660
 #: widgets/news-ticker/news-ticker.php:778
-#: widgets/off-canvas/off-canvas.php:733
-#: widgets/off-canvas/off-canvas.php:860
-#: widgets/off-canvas/off-canvas.php:1009
+#: widgets/off-canvas/off-canvas.php:737
+#: widgets/off-canvas/off-canvas.php:864
+#: widgets/off-canvas/off-canvas.php:1013
 #: widgets/page-title/page-title.php:404
 #: widgets/pdf-view/pdf-view.php:732
 #: widgets/post-comments/post-comments.php:1470
@@ -3865,7 +3854,7 @@ msgstr ""
 #: widgets/numeric-list/numeric-list.php:106
 #: widgets/off-canvas/off-canvas.php:137
 #: widgets/off-canvas/off-canvas.php:140
-#: widgets/off-canvas/off-canvas.php:643
+#: widgets/off-canvas/off-canvas.php:647
 #: widgets/page-title/page-title.php:362
 #: widgets/pdf-view/pdf-view.php:575
 #: widgets/post-grid/post-grid.php:290
@@ -3924,7 +3913,7 @@ msgstr ""
 #: widgets/list-group/list-group.php:126
 #: widgets/numeric-list/numeric-list.php:126
 #: widgets/off-canvas/off-canvas.php:153
-#: widgets/off-canvas/off-canvas.php:662
+#: widgets/off-canvas/off-canvas.php:666
 msgid "Description"
 msgstr ""
 
@@ -4079,7 +4068,7 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:225
 #: widgets/image-grid/image-grid.php:702
 #: widgets/infobox/infobox.php:677
-#: widgets/off-canvas/off-canvas.php:614
+#: widgets/off-canvas/off-canvas.php:618
 #: widgets/testimonial/testimonial.php:197
 #: widgets/toggle/toggle.php:1702
 msgid "Content"
@@ -5920,8 +5909,8 @@ msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:1230
 #: widgets/archive-posts/archive-posts.php:1252
-#: widgets/off-canvas/off-canvas.php:716
-#: widgets/off-canvas/off-canvas.php:743
+#: widgets/off-canvas/off-canvas.php:720
+#: widgets/off-canvas/off-canvas.php:747
 #: widgets/post-comments/post-comments.php:1600
 #: widgets/post-comments/post-comments.php:2477
 #: widgets/post-comments/post-comments.php:2499
@@ -8559,7 +8548,7 @@ msgid "Button Close Icon"
 msgstr ""
 
 #: widgets/off-canvas/off-canvas.php:359
-#: widgets/off-canvas/off-canvas.php:920
+#: widgets/off-canvas/off-canvas.php:924
 msgid "Close Bar"
 msgstr ""
 
@@ -8604,24 +8593,28 @@ msgstr ""
 msgid "Body Height"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:680
+#: widgets/off-canvas/off-canvas.php:586
+msgid "Body Padding"
+msgstr ""
+
+#: widgets/off-canvas/off-canvas.php:684
 #: widgets/post-content/post-content.php:269
 msgid "Links"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:899
+#: widgets/off-canvas/off-canvas.php:903
 msgid "Floating Styles"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:1048
+#: widgets/off-canvas/off-canvas.php:1052
 msgid "Button Wrapper"
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:1140
+#: widgets/off-canvas/off-canvas.php:1144
 msgid "You have chosen to open the off canvas using a different element."
 msgstr ""
 
-#: widgets/off-canvas/off-canvas.php:1145
+#: widgets/off-canvas/off-canvas.php:1149
 msgid "You’ve set the offcanvas toggle to float, keeping it fixed on the screen."
 msgstr ""
 

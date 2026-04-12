@@ -582,6 +582,10 @@ class Off_Canvas extends Base {
 					'box_shadow'    => [],
 					'bg'            => [],
 					'padding'       => [],
+					'padding_2'     => [
+						'label'    => __( 'Body Padding', 'zyre-elementor-addons' ),
+						'selector' => '.zyre-offcanvas-content.zyre-offcanvas-content-{{ID}} .zyre-offcanvas-body',
+					],
 				],
 				'selector' => '.zyre-offcanvas-content.zyre-offcanvas-content-{{ID}}',
 			]

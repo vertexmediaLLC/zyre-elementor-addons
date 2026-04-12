@@ -633,14 +633,14 @@ class Module {
 				if ( ! empty( $document_conditions ) ) {
 					foreach ( $document_conditions as $key => $condition ) {
 						if ( 'include' === $condition['type'] ) {
-							$title = $this->get_condition_title( $condition['sub_name'], $condition['sub_id'] );
-							$sub_page_id = $title ? '#' . $title : '';
-							$con_label = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_page_id : Conditions_Manager::instance()->get_all_name( $condition['name'] );
+							$title = self::get_condition_title( $condition['sub_name'], $condition['sub_id'] );
+							$sub_title = $title ? ' #' . $title : '';
+							$con_label = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_title : Conditions_Manager::instance()->get_all_name( $condition['name'] );
 							$include_conditions[] = $con_label;
 						} elseif ( 'exclude' === $condition['type'] ) {
-							$title = $this->get_condition_title( $condition['sub_name'], $condition['sub_id'] );
-							$sub_page_id = $title ? '#' . $title : '';
-							$con_label = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_page_id : Conditions_Manager::instance()->get_all_name( $condition['name'] );
+							$title = self::get_condition_title( $condition['sub_name'], $condition['sub_id'] );
+							$sub_title = $title ? ' #' . $title : '';
+							$con_label = ! empty( $condition['sub_name'] ) && 'all' !== $condition['sub_name'] ? Conditions_Manager::instance()->get_name( $condition['sub_name'] ) . $sub_title : Conditions_Manager::instance()->get_all_name( $condition['name'] );
 							$exclude_conditions[] = $con_label;
 						}
 					}
@@ -664,25 +664,35 @@ class Module {
 		}
 	}
 
-	private function get_condition_title( $sub_name, $sub_id ) {
+	private static function get_sub_conditions() {
+		$conditions = [
+			'author'   => ['author', 'by_author'],
+		];
+
+		return apply_filters( 'zyreladdons/conditions/sub_conditions', $conditions );
+	}
+
+	public static function get_condition_title( $sub_name, $sub_id ) {
 		if ( empty( $sub_id ) ) {
 			return '';
 		}
 
+		$conditions = self::get_sub_conditions();
+
 		// Category
-		if ( in_array( $sub_name, [ 'in_category', 'in_category_children' ], true ) ) {
+		if ( in_array( $sub_name, $conditions['category'], true ) ) {
 			$term = get_term( $sub_id, 'category' );
 			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
 		}
 
 		// Tag
-		if ( 'in_post_tag' === $sub_name ) {
+		if ( in_array( $sub_name, $conditions['post_tag'], true ) ) {
 			$term = get_term( $sub_id, 'post_tag' );
 			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
 		}
 
 		// Author
-		if ( in_array( $sub_name, [ 'post_by_author', 'page_by_author' ], true ) ) {
+		if ( in_array( $sub_name, $conditions['author'], true ) ) {
 			$user = get_userdata( $sub_id );
 			return $user ? $user->display_name : '';
 		}

@@ -197,6 +197,7 @@ function _checkIfArray(r) {
 
 	function handleSelectChange(event) {
 		if (event.target.localName == "select") {
+			
 			var parentID = event.target.dataset.parent;
 			var selectedType = event.target.dataset.setting;
 			var selected = event.target.value;
@@ -205,10 +206,12 @@ function _checkIfArray(r) {
 			var sub_name = $("[data-id='sub_name-" + parentID + "']");
 			var sub_id = $("[data-id='sub_id-" + parentID + "']");
 			if (selectedType == "type") {
-				//TODO: Add prefix icon later on
+				//ToDo: Add prefix icon later on
 			}
 			if (selectedType == "name") {
 				if (selected == "general") {
+					sub_name.val('').trigger('change');
+					sub_id.val('').trigger('change');
 					sub_name.parent().hide();
 					sub_id.parent().hide();
 				} else {
@@ -224,13 +227,29 @@ function _checkIfArray(r) {
 					post: "post",
 					in_category: "category",
 					in_category_children: "category",
+					author: "author",
+					category: "category",
+					child_of_category: "category",
+					any_child_of_category: "category",
+					post_tag: "post_tag",
 					in_post_tag: "post_tag",
 					post_by_author: "author",
 					page: "page",
 					page_by_author: "author",
+					attachment_by_author: "author",
 					child_of: "page",
 					any_child_of: "page",
 					by_author: "author",
+					product_brand: "tax",
+					product_cat: "tax",
+					product_tag: "tax",
+					product: "product",
+					in_product_brand: "tax",
+					in_product_brand_children: "tax",
+					in_product_cat: "tax",
+					in_product_cat_children: "tax",
+					in_product_tag: "tax",
+					product_by_author: "author",
 				};
 				if (dataPair.hasOwnProperty(selected)) {
 					// Toggle Visibility
@@ -291,6 +310,9 @@ function _checkIfArray(r) {
 						dropdownCssClass: "zyre-template-condition-dropdown",
 					});
 				} else {
+					// clear value
+    				sub_id.val('').trigger('change');
+
 					sub_id.parent().hide();
 				}
 			}

@@ -49,6 +49,8 @@ body.rtl .zyre-addon-search-box .zyre-search-form-select-wrapper::after {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	background: none;
+	background-image: none;
 	font-weight: 700;
 	padding: var(--padding-top) var(--padding-right) var(--padding-bottom) var(--padding-left);
 }
