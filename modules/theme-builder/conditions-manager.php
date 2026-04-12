@@ -256,6 +256,17 @@ class Conditions_Manager {
 		return apply_filters( 'zyreladdons/conditions/initial', $conditions );
 	}
 
+	private function get_archive_conditions() {
+		$conditions = [
+			'' => [
+				'title' => __( 'All Archives', 'zyre-elementor-addons' ),
+				'all_label' => __( 'All Archives', 'zyre-elementor-addons' ),
+			],
+		];
+
+		return apply_filters( 'zyreladdons/conditions/archive', $conditions );
+	}
+
 	protected function process_condition() {
 		$conditions = array(
 			'name' => array_keys( $this->initial_conditions() ),
@@ -267,17 +278,20 @@ class Conditions_Manager {
 
 		$tmp_singular = $this->singular_conditions();
 		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular;
+		$all_cond_list = apply_filters( 'zyreladdons/conditions/all_conditions_list', $all_cond_list );
 
-		if ( isset( $tmp_singular['post_group']['conditions'] ) ) {
-			$all_cond_list += $tmp_singular['post_group']['conditions'];
-			unset($tmp_singular['post_group']);
+		unset($all_cond_list['']);
+
+		$unset_groups = [ 'post_group', 'page_group' ];
+		$unset_groups = apply_filters( 'zyreladdons/conditions/process/unset/groups', $unset_groups );
+		
+		foreach ( $unset_groups as $key ) {
+			if ( isset( $all_cond_list[ $key ]['conditions'] ) ) {
+				$all_cond_list += $all_cond_list[ $key ]['conditions'];
+				unset($all_cond_list[ $key ]);
+			}
 		}
-
-		if ( isset( $tmp_singular['page_group']['conditions'] ) ) {
-			$all_cond_list += $tmp_singular['page_group']['conditions'];
-			unset($tmp_singular['page_group']);
-		}
-
+		
 		$this->all_conds_list = $all_cond_list;
 		$this->all_conds = $conditions;
 	}
@@ -396,7 +410,7 @@ class Conditions_Manager {
 
 	private function singular_conditions() {
 		$conditions = [
-			'all' => [
+			'' => [
 				'title' => __( 'All Singular', 'zyre-elementor-addons' ),
 				'all_label' => __( 'All Singular', 'zyre-elementor-addons' ),
 			],
@@ -416,8 +430,6 @@ class Conditions_Manager {
 		if ( empty( $term_taxonomy ) ) {
 			throw new Exception( esc_html__( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
 		}
-
-		$prefix = 'post_tag' === $term_taxonomy ? __( 'Tag: ', 'zyre-elementor-addons' ) : __( 'Category: ', 'zyre-elementor-addons' );
 
 		$args = [
 			'taxonomy'   => $term_taxonomy,
@@ -439,21 +451,14 @@ class Conditions_Manager {
 
 		$out = [];
 		foreach ( $terms as $term ) {
-			$out[ (string) $term->term_id ] = $prefix . $term->name;
+			$out[ (string) $term->term_id ] = $term->name;
 		}
 
 		return $out;
 	}
 
 	private function archive_conditions() {
-		$conditions = [
-			'all' => [
-				'title' => __( 'All Archives', 'zyre-elementor-addons' ),
-				'all_label' => __( 'All Archives', 'zyre-elementor-addons' ),
-			],
-		];
-
-		return apply_filters( 'zyreladdons/conditions/archive', $conditions );
+		return $this->get_archive_conditions();
 	}
 
 	public function process_author() {
@@ -666,24 +671,7 @@ class Conditions_Manager {
 			$sub_name = $parsed_condition['sub_name'];
 			$sub_id   = $parsed_condition['sub_id'];
 
-			$title = get_the_title( $sub_id );
-
-			 if ( in_array( $sub_name, [ 'in_category', 'in_category_children' ], true ) ) {
-				$term = get_term( $sub_id, 'category' );
-				if ( $term && ! is_wp_error( $term ) ) {
-					$title = $term->name;
-				}
-			} elseif ( 'in_post_tag' === $sub_name ) {
-				$term = get_term( $sub_id, 'post_tag' );
-				if ( $term && ! is_wp_error( $term ) ) {
-					$title = $term->name;
-				}
-			} elseif ( in_array( $sub_name, [ 'post_by_author', 'page_by_author' ], true ) ) {
-				$user = get_userdata( $sub_id );
-				if ( $user ) {
-					$title = $user->display_name;
-				}
-			}
+			$title = Module::get_condition_title( $sub_name, $sub_id );
 
 			$uuid = uniqid();
 
