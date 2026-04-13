@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-12T11:50:09+00:00\n"
+"POT-Creation-Date: 2026-04-13T11:24:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -1676,25 +1676,25 @@ msgid "No saved templates found!"
 msgstr ""
 
 #: classes/select2-handler.php:12
-#: modules/theme-builder/conditions-manager.php:326
-#: modules/theme-builder/conditions-manager.php:584
-#: modules/theme-builder/conditions-manager.php:588
+#: modules/theme-builder/conditions-manager.php:329
+#: modules/theme-builder/conditions-manager.php:587
+#: modules/theme-builder/conditions-manager.php:591
 msgid "Unauthorized request"
 msgstr ""
 
 #: classes/select2-handler.php:18
 #: modules/mega-menu/module.php:185
-#: modules/theme-builder/conditions-manager.php:332
+#: modules/theme-builder/conditions-manager.php:335
 msgid "Invalid request"
 msgstr ""
 
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:346
+#: modules/theme-builder/conditions-manager.php:349
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:105
-#: modules/theme-builder/conditions-manager.php:431
+#: modules/theme-builder/conditions-manager.php:434
 msgid "Invalid taxonomy"
 msgstr ""
 
@@ -2640,8 +2640,8 @@ msgid "Add New Item"
 msgstr ""
 
 #: modules/mega-menu/cpt.php:34
-#: modules/theme-builder/module.php:424
-#: modules/theme-builder/module.php:518
+#: modules/theme-builder/module.php:425
+#: modules/theme-builder/module.php:519
 msgid "Add New"
 msgstr ""
 
@@ -2670,32 +2670,32 @@ msgid "Search Item"
 msgstr ""
 
 #: modules/mega-menu/cpt.php:41
-#: modules/theme-builder/module.php:431
+#: modules/theme-builder/module.php:432
 msgid "Not found"
 msgstr ""
 
 #: modules/mega-menu/cpt.php:42
-#: modules/theme-builder/module.php:432
+#: modules/theme-builder/module.php:433
 msgid "Not found in Trash"
 msgstr ""
 
 #: modules/mega-menu/cpt.php:43
-#: modules/theme-builder/module.php:433
+#: modules/theme-builder/module.php:434
 msgid "Featured Image"
 msgstr ""
 
 #: modules/mega-menu/cpt.php:44
-#: modules/theme-builder/module.php:434
+#: modules/theme-builder/module.php:435
 msgid "Set featured image"
 msgstr ""
 
 #: modules/mega-menu/cpt.php:45
-#: modules/theme-builder/module.php:435
+#: modules/theme-builder/module.php:436
 msgid "Remove featured image"
 msgstr ""
 
 #: modules/mega-menu/cpt.php:46
-#: modules/theme-builder/module.php:436
+#: modules/theme-builder/module.php:437
 msgid "Use as featured image"
 msgstr ""
 
@@ -2895,173 +2895,173 @@ msgstr ""
 msgid "No content found"
 msgstr ""
 
+#: modules/theme-builder/conditions-manager.php:242
 #: modules/theme-builder/conditions-manager.php:243
-#: modules/theme-builder/conditions-manager.php:244
 msgid "Entire Site"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:247
+#: modules/theme-builder/conditions-manager.php:246
 #: widgets/archive-title/archive-title.php:819
 msgid "Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:248
+#: modules/theme-builder/conditions-manager.php:247
 #: modules/theme-builder/conditions-manager.php:262
 #: modules/theme-builder/conditions-manager.php:263
 msgid "All Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:251
+#: modules/theme-builder/conditions-manager.php:250
 msgid "Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:252
-#: modules/theme-builder/conditions-manager.php:414
-#: modules/theme-builder/conditions-manager.php:415
+#: modules/theme-builder/conditions-manager.php:251
+#: modules/theme-builder/conditions-manager.php:417
+#: modules/theme-builder/conditions-manager.php:418
 msgid "All Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:418
-#: modules/theme-builder/conditions-manager.php:419
+#: modules/theme-builder/conditions-manager.php:421
+#: modules/theme-builder/conditions-manager.php:422
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:614
+#: modules/theme-builder/conditions-manager.php:617
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:778
+#: modules/theme-builder/conditions-manager.php:783
 #: modules/theme-builder/templates/template-conditions.php:77
 msgid "Remove this item"
 msgstr ""
 
-#: modules/theme-builder/module.php:311
 #: modules/theme-builder/module.php:312
-#: modules/theme-builder/module.php:445
-#: modules/theme-builder/module.php:515
-msgid "Theme Builder"
-msgstr ""
-
-#: modules/theme-builder/module.php:415
-msgctxt "Post Type General Name"
+#: modules/theme-builder/module.php:313
+#: modules/theme-builder/module.php:446
+#: modules/theme-builder/module.php:516
 msgid "Theme Builder"
 msgstr ""
 
 #: modules/theme-builder/module.php:416
-msgctxt "Post Type Singular Name"
+msgctxt "Post Type General Name"
 msgid "Theme Builder"
 msgstr ""
 
 #: modules/theme-builder/module.php:417
-msgctxt "Admin Menu text"
+msgctxt "Post Type Singular Name"
 msgid "Theme Builder"
 msgstr ""
 
 #: modules/theme-builder/module.php:418
-msgctxt "Add New on Toolbar"
+msgctxt "Admin Menu text"
 msgid "Theme Builder"
 msgstr ""
 
 #: modules/theme-builder/module.php:419
-msgid "Theme Builder Archives"
+msgctxt "Add New on Toolbar"
+msgid "Theme Builder"
 msgstr ""
 
 #: modules/theme-builder/module.php:420
-msgid "Theme Builder Attributes"
+msgid "Theme Builder Archives"
 msgstr ""
 
 #: modules/theme-builder/module.php:421
-msgid "Parent Theme Builder:"
+msgid "Theme Builder Attributes"
 msgstr ""
 
 #: modules/theme-builder/module.php:422
-msgid "All Theme Builder"
+msgid "Parent Theme Builder:"
 msgstr ""
 
 #: modules/theme-builder/module.php:423
+msgid "All Theme Builder"
+msgstr ""
+
+#: modules/theme-builder/module.php:424
 msgid "Add New Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:425
+#: modules/theme-builder/module.php:426
 msgid "New Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:426
+#: modules/theme-builder/module.php:427
 msgid "Edit Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:427
+#: modules/theme-builder/module.php:428
 msgid "Update Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:428
 #: modules/theme-builder/module.php:429
+#: modules/theme-builder/module.php:430
 msgid "View Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:430
+#: modules/theme-builder/module.php:431
 msgid "Search Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:437
+#: modules/theme-builder/module.php:438
 msgid "Insert into Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:438
+#: modules/theme-builder/module.php:439
 msgid "Uploaded to this Theme Builder"
 msgstr ""
 
-#: modules/theme-builder/module.php:439
+#: modules/theme-builder/module.php:440
 msgid "Theme Builder list"
 msgstr ""
 
-#: modules/theme-builder/module.php:440
+#: modules/theme-builder/module.php:441
 msgid "Theme Builder list navigation"
 msgstr ""
 
-#: modules/theme-builder/module.php:441
+#: modules/theme-builder/module.php:442
 msgid "Filter Theme Builder list"
 msgstr ""
 
-#: modules/theme-builder/module.php:446
+#: modules/theme-builder/module.php:447
 msgid "Build your website header, footer, single page/post template and more."
 msgstr ""
 
-#: modules/theme-builder/module.php:527
+#: modules/theme-builder/module.php:528
 #: widgets/business-hour/business-hour.php:458
 msgid "Header"
 msgstr ""
 
-#: modules/theme-builder/module.php:528
+#: modules/theme-builder/module.php:529
 msgid "Footer"
 msgstr ""
 
-#: modules/theme-builder/module.php:529
+#: modules/theme-builder/module.php:530
 #: widgets/animated-text/animated-text.php:68
 msgid "Single"
 msgstr ""
 
-#: modules/theme-builder/module.php:530
+#: modules/theme-builder/module.php:531
 msgid "Archive"
 msgstr ""
 
-#: modules/theme-builder/module.php:547
+#: modules/theme-builder/module.php:548
 #: widgets/image-grid/image-grid.php:300
 msgid "All"
 msgstr ""
 
-#: modules/theme-builder/module.php:596
+#: modules/theme-builder/module.php:597
 #: traits/list-item-advanced-trait.php:100
 #: widgets/alert/alert.php:44
 #: widgets/toggle/toggle.php:147
 msgid "Type"
 msgstr ""
 
-#: modules/theme-builder/module.php:597
+#: modules/theme-builder/module.php:598
 msgid "Conditions"
 msgstr ""
 
-#: modules/theme-builder/module.php:615
+#: modules/theme-builder/module.php:616
 #: templates/admin/dashboard-home.php:504
 #: widgets/advance-accordion/advance-accordion.php:355
 #: widgets/advance-accordion/advance-accordion.php:502
@@ -3089,52 +3089,52 @@ msgid "Active"
 msgstr ""
 
 #. translators: 1: included conditions, 2: excluded conditions
-#: modules/theme-builder/module.php:652
+#: modules/theme-builder/module.php:653
 #, php-format
 msgid "<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s"
 msgstr ""
 
-#: modules/theme-builder/module.php:662
+#: modules/theme-builder/module.php:663
 msgid "Not Applicable"
 msgstr ""
 
-#: modules/theme-builder/module.php:707
+#: modules/theme-builder/module.php:720
 #: zyre-elementor-addons.php:123
 #: zyre-elementor-addons.php:136
 #: zyre-elementor-addons.php:158
 msgid "Elementor"
 msgstr ""
 
-#: modules/theme-builder/module.php:753
+#: modules/theme-builder/module.php:766
 msgid "Header Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:757
+#: modules/theme-builder/module.php:770
 msgid "Footer Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:761
+#: modules/theme-builder/module.php:774
 #: widgets/animated-text/animated-text.php:490
 msgid "Single Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:765
+#: modules/theme-builder/module.php:778
 msgid "Archive Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:769
+#: modules/theme-builder/module.php:782
 msgid "Loop Template"
 msgstr ""
 
-#: modules/theme-builder/module.php:797
+#: modules/theme-builder/module.php:810
 msgid "Invalid post type."
 msgstr ""
 
-#: modules/theme-builder/module.php:801
+#: modules/theme-builder/module.php:814
 msgid "Permission denied."
 msgstr ""
 
-#: modules/theme-builder/module.php:973
+#: modules/theme-builder/module.php:986
 msgid "Zyre Theme Builder"
 msgstr ""
 
