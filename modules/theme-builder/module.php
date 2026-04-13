@@ -75,6 +75,8 @@ class Module {
 		add_action( 'manage_' . self::POST_TYPE . '_posts_columns', [ $this, 'admin_columns_headers' ] );
 		add_action( 'manage_' . self::POST_TYPE . '_posts_custom_column', [ $this, 'admin_columns_content' ], 10, 2 );
 
+		add_filter( 'zyreladdons/conditions/sub_name_key_pairs', [ $this, 'set_sub_name_key_pairs' ] );
+
 		// Override Single Post Template
 		add_filter( 'template_include', [ $this, 'template_include' ], 999 );
 		add_action( 'zyreladdons_theme_builder_render', [ $this, 'single_blog_content_elementor' ], 999 );
@@ -84,7 +86,6 @@ class Module {
 
 	public function include_files() {
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-cache.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/module.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/conditions-manager.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/theme-support.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/theme-builder/compatibility/astra.php';
@@ -620,12 +621,12 @@ class Module {
 
 		if ( 'condition' === $column_name ) {
 
-			$type       = get_post_meta( $post_id, 'zyreladdons_library_type', true );
+			$type = get_post_meta( $post_id, 'zyreladdons_library_type', true );
 
 			if ( 'loop-template' != $type ) {
 				// generate display condition from document conditions
-				$include_conditions     = [];
-				$exclude_conditions      = [];
+				$include_conditions = [];
+				$exclude_conditions = [];
 
 				// get doc conditions
 				$document_conditions    = $this->get_document_conditions( $post_id );
@@ -664,6 +665,18 @@ class Module {
 		}
 	}
 
+	public function set_sub_name_key_pairs( $key_pairs ) {
+		$result = [];
+
+		foreach (self::get_sub_conditions() as $parentKey => $values) {
+			foreach ($values as $value) {
+				$result[$value] = $parentKey;
+			}
+		}
+
+		return array_merge( $key_pairs, $result );
+	}
+
 	private static function get_sub_conditions() {
 		$conditions = [
 			'author'   => ['author', 'by_author'],
@@ -680,19 +693,19 @@ class Module {
 		$conditions = self::get_sub_conditions();
 
 		// Category
-		if ( in_array( $sub_name, $conditions['category'], true ) ) {
+		if ( isset( $conditions['category'] ) && in_array( $sub_name, $conditions['category'], true ) ) {
 			$term = get_term( $sub_id, 'category' );
 			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
 		}
 
 		// Tag
-		if ( in_array( $sub_name, $conditions['post_tag'], true ) ) {
+		if ( isset( $conditions['post_tag'] ) && in_array( $sub_name, $conditions['post_tag'], true ) ) {
 			$term = get_term( $sub_id, 'post_tag' );
 			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
 		}
 
 		// Author
-		if ( in_array( $sub_name, $conditions['author'], true ) ) {
+		if ( isset( $conditions['author'] ) && in_array( $sub_name, $conditions['author'], true ) ) {
 			$user = get_userdata( $sub_id );
 			return $user ? $user->display_name : '';
 		}

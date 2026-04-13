@@ -10,20 +10,7 @@ class Conditions_Manager {
 	public static $instance = null;
 
 	private $cache;
-	private $all_conds;
-	private $all_conds_list;
 	private $location_cache = [];
-
-	public function __construct() {
-		$this->cache = new Conditions_Cache();
-
-		add_action( 'wp_ajax_zyreladdons_condition_autocomplete', [ $this, 'condition_autocomplete' ] );
-		add_action( 'wp_ajax_zyreladdons_condition_update', [ $this, 'condition_update' ] );
-		add_action( 'wp_ajax_zyreladdons_condition_template_type', [ $this, 'get_template_type' ] );
-		add_action( 'wp_ajax_zyreladdons_condition_current', [ $this, 'get_current_condition' ] );
-
-		$this->process_condition();
-	}
 
 	public static function instance() {
 		if ( is_null( self::$instance ) ) {
@@ -33,6 +20,15 @@ class Conditions_Manager {
 		return self::$instance;
 	}
 
+	public function __construct() {
+		$this->cache = new Conditions_Cache();
+
+		add_action( 'wp_ajax_zyreladdons_condition_autocomplete', [ $this, 'condition_autocomplete' ] );
+		add_action( 'wp_ajax_zyreladdons_condition_update', [ $this, 'condition_update' ] );
+		add_action( 'wp_ajax_zyreladdons_condition_template_type', [ $this, 'get_template_type' ] );
+		add_action( 'wp_ajax_zyreladdons_condition_current', [ $this, 'get_current_condition' ] );
+	}
+
 	protected function parse_condition( $condition ) {
 		list( $type, $name, $sub_name, $sub_id ) = array_pad( explode( '/', $condition ), 4, '' );
 
@@ -40,7 +36,8 @@ class Conditions_Manager {
 	}
 
 	private function get_condition( $cond_name ) {
-		return $this->all_conds[ $cond_name ];
+		$all_conds = $this->process_conditions();
+		return $all_conds[ $cond_name ];
 	}
 
 	private function check_name( $name ) {
@@ -212,11 +209,13 @@ class Conditions_Manager {
 	}
 
 	public function get_name( $cond ) {
-		return $this->all_conds_list[ $cond ]['title'] ?? '';
+		$all_conds_list = $this->process_conditions_list();
+		return $all_conds_list[ $cond ]['title'] ?? '';
 	}
 
 	public function get_all_name( $cond ) {
-		return $this->all_conds_list[ $cond ]['all_label'] ?? '';
+		$all_conds_list = $this->process_conditions_list();
+		return $all_conds_list[ $cond ]['all_label'] ?? '';
 	}
 
 	public function get_conditions_list( $type = 'initial' ) {
@@ -238,7 +237,7 @@ class Conditions_Manager {
 	}
 
 	private function initial_conditions() {
-		$conditions = [
+		$conditions_default = [
 			'general' => [
 				'title' => __( 'Entire Site', 'zyre-elementor-addons' ),
 				'all_label' => __( 'Entire Site', 'zyre-elementor-addons' ),
@@ -253,7 +252,8 @@ class Conditions_Manager {
 			],
 		];
 
-		return apply_filters( 'zyreladdons/conditions/initial', $conditions );
+		$conditions = apply_filters( 'zyreladdons/conditions/initial', $conditions_default );
+		return $conditions;
 	}
 
 	private function get_archive_conditions() {
@@ -267,7 +267,7 @@ class Conditions_Manager {
 		return apply_filters( 'zyreladdons/conditions/archive', $conditions );
 	}
 
-	protected function process_condition() {
+	private function process_conditions() {
 		$conditions = array(
 			'name' => array_keys( $this->initial_conditions() ),
 			'sub_name' => array(
@@ -276,6 +276,10 @@ class Conditions_Manager {
 			),
 		);
 
+		return $conditions;
+	}
+
+	private function process_conditions_list() {
 		$tmp_singular = $this->singular_conditions();
 		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular;
 		$all_cond_list = apply_filters( 'zyreladdons/conditions/all_conditions_list', $all_cond_list );
@@ -292,8 +296,7 @@ class Conditions_Manager {
 			}
 		}
 		
-		$this->all_conds_list = $all_cond_list;
-		$this->all_conds = $conditions;
+		return $all_cond_list;
 	}
 
 	protected function flatten_singular_array( $arr ) {
@@ -663,6 +666,8 @@ class Conditions_Manager {
 
 	private function cond_to_html( $cond ) {
 
+		$all_conds_list = $this->process_conditions_list();
+
 		foreach ( $cond as $condition ) {
 			$parsed_condition = $this->parse_condition( $condition );
 
@@ -676,7 +681,7 @@ class Conditions_Manager {
 			$uuid = uniqid();
 
 			$sub_name_html = $sub_name
-				? '<option value="' . esc_attr( $sub_name ) . '" selected="selected">' . esc_html( $this->all_conds_list[ $sub_name ]['title'] ) . '</option>'
+				? '<option value="' . esc_attr( $sub_name ) . '" selected="selected">' . esc_html( $all_conds_list[ $sub_name ]['title'] ) . '</option>'
 				: '';
 
 			$sub_id_html = $sub_id
