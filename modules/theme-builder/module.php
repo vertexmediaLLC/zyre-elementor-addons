@@ -407,6 +407,16 @@ class Module {
 				ZYRELADDONS_VERSION,
 				true
 			);
+
+			$localize_data = [
+				'conditionsSubNames' => apply_filters( 'zyreladdons/conditions/sub_name_key_pairs', [] ),
+			];
+
+			wp_localize_script(
+				'zyreladdons-template-modal',
+				'ZyreTemplate',
+				$localize_data
+			);
 		}
 	}
 

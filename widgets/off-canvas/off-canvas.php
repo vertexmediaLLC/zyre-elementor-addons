@@ -591,6 +591,23 @@ class Off_Canvas extends Base {
 			]
 		);
 
+		$this->add_control(
+			'content_body_overflow',
+			[
+				'label'     => __( 'Body overflow-y', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'auto',
+				'options'   => [
+					'auto'    => __( 'Auto', 'zyre-elementor-addons' ),
+					'visible' => __( 'Visible', 'zyre-elementor-addons' ),
+					'hidden'  => __( 'Hidden', 'zyre-elementor-addons' ),
+				],
+				'selectors' => [
+					'.zyre-offcanvas-content.zyre-offcanvas-content-{{ID}} .zyre-offcanvas-body' => 'overflow-y: {{VALUE}};',
+				],
+			],
+		);
+
 		$this->set_style_controls(
 			'overlay',
 			[

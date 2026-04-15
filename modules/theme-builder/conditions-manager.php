@@ -48,29 +48,33 @@ class Conditions_Manager {
 		return in_array( $name, $conds ) && $this->check_wp_page( $name );
 	}
 
-	private function check_sub_name( $sub_name, $parsed_condition ) {
-		$name = $parsed_condition['name'];
-
-		if ( 'all' === $sub_name ) {
-			$this->check_wp_page( $name );
-		}
-		return apply_filters( 'zyreladdons/conditions/check/sub_name', $sub_name, $parsed_condition );
+	private function check_sub_name( $sub_name ) {
+		return $this->check_wp_page( $sub_name );
 	}
 
-	private function check_wp_page( $name ) {
-		if ( 'archive' === $name ) {
-			$is_archive = is_archive() || is_home() || is_search();
+	private function check_sub_id( $sub_name, $sub_id ) {
+		return $this->check_wp_page( $sub_name, $sub_id );
+	}
 
-			// If installed then let WooCommerce handle it.
-			if ( $is_archive && class_exists( 'woocommerce' ) && \is_woocommerce() ) {
-				$is_archive = false;
-			}
-			return $is_archive;
+	private function check_wp_page( $name, $sub_id = '' ) {
+		$check_page = false;
+
+		switch ( $name ) {
+			case 'archive':
+				$check_page = is_archive() || is_home() || is_search();
+				// If installed then let WooCommerce handle it.
+				if ( $check_page && class_exists( 'woocommerce' ) && \is_woocommerce() ) {
+					$check_page = false;
+				}
+				break;
+			case 'singular':
+				$check_page = ( is_singular() && ! is_embed() ) || is_404();
+				break;
 		}
-		if ( 'singular' === $name ) {
-			return ( is_singular() && ! is_embed() ) || is_404();
-		}
-		return false;
+
+		$check_page = apply_filters( 'zyreladdons/conditions/check_wp_page', $check_page, $name, $sub_id );
+
+		return $check_page;
 	}
 
 	private function get_priority_by_key( $key ) {
@@ -133,6 +137,11 @@ class Conditions_Manager {
 		return $priority;
 	}
 
+	public function get_theme_templates_ids( $location ) {
+		$templates = $this->get_location_templates( $location );
+		return $templates;
+	}
+
 	public function get_location_templates( $location ) {
 		$tpl_priority = [];
 
@@ -158,7 +167,11 @@ class Conditions_Manager {
 				$condition_pass = $this->check_name( $name );
 
 				if ( $condition_pass && $sub_name ) {
-					$condition_pass = $this->check_sub_name( $sub_name, $parsed_condition );
+					$condition_pass = $this->check_sub_name( $sub_name );
+				}
+
+				if ( $condition_pass && $sub_id ) {
+					$condition_pass = $this->check_sub_id( $sub_name, $sub_id );
 				}
 
 				if ( $condition_pass ) {
@@ -185,11 +198,6 @@ class Conditions_Manager {
 		asort( $tpl_priority );
 
 		return $tpl_priority;
-	}
-
-	public function get_theme_templates_ids( $location ) {
-		$templates = $this->get_location_templates( $location );
-		return $templates;
 	}
 
 	public function get_documents_for_location( $location ) {

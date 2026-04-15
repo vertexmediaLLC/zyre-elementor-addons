@@ -403,8 +403,6 @@ class Assets_Manager {
 			],
 		];
 
-		$localize_data['conditionsSubNames'] = apply_filters( 'zyreladdons/conditions/sub_name_key_pairs', [] );
-
 		wp_localize_script(
 			'zyreladdons-editor',
 			'ZyreAddonsEditor',
