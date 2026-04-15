@@ -237,13 +237,13 @@ function _checkIfArray(r) {
       }
       if (selectedType == "sub_name") {
         var dataPair =
-          typeof ZyreAddonsEditor !== "undefined" &&
-          ZyreAddonsEditor.conditionsSubNames
-            ? ZyreAddonsEditor.conditionsSubNames
+          typeof ZyreTemplate !== "undefined" && ZyreTemplate.conditionsSubNames
+            ? ZyreTemplate.conditionsSubNames
             : {};
         if (dataPair.hasOwnProperty(selected)) {
           // Toggle Visibility
           sub_id.parent().show();
+		  
           var dataType = dataPair[selected];
           var dataVal = selected;
           if (["post", "page"].includes(dataType)) {
@@ -386,6 +386,7 @@ function _checkIfArray(r) {
           if (data.data) {
             var optionHTML = populateOption(data.data, selectedVal);
             target.html(optionHTML);
+			target.trigger("change");
           }
         }
       },
