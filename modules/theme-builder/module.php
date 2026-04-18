@@ -702,15 +702,23 @@ class Module {
 
 		$conditions = self::get_sub_conditions();
 
+		// var_dump( $conditions );
+
 		// Category
 		if ( isset( $conditions['category'] ) && in_array( $sub_name, $conditions['category'], true ) ) {
 			$term = get_term( $sub_id, 'category' );
 			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
 		}
 
-		// Tag
+		// Post Tag
 		if ( isset( $conditions['post_tag'] ) && in_array( $sub_name, $conditions['post_tag'], true ) ) {
 			$term = get_term( $sub_id, 'post_tag' );
+			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
+		}
+
+		// Taxonomy
+		if ( isset( $conditions['tax'] ) && in_array( $sub_name, $conditions['tax'], true ) ) {
+			$term = get_term( $sub_id, $sub_name );
 			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
 		}
 

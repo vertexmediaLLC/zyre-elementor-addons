@@ -59,17 +59,14 @@ class Conditions_Manager {
 	private function check_wp_page( $name, $sub_id = '' ) {
 		$check_page = false;
 
-		switch ( $name ) {
-			case 'archive':
-				$check_page = is_archive() || is_home() || is_search();
-				// If installed then let WooCommerce handle it.
-				if ( $check_page && class_exists( 'woocommerce' ) && \is_woocommerce() ) {
-					$check_page = false;
-				}
-				break;
-			case 'singular':
-				$check_page = ( is_singular() && ! is_embed() ) || is_404();
-				break;
+		if ( 'archive' === $name ) {
+			$check_page = is_archive() || is_home() || is_search();
+			// If installed then let WooCommerce handle it.
+			if ( $check_page && class_exists( 'woocommerce' ) && \is_woocommerce() ) {
+				$check_page = false;
+			}
+		} elseif ( 'singular' === $name ) {
+			$check_page = ( is_singular() && ! is_embed() ) || is_404();
 		}
 
 		$check_page = apply_filters( 'zyreladdons/conditions/check_wp_page', $check_page, $name, $sub_id );
@@ -163,15 +160,14 @@ class Conditions_Manager {
 				$sub_id = $parsed_condition['sub_id'];
 
 				$is_include = 'include' === $include;
-
+				
 				$condition_pass = $this->check_name( $name );
 
 				if ( $condition_pass && $sub_name ) {
 					$condition_pass = $this->check_sub_name( $sub_name );
-				}
-
-				if ( $condition_pass && $sub_id ) {
-					$condition_pass = $this->check_sub_id( $sub_name, $sub_id );
+					if ( $sub_id ) {
+						$condition_pass = $this->check_sub_id( $sub_name, $sub_id );
+					}
 				}
 
 				if ( $condition_pass ) {
@@ -217,34 +213,34 @@ class Conditions_Manager {
 	}
 
 	public function get_name( $cond ) {
-		$all_conds_list = $this->process_conditions_list();
+		$all_conds_list = self::process_conditions_list();
 		return $all_conds_list[ $cond ]['title'] ?? '';
 	}
 
 	public function get_all_name( $cond ) {
-		$all_conds_list = $this->process_conditions_list();
+		$all_conds_list = self::process_conditions_list();
 		return $all_conds_list[ $cond ]['all_label'] ?? '';
 	}
 
-	public function get_conditions_list( $type = 'initial' ) {
+	public function get_conditions_by_type( $type = 'initial' ) {
 		$conditions = [];
 
 		switch ( $type ) {
 			case 'initial':
-				$conditions = $this->initial_conditions();
+				$conditions = self::initial_conditions();
 				break;
 			case 'archive':
-				$conditions = $this->archive_conditions();
+				$conditions = self::archive_conditions();
 				break;
 			case 'singular':
-				$conditions = $this->singular_conditions();
+				$conditions = self::singular_conditions();
 				break;
 		}
 
 		return $conditions;
 	}
 
-	private function initial_conditions() {
+	private static function initial_conditions() {
 		$conditions_default = [
 			'general' => [
 				'title' => __( 'Entire Site', 'zyre-elementor-addons' ),
@@ -264,7 +260,7 @@ class Conditions_Manager {
 		return $conditions;
 	}
 
-	private function get_archive_conditions() {
+	private static function get_archive_conditions() {
 		$conditions = [
 			'' => [
 				'title' => __( 'All Archives', 'zyre-elementor-addons' ),
@@ -277,30 +273,31 @@ class Conditions_Manager {
 
 	private function process_conditions() {
 		$conditions = array(
-			'name' => array_keys( $this->initial_conditions() ),
+			'name' => array_keys( self::initial_conditions() ),
 			'sub_name' => array(
-				'archive' => array_keys( $this->archive_conditions() ),
-				'singular' => $this->flatten_singular_array( $this->singular_conditions() ),
+				'archive' => array_keys( self::archive_conditions() ),
+				'singular' => $this->flatten_singular_array( self::singular_conditions() ),
 			),
 		);
 
 		return $conditions;
 	}
 
-	private function process_conditions_list() {
-		$tmp_singular = $this->singular_conditions();
-		$all_cond_list = $this->initial_conditions() + $this->archive_conditions() + $tmp_singular;
+	public static function get_conditions_list() {
+		return self::process_conditions_list();
+	}
+
+	private static function process_conditions_list() {
+		$tmp_singular = self::singular_conditions();
+		$all_cond_list = self::initial_conditions() + self::archive_conditions() + $tmp_singular;
 		$all_cond_list = apply_filters( 'zyreladdons/conditions/all_conditions_list', $all_cond_list );
 
 		unset($all_cond_list['']);
 
-		$unset_groups = [ 'post_group', 'page_group' ];
-		$unset_groups = apply_filters( 'zyreladdons/conditions/process/unset/groups', $unset_groups );
-		
-		foreach ( $unset_groups as $key ) {
-			if ( isset( $all_cond_list[ $key ]['conditions'] ) ) {
-				$all_cond_list += $all_cond_list[ $key ]['conditions'];
-				unset($all_cond_list[ $key ]);
+		foreach ($all_cond_list as $key => $item) {
+			if (isset($item['conditions']) && is_array($item['conditions'])) {
+				$all_cond_list += $item['conditions'];
+				unset($all_cond_list[$key]);
 			}
 		}
 		
@@ -364,7 +361,7 @@ class Conditions_Manager {
 			}
 
 			if ( 'singular' === $object_type ) {
-				$response = $this->singular_conditions();
+				$response = self::singular_conditions();
 			}
 
 			if ( 'tax' === $object_type ) {
@@ -372,7 +369,7 @@ class Conditions_Manager {
 			}
 
 			if ( 'archive' === $object_type ) {
-				$response = $this->archive_conditions();
+				$response = self::archive_conditions();
 			}
 
 			if ( 'author' === $object_type ) {
@@ -419,7 +416,7 @@ class Conditions_Manager {
 		return $out;
 	}
 
-	private function singular_conditions() {
+	private static function singular_conditions() {
 		$conditions = [
 			'' => [
 				'title' => __( 'All Singular', 'zyre-elementor-addons' ),
@@ -442,8 +439,17 @@ class Conditions_Manager {
 			throw new Exception( esc_html__( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
 		}
 
+		$taxonomy = $term_taxonomy;
+
+		if ( strpos( $term_taxonomy, 'child_of_' ) === 0 ) {
+			$taxonomy = substr( $term_taxonomy, strlen( 'child_of_' ) );
+
+		} elseif ( strpos( $term_taxonomy, 'any_child_of_' ) === 0 ) {
+			$taxonomy = substr( $term_taxonomy, strlen( 'any_child_of_' ) );
+		}
+
 		$args = [
-			'taxonomy'   => $term_taxonomy,
+			'taxonomy'   => $taxonomy,
 			'hide_empty' => false,
 			'orderby'    => 'name',
 			'order'      => 'ASC',
@@ -468,8 +474,8 @@ class Conditions_Manager {
 		return $out;
 	}
 
-	private function archive_conditions() {
-		return $this->get_archive_conditions();
+	private static function archive_conditions() {
+		return self::get_archive_conditions();
 	}
 
 	public function process_author() {
@@ -674,7 +680,7 @@ class Conditions_Manager {
 
 	private function cond_to_html( $cond ) {
 
-		$all_conds_list = $this->process_conditions_list();
+		$all_conds_list = self::process_conditions_list();
 
 		foreach ( $cond as $condition ) {
 			$parsed_condition = $this->parse_condition( $condition );
@@ -724,9 +730,9 @@ class Conditions_Manager {
 							data-setting="name"
 							data-selected="<?php echo esc_attr( $name ); ?>"
 							class="modal__form-select">
-							<?php if ( ! empty( $this->get_conditions_list() ) ) : ?>
+							<?php if ( ! empty( $this->get_conditions_by_type() ) ) : ?>
 							<optgroup label="General">
-								<?php foreach ( $this->get_conditions_list() as $key => $cond ) : ?>
+								<?php foreach ( $this->get_conditions_by_type() as $key => $cond ) : ?>
 									<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $name, $key ); ?>><?php echo esc_html( $cond['title'] ); ?></option>
 								<?php endforeach; ?>
 							</optgroup>
