@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $types    = \VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module::get_template_types();
-$initial_conditions = \VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Conditions_Manager::instance()->get_conditions_list();
+$initial_conditions = \VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Conditions_Manager::instance()->get_conditions_by_type();
 $selected = get_query_var( 'zyreladdons_library_type' );
 ?>
 

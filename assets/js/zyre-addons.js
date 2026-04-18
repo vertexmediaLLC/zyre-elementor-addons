@@ -489,7 +489,7 @@ function haObserveTarget(target, callback) {
 			body:not(.rtl) ${widgetClass} ul.sub-menu{left:0;box-shadow:4px 6px 12px rgba(0,0,0,.1);}
 			body.rtl ${widgetClass} ul.sub-menu{right:0;box-shadow:4px 6px 12px rgba(0,0,0,.1);}
 			${widgetClass} .zyre-mega-menu--vr.submenu--pos_top ul.sub-menu{transform:translateY(0)}
-			${widgetClass} .zyre-mega-menu--vr.submenu--pos_top.submenu--h_full ul.sub-menu:not(.zy-megamenu-panel) {bottom: 0;}
+			${widgetClass} .zyre-mega-menu--vr.submenu--pos_top.submenu--h_full ul.sub-menu {bottom: 0;}
 			${widgetClass} .zyre-mega-menu--vr ul.sub-menu{top: 0;}
 			body:not(.rtl) ${widgetClass} .zyre-mega-menu--vr ul.sub-menu{left:100%;}
 			body.rtl ${widgetClass} .zyre-mega-menu--vr ul.sub-menu{right:100%;}

@@ -727,22 +727,15 @@ class Mega_Menu extends Base {
 		$this->set_style_controls(
 			'submenu',
 			[
-				'selector'  => '{{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li.menu-item > ul.sub-menu:not(.zy-megamenu-panel)',
-				'controls'  => [
-					'height' => [],
-				],
-				'condition' => [
-					'menu_layout'      => 'vr',
-					'submenu_position' => 'pos_top',
-				],
-			]
-		);
-
-		$this->set_style_controls(
-			'submenu',
-			[
-				'selector' => '{{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li.menu-item > ul.sub-menu:not(.zy-megamenu-panel)',
+				'selector' => '{{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li.menu-item > ul.sub-menu',
 				'controls' => [
+					'height'   => [
+						'condition' => [
+							'menu_layout'      => 'vr',
+							'submenu_position' => 'pos_top',
+							'submenu_y_h'      => 'h_rel',
+						],
+					],
 					'offset_x' => [
 						'css_property' => is_rtl() ? 'right' : 'left',
 						'size_units'   => ['%', 'px', 'custom'],
@@ -757,6 +750,57 @@ class Mega_Menu extends Base {
 							],
 						],
 					],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'submenu_offset_t',
+			[
+				'label'     => esc_html__( 'Offset (top)', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'custom' ],
+				'range'     => [
+					'px' => [
+						'min' => -1000,
+						'max' => 1000,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li.menu-item > ul.sub-menu' => 'top: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'menu_layout'      => 'vr',
+					'submenu_position' => 'pos_top',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'submenu_offset_b',
+			[
+				'label'     => esc_html__( 'Offset (bottom)', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'custom' ],
+				'range'     => [
+					'px' => [
+						'min' => -1000,
+						'max' => 1000,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}}:not(.zyre-menu__mobile) ul.menu > li.menu-item > ul.sub-menu' => 'bottom: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'menu_layout'      => 'vr',
+					'submenu_position' => 'pos_top',
+					'submenu_y_h'      => 'h_full',
 				],
 			]
 		);
