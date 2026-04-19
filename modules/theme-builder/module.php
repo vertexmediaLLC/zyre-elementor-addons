@@ -678,7 +678,12 @@ class Module {
 	public function set_sub_name_key_pairs( $key_pairs ) {
 		$result = [];
 
-		foreach (self::get_sub_conditions() as $parentKey => $values) {
+		$sub_conditions = self::get_sub_conditions();
+		if ( isset( $sub_conditions['taxonomies'] ) ) {
+			unset( $sub_conditions['taxonomies'] );
+		}
+
+		foreach ($sub_conditions as $parentKey => $values) {
 			foreach ($values as $value) {
 				$result[$value] = $parentKey;
 			}
@@ -696,13 +701,12 @@ class Module {
 	}
 
 	public static function get_condition_title( $sub_name, $sub_id ) {
+		// var_dump( self::get_sub_conditions() );
 		if ( empty( $sub_id ) ) {
 			return '';
 		}
 
 		$conditions = self::get_sub_conditions();
-
-		// var_dump( $conditions );
 
 		// Category
 		if ( isset( $conditions['category'] ) && in_array( $sub_name, $conditions['category'], true ) ) {
@@ -717,8 +721,8 @@ class Module {
 		}
 
 		// Taxonomy
-		if ( isset( $conditions['tax'] ) && in_array( $sub_name, $conditions['tax'], true ) ) {
-			$term = get_term( $sub_id, $sub_name );
+		if ( isset( $conditions['taxonomies'] ) && isset( $conditions['taxonomies'][ $sub_name ] ) ) {
+			$term = get_term( $sub_id, $conditions['taxonomies'][ $sub_name ] );
 			return ( $term && ! is_wp_error( $term ) ) ? $term->name : '';
 		}
 
