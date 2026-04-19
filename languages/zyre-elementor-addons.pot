@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-15T11:59:59+00:00\n"
+"POT-Creation-Date: 2026-04-19T11:57:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -140,8 +140,8 @@ msgstr ""
 #: widgets/lottie-animation/lottie-animation.php:192
 #: widgets/mega-menu/mega-menu.php:122
 #: widgets/mega-menu/mega-menu.php:394
-#: widgets/mega-menu/mega-menu.php:839
-#: widgets/mega-menu/mega-menu.php:1231
+#: widgets/mega-menu/mega-menu.php:883
+#: widgets/mega-menu/mega-menu.php:1275
 #: widgets/menu/menu.php:82
 #: widgets/menu/menu.php:305
 #: widgets/menu/menu.php:671
@@ -374,8 +374,8 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1250
 #: widgets/call-to-action/call-to-action.php:1388
 #: widgets/iconbox/iconbox.php:522
-#: widgets/mega-menu/mega-menu.php:1413
-#: widgets/mega-menu/mega-menu.php:1445
+#: widgets/mega-menu/mega-menu.php:1457
+#: widgets/mega-menu/mega-menu.php:1489
 #: widgets/menu/menu.php:1245
 #: widgets/menu/menu.php:1277
 #: widgets/pdf-view/pdf-view.php:709
@@ -421,7 +421,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:880
 #: widgets/flipbox/flipbox.php:156
 #: widgets/mega-menu/mega-menu.php:409
-#: widgets/mega-menu/mega-menu.php:854
+#: widgets/mega-menu/mega-menu.php:898
 #: widgets/menu/menu.php:320
 #: widgets/menu/menu.php:686
 #: widgets/pdf-view/pdf-view.php:326
@@ -644,7 +644,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:588
 #: widgets/lottie-animation/lottie-animation.php:86
 #: widgets/mega-menu/mega-menu.php:270
-#: widgets/mega-menu/mega-menu.php:1061
+#: widgets/mega-menu/mega-menu.php:1105
 #: widgets/menu/menu.php:209
 #: widgets/menu/menu.php:893
 #: widgets/news-ticker/news-ticker.php:458
@@ -753,7 +753,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:592
 #: widgets/lottie-animation/lottie-animation.php:90
 #: widgets/mega-menu/mega-menu.php:274
-#: widgets/mega-menu/mega-menu.php:1065
+#: widgets/mega-menu/mega-menu.php:1109
 #: widgets/menu/menu.php:213
 #: widgets/menu/menu.php:897
 #: widgets/news-ticker/news-ticker.php:398
@@ -874,7 +874,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:596
 #: widgets/lottie-animation/lottie-animation.php:94
 #: widgets/mega-menu/mega-menu.php:278
-#: widgets/mega-menu/mega-menu.php:1069
+#: widgets/mega-menu/mega-menu.php:1113
 #: widgets/menu/menu.php:217
 #: widgets/menu/menu.php:901
 #: widgets/news-ticker/news-ticker.php:402
@@ -998,7 +998,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:600
 #: widgets/lottie-animation/lottie-animation.php:98
 #: widgets/mega-menu/mega-menu.php:282
-#: widgets/mega-menu/mega-menu.php:1073
+#: widgets/mega-menu/mega-menu.php:1117
 #: widgets/menu/menu.php:221
 #: widgets/menu/menu.php:905
 #: widgets/news-ticker/news-ticker.php:406
@@ -1676,25 +1676,25 @@ msgid "No saved templates found!"
 msgstr ""
 
 #: classes/select2-handler.php:12
-#: modules/theme-builder/conditions-manager.php:337
-#: modules/theme-builder/conditions-manager.php:595
-#: modules/theme-builder/conditions-manager.php:599
+#: modules/theme-builder/conditions-manager.php:334
+#: modules/theme-builder/conditions-manager.php:601
+#: modules/theme-builder/conditions-manager.php:605
 msgid "Unauthorized request"
 msgstr ""
 
 #: classes/select2-handler.php:18
 #: modules/mega-menu/module.php:185
-#: modules/theme-builder/conditions-manager.php:343
+#: modules/theme-builder/conditions-manager.php:340
 msgid "Invalid request"
 msgstr ""
 
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:357
+#: modules/theme-builder/conditions-manager.php:354
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:105
-#: modules/theme-builder/conditions-manager.php:442
+#: modules/theme-builder/conditions-manager.php:439
 msgid "Invalid taxonomy"
 msgstr ""
 
@@ -2498,9 +2498,9 @@ msgstr ""
 #: widgets/logo-grid/logo-grid.php:425
 #: widgets/lottie-animation/lottie-animation.php:352
 #: widgets/mega-menu/mega-menu.php:424
-#: widgets/mega-menu/mega-menu.php:869
-#: widgets/mega-menu/mega-menu.php:1249
-#: widgets/mega-menu/mega-menu.php:1406
+#: widgets/mega-menu/mega-menu.php:913
+#: widgets/mega-menu/mega-menu.php:1293
+#: widgets/mega-menu/mega-menu.php:1450
 #: widgets/menu/menu.php:335
 #: widgets/menu/menu.php:701
 #: widgets/menu/menu.php:1081
@@ -2895,42 +2895,42 @@ msgstr ""
 msgid "No content found"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:250
-#: modules/theme-builder/conditions-manager.php:251
+#: modules/theme-builder/conditions-manager.php:246
+#: modules/theme-builder/conditions-manager.php:247
 msgid "Entire Site"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:254
+#: modules/theme-builder/conditions-manager.php:250
 #: widgets/archive-title/archive-title.php:819
 msgid "Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:255
-#: modules/theme-builder/conditions-manager.php:270
-#: modules/theme-builder/conditions-manager.php:271
+#: modules/theme-builder/conditions-manager.php:251
+#: modules/theme-builder/conditions-manager.php:266
+#: modules/theme-builder/conditions-manager.php:267
 msgid "All Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:258
+#: modules/theme-builder/conditions-manager.php:254
 msgid "Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:259
-#: modules/theme-builder/conditions-manager.php:425
-#: modules/theme-builder/conditions-manager.php:426
+#: modules/theme-builder/conditions-manager.php:255
+#: modules/theme-builder/conditions-manager.php:422
+#: modules/theme-builder/conditions-manager.php:423
 msgid "All Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:429
-#: modules/theme-builder/conditions-manager.php:430
+#: modules/theme-builder/conditions-manager.php:426
+#: modules/theme-builder/conditions-manager.php:427
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:625
+#: modules/theme-builder/conditions-manager.php:631
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:791
+#: modules/theme-builder/conditions-manager.php:797
 #: modules/theme-builder/templates/template-conditions.php:77
 msgid "Remove this item"
 msgstr ""
@@ -3071,9 +3071,9 @@ msgstr ""
 #: widgets/cf7/cf7.php:302
 #: widgets/image-grid/image-grid.php:566
 #: widgets/mega-menu/mega-menu.php:534
-#: widgets/mega-menu/mega-menu.php:979
-#: widgets/mega-menu/mega-menu.php:1334
-#: widgets/mega-menu/mega-menu.php:1438
+#: widgets/mega-menu/mega-menu.php:1023
+#: widgets/mega-menu/mega-menu.php:1378
+#: widgets/mega-menu/mega-menu.php:1482
 #: widgets/menu/menu.php:445
 #: widgets/menu/menu.php:811
 #: widgets/menu/menu.php:1166
@@ -3098,43 +3098,43 @@ msgstr ""
 msgid "Not Applicable"
 msgstr ""
 
-#: modules/theme-builder/module.php:730
+#: modules/theme-builder/module.php:742
 #: zyre-elementor-addons.php:123
 #: zyre-elementor-addons.php:136
 #: zyre-elementor-addons.php:158
 msgid "Elementor"
 msgstr ""
 
-#: modules/theme-builder/module.php:776
+#: modules/theme-builder/module.php:788
 msgid "Header Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:780
+#: modules/theme-builder/module.php:792
 msgid "Footer Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:784
+#: modules/theme-builder/module.php:796
 #: widgets/animated-text/animated-text.php:490
 msgid "Single Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:788
+#: modules/theme-builder/module.php:800
 msgid "Archive Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:792
+#: modules/theme-builder/module.php:804
 msgid "Loop Template"
 msgstr ""
 
-#: modules/theme-builder/module.php:820
+#: modules/theme-builder/module.php:832
 msgid "Invalid post type."
 msgstr ""
 
-#: modules/theme-builder/module.php:824
+#: modules/theme-builder/module.php:836
 msgid "Permission denied."
 msgstr ""
 
-#: modules/theme-builder/module.php:996
+#: modules/theme-builder/module.php:1008
 msgid "Zyre Theme Builder"
 msgstr ""
 
@@ -3710,8 +3710,8 @@ msgstr ""
 #: widgets/lottie-animation/lottie-animation.php:194
 #: widgets/lottie-animation/lottie-animation.php:402
 #: widgets/mega-menu/mega-menu.php:478
-#: widgets/mega-menu/mega-menu.php:923
-#: widgets/mega-menu/mega-menu.php:1291
+#: widgets/mega-menu/mega-menu.php:967
+#: widgets/mega-menu/mega-menu.php:1335
 #: widgets/menu/menu.php:389
 #: widgets/menu/menu.php:755
 #: widgets/menu/menu.php:1123
@@ -4120,12 +4120,12 @@ msgstr ""
 #: widgets/mega-menu/mega-menu.php:454
 #: widgets/mega-menu/mega-menu.php:510
 #: widgets/mega-menu/mega-menu.php:566
-#: widgets/mega-menu/mega-menu.php:899
-#: widgets/mega-menu/mega-menu.php:955
-#: widgets/mega-menu/mega-menu.php:1011
-#: widgets/mega-menu/mega-menu.php:1279
-#: widgets/mega-menu/mega-menu.php:1322
-#: widgets/mega-menu/mega-menu.php:1368
+#: widgets/mega-menu/mega-menu.php:943
+#: widgets/mega-menu/mega-menu.php:999
+#: widgets/mega-menu/mega-menu.php:1055
+#: widgets/mega-menu/mega-menu.php:1323
+#: widgets/mega-menu/mega-menu.php:1366
+#: widgets/mega-menu/mega-menu.php:1412
 #: widgets/menu/menu.php:365
 #: widgets/menu/menu.php:421
 #: widgets/menu/menu.php:477
@@ -5897,8 +5897,8 @@ msgid "Hover Background Color"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:1156
-#: widgets/mega-menu/mega-menu.php:795
-#: widgets/mega-menu/mega-menu.php:1208
+#: widgets/mega-menu/mega-menu.php:839
+#: widgets/mega-menu/mega-menu.php:1252
 #: widgets/menu/menu.php:627
 #: widgets/menu/menu.php:1040
 msgid "Bottom Space"
@@ -6519,8 +6519,8 @@ msgstr ""
 
 #: widgets/business-hour/business-hour.php:737
 #: widgets/mega-menu/mega-menu.php:395
-#: widgets/mega-menu/mega-menu.php:840
-#: widgets/mega-menu/mega-menu.php:1232
+#: widgets/mega-menu/mega-menu.php:884
+#: widgets/mega-menu/mega-menu.php:1276
 #: widgets/menu/menu.php:306
 #: widgets/menu/menu.php:672
 #: widgets/menu/menu.php:1064
@@ -6529,8 +6529,8 @@ msgstr ""
 
 #: widgets/business-hour/business-hour.php:738
 #: widgets/mega-menu/mega-menu.php:396
-#: widgets/mega-menu/mega-menu.php:841
-#: widgets/mega-menu/mega-menu.php:1233
+#: widgets/mega-menu/mega-menu.php:885
+#: widgets/mega-menu/mega-menu.php:1277
 #: widgets/menu/menu.php:307
 #: widgets/menu/menu.php:673
 #: widgets/menu/menu.php:1065
@@ -8227,29 +8227,29 @@ msgid "Vertical Layout only"
 msgstr ""
 
 #: widgets/mega-menu/mega-menu.php:341
-#: widgets/mega-menu/mega-menu.php:1187
+#: widgets/mega-menu/mega-menu.php:1231
 #: widgets/menu/menu.php:252
 #: widgets/menu/menu.php:1019
 msgid "Menu Item"
 msgstr ""
 
 #: widgets/mega-menu/mega-menu.php:359
-#: widgets/mega-menu/mega-menu.php:804
+#: widgets/mega-menu/mega-menu.php:848
 #: widgets/menu/menu.php:270
 #: widgets/menu/menu.php:636
 msgid "Arrow Space"
 msgstr ""
 
 #: widgets/mega-menu/mega-menu.php:370
-#: widgets/mega-menu/mega-menu.php:815
+#: widgets/mega-menu/mega-menu.php:859
 #: widgets/menu/menu.php:281
 #: widgets/menu/menu.php:647
 msgid "Description Space"
 msgstr ""
 
 #: widgets/mega-menu/mega-menu.php:391
-#: widgets/mega-menu/mega-menu.php:836
-#: widgets/mega-menu/mega-menu.php:1228
+#: widgets/mega-menu/mega-menu.php:880
+#: widgets/mega-menu/mega-menu.php:1272
 #: widgets/menu/menu.php:302
 #: widgets/menu/menu.php:668
 #: widgets/menu/menu.php:1060
@@ -8259,9 +8259,9 @@ msgstr ""
 #: widgets/mega-menu/mega-menu.php:463
 #: widgets/mega-menu/mega-menu.php:519
 #: widgets/mega-menu/mega-menu.php:575
-#: widgets/mega-menu/mega-menu.php:908
-#: widgets/mega-menu/mega-menu.php:964
-#: widgets/mega-menu/mega-menu.php:1020
+#: widgets/mega-menu/mega-menu.php:952
+#: widgets/mega-menu/mega-menu.php:1008
+#: widgets/mega-menu/mega-menu.php:1064
 #: widgets/menu/menu.php:374
 #: widgets/menu/menu.php:430
 #: widgets/menu/menu.php:486
@@ -8286,44 +8286,52 @@ msgstr ""
 msgid "Note: The following styles will not apply to the Mega Menu Builder content."
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:774
+#: widgets/mega-menu/mega-menu.php:760
+msgid "Offset (top)"
+msgstr ""
+
+#: widgets/mega-menu/mega-menu.php:785
+msgid "Offset (bottom)"
+msgstr ""
+
+#: widgets/mega-menu/mega-menu.php:818
 #: widgets/menu/menu.php:606
 msgid "Sub Menu Item"
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:1040
+#: widgets/mega-menu/mega-menu.php:1084
 #: widgets/menu/menu.php:872
 msgid "Menu Toggle"
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:1088
+#: widgets/mega-menu/mega-menu.php:1132
 #: widgets/menu/menu.php:920
 #: widgets/search-box/search-box.php:672
 #: widgets/toggle/toggle.php:884
 msgid "Toggle Button"
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:1110
+#: widgets/mega-menu/mega-menu.php:1154
 #: widgets/menu/menu.php:942
 msgid "Close Icon Color"
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:1139
+#: widgets/mega-menu/mega-menu.php:1183
 #: widgets/menu/menu.php:971
 msgid "Responsive Menu"
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:1151
+#: widgets/mega-menu/mega-menu.php:1195
 #: widgets/menu/menu.php:983
 msgid "Space Top"
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:1167
+#: widgets/mega-menu/mega-menu.php:1211
 #: widgets/menu/menu.php:999
 msgid "Dropdown Menu"
 msgstr ""
 
-#: widgets/mega-menu/mega-menu.php:1383
+#: widgets/mega-menu/mega-menu.php:1427
 #: widgets/menu/menu.php:1215
 msgid "Submenu Toggle"
 msgstr ""

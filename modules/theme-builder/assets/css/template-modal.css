@@ -294,7 +294,7 @@
 	height: 60px;
 	border-radius: 6px;
 	background-color: #fff;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: "Inter", sans-serif;
 	line-height: 32px;
 	font-weight: 300;
@@ -543,6 +543,14 @@
 /* select2 */
 .zyre-template-element-modal .select2-container--default .select2-selection--single {
 	border: none;
+}
+
+.zyre-template-element-modal .select2-container .select2-selection--single .select2-selection__rendered {
+	padding-right: 8px;
+}
+
+.zyre-template-element-modal .select2-container--default .select2-selection--single .select2-selection__clear {
+	margin-inline-start: 4px;
 }
 
 .zyre-template-element-modal .select2-container--default .select2-selection--single .select2-selection__arrow {

@@ -243,11 +243,21 @@ function _checkIfArray(r) {
         if (dataPair.hasOwnProperty(selected)) {
           // Toggle Visibility
           sub_id.parent().show();
-		  
+
           var dataType = dataPair[selected];
+          var prevVal = $(event.target).data("selected") || "";
           var dataVal = selected;
+		  
+          // Only run if value actually changed
+          if (prevVal !== dataVal) {
+            sub_id.val("").trigger("change");
+          }
+
           if (["post", "page"].includes(dataType)) {
             dataVal = dataType;
+            dataType = "post";
+          }
+		  if (["post_types"].includes(dataType)) {
             dataType = "post";
           }
           if (["category", "post_tag"].includes(dataType)) {
@@ -386,7 +396,7 @@ function _checkIfArray(r) {
           if (data.data) {
             var optionHTML = populateOption(data.data, selectedVal);
             target.html(optionHTML);
-			target.trigger("change");
+            target.trigger("change");
           }
         }
       },
