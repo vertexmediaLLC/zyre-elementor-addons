@@ -701,7 +701,6 @@ class Module {
 	}
 
 	public static function get_condition_title( $sub_name, $sub_id ) {
-		// var_dump( self::get_sub_conditions() );
 		if ( empty( $sub_id ) ) {
 			return '';
 		}
