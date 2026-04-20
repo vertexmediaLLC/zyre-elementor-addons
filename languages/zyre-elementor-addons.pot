@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-19T11:57:45+00:00\n"
+"POT-Creation-Date: 2026-04-20T11:56:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -1676,25 +1676,25 @@ msgid "No saved templates found!"
 msgstr ""
 
 #: classes/select2-handler.php:12
-#: modules/theme-builder/conditions-manager.php:334
-#: modules/theme-builder/conditions-manager.php:601
-#: modules/theme-builder/conditions-manager.php:605
+#: modules/theme-builder/conditions-manager.php:333
+#: modules/theme-builder/conditions-manager.php:614
+#: modules/theme-builder/conditions-manager.php:618
 msgid "Unauthorized request"
 msgstr ""
 
 #: classes/select2-handler.php:18
 #: modules/mega-menu/module.php:185
-#: modules/theme-builder/conditions-manager.php:340
+#: modules/theme-builder/conditions-manager.php:339
 msgid "Invalid request"
 msgstr ""
 
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:354
+#: modules/theme-builder/conditions-manager.php:353
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:105
-#: modules/theme-builder/conditions-manager.php:439
+#: modules/theme-builder/conditions-manager.php:438
 msgid "Invalid taxonomy"
 msgstr ""
 
@@ -2895,42 +2895,42 @@ msgstr ""
 msgid "No content found"
 msgstr ""
 
+#: modules/theme-builder/conditions-manager.php:245
 #: modules/theme-builder/conditions-manager.php:246
-#: modules/theme-builder/conditions-manager.php:247
 msgid "Entire Site"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:250
+#: modules/theme-builder/conditions-manager.php:249
 #: widgets/archive-title/archive-title.php:819
 msgid "Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:251
+#: modules/theme-builder/conditions-manager.php:250
+#: modules/theme-builder/conditions-manager.php:265
 #: modules/theme-builder/conditions-manager.php:266
-#: modules/theme-builder/conditions-manager.php:267
 msgid "All Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:254
+#: modules/theme-builder/conditions-manager.php:253
 msgid "Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:255
+#: modules/theme-builder/conditions-manager.php:254
+#: modules/theme-builder/conditions-manager.php:421
 #: modules/theme-builder/conditions-manager.php:422
-#: modules/theme-builder/conditions-manager.php:423
 msgid "All Singular"
 msgstr ""
 
+#: modules/theme-builder/conditions-manager.php:425
 #: modules/theme-builder/conditions-manager.php:426
-#: modules/theme-builder/conditions-manager.php:427
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:631
+#: modules/theme-builder/conditions-manager.php:644
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:797
+#: modules/theme-builder/conditions-manager.php:810
 #: modules/theme-builder/templates/template-conditions.php:77
 msgid "Remove this item"
 msgstr ""
@@ -3098,43 +3098,43 @@ msgstr ""
 msgid "Not Applicable"
 msgstr ""
 
-#: modules/theme-builder/module.php:742
+#: modules/theme-builder/module.php:741
 #: zyre-elementor-addons.php:123
 #: zyre-elementor-addons.php:136
 #: zyre-elementor-addons.php:158
 msgid "Elementor"
 msgstr ""
 
-#: modules/theme-builder/module.php:788
+#: modules/theme-builder/module.php:787
 msgid "Header Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:792
+#: modules/theme-builder/module.php:791
 msgid "Footer Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:796
+#: modules/theme-builder/module.php:795
 #: widgets/animated-text/animated-text.php:490
 msgid "Single Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:800
+#: modules/theme-builder/module.php:799
 msgid "Archive Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:804
+#: modules/theme-builder/module.php:803
 msgid "Loop Template"
 msgstr ""
 
-#: modules/theme-builder/module.php:832
+#: modules/theme-builder/module.php:831
 msgid "Invalid post type."
 msgstr ""
 
-#: modules/theme-builder/module.php:836
+#: modules/theme-builder/module.php:835
 msgid "Permission denied."
 msgstr ""
 
-#: modules/theme-builder/module.php:1008
+#: modules/theme-builder/module.php:1007
 msgid "Zyre Theme Builder"
 msgstr ""
 

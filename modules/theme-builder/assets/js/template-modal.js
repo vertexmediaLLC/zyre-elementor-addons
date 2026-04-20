@@ -305,7 +305,7 @@ function _checkIfArray(r) {
             },
             minimumInputLength: 2,
             cache: true,
-            placeholder: "All",
+            placeholder: "All／None",
             allowClear: true,
             dropdownCssClass: "zyre-template-condition-dropdown",
           });

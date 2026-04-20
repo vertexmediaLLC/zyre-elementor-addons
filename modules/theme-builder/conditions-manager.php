@@ -57,21 +57,20 @@ class Conditions_Manager {
 	}
 
 	private function check_wp_page( $name, $sub_id = '' ) {
-		$check_page = false;
 
 		if ( 'archive' === $name ) {
-			$check_page = is_archive() || is_home() || is_search();
+			return is_archive() || is_home() || is_search();
 			// If installed then let WooCommerce handle it.
-			if ( $check_page && class_exists( 'woocommerce' ) && \is_woocommerce() ) {
-				$check_page = false;
+			if ( class_exists( 'woocommerce' ) && \is_woocommerce() ) {
+				return false;
 			}
-		} elseif ( 'singular' === $name ) {
-			$check_page = ( is_singular() && ! is_embed() ) || is_404();
+		}
+		
+		if ( 'singular' === $name ) {
+			return ( is_singular() && ! is_embed() ) || is_404();
 		}
 
-		$check_page = apply_filters( 'zyreladdons/conditions/check_wp_page', $check_page, $name, $sub_id );
-
-		return $check_page;
+		return apply_filters( 'zyreladdons/conditions/check_wp_page', false, $name, $sub_id );
 	}
 
 	private function get_priority_by_key( $key ) {
@@ -443,9 +442,23 @@ class Conditions_Manager {
 
 		if ( strpos( $term_taxonomy, 'child_of_' ) === 0 ) {
 			$taxonomy = substr( $term_taxonomy, strlen( 'child_of_' ) );
-
 		} elseif ( strpos( $term_taxonomy, 'any_child_of_' ) === 0 ) {
 			$taxonomy = substr( $term_taxonomy, strlen( 'any_child_of_' ) );
+		} elseif ( strpos( $term_taxonomy, 'in_' ) === 0 ) {
+			$taxonomy = substr( $term_taxonomy, strlen( 'in_' ) );
+		}
+
+		// remove prefixes
+		foreach ( ['child_of_', 'any_child_of_', 'in_'] as $prefix ) {
+			if ( strpos( $taxonomy, $prefix ) === 0 ) {
+				$taxonomy = substr( $taxonomy, strlen( $prefix ) );
+				break;
+			}
+		}
+
+		// remove suffix
+		if ( str_ends_with( $taxonomy, '_children' ) ) {
+			$taxonomy = substr( $taxonomy, 0, -strlen('_children') );
 		}
 
 		$args = [
