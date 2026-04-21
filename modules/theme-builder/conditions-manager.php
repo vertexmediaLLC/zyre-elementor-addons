@@ -65,11 +65,15 @@ class Conditions_Manager {
 				return false;
 			}
 		}
-		
+
 		if ( 'singular' === $name ) {
 			return ( is_singular() && ! is_embed() ) || is_404();
 		}
 
+		if ( 'front_page' === $name ) {
+			return is_front_page();
+		}
+		
 		return apply_filters( 'zyreladdons/conditions/check_wp_page', false, $name, $sub_id );
 	}
 
@@ -601,6 +605,56 @@ class Conditions_Manager {
 		return $result;
 	}
 
+	/* public function condition_update() {
+		try {
+			$this->validate_reqeust( $_POST['nonce'] );
+
+			$template_id = isset( $_POST['template_id'] ) ? absint( $_POST['template_id'] ) : null;
+
+			$post_status = get_post_status( $template_id );
+			$same_author = self::is_the_same_author( $template_id );
+
+			if ( ( 'private' === $post_status || 'draft' === $post_status ) && ! $same_author ) {
+				throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
+			}
+
+			if ( post_password_required( $template_id ) && ! $same_author ) {
+				throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
+			}
+
+			$request_conditions = isset( $_POST['conds'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['conds'] ) ) : [];
+
+			$exits_conditions = get_post_meta( $template_id, 'zyreladdons_display_cond', true );
+			$merged_conditions = ! empty( $exits_conditions ) ? array_diff( $request_conditions, $exits_conditions ) : $request_conditions;
+
+			if ( $template_id ) {
+
+				$all_extits_condition = $this->get_all_conditions();
+				$template_type = get_post_meta( $template_id, 'zyreladdons_library_type', true );
+
+				$duplicate = $this->check_template_conditions( $template_type, $request_conditions, $merged_conditions, $all_extits_condition );
+
+				if ( ! $duplicate ) {
+					$cond = update_post_meta( $template_id, 'zyreladdons_display_cond', array_unique( $request_conditions ) );
+					$updates = get_post_meta( $template_id, 'zyreladdons_display_cond' );
+
+					if ( null !== $cond ) {
+						$this->cache->regenerate();
+						wp_send_json_success( $updates );
+					} else {
+						wp_send_json_error();
+					}
+				} else {
+					wp_send_json_error( [ 'msg' => esc_html__( 'Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly.', 'zyre-elementor-addons' ) ] );
+				}
+			} else {
+				wp_send_json_error();
+			}
+		} catch ( Exception $e ) {
+			wp_send_json_error( $e->getMessage() );
+		}
+	} */
+
 	public function condition_update() {
 		try {
 			$this->validate_reqeust( $_POST['nonce'] );
@@ -627,6 +681,24 @@ class Conditions_Manager {
 
 				$all_extits_condition = $this->get_all_conditions();
 				$template_type = get_post_meta( $template_id, 'zyreladdons_library_type', true );
+
+				// Exclude current template's previously saved conditions from duplicate check.
+				if ( isset( $all_extits_condition[ $template_type ] ) && ! empty( $exits_conditions ) && is_array( $exits_conditions ) ) {
+					$current_template_conditions = array_map(
+						function( $value ) {
+							return substr( strstr( $value, '/' ), strlen( '/' ) );
+						},
+						$exits_conditions
+					);
+
+					$all_extits_condition[ $template_type ] = array_filter(
+						$all_extits_condition[ $template_type ],
+						function( $value ) use ( $current_template_conditions ) {
+							$normalized = substr( strstr( $value, '/' ), strlen( '/' ) );
+							return ! in_array( $normalized, $current_template_conditions, true );
+						}
+					);
+				}
 
 				$duplicate = $this->check_template_conditions( $template_type, $request_conditions, $merged_conditions, $all_extits_condition );
 

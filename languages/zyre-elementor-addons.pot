@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-21T06:50:07+00:00\n"
+"POT-Creation-Date: 2026-04-21T09:27:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -1676,25 +1676,25 @@ msgid "No saved templates found!"
 msgstr ""
 
 #: classes/select2-handler.php:12
-#: modules/theme-builder/conditions-manager.php:333
-#: modules/theme-builder/conditions-manager.php:614
-#: modules/theme-builder/conditions-manager.php:618
+#: modules/theme-builder/conditions-manager.php:337
+#: modules/theme-builder/conditions-manager.php:668
+#: modules/theme-builder/conditions-manager.php:672
 msgid "Unauthorized request"
 msgstr ""
 
 #: classes/select2-handler.php:18
 #: modules/mega-menu/module.php:185
-#: modules/theme-builder/conditions-manager.php:339
+#: modules/theme-builder/conditions-manager.php:343
 msgid "Invalid request"
 msgstr ""
 
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:353
+#: modules/theme-builder/conditions-manager.php:357
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:105
-#: modules/theme-builder/conditions-manager.php:438
+#: modules/theme-builder/conditions-manager.php:442
 msgid "Invalid taxonomy"
 msgstr ""
 
@@ -2895,42 +2895,42 @@ msgstr ""
 msgid "No content found"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:245
-#: modules/theme-builder/conditions-manager.php:246
+#: modules/theme-builder/conditions-manager.php:249
+#: modules/theme-builder/conditions-manager.php:250
 msgid "Entire Site"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:249
+#: modules/theme-builder/conditions-manager.php:253
 #: widgets/archive-title/archive-title.php:823
 msgid "Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:250
-#: modules/theme-builder/conditions-manager.php:265
-#: modules/theme-builder/conditions-manager.php:266
+#: modules/theme-builder/conditions-manager.php:254
+#: modules/theme-builder/conditions-manager.php:269
+#: modules/theme-builder/conditions-manager.php:270
 msgid "All Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:253
+#: modules/theme-builder/conditions-manager.php:257
 msgid "Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:254
-#: modules/theme-builder/conditions-manager.php:421
-#: modules/theme-builder/conditions-manager.php:422
+#: modules/theme-builder/conditions-manager.php:258
+#: modules/theme-builder/conditions-manager.php:425
+#: modules/theme-builder/conditions-manager.php:426
 msgid "All Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:425
-#: modules/theme-builder/conditions-manager.php:426
+#: modules/theme-builder/conditions-manager.php:429
+#: modules/theme-builder/conditions-manager.php:430
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:644
+#: modules/theme-builder/conditions-manager.php:716
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:810
+#: modules/theme-builder/conditions-manager.php:882
 #: modules/theme-builder/templates/template-conditions.php:77
 msgid "Remove this item"
 msgstr ""
