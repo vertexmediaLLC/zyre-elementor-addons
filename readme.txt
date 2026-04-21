@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -241,6 +241,14 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 
 == Changelog ==
+
+= 2.0.2 - 21 April 2026 =
+
+- Fixed Theme Builder conditions for Front Page.
+- Fixed page layout issues in Editor for Theme Builder.
+- Updated the Theme Builder conditions.
+- Updated the Mega Menu widget a bit.
+- Updated the Off-Canvas widget a bit.
 
 = 2.0.1 - 06 April 2026 =
 
