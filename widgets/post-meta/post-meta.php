@@ -22,6 +22,10 @@ class Post_Meta extends Base {
 		return [ 'meta', 'post meta', 'post info', 'post', 'post data', 'post meta info', 'author', 'edit post text', 'edit post link', 'comments', 'comments count', 'tags', 'category', 'taxonomy', 'dates', 'author link' ];
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}

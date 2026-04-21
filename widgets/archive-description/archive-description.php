@@ -21,6 +21,10 @@ class Archive_Description extends Base {
 		return array( 'archive description', 'description', 'archive', 'archive info', 'archive details', 'archive category', 'tag description', 'tag info', 'tag details' );
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}

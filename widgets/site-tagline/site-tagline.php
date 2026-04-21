@@ -21,6 +21,10 @@ class Site_Tagline extends Base {
 		return [ 'site tagline', 'tagline', 'site', 'site info', 'site description', 'description', 'site brand', 'brand description' ];
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}

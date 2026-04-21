@@ -21,6 +21,10 @@ class Author_Box extends Base {
 		return [ 'author box', 'author meta', 'author', 'author description', 'author details', 'author name', 'author info', 'author link', 'author bio', 'bio' ];
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}
