@@ -1,3 +1,11 @@
+= 2.0.2 - 2026-04-21 =
+
+- Fixed Theme Builder conditions for Front Page.
+- Fixed page layout issues in Editor for Theme Builder.
+- Updated the Theme Builder conditions.
+- Updated the Mega Menu widget a bit.
+- Updated the Off-Canvas widget a bit.
+
 = 2.0.1 - 2026-04-06 =
 
 - Updated Toggle and Off-Canvas Widgets.
