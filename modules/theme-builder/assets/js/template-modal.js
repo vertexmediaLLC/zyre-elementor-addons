@@ -186,7 +186,7 @@ function _checkIfArray(r) {
   });
 
   $(document).on("click", ".zyre-template-condition-remove", function () {
-    $(this).parent().remove();
+    $(this).closest('.zyre-template-condition-item').remove();
     elementor.trigger("zyre:templateConditionChange");
   });
 
@@ -247,7 +247,7 @@ function _checkIfArray(r) {
           var dataType = dataPair[selected];
           var prevVal = $(event.target).data("selected") || "";
           var dataVal = selected;
-		  
+
           // Only run if value actually changed
           if (prevVal !== dataVal) {
             sub_id.val("").trigger("change");
@@ -257,7 +257,7 @@ function _checkIfArray(r) {
             dataVal = dataType;
             dataType = "post";
           }
-		  if (["post_types"].includes(dataType)) {
+          if (["post_types"].includes(dataType)) {
             dataType = "post";
           }
           if (["category", "post_tag"].includes(dataType)) {
@@ -326,20 +326,30 @@ function _checkIfArray(r) {
     var conditionItems = $(".zyre-template-condition-wrap").find(
       ".zyre-template-condition-item",
     );
+
     conditionItems.each(function () {
-      var type = $(this).find(".zyre-tce-type select").val();
-      var name = $(this).find(".zyre-tce-name select").val();
-      var sub_name = $(this).find(".zyre-tce-sub_name select").val();
-      var sub_id = $(this).find(".zyre-tce-sub_id select").val();
+      var type = $(this).find(".zyre-tce-type select").val() || "";
+      var name = $(this).find(".zyre-tce-name select").val() || "";
+      var sub_name = $(this).find(".zyre-tce-sub_name select").val() || "";
+      var sub_id = $(this).find(".zyre-tce-sub_id select").val() || "";
+
+      if (!type || !name) {
+        return;
+      }
+
       var localCond = type + "/" + name;
+
       if (sub_name) {
         localCond += "/" + sub_name;
       }
-      if (sub_id) {
+
+      if (typeof sub_id === "string" && sub_id.trim()) {
         localCond += "/" + sub_id.trim();
       }
+
       conditions.push(localCond);
     });
+
     newConditions = conditions;
   }
 
