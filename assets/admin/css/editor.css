@@ -20,20 +20,20 @@
 }
 
 .elementor-icons-manager__tab-link .zy-Zyre-addons {
-    vertical-align: bottom;
+	vertical-align: bottom;
 }
 
 .elementor-panel .elementor-element .icon {
-    position: relative;
+	position: relative;
 }
 
 .elementor-panel .elementor-element .icon .zy-fonticon:after {
-    position: absolute;
-    top: 5px;
-    right: 6px;
-    content: "\eb42";
-    font-size: 20px;
-    opacity: .5;
+	position: absolute;
+	top: 5px;
+	right: 6px;
+	content: "\eb42";
+	font-size: 20px;
+	opacity: .5;
 }
 
 .elementor-panel .elementor-element .zy-fonticon.zy-Header:before {
@@ -41,14 +41,14 @@
 	transform: rotate(90deg);
 }
 
-.elementor-panel .zyre-element--promotion > .elementor-element > .eicon-lock {
-    right: auto;
-    left: 5px;
+.elementor-panel .zyre-element--promotion>.elementor-element>.eicon-lock {
+	right: auto;
+	left: 5px;
 }
 
 .elementor-panel .elementor-element:hover .icon .zy-fonticon:after,
 .elementor-panel .elementor-element:focus .icon .zy-fonticon:after {
-    opacity: 1;
+	opacity: 1;
 }
 
 #elementor-element--promotion__dialog .dialog-button.zyre-btn--promotion {
@@ -87,6 +87,25 @@
 
 .elementor-control-type-zyreladdons_style_select .zyre-sync-button i {
 	font-size: 1.15em;
+}
+
+#elementor-panel-categories:has(#elementor-panel-category-zyreladdons_theme_builder) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+#elementor-panel-categories #elementor-panel-category-zyreladdons_theme_builder {
+	-webkit-box-ordinal-group: -1;
+	-webkit-order: -2;
+	-ms-flex-order: -2;
+	order: -2;
 }
 
 /* Fix icon rotation based on selected direction */
@@ -128,7 +147,7 @@
 }
 
 .elementor-control-type-zyreladdons_style_select .elementor-control-input-wrapper:hover .zyre-tooltip {
-  visibility: visible;
+	visibility: visible;
 }
 
 /* micromodal */

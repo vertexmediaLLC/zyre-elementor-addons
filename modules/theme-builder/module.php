@@ -46,15 +46,25 @@ class Module {
 		add_action( 'wp', [ $this, 'hooks' ] );
 		$this->cache = new Conditions_Cache();
 
-		add_action( 'admin_menu', [ $this, 'modify_menu' ], 90 );
 		add_filter( 'query_vars', [ $this, 'add_query_vars' ] );
-		add_action( 'init', [ $this, 'create_post_type' ], 99 );
+		add_filter( 'views_edit-' . self::POST_TYPE, [ $this, 'render_admin_tabs' ] );
+		// This module may itself be instantiated during `init`, so register immediately in that case.
+		if ( doing_action( 'init' ) || did_action( 'init' ) ) {
+			$this->create_post_type();
+		} else {
+			add_action( 'init', [ $this, 'create_post_type' ], 9 );
+		}
 		register_activation_hook( ZYRELADDONS__FILE__, [ $this, 'on_plugin_activation' ] );
+		add_action( 'admin_menu', [ $this, 'modify_menu' ], 90 );
 		add_action( 'pre_get_posts', [ $this, 'set_meta_query_to_posts_query' ] );
+
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 
 		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'edit_template_condition_modal' ], 10, 2 );
 		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'template_element_scripts' ], 9 );
+
+		add_filter( 'elementor/document/config', [ $this, 'document_config_title' ], 10, 2 );
+		add_action( 'admin_action_zyreladdons_library_new_post', [ $this, 'admin_action_new_post' ] );
 
 		add_action( 'current_screen', function () {
 			$current_screen = get_current_screen();
@@ -66,11 +76,6 @@ class Module {
 			} );
 			add_action( 'in_admin_footer', [ $this, 'add_new_template' ], 10, 2 );
 		} );
-
-		add_filter( 'views_edit-' . self::POST_TYPE, [ $this, 'render_admin_tabs' ] );
-
-		add_filter( 'elementor/document/config', [ $this, 'document_config_title' ], 10, 2 );
-		add_action( 'admin_action_zyreladdons_library_new_post', [ $this, 'admin_action_new_post' ] );
 
 		add_action( 'manage_' . self::POST_TYPE . '_posts_columns', [ $this, 'admin_columns_headers' ] );
 		add_action( 'manage_' . self::POST_TYPE . '_posts_custom_column', [ $this, 'admin_columns_content' ], 10, 2 );
@@ -468,6 +473,7 @@ class Module {
 			'hierarchical'        => false,
 			'exclude_from_search' => true,
 			'capability_type'     => 'page',
+			'map_meta_cap'        => true,
 		];
 
 		register_post_type( self::POST_TYPE, $args );

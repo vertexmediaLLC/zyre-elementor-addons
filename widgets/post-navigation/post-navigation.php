@@ -21,6 +21,10 @@ class Post_Navigation extends Base {
 		return array( 'posts', 'post navigation', 'post links', 'next post', 'previous post', 'after post', 'before post' );
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}

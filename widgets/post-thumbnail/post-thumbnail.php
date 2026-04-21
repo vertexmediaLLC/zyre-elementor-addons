@@ -22,6 +22,10 @@ class Post_Thumbnail extends Base {
 		return [ 'thumbnail', 'post thumbnail', 'post info', 'post', 'post data', 'post featured image', 'featured image', 'post image' ];
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}

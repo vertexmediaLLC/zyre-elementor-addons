@@ -22,6 +22,10 @@ class Site_Logo extends Base {
 		return [ 'site logo', 'logo', 'site', 'site info', 'site branding', 'branding', 'company logo', 'company branding' ];
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}

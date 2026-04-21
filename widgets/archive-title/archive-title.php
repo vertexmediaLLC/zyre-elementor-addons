@@ -21,6 +21,10 @@ class Archive_Title extends Base {
 		return [ 'archive title', 'title', 'archive', 'archive info', 'archive heading', 'heading', 'archive name', 'category', 'tag' ];
 	}
 
+	public function get_categories() {
+        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+    }
+
 	public function get_custom_help_url() {
 		return $this->set_help_url();
 	}
