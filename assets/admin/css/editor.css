@@ -89,6 +89,10 @@
 	font-size: 1.15em;
 }
 
+.elementor-control-type-button.elementor-control-zyre_template_edit_btn .elementor-control-input-wrapper {
+    text-align: center;
+}
+
 #elementor-panel-categories:has(#elementor-panel-category-zyreladdons_theme_builder) {
 	display: -webkit-box;
 	display: -webkit-flex;
