@@ -51,6 +51,7 @@ class Select2_Handler {
 
 	public static function process_post() {
 		$post_type  = ! empty( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'any';
+		$template_type = isset( $_POST['template_type'] ) ? sanitize_text_field( wp_unslash( $_POST['template_type'] ) ) : '';
 		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( wp_unslash( $_POST['query_term'] ) ) : '';
 		$saved_values = ! empty( $_POST['saved_values'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
 
@@ -65,6 +66,16 @@ class Select2_Handler {
 
 		if ( $query_term ) {
 			$args['s'] = $query_term;
+		}
+
+		if ( 'zyreladdons_library' == $args['post_type'] && ! empty( $template_type ) ) {
+			$args['posts_per_page'] = -1;
+			$args['meta_query'] = [
+				[
+					'key'   => 'zyreladdons_library_type',
+					'value' => $template_type,
+				],
+			];
 		}
 
 		if ( $saved_values ) {
