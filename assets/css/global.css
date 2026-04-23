@@ -112,7 +112,7 @@
 .zyre-addon .zy-basis-0 {flex-basis: 0;}
 .zyre-addon .zy-shrink-0 {flex-shrink: 0;}
 .zyre-addon .zy-shrink-1 {flex-shrink: 1;}
-
+@media (max-width: 47.98em) {.zyre-addon .zy-sm-flex-wrap {flex-wrap: wrap;}}
 .zyre-addon .zy-align-center {align-items: center;}
 .zyre-addon .zy-align-stretch {align-items: stretch;}
 .zyre-addon .zy-align-start {align-items: flex-start;}
@@ -430,6 +430,10 @@
 	background-color: #fff3cd;
 }
 
+.zyreladdons-notice-warning.has-button a {
+	background: #856404;
+}
+
 .zyreladdons-notice-warning-2 {
 	background-color: #fff0d4;
 	color: #9f6800;
@@ -437,4 +441,8 @@
 	text-align: center;
 	margin-bottom: 15px;
 	padding: 15px 20px;
+}
+
+.zyreladdons-notice-warning-2.has-button a {
+	background: #9f6800;
 }

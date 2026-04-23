@@ -160,15 +160,33 @@ class Query_Manager {
 	/**
 	 * Get all public post types
 	 *
+	 * @param array $args
 	 * @return array
 	 */
-	public static function get_post_types() {
+	public static function get_post_types( $args = [] ) {
 		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+
+		if ( ! empty( $args['exclude'] ) && is_array( $args['exclude'] ) ) {
+			foreach ( $args['exclude'] as $name ) {
+				if ( isset( $post_types[ $name ] ) ) {
+					unset( $post_types[ $name ] );
+				}
+			}
+		}
+
 		$list = [];
 
 		if ( ! empty( $post_types ) ) {
 			foreach ( $post_types as $post_type ) {
 				$list[ $post_type->name ] = $post_type->labels->name;
+			}
+		}
+
+		if ( ! empty( $args['include'] ) && is_array( $args['include'] ) ) {
+			foreach ( $args['include'] as $name => $label ) {
+				if ( ! isset( $post_types[ $name ] ) ) {
+					$list[ $name ] = esc_html( $label );
+				}
 			}
 		}
 

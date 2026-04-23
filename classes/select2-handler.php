@@ -39,6 +39,10 @@ class Select2_Handler {
 				$response = self::process_term();
 			}
 
+			if ( 'user' === $object_type ) {
+				$response = self::process_user();
+			}
+
 			if ( 'mailchimp_list' === $object_type ) {
 				$response = self::process_mailchimp_list();
 			}
@@ -66,6 +70,7 @@ class Select2_Handler {
 
 		if ( $query_term ) {
 			$args['s'] = $query_term;
+			add_filter( 'posts_search', [ __CLASS__, 'title_only_search' ], 10, 2 );
 		}
 
 		if ( 'zyreladdons_library' == $args['post_type'] && ! empty( $template_type ) ) {
@@ -85,6 +90,10 @@ class Select2_Handler {
 		}
 
 		$posts = get_posts( $args );
+
+		if ( $query_term ) {
+			remove_filter( 'posts_search', [ __CLASS__, 'title_only_search' ], 10 );
+		}
 
 		if ( empty( $posts ) ) {
 			return [];
@@ -155,6 +164,39 @@ class Select2_Handler {
 		return $out;
 	}
 
+	public static function process_user() {
+		$query_term = ! empty( $_POST['query_term'] ) ? sanitize_text_field( wp_unslash( $_POST['query_term'] ) ) : '';
+		$saved_values = ! empty( $_POST['saved_values'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
+
+		$out = [];
+
+		$args = [
+			'fields'  => ['ID', 'display_name'],
+			'orderby' => 'display_name',
+		];
+
+		if ( ! empty( $saved_values ) ) {
+			$args['include'] = $saved_values;
+		}
+
+		if ( $query_term ) {
+			$args['number'] = 20;
+			$args['search'] = "*$query_term*";
+		}
+
+		$users = get_users( $args );
+
+		if ( empty( $users ) ) {
+			return $out;
+		}
+
+		foreach ( $users as $user ) {
+			$out[ " {$user->ID}" ] = esc_html( $user->display_name );
+		}
+
+		return $out;
+	}
+
 	public static function process_mailchimp_list() {
 		$global_api   = ! empty( $_POST['global_api'] ) ? sanitize_text_field( wp_unslash( $_POST['global_api'] ) ) : '';
 		$saved_values = ! empty( $_POST['saved_values'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['saved_values'] ) ) : [];
@@ -201,5 +243,22 @@ class Select2_Handler {
 		} catch ( Exception $e ) {
 			wp_send_json_error( $e->getMessage() );
 		}
+	}
+
+	public static function title_only_search( $search, $wp_query ) {
+		global $wpdb;
+
+		// Only modify when 's' exists
+		if ( empty( $wp_query->query_vars['s'] ) ) {
+			return $search;
+		}
+
+		$term = $wp_query->query_vars['s'];
+		$like = '%' . $wpdb->esc_like( $term ) . '%';
+
+		return $wpdb->prepare(
+			" AND {$wpdb->posts}.post_title LIKE %s ",
+			$like
+		);
 	}
 }
