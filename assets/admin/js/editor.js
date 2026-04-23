@@ -299,11 +299,17 @@
       if (dynamicParams.select2_dependency) {
         var dependencyValue = dynamicParams.select2_dependency;
         var postTypes = this.container.settings.get(dependencyValue) || [];
+        if (!_.isArray(postTypes)) {
+          postTypes = postTypes ? [postTypes] : [];
+        }
         var settings = this.container.settings;
 
         settings.on(`change:${dependencyValue}`, function () {
           var savedValues = _this.getControlValue();
           var postTypes = settings.get(dependencyValue);
+          if (!_.isArray(postTypes)) {
+            postTypes = postTypes ? [postTypes] : [];
+          }
 
           _this.getControlDependency(postTypes, function (params) {
             // update first
@@ -391,17 +397,22 @@
           var dependencyValue = dynamicParams.select2_dependency;
           // override dynamic_params based on select2_dependency
           var postTypes = this.container.settings.get(dependencyValue) || [];
+          if (!_.isArray(postTypes)) {
+            postTypes = postTypes ? [postTypes] : [];
+          }
           if (postTypes.length) {
             this.getControlDependency(postTypes, function (params) {
               // only update taxonomy
               var oldParams = self.model.get("dynamic_params") || {};
               self.model.set("dynamic_params", _.extend({}, oldParams, params));
 
+			//   var isSelect2 = !!self.ui.select.data("select2");
+
               // DO NOT clear if saved values exist
-              if (_.isEmpty(savedValues)) {
+            //   if (_.isEmpty(savedValues)) {
                 self.container.settings.set(self.model.get("name"), []);
                 self.ui.select.val(null).trigger("change");
-              }
+            //   }
             });
           }
         }
