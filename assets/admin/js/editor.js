@@ -218,6 +218,9 @@
             callback(params);
           }
         },
+        error: function () {
+          self.$el.find(".elementor-control-spinner").remove();
+        },
       });
     },
     getSelect2DefaultOptions: function () {
@@ -304,11 +307,17 @@
         }
         var settings = this.container.settings;
 
-        settings.on(`change:${dependencyValue}`, function () {
+        settings.on(`change:${dependencyValue}`, function (e) {
           var savedValues = _this.getControlValue();
           var postTypes = settings.get(dependencyValue);
           if (!_.isArray(postTypes)) {
             postTypes = postTypes ? [postTypes] : [];
+          }
+
+          // If select2_dependency is select type, clear value when dependency changed to prevent confusion
+          var controlView = _this.container.controls[dependencyValue];
+          if (controlView.type && controlView.type === "select") {
+            _this.ui.select.val(null).trigger("change");
           }
 
           _this.getControlDependency(postTypes, function (params) {
@@ -377,6 +386,9 @@
             _this.render();
           }
         },
+        complete: function () {
+          _this.$el.find(".elementor-control-spinner").remove();
+        },
       });
     },
     applySavedValue: function () {
@@ -406,13 +418,11 @@
               var oldParams = self.model.get("dynamic_params") || {};
               self.model.set("dynamic_params", _.extend({}, oldParams, params));
 
-			//   var isSelect2 = !!self.ui.select.data("select2");
-
               // DO NOT clear if saved values exist
-            //   if (_.isEmpty(savedValues)) {
+              if (_.isEmpty(savedValues)) {
                 self.container.settings.set(self.model.get("name"), []);
                 self.ui.select.val(null).trigger("change");
-            //   }
+              }
             });
           }
         }
@@ -422,7 +432,7 @@
           this.initSortable();
         }
       } else {
-        this.ui.select.trigger("change");
+        // this.ui.select.trigger("change");
       }
     },
     initSortable: function () {
