@@ -448,6 +448,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'icon_color':
+					case 'icon_color_2':
 						$control_args = [
 							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Icon Color', 'zyre-elementor-addons' ),
 							'type'      => Controls_Manager::COLOR,
