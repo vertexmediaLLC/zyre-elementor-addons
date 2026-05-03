@@ -181,7 +181,9 @@ class Module {
 
 		$this->templates = get_posts( $arg );
 
-		$this->templates = null;
+		if ( empty( $this->templates ) ) {
+			$this->templates = null;
+		}
 
 		// more conditions can be triggered at once
 		// don't use switch case
@@ -577,6 +579,7 @@ class Module {
 	}
 
 	protected function parse_condition( $condition ) {
+		$condition = is_array( $condition ) ? $condition[0] : $condition;
 		list( $type, $name, $sub_name, $sub_id ) = array_pad( explode( '/', $condition ), 4, '' );
 		return compact( 'type', 'name', 'sub_name', 'sub_id' );
 	}
