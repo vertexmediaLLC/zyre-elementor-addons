@@ -2,6 +2,8 @@
 
 namespace VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Compatibility;
 
+use VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Conditions_Manager;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -12,12 +14,15 @@ class TwentyNineteen {
 	/**
 	 * Run all the Actions / Filters.
 	 */
-	public function __construct( $template_ids ) {
-		if ( null !== $template_ids[0] ) {
+	public function __construct() {
+		$headers = Conditions_Manager::instance()->get_documents_for_location( 'header' );
+		$footers = Conditions_Manager::instance()->get_documents_for_location( 'footer' );
+
+		if ( ! empty( $headers ) ) {
 			add_action( 'get_header', [ $this, 'get_header' ] );
 		}
 
-		if ( null !== $template_ids[1] ) {
+		if ( ! empty( $footers ) ) {
 			add_action( 'get_footer', [ $this, 'get_footer' ] );
 		}
 	}

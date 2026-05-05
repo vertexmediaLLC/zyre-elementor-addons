@@ -279,31 +279,31 @@ class Module {
 
 		switch ( $this->current_theme ) {
 			case 'astra':
-				new Compatibility\Astra( self::template_ids() );
+				new Compatibility\Astra();
 				break;
 
 			case 'bb-theme':
 			case 'bb-theme-child':
-				new Compatibility\Bbtheme( self::template_ids() );
+				new Compatibility\Bbtheme();
 				break;
 
 			case 'generatepress':
 			case 'generatepress-child':
-				new Compatibility\Generatepress( self::template_ids() );
+				new Compatibility\Generatepress();
 				break;
 
 			case 'genesis':
 			case 'genesis-child':
-				new Compatibility\Genesis( self::template_ids() );
+				new Compatibility\Genesis();
 				break;
 
 			case 'oceanwp':
 			case 'oceanwp-child':
-				new Compatibility\Oceanwp( self::template_ids() );
+				new Compatibility\Oceanwp();
 				break;
 
 			case 'twentynineteen':
-				new Compatibility\TwentyNineteen( self::template_ids() );
+				new Compatibility\TwentyNineteen();
 				break;
 
 			default:

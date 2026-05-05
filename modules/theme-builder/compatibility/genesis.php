@@ -3,6 +3,7 @@
 namespace VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Compatibility;
 
 use VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Module as Theme_Builder;
+use VertexMediaLLC\ZyreElementorAddons\Modules\ThemeBuilder\Conditions_Manager;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -24,9 +25,17 @@ class Genesis {
 	/**
 	 * Run all the Actions / Filters.
 	 */
-	public function __construct( $template_ids ) {
-		$this->header = $template_ids[0];
-		$this->footer = $template_ids[1];
+	public function __construct() {
+		$headers = Conditions_Manager::instance()->get_documents_for_location( 'header' );
+		$footers = Conditions_Manager::instance()->get_documents_for_location( 'footer' );
+
+		if ( ! empty( $headers ) ) {
+			$this->header = $headers[0];
+		}
+
+		if ( ! empty( $footers ) ) {
+			$this->footer = $footers[0];
+		}
 
 		if ( defined( 'ELEMENTOR_VERSION' ) && is_callable( 'Elementor\Plugin::instance' ) ) {
 			$this->elementor = \Elementor\Plugin::instance();
