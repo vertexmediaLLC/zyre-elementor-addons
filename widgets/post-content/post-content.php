@@ -701,40 +701,64 @@ class Post_Content extends Base {
 	 * Register render display controls
 	 */
 	protected function render() {
-		$settings = $this->get_settings_for_display();
-
-		if ( 'custom' === $settings['source_type'] ) {
-			$post_id = is_array( $settings['source_custom'] ) ? (int) $settings['source_custom'][0] : (int) $settings['source_custom'];
-			zyreladdons_elementor()->db->switch_to_post( $post_id );
-		}
-
+	
 		static $have_posts = [];
+
 		$post = get_post();
+
 		// Exit early if there's no valid post object
 		if ( ! $post ) {
 			return;
 		}
 
 		if ( post_password_required( $post->ID ) ) {
-			echo wp_kses_post( get_the_password_form( $post->ID ) );
+			echo get_the_password_form( $post->ID ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			return;
 		}
 
 		if ( isset( $have_posts[ $post->ID ] ) ) {
 			return;
 		}
+
+		$settings = $this->get_settings_for_display();
+
+		$is_edit_mode = zyreladdons_elementor()->editor->is_edit_mode();
+
+		$tmpl_type = get_post_meta( $post->ID, 'zyreladdons_library_type', true );
+
+		if ( 'current_post' === $settings['source_type'] && $is_edit_mode && 'single' === $tmpl_type ) {
+			return;
+		}
+
+		if ( 'custom' === $settings['source_type'] ) {
+			if ( empty( $settings['source_custom'] ) ) {
+				return;
+			}
+
+			$post_id = is_array( $settings['source_custom'] ) ? (int) $settings['source_custom'][0] : (int) $settings['source_custom'];
+			zyreladdons_elementor()->db->switch_to_post( $post_id );
+		}
+
 		$have_posts[ $post->ID ] = true;
 		?>
 
 		<div class="zyre-post-content">
 			<?php
-			$content = apply_filters( 'the_content', get_the_content() );
-			echo wp_kses_post( $content );
+			echo apply_filters( 'the_content', get_the_content() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+			wp_link_pages( [
+				'before' => '<div class="page-links zyre-page-links"><span class="page-links-title zyre-page-links-title">' . esc_html__( 'Pages:', 'zyre-elementor-addons' ) . '</span>',
+				'after' => '</div>',
+				'link_before' => '<span>',
+				'link_after' => '</span>',
+				'pagelink' => '<span class="screen-reader-text">' . esc_html__( 'Page', 'zyre-elementor-addons' ) . ' </span>%',
+				'separator' => '<span class="screen-reader-text">, </span>',
+			] );
 			?>
 		</div>
 
 		<?php
-		if ( 'custom' === $settings['source_type'] ) {
+		if ( 'custom' === $settings['source_type'] && ! empty( $settings['source_custom'] ) ) {
 			zyreladdons_elementor()->db->restore_current_post();
 		}
 	}
