@@ -4,11 +4,11 @@ Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight Elementor addon with Theme Builder, Header/Footer Builder, Mega Menu Builder, 60+ widgets including Off-Canvas, and pre-built templates.
+Lightweight Elementor addons with Theme Builder, Header/Footer and Mega Menu Builder, 60+ widgets including Off-Canvas, and 54+ pre-built templates.
 
 == Description ==
 
@@ -241,6 +241,12 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 
 == Changelog ==
+
+= 2.0.4 - 06 May 2026 =
+
+- Released version 2.0.4 due to an update issue with version 2.0.3.
+- Fixed: the Post Content widget for appearing CSS in editor mode.
+- Fixed: Theme Builder compatibility issues for showing header, footer template.
 
 = 2.0.3 - 06 May 2026 =
 
