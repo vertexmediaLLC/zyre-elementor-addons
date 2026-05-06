@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -241,6 +241,11 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 
 == Changelog ==
+
+= 2.0.3 - 06 May 2026 =
+
+- Fixed: the Post Content widget for appearing CSS in editor mode.
+- Fixed: Theme Builder compatibility issues for showing header, footer template.
 
 = 2.0.2 - 21 April 2026 =
 
