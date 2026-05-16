@@ -1203,6 +1203,28 @@ class Widgets_Manager {
 				],
 				'js'        => [],
 			],
+			'advance-tab'  => [
+				'cat'       => 'general',
+				'is_active' => true,
+				'demo'      => 'https://zyreaddons.com/demos/advance-tab/',
+				'doc'       => 'https://zyreaddons.com/docs/zyre-elementor-addons/widgets/advance-tab/',
+				'title'     => esc_html__( 'Advance Tab', 'zyre-elementor-addons' ),
+				'icon'      => 'zy-fonticon zy-Advance-tab',
+				'css'       => [ 'advance-tab' ],
+				'styles'    => [
+					'one'   => [
+						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'advance-tab', 'style-one.jpg' ),
+					],
+					'two' => [
+						'name'      => esc_html__( 'Info tab', 'zyre-elementor-addons' ),
+						'is_active' => true,
+						'thumb'     => self::get_widget_thumbnail_url( 'advance-tab', 'style-three.jpg' ),
+					],
+				],
+				'js'        => [],
+			],
 			'subscription-form'  => [
 				'cat'       => 'general',
 				'is_active' => true,
