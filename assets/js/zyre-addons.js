@@ -125,6 +125,33 @@ function haObserveTarget(target, callback) {
       }
     };
 
+	// Advance Tab
+	var Advance_Tab = function Advance_Tab($scope) {
+		var $tabs = $scope.find(".zyre-tabs"),
+		$navItems = $scope.find(".zyre-tabs-nav-item"),
+		hoverContentDisplay = $scope.hasClass(
+			"zyre-tab-content-display-hover--yes",
+		),
+		eventType = hoverContentDisplay ? "mouseenter" : "click",
+		$content = $scope.find(".zyre-tabs-content-item");
+
+		$navItems.each(function (inx, item) {
+			$(this).on(eventType, function (e) {
+				e.preventDefault();
+
+				if ($(this).hasClass("active")) {
+					return;
+				} else {
+					$navItems.removeClass("active");
+					$(this).addClass("active");
+					$content.removeClass("active");
+					var contentId = $(this).data("content-id");
+					$tabs.find("#" + contentId).addClass("active");
+				}
+			});
+		});
+	};
+
     // Team Member
     var Team_Member = function Team_Member($scope) {
       var btn = $scope.find(".zyre-button");
@@ -1075,6 +1102,7 @@ function haObserveTarget(target, callback) {
     // Function Handlers
     var fnHanlders = {
       "zyre-toggle.default": Toggle_Switcher,
+      "zyre-advance-tab.default": Advance_Tab,
       "zyre-team-member.default": Team_Member,
       "zyre-fun-fact.default": FunFact,
       "zyre-skill-bar.default": SkillHandler,

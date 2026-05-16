@@ -301,16 +301,23 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'font_weight':
-						$allowed_defaults = [ '200', '300', '400', '500', '600', '700', '800', '900' ];
+						$allowed_defaults = [ '100', '200', '300', '400', '500', '600', '700', '800', '900', '', 'normal', 'bold' ];
 						$control_args = [
 							'label'   => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Font Weight', 'zyre-elementor-addons' ),
 							'type'    => Controls_Manager::SELECT,
 							'options' => ! empty( $values['options'] ) && is_array( $values['options'] ) ? $values['options'] : [
-								'300' => esc_html__( '300 (Light)', 'zyre-elementor-addons' ),
-								'400' => esc_html__( '400 (Normal)', 'zyre-elementor-addons' ),
-								'500' => esc_html__( '500 (Medium)', 'zyre-elementor-addons' ),
-								'600' => esc_html__( '600 (Semi Bold)', 'zyre-elementor-addons' ),
-								'700' => esc_html__( '700 (Bold)', 'zyre-elementor-addons' ),
+								'100'    => esc_html__( '100 (Thin)', 'zyre-elementor-addons' ),
+								'200'    => esc_html__( '200 (Extra Light)', 'zyre-elementor-addons' ),
+								'300'    => esc_html__( '300 (Light)', 'zyre-elementor-addons' ),
+								'400'    => esc_html__( '400 (Normal)', 'zyre-elementor-addons' ),
+								'500'    => esc_html__( '500 (Medium)', 'zyre-elementor-addons' ),
+								'600'    => esc_html__( '600 (Semi Bold)', 'zyre-elementor-addons' ),
+								'700'    => esc_html__( '700 (Bold)', 'zyre-elementor-addons' ),
+								'800'    => esc_html__( '800 (Extra Bold)', 'zyre-elementor-addons' ),
+								'900'    => esc_html__( '900 (Black)', 'zyre-elementor-addons' ),
+								''       => esc_html__( 'Default', 'zyre-elementor-addons' ),
+								'normal' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
+								'bold'   => esc_html__( 'Bold', 'zyre-elementor-addons' ),
 							],
 							'default' => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '400',
 							'selectors'            => [
@@ -791,9 +798,11 @@ abstract class Base extends Widget_Base {
 							'selectors'            => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => '{{VALUE}}',
 							],
-							'prefix_class'         => ! empty( $values['prefix_class'] ) ? esc_html( $values['prefix_class'] ) : '',
 							'condition'            => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
+						if ( ! empty( $values['prefix_class'] ) ) {
+							$control_args['prefix_class'] = esc_html( $values['prefix_class'] );
+						}
 						if ( ! empty( $values['separator'] ) ) {
 							$control_args['separator'] = $values['separator'];
 						}
@@ -1032,7 +1041,7 @@ abstract class Base extends Widget_Base {
 					case 'align_y':
 					case 'vertical_align':
 						$allowed_defaults = [ 'flex-start', 'center', 'flex-end', 'stretch' ];
-						$allowed_props = [ 'align-items', 'align-content' ];
+						$allowed_props = [ 'align-items', 'align-content', 'justify-content' ];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'align-items';
 						$control_args = [
 							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Vertical Align', 'zyre-elementor-addons' ),

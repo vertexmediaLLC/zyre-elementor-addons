@@ -70,6 +70,30 @@
     flex-shrink: 0;
 }
 
+/* Source: advance-tab/advance-tab.css */
+.zyre-addon-advance-tab  .zyre-tabs-nav-item,
+.zyre-addon-advance-tab  .zyre-tabs-nav-item * {
+	transition: color var(--zy-transition-duration), background var(--zy-transition-duration), border-color var(--zy-transition-duration);
+}
+
+.zyre-addon-advance-tab .zyre-tabs-nav-item {
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	box-shadow: none;
+    color: #000000;
+	padding: 1.05em 0;
+}
+
+.zyre-addon-advance-tab .zyre-tabs-nav-item.active {
+    color: #197dff;
+	border-color: #197dff;
+}
+
+.zyre-addon-advance-tab .zyre-tabs-content-item:not(.active) {
+    display: none;
+}
+
 /* Source: advance-toggle/advance-toggle.css */
 .zyre-addon-advance-toggle .zyre-advance-accordion-section:not(.active) .zyre-accordion-contents,
 .zyre-addon-advance-toggle .zyre-advance-accordion-section .toggle-icon-opened,
