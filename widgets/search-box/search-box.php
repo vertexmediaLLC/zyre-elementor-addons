@@ -535,7 +535,7 @@ class Search_Box extends Base {
 						'label'    => __( 'Placeholder Color', 'zyre-elementor-addons' ),
 						'selector' => '{{WRAPPER}} .zyre-search-field::placeholder, {{WRAPPER}} .zyre-search-field::-webkit-input-placeholder',
 					],
-					'bg_color'       => [],
+					'bg'             => [],
 					'height'         => [],
 					'border'         => [],
 					'border_color_2' => [
