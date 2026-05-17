@@ -319,7 +319,7 @@ abstract class Base extends Widget_Base {
 								'normal' => esc_html__( 'Normal', 'zyre-elementor-addons' ),
 								'bold'   => esc_html__( 'Bold', 'zyre-elementor-addons' ),
 							],
-							'default' => ! empty( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '400',
+							'default' => isset( $values['default'] ) && in_array( $values['default'], $allowed_defaults, true ) ? $values['default'] : '400',
 							'selectors'            => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'font-weight: {{VALUE}};',
 							],
