@@ -78,14 +78,12 @@ function haObserveTarget(target, callback) {
     var Toggle_Switcher = function Toggle_Switcher($scope) {
       var parent = $scope.find(".zyre-toggle-wrapper"),
         toggleType = parent.data("toggle-type");
-      if (toggleType == "button") {
-        var buttons = parent.find(".zyre-toggle-switch-button"),
-          hoverContentDisplay = $scope.hasClass("zyre-toggle-content-display-hover--yes"),
-		  eventType = hoverContentDisplay ? "mouseenter" : "click",
+      if (toggleType == "title") {
+        var buttons = parent.find(".zyre-toggle-switch-text"),
           contents = parent.find(".zyre-toggle-content-section");
 		  
         buttons.each(function (inx, btn) {
-          $(this).on(eventType, function (e) {
+          $(this).on("click", function (e) {
             e.preventDefault();
 
             if ($(this).hasClass("active")) {

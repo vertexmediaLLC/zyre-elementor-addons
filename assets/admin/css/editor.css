@@ -154,6 +154,10 @@
 	visibility: visible;
 }
 
+.elementor-control-zyre_switch_items .elementor-button.elementor-repeater-add {
+	display: none;
+}
+
 /* micromodal */
 .micromodal-slide {
 	display: none;
