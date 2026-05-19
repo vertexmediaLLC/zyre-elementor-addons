@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,7 @@ Below is the complete list of widgets included in the free version.
 * **[Author Box](https://zyreaddons.com/demos/author-box/)**: Author bio and details.
 * **[PDF View](https://zyreaddons.com/demos/pdf-view/)**: Embed PDF files with download option.
 * **[Lottie Animation](https://zyreaddons.com/demos/lottie-animations/)**: Lightweight Lottie animations.
+* **[Advance Tab](https://zyreaddons.com/demos/advance-tab/)**: Create horizontal & vertical tabs to display HTML text, and saved templates.
 * More coming...
 
 ## Theme Builder
@@ -134,7 +135,15 @@ ZyreAddons Pro is currently under development and will include advanced widgets,
 
 ### Privacy Policy
 
-This plugin may display an optional newsletter subscription form in the WordPress dashboard. If a user voluntarily submits their email address, it is sent to Mailchimp for newsletter subscription purposes. No email data is collected or transmitted without user action.
+**Zyre Addons** uses [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
+
+Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users. 
+
+Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
+
+Learn more about how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).
+
+This plugin may also display an optional newsletter subscription form in the WordPress dashboard. If a user voluntarily submits their email address, it is sent to Mailchimp for newsletter subscription purposes. No email data is collected or transmitted without user action.
 
 Privacy Policy: https://zyreaddons.com/privacy-policy/
 Terms of Use: https://zyreaddons.com/terms-of-use/
@@ -202,12 +211,6 @@ Endpoint: https://*.api.mailchimp.com/3.0/
 Terms of Use: https://mailchimp.com/legal/terms/
 Privacy Policy: https://mailchimp.com/legal/privacy/
 
-**3. Appsero**
-
-This plugin uses the Appsero SDK for a feedback modal on plugin deactivation and optional telemetry collection. Data (site URL, plugin & WordPress version, PHP version, activation status) is collected only after explicit opt-in. No personal user data is collected without consent.
-
-Privacy Policy: https://appsero.com/privacy-policy/
-
 
 == Installation ==
 
@@ -241,6 +244,11 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 
 == Changelog ==
+
+= 2.0.5 - 19 May 2026 =
+
+- Removed the button parts from Toggle widget.
+- Added a new widget: Advanced Tab
 
 = 2.0.4 - 06 May 2026 =
 
