@@ -30,6 +30,10 @@
 
     /* Transitions */
     --zy-transition-duration: 0.3s;
+    --zy-transition-duration2: 0.25s;
+    --zy-transition-duration3: 0.2s;
     --zy-transition-property: all;
     --zy-transition: var(--zy-transition-property) var(--zy-transition-duration);
+    --zy-transition2: var(--zy-transition-property) var(--zy-transition-duration2);
+    --zy-transition3: var(--zy-transition-property) var(--zy-transition-duration3);
 }

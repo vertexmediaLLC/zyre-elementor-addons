@@ -132,6 +132,18 @@
 	transform: rotate(270deg);
 }
 
+#elementor-controls .elementor-control-type-repeater .zyre-repeater-fields-type_child {
+	margin-left: 10px;
+}
+
+#elementor-controls .elementor-control-type-repeater .zyre-repeater-fields-type_child .elementor-repeater-row-tools > button {
+	height: 36px;
+}
+
+#elementor-controls .elementor-control-type-repeater .zyre-repeater-fields-type_child .elementor-repeater-row-tools .elementor-repeater-row-tool {
+	width: 36px;
+}
+
 /* Tooltip */
 .elementor-control-type-zyreladdons_style_select .elementor-control-input-wrapper {
 	position: relative;

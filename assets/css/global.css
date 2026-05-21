@@ -108,6 +108,7 @@
 .zyre-addon .zy-direction-row {flex-direction: row;}
 .zyre-addon .zy-dir-row-reverse {flex-direction: row-reverse;}
 .zyre-addon .zy-direction-column {flex-direction: column;}
+.zyre-addon .zy-flex-1 {flex: 1;}
 .zyre-addon .zy-grow-1 {flex-grow: 1;}
 .zyre-addon .zy-basis-0 {flex-basis: 0;}
 .zyre-addon .zy-shrink-0 {flex-shrink: 0;}
@@ -253,6 +254,11 @@
 
 /* transition */
 .zyre-addon .zy-transition {transition: var(--zy-transition);}
+.zyre-addon .zy-transition2 {transition: var(--zy-transition2);}
+.zyre-addon .zy-transition3 {transition: var(--zy-transition3);}
+.zyre-addon .zy-transition-all, .zyre-addon .zy-transition-all > * {transition: var(--zy-transition);}
+.zyre-addon .zy-transition2-all, .zyre-addon .zy-transition2-all > * {transition: var(--zy-transition2);}
+.zyre-addon .zy-transition3-all, .zyre-addon .zy-transition3-all > * {transition: var(--zy-transition3);}
 
 /* position, left, top, right, bottom */
 .zyre-addon .zy-relative {position: relative;}
