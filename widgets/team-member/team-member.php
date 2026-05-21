@@ -1,7 +1,6 @@
 <?php
 namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
-use Automattic\WooCommerce\Admin\API\Reports\Query;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;

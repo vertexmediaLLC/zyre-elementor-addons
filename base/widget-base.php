@@ -879,6 +879,7 @@ abstract class Base extends Widget_Base {
 
 					case 'align':
 					case 'alignment':
+					case 'text_align':
 						$allowed_defaults = [ 'left', 'center', 'right', 'justify' ];
 						$control_args = [
 							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Alignment', 'zyre-elementor-addons' ),
