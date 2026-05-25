@@ -606,6 +606,7 @@ abstract class Base extends Widget_Base {
 						break;
 
 					case 'margin':
+					case 'margin_2':
 						$control_args = [
 							'label'      => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Margin', 'zyre-elementor-addons' ),
 							'type'       => Controls_Manager::DIMENSIONS,
@@ -1220,6 +1221,29 @@ abstract class Base extends Widget_Base {
 							'selectors' => [
 								! empty( $values['selector'] ) ? $values['selector'] : $selector => "transform: rotate({{SIZE}}{{UNIT}}){$priority};",
 							],
+						];
+						if ( ! empty( $values['separator'] ) ) {
+							$control_args['separator'] = $values['separator'];
+						}
+						$this->add_responsive_control( $control_name, $control_args );
+						break;
+
+					case 'scale':
+					case 'scale_2':
+						$control_args = [
+							'label'       => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Scale', 'zyre-elementor-addons' ),
+							'description' => ! empty( $values['description'] ) ? esc_html( $values['description'] ) : '',
+							'range'       => ! empty( $values['range'] ) && is_array( $values['range'] ) ? $values['range'] : [
+								'px' => [
+									'max'  => 5,
+									'step' => 0.1,
+								],
+							],
+							'type'        => Controls_Manager::SLIDER,
+							'selectors'   => [
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => "transform: scale({{SIZE}});",
+							],
+							'condition'   => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
 						if ( ! empty( $values['separator'] ) ) {
 							$control_args['separator'] = $values['separator'];
