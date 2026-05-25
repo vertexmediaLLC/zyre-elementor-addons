@@ -358,6 +358,16 @@ trait Swiper_Trait {
 		);
 
 		$this->add_control(
+			'centered_slides',
+			[
+				'label'              => esc_html__( 'Centered Slides', 'zyre-elementor-addons' ),
+				'type'               => Controls_Manager::SWITCHER,
+				'default'            => '',
+				'frontend_available' => true,
+			]
+		);
+
+		$this->add_control(
 			'autoplay',
 			[
 				'label' => esc_html__( 'Autoplay', 'zyre-elementor-addons' ),
