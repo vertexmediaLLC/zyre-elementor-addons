@@ -59,7 +59,7 @@ function zyreladdons_get_el_post_widget_settings( $post_id, $widget_id ) {
  *
  * @param string $key
  *
- * @return void
+ * @return array
  * @since 1.0.0
  */
 function zyreladdons_get_credentials( $key = '' ) {

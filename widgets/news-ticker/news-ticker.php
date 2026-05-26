@@ -4,6 +4,7 @@ namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 
 use Elementor\Controls_Manager;
 use Elementor\Icons_Manager;
+use VertexMediaLLC\ZyreElementorAddons\Query_Manager;
 use VertexMediaLLC\ZyreElementorAddons\Traits\Swiper_Trait;
 
 defined( 'ABSPATH' ) || die();
@@ -121,7 +122,7 @@ class News_Ticker extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
-				'options' => zyreladdons_get_all_posts(),
+				'options' => Query_Manager::get_query_post_list( 'post' ),
 				'condition' => [
 					'query_source' => 'post',
 					'query_selection' => 'manual',
@@ -137,7 +138,7 @@ class News_Ticker extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Page', 'zyre-elementor-addons' ),
-				'options' => zyreladdons_get_all_pages(),
+				'options' => Query_Manager::get_query_post_list( 'page' ),
 				'condition' => [
 					'query_source' => 'page',
 					'query_selection' => 'manual',

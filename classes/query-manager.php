@@ -13,6 +13,14 @@ class Query_Manager {
 	 * @return array
 	 */
 	public static function get_page_template_options( $type = '', $args = [] ) {
+		static $cache = [];
+
+		$key = md5( wp_json_encode( [ $type, $args ] ) );
+
+		if ( isset( $cache[ $key ] ) ) {
+			return $cache[ $key ];
+		}
+
 		$page_templates = self::get_elementor_templates( $type, $args );
 
 		$options = [];
@@ -24,6 +32,8 @@ class Query_Manager {
 		} else {
 			$options['no_template'] = __( 'No saved templates found!', 'zyre-elementor-addons' );
 		}
+
+		$cache[ $key ] = $options;
 
 		return $options;
 	}
@@ -69,7 +79,7 @@ class Query_Manager {
 
 
     /**
-     * Query Posts
+     * Get a list of posts based on specified criteria such as post type, limit, and search term.
      *
      * @param string $post_type
      * @param integer $limit
@@ -138,23 +148,47 @@ class Query_Manager {
 
 		return $data;
 	}
-
+	
 	/**
-	 * Get all WordPress registered widgets
+	 * Get author list based on specified roles, with options to include or exclude certain roles.
+	 * 
+	 * @param array $args {
+	 *    @type array $exclude_roles Roles to exclude from the author list.
+	 *    @type array $include_roles Roles to include in the author list.
+	 * }
 	 *
-	 * @return array
+	 * @return array Array of authors with user ID as key and display name as value.
 	 */
-	public static function get_registered_sidebars() {
-		global $wp_registered_sidebars;
-		$options = [];
+	public static function get_author_list( $args = [] ) {
+		$allowed_roles = [ 'contributor', 'author', 'editor', 'administrator' ];
 
-		if ( ! empty( $wp_registered_sidebars ) && is_array( $wp_registered_sidebars ) ) {
-			foreach ( $wp_registered_sidebars as $sidebar_id => $sidebar ) {
-				$options[$sidebar_id] = $sidebar['name'];
+		if ( ! empty( $args['exclude_roles'] ) && is_array( $args['exclude_roles'] ) ) {
+			foreach ( $args['exclude_roles'] as $role ) {
+				if ( in_array( $role, $allowed_roles ) ) {
+					$allowed_roles = array_diff( $allowed_roles, [ $role ] );
+					$allowed_roles = array_values( $allowed_roles ); // Reindex array after removal
+				}
 			}
 		}
 
-		return $options;
+		if ( ! empty( $args['include_roles'] ) && is_array( $args['include_roles'] ) ) {
+			foreach ( $args['include_roles'] as $role ) {
+				if ( ! in_array( $role, $allowed_roles ) ) {
+					$allowed_roles[] = $role;
+				}
+			}
+		}
+
+		$users = get_users( [
+			'role__in'            => $allowed_roles,
+			'fields'              => [ 'ID', 'display_name' ],
+		] );
+
+		if ( ! empty( $users ) ) {
+			return wp_list_pluck( $users, 'display_name', 'ID' );
+		}
+
+		return [];
 	}
 
 	/**
@@ -164,7 +198,15 @@ class Query_Manager {
 	 * @return array
 	 */
 	public static function get_post_types( $args = [] ) {
-		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+		$default_args = [
+			'public' => true,
+		];
+
+		if ( isset( $args['show_in_nav_menus'] ) ) {
+			$default_args['show_in_nav_menus'] = (bool) $args['show_in_nav_menus'];
+		}
+
+		$post_types = get_post_types( $default_args, 'objects' );
 
 		if ( ! empty( $args['exclude'] ) && is_array( $args['exclude'] ) ) {
 			foreach ( $args['exclude'] as $name ) {
@@ -191,5 +233,64 @@ class Query_Manager {
 		}
 
 		return $list;
+	}
+
+	/**
+	 * Get term list based on specified taxonomy and other arguments, with the option to specify which field to use as the key in the returned array.
+	 * 
+	 * @param array $args {
+	 *   @type string $taxonomy The taxonomy to retrieve terms from (default: 'category').
+	 *   @type bool $hide_empty Whether to hide terms that have no posts (default: true).
+	 * }
+	 * @param string $field The field of the term object to use as the key in the returned array (default: 'term_id').
+	 *
+	 * @return array
+	 */
+	 public static function get_term_list( $args = [], $field = 'term_id' ) {
+		static $cache = [];
+
+		$default_args = [
+			'taxonomy' => 'category',
+			'hide_empty' => true,
+		];
+
+		$args = wp_parse_args( $args, $default_args );
+
+		$key = md5( wp_json_encode( [ $args, $field ] ) );
+
+		if ( isset( $cache[ $key ] ) ) {
+			return $cache[ $key ];
+		}
+
+		$options = [];
+		$terms = get_terms( $args );
+
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+			foreach ( $terms as $term ) {
+				$options[ $term->{$field} ] = $term->name;
+			}
+		}
+
+		$cache[ $key ] = $options;
+
+		return $options;
+	}
+
+	/**
+	 * Get all WordPress registered widgets
+	 *
+	 * @return array
+	 */
+	public static function get_registered_sidebars() {
+		global $wp_registered_sidebars;
+		$options = [];
+
+		if ( ! empty( $wp_registered_sidebars ) && is_array( $wp_registered_sidebars ) ) {
+			foreach ( $wp_registered_sidebars as $sidebar_id => $sidebar ) {
+				$options[$sidebar_id] = $sidebar['name'];
+			}
+		}
+
+		return $options;
 	}
 }

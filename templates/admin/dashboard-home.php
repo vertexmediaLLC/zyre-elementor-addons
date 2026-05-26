@@ -3,6 +3,8 @@
  * Dashboard main template
  */
 
+use VertexMediaLLC\ZyreElementorAddons\Widgets_Manager;
+
 defined( 'ABSPATH' ) || die();
 
 $widgets = self::get_widgets();
@@ -10,8 +12,8 @@ $widget_key_first = array_key_first( $widgets );
 $used_widgets = self::get_widgets_raw_usage();
 $unused_widgets = self::get_widgets_unusage();
 
-$inactive_widgets = \VertexMediaLLC\ZyreElementorAddons\Widgets_Manager::get_inactive_widgets();
-$active_styles = \VertexMediaLLC\ZyreElementorAddons\Widgets_Manager::get_widgets_active_styles();
+$inactive_widgets = Widgets_Manager::get_inactive_widgets();
+$active_styles = Widgets_Manager::get_widgets_active_styles();
 
 $total_widgets_count = count( $widgets );
 $total_used_widgets_count = count( $used_widgets );
@@ -144,7 +146,7 @@ $credential_data = zyreladdons_get_credentials();
 								</div>
 								<div class="zyre-tabs-up-content-right">
 									<figure class="zyre-elements">
-										<img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/welcome-image.png' ); ?>" alt="<?php echo esc_attr_e( 'Welcome Image', 'zyre-elementor-addons' ); ?>">
+										<img src="<?php echo esc_url( ZYRELADDONS_ASSETS . 'img/welcome-image.png' ); ?>" alt="<?php esc_attr_e( 'Welcome Image', 'zyre-elementor-addons' ); ?>">
 									</figure>
 								</div>
 							</div>
@@ -461,6 +463,8 @@ $credential_data = zyreladdons_get_credentials();
 								$widget_styles_count = count( $widget_styles );
 								$widget_class = 'zyre-dash-widget-tab';
 
+								$is_pro_widget = isset( $widget['is_pro'] ) && $widget['is_pro'];
+
 								$widget_active = false;
 								$default_style_key = self::get_widget_default_style_key( $widget_key );
 								$checked = '';
@@ -515,7 +519,8 @@ $credential_data = zyreladdons_get_credentials();
 										<?php
 										$i = 1;
 										foreach ( $widget_styles as $style_key => $style ) :
-											$thumb_url = ! empty( $style['thumb'] ) ? $style['thumb'] : $widget_style_thumb_ph;
+											$file_name = 'style-' . $style_key;
+											$thumb_url = self::get_widget_thumbnail_url( $widget_key, $file_name, $is_pro_widget );
 											$is_default_style = $default_style_key === $style_key;
 
 											$is_active = isset( $active_styles[ $widget_key ] ) && ! empty( $active_styles[ $widget_key ] ) ? in_array( $style_key, $active_styles[ $widget_key ], true ) : $style['is_active'];
@@ -523,7 +528,7 @@ $credential_data = zyreladdons_get_credentials();
 											?>
 											<div class="zyre-dash-each-widget-style <?php echo $is_default_style ? 'widget-style--active-default' : ''; ?>">
 												<figure>
-													<img src="<?php echo esc_url( $thumb_url ); ?>" alt="">
+													<img src="<?php echo esc_url( $thumb_url ? $thumb_url : $widget_style_thumb_ph ); ?>" alt="">
 												</figure>
 												<div class="zyre-dash-each-widget-style-content">
 													<p class="zyre-widget-style-type">

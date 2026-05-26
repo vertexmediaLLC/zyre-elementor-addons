@@ -179,6 +179,35 @@ class Dashboard {
 		return $style_key;
 	}
 
+	public static function get_widget_thumbnail_url( $widget_id, $file_name, $is_pro_widget = false ) {
+		$widget_id = sanitize_key( $widget_id );
+
+		$plugin_dir = ZYRELADDONS_DIR_PATH;
+		if ( $is_pro_widget && defined( 'ZYRELADDONSPRO_DIR_PATH' ) ) {
+			$plugin_dir = ZYRELADDONSPRO_DIR_PATH;
+		}
+
+		$plugin_assets = ZYRELADDONS_ASSETS;
+		if ( $is_pro_widget && defined( 'ZYRELADDONSPRO_ASSETS' ) ) {
+			$plugin_assets = ZYRELADDONSPRO_ASSETS;
+		}
+
+		$file_dir = 'img/widgets-thumbs/' . $widget_id . '/' . $file_name;
+		$file_path = trailingslashit( $plugin_dir . 'assets' ) . $file_dir;
+		$file_path_jpg = $file_path . '.jpg';
+		$file_path_png = $file_path . '.png';
+
+		$file_url = '';
+
+		if ( file_exists( $file_path_jpg ) ) {
+			$file_url = $plugin_assets . $file_dir . '.jpg';
+		} elseif ( file_exists( $file_path_png ) ) {
+			$file_url = $plugin_assets . $file_dir . '.png';
+		}
+
+		return $file_url;
+	}
+
 	public static function add_menu() {
 		self::$menu_slug = add_menu_page(
 			__( 'Zyre Elementor Addons Dashboard', 'zyre-elementor-addons' ),

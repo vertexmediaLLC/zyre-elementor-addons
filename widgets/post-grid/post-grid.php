@@ -5,6 +5,7 @@ namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use VertexMediaLLC\ZyreElementorAddons\Query_Manager;
 
 defined( 'ABSPATH' ) || die();
 
@@ -116,8 +117,14 @@ class Post_Grid extends Base {
 			]
 		);
 
-		$post_types = zyreladdons_get_post_types();
+		$post_types = Query_Manager::get_post_types(
+			[
+				'exclude' => [ 'attachment', 'elementor_library' ],
+				'show_in_nav_menus' => true,
+			]
+		);
 		$post_types['archive'] = esc_html__( 'Archive Posts', 'zyre-elementor-addons' );
+		$post_types['manual'] = esc_html__( 'Manual Selection', 'zyre-elementor-addons' );
 
 		$this->add_control(
 			'query_source',
@@ -136,7 +143,7 @@ class Post_Grid extends Base {
 				'type' => Controls_Manager::SELECT2,
 				'label_block' => true,
 				'multiple' => true,
-				'options' => zyreladdons_get_all_type_posts(),
+				'options' => Query_Manager::get_query_post_list(),
 				'condition' => [
 					'query_source' => 'manual',
 				],
@@ -151,7 +158,7 @@ class Post_Grid extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
-				'options' => zyreladdons_get_all_author(),
+				'options' => Query_Manager::get_author_list(),
 				'condition' => [
 					'query_source!' => [ 'manual', 'archive' ],
 				],
@@ -174,7 +181,7 @@ class Post_Grid extends Base {
 					'type' => Controls_Manager::SELECT2,
 					'label_block' => true,
 					'multiple' => true,
-					'options' => zyreladdons_get_category_list( $taxonomy ), // Use your existing helper to get terms
+					'options' => Query_Manager::get_term_list( [ 'taxonomy' => $taxonomy ] ), // Use your existing helper to get terms
 					'condition' => [
 						'query_source' => $object->object_type,
 						'query_source!' => 'manual',
@@ -227,9 +234,24 @@ class Post_Grid extends Base {
 				'label_block' => true,
 				'multiple' => true,
 				'placeholder' => esc_html__( 'Search Post', 'zyre-elementor-addons' ),
-				'options' => zyreladdons_get_all_posts(),
+				'options' => Query_Manager::get_query_post_list( 'post' ),
 				'condition' => [
-					'query_source!' => [ 'manual', 'archive' ],
+					'query_source!' => [ 'page', 'manual', 'archive' ],
+				],
+			]
+		);
+
+		$this->add_control(
+			'exclude_pages',
+			[
+				'label' => esc_html__( 'Exclude Pages', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::SELECT2,
+				'label_block' => true,
+				'multiple' => true,
+				'placeholder' => esc_html__( 'Search Page', 'zyre-elementor-addons' ),
+				'options' => Query_Manager::get_query_post_list( 'page' ),
+				'condition' => [
+					'query_source' => [ 'page' ],
 				],
 			]
 		);
@@ -2259,6 +2281,10 @@ class Post_Grid extends Base {
 
 		if ( ! empty( $this->settings['exclude_posts'] ) ) {
 			$query_args['post__not_in'] = array_map( 'intval', (array) $this->settings['exclude_posts'] );
+		}
+
+		if ( ! empty( $this->settings['exclude_pages'] ) ) {
+			$query_args['post__not_in'] = array_map( 'intval', (array) $this->settings['exclude_pages'] );
 		}
 
 		if ( ! empty( $this->settings['author_list'] ) ) {
