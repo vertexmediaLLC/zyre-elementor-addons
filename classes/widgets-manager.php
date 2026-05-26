@@ -114,32 +114,19 @@ class Widgets_Manager {
 	}
 
 	/**
-	 * Get widget thumbnail url.
-	 *
-	 * @param string $widget_id The widget id
-	 * @param string $file_name Name of the file. e.g. style-one.jpg
-	 *
-	 * @return string File url or ''.
-	 */
-	public static function get_widget_thumbnail_url( $widget_id, $file_name ) {
-		$widget_id = sanitize_key( $widget_id );
-		$file_name = basename( $file_name );
-		$relative_path = 'img/widgets-thumbs/' . $widget_id . '/' . $file_name;
-
-		$file_path = trailingslashit( ZYRELADDONS_DIR_PATH . 'assets' ) . $relative_path;
-		$file_url = ZYRELADDONS_ASSETS . $relative_path;
-
-		return file_exists( $file_path ) ? $file_url : '';
-	}
-
-	/**
 	 * Retrieves the free widgets map.
 	 *
 	 * @since 1.0.0
 	 * @return array The free widgets map.
 	 */
 	public static function get_free_widgets_map() {
-		return [
+		static $cache = null;
+
+		if ( null !== $cache ) {
+			return $cache;
+		}
+		
+		$cache = [
 			'heading' => [
 				'cat'       => 'general',
 				'is_active' => true,
@@ -152,32 +139,26 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'heading', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Creative', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'heading', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'heading', 'style-three.jpg' ),
 					],
 					'four'  => [
 						'name'      => esc_html__( 'Two Layers', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'heading', 'style-four.jpg' ),
 					],
 					'five'  => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'heading', 'style-five.jpg' ),
 					],
 					'six'  => [
 						'name'      => esc_html__( 'Dual Font', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'heading', 'style-six.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -194,22 +175,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Default', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-heading', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Dual Font', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-heading', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-heading', 'style-three.jpg' ),
 					],
 					'four'  => [
 						'name'      => esc_html__( 'Three Layers', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-heading', 'style-four.jpg' ),
 					],
 				],
 				'style_default' => 'one',
@@ -227,12 +204,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Dual Font', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'gradient-heading', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'gradient-heading', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -249,17 +224,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'dual-color-heading', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Background', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'dual-color-heading', 'style-two.jpg' ),
 					],
 					'three'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'dual-color-heading', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -276,17 +248,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-heading', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Complex', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-heading', 'style-two.jpg' ),
 					],
 					'three'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-heading', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -303,27 +272,22 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Primary', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Primary Two', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-two.jpg' ),
 					],
 					'three'  => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-three.jpg' ),
 					],
 					'four'  => [
 						'name'      => esc_html__( 'Iconic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-four.jpg' ),
 					],
 					'five' => [
 						'name'      => esc_html__( '3D', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'button', 'style-five.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -340,22 +304,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Primary', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-one.jpg' ),
 					],
 					'two' => [
 						'name'      => esc_html__( 'Primary Two', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Join Buttons', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-three.jpg' ),
 					],
 					'four'   => [
 						'name'      => esc_html__( 'Join Buttons Two', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'dual-button', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -372,17 +332,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'infobox', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'infobox', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'infobox', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -399,27 +356,22 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'iconbox', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'iconbox', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'iconbox', 'style-three.jpg' ),
 					],
 					'four'  => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'iconbox', 'style-four.jpg' ),
 					],
 					'five'  => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'iconbox', 'style-five.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -436,12 +388,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Image Card', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'flipbox', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Team Card', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'flipbox', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -458,27 +408,22 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'call-to-action', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Dual Button', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'call-to-action', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'call-to-action', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'call-to-action', 'style-four.jpg' ),
 					],
 					'five' => [
 						'name'      => esc_html__( 'Standard-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'call-to-action', 'style-five.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -495,22 +440,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Banner', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Overlay Image', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-two.jpg' ),
 					],
 					'three'   => [
 						'name'      => esc_html__( 'Product Banner', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Product Banner-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'featured-banner', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -527,17 +468,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'feature-list', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance 2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'feature-list', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'feature-list', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -554,22 +492,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'numeric-list', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'numeric-list', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'numeric-list', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Boxed', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'numeric-list', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -586,17 +520,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Horizontal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-list', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-list', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Boxed', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-list', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -613,17 +544,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'list-group', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'list-group', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'list-group', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -640,12 +568,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-carousel', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-carousel', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -662,12 +588,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'team-member', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'team-member', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -684,17 +608,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'testimonial', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'With Review', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'testimonial', 'style-two.jpg' ),
 					],
 					'three'   => [
 						'name'      => esc_html__( 'Message', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'testimonial', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -711,42 +632,34 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Overlay', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-four.jpg' ),
 					],
 					'five' => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-five.jpg' ),
 					],
 					'six' => [
 						'name'      => esc_html__( 'Boxed', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-six.jpg' ),
 					],
 					'seven' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-seven.jpg' ),
 					],
 					'eight' => [
 						'name'      => esc_html__( 'Modern-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-grid', 'style-eight.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -763,22 +676,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Creative', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'image-grid', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -799,17 +708,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'logo-grid', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'logo-grid', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'logo-grid', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -826,7 +732,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'logo-carousel', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -843,12 +748,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'social-icon', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'social-icon', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -865,12 +768,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'social-share', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'social-share', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -891,17 +792,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-accordion', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-accordion', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Smart', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-accordion', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -918,17 +816,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-toggle', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-toggle', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-toggle', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -945,22 +840,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'fun-fact', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Boxed', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'fun-fact', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'fun-fact', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'fun-fact', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -981,7 +872,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'alert', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1002,12 +892,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Individuals', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'skill-bar', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Company', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'skill-bar', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1028,7 +916,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'countdown', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1049,17 +936,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Primary', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'business-hour', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'business-hour', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Boxed', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'business-hour', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1076,12 +960,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'drop-cap', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'drop-cap', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1098,17 +980,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Changing Word', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'animated-text', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Changing Color', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'animated-text', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Flashing', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'animated-text', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1129,22 +1008,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'news-ticker', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'news-ticker', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'news-ticker', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Breaking', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'news-ticker', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1161,12 +1036,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'divider', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Dotted', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'divider', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1183,22 +1056,18 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Primary', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'toggle', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'On-Off', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'toggle', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'toggle', 'style-three.jpg' ),
 					],
 					'four' => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'toggle', 'style-four.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1215,12 +1084,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-tab', 'style-one.jpg' ),
 					],
 					'two' => [
 						'name'      => esc_html__( 'Info tab', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'advance-tab', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1237,17 +1104,14 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'subscription-form', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'subscription-form', 'style-two.jpg' ),
 					],
 					'three' => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'subscription-form', 'style-three.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1264,12 +1128,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'cf7', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Minimal', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'cf7', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1286,12 +1148,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'site-title', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'site-title', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1308,7 +1168,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'site-tagline', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1325,7 +1184,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'site-logo', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1342,7 +1200,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'menu', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1364,7 +1221,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'mega-menu', 'style-one.jpg' ),
 					],
 				],
 			],
@@ -1381,7 +1237,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'off-canvas', 'style-one.jpg' ),
 					],
 				],
 			],
@@ -1398,32 +1253,26 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Simple-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-two.jpg' ),
 					],
 					'three'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-three.jpg' ),
 					],
 					'four'   => [
 						'name'      => esc_html__( 'Standard-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-four.jpg' ),
 					],
 					'five'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-five.jpg' ),
 					],
 					'six'   => [
 						'name'      => esc_html__( 'Advance-2', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'search-box', 'style-six.jpg' ),
 					],
 				],
 			],
@@ -1439,12 +1288,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-title', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-title', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1461,7 +1308,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'page-title', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1478,7 +1324,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-excerpt', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1495,7 +1340,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-content', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1512,7 +1356,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-thumbnail', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1529,7 +1372,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-meta', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1546,12 +1388,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-navigation', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Simple', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-navigation', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1568,12 +1408,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-comments', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'post-comments', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1590,7 +1428,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'archive-title', 'style-one.png' ),
 					],
 				],
 				'js'        => [],
@@ -1607,7 +1444,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Standard', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'archive-description', 'style-one.png' ),
 					],
 				],
 				'js'        => [],
@@ -1624,12 +1460,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'archive-posts', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Modern', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'archive-posts', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1646,12 +1480,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'author-box', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'author-box', 'style-two.png' ),
 					],
 				],
 				'js'        => [],
@@ -1668,12 +1500,10 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Basic', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'pdf-view', 'style-one.jpg' ),
 					],
 					'two'   => [
 						'name'      => esc_html__( 'Advance', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'pdf-view', 'style-two.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1694,7 +1524,6 @@ class Widgets_Manager {
 					'one'   => [
 						'name'      => esc_html__( 'Style One', 'zyre-elementor-addons' ),
 						'is_active' => true,
-						'thumb'     => self::get_widget_thumbnail_url( 'lottie-animation', 'style-one.jpg' ),
 					],
 				],
 				'js'        => [],
@@ -1704,6 +1533,8 @@ class Widgets_Manager {
 				],
 			],
 		];
+
+		return $cache;
 	}
 
 	/**
@@ -1790,29 +1621,51 @@ class Widgets_Manager {
 	 * @return array The widget map styles.
 	 */
 	public static function get_the_widget_styles( string $widget_id ) {
+		static $cache = [];
+
 		$widget_id = str_replace( 'zyre-', '', $widget_id );
 
-		$widget_map = self::get_the_widget_map( $widget_id );
 		$all_active_styles = self::get_widgets_active_styles();
+
+		$key = md5( wp_json_encode( [
+			'widget_id' => $widget_id,
+			'active'    => $all_active_styles[ $widget_id ] ?? [],
+		] ) );
+
+		if ( isset( $cache[ $key ] ) ) {
+			return $cache[ $key ];
+		}
+
+		$widget_map = self::get_the_widget_map( $widget_id );
 		$active_styles = isset( $all_active_styles[ $widget_id ] ) ? $all_active_styles[ $widget_id ] : [];
 
 		$widget_styles = [];
 
 		if ( ! empty( $widget_map['styles'] ) && is_array( $widget_map['styles'] ) ) {
 			$i = 1;
-			foreach ( $widget_map['styles'] as $key => $style ) {
-				$is_active = ! empty( $active_styles ) ? in_array( $key, $active_styles, true ) : $style['is_active'];
+
+			foreach ( $widget_map['styles'] as $key_style => $style ) {
+				$is_active = ! empty( $active_styles ) ? in_array( $key_style, $active_styles, true ) : $style['is_active'];
 
 				$inactive_text = ! $is_active ? esc_html__( '(Inactive)', 'zyre-elementor-addons' ) : '';
-				/* translators: 1: style number, 2: style name, 3: additional text */
-				$widget_styles[ $key ]['name'] = sprintf( esc_html__( 'Style %1$d - %2$s %3$s', 'zyre-elementor-addons' ), $i, $style['name'], $inactive_text );
-				$widget_styles[ $key ]['is_active'] = $is_active;
+
+				$widget_styles[ $key_style ]['name'] = sprintf(
+					/* translators: 1: style number, 2: style name, 3: additional text */
+					esc_html__( 'Style %1$d - %2$s %3$s', 'zyre-elementor-addons' ),
+					$i,
+					$style['name'],
+					$inactive_text
+				);
+
+				$widget_styles[ $key_style ]['is_active'] = $is_active;
 
 				++$i;
 			}
 		}
 
-		return $widget_styles;
+		$cache[ $key ] = $widget_styles;
+
+		return $cache[ $key ];
 	}
 
 	/**
@@ -1838,16 +1691,20 @@ class Widgets_Manager {
 	 * @return array The widget style options.
 	 */
 	public static function get_the_widget_style_options( string $widget_id ) {
-		$default_style = [
-			'default' => [
-				'name'      => esc_html__( 'Default - No Style', 'zyre-elementor-addons' ),
-				'is_active' => true,
-			],
-		];
-		$widget_styles = self::get_the_widget_styles( $widget_id );
-		// $widget_styles = array_merge( $default_style, $widget_styles );
+		static $cache = [];
 
-		return array_map( fn( $style ) => $style['name'], $widget_styles );
+		if ( isset( $cache[ $widget_id ] ) ) {
+			return $cache[ $widget_id ];
+		}
+
+		$widget_styles = self::get_the_widget_styles( $widget_id );
+
+		$cache[ $widget_id ] = array_map(
+			fn( $style ) => $style['name'],
+			$widget_styles
+		);
+
+		return $cache[ $widget_id ];
 	}
 
 	/**

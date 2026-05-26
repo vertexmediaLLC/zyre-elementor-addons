@@ -2,9 +2,9 @@
 Contributors: vertexmediallc
 Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -244,6 +244,10 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 
 == Changelog ==
+
+= 2.0.6 - 26 May 2026 =
+
+- Improved the plugin loading speed.
 
 = 2.0.5 - 19 May 2026 =
 

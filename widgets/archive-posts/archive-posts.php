@@ -6,6 +6,7 @@ use Elementor\Repeater;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use VertexMediaLLC\ZyreElementorAddons\Query_Manager;
 
 defined( 'ABSPATH' ) || die();
 
@@ -129,7 +130,7 @@ class Archive_Posts extends Base {
 				'type'        => Controls_Manager::SELECT2,
 				'label_block' => true,
 				'multiple'    => true,
-				'options'     => zyreladdons_get_all_posts(),
+				'options'     => Query_Manager::get_query_post_list( 'post' ),
 				'condition'   => array(
 					'query_source' => 'manual',
 				),
