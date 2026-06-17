@@ -43,6 +43,7 @@ class Advance_Heading extends Base {
 			[
 				'label'       => esc_html__( 'Title Prefix', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Prefix', 'zyre-elementor-addons' ),
 				'dynamic'     => [ 'active' => true ],
 			]
 		);
@@ -75,6 +76,7 @@ class Advance_Heading extends Base {
 			[
 				'label'       => esc_html__( 'Title Suffix', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Suffix', 'zyre-elementor-addons' ),
 				'dynamic'     => [ 'active' => true ],
 			]
 		);
@@ -123,12 +125,16 @@ class Advance_Heading extends Base {
 				'default'        => '',
 				'options'        => [
 					'block'  => [
-						'title' => esc_html__( 'Block', 'zyre-elementor-addons' ),
+						'title' => esc_html__( 'Flex - Column', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-editor-list-ul',
 					],
 					'inline' => [
-						'title' => esc_html__( 'Inline', 'zyre-elementor-addons' ),
+						'title' => esc_html__( 'Flex', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-ellipsis-h',
+					],
+					'default' => [
+						'title' => esc_html__( 'Block', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-div-block',
 					],
 				],
 				'render_type'    => 'template',
@@ -155,6 +161,9 @@ class Advance_Heading extends Base {
 				],
 				'selectors'  => [
 					'{{WRAPPER}} .zyre-advance-heading-title' => 'gap: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'title_layout!' => 'default',
 				],
 			]
 		);
@@ -677,7 +686,10 @@ class Advance_Heading extends Base {
 		$this->add_inline_editing_attributes( 'title_prefix' );
 		$this->add_inline_editing_attributes( 'title_suffix', 'none' );
 
+		$title_layout_class = ( 'default' === $settings['title_layout'] ) ? 'zy-block' : 'zy-flex';
+
 		// Add HTML class
+		$this->add_render_attribute( 'heading', 'class', 'zyre-advance-heading-title zy-text-center zy-relative ' . $title_layout_class . ' zy-align-center zy-justify-center zy-m-0' );
 		$this->add_render_attribute( 'title_text', 'class', 'zyre-advance-heading-title-text zy-relative zy-inline-flex zy-align-center zy-transition' );
 		$this->add_render_attribute( 'title_text_x', 'class', 'zyre-advance-heading-title-text-extra zy-transition' );
 		$this->add_render_attribute( 'title_prefix', 'class', 'zyre-advance-heading-title-prefix zy-relative zy-inline-flex zy-align-center zy-transition' );
@@ -711,7 +723,7 @@ class Advance_Heading extends Base {
 		}
 		?>
 	
-		<<?php Utils::print_validated_html_tag( $settings['title_tag'] ); ?> class="zyre-advance-heading-title zy-text-center zy-relative zy-flex zy-align-center zy-justify-center zy-m-0">
+		<<?php Utils::print_validated_html_tag( $settings['title_tag'] ); ?> <?php $this->print_render_attribute_string( 'heading' ); ?>>
 			<?php if ( ! empty( $settings['title_prefix'] ) ) : ?>
 				<span <?php $this->print_render_attribute_string( 'title_prefix' ); ?>>
 					<?php echo wp_kses( $settings['title_prefix'], zyreladdons_get_allowed_html() ); ?>
