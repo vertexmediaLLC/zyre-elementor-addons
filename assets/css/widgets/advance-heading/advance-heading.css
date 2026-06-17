@@ -1,8 +1,8 @@
-.zyre-addon-advance-heading:not(.zyre-advance-heading--layout-inline) .zyre-advance-heading-title {
+.zyre-addon-advance-heading:not(.zyre-advance-heading--layout-inline):not(.zyre-advance-heading--layout-default) .zyre-advance-heading-title {
     flex-direction: column;
 }
 
-.zyre-addon-advance-heading:not(.zyre-advance-heading--layout-inline) .zyre-advance-heading-title > * {
+.zyre-addon-advance-heading:not(.zyre-advance-heading--layout-inline):not(.zyre-advance-heading--layout-default) .zyre-advance-heading-title > * {
 	width: 100%;
 	justify-content: center;
 }
