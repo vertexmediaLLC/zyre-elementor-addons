@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zyre Elementor Addons 2.0.8\n"
+"Project-Id-Version: Zyre Elementor Addons 2.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zyre-elementor-addons\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-17T05:14:48+00:00\n"
+"POT-Creation-Date: 2026-06-30T06:28:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -270,8 +270,8 @@ msgstr ""
 #: traits/social-trait.php:489
 #: widgets/advance-accordion/advance-accordion.php:310
 #: widgets/advance-accordion/advance-accordion.php:429
-#: widgets/advance-heading/advance-heading.php:291
-#: widgets/advance-heading/advance-heading.php:411
+#: widgets/advance-heading/advance-heading.php:289
+#: widgets/advance-heading/advance-heading.php:409
 #: widgets/advance-tab/advance-tab.php:610
 #: widgets/advance-tab/advance-tab.php:691
 #: widgets/advance-tab/advance-tab.php:752
@@ -474,8 +474,8 @@ msgstr ""
 #: traits/social-trait.php:253
 #: traits/social-trait.php:496
 #: traits/social-trait.php:553
-#: widgets/advance-heading/advance-heading.php:298
-#: widgets/advance-heading/advance-heading.php:319
+#: widgets/advance-heading/advance-heading.php:296
+#: widgets/advance-heading/advance-heading.php:317
 #: widgets/advance-tab/advance-tab.php:983
 #: widgets/advance-tab/advance-tab.php:1016
 #: widgets/advance-tab/advance-tab.php:1049
@@ -613,7 +613,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:1249
 #: traits/list-item-advanced-trait.php:2075
 #: traits/list-item-advanced-trait.php:2301
-#: widgets/advance-heading/advance-heading.php:334
+#: widgets/advance-heading/advance-heading.php:332
 #: widgets/animated-text/animated-text.php:1047
 #: widgets/post-comments/post-comments.php:848
 #: widgets/post-comments/post-comments.php:1684
@@ -759,7 +759,7 @@ msgstr ""
 
 #: base/widget-base.php:818
 #: traits/list-item-trait.php:271
-#: widgets/advance-heading/advance-heading.php:149
+#: widgets/advance-heading/advance-heading.php:147
 #: widgets/author-box/author-box.php:67
 #: widgets/author-box/author-box.php:1026
 #: widgets/flipbox/flipbox.php:704
@@ -785,7 +785,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:2105
 #: traits/list-item-trait.php:116
 #: traits/social-trait.php:423
-#: widgets/advance-heading/advance-heading.php:174
+#: widgets/advance-heading/advance-heading.php:172
 #: widgets/animated-text/animated-text.php:182
 #: widgets/archive-description/archive-description.php:133
 #: widgets/archive-posts/archive-posts.php:837
@@ -846,8 +846,8 @@ msgstr ""
 #: traits/social-trait.php:427
 #: traits/swiper-trait.php:454
 #: widgets/advance-accordion/advance-accordion.php:166
-#: widgets/advance-heading/advance-heading.php:179
-#: widgets/advance-heading/advance-heading.php:384
+#: widgets/advance-heading/advance-heading.php:177
+#: widgets/advance-heading/advance-heading.php:382
 #: widgets/advance-tab/advance-tab.php:165
 #: widgets/advance-tab/advance-tab.php:278
 #: widgets/advance-tab/advance-tab.php:401
@@ -988,8 +988,8 @@ msgstr ""
 #: traits/list-item-trait.php:124
 #: traits/social-trait.php:431
 #: traits/social-trait.php:768
-#: widgets/advance-heading/advance-heading.php:183
-#: widgets/advance-heading/advance-heading.php:388
+#: widgets/advance-heading/advance-heading.php:181
+#: widgets/advance-heading/advance-heading.php:386
 #: widgets/advance-tab/advance-tab.php:405
 #: widgets/advance-tab/advance-tab.php:576
 #: widgets/animated-text/animated-text.php:190
@@ -1101,8 +1101,8 @@ msgstr ""
 #: traits/social-trait.php:435
 #: traits/swiper-trait.php:455
 #: widgets/advance-accordion/advance-accordion.php:167
-#: widgets/advance-heading/advance-heading.php:187
-#: widgets/advance-heading/advance-heading.php:392
+#: widgets/advance-heading/advance-heading.php:185
+#: widgets/advance-heading/advance-heading.php:390
 #: widgets/advance-tab/advance-tab.php:169
 #: widgets/advance-tab/advance-tab.php:282
 #: widgets/advance-tab/advance-tab.php:409
@@ -1572,8 +1572,8 @@ msgstr ""
 
 #: base/widget-base.php:1414
 #: traits/list-item-trait.php:46
-#: widgets/advance-heading/advance-heading.php:136
-#: widgets/advance-heading/advance-heading.php:513
+#: widgets/advance-heading/advance-heading.php:134
+#: widgets/advance-heading/advance-heading.php:511
 #: widgets/advance-tab/advance-tab.php:255
 #: widgets/alert/alert.php:106
 #: widgets/animated-text/animated-text.php:167
@@ -1600,7 +1600,7 @@ msgstr ""
 
 #: base/widget-base.php:1416
 #: traits/list-item-trait.php:50
-#: widgets/advance-heading/advance-heading.php:517
+#: widgets/advance-heading/advance-heading.php:515
 #: widgets/advance-tab/advance-tab.php:259
 #: widgets/alert/alert.php:110
 #: widgets/animated-text/animated-text.php:166
@@ -1616,7 +1616,7 @@ msgid "Inline"
 msgstr ""
 
 #: base/widget-base.php:1417
-#: widgets/advance-heading/advance-heading.php:132
+#: widgets/advance-heading/advance-heading.php:130
 msgid "Flex"
 msgstr ""
 
@@ -3696,7 +3696,7 @@ msgstr ""
 
 #: traits/button-trait.php:153
 #: traits/list-item-advanced-trait.php:424
-#: widgets/advance-heading/advance-heading.php:207
+#: widgets/advance-heading/advance-heading.php:205
 #: widgets/divider/divider.php:144
 #: widgets/drop-cap/drop-cap.php:68
 #: widgets/dual-color-heading/dual-color-heading.php:141
@@ -3765,8 +3765,8 @@ msgstr ""
 #: traits/social-trait.php:546
 #: widgets/advance-accordion/advance-accordion.php:331
 #: widgets/advance-accordion/advance-accordion.php:462
-#: widgets/advance-heading/advance-heading.php:312
-#: widgets/advance-heading/advance-heading.php:438
+#: widgets/advance-heading/advance-heading.php:310
+#: widgets/advance-heading/advance-heading.php:436
 #: widgets/advance-tab/advance-tab.php:645
 #: widgets/advance-tab/advance-tab.php:850
 #: widgets/advance-tab/advance-tab.php:1009
@@ -3969,7 +3969,7 @@ msgstr ""
 
 #: traits/list-item-advanced-trait.php:166
 #: traits/swiper-trait.php:155
-#: widgets/advance-heading/advance-heading.php:87
+#: widgets/advance-heading/advance-heading.php:85
 #: widgets/call-to-action/call-to-action.php:402
 #: widgets/dual-color-heading/dual-color-heading.php:73
 #: widgets/featured-banner/featured-banner.php:419
@@ -4112,7 +4112,7 @@ msgid "Works when List Item > Width is set in the Style tab."
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:422
-#: widgets/advance-heading/advance-heading.php:205
+#: widgets/advance-heading/advance-heading.php:203
 #: widgets/divider/divider.php:142
 #: widgets/drop-cap/drop-cap.php:66
 #: widgets/dual-color-heading/dual-color-heading.php:139
@@ -4236,7 +4236,7 @@ msgstr ""
 
 #: traits/list-item-advanced-trait.php:792
 #: traits/list-item-trait.php:41
-#: widgets/advance-heading/advance-heading.php:123
+#: widgets/advance-heading/advance-heading.php:121
 #: widgets/advance-tab/advance-tab.php:250
 #: widgets/call-to-action/call-to-action.php:1630
 #: widgets/dual-button/dual-button.php:277
@@ -4901,7 +4901,7 @@ msgid "Advance Heading Content"
 msgstr ""
 
 #: widgets/advance-heading/advance-heading.php:44
-#: widgets/advance-heading/advance-heading.php:226
+#: widgets/advance-heading/advance-heading.php:224
 #: widgets/archive-title/archive-title.php:507
 #: widgets/call-to-action/call-to-action.php:372
 #: widgets/call-to-action/call-to-action.php:1565
@@ -4914,14 +4914,9 @@ msgstr ""
 msgid "Title Prefix"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:46
-#: widgets/post-grid/post-grid.php:1988
-msgid "Prefix"
-msgstr ""
-
-#: widgets/advance-heading/advance-heading.php:54
-#: widgets/advance-heading/advance-heading.php:56
-#: widgets/advance-heading/advance-heading.php:246
+#: widgets/advance-heading/advance-heading.php:53
+#: widgets/advance-heading/advance-heading.php:55
+#: widgets/advance-heading/advance-heading.php:244
 #: widgets/advance-toggle/advance-toggle.php:480
 #: widgets/archive-title/archive-title.php:315
 #: widgets/dual-color-heading/dual-color-heading.php:43
@@ -4936,13 +4931,13 @@ msgstr ""
 msgid "Title Text"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:64
-#: widgets/advance-heading/advance-heading.php:267
+#: widgets/advance-heading/advance-heading.php:63
+#: widgets/advance-heading/advance-heading.php:265
 msgid "Title Text (Extra)"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:77
-#: widgets/advance-heading/advance-heading.php:350
+#: widgets/advance-heading/advance-heading.php:76
+#: widgets/advance-heading/advance-heading.php:348
 #: widgets/call-to-action/call-to-action.php:415
 #: widgets/call-to-action/call-to-action.php:1582
 #: widgets/dual-color-heading/dual-color-heading.php:63
@@ -4956,12 +4951,7 @@ msgstr ""
 msgid "Title Suffix"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:79
-#: widgets/heading/heading.php:73
-msgid "Suffix"
-msgstr ""
-
-#: widgets/advance-heading/advance-heading.php:91
+#: widgets/advance-heading/advance-heading.php:89
 #: widgets/archive-description/archive-description.php:99
 #: widgets/archive-posts/archive-posts.php:304
 #: widgets/archive-title/archive-title.php:68
@@ -4986,7 +4976,7 @@ msgstr ""
 msgid "H1"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:95
+#: widgets/advance-heading/advance-heading.php:93
 #: widgets/archive-description/archive-description.php:102
 #: widgets/archive-posts/archive-posts.php:308
 #: widgets/archive-title/archive-title.php:72
@@ -5011,7 +5001,7 @@ msgstr ""
 msgid "H2"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:99
+#: widgets/advance-heading/advance-heading.php:97
 #: widgets/archive-description/archive-description.php:105
 #: widgets/archive-posts/archive-posts.php:312
 #: widgets/archive-title/archive-title.php:76
@@ -5036,7 +5026,7 @@ msgstr ""
 msgid "H3"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:103
+#: widgets/advance-heading/advance-heading.php:101
 #: widgets/archive-description/archive-description.php:108
 #: widgets/archive-posts/archive-posts.php:316
 #: widgets/archive-title/archive-title.php:80
@@ -5061,7 +5051,7 @@ msgstr ""
 msgid "H4"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:107
+#: widgets/advance-heading/advance-heading.php:105
 #: widgets/archive-description/archive-description.php:111
 #: widgets/archive-posts/archive-posts.php:320
 #: widgets/archive-title/archive-title.php:84
@@ -5086,7 +5076,7 @@ msgstr ""
 msgid "H5"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:111
+#: widgets/advance-heading/advance-heading.php:109
 #: widgets/archive-description/archive-description.php:114
 #: widgets/archive-posts/archive-posts.php:324
 #: widgets/archive-title/archive-title.php:88
@@ -5111,27 +5101,27 @@ msgstr ""
 msgid "H6"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:128
+#: widgets/advance-heading/advance-heading.php:126
 msgid "Flex - Column"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:491
+#: widgets/advance-heading/advance-heading.php:489
 msgid "Separators Style"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:541
-#: widgets/advance-heading/advance-heading.php:553
+#: widgets/advance-heading/advance-heading.php:539
+#: widgets/advance-heading/advance-heading.php:551
 #: widgets/divider/divider.php:217
 msgid "Left Separator"
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:566
-#: widgets/advance-heading/advance-heading.php:637
+#: widgets/advance-heading/advance-heading.php:564
+#: widgets/advance-heading/advance-heading.php:635
 msgid "Set width, & border type, color for appearance."
 msgstr ""
 
-#: widgets/advance-heading/advance-heading.php:612
-#: widgets/advance-heading/advance-heading.php:624
+#: widgets/advance-heading/advance-heading.php:610
+#: widgets/advance-heading/advance-heading.php:622
 #: widgets/divider/divider.php:259
 msgid "Right Separator"
 msgstr ""
@@ -7862,6 +7852,10 @@ msgstr ""
 msgid "Heading Content"
 msgstr ""
 
+#: widgets/heading/heading.php:73
+msgid "Suffix"
+msgstr ""
+
 #: widgets/heading/heading.php:136
 msgid "Sub Title HTML Tag"
 msgstr ""
@@ -9933,6 +9927,10 @@ msgstr ""
 
 #: widgets/post-grid/post-grid.php:1847
 msgid "Show Horizontal Line"
+msgstr ""
+
+#: widgets/post-grid/post-grid.php:1988
+msgid "Prefix"
 msgstr ""
 
 #: widgets/post-grid/post-grid.php:2024
