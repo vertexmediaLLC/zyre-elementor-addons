@@ -5,7 +5,7 @@
  * Plugin Name: Zyre Elementor Addons
  * Description: <a href="https://zyreaddons.com/">Zyre Elementor Addons</a> is a powerful Lightweight Elementor addons with Theme Builder, Header/Footer and Mega Menu Builder, 60+ widgets including Off-Canvas, and 54+ pre-built templates.
  * Plugin URI: https://zyreaddons.com/
- * Version: 2.0.8
+ * Version: 2.0.9
  * Author: VertexMediaLLC
  * Author URI: https://vertexmedia.tech/
  * Text Domain: zyre-elementor-addons
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'ZYRELADDONS_VERSION', '2.0.8' );
+define( 'ZYRELADDONS_VERSION', '2.0.9' );
 define( 'ZYRELADDONS__FILE__', __FILE__ );
 define( 'ZYRELADDONS_DIR_PATH', plugin_dir_path( ZYRELADDONS__FILE__ ) );
 define( 'ZYRELADDONS_DIR_URL', plugin_dir_url( ZYRELADDONS__FILE__ ) );

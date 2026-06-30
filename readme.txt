@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.8
+Stable tag: 2.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -245,9 +245,14 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 == Changelog ==
 
+= 2.0.9 - 30 June 2026 =
+
+- Updated Advanced Heading widget.
+- Fixed Mega Menu widget responsive issue.
+
 = 2.0.8 - 17 June 2026 =
 
-- Updateed Advanced Heading widget.
+- Updated Advanced Heading widget.
 
 = 2.0.7 - 08 June 2026 =
 
