@@ -43,7 +43,6 @@ class Advance_Heading extends Base {
 			[
 				'label'       => esc_html__( 'Title Prefix', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Prefix', 'zyre-elementor-addons' ),
 				'dynamic'     => [ 'active' => true ],
 			]
 		);
@@ -76,7 +75,6 @@ class Advance_Heading extends Base {
 			[
 				'label'       => esc_html__( 'Title Suffix', 'zyre-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Suffix', 'zyre-elementor-addons' ),
 				'dynamic'     => [ 'active' => true ],
 			]
 		);
