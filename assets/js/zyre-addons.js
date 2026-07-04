@@ -409,8 +409,8 @@ function haObserveTarget(target, callback) {
       }
 
       if (navMenu.length) {
-        navMenu.addClass('initialized');
-        addResponsiveCSS(breakpoint);
+		addResponsiveCSS(breakpoint);
+		navMenu.addClass('initialized');
       }
 
       humBurgerBtn.on('click', function (e) {
@@ -555,7 +555,7 @@ function haObserveTarget(target, callback) {
           cssResponsive += `${widgetClass}.zyre-menu__mobile ul.menu li.menu-item:${settings.mobile_menu_item_rm_border} {border: none !important;}`;
         }
 
-        var css = '';
+		var css = ``;
         if (breakpoint && '-1' == breakpoint) {
           css += cssResponsive;
         } else if (breakpoint && breakpoint > 0) {
@@ -578,8 +578,8 @@ function haObserveTarget(target, callback) {
       }
 
       if (navMenu.length) {
-        navMenu.addClass('initialized');
-        addMegaMenuCSS(breakpoint);
+		addMegaMenuCSS(breakpoint);
+		navMenu.addClass('initialized');
       }
 
       if (dataCss.length > 0) {

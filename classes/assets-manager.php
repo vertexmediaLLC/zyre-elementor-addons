@@ -22,6 +22,8 @@ class Assets_Manager {
 	public static function init() {
 		self::$suffix = zyreladdons_is_script_debug_enabled() ? '.' : '.min.';
 
+		add_action( 'wp_head', array( __CLASS__, 'enqueue_initial_css' ), 1 );
+
 		// Frontend scripts.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'frontend_register' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'frontend_enqueue' ), 100 );
@@ -35,6 +37,25 @@ class Assets_Manager {
 
 		// Registers the paragraph toolbar for Elementor editor.
 		add_filter( 'elementor/editor/localize_settings', array( __CLASS__, 'add_inline_editing_intermediate_toolbar' ) );
+	}
+
+	/**
+	 * Print some initial CSS,
+	 * preventing a broken/unstyled flash before the Plugin's CSS loads.
+	 *
+	 * @since 2.1.0
+	 *
+	 * @return void
+	 */
+	public static function enqueue_initial_css() {
+		?>
+		<style id="zyreladdons-initial-css">
+			.zyre-nav-menu:not(.initialized),
+			.zyre-mega-menu:not(.initialized) {
+				display: none
+			}
+		</style>
+		<?php
 	}
 
 	/**

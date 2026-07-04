@@ -685,13 +685,14 @@ class Advance_Heading extends Base {
 		$this->add_inline_editing_attributes( 'title_suffix', 'none' );
 
 		$title_layout_class = ( 'default' === $settings['title_layout'] ) ? 'zy-block' : 'zy-flex';
+		$inner_content_class = ( 'default' === $settings['title_layout'] ) ? 'zy-inline' : 'zy-inline-flex';
 
 		// Add HTML class
 		$this->add_render_attribute( 'heading', 'class', 'zyre-advance-heading-title zy-text-center zy-relative ' . $title_layout_class . ' zy-align-center zy-justify-center zy-m-0' );
-		$this->add_render_attribute( 'title_text', 'class', 'zyre-advance-heading-title-text zy-relative zy-inline-flex zy-align-center zy-transition' );
+		$this->add_render_attribute( 'title_text', 'class', 'zyre-advance-heading-title-text zy-relative ' . $inner_content_class . ' zy-align-center zy-transition' );
 		$this->add_render_attribute( 'title_text_x', 'class', 'zyre-advance-heading-title-text-extra zy-transition' );
-		$this->add_render_attribute( 'title_prefix', 'class', 'zyre-advance-heading-title-prefix zy-relative zy-inline-flex zy-align-center zy-transition' );
-		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-advance-heading-title-suffix zy-relative zy-inline-flex zy-align-center zy-transition' );
+		$this->add_render_attribute( 'title_prefix', 'class', 'zyre-advance-heading-title-prefix zy-relative ' . $inner_content_class . ' zy-align-center zy-transition' );
+		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-advance-heading-title-suffix zy-relative ' . $inner_content_class . ' zy-align-center zy-transition' );
 
 		if ( ! empty( $settings['title_text_separator_switch'] ) && 'yes' === $settings['title_text_separator_switch'] ) {
 			if ( ! empty( $settings['title_text_separator_left_switch'] ) && 'yes' === $settings['title_text_separator_left_switch'] ) {
