@@ -1,3 +1,9 @@
+= 2.1.0 - 2026-07-04 =
+
+- Updated Advanced Heading widget.
+- Added Box Shadow & Padding to Image Carousel & Logo Carousel.
+- Fixed Menu & Mega Menu style broken issues during loading.
+
 = 2.0.9 - 2026-06-30 =
 
 - Updated Advanced Heading widget.

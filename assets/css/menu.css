@@ -2,10 +2,6 @@
 	overflow: hidden;
 }
 
-.zyre-nav-menu:not(.initialized) {
-	display: none
-}
-
 .zyre-nav-menu:hover {
 	overflow: visible;
 }

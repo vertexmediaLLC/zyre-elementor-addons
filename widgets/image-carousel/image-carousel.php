@@ -412,6 +412,27 @@ class Image_Carousel extends Base {
 
 		$this->end_controls_section();
 
+		// Section: Carousel Item
+		$this->start_controls_section(
+			'section_carousel_item_style',
+			[
+				'label' => esc_html__( 'Carousel Item', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->set_style_controls(
+			'carousel_item',
+			[
+				'selector' => '{{WRAPPER}} .zyre-carousel-item',
+				'controls' => [
+					'padding' => [],
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
 		// Section: Content
 		$this->start_controls_section(
 			'section_content_style',
@@ -496,6 +517,7 @@ class Image_Carousel extends Base {
 					],
 					'border'        => [],
 					'border_radius' => [],
+					'box_shadow'    => [],
 					'padding'       => [],
 				],
 			]
