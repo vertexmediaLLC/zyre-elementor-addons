@@ -10,3 +10,22 @@
 .zyre-addon-button.elementor-align-justify .zyre-button {
     width: 100%;
 }
+
+.zyre-addon-button .zyre-button-icon-onhover .zyre-button-icon > * {
+	margin-inline-end: -1rem;
+}
+
+.zyre-addon-button .zyre-button-icon-onhover .zyre-button-icon {
+	opacity: 0;
+	transform: translateX(-0.7em);
+	transition: opacity var(--zy-transition-duration), transform var(--zy-transition-duration);
+}
+
+.rtl .zyre-addon-button .zyre-button-icon-onhover .zyre-button-icon {
+	transform: translateX(0.7em);
+}
+
+.zyre-addon-button .zyre-button-icon-onhover:hover .zyre-button-icon {
+	opacity: 1;
+	transform: translateX(0);
+}

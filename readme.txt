@@ -1,10 +1,10 @@
 === Zyre Elementor Addons ===
-Contributors: vertexmediallc
+Contributors: vertexmediallc, trainershujon
 Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -244,6 +244,10 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 
 == Changelog ==
+
+= 2.1.1 - 29 July 2026 =
+
+- Updated Button, Image Carousel, and Testimonial widgets.
 
 = 2.1.0 - 04 July 2026 =
 
