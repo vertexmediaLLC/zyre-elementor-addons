@@ -1334,6 +1334,25 @@
     width: 100%;
 }
 
+.zyre-addon-button .zyre-button-icon-onhover .zyre-button-icon > * {
+	margin-inline-end: -1rem;
+}
+
+.zyre-addon-button .zyre-button-icon-onhover .zyre-button-icon {
+	opacity: 0;
+	transform: translateX(-0.7em);
+	transition: opacity var(--zy-transition-duration), transform var(--zy-transition-duration);
+}
+
+.rtl .zyre-addon-button .zyre-button-icon-onhover .zyre-button-icon {
+	transform: translateX(0.7em);
+}
+
+.zyre-addon-button .zyre-button-icon-onhover:hover .zyre-button-icon {
+	opacity: 1;
+	transform: translateX(0);
+}
+
 /* Source: call-to-action/call-to-action.css */
 .zyre-addon-call-to-action .zyre-cta {
 	--image-transition-duration: 1000ms;
@@ -1595,6 +1614,25 @@ body.rtl .zyre-drop-cap-yes .zyre-dropcap::first-letter {
 .zyre-addon-dual-button .zyre-button-connector::before,
 .zyre-addon-dual-button .zyre-button-connector::after {
 	content: "";
+}
+
+.zyre-addon-dual-button .zyre-button-icon-onhover .zyre-button-icon > * {
+	margin-inline-end: -1rem;
+}
+
+.zyre-addon-dual-button .zyre-button-icon-onhover .zyre-button-icon {
+	opacity: 0;
+	transform: translateX(-0.7em);
+	transition: opacity var(--zy-transition-duration), transform var(--zy-transition-duration);
+}
+
+.rtl .zyre-addon-dual-button .zyre-button-icon-onhover .zyre-button-icon {
+	transform: translateX(0.7em);
+}
+
+.zyre-addon-dual-button .zyre-button-icon-onhover:hover .zyre-button-icon {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 /* Source: feature-list/feature-list.css */

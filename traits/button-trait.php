@@ -128,6 +128,15 @@ trait Button_Trait {
 			]
 		);
 
+		$this->add_control(
+			$prefix . 'button_icon_onhover',
+			[
+				'label'     => esc_html__( 'Show Icon on Hover', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'condition' => [ $prefix . 'button_icon[value]!' => '' ] + $conditions,
+			]
+		);
+
 		if ( $args['show_button_id'] ) {
 			$this->add_control(
 				$prefix . 'button_id_attr',
@@ -709,6 +718,7 @@ trait Button_Trait {
 		$icon = "{$prefix}icon";
 		$button_icon = "{$prefix}button_icon";
 		$button_icon_position = "{$prefix}button_icon_position";
+		$button_icon_onhover = "{$prefix}button_icon_onhover";
 		$button_id_attr = "{$prefix}button_id_attr";
 		$button_class_attr = "{$prefix}button_class_attr";
 		$button_onclick_event = "{$prefix}button_onclick_event";
@@ -734,6 +744,10 @@ trait Button_Trait {
 
 		$instance->add_render_attribute( $button, 'class', esc_attr( $icon_position ? 'zyre-align-icon-' . $icon_position : '' ) );
 		$instance->add_render_attribute( $icon, 'class', esc_attr( $icon_position ? 'zyre-icon-' . $icon_position : '' ) );
+
+		if ( ! empty( $settings[ $button_icon_onhover ] ) && 'yes' === $settings[ $button_icon_onhover ] ) {
+			$instance->add_render_attribute( $button, 'class', 'zyre-button-icon-onhover' );
+		}
 
 		if ( ! empty( $settings[ $button_id_attr ] ) ) {
 			$instance->add_render_attribute( $button, 'id', esc_attr( str_replace( ' ', '', $settings[ $button_id_attr ] ) ) );

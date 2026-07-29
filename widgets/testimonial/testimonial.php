@@ -386,6 +386,24 @@ class Testimonial extends Base {
 			]
 		);
 
+		$this->add_control(
+			'container_opacity',
+			[
+				'label'     => esc_html__( 'Opacity', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'max'  => 1,
+						'min'  => 0.10,
+						'step' => 0.01,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-widget-container' => 'opacity: {{SIZE}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 	}
 

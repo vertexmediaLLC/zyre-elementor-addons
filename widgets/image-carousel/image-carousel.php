@@ -330,6 +330,38 @@ class Image_Carousel extends Base {
 			]
 		);
 
+		$this->set_style_controls(
+			'dots_wrapper',
+			[
+				'selector'  => '{{WRAPPER}} .swiper .swiper-pagination-horizontal',
+				'controls'  => [
+					'align_x' => [
+						'options'   => [
+							'flex-start' => [
+								'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+								'icon'  => 'eicon-justify-start-h',
+							],
+							'center'     => [
+								'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+								'icon'  => 'eicon-justify-center-h',
+							],
+							'flex-end'   => [
+								'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+								'icon'  => 'eicon-justify-end-h',
+							],
+						],
+						'separator' => 'before',
+					],
+					'padding' => [
+						'label' => esc_html__( 'Wrapper Padding', 'zyre-elementor-addons' ),
+					],
+				],
+				'condition' => [
+					'pagination' => 'bullets',
+				],
+			]
+		);
+
 		// Fraction
 		$this->set_style_controls(
 			'fraction',

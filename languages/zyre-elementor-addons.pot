@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-04T10:15:13+00:00\n"
+"POT-Creation-Date: 2026-07-29T06:27:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -60,7 +60,7 @@ msgstr ""
 
 #: base/widget-base.php:194
 #: widgets/author-box/author-box.php:925
-#: widgets/image-carousel/image-carousel.php:340
+#: widgets/image-carousel/image-carousel.php:372
 #: widgets/logo-carousel/logo-carousel.php:349
 #: widgets/post-comments/post-comments.php:3077
 msgid "Typography"
@@ -105,7 +105,7 @@ msgstr ""
 #: widgets/site-logo/site-logo.php:52
 #: widgets/site-title/site-title.php:171
 #: widgets/team-member/team-member.php:480
-#: widgets/testimonial/testimonial.php:447
+#: widgets/testimonial/testimonial.php:465
 msgid "Default"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr ""
 
 #: base/widget-base.php:283
 #: modules/mega-menu/templates/popup.php:109
-#: traits/button-trait.php:523
+#: traits/button-trait.php:532
 #: traits/list-item-advanced-trait.php:1298
 #: traits/list-item-advanced-trait.php:2180
 #: traits/social-trait.php:310
@@ -255,8 +255,8 @@ msgstr ""
 
 #: base/widget-base.php:319
 #: controls/typography.php:59
-#: traits/button-trait.php:319
-#: traits/button-trait.php:582
+#: traits/button-trait.php:328
+#: traits/button-trait.php:591
 #: traits/list-item-advanced-trait.php:345
 #: traits/list-item-advanced-trait.php:680
 #: traits/list-item-advanced-trait.php:1075
@@ -374,10 +374,10 @@ msgstr ""
 
 #: base/widget-base.php:365
 #: classes/widgets-manager.php:229
-#: traits/button-trait.php:340
-#: traits/button-trait.php:386
-#: traits/button-trait.php:603
-#: traits/button-trait.php:635
+#: traits/button-trait.php:349
+#: traits/button-trait.php:395
+#: traits/button-trait.php:612
+#: traits/button-trait.php:644
 #: traits/list-item-advanced-trait.php:688
 #: traits/list-item-advanced-trait.php:725
 #: traits/list-item-advanced-trait.php:1083
@@ -523,7 +523,7 @@ msgstr ""
 
 #: base/widget-base.php:460
 #: modules/mega-menu/templates/popup.php:105
-#: traits/button-trait.php:589
+#: traits/button-trait.php:598
 #: traits/list-item-advanced-trait.php:1406
 #: traits/list-item-advanced-trait.php:1534
 #: traits/list-item-advanced-trait.php:2360
@@ -547,8 +547,8 @@ msgid "Border"
 msgstr ""
 
 #: base/widget-base.php:503
-#: traits/button-trait.php:409
-#: traits/button-trait.php:645
+#: traits/button-trait.php:418
+#: traits/button-trait.php:654
 #: traits/social-trait.php:217
 #: traits/social-trait.php:281
 #: traits/social-trait.php:520
@@ -567,8 +567,8 @@ msgid "Border Width"
 msgstr ""
 
 #: base/widget-base.php:547
-#: traits/button-trait.php:433
-#: traits/button-trait.php:672
+#: traits/button-trait.php:442
+#: traits/button-trait.php:681
 #: traits/list-item-advanced-trait.php:779
 #: traits/list-item-advanced-trait.php:1167
 #: traits/list-item-advanced-trait.php:1639
@@ -604,11 +604,12 @@ msgstr ""
 #: widgets/advance-tab/advance-tab.php:924
 #: widgets/lottie-animation/lottie-animation.php:359
 #: widgets/lottie-animation/lottie-animation.php:409
+#: widgets/testimonial/testimonial.php:392
 msgid "Opacity"
 msgstr ""
 
 #: base/widget-base.php:611
-#: traits/button-trait.php:457
+#: traits/button-trait.php:466
 #: traits/list-item-advanced-trait.php:993
 #: traits/list-item-advanced-trait.php:1249
 #: traits/list-item-advanced-trait.php:2075
@@ -621,12 +622,12 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1754
 #: widgets/post-comments/post-comments.php:2956
 #: widgets/post-thumbnail/post-thumbnail.php:313
-#: widgets/testimonial/testimonial.php:582
+#: widgets/testimonial/testimonial.php:600
 msgid "Margin"
 msgstr ""
 
 #: base/widget-base.php:630
-#: traits/button-trait.php:445
+#: traits/button-trait.php:454
 #: traits/list-item-advanced-trait.php:824
 #: traits/list-item-advanced-trait.php:1005
 #: traits/list-item-advanced-trait.php:1653
@@ -676,7 +677,7 @@ msgid "Spacing"
 msgstr ""
 
 #: base/widget-base.php:683
-#: traits/button-trait.php:200
+#: traits/button-trait.php:209
 #: traits/list-item-advanced-trait.php:576
 #: traits/list-item-advanced-trait.php:925
 #: traits/list-item-advanced-trait.php:1315
@@ -696,13 +697,13 @@ msgstr ""
 #: widgets/post-meta/post-meta.php:725
 #: widgets/post-navigation/post-navigation.php:590
 #: widgets/team-member/team-member.php:441
-#: widgets/testimonial/testimonial.php:408
-#: widgets/testimonial/testimonial.php:844
+#: widgets/testimonial/testimonial.php:426
+#: widgets/testimonial/testimonial.php:862
 msgid "Width"
 msgstr ""
 
 #: base/widget-base.php:716
-#: traits/button-trait.php:222
+#: traits/button-trait.php:231
 #: traits/list-item-advanced-trait.php:596
 #: traits/list-item-advanced-trait.php:950
 #: traits/list-item-advanced-trait.php:1342
@@ -822,8 +823,8 @@ msgstr ""
 #: widgets/social-share/social-share.php:613
 #: widgets/team-member/team-member.php:212
 #: widgets/testimonial/testimonial.php:310
-#: widgets/testimonial/testimonial.php:675
-#: widgets/testimonial/testimonial.php:698
+#: widgets/testimonial/testimonial.php:693
+#: widgets/testimonial/testimonial.php:716
 #: widgets/toggle/toggle.php:395
 msgid "Alignment"
 msgstr ""
@@ -833,7 +834,7 @@ msgstr ""
 #: base/widget-base.php:1020
 #: base/widget-base.php:1086
 #: base/widget-base.php:1166
-#: traits/button-trait.php:473
+#: traits/button-trait.php:482
 #: traits/list-item-advanced-trait.php:400
 #: traits/list-item-advanced-trait.php:841
 #: traits/list-item-advanced-trait.php:871
@@ -908,6 +909,7 @@ msgstr ""
 #: widgets/heading/heading.php:755
 #: widgets/iconbox/iconbox.php:367
 #: widgets/iconbox/iconbox.php:444
+#: widgets/image-carousel/image-carousel.php:341
 #: widgets/image-grid/image-grid.php:341
 #: widgets/image-heading/image-heading.php:400
 #: widgets/infobox/infobox.php:168
@@ -954,9 +956,9 @@ msgstr ""
 #: widgets/team-member/team-member.php:527
 #: widgets/testimonial/testimonial.php:90
 #: widgets/testimonial/testimonial.php:314
-#: widgets/testimonial/testimonial.php:494
-#: widgets/testimonial/testimonial.php:679
-#: widgets/testimonial/testimonial.php:702
+#: widgets/testimonial/testimonial.php:512
+#: widgets/testimonial/testimonial.php:697
+#: widgets/testimonial/testimonial.php:720
 #: widgets/toggle/toggle.php:234
 #: widgets/toggle/toggle.php:320
 #: widgets/toggle/toggle.php:398
@@ -971,8 +973,8 @@ msgstr ""
 #: base/widget-base.php:1058
 #: base/widget-base.php:1090
 #: base/widget-base.php:1133
-#: traits/button-trait.php:254
-#: traits/button-trait.php:477
+#: traits/button-trait.php:263
+#: traits/button-trait.php:486
 #: traits/list-item-advanced-trait.php:404
 #: traits/list-item-advanced-trait.php:845
 #: traits/list-item-advanced-trait.php:875
@@ -1035,6 +1037,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:407
 #: widgets/iconbox/iconbox.php:448
 #: widgets/iconbox/iconbox.php:657
+#: widgets/image-carousel/image-carousel.php:345
 #: widgets/infobox/infobox.php:201
 #: widgets/infobox/infobox.php:561
 #: widgets/infobox/infobox.php:596
@@ -1075,8 +1078,8 @@ msgstr ""
 #: widgets/team-member/team-member.php:220
 #: widgets/team-member/team-member.php:531
 #: widgets/testimonial/testimonial.php:318
-#: widgets/testimonial/testimonial.php:498
-#: widgets/testimonial/testimonial.php:706
+#: widgets/testimonial/testimonial.php:516
+#: widgets/testimonial/testimonial.php:724
 #: widgets/toggle/toggle.php:324
 #: widgets/toggle/toggle.php:402
 #: widgets/toggle/toggle.php:497
@@ -1088,7 +1091,7 @@ msgstr ""
 #: base/widget-base.php:1028
 #: base/widget-base.php:1094
 #: base/widget-base.php:1170
-#: traits/button-trait.php:481
+#: traits/button-trait.php:490
 #: traits/list-item-advanced-trait.php:408
 #: traits/list-item-advanced-trait.php:849
 #: traits/list-item-advanced-trait.php:879
@@ -1163,6 +1166,7 @@ msgstr ""
 #: widgets/heading/heading.php:763
 #: widgets/iconbox/iconbox.php:375
 #: widgets/iconbox/iconbox.php:452
+#: widgets/image-carousel/image-carousel.php:349
 #: widgets/image-grid/image-grid.php:345
 #: widgets/image-heading/image-heading.php:401
 #: widgets/infobox/infobox.php:176
@@ -1208,9 +1212,9 @@ msgstr ""
 #: widgets/team-member/team-member.php:535
 #: widgets/testimonial/testimonial.php:98
 #: widgets/testimonial/testimonial.php:322
-#: widgets/testimonial/testimonial.php:502
-#: widgets/testimonial/testimonial.php:683
-#: widgets/testimonial/testimonial.php:710
+#: widgets/testimonial/testimonial.php:520
+#: widgets/testimonial/testimonial.php:701
+#: widgets/testimonial/testimonial.php:728
 #: widgets/toggle/toggle.php:238
 #: widgets/toggle/toggle.php:328
 #: widgets/toggle/toggle.php:406
@@ -1241,7 +1245,7 @@ msgstr ""
 
 #: base/widget-base.php:943
 #: base/widget-base.php:987
-#: traits/button-trait.php:262
+#: traits/button-trait.php:271
 #: traits/list-item-trait.php:161
 #: traits/social-trait.php:603
 #: traits/swiper-trait.php:344
@@ -1283,7 +1287,7 @@ msgstr ""
 
 #: base/widget-base.php:947
 #: base/widget-base.php:991
-#: traits/button-trait.php:266
+#: traits/button-trait.php:275
 #: widgets/business-hour/business-hour.php:912
 #: widgets/pdf-view/pdf-view.php:454
 #: widgets/post-comments/post-comments.php:818
@@ -1295,7 +1299,7 @@ msgstr ""
 
 #: base/widget-base.php:951
 #: base/widget-base.php:995
-#: traits/button-trait.php:270
+#: traits/button-trait.php:279
 #: widgets/business-hour/business-hour.php:916
 #: widgets/pdf-view/pdf-view.php:458
 #: widgets/post-comments/post-comments.php:822
@@ -1348,8 +1352,8 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:517
 #: widgets/team-member/team-member.php:553
 #: widgets/team-member/team-member.php:615
-#: widgets/testimonial/testimonial.php:520
-#: widgets/testimonial/testimonial.php:876
+#: widgets/testimonial/testimonial.php:538
+#: widgets/testimonial/testimonial.php:894
 msgid "Top"
 msgstr ""
 
@@ -1384,8 +1388,8 @@ msgstr ""
 #: widgets/post-grid/post-grid.php:525
 #: widgets/team-member/team-member.php:561
 #: widgets/team-member/team-member.php:623
-#: widgets/testimonial/testimonial.php:528
-#: widgets/testimonial/testimonial.php:884
+#: widgets/testimonial/testimonial.php:546
+#: widgets/testimonial/testimonial.php:902
 msgid "Bottom"
 msgstr ""
 
@@ -1547,7 +1551,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:1960
 #: widgets/skill-bar/skill-bar.php:449
 #: widgets/team-member/team-member.php:908
-#: widgets/testimonial/testimonial.php:609
+#: widgets/testimonial/testimonial.php:627
 msgid "Horizontal Offset"
 msgstr ""
 
@@ -1558,7 +1562,7 @@ msgstr ""
 #: widgets/dual-button/dual-button.php:532
 #: widgets/featured-banner/featured-banner.php:1989
 #: widgets/team-member/team-member.php:935
-#: widgets/testimonial/testimonial.php:642
+#: widgets/testimonial/testimonial.php:660
 msgid "Vertical Offset"
 msgstr ""
 
@@ -1584,7 +1588,7 @@ msgstr ""
 #: widgets/image-heading/image-heading.php:284
 #: widgets/post-grid/post-grid.php:1585
 #: widgets/search-box/search-box.php:102
-#: widgets/testimonial/testimonial.php:1030
+#: widgets/testimonial/testimonial.php:1048
 msgid "Block"
 msgstr ""
 
@@ -1594,7 +1598,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:2050
 #: widgets/heading/heading.php:695
 #: widgets/image-heading/image-heading.php:283
-#: widgets/testimonial/testimonial.php:1031
+#: widgets/testimonial/testimonial.php:1049
 msgid "Inline Block"
 msgstr ""
 
@@ -1611,7 +1615,7 @@ msgstr ""
 #: widgets/off-canvas/off-canvas.php:198
 #: widgets/post-grid/post-grid.php:1589
 #: widgets/search-box/search-box.php:98
-#: widgets/testimonial/testimonial.php:1032
+#: widgets/testimonial/testimonial.php:1050
 msgid "Inline"
 msgstr ""
 
@@ -2005,8 +2009,8 @@ msgstr ""
 
 #: classes/widgets-manager.php:225
 #: modules/mega-menu/templates/popup.php:139
-#: traits/button-trait.php:326
-#: traits/button-trait.php:373
+#: traits/button-trait.php:335
+#: traits/button-trait.php:382
 #: traits/list-item-advanced-trait.php:1237
 #: widgets/advance-tab/advance-tab.php:617
 #: widgets/advance-tab/advance-tab.php:652
@@ -2071,7 +2075,7 @@ msgstr ""
 #: widgets/skill-bar/skill-bar.php:107
 #: widgets/skill-bar/skill-bar.php:561
 #: widgets/team-member/team-member.php:1003
-#: widgets/testimonial/testimonial.php:1049
+#: widgets/testimonial/testimonial.php:1067
 #: widgets/toggle/toggle.php:541
 #: widgets/toggle/toggle.php:588
 #: widgets/toggle/toggle.php:616
@@ -3678,23 +3682,27 @@ msgstr ""
 msgid "Icon Spacing"
 msgstr ""
 
-#: traits/button-trait.php:135
+#: traits/button-trait.php:134
+msgid "Show Icon on Hover"
+msgstr ""
+
+#: traits/button-trait.php:144
 msgid "Button ID"
 msgstr ""
 
-#: traits/button-trait.php:138
+#: traits/button-trait.php:147
 msgid "Add your custom id WITHOUT the Pound key. e.g: my-id"
 msgstr ""
 
-#: traits/button-trait.php:139
+#: traits/button-trait.php:148
 msgid "Please make sure the ID is unique and not used elsewhere on the current page. This field allows <code>A-z 0-9</code> & underscore chars without spaces."
 msgstr ""
 
-#: traits/button-trait.php:151
+#: traits/button-trait.php:160
 msgid "Custom Class"
 msgstr ""
 
-#: traits/button-trait.php:153
+#: traits/button-trait.php:162
 #: traits/list-item-advanced-trait.php:424
 #: widgets/advance-heading/advance-heading.php:205
 #: widgets/divider/divider.php:144
@@ -3709,11 +3717,11 @@ msgstr ""
 msgid "Class Name"
 msgstr ""
 
-#: traits/button-trait.php:164
+#: traits/button-trait.php:173
 msgid "onClick Event"
 msgstr ""
 
-#: traits/button-trait.php:244
+#: traits/button-trait.php:253
 #: widgets/business-hour/business-hour.php:891
 #: widgets/call-to-action/call-to-action.php:1637
 #: widgets/dual-button/dual-button.php:282
@@ -3725,7 +3733,7 @@ msgstr ""
 msgid "Justify Content"
 msgstr ""
 
-#: traits/button-trait.php:250
+#: traits/button-trait.php:259
 #: traits/social-trait.php:764
 #: widgets/author-box/author-box.php:1043
 #: widgets/business-hour/business-hour.php:820
@@ -3738,7 +3746,7 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
-#: traits/button-trait.php:258
+#: traits/button-trait.php:267
 #: traits/social-trait.php:772
 #: widgets/author-box/author-box.php:1047
 #: widgets/business-hour/business-hour.php:828
@@ -3751,8 +3759,8 @@ msgstr ""
 msgid "End"
 msgstr ""
 
-#: traits/button-trait.php:366
-#: traits/button-trait.php:615
+#: traits/button-trait.php:375
+#: traits/button-trait.php:624
 #: traits/list-item-advanced-trait.php:717
 #: traits/list-item-advanced-trait.php:1112
 #: traits/list-item-advanced-trait.php:1485
@@ -3848,7 +3856,7 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: traits/button-trait.php:469
+#: traits/button-trait.php:478
 #: widgets/business-hour/business-hour.php:606
 #: widgets/heading/heading.php:396
 #: widgets/heading/heading.php:431
@@ -3863,15 +3871,15 @@ msgstr ""
 msgid "Horizontal Position"
 msgstr ""
 
-#: traits/button-trait.php:544
+#: traits/button-trait.php:553
 msgid "Background Width"
 msgstr ""
 
-#: traits/button-trait.php:562
+#: traits/button-trait.php:571
 msgid "Background Height"
 msgstr ""
 
-#: traits/button-trait.php:622
+#: traits/button-trait.php:631
 msgid "Icon Hover Color"
 msgstr ""
 
@@ -3886,14 +3894,14 @@ msgstr ""
 #: widgets/flipbox/flipbox.php:647
 #: widgets/fun-fact/fun-fact.php:62
 #: widgets/fun-fact/fun-fact.php:75
-#: widgets/image-carousel/image-carousel.php:511
+#: widgets/image-carousel/image-carousel.php:543
 #: widgets/image-grid/image-grid.php:661
 #: widgets/infobox/infobox.php:97
 #: widgets/infobox/infobox.php:124
 #: widgets/pdf-view/pdf-view.php:152
 #: widgets/pdf-view/pdf-view.php:179
 #: widgets/testimonial/testimonial.php:63
-#: widgets/testimonial/testimonial.php:465
+#: widgets/testimonial/testimonial.php:483
 msgid "Image"
 msgstr ""
 
@@ -3937,7 +3945,7 @@ msgstr ""
 #: widgets/heading/heading.php:195
 #: widgets/iconbox/iconbox.php:71
 #: widgets/iconbox/iconbox.php:721
-#: widgets/image-carousel/image-carousel.php:478
+#: widgets/image-carousel/image-carousel.php:510
 #: widgets/image-grid/image-grid.php:68
 #: widgets/image-grid/image-grid.php:834
 #: widgets/image-list/image-list.php:122
@@ -4160,7 +4168,7 @@ msgstr ""
 #: widgets/flipbox/flipbox.php:826
 #: widgets/fun-fact/fun-fact.php:523
 #: widgets/iconbox/iconbox.php:625
-#: widgets/image-carousel/image-carousel.php:440
+#: widgets/image-carousel/image-carousel.php:472
 #: widgets/image-grid/image-grid.php:225
 #: widgets/image-grid/image-grid.php:702
 #: widgets/infobox/infobox.php:677
@@ -4300,7 +4308,7 @@ msgstr ""
 
 #: traits/list-item-advanced-trait.php:1393
 #: traits/list-item-advanced-trait.php:1521
-#: widgets/testimonial/testimonial.php:784
+#: widgets/testimonial/testimonial.php:802
 msgid "Number Color"
 msgstr ""
 
@@ -4312,7 +4320,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:2521
 #: widgets/iconbox/iconbox.php:440
 #: widgets/team-member/team-member.php:523
-#: widgets/testimonial/testimonial.php:490
+#: widgets/testimonial/testimonial.php:508
 msgid "Horizontal Alignment"
 msgstr ""
 
@@ -4442,7 +4450,7 @@ msgstr ""
 #: widgets/subscription-form/subscription-form.php:184
 #: widgets/subscription-form/subscription-form.php:235
 #: widgets/subscription-form/subscription-form.php:247
-#: widgets/testimonial/testimonial.php:596
+#: widgets/testimonial/testimonial.php:614
 #: widgets/toggle/toggle.php:258
 msgid "Yes"
 msgstr ""
@@ -4484,7 +4492,7 @@ msgstr ""
 #: widgets/subscription-form/subscription-form.php:185
 #: widgets/subscription-form/subscription-form.php:236
 #: widgets/subscription-form/subscription-form.php:248
-#: widgets/testimonial/testimonial.php:597
+#: widgets/testimonial/testimonial.php:615
 #: widgets/toggle/toggle.php:259
 msgid "No"
 msgstr ""
@@ -4586,7 +4594,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:359
 #: widgets/featured-banner/featured-banner.php:1529
 #: widgets/heading/heading.php:128
-#: widgets/image-carousel/image-carousel.php:494
+#: widgets/image-carousel/image-carousel.php:526
 #: widgets/toggle/toggle.php:128
 msgid "Sub Title"
 msgstr ""
@@ -6031,7 +6039,7 @@ msgstr ""
 #: widgets/pdf-view/pdf-view.php:607
 #: widgets/post-grid/post-grid.php:888
 #: widgets/post-meta/post-meta.php:61
-#: widgets/testimonial/testimonial.php:921
+#: widgets/testimonial/testimonial.php:939
 msgid "Author"
 msgstr ""
 
@@ -6488,8 +6496,8 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:2555
 #: widgets/team-member/team-member.php:557
 #: widgets/team-member/team-member.php:619
-#: widgets/testimonial/testimonial.php:524
-#: widgets/testimonial/testimonial.php:880
+#: widgets/testimonial/testimonial.php:542
+#: widgets/testimonial/testimonial.php:898
 msgid "Middle"
 msgstr ""
 
@@ -7161,8 +7169,8 @@ msgstr ""
 #: widgets/skill-bar/skill-bar.php:595
 #: widgets/team-member/team-member.php:549
 #: widgets/team-member/team-member.php:611
-#: widgets/testimonial/testimonial.php:516
-#: widgets/testimonial/testimonial.php:872
+#: widgets/testimonial/testimonial.php:534
+#: widgets/testimonial/testimonial.php:890
 #: widgets/toggle/toggle.php:905
 msgid "Vertical Position"
 msgstr ""
@@ -7304,14 +7312,14 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:2141
 #: widgets/dual-color-heading/dual-color-heading.php:242
 #: widgets/featured-banner/featured-banner.php:2046
-#: widgets/testimonial/testimonial.php:1027
+#: widgets/testimonial/testimonial.php:1045
 msgid "Display as"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:2148
 #: widgets/dual-color-heading/dual-color-heading.php:248
 #: widgets/featured-banner/featured-banner.php:2052
-#: widgets/testimonial/testimonial.php:1033
+#: widgets/testimonial/testimonial.php:1051
 msgid "Table"
 msgstr ""
 
@@ -7398,6 +7406,7 @@ msgid "Steps"
 msgstr ""
 
 #: widgets/cf7/cf7.php:483
+#: widgets/image-carousel/image-carousel.php:356
 msgid "Wrapper Padding"
 msgstr ""
 
@@ -7707,7 +7716,7 @@ msgid "Icon Padding"
 msgstr ""
 
 #: widgets/flipbox/flipbox.php:787
-#: widgets/testimonial/testimonial.php:571
+#: widgets/testimonial/testimonial.php:589
 msgid "Icon Rotate"
 msgstr ""
 
@@ -7780,9 +7789,9 @@ msgstr ""
 #: widgets/fun-fact/fun-fact.php:725
 #: widgets/pdf-view/pdf-view.php:391
 #: widgets/team-member/team-member.php:1007
-#: widgets/testimonial/testimonial.php:430
-#: widgets/testimonial/testimonial.php:814
-#: widgets/testimonial/testimonial.php:1054
+#: widgets/testimonial/testimonial.php:448
+#: widgets/testimonial/testimonial.php:832
+#: widgets/testimonial/testimonial.php:1072
 msgid "Bottom Spacing"
 msgstr ""
 
@@ -8002,37 +8011,37 @@ msgstr ""
 msgid "Active Color"
 msgstr ""
 
-#: widgets/image-carousel/image-carousel.php:343
+#: widgets/image-carousel/image-carousel.php:375
 #: widgets/logo-carousel/logo-carousel.php:352
 msgid "Fraction Color"
 msgstr ""
 
-#: widgets/image-carousel/image-carousel.php:358
+#: widgets/image-carousel/image-carousel.php:390
 #: widgets/logo-carousel/logo-carousel.php:367
 msgid "Current Color"
 msgstr ""
 
-#: widgets/image-carousel/image-carousel.php:373
+#: widgets/image-carousel/image-carousel.php:405
 #: widgets/logo-carousel/logo-carousel.php:382
 msgid "Total Color"
 msgstr ""
 
-#: widgets/image-carousel/image-carousel.php:389
+#: widgets/image-carousel/image-carousel.php:421
 #: widgets/logo-carousel/logo-carousel.php:398
 msgid "Progress Bar Color"
 msgstr ""
 
-#: widgets/image-carousel/image-carousel.php:404
+#: widgets/image-carousel/image-carousel.php:436
 #: widgets/logo-carousel/logo-carousel.php:413
 msgid "Progress Fill Color"
 msgstr ""
 
-#: widgets/image-carousel/image-carousel.php:419
+#: widgets/image-carousel/image-carousel.php:451
 #: widgets/logo-carousel/logo-carousel.php:428
 msgid "Carousel Item"
 msgstr ""
 
-#: widgets/image-carousel/image-carousel.php:516
+#: widgets/image-carousel/image-carousel.php:548
 #: widgets/logo-carousel/logo-carousel.php:464
 msgid "Fit Image as"
 msgstr ""
@@ -8888,7 +8897,7 @@ msgstr ""
 
 #: widgets/off-canvas/off-canvas.php:603
 #: widgets/team-member/team-member.php:481
-#: widgets/testimonial/testimonial.php:448
+#: widgets/testimonial/testimonial.php:466
 msgid "Hidden"
 msgstr ""
 
@@ -9910,7 +9919,7 @@ msgstr ""
 
 #: widgets/post-grid/post-grid.php:1458
 #: widgets/team-member/team-member.php:582
-#: widgets/testimonial/testimonial.php:836
+#: widgets/testimonial/testimonial.php:854
 msgid "Content Body"
 msgstr ""
 
@@ -10684,12 +10693,12 @@ msgid "Photo Holder"
 msgstr ""
 
 #: widgets/team-member/team-member.php:477
-#: widgets/testimonial/testimonial.php:444
+#: widgets/testimonial/testimonial.php:462
 msgid "Overflow"
 msgstr ""
 
 #: widgets/team-member/team-member.php:593
-#: widgets/testimonial/testimonial.php:971
+#: widgets/testimonial/testimonial.php:989
 msgid "Top Spacing"
 msgstr ""
 
@@ -10714,7 +10723,7 @@ msgid "Testimonial Content"
 msgstr ""
 
 #: widgets/testimonial/testimonial.php:126
-#: widgets/testimonial/testimonial.php:549
+#: widgets/testimonial/testimonial.php:567
 msgid "Quote Icon"
 msgstr ""
 
@@ -10751,7 +10760,7 @@ msgid "Type Name here"
 msgstr ""
 
 #: widgets/testimonial/testimonial.php:248
-#: widgets/testimonial/testimonial.php:937
+#: widgets/testimonial/testimonial.php:955
 msgid "Designation"
 msgstr ""
 
@@ -10764,7 +10773,7 @@ msgid "Type Designation here"
 msgstr ""
 
 #: widgets/testimonial/testimonial.php:262
-#: widgets/testimonial/testimonial.php:954
+#: widgets/testimonial/testimonial.php:972
 msgid "Logo"
 msgstr ""
 
@@ -10776,36 +10785,36 @@ msgstr ""
 msgid "Gap Between"
 msgstr ""
 
-#: widgets/testimonial/testimonial.php:397
+#: widgets/testimonial/testimonial.php:415
 msgid "Image Holder"
 msgstr ""
 
-#: widgets/testimonial/testimonial.php:594
+#: widgets/testimonial/testimonial.php:612
 msgid "Overflow?"
 msgstr ""
 
-#: widgets/testimonial/testimonial.php:732
+#: widgets/testimonial/testimonial.php:750
 msgid "Ratting"
 msgstr ""
 
-#: widgets/testimonial/testimonial.php:743
+#: widgets/testimonial/testimonial.php:761
 msgid "Star Size"
 msgstr ""
 
-#: widgets/testimonial/testimonial.php:770
+#: widgets/testimonial/testimonial.php:788
 msgid "Unrated Color"
 msgstr ""
 
-#: widgets/testimonial/testimonial.php:798
+#: widgets/testimonial/testimonial.php:816
 msgid "Rated/Icon Color"
 msgstr ""
 
-#: widgets/testimonial/testimonial.php:905
+#: widgets/testimonial/testimonial.php:923
 msgid "Content Text"
 msgstr ""
 
 #. translators: %s is the rating count
-#: widgets/testimonial/testimonial.php:1103
+#: widgets/testimonial/testimonial.php:1121
 #, php-format
 msgid "Rated %s out of 5"
 msgstr ""
