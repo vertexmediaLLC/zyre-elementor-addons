@@ -2044,21 +2044,25 @@ class Call_To_Action extends Base {
 			[
 				'selector' => '{{WRAPPER}} .zyre-cta-ribbon-title',
 				'controls' => [
-					'background' => [
+					'background'    => [
 						'label' => esc_html__( 'Text Background', 'zyre-elementor-addons' ),
 					],
-					'color'      => [
+					'color'         => [
 						'label' => esc_html__( 'Text Color', 'zyre-elementor-addons' ),
 					],
-					'typography' => [
+					'typography'    => [
 						'fields_options' => [
-							'typography'  => [ 'default' => 'yes' ],
-							'font_family' => [ 'default' => 'Inter' ],
+							'typography'  => ['default' => 'yes'],
+							'font_family' => ['default' => 'Inter'],
 						],
 					],
-					'padding'    => [],
-					'border'     => [],
-					'box_shadow' => [],
+					'padding'       => [],
+					'border'        => [],
+					'border_radius' => [],
+					'box_shadow'    => [],
+					'width'         => [
+						'label' => esc_html__( 'Title Width', 'zyre-elementor-addons' ),
+					],
 				],
 			]
 		);
@@ -2118,6 +2122,26 @@ class Call_To_Action extends Base {
 					],
 					'offset_y' => [
 						'css_property' => '--translateY',
+					],
+					'width'    => [],
+					'height'   => [],
+					'align_y'  => [
+						'label'        => esc_html__( 'Align Content', 'zyre-elementor-addons' ),
+						'options'      => [
+							'flex-start' => [
+								'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
+								'icon'  => 'eicon-h-align-left',
+							],
+							'center'     => [
+								'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+								'icon'  => 'eicon-h-align-center',
+							],
+							'flex-end'   => [
+								'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+								'icon'  => 'eicon-h-align-right',
+							],
+						],
+						'css_property' => 'align-content',
 					],
 				],
 			]
@@ -2280,7 +2304,7 @@ class Call_To_Action extends Base {
 		$this->add_render_attribute( 'title_suffix', 'class', 'zyre-cta-title-suffix' );
 		if ( ! empty( $settings['title_suffix_display'] ) ) {
 			$this->add_render_attribute( 'title_suffix', 'class', esc_attr( 'zyre-d-' . $settings['title_suffix_display'] ) );
-	}
+		}
 		$this->add_render_attribute( 'subtitle', 'class', 'zyre-cta-subtitle' );
 		if ( ! empty( $settings['subtitle_display'] ) ) {
 			$this->add_render_attribute( 'subtitle', 'class', esc_attr( 'zyre-d-' . $settings['subtitle_display'] ) );

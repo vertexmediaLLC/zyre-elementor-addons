@@ -29,3 +29,11 @@
 	opacity: 1;
 	transform: translateX(0);
 }
+
+.zyre-addon-button .zyre-button-icon-onhover.zyre-align-icon-left .zyre-button-icon {
+	transform: translateX(0);
+}
+
+.zyre-addon-button .zyre-button-icon-onhover.zyre-align-icon-left:hover .zyre-button-icon {
+	transform: translateX(-0.7em);
+}

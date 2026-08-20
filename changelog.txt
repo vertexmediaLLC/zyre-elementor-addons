@@ -1,3 +1,7 @@
+= 2.1.2 - 2026-08-20 =
+
+- Updated Button, Call to Action, and Image List widgets.
+
 = 2.1.1 - 2026-07-29 =
 
 - Updated Button, Image Carousel, and Testimonial widgets.

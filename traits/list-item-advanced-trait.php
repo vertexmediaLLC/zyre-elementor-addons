@@ -786,30 +786,23 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'item_layout',
 			[
 				'label'   => esc_html__( 'Layout', 'zyre-elementor-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'right' => [
-						'title' => esc_html__( 'Content Right', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-h-align-right',
-					],
-					'left'  => [
-						'title' => esc_html__( 'Content Left', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-h-align-left',
-					],
-					'bottom'   => [
-						'title' => esc_html__( 'Content Bottom', 'zyre-elementor-addons' ),
-						'icon'  => 'eicon-v-align-bottom',
-					],
+					'right' => esc_html__( 'Content Right', 'zyre-elementor-addons' ),
+					'left'  => esc_html__( 'Content Left', 'zyre-elementor-addons' ),
+					'top'   => esc_html__( 'Content Top', 'zyre-elementor-addons' ),
+					'bottom'   => esc_html__( 'Content Bottom', 'zyre-elementor-addons' ),
 				],
 				'default'              => 'group' === $args['id_prefix'] ? 'right' : 'bottom',
 				'render_type'          => 'template',
 				'selectors_dictionary' => [
 					'right'  => 'flex-direction: row;justify-content: flex-start;',
 					'left' => 'flex-direction: row-reverse;justify-content: flex-end;',
+					'top'   => 'flex-direction: column-reverse;align-items: flex-start;',
 					'bottom'   => 'flex-direction: column;align-items: flex-start;',
 				],
 				'selectors'            => [
