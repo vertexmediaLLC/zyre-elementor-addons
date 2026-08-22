@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -245,7 +245,7 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 == Changelog ==
 
-= 2.1.2 - 20 August 2026 =
+= 2.1.3 - 22 August 2026 =
 
 - Updated Button, Call to Action, and Image List widgets.
 
@@ -307,28 +307,3 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 = 2.0.0 - 04 April 2026 =
 
 - Mega Menu, Off-Canvas, and Search Box widgets included.
-
-= 1.0.5 - 18 March 2026 =
-
-- Updated the readme file for version 1.0.5.
-
-= 1.0.4 - 18 March 2026 =
-
-- Added videos and updated the readme file.
-
-= 1.0.3 - 10 March 2026 =
-
-- Initial release of Zyre Elementor Addons.
-- The plugin has been carefully reviewed and the issues fixed.
-
-= 1.0.2 - 22 February 2026 =
-
-- Some escaping outputs, enqueues, assets, and widgets issues are fixed.
-
-= 1.0.1 - 29 January 2026 =
-
-- Some escaping issues are fixed.
-
-= 1.0.0 - 29 January 2026 =
-
-- Initial release with 57 free Elementor widgets.
