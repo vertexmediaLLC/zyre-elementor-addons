@@ -958,7 +958,7 @@ class FlipBox extends Base {
 				</div>
 			<?php endif; ?>
 
-			<?php if ( ! empty( $settings[ $title ] ) && ! empty( $settings[ $description ] ) ) : ?>
+			<?php if ( ! empty( $settings[ $title ] ) || ! empty( $settings[ $description ] ) ) : ?>
 				<div class="zyre-flipbox-content">
 					<?php if ( ! empty( $settings[ $title ] ) ) : ?>
 						<<?php Utils::print_validated_html_tag( $title_tag ); ?> class="zyre-flipbox-title zy-m-0 zy-lh-1.2 zy-fw-bold">
