@@ -395,6 +395,20 @@ trait Social_Trait {
 
 		$args = wp_parse_args( $args, $default_args );
 
+		$this->add_control(
+			'social_icon_on_hover',
+			[
+				'label'          => esc_html__( 'Show Icon on Hover?', 'zyre-elementor-addons' ),
+				'type'           => Controls_Manager::SWITCHER,
+				'prefix_class'   => 'zyre-icon-on-hover--',
+				'style_transfer' => true,
+				'selectors'      => [
+					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-social-icon-holder'                         => 'opacity: 0;transition: opacity var(--zy-transition-duration)',
+					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-social-icon:hover .zyre-social-icon-holder' => 'opacity: 1',
+				],
+			]
+		);
+
 		$this->add_responsive_control(
 			'social_icon_columns',
 			[
@@ -410,6 +424,7 @@ trait Social_Trait {
 					'5' => '5',
 					'6' => '6',
 				],
+				'separator'    => 'before',
 				'prefix_class' => 'elementor-grid%s-',
 				'selectors' => [
 					'{{WRAPPER}}' => '--grid-template-columns: repeat({{VALUE}}, auto);',

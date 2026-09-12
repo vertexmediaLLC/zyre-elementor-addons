@@ -658,6 +658,23 @@ class Social_Share extends Base {
 		);
 
 		$this->add_control(
+			'share_icon_on_hover',
+			[
+				'label'          => esc_html__( 'Show Icon on Hover?', 'zyre-elementor-addons' ),
+				'type'           => Controls_Manager::SWITCHER,
+				'prefix_class'   => 'zyre-icon-on-hover--',
+				'style_transfer' => true,
+				'selectors'      => [
+					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-share-icon-holder'                         => 'opacity: 0;transition: opacity var(--zy-transition-duration)',
+					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-share-item:hover .zyre-share-icon-holder' => 'opacity: 1',
+				],
+				'condition'      => [
+					'share_view' => ['icon-text', 'icon'],
+				],
+			]
+		);
+
+		$this->add_control(
 			'social_share_css_class',
 			[
 				'label'       => esc_html__( 'Class', 'zyre-elementor-addons' ),
