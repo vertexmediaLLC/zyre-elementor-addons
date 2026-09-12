@@ -192,6 +192,20 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
+		if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
+			$repeater->add_control(
+				'item_extra',
+				[
+					'label' => esc_html__( 'Extra Text', 'zyre-elementor-addons' ),
+					'type' => Controls_Manager::TEXT,
+					'default' => '',
+					'dynamic' => [
+						'active' => true,
+					],
+				]
+			);
+		}
+
 		$repeater->add_control(
 			'item_link',
 			[
@@ -359,8 +373,20 @@ trait List_Item_Advanced_Trait {
 					'type'    => Controls_Manager::ICONS,
 					'default' => [
 						'value'   => is_rtl() ? 'zy-fonticon-b zy-Arrow-left' : 'zy-fonticon-b zy-Arrow-right',
-						'library' => 'zyreladdons-icons-bold',
+						'library' => 'zyre-icons-bold',
 					],
+				]
+			);
+
+			$this->add_control(
+				$prefix . 'items_icon_on_hover',
+				[
+					'label' => esc_html__( 'Show Icon on Item Hover?', 'zyre-elementor-addons' ),
+					'type' => Controls_Manager::SWITCHER,
+					'label_off' => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+					'label_on' => esc_html__( 'No', 'zyre-elementor-addons' ),
+					'prefix_class' => "zyre-{$class_base}list-icon-on-hover--",
+					'style_transfer' => true,
 				]
 			);
 		}
@@ -497,9 +523,27 @@ trait List_Item_Advanced_Trait {
 				'type' => Controls_Manager::SWITCHER,
 				'label_off' => esc_html__( 'Off', 'zyre-elementor-addons' ),
 				'label_on' => esc_html__( 'On', 'zyre-elementor-addons' ),
-				'separator' => 'before',
 				'prefix_class' => "zyre-{$class_base}list-divider--",
 				'style_transfer' => true,
+			]
+		);
+
+		$this->add_control(
+			'divider_exclude',
+			[
+				'label' => esc_html__( 'Exclude from Last Item?', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'zyre-elementor-addons' ),
+				'label_off' => esc_html__( 'No', 'zyre-elementor-addons' ),
+				'prefix_class' => "zyre-{$class_base}list-divider-in-last-item--",
+				'style_transfer' => true,
+				'selectors' => [
+					"{{WRAPPER}}.zyre-{$class_base}list-divider-in-last-item--yes .zyre-{$class_base}list-items .zyre-{$class_base}list-item:last-child::after" => 'content: none;',
+					"{{WRAPPER}}.zyre-{$class_base}list-divider-in-last-item--yes .zyre-{$class_base}list-items .zyre-{$class_base}list-item:last-child .zyre-image-list-item-content::after" => 'content: none;',
+				],
+				'condition' => [
+					'divider'     => 'yes',
+				],
 			]
 		);
 
@@ -539,8 +583,24 @@ trait List_Item_Advanced_Trait {
 					'divider' => 'yes',
 				],
 				'selectors' => [
-					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child)::after" => '--divider-style: {{VALUE}}',
-					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => '--divider-style: {{VALUE}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-items .zyre-{$class_base}list-item::after" => '--divider-style: {{VALUE}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-items .zyre-{$class_base}list-item .zyre-image-list-item-content::after" => '--divider-style: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'divider_color',
+			[
+				'label' => esc_html__( 'Color', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#e6ebf2',
+				'condition' => [
+					'divider' => 'yes',
+				],
+				'selectors' => [
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item::after" => 'border-color: {{VALUE}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item .zyre-image-list-item-content::after" => 'border-color: {{VALUE}}',
 				],
 			]
 		);
@@ -564,28 +624,33 @@ trait List_Item_Advanced_Trait {
 					'divider' => 'yes',
 				],
 				'selectors' => [
-					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child)::after" => '--divider-weight: {{SIZE}}{{UNIT}}',
-					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-items .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => '--divider-weight: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-items .zyre-{$class_base}list-item::after" => '--divider-weight: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-items .zyre-{$class_base}list-item .zyre-image-list-item-content::after" => '--divider-weight: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'divider_width',
 			[
 				'label' => esc_html__( 'Width', 'zyre-elementor-addons' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'size_units' => [ 'px', '%', 'vw', 'custom' ],
 				'default' => [
 					'unit' => '%',
 				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 2000,
+					],
+				],
 				'condition' => [
 					'divider' => 'yes',
-					'view!' => 'inline',
 				],
 				'selectors' => [
-					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item:not(:last-child)::after" => 'width: {{SIZE}}{{UNIT}}',
-					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => 'width: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item::after" => 'width: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item .zyre-image-list-item-content::after" => 'width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -618,24 +683,31 @@ trait List_Item_Advanced_Trait {
 					'view' => 'inline',
 				],
 				'selectors' => [
-					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item:not(:last-child)::after" => 'height: {{SIZE}}{{UNIT}}',
-					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => 'height: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item::after" => 'height: {{SIZE}}{{UNIT}}',
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item .zyre-image-list-item-content::after" => 'height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
 
-		$this->add_control(
-			'divider_color',
+		$offset_x_prop = is_rtl() ? 'right' : 'left';
+
+		$this->add_responsive_control(
+			'divider_height_offset_x',
 			[
-				'label' => esc_html__( 'Color', 'zyre-elementor-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#e6ebf2',
-				'condition' => [
-					'divider' => 'yes',
+				'label' => esc_html__( 'Horizontal Offset', 'zyre-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
 				],
 				'selectors' => [
-					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item:not(:last-child)::after" => 'border-color: {{VALUE}}',
-					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item:not(:last-child) .zyre-image-list-item-content::after" => 'border-color: {{VALUE}}',
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item::after" => "{$offset_x_prop}: {{SIZE}}{{UNIT}}",
+					"{{WRAPPER}}.zyre-image-list-divider-to--content .zyre-{$class_base}list-item .zyre-image-list-item-content::after" => "{$offset_x_prop}: {{SIZE}}{{UNIT}}",
+				],
+				'condition' => [
+					'divider'     => 'yes',
 				],
 			]
 		);
@@ -749,6 +821,32 @@ trait List_Item_Advanced_Trait {
 				'default'   => '',
 				'selectors' => [
 					"{{WRAPPER}} .zyre-{$class_base}list-item:hover .zyre-{$class_base}list-item-text"    => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
+			$this->add_control(
+				'extra_color_hover',
+				[
+					'label'     => esc_html__( 'Extra Text Color', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::COLOR,
+					'default'   => '',
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$class_base}list-item:hover .zyre-{$class_base}list-item-extra"    => 'color: {{VALUE}};',
+					],
+				]
+			);
+		}
+
+		$this->add_control(
+			'divider_color_hover',
+			[
+				'label'     => esc_html__( 'Divider Color', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					"{{WRAPPER}}:not(.zyre-image-list-divider-to--content) .zyre-{$class_base}list-item:hover::after"    => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1180,6 +1278,89 @@ trait List_Item_Advanced_Trait {
 				],
 			]
 		);
+
+		$this->add_responsive_control(
+			'item_content_layout',
+			[
+				'label'     => esc_html__( 'Layout', 'zyre-elementor-addons' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'default'   => 'block',
+				'options'   => [
+					'block' => [
+						'title' => esc_html__( 'Block', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-editor-list-ul',
+					],
+					'flex'  => [
+						'title' => esc_html__( 'Inline', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-ellipsis-h',
+					],
+				],
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-content" => 'display: {{VALUE}};',
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'item_content_justify',
+			[
+				'label'       => esc_html__( 'Justify Content', 'zyre-elementor-addons' ),
+				'label_block' => true,
+				'type'        => Controls_Manager::CHOOSE,
+				'default'     => 'space-between',
+				'options'     => [
+					'flex-start'    => [
+						'title' => esc_html__( 'Start', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-justify-start-h',
+					],
+					'center'        => [
+						'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-justify-center-h',
+					],
+					'flex-end'      => [
+						'title' => esc_html__( 'End', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-justify-end-h',
+					],
+					'space-between' => [
+						'title' => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-justify-space-between-h',
+					],
+					'space-around'  => [
+						'title' => esc_html__( 'Space Around', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-justify-space-around-h',
+					],
+					'space-evenly'  => [
+						'title' => esc_html__( 'Space Evenly', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-flex eicon-justify-space-evenly-h',
+					],
+				],
+				'selectors'   => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-content" => 'justify-content: {{VALUE}};align-content: {{VALUE}};',
+				],
+				'condition' => [
+					'item_content_layout' => 'flex',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'item_content_gap',
+			[
+				'label'                                            => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+				'type'                                             => Controls_Manager::SLIDER,
+				'default'                                          => [
+					'unit' => 'px',
+					'size' => 15,
+				],
+				'selectors'                                        => [
+					"{{WRAPPER}} .zyre-{$class_base}list-item-content" => 'gap: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'item_content_layout' => 'flex',
+				],
+			]
+		);
 	}
 
 	/**
@@ -1243,6 +1424,32 @@ trait List_Item_Advanced_Trait {
 				'type'      => Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}"     => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			$prefix . 'width',
+			[
+				'label'      => esc_html__( 'Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'vw' ],
+				'range'      => [
+					'px' => [
+						'min' => 10,
+						'max' => 1000,
+					],
+					'%'  => [
+						'min' => 1,
+						'max' => 100,
+					],
+					'vw'  => [
+						'min' => 1,
+						'max' => 100,
+					],
+				],
+				'selectors'  => [
+					"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}"  => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -2796,6 +3003,18 @@ trait List_Item_Advanced_Trait {
 								<?php echo esc_html( $item['item_description'] ); ?>
 							</p>
 						<?php endif; ?>
+
+						<?php
+						if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
+							$repeater_extra_setting_key = $instance->get_repeater_setting_key( 'item_extra', $prefix . 'list', $index );
+							$instance->add_render_attribute( $repeater_extra_setting_key, 'class', "zyre-{$class_base}list-item-extra" );
+							$instance->add_inline_editing_attributes( $repeater_extra_setting_key );
+							if ( ! empty( $item['item_extra'] ) ) { ?>
+								<p <?php $instance->print_render_attribute_string( $repeater_extra_setting_key ); ?>>
+									<?php echo esc_html( $item['item_extra'] ); ?>
+								</p>
+							<?php }
+						} ?>
 					</div>
 
 					<?php if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) :
