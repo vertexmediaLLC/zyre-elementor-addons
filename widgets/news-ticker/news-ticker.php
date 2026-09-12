@@ -553,6 +553,22 @@ class News_Ticker extends Base {
 							'post_item_divider' => 'yes',
 						],
 					],
+					'height' => [
+						'condition' => [
+							'post_item_divider' => 'yes',
+						],
+					],
+					'border_radius' => [
+						'label'     => esc_html__( 'Radius', 'zyre-elementor-addons' ),
+						'condition'    => [
+							'post_item_divider' => 'yes',
+						],
+					],
+					'align_self_y' => [
+						'condition'    => [
+							'post_item_divider' => 'yes',
+						],
+					],
 					'margin'       => [
 						'condition' => [
 							'post_item_divider' => 'yes',
