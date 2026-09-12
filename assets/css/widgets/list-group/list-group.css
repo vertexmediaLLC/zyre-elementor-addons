@@ -53,6 +53,7 @@
 .zyre-addon-list-group .zyre-group-list-item-type-wrapper,
 .zyre-addon-list-group .zyre-list-items-icon-wrapper,
 .zyre-addon-list-group .zyre-group-list-items-icon-wrapper {
+	position: relative;
 	display: inline-flex;
 	flex-shrink: 0;
     text-align: center;
@@ -80,9 +81,18 @@
 	align-items: center;
 }
 
+.zyre-addon-list-group.zyre-group-list-icon-on-hover--yes .zyre-group-list-items-icon {
+	opacity: 0;
+	transition: opacity var(--zy-transition-duration);
+}
+
+.zyre-addon-list-group.zyre-group-list-icon-on-hover--yes .zyre-group-list-item:hover .zyre-group-list-items-icon {
+	opacity: 1;
+}
+
 /* Divider */
 @media (min-width: 1025px) {
-	.zyre-group-list-divider--yes.zyre-group-list--col-1 .zyre-group-list-item:not(:last-child)::after {
+	.zyre-group-list-divider--yes.zyre-group-list--col-1 .zyre-group-list-item::after {
 		border-top-style: var(--divider-style);
 		border-top-width: var(--divider-weight);
 		width: 100%;
@@ -119,7 +129,7 @@
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
-	.zyre-group-list-divider--yes.zyre-group-list--col--tablet1 .zyre-group-list-item:not(:last-child)::after {
+	.zyre-group-list-divider--yes.zyre-group-list--col--tablet1 .zyre-group-list-item::after {
 		border-top-style: var(--divider-style);
 		border-top-width: var(--divider-weight);
 		width: 100%;
@@ -156,7 +166,7 @@
 }
 
 @media (max-width: 767px) {
-	.zyre-group-list-divider--yes.zyre-group-list--col--mobile1 .zyre-group-list-item:not(:last-child)::after {
+	.zyre-group-list-divider--yes.zyre-group-list--col--mobile1 .zyre-group-list-item::after {
 		border-top-style: var(--divider-style);
 		border-top-width: var(--divider-weight);
 		width: 100%;

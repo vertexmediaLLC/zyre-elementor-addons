@@ -50,6 +50,7 @@ class List_Group extends Base {
 		$this->__content_style_controls();
 		$this->__title_style_controls();
 		$this->__description_style_controls();
+		$this->__extra_style_controls();
 		$this->__item_type_style_controls();
 		$this->__items_icon_style_controls();
 	}
@@ -131,6 +132,26 @@ class List_Group extends Base {
 		$this->register_text_style_controls(
 			[
 				'id_prefix'   => 'item_text',
+				'widget_base' => 'group',
+			]
+		);
+
+		$this->end_controls_section();
+	}
+
+	protected function __extra_style_controls() {
+
+		$this->start_controls_section(
+			'section_extra_style',
+			[
+				'label' => esc_html__( 'Extra Text', 'zyre-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->register_text_style_controls(
+			[
+				'id_prefix'   => 'item_extra',
 				'widget_base' => 'group',
 			]
 		);
