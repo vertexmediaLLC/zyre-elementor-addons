@@ -161,28 +161,40 @@ class InfoBox extends Base {
 		$this->add_responsive_control(
 			'infobox_media_position',
 			[
-				'label'          => esc_html__( 'Media position', 'zyre-elementor-addons' ),
-				'type'           => Controls_Manager::CHOOSE,
-				'options'        => [
-					'left'  => [
+				'label'                => esc_html__( 'Media position', 'zyre-elementor-addons' ),
+				'type'                 => Controls_Manager::CHOOSE,
+				'options'              => [
+					'left'   => [
 						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-h-align-left',
 					],
-					'top'   => [
+					'top'    => [
 						'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-v-align-top',
 					],
-					'right' => [
+					'right'  => [
 						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-h-align-right',
 					],
+					'bottom' => [
+						'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-v-align-bottom',
+					],
 				],
-				'default'        => 'top',
-				'toggle'         => false,
-				'style_transfer' => true,
-				'prefix_class'   => 'zyre-infobox-media-dir%s-',
-				'condition'      => [
-					'infobox_media[value]!'   => 'none',
+				'default'              => 'top',
+				'toggle'               => false,
+				'style_transfer'       => true,
+				'selectors_dictionary' => [
+					'left'   => 'flex-direction: row;',
+					'top'    => 'flex-direction: column;',
+					'right'  => 'flex-direction: row-reverse',
+					'bottom' => 'flex-direction: column-reverse;',
+				],
+				'selectors'            => [
+					'{{WRAPPER}}.zyre-addon-infobox .elementor-widget-container' => '{{VALUE}};',
+				],
+				'condition'            => [
+					'infobox_media[value]!' => 'none',
 				],
 			]
 		);
@@ -224,8 +236,7 @@ class InfoBox extends Base {
 					'stretch' => '-webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch;',
 				],
 				'selectors'            => [
-					'{{WRAPPER}}.zyre-addon-infobox.zyre-infobox-media-dir-left .zyre-infobox-media'  => '{{VALUE}};',
-					'{{WRAPPER}}.zyre-addon-infobox.zyre-infobox-media-dir-right .zyre-infobox-media' => '{{VALUE}};',
+					'{{WRAPPER}}.zyre-addon-infobox .zyre-infobox-media'  => '{{VALUE}};',
 				],
 			]
 		);
@@ -383,6 +394,21 @@ class InfoBox extends Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'media_spacing',
+			[
+				'label'      => esc_html__( 'Space Between', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'selectors'  => [
+					'{{WRAPPER}} .elementor-widget-container' => '-webkit-gap: {{SIZE}}{{UNIT}};-moz-gap: {{SIZE}}{{UNIT}};gap: {{SIZE}}{{UNIT}};',
+				],
+				'condition'            => [
+					'infobox_media[value]!' => 'none',
+				],
+			]
+		);
+
 		$this->start_controls_tabs( 'tabs_general_style' );
 
 		// Normal Tab
@@ -514,19 +540,6 @@ class InfoBox extends Base {
 			]
 		);
 
-		$this->add_responsive_control(
-			'media_spacing',
-			[
-				'label'      => esc_html__( 'Spacing', 'zyre-elementor-addons' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'selectors'  => [
-					'{{WRAPPER}}:not(.zyre-infobox-media-dir-left):not(.zyre-infobox-media-dir-right) .zyre-infobox-media'                                     => 'margin-bottom: {{SIZE}}{{UNIT}} !important;',
-					'{{WRAPPER}}.zyre-infobox-media-dir-left .elementor-widget-container,{{WRAPPER}}.zyre-infobox-media-dir-right .elementor-widget-container' => '-webkit-gap: {{SIZE}}{{UNIT}};-moz-gap: {{SIZE}}{{UNIT}};gap: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
 		$this->set_style_controls(
 			'icon',
 			[
@@ -535,10 +548,10 @@ class InfoBox extends Base {
 					'icon_color' => [],
 					'bg_color'   => [],
 					'width'     => [
-						'label' => esc_html__( 'Icon Width', 'zyre-elementor-addons' ),
+						'label' => esc_html__( 'Icon Area Width', 'zyre-elementor-addons' ),
 					],
 					'height'    => [
-						'label' => esc_html__( 'Icon Height', 'zyre-elementor-addons' ),
+						'label' => esc_html__( 'Icon Area Height', 'zyre-elementor-addons' ),
 					],
 				],
 				'condition' => [
