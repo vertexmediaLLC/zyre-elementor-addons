@@ -1,3 +1,7 @@
+= 2.1.6 - 2026-09-13 =
+
+- Releasing version 2.1.6.
+
 = 2.1.5 - 2026-09-13 =
 
 - Numeric list widget updated.
