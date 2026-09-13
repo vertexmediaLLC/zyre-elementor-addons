@@ -1,4 +1,12 @@
-= 2.1.3 - 2026-08-25 =
+= 2.1.5 - 2026-09-13 =
+
+- Numeric list widget updated.
+- News ticker widget updated.
+- Social Icon & Social Share widget updated.
+- List Group widget updated.
+- Info Box widget updated.
+
+= 2.1.4 - 2026-08-25 =
 
 - Fixed flip box widget.
 

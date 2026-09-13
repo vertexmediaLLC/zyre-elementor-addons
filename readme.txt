@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.1.4
+Stable tag: 2.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -244,6 +244,14 @@ https://www.youtube.com/watch?v=k3P1I9MRAEs
 
 
 == Changelog ==
+
+= 2.1.5 - 13 September 2026 =
+
+- Numeric list widget updated.
+- News ticker widget updated.
+- Social Icon & Social Share widget updated.
+- List Group widget updated.
+- Info Box widget updated.
 
 = 2.1.4 - 25 August 2026 =
 
