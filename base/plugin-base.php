@@ -89,7 +89,7 @@ class Plugin {
 		}
 
 		$this->appsero = new \Appsero\Client(
-			'acb2abb0-6399-44b7-a9d9-5a2bc0a70682',
+			'70fd7441-efef-441f-88d6-39b2c9cf40e4',
 			'Zyre Elementor Addons',
 			ZYRELADDONS__FILE__
 		);
