@@ -1417,6 +1417,18 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
+		$this->add_control(
+			$prefix . 'underline_on_hover',
+			[
+				'label'        => esc_html__( 'Enable Underline on Hover?', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'selectors' => [
+					"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}"       => 'text-decoration-line: none',
+					"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}:hover" => 'text-decoration-line: underline',
+				],
+			]
+		);
+
 		$this->add_responsive_control(
 			$prefix . 'margin',
 			[
