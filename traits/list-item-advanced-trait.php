@@ -1484,7 +1484,7 @@ trait List_Item_Advanced_Trait {
 		$args = wp_parse_args( $args, $default_args );
 		$class_base = ! empty( $args['id_prefix'] ) ? $args['id_prefix'] . '-' : '';
 
-		if ( ! empty( $args['id_prefix'] ) && 'numeric' === $args['id_prefix'] ) {
+		if ( ! empty( $args['id_prefix'] ) && ( 'numeric' === $args['id_prefix'] || 'group' === $args['id_prefix'] ) ) {
 			$this->add_group_control(
 				Group_Control_Typography::get_type(),
 				[
@@ -1598,7 +1598,7 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
-		if ( ! empty( $args['id_prefix'] ) && 'numeric' === $args['id_prefix'] ) {
+		if ( ! empty( $args['id_prefix'] ) && ( 'numeric' === $args['id_prefix'] || 'group' === $args['id_prefix'] ) ) {
 			$this->add_control(
 				'item_type_color',
 				[
@@ -1726,7 +1726,7 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
-		if ( ! empty( $args['id_prefix'] ) && 'numeric' === $args['id_prefix'] ) {
+		if ( ! empty( $args['id_prefix'] ) && ( 'numeric' === $args['id_prefix'] || 'group' === $args['id_prefix'] ) ) {
 			$this->add_control(
 				'item_type_color_hover',
 				[

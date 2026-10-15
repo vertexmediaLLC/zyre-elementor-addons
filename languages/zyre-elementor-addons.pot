@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zyre Elementor Addons 2.1.0\n"
+"Project-Id-Version: Zyre Elementor Addons 2.1.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zyre-elementor-addons\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-29T06:27:23+00:00\n"
+"POT-Creation-Date: 2026-10-15T06:33:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -77,8 +77,8 @@ msgstr ""
 #: modules/mega-menu/templates/popup.php:64
 #: traits/swiper-trait.php:278
 #: traits/swiper-trait.php:293
-#: widgets/advance-tab/advance-tab.php:690
-#: widgets/advance-tab/advance-tab.php:751
+#: widgets/advance-tab/advance-tab.php:712
+#: widgets/advance-tab/advance-tab.php:773
 #: widgets/archive-title/archive-title.php:270
 #: widgets/call-to-action/call-to-action.php:180
 #: widgets/call-to-action/call-to-action.php:202
@@ -125,8 +125,8 @@ msgid "Line Through"
 msgstr ""
 
 #: base/widget-base.php:213
-#: base/widget-base.php:1313
-#: base/widget-base.php:1422
+#: base/widget-base.php:1314
+#: base/widget-base.php:1423
 #: traits/swiper-trait.php:211
 #: traits/swiper-trait.php:238
 #: widgets/archive-title/archive-title.php:303
@@ -181,13 +181,13 @@ msgstr ""
 #: base/widget-base.php:283
 #: modules/mega-menu/templates/popup.php:109
 #: traits/button-trait.php:532
-#: traits/list-item-advanced-trait.php:1298
-#: traits/list-item-advanced-trait.php:2180
+#: traits/list-item-advanced-trait.php:1510
+#: traits/list-item-advanced-trait.php:2392
 #: traits/social-trait.php:310
 #: widgets/advance-accordion/advance-accordion.php:414
 #: widgets/advance-toggle/advance-toggle.php:509
 #: widgets/business-hour/business-hour.php:173
-#: widgets/infobox/infobox.php:484
+#: widgets/infobox/infobox.php:510
 #: widgets/post-meta/post-meta.php:359
 #: widgets/site-title/site-title.php:331
 #: widgets/social-share/social-share.php:501
@@ -200,56 +200,56 @@ msgid "Font Weight"
 msgstr ""
 
 #: base/widget-base.php:309
-#: widgets/advance-tab/advance-tab.php:681
-#: widgets/advance-tab/advance-tab.php:742
+#: widgets/advance-tab/advance-tab.php:703
+#: widgets/advance-tab/advance-tab.php:764
 msgid "100 (Thin)"
 msgstr ""
 
 #: base/widget-base.php:310
-#: widgets/advance-tab/advance-tab.php:682
-#: widgets/advance-tab/advance-tab.php:743
+#: widgets/advance-tab/advance-tab.php:704
+#: widgets/advance-tab/advance-tab.php:765
 msgid "200 (Extra Light)"
 msgstr ""
 
 #: base/widget-base.php:311
-#: widgets/advance-tab/advance-tab.php:683
-#: widgets/advance-tab/advance-tab.php:744
+#: widgets/advance-tab/advance-tab.php:705
+#: widgets/advance-tab/advance-tab.php:766
 msgid "300 (Light)"
 msgstr ""
 
 #: base/widget-base.php:312
-#: widgets/advance-tab/advance-tab.php:684
-#: widgets/advance-tab/advance-tab.php:745
+#: widgets/advance-tab/advance-tab.php:706
+#: widgets/advance-tab/advance-tab.php:767
 msgid "400 (Normal)"
 msgstr ""
 
 #: base/widget-base.php:313
-#: widgets/advance-tab/advance-tab.php:685
-#: widgets/advance-tab/advance-tab.php:746
+#: widgets/advance-tab/advance-tab.php:707
+#: widgets/advance-tab/advance-tab.php:768
 msgid "500 (Medium)"
 msgstr ""
 
 #: base/widget-base.php:314
-#: widgets/advance-tab/advance-tab.php:686
-#: widgets/advance-tab/advance-tab.php:747
+#: widgets/advance-tab/advance-tab.php:708
+#: widgets/advance-tab/advance-tab.php:769
 msgid "600 (Semi Bold)"
 msgstr ""
 
 #: base/widget-base.php:315
-#: widgets/advance-tab/advance-tab.php:687
-#: widgets/advance-tab/advance-tab.php:748
+#: widgets/advance-tab/advance-tab.php:709
+#: widgets/advance-tab/advance-tab.php:770
 msgid "700 (Bold)"
 msgstr ""
 
 #: base/widget-base.php:316
-#: widgets/advance-tab/advance-tab.php:688
-#: widgets/advance-tab/advance-tab.php:749
+#: widgets/advance-tab/advance-tab.php:710
+#: widgets/advance-tab/advance-tab.php:771
 msgid "800 (Extra Bold)"
 msgstr ""
 
 #: base/widget-base.php:317
-#: widgets/advance-tab/advance-tab.php:689
-#: widgets/advance-tab/advance-tab.php:750
+#: widgets/advance-tab/advance-tab.php:711
+#: widgets/advance-tab/advance-tab.php:772
 msgid "900 (Black)"
 msgstr ""
 
@@ -257,28 +257,28 @@ msgstr ""
 #: controls/typography.php:59
 #: traits/button-trait.php:328
 #: traits/button-trait.php:591
-#: traits/list-item-advanced-trait.php:345
-#: traits/list-item-advanced-trait.php:680
-#: traits/list-item-advanced-trait.php:1075
-#: traits/list-item-advanced-trait.php:1373
-#: traits/list-item-advanced-trait.php:1753
-#: traits/list-item-advanced-trait.php:1871
-#: traits/list-item-advanced-trait.php:2317
+#: traits/list-item-advanced-trait.php:359
+#: traits/list-item-advanced-trait.php:752
+#: traits/list-item-advanced-trait.php:1166
+#: traits/list-item-advanced-trait.php:1585
+#: traits/list-item-advanced-trait.php:1965
+#: traits/list-item-advanced-trait.php:2083
+#: traits/list-item-advanced-trait.php:2529
 #: traits/list-item-trait.php:190
 #: traits/list-item-trait.php:302
 #: traits/social-trait.php:182
-#: traits/social-trait.php:489
+#: traits/social-trait.php:504
 #: widgets/advance-accordion/advance-accordion.php:310
 #: widgets/advance-accordion/advance-accordion.php:429
 #: widgets/advance-heading/advance-heading.php:289
 #: widgets/advance-heading/advance-heading.php:409
-#: widgets/advance-tab/advance-tab.php:610
-#: widgets/advance-tab/advance-tab.php:691
-#: widgets/advance-tab/advance-tab.php:752
-#: widgets/advance-tab/advance-tab.php:802
-#: widgets/advance-tab/advance-tab.php:976
-#: widgets/advance-tab/advance-tab.php:1187
-#: widgets/advance-tab/advance-tab.php:1233
+#: widgets/advance-tab/advance-tab.php:632
+#: widgets/advance-tab/advance-tab.php:713
+#: widgets/advance-tab/advance-tab.php:774
+#: widgets/advance-tab/advance-tab.php:841
+#: widgets/advance-tab/advance-tab.php:1032
+#: widgets/advance-tab/advance-tab.php:1243
+#: widgets/advance-tab/advance-tab.php:1289
 #: widgets/advance-toggle/advance-toggle.php:312
 #: widgets/advance-toggle/advance-toggle.php:410
 #: widgets/advance-toggle/advance-toggle.php:528
@@ -310,7 +310,7 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:969
 #: widgets/image-grid/image-grid.php:1068
 #: widgets/image-heading/image-heading.php:648
-#: widgets/infobox/infobox.php:392
+#: widgets/infobox/infobox.php:418
 #: widgets/logo-carousel/logo-carousel.php:177
 #: widgets/logo-grid/logo-grid.php:279
 #: widgets/logo-grid/logo-grid.php:425
@@ -323,8 +323,8 @@ msgstr ""
 #: widgets/menu/menu.php:701
 #: widgets/menu/menu.php:1081
 #: widgets/menu/menu.php:1238
-#: widgets/news-ticker/news-ticker.php:641
-#: widgets/news-ticker/news-ticker.php:758
+#: widgets/news-ticker/news-ticker.php:657
+#: widgets/news-ticker/news-ticker.php:774
 #: widgets/off-canvas/off-canvas.php:727
 #: widgets/off-canvas/off-canvas.php:847
 #: widgets/off-canvas/off-canvas.php:996
@@ -352,7 +352,7 @@ msgstr ""
 #: widgets/site-title/site-title.php:354
 #: widgets/site-title/site-title.php:441
 #: widgets/social-share/social-share.php:371
-#: widgets/social-share/social-share.php:698
+#: widgets/social-share/social-share.php:715
 #: widgets/subscription-form/subscription-form.php:443
 #: widgets/team-member/team-member.php:861
 #: widgets/toggle/toggle.php:534
@@ -363,8 +363,8 @@ msgid "Normal"
 msgstr ""
 
 #: base/widget-base.php:320
-#: widgets/advance-tab/advance-tab.php:692
-#: widgets/advance-tab/advance-tab.php:753
+#: widgets/advance-tab/advance-tab.php:714
+#: widgets/advance-tab/advance-tab.php:775
 msgid "Bold"
 msgstr ""
 
@@ -378,14 +378,14 @@ msgstr ""
 #: traits/button-trait.php:395
 #: traits/button-trait.php:612
 #: traits/button-trait.php:644
-#: traits/list-item-advanced-trait.php:688
-#: traits/list-item-advanced-trait.php:725
-#: traits/list-item-advanced-trait.php:1083
-#: traits/list-item-advanced-trait.php:1134
-#: traits/list-item-advanced-trait.php:1381
-#: traits/list-item-advanced-trait.php:1507
-#: traits/list-item-advanced-trait.php:2325
-#: traits/list-item-advanced-trait.php:2418
+#: traits/list-item-advanced-trait.php:760
+#: traits/list-item-advanced-trait.php:797
+#: traits/list-item-advanced-trait.php:1174
+#: traits/list-item-advanced-trait.php:1225
+#: traits/list-item-advanced-trait.php:1593
+#: traits/list-item-advanced-trait.php:1719
+#: traits/list-item-advanced-trait.php:2537
+#: traits/list-item-advanced-trait.php:2630
 msgid "Background"
 msgstr ""
 
@@ -426,20 +426,20 @@ msgid "Inherit"
 msgstr ""
 
 #: base/widget-base.php:402
-#: traits/list-item-advanced-trait.php:1760
-#: traits/list-item-advanced-trait.php:1789
-#: traits/list-item-advanced-trait.php:1889
-#: traits/list-item-advanced-trait.php:1963
+#: traits/list-item-advanced-trait.php:1972
+#: traits/list-item-advanced-trait.php:2001
+#: traits/list-item-advanced-trait.php:2101
+#: traits/list-item-advanced-trait.php:2175
 #: traits/social-trait.php:204
 #: traits/social-trait.php:268
-#: traits/social-trait.php:509
-#: traits/social-trait.php:566
-#: widgets/advance-tab/advance-tab.php:809
-#: widgets/advance-tab/advance-tab.php:857
-#: widgets/advance-tab/advance-tab.php:905
-#: widgets/advance-tab/advance-tab.php:995
-#: widgets/advance-tab/advance-tab.php:1028
-#: widgets/advance-tab/advance-tab.php:1061
+#: traits/social-trait.php:524
+#: traits/social-trait.php:581
+#: widgets/advance-tab/advance-tab.php:848
+#: widgets/advance-tab/advance-tab.php:896
+#: widgets/advance-tab/advance-tab.php:944
+#: widgets/advance-tab/advance-tab.php:1051
+#: widgets/advance-tab/advance-tab.php:1084
+#: widgets/advance-tab/advance-tab.php:1117
 #: widgets/animated-text/animated-text.php:889
 #: widgets/call-to-action/call-to-action.php:1239
 #: widgets/call-to-action/call-to-action.php:1377
@@ -463,25 +463,25 @@ msgid "Background Color"
 msgstr ""
 
 #: base/widget-base.php:432
-#: traits/list-item-advanced-trait.php:630
-#: traits/list-item-advanced-trait.php:1878
-#: traits/list-item-advanced-trait.php:1952
+#: traits/list-item-advanced-trait.php:595
+#: traits/list-item-advanced-trait.php:2090
+#: traits/list-item-advanced-trait.php:2164
 #: traits/list-item-trait.php:197
 #: traits/list-item-trait.php:222
 #: traits/list-item-trait.php:309
 #: traits/list-item-trait.php:333
 #: traits/social-trait.php:189
 #: traits/social-trait.php:253
-#: traits/social-trait.php:496
-#: traits/social-trait.php:553
+#: traits/social-trait.php:511
+#: traits/social-trait.php:568
 #: widgets/advance-heading/advance-heading.php:296
 #: widgets/advance-heading/advance-heading.php:317
-#: widgets/advance-tab/advance-tab.php:983
-#: widgets/advance-tab/advance-tab.php:1016
-#: widgets/advance-tab/advance-tab.php:1049
-#: widgets/advance-tab/advance-tab.php:1240
-#: widgets/advance-tab/advance-tab.php:1263
-#: widgets/advance-tab/advance-tab.php:1286
+#: widgets/advance-tab/advance-tab.php:1039
+#: widgets/advance-tab/advance-tab.php:1072
+#: widgets/advance-tab/advance-tab.php:1105
+#: widgets/advance-tab/advance-tab.php:1296
+#: widgets/advance-tab/advance-tab.php:1319
+#: widgets/advance-tab/advance-tab.php:1342
 #: widgets/animated-text/animated-text.php:675
 #: widgets/animated-text/animated-text.php:1113
 #: widgets/animated-text/animated-text.php:1175
@@ -509,8 +509,8 @@ msgstr ""
 #: widgets/site-title/site-title.php:499
 #: widgets/social-share/social-share.php:378
 #: widgets/social-share/social-share.php:444
-#: widgets/social-share/social-share.php:705
-#: widgets/social-share/social-share.php:755
+#: widgets/social-share/social-share.php:722
+#: widgets/social-share/social-share.php:772
 #: widgets/toggle/toggle.php:694
 #: widgets/toggle/toggle.php:727
 #: widgets/toggle/toggle.php:760
@@ -524,10 +524,10 @@ msgstr ""
 #: base/widget-base.php:460
 #: modules/mega-menu/templates/popup.php:105
 #: traits/button-trait.php:598
-#: traits/list-item-advanced-trait.php:1406
-#: traits/list-item-advanced-trait.php:1534
-#: traits/list-item-advanced-trait.php:2360
-#: traits/list-item-advanced-trait.php:2456
+#: traits/list-item-advanced-trait.php:1618
+#: traits/list-item-advanced-trait.php:1746
+#: traits/list-item-advanced-trait.php:2572
+#: traits/list-item-advanced-trait.php:2668
 #: widgets/business-hour/business-hour.php:210
 #: widgets/call-to-action/call-to-action.php:1250
 #: widgets/call-to-action/call-to-action.php:1388
@@ -551,8 +551,8 @@ msgstr ""
 #: traits/button-trait.php:654
 #: traits/social-trait.php:217
 #: traits/social-trait.php:281
-#: traits/social-trait.php:520
-#: traits/social-trait.php:577
+#: traits/social-trait.php:535
+#: traits/social-trait.php:592
 #: widgets/post-comments/post-comments.php:1918
 #: widgets/post-comments/post-comments.php:2220
 #: widgets/post-comments/post-comments.php:2342
@@ -569,13 +569,13 @@ msgstr ""
 #: base/widget-base.php:547
 #: traits/button-trait.php:442
 #: traits/button-trait.php:681
-#: traits/list-item-advanced-trait.php:779
-#: traits/list-item-advanced-trait.php:1167
-#: traits/list-item-advanced-trait.php:1639
-#: traits/list-item-advanced-trait.php:1812
-#: traits/list-item-advanced-trait.php:2020
-#: traits/list-item-advanced-trait.php:2496
-#: traits/social-trait.php:727
+#: traits/list-item-advanced-trait.php:877
+#: traits/list-item-advanced-trait.php:1258
+#: traits/list-item-advanced-trait.php:1851
+#: traits/list-item-advanced-trait.php:2024
+#: traits/list-item-advanced-trait.php:2232
+#: traits/list-item-advanced-trait.php:2708
+#: traits/social-trait.php:742
 #: widgets/featured-banner/featured-banner.php:880
 #: widgets/flipbox/flipbox.php:156
 #: widgets/mega-menu/mega-menu.php:409
@@ -595,13 +595,13 @@ msgid "Box Shadow"
 msgstr ""
 
 #: base/widget-base.php:580
-#: traits/list-item-advanced-trait.php:1428
-#: traits/list-item-advanced-trait.php:1558
-#: traits/list-item-advanced-trait.php:1900
-#: traits/list-item-advanced-trait.php:1974
-#: widgets/advance-tab/advance-tab.php:828
-#: widgets/advance-tab/advance-tab.php:876
-#: widgets/advance-tab/advance-tab.php:924
+#: traits/list-item-advanced-trait.php:1640
+#: traits/list-item-advanced-trait.php:1770
+#: traits/list-item-advanced-trait.php:2112
+#: traits/list-item-advanced-trait.php:2186
+#: widgets/advance-tab/advance-tab.php:867
+#: widgets/advance-tab/advance-tab.php:915
+#: widgets/advance-tab/advance-tab.php:963
 #: widgets/lottie-animation/lottie-animation.php:359
 #: widgets/lottie-animation/lottie-animation.php:409
 #: widgets/testimonial/testimonial.php:392
@@ -610,10 +610,10 @@ msgstr ""
 
 #: base/widget-base.php:611
 #: traits/button-trait.php:466
-#: traits/list-item-advanced-trait.php:993
-#: traits/list-item-advanced-trait.php:1249
-#: traits/list-item-advanced-trait.php:2075
-#: traits/list-item-advanced-trait.php:2301
+#: traits/list-item-advanced-trait.php:1084
+#: traits/list-item-advanced-trait.php:1435
+#: traits/list-item-advanced-trait.php:2287
+#: traits/list-item-advanced-trait.php:2513
 #: widgets/advance-heading/advance-heading.php:332
 #: widgets/animated-text/animated-text.php:1047
 #: widgets/post-comments/post-comments.php:848
@@ -628,14 +628,14 @@ msgstr ""
 
 #: base/widget-base.php:630
 #: traits/button-trait.php:454
-#: traits/list-item-advanced-trait.php:824
-#: traits/list-item-advanced-trait.php:1005
-#: traits/list-item-advanced-trait.php:1653
-#: traits/list-item-advanced-trait.php:1825
-#: traits/list-item-advanced-trait.php:2063
-#: traits/social-trait.php:747
-#: traits/social-trait.php:823
-#: traits/social-trait.php:856
+#: traits/list-item-advanced-trait.php:915
+#: traits/list-item-advanced-trait.php:1096
+#: traits/list-item-advanced-trait.php:1865
+#: traits/list-item-advanced-trait.php:2037
+#: traits/list-item-advanced-trait.php:2275
+#: traits/social-trait.php:762
+#: traits/social-trait.php:838
+#: traits/social-trait.php:871
 #: widgets/post-comments/post-comments.php:1626
 #: widgets/post-comments/post-comments.php:1672
 #: widgets/post-comments/post-comments.php:1705
@@ -644,7 +644,7 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:2942
 #: widgets/post-thumbnail/post-thumbnail.php:301
 #: widgets/site-title/site-title.php:423
-#: widgets/social-share/social-share.php:996
+#: widgets/social-share/social-share.php:1013
 msgid "Padding"
 msgstr ""
 
@@ -653,7 +653,7 @@ msgstr ""
 #: widgets/archive-title/archive-title.php:350
 #: widgets/call-to-action/call-to-action.php:1086
 #: widgets/call-to-action/call-to-action.php:1645
-#: widgets/call-to-action/call-to-action.php:2190
+#: widgets/call-to-action/call-to-action.php:2214
 #: widgets/dual-button/dual-button.php:289
 #: widgets/featured-banner/featured-banner.php:1100
 #: widgets/featured-banner/featured-banner.php:1644
@@ -661,7 +661,6 @@ msgstr ""
 #: widgets/fun-fact/fun-fact.php:170
 #: widgets/heading/heading.php:859
 #: widgets/iconbox/iconbox.php:228
-#: widgets/infobox/infobox.php:520
 #: widgets/page-title/page-title.php:214
 #: widgets/post-comments/post-comments.php:880
 #: widgets/post-comments/post-comments.php:1070
@@ -671,19 +670,20 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:2036
 #: widgets/post-grid/post-grid.php:551
 #: widgets/post-title/post-title.php:214
-#: widgets/social-share/social-share.php:798
+#: widgets/social-share/social-share.php:815
 #: widgets/team-member/team-member.php:463
 msgid "Spacing"
 msgstr ""
 
 #: base/widget-base.php:683
 #: traits/button-trait.php:209
-#: traits/list-item-advanced-trait.php:576
-#: traits/list-item-advanced-trait.php:925
-#: traits/list-item-advanced-trait.php:1315
-#: traits/list-item-advanced-trait.php:2033
-#: traits/list-item-advanced-trait.php:2197
-#: widgets/advance-tab/advance-tab.php:1103
+#: traits/list-item-advanced-trait.php:636
+#: traits/list-item-advanced-trait.php:1016
+#: traits/list-item-advanced-trait.php:1446
+#: traits/list-item-advanced-trait.php:1527
+#: traits/list-item-advanced-trait.php:2245
+#: traits/list-item-advanced-trait.php:2409
+#: widgets/advance-tab/advance-tab.php:1159
 #: widgets/animated-text/animated-text.php:584
 #: widgets/animated-text/animated-text.php:1124
 #: widgets/animated-text/animated-text.php:1186
@@ -704,12 +704,12 @@ msgstr ""
 
 #: base/widget-base.php:716
 #: traits/button-trait.php:231
-#: traits/list-item-advanced-trait.php:596
-#: traits/list-item-advanced-trait.php:950
-#: traits/list-item-advanced-trait.php:1342
-#: traits/list-item-advanced-trait.php:2048
-#: traits/list-item-advanced-trait.php:2223
-#: widgets/advance-tab/advance-tab.php:1118
+#: traits/list-item-advanced-trait.php:661
+#: traits/list-item-advanced-trait.php:1041
+#: traits/list-item-advanced-trait.php:1554
+#: traits/list-item-advanced-trait.php:2260
+#: traits/list-item-advanced-trait.php:2435
+#: widgets/advance-tab/advance-tab.php:1174
 #: widgets/animated-text/animated-text.php:610
 #: widgets/call-to-action/call-to-action.php:741
 #: widgets/featured-banner/featured-banner.php:714
@@ -723,14 +723,14 @@ msgstr ""
 
 #: base/widget-base.php:749
 #: traits/list-item-trait.php:239
-#: traits/social-trait.php:798
-#: widgets/advance-tab/advance-tab.php:1133
+#: traits/social-trait.php:813
+#: widgets/advance-tab/advance-tab.php:1189
 #: widgets/alert/alert.php:226
 #: widgets/divider/divider.php:396
 #: widgets/image-carousel/image-carousel.php:150
 #: widgets/logo-carousel/logo-carousel.php:159
 #: widgets/post-navigation/post-navigation.php:344
-#: widgets/social-share/social-share.php:971
+#: widgets/social-share/social-share.php:988
 #: widgets/team-member/team-member.php:827
 msgid "Size"
 msgstr ""
@@ -777,16 +777,18 @@ msgstr ""
 msgid "Row Gap"
 msgstr ""
 
-#: base/widget-base.php:886
-#: traits/list-item-advanced-trait.php:395
-#: traits/list-item-advanced-trait.php:836
-#: traits/list-item-advanced-trait.php:866
-#: traits/list-item-advanced-trait.php:895
-#: traits/list-item-advanced-trait.php:1017
-#: traits/list-item-advanced-trait.php:2105
+#: base/widget-base.php:887
+#: traits/list-item-advanced-trait.php:421
+#: traits/list-item-advanced-trait.php:927
+#: traits/list-item-advanced-trait.php:957
+#: traits/list-item-advanced-trait.php:986
+#: traits/list-item-advanced-trait.php:1108
+#: traits/list-item-advanced-trait.php:2317
 #: traits/list-item-trait.php:116
-#: traits/social-trait.php:423
+#: traits/social-trait.php:438
 #: widgets/advance-heading/advance-heading.php:172
+#: widgets/advance-tab/advance-tab.php:821
+#: widgets/advance-tab/advance-tab.php:1011
 #: widgets/animated-text/animated-text.php:182
 #: widgets/archive-description/archive-description.php:133
 #: widgets/archive-posts/archive-posts.php:837
@@ -799,7 +801,7 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:810
 #: widgets/featured-banner/featured-banner.php:1184
 #: widgets/fun-fact/fun-fact.php:734
-#: widgets/infobox/infobox.php:588
+#: widgets/infobox/infobox.php:601
 #: widgets/lottie-animation/lottie-animation.php:86
 #: widgets/mega-menu/mega-menu.php:270
 #: widgets/mega-menu/mega-menu.php:1105
@@ -829,30 +831,30 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: base/widget-base.php:891
-#: base/widget-base.php:931
-#: base/widget-base.php:1020
-#: base/widget-base.php:1086
-#: base/widget-base.php:1166
+#: base/widget-base.php:892
+#: base/widget-base.php:932
+#: base/widget-base.php:1021
+#: base/widget-base.php:1087
+#: base/widget-base.php:1167
 #: traits/button-trait.php:482
-#: traits/list-item-advanced-trait.php:400
-#: traits/list-item-advanced-trait.php:841
-#: traits/list-item-advanced-trait.php:871
-#: traits/list-item-advanced-trait.php:900
-#: traits/list-item-advanced-trait.php:1021
-#: traits/list-item-advanced-trait.php:1670
-#: traits/list-item-advanced-trait.php:2109
-#: traits/list-item-advanced-trait.php:2525
+#: traits/list-item-advanced-trait.php:426
+#: traits/list-item-advanced-trait.php:932
+#: traits/list-item-advanced-trait.php:962
+#: traits/list-item-advanced-trait.php:991
+#: traits/list-item-advanced-trait.php:1112
+#: traits/list-item-advanced-trait.php:1882
+#: traits/list-item-advanced-trait.php:2321
+#: traits/list-item-advanced-trait.php:2737
 #: traits/list-item-trait.php:120
-#: traits/social-trait.php:427
+#: traits/social-trait.php:442
 #: traits/swiper-trait.php:454
 #: widgets/advance-accordion/advance-accordion.php:166
 #: widgets/advance-heading/advance-heading.php:177
 #: widgets/advance-heading/advance-heading.php:382
-#: widgets/advance-tab/advance-tab.php:165
-#: widgets/advance-tab/advance-tab.php:278
-#: widgets/advance-tab/advance-tab.php:401
-#: widgets/advance-tab/advance-tab.php:572
+#: widgets/advance-tab/advance-tab.php:166
+#: widgets/advance-tab/advance-tab.php:289
+#: widgets/advance-tab/advance-tab.php:412
+#: widgets/advance-tab/advance-tab.php:583
 #: widgets/advance-toggle/advance-toggle.php:167
 #: widgets/animated-text/animated-text.php:186
 #: widgets/animated-text/animated-text.php:460
@@ -913,8 +915,8 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:341
 #: widgets/image-heading/image-heading.php:400
 #: widgets/infobox/infobox.php:168
-#: widgets/infobox/infobox.php:557
-#: widgets/infobox/infobox.php:592
+#: widgets/infobox/infobox.php:570
+#: widgets/infobox/infobox.php:605
 #: widgets/lottie-animation/lottie-animation.php:90
 #: widgets/mega-menu/mega-menu.php:274
 #: widgets/mega-menu/mega-menu.php:1109
@@ -966,34 +968,35 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: base/widget-base.php:895
-#: base/widget-base.php:935
-#: base/widget-base.php:979
-#: base/widget-base.php:1024
-#: base/widget-base.php:1058
-#: base/widget-base.php:1090
-#: base/widget-base.php:1133
+#: base/widget-base.php:896
+#: base/widget-base.php:936
+#: base/widget-base.php:980
+#: base/widget-base.php:1025
+#: base/widget-base.php:1059
+#: base/widget-base.php:1091
+#: base/widget-base.php:1134
 #: traits/button-trait.php:263
 #: traits/button-trait.php:486
-#: traits/list-item-advanced-trait.php:404
-#: traits/list-item-advanced-trait.php:845
-#: traits/list-item-advanced-trait.php:875
-#: traits/list-item-advanced-trait.php:904
-#: traits/list-item-advanced-trait.php:1025
-#: traits/list-item-advanced-trait.php:1054
-#: traits/list-item-advanced-trait.php:1674
-#: traits/list-item-advanced-trait.php:1699
-#: traits/list-item-advanced-trait.php:2113
-#: traits/list-item-advanced-trait.php:2142
-#: traits/list-item-advanced-trait.php:2529
-#: traits/list-item-advanced-trait.php:2554
+#: traits/list-item-advanced-trait.php:430
+#: traits/list-item-advanced-trait.php:936
+#: traits/list-item-advanced-trait.php:966
+#: traits/list-item-advanced-trait.php:995
+#: traits/list-item-advanced-trait.php:1116
+#: traits/list-item-advanced-trait.php:1145
+#: traits/list-item-advanced-trait.php:1318
+#: traits/list-item-advanced-trait.php:1886
+#: traits/list-item-advanced-trait.php:1911
+#: traits/list-item-advanced-trait.php:2325
+#: traits/list-item-advanced-trait.php:2354
+#: traits/list-item-advanced-trait.php:2741
+#: traits/list-item-advanced-trait.php:2766
 #: traits/list-item-trait.php:124
-#: traits/social-trait.php:431
-#: traits/social-trait.php:768
+#: traits/social-trait.php:446
+#: traits/social-trait.php:783
 #: widgets/advance-heading/advance-heading.php:181
 #: widgets/advance-heading/advance-heading.php:386
-#: widgets/advance-tab/advance-tab.php:405
-#: widgets/advance-tab/advance-tab.php:576
+#: widgets/advance-tab/advance-tab.php:416
+#: widgets/advance-tab/advance-tab.php:587
 #: widgets/animated-text/animated-text.php:190
 #: widgets/animated-text/animated-text.php:464
 #: widgets/archive-description/archive-description.php:141
@@ -1014,6 +1017,7 @@ msgstr ""
 #: widgets/call-to-action/call-to-action.php:1184
 #: widgets/call-to-action/call-to-action.php:1673
 #: widgets/call-to-action/call-to-action.php:1901
+#: widgets/call-to-action/call-to-action.php:2136
 #: widgets/divider/divider.php:194
 #: widgets/divider/divider.php:355
 #: widgets/divider/divider.php:424
@@ -1038,9 +1042,9 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:448
 #: widgets/iconbox/iconbox.php:657
 #: widgets/image-carousel/image-carousel.php:345
-#: widgets/infobox/infobox.php:201
-#: widgets/infobox/infobox.php:561
-#: widgets/infobox/infobox.php:596
+#: widgets/infobox/infobox.php:213
+#: widgets/infobox/infobox.php:574
+#: widgets/infobox/infobox.php:609
 #: widgets/lottie-animation/lottie-animation.php:94
 #: widgets/mega-menu/mega-menu.php:278
 #: widgets/mega-menu/mega-menu.php:1113
@@ -1073,7 +1077,7 @@ msgstr ""
 #: widgets/site-tagline/site-tagline.php:212
 #: widgets/site-title/site-title.php:243
 #: widgets/social-share/social-share.php:622
-#: widgets/social-share/social-share.php:939
+#: widgets/social-share/social-share.php:956
 #: widgets/subscription-form/subscription-form.php:414
 #: widgets/team-member/team-member.php:220
 #: widgets/team-member/team-member.php:531
@@ -1086,30 +1090,30 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
-#: base/widget-base.php:899
-#: base/widget-base.php:939
-#: base/widget-base.php:1028
-#: base/widget-base.php:1094
-#: base/widget-base.php:1170
+#: base/widget-base.php:900
+#: base/widget-base.php:940
+#: base/widget-base.php:1029
+#: base/widget-base.php:1095
+#: base/widget-base.php:1171
 #: traits/button-trait.php:490
-#: traits/list-item-advanced-trait.php:408
-#: traits/list-item-advanced-trait.php:849
-#: traits/list-item-advanced-trait.php:879
-#: traits/list-item-advanced-trait.php:908
-#: traits/list-item-advanced-trait.php:1029
-#: traits/list-item-advanced-trait.php:1678
-#: traits/list-item-advanced-trait.php:2117
-#: traits/list-item-advanced-trait.php:2533
+#: traits/list-item-advanced-trait.php:434
+#: traits/list-item-advanced-trait.php:940
+#: traits/list-item-advanced-trait.php:970
+#: traits/list-item-advanced-trait.php:999
+#: traits/list-item-advanced-trait.php:1120
+#: traits/list-item-advanced-trait.php:1890
+#: traits/list-item-advanced-trait.php:2329
+#: traits/list-item-advanced-trait.php:2745
 #: traits/list-item-trait.php:128
-#: traits/social-trait.php:435
+#: traits/social-trait.php:450
 #: traits/swiper-trait.php:455
 #: widgets/advance-accordion/advance-accordion.php:167
 #: widgets/advance-heading/advance-heading.php:185
 #: widgets/advance-heading/advance-heading.php:390
-#: widgets/advance-tab/advance-tab.php:169
-#: widgets/advance-tab/advance-tab.php:282
-#: widgets/advance-tab/advance-tab.php:409
-#: widgets/advance-tab/advance-tab.php:580
+#: widgets/advance-tab/advance-tab.php:170
+#: widgets/advance-tab/advance-tab.php:293
+#: widgets/advance-tab/advance-tab.php:420
+#: widgets/advance-tab/advance-tab.php:591
 #: widgets/advance-toggle/advance-toggle.php:168
 #: widgets/animated-text/animated-text.php:194
 #: widgets/animated-text/animated-text.php:468
@@ -1170,8 +1174,8 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:345
 #: widgets/image-heading/image-heading.php:401
 #: widgets/infobox/infobox.php:176
-#: widgets/infobox/infobox.php:565
-#: widgets/infobox/infobox.php:600
+#: widgets/infobox/infobox.php:578
+#: widgets/infobox/infobox.php:613
 #: widgets/lottie-animation/lottie-animation.php:98
 #: widgets/mega-menu/mega-menu.php:282
 #: widgets/mega-menu/mega-menu.php:1117
@@ -1222,9 +1226,9 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: base/widget-base.php:903
-#: traits/list-item-advanced-trait.php:1033
-#: traits/list-item-advanced-trait.php:2121
+#: base/widget-base.php:904
+#: traits/list-item-advanced-trait.php:1124
+#: traits/list-item-advanced-trait.php:2333
 #: widgets/archive-description/archive-description.php:149
 #: widgets/author-box/author-box.php:472
 #: widgets/mega-menu/mega-menu.php:286
@@ -1235,31 +1239,34 @@ msgstr ""
 msgid "Justify"
 msgstr ""
 
-#: base/widget-base.php:925
-#: base/widget-base.php:1013
-#: base/widget-base.php:1081
+#: base/widget-base.php:926
+#: base/widget-base.php:1014
+#: base/widget-base.php:1082
 #: widgets/animated-text/animated-text.php:1325
 #: widgets/fun-fact/fun-fact.php:188
 msgid "Horizontal Align"
 msgstr ""
 
-#: base/widget-base.php:943
-#: base/widget-base.php:987
+#: base/widget-base.php:944
+#: base/widget-base.php:988
 #: traits/button-trait.php:271
+#: traits/list-item-advanced-trait.php:1326
+#: traits/list-item-advanced-trait.php:1350
 #: traits/list-item-trait.php:161
-#: traits/social-trait.php:603
+#: traits/social-trait.php:618
 #: traits/swiper-trait.php:344
-#: widgets/advance-tab/advance-tab.php:298
-#: widgets/advance-tab/advance-tab.php:415
-#: widgets/advance-tab/advance-tab.php:544
-#: widgets/advance-tab/advance-tab.php:566
+#: widgets/advance-tab/advance-tab.php:309
+#: widgets/advance-tab/advance-tab.php:426
+#: widgets/advance-tab/advance-tab.php:555
+#: widgets/advance-tab/advance-tab.php:577
 #: widgets/archive-posts/archive-posts.php:240
 #: widgets/business-hour/business-hour.php:673
 #: widgets/business-hour/business-hour.php:723
 #: widgets/business-hour/business-hour.php:863
 #: widgets/business-hour/business-hour.php:908
 #: widgets/business-hour/business-hour.php:988
-#: widgets/news-ticker/news-ticker.php:739
+#: widgets/infobox/infobox.php:400
+#: widgets/news-ticker/news-ticker.php:755
 #: widgets/off-canvas/off-canvas.php:826
 #: widgets/off-canvas/off-canvas.php:975
 #: widgets/pdf-view/pdf-view.php:450
@@ -1285,9 +1292,10 @@ msgstr ""
 msgid "Space Between"
 msgstr ""
 
-#: base/widget-base.php:947
-#: base/widget-base.php:991
+#: base/widget-base.php:948
+#: base/widget-base.php:992
 #: traits/button-trait.php:275
+#: traits/list-item-advanced-trait.php:1330
 #: widgets/business-hour/business-hour.php:912
 #: widgets/pdf-view/pdf-view.php:454
 #: widgets/post-comments/post-comments.php:818
@@ -1297,9 +1305,10 @@ msgstr ""
 msgid "Space Around"
 msgstr ""
 
-#: base/widget-base.php:951
-#: base/widget-base.php:995
+#: base/widget-base.php:952
+#: base/widget-base.php:996
 #: traits/button-trait.php:279
+#: traits/list-item-advanced-trait.php:1334
 #: widgets/business-hour/business-hour.php:916
 #: widgets/pdf-view/pdf-view.php:458
 #: widgets/post-comments/post-comments.php:822
@@ -1309,29 +1318,31 @@ msgstr ""
 msgid "Space Evenly"
 msgstr ""
 
-#: base/widget-base.php:969
-#: base/widget-base.php:1049
-#: base/widget-base.php:1124
+#: base/widget-base.php:970
+#: base/widget-base.php:1050
+#: base/widget-base.php:1125
 #: widgets/animated-text/animated-text.php:1355
 #: widgets/author-box/author-box.php:82
 #: widgets/post-comments/post-comments.php:2547
 msgid "Vertical Align"
 msgstr ""
 
-#: base/widget-base.php:975
-#: base/widget-base.php:1054
-#: base/widget-base.php:1129
-#: base/widget-base.php:1174
-#: traits/list-item-advanced-trait.php:1050
-#: traits/list-item-advanced-trait.php:1695
-#: traits/list-item-advanced-trait.php:2138
-#: traits/list-item-advanced-trait.php:2550
+#: base/widget-base.php:976
+#: base/widget-base.php:1055
+#: base/widget-base.php:1130
+#: base/widget-base.php:1175
+#: traits/list-item-advanced-trait.php:1141
+#: traits/list-item-advanced-trait.php:1907
+#: traits/list-item-advanced-trait.php:2350
+#: traits/list-item-advanced-trait.php:2762
+#: widgets/advance-tab/advance-tab.php:174
 #: widgets/animated-text/animated-text.php:1360
 #: widgets/archive-posts/archive-posts.php:209
 #: widgets/author-box/author-box.php:86
 #: widgets/author-box/author-box.php:170
 #: widgets/author-box/author-box.php:205
 #: widgets/call-to-action/call-to-action.php:775
+#: widgets/call-to-action/call-to-action.php:2132
 #: widgets/featured-banner/featured-banner.php:748
 #: widgets/flipbox/flipbox.php:211
 #: widgets/flipbox/flipbox.php:605
@@ -1344,7 +1355,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:653
 #: widgets/image-heading/image-heading.php:516
 #: widgets/infobox/infobox.php:172
-#: widgets/infobox/infobox.php:197
+#: widgets/infobox/infobox.php:209
 #: widgets/lottie-animation/lottie-animation.php:215
 #: widgets/off-canvas/off-canvas.php:488
 #: widgets/post-comments/post-comments.php:354
@@ -1357,19 +1368,21 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: base/widget-base.php:983
-#: base/widget-base.php:1062
-#: base/widget-base.php:1137
-#: base/widget-base.php:1178
-#: traits/list-item-advanced-trait.php:1058
-#: traits/list-item-advanced-trait.php:1703
-#: traits/list-item-advanced-trait.php:2146
-#: traits/list-item-advanced-trait.php:2558
+#: base/widget-base.php:984
+#: base/widget-base.php:1063
+#: base/widget-base.php:1138
+#: base/widget-base.php:1179
+#: traits/list-item-advanced-trait.php:1149
+#: traits/list-item-advanced-trait.php:1915
+#: traits/list-item-advanced-trait.php:2358
+#: traits/list-item-advanced-trait.php:2770
+#: widgets/advance-tab/advance-tab.php:178
 #: widgets/animated-text/animated-text.php:1364
 #: widgets/author-box/author-box.php:94
 #: widgets/author-box/author-box.php:174
 #: widgets/author-box/author-box.php:213
 #: widgets/call-to-action/call-to-action.php:783
+#: widgets/call-to-action/call-to-action.php:2140
 #: widgets/featured-banner/featured-banner.php:756
 #: widgets/flipbox/flipbox.php:215
 #: widgets/flipbox/flipbox.php:613
@@ -1379,7 +1392,8 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:411
 #: widgets/iconbox/iconbox.php:661
 #: widgets/image-heading/image-heading.php:520
-#: widgets/infobox/infobox.php:205
+#: widgets/infobox/infobox.php:180
+#: widgets/infobox/infobox.php:217
 #: widgets/lottie-animation/lottie-animation.php:214
 #: widgets/off-canvas/off-canvas.php:492
 #: widgets/pdf-view/pdf-view.php:118
@@ -1393,7 +1407,7 @@ msgstr ""
 msgid "Bottom"
 msgstr ""
 
-#: base/widget-base.php:1098
+#: base/widget-base.php:1099
 #: widgets/business-hour/business-hour.php:832
 #: widgets/fun-fact/fun-fact.php:205
 #: widgets/heading/heading.php:546
@@ -1402,11 +1416,11 @@ msgstr ""
 #: widgets/heading/heading.php:807
 #: widgets/iconbox/iconbox.php:415
 #: widgets/iconbox/iconbox.php:665
-#: widgets/infobox/infobox.php:209
+#: widgets/infobox/infobox.php:221
 msgid "Stretch"
 msgstr ""
 
-#: base/widget-base.php:1161
+#: base/widget-base.php:1162
 #: widgets/call-to-action/call-to-action.php:115
 #: widgets/call-to-action/call-to-action.php:301
 #: widgets/call-to-action/call-to-action.php:496
@@ -1437,65 +1451,65 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: base/widget-base.php:1203
-#: widgets/advance-tab/advance-tab.php:1207
+#: base/widget-base.php:1204
+#: widgets/advance-tab/advance-tab.php:1263
 #: widgets/animated-text/animated-text.php:264
-#: widgets/call-to-action/call-to-action.php:2092
-#: widgets/infobox/infobox.php:626
+#: widgets/call-to-action/call-to-action.php:2096
+#: widgets/infobox/infobox.php:639
 msgid "Rotate"
 msgstr ""
 
-#: base/widget-base.php:1234
-#: traits/list-item-advanced-trait.php:1446
-#: traits/list-item-advanced-trait.php:1577
-#: traits/list-item-advanced-trait.php:1921
-#: traits/list-item-advanced-trait.php:1995
+#: base/widget-base.php:1235
+#: traits/list-item-advanced-trait.php:1658
+#: traits/list-item-advanced-trait.php:1789
+#: traits/list-item-advanced-trait.php:2133
+#: traits/list-item-advanced-trait.php:2207
 msgid "Scale"
 msgstr ""
 
-#: base/widget-base.php:1257
+#: base/widget-base.php:1258
 #: widgets/image-carousel/image-carousel.php:104
 #: widgets/logo-carousel/logo-carousel.php:113
 #: widgets/news-ticker/news-ticker.php:342
 msgid "Transition Effect"
 msgstr ""
 
-#: base/widget-base.php:1261
+#: base/widget-base.php:1262
 #: widgets/image-carousel/image-carousel.php:108
 #: widgets/logo-carousel/logo-carousel.php:117
 #: widgets/news-ticker/news-ticker.php:346
 msgid "ease"
 msgstr ""
 
-#: base/widget-base.php:1262
+#: base/widget-base.php:1263
 #: widgets/image-carousel/image-carousel.php:109
 #: widgets/logo-carousel/logo-carousel.php:118
 #: widgets/news-ticker/news-ticker.php:347
 msgid "linear"
 msgstr ""
 
-#: base/widget-base.php:1263
+#: base/widget-base.php:1264
 #: widgets/image-carousel/image-carousel.php:110
 #: widgets/logo-carousel/logo-carousel.php:119
 #: widgets/news-ticker/news-ticker.php:348
 msgid "ease-in"
 msgstr ""
 
-#: base/widget-base.php:1264
+#: base/widget-base.php:1265
 #: widgets/image-carousel/image-carousel.php:111
 #: widgets/logo-carousel/logo-carousel.php:120
 #: widgets/news-ticker/news-ticker.php:349
 msgid "ease-out"
 msgstr ""
 
-#: base/widget-base.php:1265
+#: base/widget-base.php:1266
 #: widgets/image-carousel/image-carousel.php:112
 #: widgets/logo-carousel/logo-carousel.php:121
 #: widgets/news-ticker/news-ticker.php:350
 msgid "ease-in-out"
 msgstr ""
 
-#: base/widget-base.php:1282
+#: base/widget-base.php:1283
 #: traits/swiper-trait.php:256
 #: widgets/call-to-action/call-to-action.php:855
 #: widgets/call-to-action/call-to-action.php:965
@@ -1509,11 +1523,11 @@ msgstr ""
 msgid "Transition Duration"
 msgstr ""
 
-#: base/widget-base.php:1305
+#: base/widget-base.php:1306
 msgid "Object Fit"
 msgstr ""
 
-#: base/widget-base.php:1309
+#: base/widget-base.php:1310
 #: widgets/call-to-action/call-to-action.php:104
 #: widgets/call-to-action/call-to-action.php:182
 #: widgets/featured-banner/featured-banner.php:105
@@ -1521,30 +1535,31 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: base/widget-base.php:1310
+#: base/widget-base.php:1311
 #: widgets/call-to-action/call-to-action.php:183
 #: widgets/featured-banner/featured-banner.php:185
 msgid "Contain"
 msgstr ""
 
-#: base/widget-base.php:1311
+#: base/widget-base.php:1312
 #: widgets/animated-text/animated-text.php:505
 msgid "Fill"
 msgstr ""
 
-#: base/widget-base.php:1312
+#: base/widget-base.php:1313
 msgid "Scale Down"
 msgstr ""
 
-#: base/widget-base.php:1329
-#: traits/list-item-advanced-trait.php:1180
-#: traits/list-item-advanced-trait.php:1717
+#: base/widget-base.php:1330
+#: traits/list-item-advanced-trait.php:1271
+#: traits/list-item-advanced-trait.php:1929
 #: widgets/image-heading/image-heading.php:607
 msgid "Z-Index"
 msgstr ""
 
-#: base/widget-base.php:1350
-#: widgets/advance-tab/advance-tab.php:1151
+#: base/widget-base.php:1351
+#: traits/list-item-advanced-trait.php:697
+#: widgets/advance-tab/advance-tab.php:1207
 #: widgets/animated-text/animated-text.php:1465
 #: widgets/call-to-action/call-to-action.php:1956
 #: widgets/dual-button/dual-button.php:503
@@ -1555,8 +1570,8 @@ msgstr ""
 msgid "Horizontal Offset"
 msgstr ""
 
-#: base/widget-base.php:1381
-#: widgets/advance-tab/advance-tab.php:1167
+#: base/widget-base.php:1382
+#: widgets/advance-tab/advance-tab.php:1223
 #: widgets/animated-text/animated-text.php:1489
 #: widgets/call-to-action/call-to-action.php:1985
 #: widgets/dual-button/dual-button.php:532
@@ -1566,7 +1581,7 @@ msgstr ""
 msgid "Vertical Offset"
 msgstr ""
 
-#: base/widget-base.php:1410
+#: base/widget-base.php:1411
 #: widgets/animated-text/animated-text.php:163
 #: widgets/heading/heading.php:691
 #: widgets/image-heading/image-heading.php:278
@@ -1574,14 +1589,15 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: base/widget-base.php:1414
+#: base/widget-base.php:1415
+#: traits/list-item-advanced-trait.php:1290
 #: traits/list-item-trait.php:46
 #: widgets/advance-heading/advance-heading.php:134
 #: widgets/advance-heading/advance-heading.php:511
-#: widgets/advance-tab/advance-tab.php:255
+#: widgets/advance-tab/advance-tab.php:266
 #: widgets/alert/alert.php:106
 #: widgets/animated-text/animated-text.php:167
-#: widgets/call-to-action/call-to-action.php:2145
+#: widgets/call-to-action/call-to-action.php:2169
 #: widgets/dual-color-heading/dual-color-heading.php:245
 #: widgets/featured-banner/featured-banner.php:2049
 #: widgets/heading/heading.php:694
@@ -1592,8 +1608,8 @@ msgstr ""
 msgid "Block"
 msgstr ""
 
-#: base/widget-base.php:1415
-#: widgets/call-to-action/call-to-action.php:2146
+#: base/widget-base.php:1416
+#: widgets/call-to-action/call-to-action.php:2170
 #: widgets/dual-color-heading/dual-color-heading.php:246
 #: widgets/featured-banner/featured-banner.php:2050
 #: widgets/heading/heading.php:695
@@ -1602,13 +1618,14 @@ msgstr ""
 msgid "Inline Block"
 msgstr ""
 
-#: base/widget-base.php:1416
+#: base/widget-base.php:1417
+#: traits/list-item-advanced-trait.php:1294
 #: traits/list-item-trait.php:50
 #: widgets/advance-heading/advance-heading.php:515
-#: widgets/advance-tab/advance-tab.php:259
+#: widgets/advance-tab/advance-tab.php:270
 #: widgets/alert/alert.php:110
 #: widgets/animated-text/animated-text.php:166
-#: widgets/call-to-action/call-to-action.php:2147
+#: widgets/call-to-action/call-to-action.php:2171
 #: widgets/dual-color-heading/dual-color-heading.php:247
 #: widgets/featured-banner/featured-banner.php:2051
 #: widgets/image-heading/image-heading.php:282
@@ -1619,34 +1636,34 @@ msgstr ""
 msgid "Inline"
 msgstr ""
 
-#: base/widget-base.php:1417
+#: base/widget-base.php:1418
 #: widgets/advance-heading/advance-heading.php:130
 msgid "Flex"
 msgstr ""
 
-#: base/widget-base.php:1418
+#: base/widget-base.php:1419
 msgid "Inline Flex"
 msgstr ""
 
-#: base/widget-base.php:1419
+#: base/widget-base.php:1420
 msgid "Grid"
 msgstr ""
 
-#: base/widget-base.php:1420
+#: base/widget-base.php:1421
 msgid "Inline Grid"
 msgstr ""
 
-#: base/widget-base.php:1421
+#: base/widget-base.php:1422
 msgid "table"
 msgstr ""
 
-#: base/widget-base.php:1437
+#: base/widget-base.php:1438
 msgid "Options"
 msgstr ""
 
-#: base/widget-base.php:1455
+#: base/widget-base.php:1456
 #: classes/widgets-manager.php:1032
-#: traits/list-item-advanced-trait.php:496
+#: traits/list-item-advanced-trait.php:522
 #: widgets/divider/divider.php:15
 #: widgets/divider/divider.php:73
 #: widgets/divider/divider.php:162
@@ -1658,8 +1675,8 @@ msgstr ""
 msgid "Divider"
 msgstr ""
 
-#: base/widget-base.php:1456
-#: traits/list-item-advanced-trait.php:499
+#: base/widget-base.php:1457
+#: traits/list-item-advanced-trait.php:525
 #: widgets/archive-posts/archive-posts.php:355
 #: widgets/archive-posts/archive-posts.php:403
 #: widgets/archive-posts/archive-posts.php:450
@@ -1683,8 +1700,8 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: base/widget-base.php:1457
-#: traits/list-item-advanced-trait.php:498
+#: base/widget-base.php:1458
+#: traits/list-item-advanced-trait.php:524
 #: widgets/archive-posts/archive-posts.php:356
 #: widgets/archive-posts/archive-posts.php:404
 #: widgets/archive-posts/archive-posts.php:451
@@ -1710,16 +1727,16 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: base/widget-base.php:1478
+#: base/widget-base.php:1479
 msgid "Show Separators"
 msgstr ""
 
-#: base/widget-base.php:1480
+#: base/widget-base.php:1481
 #: widgets/heading/heading.php:652
 msgid "SHOW"
 msgstr ""
 
-#: base/widget-base.php:1481
+#: base/widget-base.php:1482
 #: widgets/heading/heading.php:653
 msgid "HIDE"
 msgstr ""
@@ -2011,11 +2028,11 @@ msgstr ""
 #: modules/mega-menu/templates/popup.php:139
 #: traits/button-trait.php:335
 #: traits/button-trait.php:382
-#: traits/list-item-advanced-trait.php:1237
-#: widgets/advance-tab/advance-tab.php:617
-#: widgets/advance-tab/advance-tab.php:652
-#: widgets/advance-tab/advance-tab.php:713
-#: widgets/advance-tab/advance-tab.php:1320
+#: traits/list-item-advanced-trait.php:1411
+#: widgets/advance-tab/advance-tab.php:639
+#: widgets/advance-tab/advance-tab.php:674
+#: widgets/advance-tab/advance-tab.php:735
+#: widgets/advance-tab/advance-tab.php:1376
 #: widgets/alert/alert.php:462
 #: widgets/animated-text/animated-text.php:116
 #: widgets/animated-text/animated-text.php:1294
@@ -2100,8 +2117,8 @@ msgstr ""
 #: widgets/featured-banner/featured-banner.php:479
 #: widgets/iconbox/iconbox.php:859
 #: widgets/image-grid/image-grid.php:227
-#: widgets/infobox/infobox.php:350
-#: widgets/infobox/infobox.php:811
+#: widgets/infobox/infobox.php:361
+#: widgets/infobox/infobox.php:824
 #: widgets/off-canvas/off-canvas.php:183
 msgid "Button"
 msgstr ""
@@ -2231,7 +2248,7 @@ msgid "Product Banner-2"
 msgstr ""
 
 #: classes/widgets-manager.php:464
-#: traits/list-item-advanced-trait.php:274
+#: traits/list-item-advanced-trait.php:288
 #: widgets/feature-list/feature-list.php:15
 msgid "Feature List"
 msgstr ""
@@ -2241,7 +2258,7 @@ msgid "Advance 2"
 msgstr ""
 
 #: classes/widgets-manager.php:488
-#: traits/list-item-advanced-trait.php:254
+#: traits/list-item-advanced-trait.php:268
 #: widgets/numeric-list/numeric-list.php:15
 msgid "Numeric List"
 msgstr ""
@@ -2255,7 +2272,7 @@ msgid "Boxed"
 msgstr ""
 
 #: classes/widgets-manager.php:516
-#: traits/list-item-advanced-trait.php:230
+#: traits/list-item-advanced-trait.php:244
 #: widgets/image-list/image-list.php:15
 msgid "Image List"
 msgstr ""
@@ -2300,7 +2317,7 @@ msgid "Post Grid"
 msgstr ""
 
 #: classes/widgets-manager.php:645
-#: traits/list-item-advanced-trait.php:346
+#: traits/list-item-advanced-trait.php:360
 #: widgets/featured-banner/featured-banner.php:894
 #: widgets/flipbox/flipbox.php:562
 #: widgets/image-grid/image-grid.php:278
@@ -2424,7 +2441,7 @@ msgid "Breaking"
 msgstr ""
 
 #: classes/widgets-manager.php:1041
-#: traits/list-item-advanced-trait.php:534
+#: traits/list-item-advanced-trait.php:578
 #: widgets/post-meta/post-meta.php:683
 #: widgets/post-navigation/post-navigation.php:556
 msgid "Dotted"
@@ -2442,7 +2459,7 @@ msgid "On-Off"
 msgstr ""
 
 #: classes/widgets-manager.php:1080
-#: widgets/advance-tab/advance-tab.php:15
+#: widgets/advance-tab/advance-tab.php:16
 msgid "Advance Tab"
 msgstr ""
 
@@ -2529,7 +2546,7 @@ msgstr ""
 #: classes/widgets-manager.php:1284
 #: widgets/archive-posts/archive-posts.php:282
 #: widgets/archive-posts/archive-posts.php:1070
-#: widgets/news-ticker/news-ticker.php:620
+#: widgets/news-ticker/news-ticker.php:636
 #: widgets/post-title/post-title.php:13
 msgid "Post Title"
 msgstr ""
@@ -2564,7 +2581,7 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:262
 #: widgets/archive-posts/archive-posts.php:346
 #: widgets/archive-posts/archive-posts.php:1144
-#: widgets/news-ticker/news-ticker.php:689
+#: widgets/news-ticker/news-ticker.php:705
 #: widgets/post-meta/post-meta.php:14
 #: widgets/post-meta/post-meta.php:40
 msgid "Post Meta"
@@ -2889,7 +2906,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:147
 #: traits/list-item-trait.php:80
 #: traits/social-trait.php:41
-#: widgets/advance-tab/advance-tab.php:150
+#: widgets/advance-tab/advance-tab.php:151
 #: widgets/alert/alert.php:60
 #: widgets/alert/alert.php:212
 #: widgets/archive-title/archive-title.php:306
@@ -2929,7 +2946,7 @@ msgstr ""
 #: widgets/site-title/site-title.php:320
 #: widgets/social-icon/social-icon.php:78
 #: widgets/social-share/social-share.php:578
-#: widgets/social-share/social-share.php:960
+#: widgets/social-share/social-share.php:977
 #: widgets/toggle/toggle.php:219
 msgid "Icon"
 msgstr ""
@@ -3140,7 +3157,7 @@ msgstr ""
 
 #: modules/theme-builder/module.php:616
 #: traits/list-item-advanced-trait.php:100
-#: widgets/advance-tab/advance-tab.php:70
+#: widgets/advance-tab/advance-tab.php:71
 #: widgets/alert/alert.php:44
 #: widgets/toggle/toggle.php:139
 msgid "Type"
@@ -3154,11 +3171,11 @@ msgstr ""
 #: templates/admin/dashboard-home.php:508
 #: widgets/advance-accordion/advance-accordion.php:355
 #: widgets/advance-accordion/advance-accordion.php:502
-#: widgets/advance-tab/advance-tab.php:195
-#: widgets/advance-tab/advance-tab.php:706
-#: widgets/advance-tab/advance-tab.php:898
-#: widgets/advance-tab/advance-tab.php:1042
-#: widgets/advance-tab/advance-tab.php:1279
+#: widgets/advance-tab/advance-tab.php:206
+#: widgets/advance-tab/advance-tab.php:728
+#: widgets/advance-tab/advance-tab.php:937
+#: widgets/advance-tab/advance-tab.php:1098
+#: widgets/advance-tab/advance-tab.php:1335
 #: widgets/advance-toggle/advance-toggle.php:355
 #: widgets/advance-toggle/advance-toggle.php:453
 #: widgets/advance-toggle/advance-toggle.php:571
@@ -3301,7 +3318,7 @@ msgid "Exclude"
 msgstr ""
 
 #: modules/theme-builder/templates/template-conditions.php:58
-#: widgets/advance-tab/advance-tab.php:34
+#: widgets/advance-tab/advance-tab.php:35
 #: widgets/animated-text/animated-text.php:54
 #: widgets/archive-posts/archive-posts.php:61
 #: widgets/archive-posts/archive-posts.php:889
@@ -3313,8 +3330,8 @@ msgstr ""
 #: widgets/flipbox/flipbox.php:318
 #: widgets/image-grid/image-grid.php:43
 #: widgets/image-list/image-list.php:62
-#: widgets/infobox/infobox.php:381
-#: widgets/list-group/list-group.php:61
+#: widgets/infobox/infobox.php:392
+#: widgets/list-group/list-group.php:62
 #: widgets/logo-grid/logo-grid.php:232
 #: widgets/numeric-list/numeric-list.php:60
 #: widgets/off-canvas/off-canvas.php:39
@@ -3326,7 +3343,7 @@ msgstr ""
 #: widgets/post-navigation/post-navigation.php:170
 #: widgets/search-box/search-box.php:37
 #: widgets/social-icon/social-icon.php:65
-#: widgets/social-share/social-share.php:684
+#: widgets/social-share/social-share.php:701
 #: widgets/subscription-form/subscription-form.php:264
 #: widgets/toggle/toggle.php:33
 msgid "General"
@@ -3509,7 +3526,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: templates/admin/dashboard-home.php:423
-#: traits/list-item-advanced-trait.php:529
+#: traits/list-item-advanced-trait.php:573
 #: widgets/post-meta/post-meta.php:678
 #: widgets/post-navigation/post-navigation.php:551
 msgid "Style"
@@ -3617,7 +3634,7 @@ msgid "Learn more"
 msgstr ""
 
 #: traits/button-trait.php:40
-#: traits/list-item-advanced-trait.php:198
+#: traits/list-item-advanced-trait.php:212
 #: traits/list-item-trait.php:93
 #: traits/social-trait.php:116
 #: traits/swiper-trait.php:108
@@ -3637,12 +3654,12 @@ msgstr ""
 
 #: traits/button-trait.php:100
 #: widgets/advance-accordion/advance-accordion.php:163
-#: widgets/advance-tab/advance-tab.php:160
+#: widgets/advance-tab/advance-tab.php:161
 #: widgets/advance-toggle/advance-toggle.php:164
 #: widgets/business-hour/business-hour.php:101
 #: widgets/business-hour/business-hour.php:154
 #: widgets/iconbox/iconbox.php:363
-#: widgets/infobox/infobox.php:553
+#: widgets/infobox/infobox.php:566
 #: widgets/off-canvas/off-canvas.php:331
 #: widgets/post-excerpt/post-excerpt.php:158
 #: widgets/search-box/search-box.php:289
@@ -3703,7 +3720,7 @@ msgid "Custom Class"
 msgstr ""
 
 #: traits/button-trait.php:162
-#: traits/list-item-advanced-trait.php:424
+#: traits/list-item-advanced-trait.php:450
 #: widgets/advance-heading/advance-heading.php:205
 #: widgets/divider/divider.php:144
 #: widgets/drop-cap/drop-cap.php:68
@@ -3713,7 +3730,7 @@ msgstr ""
 #: widgets/image-heading/image-heading.php:227
 #: widgets/logo-grid/logo-grid.php:214
 #: widgets/social-icon/social-icon.php:51
-#: widgets/social-share/social-share.php:665
+#: widgets/social-share/social-share.php:682
 msgid "Class Name"
 msgstr ""
 
@@ -3722,6 +3739,7 @@ msgid "onClick Event"
 msgstr ""
 
 #: traits/button-trait.php:253
+#: traits/list-item-advanced-trait.php:1308
 #: widgets/business-hour/business-hour.php:891
 #: widgets/call-to-action/call-to-action.php:1637
 #: widgets/dual-button/dual-button.php:282
@@ -3734,7 +3752,8 @@ msgid "Justify Content"
 msgstr ""
 
 #: traits/button-trait.php:259
-#: traits/social-trait.php:764
+#: traits/list-item-advanced-trait.php:1314
+#: traits/social-trait.php:779
 #: widgets/author-box/author-box.php:1043
 #: widgets/business-hour/business-hour.php:820
 #: widgets/business-hour/business-hour.php:896
@@ -3742,12 +3761,13 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:802
 #: widgets/post-comments/post-comments.php:1254
 #: widgets/post-comments/post-comments.php:2066
-#: widgets/social-share/social-share.php:935
+#: widgets/social-share/social-share.php:952
 msgid "Start"
 msgstr ""
 
 #: traits/button-trait.php:267
-#: traits/social-trait.php:772
+#: traits/list-item-advanced-trait.php:1322
+#: traits/social-trait.php:787
 #: widgets/author-box/author-box.php:1047
 #: widgets/business-hour/business-hour.php:828
 #: widgets/business-hour/business-hour.php:904
@@ -3755,30 +3775,30 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:810
 #: widgets/post-comments/post-comments.php:1262
 #: widgets/post-comments/post-comments.php:2074
-#: widgets/social-share/social-share.php:943
+#: widgets/social-share/social-share.php:960
 msgid "End"
 msgstr ""
 
 #: traits/button-trait.php:375
 #: traits/button-trait.php:624
-#: traits/list-item-advanced-trait.php:717
-#: traits/list-item-advanced-trait.php:1112
-#: traits/list-item-advanced-trait.php:1485
-#: traits/list-item-advanced-trait.php:1782
-#: traits/list-item-advanced-trait.php:1945
-#: traits/list-item-advanced-trait.php:2396
+#: traits/list-item-advanced-trait.php:789
+#: traits/list-item-advanced-trait.php:1203
+#: traits/list-item-advanced-trait.php:1697
+#: traits/list-item-advanced-trait.php:1994
+#: traits/list-item-advanced-trait.php:2157
+#: traits/list-item-advanced-trait.php:2608
 #: traits/list-item-trait.php:215
 #: traits/list-item-trait.php:326
 #: traits/social-trait.php:246
-#: traits/social-trait.php:546
+#: traits/social-trait.php:561
 #: widgets/advance-accordion/advance-accordion.php:331
 #: widgets/advance-accordion/advance-accordion.php:462
 #: widgets/advance-heading/advance-heading.php:310
 #: widgets/advance-heading/advance-heading.php:436
-#: widgets/advance-tab/advance-tab.php:645
-#: widgets/advance-tab/advance-tab.php:850
-#: widgets/advance-tab/advance-tab.php:1009
-#: widgets/advance-tab/advance-tab.php:1256
+#: widgets/advance-tab/advance-tab.php:667
+#: widgets/advance-tab/advance-tab.php:889
+#: widgets/advance-tab/advance-tab.php:1065
+#: widgets/advance-tab/advance-tab.php:1312
 #: widgets/advance-toggle/advance-toggle.php:333
 #: widgets/advance-toggle/advance-toggle.php:431
 #: widgets/advance-toggle/advance-toggle.php:549
@@ -3806,7 +3826,7 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:996
 #: widgets/image-grid/image-grid.php:1095
 #: widgets/image-heading/image-heading.php:674
-#: widgets/infobox/infobox.php:420
+#: widgets/infobox/infobox.php:446
 #: widgets/logo-carousel/logo-carousel.php:199
 #: widgets/logo-grid/logo-grid.php:300
 #: widgets/logo-grid/logo-grid.php:455
@@ -3818,8 +3838,8 @@ msgstr ""
 #: widgets/menu/menu.php:389
 #: widgets/menu/menu.php:755
 #: widgets/menu/menu.php:1123
-#: widgets/news-ticker/news-ticker.php:661
-#: widgets/news-ticker/news-ticker.php:779
+#: widgets/news-ticker/news-ticker.php:677
+#: widgets/news-ticker/news-ticker.php:795
 #: widgets/off-canvas/off-canvas.php:754
 #: widgets/off-canvas/off-canvas.php:881
 #: widgets/off-canvas/off-canvas.php:1030
@@ -3846,7 +3866,7 @@ msgstr ""
 #: widgets/site-title/site-title.php:376
 #: widgets/site-title/site-title.php:481
 #: widgets/social-share/social-share.php:437
-#: widgets/social-share/social-share.php:748
+#: widgets/social-share/social-share.php:765
 #: widgets/subscription-form/subscription-form.php:464
 #: widgets/team-member/team-member.php:881
 #: widgets/toggle/toggle.php:578
@@ -3921,7 +3941,7 @@ msgstr ""
 #: traits/list-item-advanced-trait.php:157
 #: traits/swiper-trait.php:80
 #: widgets/advance-accordion/advance-accordion.php:387
-#: widgets/advance-tab/advance-tab.php:47
+#: widgets/advance-tab/advance-tab.php:48
 #: widgets/advance-toggle/advance-toggle.php:385
 #: widgets/alert/alert.php:74
 #: widgets/alert/alert.php:246
@@ -3949,9 +3969,9 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:68
 #: widgets/image-grid/image-grid.php:834
 #: widgets/image-list/image-list.php:122
-#: widgets/infobox/infobox.php:252
-#: widgets/infobox/infobox.php:709
-#: widgets/list-group/list-group.php:106
+#: widgets/infobox/infobox.php:263
+#: widgets/infobox/infobox.php:722
+#: widgets/list-group/list-group.php:107
 #: widgets/news-ticker/news-ticker.php:202
 #: widgets/numeric-list/numeric-list.php:106
 #: widgets/off-canvas/off-canvas.php:137
@@ -3987,7 +4007,7 @@ msgstr ""
 #: widgets/heading/heading.php:85
 #: widgets/iconbox/iconbox.php:86
 #: widgets/image-heading/image-heading.php:79
-#: widgets/infobox/infobox.php:266
+#: widgets/infobox/infobox.php:277
 #: widgets/post-grid/post-grid.php:728
 msgid "Title HTML Tag"
 msgstr ""
@@ -4011,9 +4031,9 @@ msgstr ""
 #: widgets/image-grid/image-grid.php:89
 #: widgets/image-grid/image-grid.php:873
 #: widgets/image-list/image-list.php:142
-#: widgets/infobox/infobox.php:305
-#: widgets/infobox/infobox.php:729
-#: widgets/list-group/list-group.php:126
+#: widgets/infobox/infobox.php:316
+#: widgets/infobox/infobox.php:742
+#: widgets/list-group/list-group.php:127
 #: widgets/numeric-list/numeric-list.php:126
 #: widgets/off-canvas/off-canvas.php:153
 #: widgets/off-canvas/off-canvas.php:683
@@ -4024,399 +4044,67 @@ msgstr ""
 msgid "Item description goes here"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:208
-msgid "List Items"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:214
-#: traits/list-item-advanced-trait.php:238
-#: traits/list-item-advanced-trait.php:261
-#: traits/list-item-advanced-trait.php:281
-msgid "Item Title #1"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:218
-#: traits/list-item-advanced-trait.php:242
-#: traits/list-item-advanced-trait.php:264
-#: traits/list-item-advanced-trait.php:288
-msgid "Item Title #2"
+#: traits/list-item-advanced-trait.php:199
+#: widgets/list-group/list-group.php:147
+#: widgets/post-meta/post-meta.php:255
+msgid "Extra Text"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:222
-#: traits/list-item-advanced-trait.php:246
-#: traits/list-item-advanced-trait.php:267
+msgid "List Items"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:228
+#: traits/list-item-advanced-trait.php:252
+#: traits/list-item-advanced-trait.php:275
 #: traits/list-item-advanced-trait.php:295
+msgid "Item Title #1"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:232
+#: traits/list-item-advanced-trait.php:256
+#: traits/list-item-advanced-trait.php:278
+#: traits/list-item-advanced-trait.php:302
+msgid "Item Title #2"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:236
+#: traits/list-item-advanced-trait.php:260
+#: traits/list-item-advanced-trait.php:281
+#: traits/list-item-advanced-trait.php:309
 msgid "Item Title #3"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:226
-#: traits/list-item-advanced-trait.php:250
-#: traits/list-item-advanced-trait.php:270
-#: traits/list-item-advanced-trait.php:302
+#: traits/list-item-advanced-trait.php:240
+#: traits/list-item-advanced-trait.php:264
+#: traits/list-item-advanced-trait.php:284
+#: traits/list-item-advanced-trait.php:316
 msgid "Item Title #4"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:310
+#: traits/list-item-advanced-trait.php:324
 msgid "Group List"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:341
+#: traits/list-item-advanced-trait.php:355
 msgid "Caption Display"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:358
-#: widgets/list-group/list-group.php:159
+#: traits/list-item-advanced-trait.php:372
+#: widgets/list-group/list-group.php:180
 msgid "Items Icon"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:371
-#: traits/social-trait.php:401
-#: widgets/archive-posts/archive-posts.php:71
-#: widgets/business-hour/business-hour.php:648
-#: widgets/image-grid/image-grid.php:194
-#: widgets/logo-grid/logo-grid.php:188
-#: widgets/post-grid/post-grid.php:59
-#: widgets/social-share/social-share.php:591
-msgid "Columns"
+#: traits/list-item-advanced-trait.php:384
+msgid "Show Icon on Item Hover?"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:374
-#: widgets/business-hour/business-hour.php:651
-msgid "1 Column"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:375
-#: widgets/business-hour/business-hour.php:652
-#: widgets/logo-grid/logo-grid.php:192
-msgid "2 Columns"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:376
-#: widgets/business-hour/business-hour.php:653
-#: widgets/logo-grid/logo-grid.php:193
-msgid "3 Columns"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:377
-#: widgets/business-hour/business-hour.php:654
-#: widgets/logo-grid/logo-grid.php:194
-msgid "4 Columns"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:378
-#: widgets/business-hour/business-hour.php:655
-#: widgets/logo-grid/logo-grid.php:195
-msgid "5 Columns"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:379
-#: widgets/business-hour/business-hour.php:656
-#: widgets/logo-grid/logo-grid.php:196
-msgid "6 Columns"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:396
-msgid "Works when List Item > Width is set in the Style tab."
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:422
-#: widgets/advance-heading/advance-heading.php:203
-#: widgets/divider/divider.php:142
-#: widgets/drop-cap/drop-cap.php:66
-#: widgets/dual-color-heading/dual-color-heading.php:139
-#: widgets/gradient-heading/gradient-heading.php:150
-#: widgets/heading/heading.php:49
-#: widgets/image-heading/image-heading.php:222
-#: widgets/logo-grid/logo-grid.php:212
-#: widgets/social-icon/social-icon.php:49
-#: widgets/social-share/social-share.php:663
-msgid "Class"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:450
-msgid "Horizontal Space"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:468
-msgid "Vertical Space"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:488
-msgid "Divider Style"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:510
-msgid "Apply To"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:513
-#: widgets/advance-accordion/advance-accordion.php:281
-#: widgets/advance-toggle/advance-toggle.php:283
-#: widgets/business-hour/business-hour.php:693
-#: widgets/countdown/countdown.php:208
-#: widgets/post-navigation/post-navigation.php:233
-msgid "Item"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:514
-#: widgets/advance-tab/advance-tab.php:1308
-#: widgets/call-to-action/call-to-action.php:59
-#: widgets/call-to-action/call-to-action.php:1129
-#: widgets/drop-cap/drop-cap.php:42
-#: widgets/featured-banner/featured-banner.php:61
-#: widgets/featured-banner/featured-banner.php:1137
-#: widgets/flipbox/flipbox.php:826
-#: widgets/fun-fact/fun-fact.php:523
-#: widgets/iconbox/iconbox.php:625
-#: widgets/image-carousel/image-carousel.php:472
-#: widgets/image-grid/image-grid.php:225
-#: widgets/image-grid/image-grid.php:702
-#: widgets/infobox/infobox.php:677
-#: widgets/off-canvas/off-canvas.php:635
-#: widgets/testimonial/testimonial.php:197
-#: widgets/toggle/toggle.php:1047
-msgid "Content"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:532
-#: widgets/post-meta/post-meta.php:681
-#: widgets/post-navigation/post-navigation.php:554
-msgid "Solid"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:533
-#: widgets/post-meta/post-meta.php:682
-#: widgets/post-navigation/post-navigation.php:555
-msgid "Double"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:535
-#: widgets/post-meta/post-meta.php:684
-#: widgets/post-navigation/post-navigation.php:557
-msgid "Dashed"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:551
-#: widgets/news-ticker/news-ticker.php:544
-#: widgets/post-meta/post-meta.php:700
-#: widgets/post-navigation/post-navigation.php:569
-msgid "Weight"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:735
-#: widgets/call-to-action/call-to-action.php:1311
-#: widgets/call-to-action/call-to-action.php:1449
-#: widgets/featured-banner/featured-banner.php:1322
-#: widgets/featured-banner/featured-banner.php:1447
-#: widgets/image-grid/image-grid.php:747
-#: widgets/image-grid/image-grid.php:790
-#: widgets/post-comments/post-comments.php:2377
-msgid "Title Color"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:747
-#: widgets/call-to-action/call-to-action.php:1339
-#: widgets/call-to-action/call-to-action.php:1477
-#: widgets/featured-banner/featured-banner.php:1350
-#: widgets/featured-banner/featured-banner.php:1475
-#: widgets/image-grid/image-grid.php:755
-#: widgets/image-grid/image-grid.php:806
-#: widgets/mega-menu/mega-menu.php:454
-#: widgets/mega-menu/mega-menu.php:510
-#: widgets/mega-menu/mega-menu.php:566
-#: widgets/mega-menu/mega-menu.php:943
-#: widgets/mega-menu/mega-menu.php:999
-#: widgets/mega-menu/mega-menu.php:1055
-#: widgets/mega-menu/mega-menu.php:1323
-#: widgets/mega-menu/mega-menu.php:1366
-#: widgets/mega-menu/mega-menu.php:1412
-#: widgets/menu/menu.php:365
-#: widgets/menu/menu.php:421
-#: widgets/menu/menu.php:477
-#: widgets/menu/menu.php:731
-#: widgets/menu/menu.php:787
-#: widgets/menu/menu.php:843
-#: widgets/menu/menu.php:1111
-#: widgets/menu/menu.php:1154
-#: widgets/menu/menu.php:1200
-msgid "Description Color"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:792
-#: traits/list-item-trait.php:41
-#: widgets/advance-heading/advance-heading.php:121
-#: widgets/advance-tab/advance-tab.php:250
-#: widgets/call-to-action/call-to-action.php:1630
-#: widgets/dual-button/dual-button.php:277
-#: widgets/featured-banner/featured-banner.php:1628
-#: widgets/mega-menu/mega-menu.php:69
-#: widgets/search-box/search-box.php:93
-msgid "Layout"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:796
-msgid "Content Right"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:800
-msgid "Content Left"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:804
-msgid "Content Bottom"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1046
-#: traits/list-item-advanced-trait.php:1691
-#: traits/list-item-advanced-trait.php:2134
-#: traits/list-item-advanced-trait.php:2546
-#: widgets/iconbox/iconbox.php:399
-#: widgets/iconbox/iconbox.php:649
-#: widgets/infobox/infobox.php:193
-msgid "Vertical Alignment"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1119
-#: traits/list-item-advanced-trait.php:1492
-#: traits/list-item-advanced-trait.php:2403
-msgid "When hover over the Item."
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1120
-#: traits/list-item-advanced-trait.php:1493
-#: traits/list-item-advanced-trait.php:2404
-msgid "Activate the styles when hover over the item."
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1122
-#: traits/list-item-advanced-trait.php:1495
-#: traits/list-item-advanced-trait.php:2406
-#: widgets/iconbox/iconbox.php:511
-msgid "ON"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1123
-#: traits/list-item-advanced-trait.php:1496
-#: traits/list-item-advanced-trait.php:2407
-#: widgets/iconbox/iconbox.php:512
-msgid "OFF"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1280
-msgid "Number Typography"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1393
-#: traits/list-item-advanced-trait.php:1521
-#: widgets/testimonial/testimonial.php:802
-msgid "Number Color"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1596
-msgid "Transition Duration (s)"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:1666
-#: traits/list-item-advanced-trait.php:2521
-#: widgets/iconbox/iconbox.php:440
-#: widgets/team-member/team-member.php:523
-#: widgets/testimonial/testimonial.php:508
-msgid "Horizontal Alignment"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2090
-msgid "Overlay Position"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2249
-#: widgets/call-to-action/call-to-action.php:1926
-#: widgets/dual-button/dual-button.php:474
-#: widgets/featured-banner/featured-banner.php:1930
-msgid "Wrapper Width"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2275
-msgid "Wrapper Height"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2352
-#: traits/list-item-advanced-trait.php:2448
-msgid "Icon:"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2374
-#: traits/list-item-advanced-trait.php:2471
-#: widgets/advance-accordion/advance-accordion.php:449
-#: widgets/advance-accordion/advance-accordion.php:485
-#: widgets/advance-accordion/advance-accordion.php:525
-msgid "Icon Background"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2385
-#: traits/list-item-advanced-trait.php:2483
-#: widgets/iconbox/iconbox.php:557
-msgid "Icon Border"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2509
-msgid "Icon Border Radius"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2592
-msgid "Grid Settings"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2605
-msgid "Row Start"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2620
-msgid "Row End"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2635
-msgid "Column Start"
-msgstr ""
-
-#: traits/list-item-advanced-trait.php:2650
-msgid "Column End"
-msgstr ""
-
-#: traits/list-item-trait.php:69
-#: traits/list-item-trait.php:70
-#: widgets/feature-list/feature-list.php:76
-#: widgets/image-list/image-list.php:85
-#: widgets/list-group/list-group.php:77
-#: widgets/numeric-list/numeric-list.php:76
-msgid "List Item"
-msgstr ""
-
-#: traits/list-item-trait.php:104
-#: widgets/business-hour/business-hour.php:640
-msgid "Items"
-msgstr ""
-
-#: traits/list-item-trait.php:181
-msgid "Icon Style"
-msgstr ""
-
-#: traits/list-item-trait.php:264
-#: widgets/heading/heading.php:491
-msgid "Text Style"
-msgstr ""
-
-#: traits/social-trait.php:126
-msgid "https://your-social-link.com"
-msgstr ""
-
-#: traits/social-trait.php:133
-msgid "Enable Name"
-msgstr ""
-
+#: traits/list-item-advanced-trait.php:386
+#: traits/list-item-advanced-trait.php:536
 #: traits/social-trait.php:135
 #: traits/social-trait.php:162
 #: traits/swiper-trait.php:409
-#: widgets/advance-tab/advance-tab.php:198
+#: widgets/advance-tab/advance-tab.php:209
 #: widgets/business-hour/business-hour.php:229
 #: widgets/cf7/cf7.php:100
 #: widgets/fun-fact/fun-fact.php:414
@@ -4455,10 +4143,12 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: traits/list-item-advanced-trait.php:387
+#: traits/list-item-advanced-trait.php:537
 #: traits/social-trait.php:136
 #: traits/social-trait.php:163
 #: traits/swiper-trait.php:410
-#: widgets/advance-tab/advance-tab.php:199
+#: widgets/advance-tab/advance-tab.php:210
 #: widgets/business-hour/business-hour.php:230
 #: widgets/cf7/cf7.php:101
 #: widgets/fun-fact/fun-fact.php:415
@@ -4497,6 +4187,373 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#: traits/list-item-advanced-trait.php:397
+#: traits/social-trait.php:415
+#: widgets/archive-posts/archive-posts.php:71
+#: widgets/business-hour/business-hour.php:648
+#: widgets/image-grid/image-grid.php:194
+#: widgets/logo-grid/logo-grid.php:188
+#: widgets/post-grid/post-grid.php:59
+#: widgets/social-share/social-share.php:591
+msgid "Columns"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:400
+#: widgets/business-hour/business-hour.php:651
+msgid "1 Column"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:401
+#: widgets/business-hour/business-hour.php:652
+#: widgets/logo-grid/logo-grid.php:192
+msgid "2 Columns"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:402
+#: widgets/business-hour/business-hour.php:653
+#: widgets/logo-grid/logo-grid.php:193
+msgid "3 Columns"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:403
+#: widgets/business-hour/business-hour.php:654
+#: widgets/logo-grid/logo-grid.php:194
+msgid "4 Columns"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:404
+#: widgets/business-hour/business-hour.php:655
+#: widgets/logo-grid/logo-grid.php:195
+msgid "5 Columns"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:405
+#: widgets/business-hour/business-hour.php:656
+#: widgets/logo-grid/logo-grid.php:196
+msgid "6 Columns"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:422
+msgid "Works when List Item > Width is set in the Style tab."
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:448
+#: widgets/advance-heading/advance-heading.php:203
+#: widgets/divider/divider.php:142
+#: widgets/drop-cap/drop-cap.php:66
+#: widgets/dual-color-heading/dual-color-heading.php:139
+#: widgets/gradient-heading/gradient-heading.php:150
+#: widgets/heading/heading.php:49
+#: widgets/image-heading/image-heading.php:222
+#: widgets/logo-grid/logo-grid.php:212
+#: widgets/social-icon/social-icon.php:49
+#: widgets/social-share/social-share.php:680
+msgid "Class"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:476
+msgid "Horizontal Space"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:494
+msgid "Vertical Space"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:514
+msgid "Divider Style"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:534
+msgid "Exclude from Last Item?"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:554
+msgid "Apply To"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:557
+#: widgets/advance-accordion/advance-accordion.php:281
+#: widgets/advance-toggle/advance-toggle.php:283
+#: widgets/business-hour/business-hour.php:693
+#: widgets/countdown/countdown.php:208
+#: widgets/post-navigation/post-navigation.php:233
+msgid "Item"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:558
+#: widgets/advance-tab/advance-tab.php:1364
+#: widgets/call-to-action/call-to-action.php:59
+#: widgets/call-to-action/call-to-action.php:1129
+#: widgets/drop-cap/drop-cap.php:42
+#: widgets/featured-banner/featured-banner.php:61
+#: widgets/featured-banner/featured-banner.php:1137
+#: widgets/flipbox/flipbox.php:826
+#: widgets/fun-fact/fun-fact.php:523
+#: widgets/iconbox/iconbox.php:625
+#: widgets/image-carousel/image-carousel.php:472
+#: widgets/image-grid/image-grid.php:225
+#: widgets/image-grid/image-grid.php:702
+#: widgets/infobox/infobox.php:690
+#: widgets/off-canvas/off-canvas.php:635
+#: widgets/testimonial/testimonial.php:197
+#: widgets/toggle/toggle.php:1047
+msgid "Content"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:576
+#: widgets/post-meta/post-meta.php:681
+#: widgets/post-navigation/post-navigation.php:554
+msgid "Solid"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:577
+#: widgets/post-meta/post-meta.php:682
+#: widgets/post-navigation/post-navigation.php:555
+msgid "Double"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:579
+#: widgets/post-meta/post-meta.php:684
+#: widgets/post-navigation/post-navigation.php:557
+msgid "Dashed"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:611
+#: widgets/news-ticker/news-ticker.php:544
+#: widgets/post-meta/post-meta.php:700
+#: widgets/post-navigation/post-navigation.php:569
+msgid "Weight"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:807
+#: widgets/call-to-action/call-to-action.php:1311
+#: widgets/call-to-action/call-to-action.php:1449
+#: widgets/featured-banner/featured-banner.php:1322
+#: widgets/featured-banner/featured-banner.php:1447
+#: widgets/image-grid/image-grid.php:747
+#: widgets/image-grid/image-grid.php:790
+#: widgets/post-comments/post-comments.php:2377
+msgid "Title Color"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:819
+#: widgets/call-to-action/call-to-action.php:1339
+#: widgets/call-to-action/call-to-action.php:1477
+#: widgets/featured-banner/featured-banner.php:1350
+#: widgets/featured-banner/featured-banner.php:1475
+#: widgets/image-grid/image-grid.php:755
+#: widgets/image-grid/image-grid.php:806
+#: widgets/mega-menu/mega-menu.php:454
+#: widgets/mega-menu/mega-menu.php:510
+#: widgets/mega-menu/mega-menu.php:566
+#: widgets/mega-menu/mega-menu.php:943
+#: widgets/mega-menu/mega-menu.php:999
+#: widgets/mega-menu/mega-menu.php:1055
+#: widgets/mega-menu/mega-menu.php:1323
+#: widgets/mega-menu/mega-menu.php:1366
+#: widgets/mega-menu/mega-menu.php:1412
+#: widgets/menu/menu.php:365
+#: widgets/menu/menu.php:421
+#: widgets/menu/menu.php:477
+#: widgets/menu/menu.php:731
+#: widgets/menu/menu.php:787
+#: widgets/menu/menu.php:843
+#: widgets/menu/menu.php:1111
+#: widgets/menu/menu.php:1154
+#: widgets/menu/menu.php:1200
+msgid "Description Color"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:832
+#: widgets/post-meta/post-meta.php:304
+msgid "Extra Text Color"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:845
+#: widgets/news-ticker/news-ticker.php:550
+msgid "Divider Color"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:890
+#: traits/list-item-advanced-trait.php:1285
+#: traits/list-item-trait.php:41
+#: widgets/advance-heading/advance-heading.php:121
+#: widgets/advance-tab/advance-tab.php:261
+#: widgets/call-to-action/call-to-action.php:1630
+#: widgets/dual-button/dual-button.php:277
+#: widgets/featured-banner/featured-banner.php:1628
+#: widgets/mega-menu/mega-menu.php:69
+#: widgets/search-box/search-box.php:93
+msgid "Layout"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:893
+msgid "Content Right"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:894
+msgid "Content Left"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:895
+msgid "Content Top"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:896
+msgid "Content Bottom"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1137
+#: traits/list-item-advanced-trait.php:1903
+#: traits/list-item-advanced-trait.php:2346
+#: traits/list-item-advanced-trait.php:2758
+#: widgets/iconbox/iconbox.php:399
+#: widgets/iconbox/iconbox.php:649
+#: widgets/infobox/infobox.php:205
+msgid "Vertical Alignment"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1210
+#: traits/list-item-advanced-trait.php:1704
+#: traits/list-item-advanced-trait.php:2615
+msgid "When hover over the Item."
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1211
+#: traits/list-item-advanced-trait.php:1705
+#: traits/list-item-advanced-trait.php:2616
+msgid "Activate the styles when hover over the item."
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1213
+#: traits/list-item-advanced-trait.php:1707
+#: traits/list-item-advanced-trait.php:2618
+#: widgets/iconbox/iconbox.php:511
+msgid "ON"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1214
+#: traits/list-item-advanced-trait.php:1708
+#: traits/list-item-advanced-trait.php:2619
+#: widgets/iconbox/iconbox.php:512
+msgid "OFF"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1423
+msgid "Enable Underline on Hover?"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1492
+msgid "Number Typography"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1605
+#: traits/list-item-advanced-trait.php:1733
+#: widgets/testimonial/testimonial.php:802
+msgid "Number Color"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1808
+msgid "Transition Duration (s)"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1878
+#: traits/list-item-advanced-trait.php:2733
+#: widgets/iconbox/iconbox.php:440
+#: widgets/team-member/team-member.php:523
+#: widgets/testimonial/testimonial.php:508
+msgid "Horizontal Alignment"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2302
+msgid "Overlay Position"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2461
+#: widgets/call-to-action/call-to-action.php:1926
+#: widgets/dual-button/dual-button.php:474
+#: widgets/featured-banner/featured-banner.php:1930
+msgid "Wrapper Width"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2487
+msgid "Wrapper Height"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2564
+#: traits/list-item-advanced-trait.php:2660
+msgid "Icon:"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2586
+#: traits/list-item-advanced-trait.php:2683
+#: widgets/advance-accordion/advance-accordion.php:449
+#: widgets/advance-accordion/advance-accordion.php:485
+#: widgets/advance-accordion/advance-accordion.php:525
+msgid "Icon Background"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2597
+#: traits/list-item-advanced-trait.php:2695
+#: widgets/iconbox/iconbox.php:557
+msgid "Icon Border"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2721
+msgid "Icon Border Radius"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2804
+msgid "Grid Settings"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2817
+msgid "Row Start"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2832
+msgid "Row End"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2847
+msgid "Column Start"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:2862
+msgid "Column End"
+msgstr ""
+
+#: traits/list-item-trait.php:69
+#: traits/list-item-trait.php:70
+#: widgets/feature-list/feature-list.php:76
+#: widgets/image-list/image-list.php:85
+#: widgets/list-group/list-group.php:78
+#: widgets/numeric-list/numeric-list.php:76
+msgid "List Item"
+msgstr ""
+
+#: traits/list-item-trait.php:104
+#: widgets/business-hour/business-hour.php:640
+msgid "Items"
+msgstr ""
+
+#: traits/list-item-trait.php:181
+msgid "Icon Style"
+msgstr ""
+
+#: traits/list-item-trait.php:264
+#: widgets/heading/heading.php:491
+msgid "Text Style"
+msgstr ""
+
+#: traits/social-trait.php:126
+msgid "https://your-social-link.com"
+msgstr ""
+
+#: traits/social-trait.php:133
+msgid "Enable Name"
+msgstr ""
+
 #: traits/social-trait.php:146
 #: widgets/social-icon/social-icon.php:91
 #: widgets/team-member/team-member.php:737
@@ -4511,13 +4568,13 @@ msgstr ""
 
 #: traits/social-trait.php:230
 #: traits/social-trait.php:294
-#: traits/social-trait.php:531
-#: traits/social-trait.php:588
+#: traits/social-trait.php:546
+#: traits/social-trait.php:603
 #: widgets/archive-posts/archive-posts.php:1209
 #: widgets/social-share/social-share.php:419
 #: widgets/social-share/social-share.php:485
-#: widgets/social-share/social-share.php:730
-#: widgets/social-share/social-share.php:780
+#: widgets/social-share/social-share.php:747
+#: widgets/social-share/social-share.php:797
 msgid "Separator Color"
 msgstr ""
 
@@ -4527,7 +4584,12 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
-#: traits/social-trait.php:405
+#: traits/social-trait.php:401
+#: widgets/social-share/social-share.php:663
+msgid "Show Icon on Hover?"
+msgstr ""
+
+#: traits/social-trait.php:419
 #: widgets/call-to-action/call-to-action.php:181
 #: widgets/featured-banner/featured-banner.php:183
 #: widgets/news-ticker/news-ticker.php:111
@@ -4537,44 +4599,44 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: traits/social-trait.php:456
+#: traits/social-trait.php:471
 msgid "Enable Separator"
 msgstr ""
 
-#: traits/social-trait.php:457
+#: traits/social-trait.php:472
 msgid "Separator Between Icon & Social Name"
 msgstr ""
 
-#: traits/social-trait.php:629
-#: widgets/social-share/social-share.php:825
+#: traits/social-trait.php:644
+#: widgets/social-share/social-share.php:842
 msgid "Rows Gap"
 msgstr ""
 
-#: traits/social-trait.php:641
+#: traits/social-trait.php:656
 #: widgets/logo-grid/logo-grid.php:388
-#: widgets/social-share/social-share.php:837
+#: widgets/social-share/social-share.php:854
 msgid "Item Width"
 msgstr ""
 
-#: traits/social-trait.php:670
+#: traits/social-trait.php:685
 #: widgets/logo-grid/logo-grid.php:401
-#: widgets/social-share/social-share.php:866
+#: widgets/social-share/social-share.php:883
 msgid "Item Height"
 msgstr ""
 
-#: traits/social-trait.php:700
-#: widgets/social-share/social-share.php:896
+#: traits/social-trait.php:715
+#: widgets/social-share/social-share.php:913
 msgid "Separator Width"
 msgstr ""
 
-#: traits/social-trait.php:759
-#: widgets/social-share/social-share.php:930
+#: traits/social-trait.php:774
+#: widgets/social-share/social-share.php:947
 msgid "Items Alignment"
 msgstr ""
 
-#: traits/social-trait.php:815
+#: traits/social-trait.php:830
 #: widgets/logo-grid/logo-grid.php:491
-#: widgets/social-share/social-share.php:988
+#: widgets/social-share/social-share.php:1005
 msgid "Hover Animation"
 msgstr ""
 
@@ -4587,7 +4649,7 @@ msgid "Type Title Text"
 msgstr ""
 
 #: traits/swiper-trait.php:92
-#: widgets/advance-tab/advance-tab.php:59
+#: widgets/advance-tab/advance-tab.php:60
 #: widgets/business-hour/business-hour.php:73
 #: widgets/call-to-action/call-to-action.php:342
 #: widgets/call-to-action/call-to-action.php:1531
@@ -4680,7 +4742,7 @@ msgid "Coverflow"
 msgstr ""
 
 #: traits/swiper-trait.php:305
-#: widgets/advance-tab/advance-tab.php:1183
+#: widgets/advance-tab/advance-tab.php:1239
 #: widgets/animated-text/animated-text.php:507
 msgid "Flip"
 msgstr ""
@@ -4727,7 +4789,7 @@ msgid "Lazy Load"
 msgstr ""
 
 #: traits/swiper-trait.php:490
-#: widgets/news-ticker/news-ticker.php:871
+#: widgets/news-ticker/news-ticker.php:887
 msgid "Carousel"
 msgstr ""
 
@@ -4760,7 +4822,7 @@ msgid "Custom Content"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:62
-#: widgets/advance-tab/advance-tab.php:74
+#: widgets/advance-tab/advance-tab.php:75
 #: widgets/advance-toggle/advance-toggle.php:63
 #: widgets/flipbox/flipbox.php:353
 #: widgets/off-canvas/off-canvas.php:55
@@ -4769,7 +4831,7 @@ msgid "Saved Section"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:63
-#: widgets/advance-tab/advance-tab.php:75
+#: widgets/advance-tab/advance-tab.php:76
 #: widgets/advance-toggle/advance-toggle.php:64
 #: widgets/flipbox/flipbox.php:354
 #: widgets/off-canvas/off-canvas.php:56
@@ -4778,7 +4840,7 @@ msgid "Saved Container"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:69
-#: widgets/advance-tab/advance-tab.php:99
+#: widgets/advance-tab/advance-tab.php:100
 #: widgets/advance-toggle/advance-toggle.php:70
 #: widgets/flipbox/flipbox.php:360
 #: widgets/toggle/toggle.php:168
@@ -4786,7 +4848,7 @@ msgid "--- Select Section ---"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:75
-#: widgets/advance-tab/advance-tab.php:105
+#: widgets/advance-tab/advance-tab.php:106
 #: widgets/advance-toggle/advance-toggle.php:76
 #: widgets/flipbox/flipbox.php:366
 #: widgets/toggle/toggle.php:174
@@ -4794,7 +4856,7 @@ msgid "Sections"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:85
-#: widgets/advance-tab/advance-tab.php:115
+#: widgets/advance-tab/advance-tab.php:116
 #: widgets/advance-toggle/advance-toggle.php:86
 #: widgets/flipbox/flipbox.php:376
 #: widgets/toggle/toggle.php:184
@@ -4802,7 +4864,7 @@ msgid "--- Select Container ---"
 msgstr ""
 
 #: widgets/advance-accordion/advance-accordion.php:91
-#: widgets/advance-tab/advance-tab.php:121
+#: widgets/advance-tab/advance-tab.php:122
 #: widgets/advance-toggle/advance-toggle.php:92
 #: widgets/flipbox/flipbox.php:382
 #: widgets/testimonial/testimonial.php:359
@@ -4885,7 +4947,7 @@ msgstr ""
 #: widgets/archive-posts/archive-posts.php:996
 #: widgets/archive-posts/archive-posts.php:1293
 #: widgets/image-grid/image-grid.php:435
-#: widgets/news-ticker/news-ticker.php:705
+#: widgets/news-ticker/news-ticker.php:721
 #: widgets/post-grid/post-grid.php:1332
 #: widgets/post-grid/post-grid.php:1503
 #: widgets/post-grid/post-grid.php:1633
@@ -4973,7 +5035,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:90
 #: widgets/image-heading/image-heading.php:83
 #: widgets/image-heading/image-heading.php:160
-#: widgets/infobox/infobox.php:270
+#: widgets/infobox/infobox.php:281
 #: widgets/page-title/page-title.php:87
 #: widgets/post-comments/post-comments.php:436
 #: widgets/post-title/post-title.php:87
@@ -4998,7 +5060,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:94
 #: widgets/image-heading/image-heading.php:87
 #: widgets/image-heading/image-heading.php:164
-#: widgets/infobox/infobox.php:274
+#: widgets/infobox/infobox.php:285
 #: widgets/page-title/page-title.php:91
 #: widgets/post-comments/post-comments.php:440
 #: widgets/post-title/post-title.php:91
@@ -5023,7 +5085,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:98
 #: widgets/image-heading/image-heading.php:91
 #: widgets/image-heading/image-heading.php:168
-#: widgets/infobox/infobox.php:278
+#: widgets/infobox/infobox.php:289
 #: widgets/page-title/page-title.php:95
 #: widgets/post-comments/post-comments.php:444
 #: widgets/post-title/post-title.php:95
@@ -5048,7 +5110,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:102
 #: widgets/image-heading/image-heading.php:95
 #: widgets/image-heading/image-heading.php:172
-#: widgets/infobox/infobox.php:282
+#: widgets/infobox/infobox.php:293
 #: widgets/page-title/page-title.php:99
 #: widgets/post-comments/post-comments.php:448
 #: widgets/post-title/post-title.php:99
@@ -5073,7 +5135,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:106
 #: widgets/image-heading/image-heading.php:99
 #: widgets/image-heading/image-heading.php:176
-#: widgets/infobox/infobox.php:286
+#: widgets/infobox/infobox.php:297
 #: widgets/page-title/page-title.php:103
 #: widgets/post-comments/post-comments.php:452
 #: widgets/post-title/post-title.php:103
@@ -5098,7 +5160,7 @@ msgstr ""
 #: widgets/iconbox/iconbox.php:110
 #: widgets/image-heading/image-heading.php:103
 #: widgets/image-heading/image-heading.php:180
-#: widgets/infobox/infobox.php:290
+#: widgets/infobox/infobox.php:301
 #: widgets/page-title/page-title.php:107
 #: widgets/post-comments/post-comments.php:456
 #: widgets/post-title/post-title.php:107
@@ -5134,167 +5196,168 @@ msgstr ""
 msgid "Right Separator"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:49
+#: widgets/advance-tab/advance-tab.php:50
 msgid "Tab"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:73
-#: widgets/advance-tab/advance-tab.php:85
+#: widgets/advance-tab/advance-tab.php:74
+#: widgets/advance-tab/advance-tab.php:86
 #: widgets/toggle/toggle.php:142
 #: widgets/toggle/toggle.php:154
 msgid "Plain/ HTML Text"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:76
+#: widgets/advance-tab/advance-tab.php:77
 #: widgets/toggle/toggle.php:145
 msgid "Saved Page"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:95
+#: widgets/advance-tab/advance-tab.php:96
 #: widgets/toggle/toggle.php:164
 msgid "Add some content here."
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:131
+#: widgets/advance-tab/advance-tab.php:132
 #: widgets/toggle/toggle.php:200
 msgid "--- Select Page ---"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:137
+#: widgets/advance-tab/advance-tab.php:138
 #: widgets/news-ticker/news-ticker.php:91
 #: widgets/toggle/toggle.php:206
 msgid "Pages"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:186
+#: widgets/advance-tab/advance-tab.php:197
 msgid "Add Image"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:187
+#: widgets/advance-tab/advance-tab.php:198
 msgid "Shows only for Toggle Type → Button"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:197
+#: widgets/advance-tab/advance-tab.php:208
 #: widgets/toggle/toggle.php:257
 msgid "Active on Load"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:208
+#: widgets/advance-tab/advance-tab.php:219
 msgid "Tabs"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:213
+#: widgets/advance-tab/advance-tab.php:224
 msgid "Tab #1"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:215
+#: widgets/advance-tab/advance-tab.php:226
 #: widgets/toggle/toggle.php:275
 msgid "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, natus! Facere suscipit doloremque, ea animi debitis quas nihil beatae nobis autem cupiditate sequi doloribus voluptate magnam ipsum provident magni officiis exercitationem aliquam. Iure, minima id consectetur recusandae laudantium nam aperiam delectus. Temporibus optio doloremque nesciunt rerum atque fugit cumque aspernatur excepturi odio minus earum sunt deleniti iste magnam eum nam voluptates porro dolores autem fuga, ad, nobis in minima quod."
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:219
+#: widgets/advance-tab/advance-tab.php:230
 msgid "Tab #2"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:221
+#: widgets/advance-tab/advance-tab.php:232
 #: widgets/toggle/toggle.php:281
 msgid "Non possimus cumque consequuntur sunt est alias quae nisi voluptas dolorum nesciunt iste maiores deserunt dignissimos placeat pariatur, vitae molestias numquam, porro natus, magnam officiis nostrum sint? Amet, et porro minus corporis, asperiores labore, molestiae culpa pariatur alias expedita ea voluptatem hic? Mollitia culpa odio sequi dolore nesciunt recusandae accusantium rerum harum praesentium eos est explicabo debitis rem, iusto, iure pariatur quaerat enim? Fugiat rem, exercitationem ipsa deleniti eius libero, itaque quia, porro eaque minima quibusdam? Hic quaerat blanditiis similique aliquam corrupti eos nemo molestiae dicta tempora."
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:224
+#: widgets/advance-tab/advance-tab.php:235
 msgid "Tab #3"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:226
+#: widgets/advance-tab/advance-tab.php:237
 msgid "Phasellus dignissim quam libero, a laoreet leo malesuada sit amet. Vestibulum eget augue orci. Praesent vitae est feugiat, tristique nunc et, facilisis nibh. Curabitur faucibus ultricies dui, non tempor nibh blandit eu. Praesent congue, sapien ut porttitor egestas, elit justo rutrum lorem, nec blandit arcu purus sit amet est. Ut laoreet ac nunc luctus faucibus. Pellentesque eget viverra lectus, a varius libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et dapibus odio, ac pharetra ipsum. Aliquam vel arcu a ex lacinia accumsan. Vestibulum tortor urna, iaculis non accumsan quis, tempus quis sapien. Ut ac nisi nec orci semper ultricies."
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:236
+#: widgets/advance-tab/advance-tab.php:247
 msgid "Content Display on Hover"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:238
-#: widgets/advance-tab/advance-tab.php:356
+#: widgets/advance-tab/advance-tab.php:249
+#: widgets/advance-tab/advance-tab.php:367
 #: widgets/heading/heading.php:293
 #: widgets/toggle/toggle.php:85
 msgid "YES"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:239
-#: widgets/advance-tab/advance-tab.php:357
+#: widgets/advance-tab/advance-tab.php:250
+#: widgets/advance-tab/advance-tab.php:368
 #: widgets/heading/heading.php:294
 #: widgets/toggle/toggle.php:86
 msgid "NO"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:273
+#: widgets/advance-tab/advance-tab.php:284
 msgid "Tabs Nav Position"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:325
+#: widgets/advance-tab/advance-tab.php:336
 msgid "Tab Indicator"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:354
+#: widgets/advance-tab/advance-tab.php:365
 msgid "Enable Custom Indicator"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:387
+#: widgets/advance-tab/advance-tab.php:398
 msgid "Tabs Nav"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:398
+#: widgets/advance-tab/advance-tab.php:409
 msgid "Tabs Alignment"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:416
+#: widgets/advance-tab/advance-tab.php:427
 msgid "Set Space between tabs nav and content"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:447
+#: widgets/advance-tab/advance-tab.php:458
 msgid "Tabs Nav Inner"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:459
+#: widgets/advance-tab/advance-tab.php:470
 msgid "Tabs Direction"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:477
+#: widgets/advance-tab/advance-tab.php:488
 msgid "Space Between Tabs"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:510
+#: widgets/advance-tab/advance-tab.php:521
 msgid "Tab Item"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:522
+#: widgets/advance-tab/advance-tab.php:533
 msgid "Sub Title Typography"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:540
+#: widgets/advance-tab/advance-tab.php:551
 msgid "Direction the Elements"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:556
+#: widgets/advance-tab/advance-tab.php:567
 msgid "Direction Titles"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:559
+#: widgets/advance-tab/advance-tab.php:570
 msgid "Align Titles"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:569
+#: widgets/advance-tab/advance-tab.php:580
+#: widgets/advance-tab/advance-tab.php:601
 msgid "Text Align"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:593
+#: widgets/advance-tab/advance-tab.php:615
 #: widgets/toggle/toggle.php:517
 msgid "Title Order"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:629
-#: widgets/advance-tab/advance-tab.php:664
-#: widgets/advance-tab/advance-tab.php:725
+#: widgets/advance-tab/advance-tab.php:651
+#: widgets/advance-tab/advance-tab.php:686
+#: widgets/advance-tab/advance-tab.php:747
 #: widgets/call-to-action/call-to-action.php:1283
 #: widgets/call-to-action/call-to-action.php:1421
 #: widgets/featured-banner/featured-banner.php:1294
@@ -5305,24 +5368,48 @@ msgstr ""
 msgid "Sub Title Color"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:677
-#: widgets/advance-tab/advance-tab.php:738
+#: widgets/advance-tab/advance-tab.php:699
+#: widgets/advance-tab/advance-tab.php:760
 msgid "Subtitle Font Weight"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:773
+#: widgets/advance-tab/advance-tab.php:795
 msgid "Tab Item Image"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:951
+#: widgets/advance-tab/advance-tab.php:824
+#: widgets/advance-tab/advance-tab.php:1014
+msgid "At Start"
+msgstr ""
+
+#: widgets/advance-tab/advance-tab.php:825
+#: widgets/advance-tab/advance-tab.php:1015
+#: widgets/author-box/author-box.php:90
+#: widgets/call-to-action/call-to-action.php:779
+#: widgets/featured-banner/featured-banner.php:752
+#: widgets/flipbox/flipbox.php:609
+#: widgets/post-comments/post-comments.php:2555
+#: widgets/team-member/team-member.php:557
+#: widgets/team-member/team-member.php:619
+#: widgets/testimonial/testimonial.php:542
+#: widgets/testimonial/testimonial.php:898
+msgid "Middle"
+msgstr ""
+
+#: widgets/advance-tab/advance-tab.php:826
+#: widgets/advance-tab/advance-tab.php:1016
+msgid "At End"
+msgstr ""
+
+#: widgets/advance-tab/advance-tab.php:990
 msgid "Tab Item Icon"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:1080
+#: widgets/advance-tab/advance-tab.php:1136
 msgid "Tab Item Indicator"
 msgstr ""
 
-#: widgets/advance-tab/advance-tab.php:1191
+#: widgets/advance-tab/advance-tab.php:1247
 msgid "Flipped"
 msgstr ""
 
@@ -5993,7 +6080,7 @@ msgid "Posts Per Page"
 msgstr ""
 
 #: widgets/archive-posts/archive-posts.php:183
-#: widgets/news-ticker/news-ticker.php:575
+#: widgets/news-ticker/news-ticker.php:591
 #: widgets/post-grid/post-grid.php:1303
 msgid "Thumbnail"
 msgstr ""
@@ -6487,18 +6574,6 @@ msgstr ""
 
 #: widgets/author-box/author-box.php:58
 msgid "Enable Grid"
-msgstr ""
-
-#: widgets/author-box/author-box.php:90
-#: widgets/call-to-action/call-to-action.php:779
-#: widgets/featured-banner/featured-banner.php:752
-#: widgets/flipbox/flipbox.php:609
-#: widgets/post-comments/post-comments.php:2555
-#: widgets/team-member/team-member.php:557
-#: widgets/team-member/team-member.php:619
-#: widgets/testimonial/testimonial.php:542
-#: widgets/testimonial/testimonial.php:898
-msgid "Middle"
 msgstr ""
 
 #: widgets/author-box/author-box.php:111
@@ -7205,13 +7280,13 @@ msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1019
 #: widgets/featured-banner/featured-banner.php:1047
-#: widgets/infobox/infobox.php:505
+#: widgets/infobox/infobox.php:531
 #: widgets/logo-grid/logo-grid.php:351
 msgid "Image Width"
 msgstr ""
 
 #: widgets/call-to-action/call-to-action.php:1031
-#: widgets/infobox/infobox.php:508
+#: widgets/infobox/infobox.php:534
 #: widgets/logo-grid/logo-grid.php:364
 msgid "Image Height"
 msgstr ""
@@ -7305,18 +7380,26 @@ msgstr ""
 msgid "Text Background"
 msgstr ""
 
-#: widgets/call-to-action/call-to-action.php:2071
+#: widgets/call-to-action/call-to-action.php:2064
+msgid "Title Width"
+msgstr ""
+
+#: widgets/call-to-action/call-to-action.php:2075
 msgid "Distance"
 msgstr ""
 
-#: widgets/call-to-action/call-to-action.php:2141
+#: widgets/call-to-action/call-to-action.php:2129
+msgid "Align Content"
+msgstr ""
+
+#: widgets/call-to-action/call-to-action.php:2165
 #: widgets/dual-color-heading/dual-color-heading.php:242
 #: widgets/featured-banner/featured-banner.php:2046
 #: widgets/testimonial/testimonial.php:1045
 msgid "Display as"
 msgstr ""
 
-#: widgets/call-to-action/call-to-action.php:2148
+#: widgets/call-to-action/call-to-action.php:2172
 #: widgets/dual-color-heading/dual-color-heading.php:248
 #: widgets/featured-banner/featured-banner.php:2052
 #: widgets/testimonial/testimonial.php:1051
@@ -7515,7 +7598,7 @@ msgstr ""
 #: widgets/countdown/countdown.php:270
 #: widgets/news-ticker/news-ticker.php:69
 #: widgets/news-ticker/news-ticker.php:430
-#: widgets/social-share/social-share.php:1012
+#: widgets/social-share/social-share.php:1029
 msgid "Label"
 msgstr ""
 
@@ -7581,7 +7664,7 @@ msgstr ""
 
 #: widgets/feature-list/feature-list.php:90
 #: widgets/image-list/image-list.php:99
-#: widgets/list-group/list-group.php:91
+#: widgets/list-group/list-group.php:92
 #: widgets/numeric-list/numeric-list.php:90
 msgid "Item Content"
 msgstr ""
@@ -7641,7 +7724,7 @@ msgstr ""
 
 #: widgets/flipbox/flipbox.php:101
 #: widgets/iconbox/iconbox.php:879
-#: widgets/infobox/infobox.php:831
+#: widgets/infobox/infobox.php:844
 #: widgets/off-canvas/off-canvas.php:294
 #: widgets/search-box/search-box.php:275
 #: widgets/team-member/team-member.php:772
@@ -7700,13 +7783,11 @@ msgstr ""
 
 #: widgets/flipbox/flipbox.php:750
 #: widgets/iconbox/iconbox.php:351
-#: widgets/infobox/infobox.php:538
 msgid "Icon Width"
 msgstr ""
 
 #: widgets/flipbox/flipbox.php:753
 #: widgets/iconbox/iconbox.php:354
-#: widgets/infobox/infobox.php:541
 msgid "Icon Height"
 msgstr ""
 
@@ -7780,7 +7861,7 @@ msgstr ""
 
 #: widgets/fun-fact/fun-fact.php:458
 #: widgets/infobox/infobox.php:76
-#: widgets/infobox/infobox.php:470
+#: widgets/infobox/infobox.php:496
 #: widgets/pdf-view/pdf-view.php:428
 msgid "Icon / Image"
 msgstr ""
@@ -7922,7 +8003,7 @@ msgid "Type Icon Box Subtitle"
 msgstr ""
 
 #: widgets/iconbox/iconbox.php:139
-#: widgets/infobox/infobox.php:309
+#: widgets/infobox/infobox.php:320
 msgid "Type info box description"
 msgstr ""
 
@@ -7992,7 +8073,7 @@ msgstr ""
 
 #: widgets/image-carousel/image-carousel.php:213
 #: widgets/logo-carousel/logo-carousel.php:222
-#: widgets/news-ticker/news-ticker.php:801
+#: widgets/news-ticker/news-ticker.php:817
 msgid "Disabled"
 msgstr ""
 
@@ -8271,32 +8352,40 @@ msgstr ""
 msgid "Media position"
 msgstr ""
 
-#: widgets/infobox/infobox.php:244
+#: widgets/infobox/infobox.php:255
 msgid "Title, Description"
 msgstr ""
 
-#: widgets/infobox/infobox.php:255
+#: widgets/infobox/infobox.php:266
 msgid "Real company"
 msgstr ""
 
-#: widgets/infobox/infobox.php:256
+#: widgets/infobox/infobox.php:267
 msgid "Type Info Box Title"
 msgstr ""
 
-#: widgets/infobox/infobox.php:308
+#: widgets/infobox/infobox.php:319
 msgid "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt."
 msgstr ""
 
-#: widgets/infobox/infobox.php:327
-#: widgets/infobox/infobox.php:749
+#: widgets/infobox/infobox.php:338
+#: widgets/infobox/infobox.php:762
 msgid "Icon List"
+msgstr ""
+
+#: widgets/infobox/infobox.php:551
+msgid "Icon Area Width"
+msgstr ""
+
+#: widgets/infobox/infobox.php:554
+msgid "Icon Area Height"
 msgstr ""
 
 #: widgets/list-group/list-group.php:34
 msgid "List Group Content"
 msgstr ""
 
-#: widgets/list-group/list-group.php:145
+#: widgets/list-group/list-group.php:166
 msgid "Number, Icon & Image"
 msgstr ""
 
@@ -8736,16 +8825,16 @@ msgid "Label Arrow"
 msgstr ""
 
 #: widgets/news-ticker/news-ticker.php:489
-#: widgets/news-ticker/news-ticker.php:746
+#: widgets/news-ticker/news-ticker.php:762
 #: widgets/search-box/search-box.php:437
 msgid "Arrow Size"
 msgstr ""
 
-#: widgets/news-ticker/news-ticker.php:550
-msgid "Divider Color"
+#: widgets/news-ticker/news-ticker.php:562
+msgid "Radius"
 msgstr ""
 
-#: widgets/news-ticker/news-ticker.php:722
+#: widgets/news-ticker/news-ticker.php:738
 msgid "Slider Navigation"
 msgstr ""
 
@@ -10017,16 +10106,8 @@ msgstr ""
 msgid "Meta Link"
 msgstr ""
 
-#: widgets/post-meta/post-meta.php:255
-msgid "Extra Text"
-msgstr ""
-
 #: widgets/post-meta/post-meta.php:266
 msgid "Before Text Distance"
-msgstr ""
-
-#: widgets/post-meta/post-meta.php:304
-msgid "Extra Text Color"
 msgstr ""
 
 #: widgets/post-meta/post-meta.php:379
