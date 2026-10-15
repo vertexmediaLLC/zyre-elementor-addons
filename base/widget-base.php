@@ -882,6 +882,7 @@ abstract class Base extends Widget_Base {
 					case 'alignment':
 					case 'text_align':
 						$allowed_defaults = [ 'left', 'center', 'right', 'justify' ];
+						$selector_values = ! empty( $values['selector_value'] ) ? $values['selector_value'] : 'text-align: {{VALUE}};';
 						$control_args = [
 							'label'     => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Alignment', 'zyre-elementor-addons' ),
 							'type'      => Controls_Manager::CHOOSE,
@@ -905,7 +906,7 @@ abstract class Base extends Widget_Base {
 								],
 							],
 							'selectors' => [
-								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'text-align: {{VALUE}};',
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => $selector_values,
 							],
 							'condition'  => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
@@ -1088,7 +1089,7 @@ abstract class Base extends Widget_Base {
 								],
 								'center'  => [
 									'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
-									'icon'  => 'eicon-align-center-h',
+									'icon'  => 'eicon-align-center-v',
 								],
 								'right'   => [
 									'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),

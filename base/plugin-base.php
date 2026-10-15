@@ -200,17 +200,21 @@ class Plugin {
 		include_once ZYRELADDONS_DIR_PATH . 'controls/select2.php';
 		include_once ZYRELADDONS_DIR_PATH . 'controls/style-select.php';
 		include_once ZYRELADDONS_DIR_PATH . 'controls/typography.php';
+		include_once ZYRELADDONS_DIR_PATH . 'controls/radio-choices.php';
 
-		$select = __NAMESPACE__ . '\Controls\Select2';
-		zyreladdons_elementor()->controls_manager->register( new $select() );
+		$select2 = __NAMESPACE__ . '\Controls\Select2';
+		zyreladdons_elementor()->controls_manager->register( new $select2() );
 
-		$select = __NAMESPACE__ . '\Controls\Style_Control';
-		zyreladdons_elementor()->controls_manager->register( new $select() );
+		$style_select = __NAMESPACE__ . '\Controls\Style_Control';
+		zyreladdons_elementor()->controls_manager->register( new $style_select() );
 
-		$typography = __NAMESPACE__ . '\Controls\Group_Control_Typography_Extended';
+		$radio_choices = __NAMESPACE__ . '\Controls\Radio_Choices';
+		zyreladdons_elementor()->controls_manager->register( new $radio_choices() );
+
+		$typography_ext = __NAMESPACE__ . '\Controls\Group_Control_Typography_Extended';
 		zyreladdons_elementor()->controls_manager->add_group_control(
-			$typography::get_type(),
-			new $typography()
+			$typography_ext::get_type(),
+			new $typography_ext()
 		);
 	}
 }

@@ -696,7 +696,7 @@ class Heading extends Base {
 					],
 					'default'   => 'block',
 					'selectors' => [
-						"{{WRAPPER}} .zyre-heading-{$id_base}::before, {{WRAPPER}} .zyre-heading-{$id_base}::after" => 'display: {{VALUE}};',
+						"{{WRAPPER}} .zyre-heading-{$id_base}.has--separator::before, {{WRAPPER}} .zyre-heading-{$id_base}.has--separator::after" => 'display: {{VALUE}};',
 					],
 					'condition' => [
 						$prefix . '_switch' => 'yes',

@@ -4,6 +4,10 @@
 	display: none;
 }
 
+.zyre-addon-advance-accordion .zyre-advance-accordion-section {
+	overflow: hidden;
+}
+
 .zyre-addon-advance-accordion .zyre-advance-accordion-section.active .toggle-icon-opened {
 	display: block;
 }

@@ -5,6 +5,7 @@ namespace VertexMediaLLC\ZyreElementorAddons\Widget;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Repeater;
+use VertexMediaLLC\ZyreElementorAddons\Controls\Radio_Choices;
 use VertexMediaLLC\ZyreElementorAddons\Query_Manager;
 
 defined( 'ABSPATH' ) || die();
@@ -169,10 +170,20 @@ class Advance_Tab extends Base {
 						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
 						'icon'  => 'eicon-h-align-right',
 					],
+					'top' => [
+						'title' => esc_html__( 'Top', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-v-align-top',
+					],
+					'bottom' => [
+						'title' => esc_html__( 'Bottom', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-v-align-bottom',
+					],
 				],
 				'selectors_dictionary' => [
 					'left'  => '-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;',
 					'right' => '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;',
+					'top'  => '-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;',
+					'bottom' => '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;',
 				],
 				'selectors'            => [
 					'{{WRAPPER}} .zyre-tabs {{CURRENT_ITEM}}' => '{{VALUE}}',
@@ -568,7 +579,7 @@ class Advance_Tab extends Base {
 					'align_x' => [
 						'label' => esc_html__( 'Text Align', 'zyre-elementor-addons' ),
 						'options' => [
-							'flex-start'    => [
+							'start'    => [
 								'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
 								'icon'  => 'eicon-text-align-left',
 							],
@@ -576,12 +587,23 @@ class Advance_Tab extends Base {
 								'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
 								'icon'  => 'eicon-text-align-center',
 							],
-							'flex-end'      => [
+							'end'      => [
 								'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
 								'icon'  => 'eicon-text-align-right',
 							],
 						],
+						'condition' => [
+							'tab_item_titles_direction' => 'row',
+						],
 						'selector' => '{{WRAPPER}} .zyre-tabs-nav-item-titles',
+					],
+					'text_align' => [
+						'label' => esc_html__( 'Text Align', 'zyre-elementor-addons' ),
+						'condition' => [
+							'tab_item_titles_direction' => 'column',
+							'tab_item_titles_align_self_x' => 'stretch',
+						],
+						'selector' => '{{WRAPPER}} .zyre-tabs-nav-item-titles > *',
 					],
 				],
 			]
@@ -793,6 +815,23 @@ class Advance_Tab extends Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'image_align',
+			[
+				'label'   => esc_html__( 'Alignment', 'zyre-elementor-addons' ),
+				'type'    => Radio_Choices::TYPE,
+				'options' => [
+					'flex-start'   => esc_html__( 'At Start', 'zyre-elementor-addons' ),
+					'center' => esc_html__( 'Middle', 'zyre-elementor-addons' ),
+					'flex-end'  => esc_html__( 'At End', 'zyre-elementor-addons' ),
+				],
+				'default'      => 'flex-start',
+				'selectors' => [
+					'{{WRAPPER}} .zyre-tabs-nav-item .zyre-tabs-nav-item-image' => 'align-self: {{VALUE}}',
+				],
+			]
+		);
+
 		$this->start_controls_tabs( 'tabs_image_style' );
 
 		// Tab: Normal
@@ -962,6 +1001,23 @@ class Advance_Tab extends Base {
 					'width'         => [],
 					'height'        => [],
 					'border_radius' => [],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'tab_item_icon_align',
+			[
+				'label'   => esc_html__( 'Alignment', 'zyre-elementor-addons' ),
+				'type'    => Radio_Choices::TYPE,
+				'options' => [
+					'flex-start'   => esc_html__( 'At Start', 'zyre-elementor-addons' ),
+					'center' => esc_html__( 'Middle', 'zyre-elementor-addons' ),
+					'flex-end'  => esc_html__( 'At End', 'zyre-elementor-addons' ),
+				],
+				'default'      => 'flex-start',
+				'selectors' => [
+					'{{WRAPPER}} .zyre-tabs-nav-item .zyre-tabs-nav-item-icon-wrapper' => 'align-self: {{VALUE}}',
 				],
 			]
 		);
