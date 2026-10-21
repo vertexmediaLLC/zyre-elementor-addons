@@ -125,7 +125,7 @@ class Widgets_Manager {
 		if ( null !== $cache ) {
 			return $cache;
 		}
-		
+
 		$cache = [
 			'heading' => [
 				'cat'       => 'general',
@@ -693,7 +693,7 @@ class Widgets_Manager {
 				'js'        => [],
 				'libs'      => [
 					'css'   => [ 'e-swiper' ],
-					'js'    => [ 'zyreladdons-isotope', 'imagesloaded' ]
+					'js'    => [ 'zyreladdons-isotope', 'imagesloaded' ],
 				],
 			],
 			'logo-grid'  => [
@@ -1562,7 +1562,7 @@ class Widgets_Manager {
 				'js'   => [],
 				'libs' => [
 					'js'  => [],
-					'css' => [ 'font-awesome' ],
+					'css' => [],
 				],
 			],
 		];
@@ -1750,8 +1750,8 @@ class Widgets_Manager {
 	public static function get_widget_doc_url( string $widget_id ) {
 		$widget_map = self::get_the_widget_map( $widget_id );
 
-		if ( isset( $widget_map[ 'doc' ] ) ) {
-			return $widget_map[ 'doc' ];
+		if ( isset( $widget_map['doc'] ) ) {
+			return $widget_map['doc'];
 		}
 
 		return null;

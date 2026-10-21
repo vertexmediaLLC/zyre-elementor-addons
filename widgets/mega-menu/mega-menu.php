@@ -21,7 +21,7 @@ class Mega_Menu extends Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'zyreladdons-mega-menu' ];
+		return array_merge( parent::get_style_depends(), [ 'zyreladdons-mega-menu' ] );
 	}
 
 	/**
@@ -398,7 +398,7 @@ class Mega_Menu extends Base {
 				'default'            => '',
 				'frontend_available' => true,
 				'condition'          => [
-					'menu_item_border_border!' => ['', 'none'],
+					'menu_item_border_border!' => [ '', 'none' ],
 				],
 			]
 		);
@@ -738,7 +738,7 @@ class Mega_Menu extends Base {
 					],
 					'offset_x' => [
 						'css_property' => is_rtl() ? 'right' : 'left',
-						'size_units'   => ['%', 'px', 'custom'],
+						'size_units'   => [ '%', 'px', 'custom' ],
 						'range'        => [
 							'%'  => [
 								'min' => -500,
@@ -887,7 +887,7 @@ class Mega_Menu extends Base {
 				'default'            => '',
 				'frontend_available' => true,
 				'condition'          => [
-					'submenu_item_border_border!' => ['', 'none'],
+					'submenu_item_border_border!' => [ '', 'none' ],
 				],
 			]
 		);
@@ -1279,7 +1279,7 @@ class Mega_Menu extends Base {
 				'default'            => '',
 				'frontend_available' => true,
 				'condition'          => [
-					'mobile_menu_item_border_border!' => ['', 'none'],
+					'mobile_menu_item_border_border!' => [ '', 'none' ],
 				],
 			]
 		);

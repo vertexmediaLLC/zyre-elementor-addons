@@ -30,8 +30,8 @@ class Archive_Posts extends Base {
 	}
 
 	public function get_categories() {
-        return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
-    }
+		return [ 'zyreladdons_category', 'zyreladdons_theme_builder' ];
+	}
 
 	public function get_custom_help_url() {
 		return $this->set_help_url();
@@ -1522,14 +1522,6 @@ class Archive_Posts extends Base {
 	protected function render() {
 		$this->settings = $this->get_settings_for_display();
 		global $wp_query;
-
-		$query_vars = $wp_query->query_vars;
-
-		if ( $query_vars !== $wp_query->query_vars ) {
-			$this->query = new \WP_Query( $query_vars ); // SQL_CALC_FOUND_ROWS is used.
-		} else {
-			$this->query = $wp_query;
-		}
 
 		$is_editor = zyreladdons_elementor()->editor->is_edit_mode() || is_preview();
 

@@ -136,7 +136,7 @@ class Module {
 				if ( defined( 'ICL_LANGUAGE_CODE' ) ) :
 					$current_lang = apply_filters( 'wpml_post_language_details', null, $template['ID'] );
 
-					if ( ! empty( $current_lang ) && ! $current_lang['different_language'] && ( ICL_LANGUAGE_CODE === $current_lang['language_code'] ) ) :
+					if ( ! empty( $current_lang ) && ! $current_lang['different_language'] && ( \ICL_LANGUAGE_CODE === $current_lang['language_code'] ) ) :
 						$template_id[ $template['type'] ] = $template['ID'];
 					endif;
 				endif;
@@ -331,6 +331,11 @@ class Module {
 
 	public function enqueue_assets() {
 		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+		if ( ! $screen || false === strstr( (string) $screen->post_type, self::POST_TYPE ) ) {
 			return;
 		}
 
@@ -568,7 +573,7 @@ class Module {
 			foreach ( self::get_template_types() as $key => $value ) {
 				$active = ( $get_active === $key ) ? 'nav-tab-active' : '';
 				$admin_filter_url = admin_url( self::TAB_BASE . '&zyreladdons_library_type=' . $key );
-                $nav_tab_link = '<a class="nav-tab ' . $active . '" href="' . esc_url( $admin_filter_url ) . '">' . esc_html( $value ) . '</a>';
+				$nav_tab_link = '<a class="nav-tab ' . $active . '" href="' . esc_url( $admin_filter_url ) . '">' . esc_html( $value ) . '</a>';
 				echo wp_kses_post( $nav_tab_link );
 			}
 			?>
@@ -627,7 +632,7 @@ class Module {
 			$type       = get_post_meta( $post_id, 'zyreladdons_library_type', true );
 			$is_active   = get_post_meta( $post_id, 'zyreladdons_template_active', true );
 
-            echo esc_html( ucwords( str_replace( '-', ' ', $type ) ) );
+			echo esc_html( ucwords( str_replace( '-', ' ', $type ) ) );
 
 			echo "<span id='tmpl-", esc_attr( $post_id ), "'>";
 
@@ -666,18 +671,18 @@ class Module {
 					}
 				}
 
-                printf(
-                    wp_kses(
-                        /* translators: 1: included conditions, 2: excluded conditions */
-                        __( '<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s', 'zyre-elementor-addons' ),
-                        [
-                            'b'  => [],
-                            'br' => [],
-                        ]
-                    ),
-                    esc_html( implode( ', ', $include_conditions ) ),
-                    esc_html( implode( ', ', $exclude_conditions ) )
-                );
+				printf(
+					wp_kses(
+						/* translators: 1: included conditions, 2: excluded conditions */
+						__( '<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s', 'zyre-elementor-addons' ),
+						[
+							'b'  => [],
+							'br' => [],
+						]
+					),
+					esc_html( implode( ', ', $include_conditions ) ),
+					esc_html( implode( ', ', $exclude_conditions ) )
+				);
 			} else {
 				echo '<b>' . esc_html__( 'Not Applicable', 'zyre-elementor-addons' ) . '</b>';
 			}
@@ -692,9 +697,9 @@ class Module {
 			unset( $sub_conditions['taxonomies'] );
 		}
 
-		foreach ($sub_conditions as $parentKey => $values) {
-			foreach ($values as $value) {
-				$result[$value] = $parentKey;
+		foreach ( $sub_conditions as $parent_key => $values ) {
+			foreach ( $values as $value ) {
+				$result[ $value ] = $parent_key;
 			}
 		}
 
@@ -703,7 +708,7 @@ class Module {
 
 	private static function get_sub_conditions() {
 		$conditions = [
-			'author'   => ['author', 'by_author'],
+			'author'   => [ 'author', 'by_author' ],
 		];
 
 		return apply_filters( 'zyreladdons/conditions/sub_conditions', $conditions );
@@ -851,7 +856,7 @@ class Module {
 		$meta = [
 			'display_conditions' => [],
 		];
-	
+
 		$post_data['post_type'] = $post_type;
 
 		$post_id = $this->create_or_update_post( $type, $post_data, $meta );
@@ -861,17 +866,18 @@ class Module {
 		}
 
 		wp_safe_redirect( $this->get_edit_url( $post_id ) );
-    	exit;
+		exit;
 	}
 
 	private function check_elementor_content( $post_id ) {
-		$el_content = get_post_meta( $post_id, '_elementor_data', true );
+		$post_id = (int) $post_id;
 
-		if ( $el_content ) {
-			return true;
+		if ( ! $post_id ) {
+			return false;
 		}
 
-		return false;
+		// Same flag Elementor stores. Avoid unserializing the full _elementor_data JSON.
+		return 'builder' === get_post_meta( $post_id, \Elementor\Core\Base\Document::BUILT_WITH_ELEMENTOR_META_KEY, true );
 	}
 
 	public static function get_public_post_types( $args = [] ) {
@@ -1002,7 +1008,7 @@ class Module {
 	public function single_blog_content_elementor( $post ) {
 		$templates = $this->singular_template;
 		if ( ! empty( $templates ) ) {
-            echo self::render_builder_data( $templates ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo self::render_builder_data( $templates ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			the_content();
 		}

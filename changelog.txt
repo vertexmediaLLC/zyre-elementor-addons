@@ -1,3 +1,7 @@
+= 2.1.8 - 2026-10-21 =
+
+- Increased performance.
+
 = 2.1.7 - 2026-10-15 =
 
 - Heading, Advanced Accordion, Advanced Tab, and Group List widgets update.

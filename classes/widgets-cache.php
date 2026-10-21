@@ -141,12 +141,22 @@ class Widgets_Cache {
 	 * @return array Cached data.
 	 */
 	public function get_cache_data() {
-		$cache = get_post_meta( $this->get_post_id(), self::META_KEY, true );
-		if ( empty( $cache ) || ! is_array( $cache ) ) {
-			$cache = $this->save();
+		$post_id = $this->get_post_id();
+
+		if ( ! $post_id ) {
+			return [];
 		}
 
-		return $cache;
+		// An empty array is a valid result: the document was scanned and uses no Zyre widgets.
+		if ( metadata_exists( 'post', $post_id, self::META_KEY ) ) {
+			$cache = get_post_meta( $post_id, self::META_KEY, true );
+
+			if ( is_array( $cache ) ) {
+				return $cache;
+			}
+		}
+
+		return $this->save();
 	}
 
 	/**
@@ -260,6 +270,10 @@ class Widgets_Cache {
 		$data = $this->get_elementor_data();
 
 		if ( empty( $data ) ) {
+			if ( $this->get_post_id() ) {
+				update_post_meta( $this->get_post_id(), self::META_KEY, [] );
+			}
+
 			return [];
 		}
 
@@ -294,6 +308,12 @@ class Widgets_Cache {
 		$prev_cache = get_post_meta( $this->get_post_id(), self::META_KEY, true );
 		$global_cache = get_option( self::OPTION_KEY, [] );
 
+		if ( ! is_array( $global_cache ) ) {
+			$global_cache = [];
+		}
+
+		$original_global_cache = $global_cache;
+
 		if ( is_array( $prev_cache ) ) {
 			foreach ( $prev_cache as $type => $info ) {
 				if ( isset( $global_cache[ $doc_type ][ $type ] ) ) {
@@ -318,8 +338,13 @@ class Widgets_Cache {
 			$global_cache[ $doc_type ][ $type ] += $cache[ $type ]['used'];
 		}
 
-		// Save cache.
-		update_option( self::OPTION_KEY, $global_cache );
+		// Save cache. Skip the option write when widget counts did not change.
+		if ( $global_cache !== $original_global_cache ) {
+			update_option( self::OPTION_KEY, $global_cache, false );
+		} elseif ( false !== get_option( self::OPTION_KEY, false ) && function_exists( 'wp_set_option_autoload' ) ) {
+			wp_set_option_autoload( self::OPTION_KEY, false );
+		}
+
 		update_post_meta( $this->get_post_id(), self::META_KEY, $cache );
 
 		return $cache;

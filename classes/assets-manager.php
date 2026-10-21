@@ -209,7 +209,7 @@ class Assets_Manager {
 			ZYRELADDONS_ASSETS . 'js/pdfobject.min.js',
 			[],
 			ZYRELADDONS_VERSION,
-			false
+			true
 		);
 
 		// Lottie
@@ -218,7 +218,7 @@ class Assets_Manager {
 			ZYRELADDONS_ASSETS . 'js/lottie.min.js',
 			[],
 			ZYRELADDONS_VERSION,
-			false
+			true
 		);
 
 		// jQuery DownCount.
@@ -247,6 +247,8 @@ class Assets_Manager {
 			ZYRELADDONS_VERSION,
 			true
 		);
+
+		self::register_widget_styles();
 
 		// Localize scripts.
 		wp_localize_script(
@@ -312,25 +314,51 @@ class Assets_Manager {
 			Cache_Manager::enqueue( $post_id );
 		}
 
-		// Only for edit & preview mode.
+		// Editor, preview, unpublished, or on-demand cache disabled.
+		// Widget CSS and third-party libraries are enqueued by Elementor from
+		// get_style_depends() / get_script_depends() for widgets on the document.
 		if ( Cache_Manager::should_enqueue_raw( $post_id ) ) {
 			wp_enqueue_style( 'zyreladdons-global-vars' );
 			wp_enqueue_style( 'zyreladdons-global' );
 			wp_enqueue_script( 'zyreladdons' );
+		}
+	}
 
-			if ( zyreladdons_is_script_debug_enabled() ) {
-				Cache_Manager::enqueue_raw( $post_id );
-			} else {
-				wp_enqueue_style( 'zyreladdons-widgets' );
+	/**
+	 * Register per-widget styles so Elementor can enqueue them on demand.
+	 *
+	 * Handles match the combined-cache filenames. Published frontend pages keep
+	 * using the combined file and do not enqueue these handles.
+	 *
+	 * @since 2.1.7
+	 * @return void
+	 */
+	public static function register_widget_styles() {
+		$widgets_map = Widgets_Manager::get_active_widgets();
 
-				$widgets_map = Widgets_Manager::get_active_widgets();
-				foreach ( $widgets_map as $widget_key => $data ) {
-					if ( isset( $data['libs'] ) ) {
-						$libs = $data['libs'];
+		foreach ( $widgets_map as $widget_key => $data ) {
+			if ( empty( $data['css'] ) || ! is_array( $data['css'] ) ) {
+				continue;
+			}
 
-						Cache_Manager::enqueue_raw_libs( $libs );
-					}
+			foreach ( $data['css'] as $stylesheet ) {
+				$handle = 'zyreladdons-' . $stylesheet;
+				$file_path = ZYRELADDONS_DIR_PATH . "assets/css/widgets/{$widget_key}/{$stylesheet}" . self::$suffix . 'css';
+				$file_path = apply_filters( 'zyreladdons_get_styles_file_path', $file_path, $stylesheet, $widget_key );
+
+				if ( ! is_readable( $file_path ) ) {
+					continue;
 				}
+
+				$file_url = ZYRELADDONS_ASSETS . "css/widgets/{$widget_key}/{$stylesheet}" . self::$suffix . 'css';
+				$file_url = apply_filters( 'zyreladdons_get_styles_file_url', $file_url, $stylesheet, $widget_key );
+
+				wp_register_style(
+					$handle,
+					$file_url,
+					[ 'zyreladdons-global-vars', 'zyreladdons-global' ],
+					ZYRELADDONS_VERSION
+				);
 			}
 		}
 	}
@@ -385,7 +413,7 @@ class Assets_Manager {
 			null,
 			ZYRELADDONS_VERSION
 		);
-		
+
 		wp_enqueue_style(
 			'zyreladdons-editor',
 			ZYRELADDONS_ASSETS . 'admin/css/editor' . self::$suffix . 'css',

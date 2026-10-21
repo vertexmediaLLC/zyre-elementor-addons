@@ -2231,7 +2231,7 @@ class Post_Grid extends Base {
 		";
 
 		// order by numeric view count
-		$clauses['orderby'] = " pv.count+0 DESC ";
+		$clauses['orderby'] = ' pv.count+0 DESC ';
 
 		return $clauses;
 	}
@@ -2293,8 +2293,13 @@ class Post_Grid extends Base {
 
 		// Add dynamic taxonomy filters here (from the loop above)
 		$tax_query = [];
-		$taxonomies = get_taxonomies( [ 'public' => true ], 'objects' );
-		foreach ( $taxonomies as $taxonomy => $object ) {
+		static $public_taxonomies = null;
+
+		if ( null === $public_taxonomies ) {
+			$public_taxonomies = get_taxonomies( [ 'public' => true ] );
+		}
+
+		foreach ( $public_taxonomies as $taxonomy ) {
 			$field_key = $taxonomy . '_list';
 
 			if ( ! empty( $this->settings[ $field_key ] ) ) {
@@ -2320,10 +2325,7 @@ class Post_Grid extends Base {
 			add_filter( 'posts_clauses', [ $this, 'filter_query_order_by_post_views' ] );
 		}
 
-		// Final query
-		$the_query = new \WP_Query( $query_args );
-
-		// Archive pages only
+		// Archive frontend uses the main query. Running the custom query first discarded it.
 		if ( 'archive' === $this->settings['query_source'] && ! $is_editor ) {
 			$query_args['post_type'] = '';
 			unset( $query_args['post_status'] );
@@ -2336,8 +2338,8 @@ class Post_Grid extends Base {
 			} else {
 				$the_query = $wp_query;
 			}
-		} elseif ( 'archive' === $this->settings['query_source'] && $is_editor ) {
-			$the_query = $the_query;
+		} else {
+			$the_query = new \WP_Query( $query_args );
 		}
 
 		if ( $the_query->have_posts() ) {
@@ -2444,7 +2446,7 @@ class Post_Grid extends Base {
 			return;
 		}
 
-        $title_html_tag = $this->settings['title_tag'] ?? 'h3';
+		$title_html_tag = $this->settings['title_tag'] ?? 'h3';
 		?>
 
 		<<?php Utils::print_validated_html_tag( $title_html_tag ); ?> class="zyre-post-title zy-m-0">
@@ -2552,7 +2554,7 @@ class Post_Grid extends Base {
 		<span class="zyre-post-author-by"><?php echo esc_html( $this->settings[ $author_by_key ] ); ?></span>
 		<?php
 	}
-	
+
 	protected function render_author_name( $type ) {
 		$author_name_key = $type . '_author_name';
 		if ( empty( $this->settings[ $author_name_key ] ) ) {
@@ -2587,10 +2589,10 @@ class Post_Grid extends Base {
 		endswitch;
 
 		/** This filter is documented in wp-includes/general-template.php */
-        echo wp_kses(
-            apply_filters( 'the_date', $date, get_option( 'date_format' ), '', '' ),
-            zyreladdons_get_allowed_html()
-        );
+		echo wp_kses(
+			apply_filters( 'the_date', $date, get_option( 'date_format' ), '', '' ),
+			zyreladdons_get_allowed_html()
+		);
 
 		echo $in_meta ? '</span>' : '</div>';
 	}
@@ -2625,17 +2627,17 @@ class Post_Grid extends Base {
 				$category_prefix = '';
 
 				// Exclude parent categories only
-				if ( 'yes' === $this->settings[ 'exclude_parent_cats' ] ) {
+				if ( 'yes' === $this->settings['exclude_parent_cats'] ) {
 					// Collect all parent IDs from categories
 					$parent_ids = array_map(
-						fn($t) => $t->parent,
+						fn( $t ) => $t->parent,
 						$categories
 					);
 
 					// Remove any term whose term_id matches a parent ID
 					$categories = array_filter(
 						$categories,
-						fn($t) => ! in_array($t->term_id, $parent_ids)
+						fn( $t ) => ! in_array( $t->term_id, $parent_ids )
 					);
 				}
 
@@ -2759,12 +2761,12 @@ class Post_Grid extends Base {
 			<div class="zyre-post-content zy-relative">
 				<?php
 
-				if( ! in_array( 'header_meta', $thumbnail_overlay, true ) ) {
+				if ( ! in_array( 'header_meta', $thumbnail_overlay, true ) ) {
 					$this->render_meta_data( 'header_meta' );
 				}
 
 				$this->render_post_body_before();
-	
+
 				if ( ! in_array( 'post_date', $thumbnail_overlay, true ) ) {
 					$this->render_post_date();
 				}
@@ -2780,7 +2782,7 @@ class Post_Grid extends Base {
 				if ( ! in_array( 'excerpt', $thumbnail_overlay, true ) ) {
 					$this->render_excerpt();
 				}
-				
+
 				$this->render_post_body_after();
 
 				if ( ! in_array( 'footer_meta', $thumbnail_overlay, true ) ) {

@@ -27,7 +27,7 @@ class Menu extends Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'zyreladdons-nav-menu' ];
+		return array_merge( parent::get_style_depends(), [ 'zyreladdons-nav-menu' ] );
 	}
 
 	/**
@@ -309,7 +309,7 @@ class Menu extends Base {
 				'default'            => '',
 				'frontend_available' => true,
 				'condition'          => [
-					'menu_item_border_border!' => ['', 'none'],
+					'menu_item_border_border!' => [ '', 'none' ],
 				],
 			]
 		);
@@ -577,7 +577,7 @@ class Menu extends Base {
 				'controls' => [
 					'offset_x' => [
 						'css_property' => is_rtl() ? 'right' : 'left',
-						'size_units'   => ['%', 'px'],
+						'size_units'   => [ '%', 'px' ],
 						'range'        => [
 							'%'  => [
 								'min' => -500,
@@ -675,7 +675,7 @@ class Menu extends Base {
 				'default'            => '',
 				'frontend_available' => true,
 				'condition'          => [
-					'submenu_item_border_border!' => ['', 'none'],
+					'submenu_item_border_border!' => [ '', 'none' ],
 				],
 			]
 		);
@@ -1067,7 +1067,7 @@ class Menu extends Base {
 				'default'           => '',
 				'fontend_available' => true,
 				'condition'         => [
-					'mobile_menu_item_border_border!' => ['', 'none'],
+					'mobile_menu_item_border_border!' => [ '', 'none' ],
 				],
 			]
 		);
