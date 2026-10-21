@@ -37,7 +37,11 @@ class Logo_Carousel extends Base {
 	}
 
 	public function get_style_depends(): array {
-		return [ 'e-swiper' ];
+		return array_merge( parent::get_style_depends(), [ 'e-swiper' ] );
+	}
+
+	public function get_script_depends(): array {
+		return array_merge( parent::get_script_depends(), [ 'swiper' ] );
 	}
 
 	protected function register_content_controls() {
@@ -458,7 +462,7 @@ class Logo_Carousel extends Base {
 				'selector' => '{{WRAPPER}} .zyre-carousel-image',
 				'controls' => [
 					'height'        => [
-						'size_units' => ['px', '%', 'custom'],
+						'size_units' => [ 'px', '%', 'custom' ],
 					],
 					'object_fit'    => [
 						'label'   => esc_html__( 'Fit Image as', 'zyre-elementor-addons' ),

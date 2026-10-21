@@ -11,6 +11,7 @@ use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Text_Stroke;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
+use VertexMediaLLC\ZyreElementorAddons\Cache_Manager;
 use VertexMediaLLC\ZyreElementorAddons\Controls\Style_Control;
 use VertexMediaLLC\ZyreElementorAddons\Widgets_Manager;
 
@@ -54,6 +55,144 @@ abstract class Base extends Widget_Base {
 	 */
 	public function get_categories() {
 		return array( 'zyreladdons_category' );
+	}
+
+	/**
+	 * Styles for this widget.
+	 *
+	 * Published frontend pages use the combined CSS file. The editor, preview,
+	 * and raw mode enqueue only this widget's stylesheet.
+	 *
+	 * @since 2.1.7
+	 * @return string[]
+	 */
+	public function get_style_depends() {
+		if ( ! $this->uses_individual_widget_styles() ) {
+			return [];
+		}
+
+		return $this->get_mapped_style_handles();
+	}
+
+	/**
+	 * Scripts required by this widget.
+	 *
+	 * Elementor enqueues these when the widget is rendered, including a widget
+	 * just added in the editor.
+	 *
+	 * @since 2.1.7
+	 * @return string[]
+	 */
+	public function get_script_depends() {
+		$map = Widgets_Manager::get_the_widget_map( $this->get_widget_map_key() );
+		$handles = [];
+
+		if ( empty( $map ) || ! is_array( $map ) ) {
+			return $handles;
+		}
+
+		foreach ( [ 'libs', 'js' ] as $group ) {
+			$scripts = [];
+
+			if ( 'libs' === $group && ! empty( $map['libs']['js'] ) && is_array( $map['libs']['js'] ) ) {
+				$scripts = $map['libs']['js'];
+			} elseif ( 'js' === $group && ! empty( $map['js'] ) && is_array( $map['js'] ) ) {
+				$scripts = $map['js'];
+			}
+
+			foreach ( $scripts as $handle ) {
+				if ( $handle ) {
+					$handles[] = $handle;
+				}
+			}
+		}
+
+		return $handles;
+	}
+
+	/**
+	 * Widget key used by the widgets map.
+	 *
+	 * @since 2.1.7
+	 * @return string
+	 */
+	protected function get_widget_map_key() {
+		$name = $this->get_name();
+
+		if ( 0 === strpos( $name, 'zyre-' ) ) {
+			return substr( $name, 5 );
+		}
+
+		return $name;
+	}
+
+	/**
+	 * Whether this request should print per-widget stylesheets.
+	 *
+	 * @since 2.1.7
+	 * @return bool
+	 */
+	protected function uses_individual_widget_styles() {
+		$post_id = $this->get_dependency_post_id();
+
+		if ( ! $post_id ) {
+			return true;
+		}
+
+		return ! Cache_Manager::should_enqueue( $post_id );
+	}
+
+	/**
+	 * Document that owns the widget currently being rendered.
+	 *
+	 * @since 2.1.7
+	 * @return int
+	 */
+	protected function get_dependency_post_id() {
+		$documents = zyreladdons_elementor()->documents;
+
+		if ( $documents ) {
+			$document = $documents->get_current();
+
+			if ( $document ) {
+				return (int) $document->get_main_id();
+			}
+		}
+
+		return (int) get_the_ID();
+	}
+
+	/**
+	 * Stylesheet handles declared for this widget in the widgets map.
+	 *
+	 * @since 2.1.7
+	 * @return string[]
+	 */
+	protected function get_mapped_style_handles() {
+		$map = Widgets_Manager::get_the_widget_map( $this->get_widget_map_key() );
+		$handles = [];
+
+		if ( empty( $map ) || ! is_array( $map ) ) {
+			return $handles;
+		}
+
+		if ( ! empty( $map['css'] ) && is_array( $map['css'] ) ) {
+			foreach ( $map['css'] as $stylesheet ) {
+				if ( $stylesheet ) {
+					$handles[] = 'zyreladdons-' . $stylesheet;
+				}
+			}
+		}
+
+		if ( ! empty( $map['libs']['css'] ) && is_array( $map['libs']['css'] ) ) {
+			foreach ( $map['libs']['css'] as $handle ) {
+				if ( $handle ) {
+					$handles[] = $handle;
+				}
+			}
+		}
+
+		return $handles;
 	}
 
 	/**
@@ -244,7 +383,7 @@ abstract class Base extends Widget_Base {
 								'condition' => [
 									$control_name => [ 'underline', 'overline', 'line-through' ],
 								],
-							]		
+							]
 						);
 
 						// Offset
@@ -260,7 +399,7 @@ abstract class Base extends Widget_Base {
 								'condition' => [
 									$control_name => [ 'underline' ],
 								],
-							]		
+							]
 						);
 						break;
 
@@ -363,7 +502,7 @@ abstract class Base extends Widget_Base {
 						$control_args = [
 							'name'           => $control_name,
 							'label'          => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Background', 'zyre-elementor-addons' ),
-							'types'          => ! empty( $values['types'] ) && is_array( $values['types'] ) ? $values['types'] : ['classic', 'gradient'],
+							'types'          => ! empty( $values['types'] ) && is_array( $values['types'] ) ? $values['types'] : [ 'classic', 'gradient' ],
 							'exclude'        => isset( $values['exclude'] ) && is_array( $values['exclude'] ) ? $values['exclude'] : [ 'image' ],
 							'fields_options' => ! empty( $values['fields_options'] ) && is_array( $values['fields_options'] ) ? $values['fields_options'] : [],
 							'selector'       => ! empty( $values['selector'] ) ? $values['selector'] : $selector,
@@ -410,7 +549,7 @@ abstract class Base extends Widget_Base {
 						if ( ! empty( $values['separator'] ) ) {
 							$control_args['separator'] = $values['separator'];
 						}
-						if ( isset( $values['responsive'] ) && $values['responsive'] === true ) {
+						if ( isset( $values['responsive'] ) && true === $values['responsive'] ) {
 							$this->add_responsive_control( $control_name, $control_args );
 						} else {
 							$this->add_control( $control_name, $control_args );
@@ -710,13 +849,13 @@ abstract class Base extends Widget_Base {
 					case 'height_2':
 					case 'min_height':
 						$priority = isset( $values['priority'] ) && true === $values['priority'] ? ' !important' : '';
-						$allowed_props = ['height', 'min-height', 'max-height'];
+						$allowed_props = [ 'height', 'min-height', 'max-height' ];
 						$css_property = ! empty( $values['css_property'] ) && in_array( $values['css_property'], $allowed_props, true ) ? $values['css_property'] : 'height';
 						$control_args = [
 							'label'       => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Height', 'zyre-elementor-addons' ),
 							'description' => ! empty( $values['description'] ) ? esc_html( $values['description'] ) : '',
-							'size_units'  => ! empty( $values['size_units'] ) ? $values['size_units'] : ['px', '%', 'em', 'rem', 'vh', 'custom'],
-							'default'     => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : ['unit' => 'px'],
+							'size_units'  => ! empty( $values['size_units'] ) ? $values['size_units'] : [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
+							'default'     => isset( $values['default'] ) && is_array( $values['default'] ) ? $values['default'] : [ 'unit' => 'px' ],
 							'range'       => ! empty( $values['range'] ) ? $values['range'] : [
 								'px'  => [
 									'max' => 1000,
@@ -1242,7 +1381,7 @@ abstract class Base extends Widget_Base {
 							],
 							'type'        => Controls_Manager::SLIDER,
 							'selectors'   => [
-								! empty( $values['selector'] ) ? $values['selector'] : $selector => "transform: scale({{SIZE}});",
+								! empty( $values['selector'] ) ? $values['selector'] : $selector => 'transform: scale({{SIZE}});',
 							],
 							'condition'   => ! empty( $values['condition'] ) && is_array( $values['condition'] ) ? $values['condition'] : $condition,
 						];
@@ -1351,7 +1490,7 @@ abstract class Base extends Widget_Base {
 							'label'       => ! empty( $values['label'] ) ? esc_html( $values['label'] ) : esc_html__( 'Horizontal Offset', 'zyre-elementor-addons' ),
 							'description' => ! empty( $values['description'] ) ? esc_html( $values['description'] ) : '',
 							'type'        => Controls_Manager::SLIDER,
-							'size_units'  => ! empty( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : ['%', 'px', 'vw', 'custom'],
+							'size_units'  => ! empty( $values['size_units'] ) && is_array( $values['size_units'] ) ? $values['size_units'] : [ '%', 'px', 'vw', 'custom' ],
 							'range'       => ! empty( $values['range'] ) && is_array( $values['range'] ) ? $values['range'] : [
 								'%'  => [
 									'min' => -100,

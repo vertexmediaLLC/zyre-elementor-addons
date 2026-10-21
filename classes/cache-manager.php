@@ -158,11 +158,17 @@ class Cache_Manager {
 	 * @param int $post_id The ID of the post.
 	 */
 	public static function enqueue( $post_id ) {
+		$assets_cache = new Assets_Cache( $post_id, self::$widgets_cache );
+
+		// Header, footer, and mega-menu documents enqueue separately when they contain widgets.
+		if ( ! $assets_cache->get_widgets_cache()->has() ) {
+			return;
+		}
+
 		wp_enqueue_style( 'zyreladdons-global-vars' );
 		wp_enqueue_style( 'zyreladdons-global' );
 		wp_enqueue_script( 'zyreladdons' );
 
-		$assets_cache = new Assets_Cache( $post_id, self::$widgets_cache );
 		$assets_cache->enqueue_libraries();
 		$assets_cache->enqueue();
 		self::enqueue_fa5_fonts( $post_id );

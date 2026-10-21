@@ -468,10 +468,18 @@ function _checkIfArray(r) {
   }
 
   function saveConditions() {
+    // Legacy Elementor publish button (removed in newer top-bar UI). Optional only.
     var $elBtn = document.getElementById(
       "elementor-panel-saver-button-publish",
     );
-    $elBtn.classList.add("elementor-button-state");
+    var $saveBtn = document.getElementById("zyre-template-save-data");
+    if ($elBtn) {
+      $elBtn.classList.add("elementor-button-state");
+    }
+    if ($saveBtn) {
+      $saveBtn.classList.add("elementor-button-state");
+      $saveBtn.disabled = true;
+    }
     postId = elementor.config.document.id;
     jQuery.ajax({
       url: ajaxurl,
@@ -505,10 +513,16 @@ function _checkIfArray(r) {
           }
         }
       },
+      complete: function complete() {
+        if ($elBtn) {
+          $elBtn.classList.remove("elementor-button-state");
+        }
+        if ($saveBtn) {
+          $saveBtn.classList.remove("elementor-button-state");
+          $saveBtn.disabled = false;
+        }
+      },
     });
-    setTimeout(function () {
-      $elBtn.classList.remove("elementor-button-state");
-    }, 500);
   }
 
   elementor.saver.on("after:save", function (data) {

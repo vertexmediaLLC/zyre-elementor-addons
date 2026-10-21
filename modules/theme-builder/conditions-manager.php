@@ -73,7 +73,7 @@ class Conditions_Manager {
 		if ( 'front_page' === $name ) {
 			return is_front_page();
 		}
-		
+
 		return apply_filters( 'zyreladdons/conditions/check_wp_page', false, $name, $sub_id );
 	}
 
@@ -163,7 +163,7 @@ class Conditions_Manager {
 				$sub_id = $parsed_condition['sub_id'];
 
 				$is_include = 'include' === $include;
-				
+
 				$condition_pass = $this->check_name( $name );
 
 				if ( $condition_pass && $sub_name ) {
@@ -211,6 +211,8 @@ class Conditions_Manager {
 		foreach ( $theme_templates_ids as $theme_template_id => $priority ) {
 			$documents[] = $theme_template_id;
 		}
+
+		$this->location_cache[ $location ] = $documents;
 
 		return $documents;
 	}
@@ -295,15 +297,15 @@ class Conditions_Manager {
 		$all_cond_list = self::initial_conditions() + self::archive_conditions() + $tmp_singular;
 		$all_cond_list = apply_filters( 'zyreladdons/conditions/all_conditions_list', $all_cond_list );
 
-		unset($all_cond_list['']);
+		unset( $all_cond_list[''] );
 
-		foreach ($all_cond_list as $key => $item) {
-			if (isset($item['conditions']) && is_array($item['conditions'])) {
+		foreach ( $all_cond_list as $key => $item ) {
+			if ( isset( $item['conditions'] ) && is_array( $item['conditions'] ) ) {
 				$all_cond_list += $item['conditions'];
-				unset($all_cond_list[$key]);
+				unset( $all_cond_list[ $key ] );
 			}
 		}
-		
+
 		return $all_cond_list;
 	}
 
@@ -337,7 +339,7 @@ class Conditions_Manager {
 			throw new Exception( esc_html__( 'Unauthorized request', 'zyre-elementor-addons' ) );
 		}
 
-		$nonce = sanitize_text_field( wp_unslash( $nonce ?: $_GET['nonce'] ) );
+		$nonce = sanitize_text_field( wp_unslash( $nonce ? $nonce : $_GET['nonce'] ) );
 
 		if ( ! wp_verify_nonce( $nonce, 'zyreladdons_editor_nonce' ) ) {
 			throw new Exception( esc_html__( 'Invalid request', 'zyre-elementor-addons' ) );
@@ -389,7 +391,7 @@ class Conditions_Manager {
 
 	private function process_post() {
 		$post_type  = sanitize_text_field( wp_unslash( $_GET['object_term'] ?? 'any' ) );
-    	$query_term = sanitize_text_field( wp_unslash( $_GET['q'] ?? '' ) );
+		$query_term = sanitize_text_field( wp_unslash( $_GET['q'] ?? '' ) );
 
 		$args = [
 			'post_type'        => $post_type,
@@ -436,7 +438,7 @@ class Conditions_Manager {
 
 	public function process_term() {
 		$term_taxonomy = sanitize_text_field( wp_unslash( $_GET['object_term'] ?? '' ) );
-    	$query_term    = sanitize_text_field( wp_unslash( $_GET['q'] ?? '' ) );
+		$query_term    = sanitize_text_field( wp_unslash( $_GET['q'] ?? '' ) );
 
 		if ( empty( $term_taxonomy ) ) {
 			throw new Exception( esc_html__( 'Invalid taxonomy', 'zyre-elementor-addons' ) );
@@ -453,7 +455,7 @@ class Conditions_Manager {
 		}
 
 		// remove prefixes
-		foreach ( ['child_of_', 'any_child_of_', 'in_'] as $prefix ) {
+		foreach ( [ 'child_of_', 'any_child_of_', 'in_' ] as $prefix ) {
 			if ( strpos( $taxonomy, $prefix ) === 0 ) {
 				$taxonomy = substr( $taxonomy, strlen( $prefix ) );
 				break;
@@ -462,7 +464,7 @@ class Conditions_Manager {
 
 		// remove suffix
 		if ( str_ends_with( $taxonomy, '_children' ) ) {
-			$taxonomy = substr( $taxonomy, 0, -strlen('_children') );
+			$taxonomy = substr( $taxonomy, 0, -strlen( '_children' ) );
 		}
 
 		$args = [
@@ -635,7 +637,7 @@ class Conditions_Manager {
 				// Exclude current template's previously saved conditions from duplicate check.
 				if ( isset( $all_extits_condition[ $template_type ] ) && ! empty( $exits_conditions ) && is_array( $exits_conditions ) ) {
 					$current_template_conditions = array_map(
-						function( $value ) {
+						function ( $value ) {
 							return substr( strstr( $value, '/' ), strlen( '/' ) );
 						},
 						$exits_conditions
@@ -643,7 +645,7 @@ class Conditions_Manager {
 
 					$all_extits_condition[ $template_type ] = array_filter(
 						$all_extits_condition[ $template_type ],
-						function( $value ) use ( $current_template_conditions ) {
+						function ( $value ) use ( $current_template_conditions ) {
 							$normalized = substr( strstr( $value, '/' ), strlen( '/' ) );
 							return ! in_array( $normalized, $current_template_conditions, true );
 						}
@@ -746,7 +748,7 @@ class Conditions_Manager {
 
 					<div class="zyre-tce-type">
 						<select
-                            id="type-<?php echo esc_attr( $uuid ); ?>"
+							id="type-<?php echo esc_attr( $uuid ); ?>"
 							data-id="type-<?php echo esc_attr( $uuid ); ?>"
 							data-parent="<?php echo esc_attr( $uuid ); ?>"
 							data-setting="type"
@@ -800,7 +802,7 @@ class Conditions_Manager {
 						</select>
 					</div>
 
-                    <div class="zyre-tce-sub_id<?php echo $sub_id ? '' : ' zyre-d-none'; ?>">
+					<div class="zyre-tce-sub_id<?php echo $sub_id ? '' : ' zyre-d-none'; ?>">
 						<select
 							id="sub_id-<?php echo esc_attr( $uuid ); ?>"
 							data-id="sub_id-<?php echo esc_attr( $uuid ); ?>"

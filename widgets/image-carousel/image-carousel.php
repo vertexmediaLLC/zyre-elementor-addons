@@ -37,7 +37,11 @@ class Image_Carousel extends Base {
 	}
 
 	public function get_style_depends(): array {
-		return [ 'e-swiper' ];
+		return array_merge( parent::get_style_depends(), [ 'e-swiper' ] );
+	}
+
+	public function get_script_depends(): array {
+		return array_merge( parent::get_script_depends(), [ 'swiper' ] );
 	}
 
 	protected function register_content_controls() {

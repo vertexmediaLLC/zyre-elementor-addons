@@ -13,7 +13,7 @@ class Module {
 
 	public $dir;
 	public $url;
-	public $iconManager;
+	public $icon_manager;
 
 	public static $menuitem_settings_key = 'zyreladdons_menuitem_settings';
 	public static $megamenu_settings_key = 'zyreladdons_megamenu_settings';
@@ -44,16 +44,17 @@ class Module {
 		Cpt::flush_rewrites();
 		new Options();
 
+		add_action( 'elementor/editor/after_save', [ __CLASS__, 'cache_nested_menu_flag' ], 10, 2 );
+
 		// AJAX Handlers
-		add_action( 'wp_ajax_zyreladdons_save_menuitem_settings', [__CLASS__, 'save_menuitem_settings'] );
-		add_action( 'wp_ajax_zyreladdons_get_menuitem_settings', [__CLASS__, 'get_menuitem_settings'] );
-		add_action( 'wp_ajax_zyreladdons_get_content_editor', [__CLASS__, 'get_content_editor'] );
+		add_action( 'wp_ajax_zyreladdons_save_menuitem_settings', [ __CLASS__, 'save_menuitem_settings' ] );
+		add_action( 'wp_ajax_zyreladdons_get_menuitem_settings', [ __CLASS__, 'get_menuitem_settings' ] );
+		add_action( 'wp_ajax_zyreladdons_get_content_editor', [ __CLASS__, 'get_content_editor' ] );
 	}
 
 	public function include_files() {
 		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/cpt.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/options.php';
-		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/icon-list.php';
 		include_once ZYRELADDONS_DIR_PATH . 'modules/mega-menu/walker.php';
 	}
 
@@ -115,7 +116,7 @@ class Module {
 			wp_enqueue_script(
 				'zyreladdons-aesthetic-icon-picker',
 				ZYRELADDONS_DIR_URL . 'modules/mega-menu/assets/aesthetic-icon-picker/js/aesthetic-icon-picker.js',
-				array( 'jquery' ),
+				[ 'jquery' ],
 				ZYRELADDONS_VERSION,
 				true
 			);
@@ -123,7 +124,7 @@ class Module {
 			wp_enqueue_script(
 				'zyreladdons-jquery-modal',
 				ZYRELADDONS_DIR_URL . 'modules/mega-menu/assets/jquery-modal/jquery.modal.min.js',
-				array( 'jquery' ),
+				[ 'jquery' ],
 				'0.9.1',
 				true
 			);
@@ -131,7 +132,7 @@ class Module {
 			wp_enqueue_script(
 				'zyreladdons-megamenu',
 				ZYRELADDONS_DIR_URL . 'modules/mega-menu/assets/js/megamenu.js',
-				array( 'jquery', 'wp-color-picker' ),
+				[ 'jquery', 'wp-color-picker' ],
 				ZYRELADDONS_VERSION,
 				true
 			);
@@ -148,7 +149,7 @@ class Module {
 		}
 	}
 
-	function get_menu_items() {
+	public function get_menu_items() {
 
 		$args = [
 			'post_type'   => 'nav_menu_item',
@@ -158,7 +159,7 @@ class Module {
 		];
 
 		$items = new \WP_Query( $args );
-		$menuItems = [];
+		$menu_items = [];
 
 		foreach ( $items->posts as $item ) {
 
@@ -168,12 +169,12 @@ class Module {
 				continue;
 			}
 
-			if ( ! empty( $data['menu_enable'] ) && $data['menu_enable'] == 1 ) {
-				$menuItems[] = "#menu-item-" . $item;
+			if ( ! empty( $data['menu_enable'] ) && 1 === $data['menu_enable'] ) {
+				$menu_items[] = '#menu-item-' . $item;
 			}
 		}
 
-		return $menuItems;
+		return $menu_items;
 	}
 
 	private static function validate() {
@@ -201,7 +202,7 @@ class Module {
 		if ( empty( $_POST['settings'] ) || ! is_array( $_POST['settings'] ) ) {
 			wp_send_json_error( [ 'message' => __( 'Invalid data', 'zyre-elementor-addons' ) ] );
 		}
-		
+
 		$settings = zyreladdons_sanitize_array_recursively( $_POST['settings'] );
 
 		$menu_item_id = absint( $settings['menu_id'] );
@@ -235,9 +236,9 @@ class Module {
 				'menu_badge_text'                 => '',
 				'menu_badge_color'                => '',
 				'menu_badge_background'           => '',
-				"menu_badge_enable_arrow"         => '',
+				'menu_badge_enable_arrow'         => '',
 				'menu_badge_radius'               => '',
-				'megamenu_width'             => '',
+				'megamenu_width'                  => '',
 				'mobile_submenu_content_type'     => '',
 				'vertical_megamenu_position_type' => '',
 				'megamenu_width_type'             => '',
@@ -286,6 +287,10 @@ class Module {
 			update_post_meta( $builder_post_id, '_wp_page_template', 'elementor_canvas' );
 		}
 
+		if ( $builder_post_id && ! is_wp_error( $builder_post_id ) && $content_key ) {
+			update_post_meta( $content_key, '_zyreladdons_mm_content_id', $builder_post_id );
+		}
+
 		$url = add_query_arg(
 			[
 				'post'   => $builder_post_id,
@@ -297,5 +302,65 @@ class Module {
 		wp_send_json_success( [
 			'url' => $url,
 		] );
+	}
+
+	/**
+	 * Remember whether mega menu content contains the blocked navigation widget.
+	 *
+	 * @param int   $post_id Saved post ID.
+	 * @param array $data    Elementor editor data.
+	 * @return void
+	 */
+	public static function cache_nested_menu_flag( $post_id, $data ) {
+		if ( 'zyreladdons_mm' !== get_post_type( $post_id ) ) {
+			return;
+		}
+
+		$widget_used = [];
+		$templates = [];
+
+		if ( is_array( $data ) ) {
+			array_walk_recursive(
+				$data,
+				function ( $value, $key ) use ( &$widget_used, &$templates ) {
+					if ( 'template_id' === $key ) {
+						$templates[] = $value;
+					}
+
+					if ( 'widgetType' === $key ) {
+						$widget_used[] = $value;
+					}
+				}
+			);
+		}
+
+		if ( $templates && class_exists( '\Elementor\Plugin' ) ) {
+			$elementor = \Elementor\Plugin::instance();
+
+			foreach ( $templates as $template ) {
+				$document = $elementor->documents->get_doc_for_frontend( $template );
+
+				if ( ! $document || ! $document->is_built_with_elementor() ) {
+					continue;
+				}
+
+				$template_data = $document->get_elements_data();
+
+				if ( empty( $template_data ) || ! is_array( $template_data ) ) {
+					continue;
+				}
+
+				array_walk_recursive(
+					$template_data,
+					function ( $value, $key ) use ( &$widget_used ) {
+						if ( 'widgetType' === $key ) {
+							$widget_used[] = $value;
+						}
+					}
+				);
+			}
+		}
+
+		update_post_meta( $post_id, '_zyreladdons_mm_nested_nav', in_array( 'zy-nav-menu', $widget_used, true ) ? '1' : '0' );
 	}
 }

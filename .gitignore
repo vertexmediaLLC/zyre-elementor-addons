@@ -23,3 +23,7 @@ readme.md
 Thumbs.db
 .idea/
 .vscode/
+
+# Ignore .md files
+PERFORMANCE-AUDIT.md
+PERFORMANCE-CHANGELOG.md

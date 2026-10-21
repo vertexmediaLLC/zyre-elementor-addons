@@ -10,7 +10,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 	/**
 	 * @var mixed
 	 */
-	public $menu_Settings;
+	public $menu_settings;
 
 	/**
 	 * @param $menu_item_id
@@ -18,27 +18,27 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 	public function get_item_meta( $menu_item_id ) {
 
 		$meta_key = Mega_Menu::$menuitem_settings_key;
-		$data     = get_post_meta( $menu_item_id, $meta_key, true );
+		$data = get_post_meta( $menu_item_id, $meta_key, true );
 
 		if ( ! is_array( $data ) ) {
 			$data = [];
 		}
 
 		$default = [
-			"menu_id"                         => null,
-			"menu_has_child"                  => '',
-			"menu_enable"                     => 0,
-			"menu_icon"                       => '',
-			"menu_icon_color"                 => '',
-			"menu_icon_size"                  => '',
-			"menu_badge_text"                 => '',
-			"menu_badge_color"                => '',
-			"menu_badge_background"           => '',
-			"menu_badge_enable_arrow"         => '',
-			"mobile_submenu_content_type"     => 'builder_content',
-			"vertical_megamenu_position_type" => 'position_relative',
-			"megamenu_width"                  => '',
-			"megamenu_width_type"             => 'custom_width',
+			'menu_id'                         => null,
+			'menu_has_child'                  => '',
+			'menu_enable'                     => 0,
+			'menu_icon'                       => '',
+			'menu_icon_color'                 => '',
+			'menu_icon_size'                  => '',
+			'menu_badge_text'                 => '',
+			'menu_badge_color'                => '',
+			'menu_badge_background'           => '',
+			'menu_badge_enable_arrow'         => '',
+			'mobile_submenu_content_type'     => 'builder_content',
+			'vertical_megamenu_position_type' => 'position_relative',
+			'megamenu_width'                  => '',
+			'megamenu_width_type'             => 'custom_width',
 		];
 
 		return array_merge( $default, $data );
@@ -52,7 +52,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 		$menu_slug = ( ( ( gettype( $menu_slug ) == 'object' ) && ( isset( $menu_slug->slug ) ) ) ? $menu_slug->slug : $menu_slug );
 
 		$cache_key = 'zyreladdons_mm_data_' . $menu_slug;
-		$cached    = wp_cache_get( $cache_key );
+		$cached = wp_cache_get( $cache_key );
 		if ( false !== $cached ) {
 			return $cached;
 		}
@@ -60,18 +60,18 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 		$return = 0;
 
 		$settings = Options::get_megamenu_settings( [] );
-		$term     = get_term_by( 'slug', $menu_slug, 'nav_menu' );
+		$term = get_term_by( 'slug', $menu_slug, 'nav_menu' );
 
 		if (
-			isset($term->term_id)
+			isset( $term->term_id )
 			&& isset( $settings[ 'menu_location_' . $term->term_id ] )
-			&& $settings[ 'menu_location_' . $term->term_id ]['is_enabled'] == '1'
+			&& '1' == $settings[ 'menu_location_' . $term->term_id ]['is_enabled']
 		) {
 
 			$return = 1;
 		}
 
-		wp_cache_set($cache_key, $return);
+		wp_cache_set( $cache_key, $return );
 
 		return $return;
 	}
@@ -81,7 +81,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 	 * @param $menu
 	 */
 	public function is_megamenu_item( $item_meta, $menu ) {
-		if ( $this->is_megamenu( $menu ) == 1 && $item_meta['menu_enable'] == 1 && class_exists( 'Elementor\Plugin' ) ) {
+		if ( 1 == $this->is_megamenu( $menu ) && 1 == $item_meta['menu_enable'] && class_exists( 'Elementor\Plugin' ) ) {
 			return true;
 		}
 
@@ -100,7 +100,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 	 * @param int    $depth  Depth of menu item. Used for padding.
 	 * @param array  $args   An array of arguments. @see wp_nav_menu()
 	 */
-	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+	public function start_lvl( &$output, $depth = 0, $args = [] ) {
 		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul class=\"sub-menu\">\n";
 	}
@@ -116,8 +116,8 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 	 * @param int    $depth  Depth of menu item. Used for padding.
 	 * @param array  $args   An array of arguments. @see wp_nav_menu()
 	 */
-	public function end_lvl(&$output, $depth = 0, $args = array()) {
-		$indent = str_repeat("\t", $depth);
+	public function end_lvl( &$output, $depth = 0, $args = [] ) {
+		$indent = str_repeat( "\t", $depth );
 		$output .= "$indent</ul>\n";
 	}
 	/**
@@ -134,7 +134,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 	 * @param array  $args   An array of arguments. @see wp_nav_menu()
 	 * @param int    $id     Current item ID.
 	 */
-	public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+	public function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$classes = empty( $item->classes ) ? [] : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
@@ -156,33 +156,33 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 
 		// New
 		$class_names .= ' nav-item';
-		$item_meta        = $this->get_item_meta($item->ID);
+		$item_meta = $this->get_item_meta( $item->ID );
 		$is_megamenu_item = $this->is_megamenu_item( $item_meta, $args->menu );
 
-		if ( in_array( 'menu-item-has-children', $classes ) || $is_megamenu_item == true ) {
+		if ( in_array( 'menu-item-has-children', $classes ) || true === $is_megamenu_item ) {
 			$class_names .= ' ' . $item_meta['vertical_megamenu_position_type'] . ' zy-dropdown-menu-' . $item_meta['megamenu_width_type'] . '';
 		}
 
-		if ( $is_megamenu_item == true ) {
+		if ( true === $is_megamenu_item ) {
 			$class_names .= ' zy-megamenu-has';
 		}
 
-		if ( $item->ID == $item_meta['menu_id'] && $item_meta['mobile_submenu_content_type'] == 'builder_content' ) {
+		if ( $item->ID == $item_meta['menu_id'] && 'builder_content' === $item_meta['mobile_submenu_content_type'] ) {
 			$class_names .= ' zy-mobile-builder-content';
 		}
 
-		if ( $item->ID == $item_meta['menu_id'] && $item_meta['mobile_submenu_content_type'] == 'submenu_list' ) {
+		if ( $item->ID == $item_meta['menu_id'] && 'submenu_list' === $item_meta['mobile_submenu_content_type'] ) {
 			$class_names .= ' zy-mobile-submenu-items';
 		}
 
 		// Add Icon Class for Megamenu Item
 		if ( $this->is_megamenu( $args->menu ) == 1 ) {
-			if ( $item_meta['menu_icon'] != '' ) {
+			if ( '' != $item_meta['menu_icon'] ) {
 				$class_names .= ' menu-item-has-icon';
 			}
 		}
 
-		$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		/**
 		 * Filter the ID applied to a menu item's list item element.
@@ -197,7 +197,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 		 * @param int    $depth   Depth of menu item. Used for padding.
 		 */
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
-		$id = $id ? ' id="' . esc_attr($id) . '"' : '';
+		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 		// New
 		$data_attr = '';
 		switch ( $item_meta['megamenu_width_type'] ) {
@@ -210,7 +210,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 				break;
 
 			case 'custom_width':
-				$data_attr = $item_meta['megamenu_width'] === '' ? esc_attr( ' data-megamenu-width=750px' ) : esc_attr( ' data-megamenu-width=' . $item_meta['megamenu_width'] . '' );
+				$data_attr = '' === $item_meta['megamenu_width'] ? esc_attr( ' data-megamenu-width=750px' ) : esc_attr( ' data-megamenu-width=' . $item_meta['megamenu_width'] . '' );
 				break;
 
 			default:
@@ -219,26 +219,26 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 		}
 		//
 		$output .= $indent . '<li' . $id . $class_names . $data_attr . '>';
-		$atts           = array();
-		$atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
-		$atts['target'] = !empty($item->target) ? $item->target : '';
-		$atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
-		$atts['href']   = !empty($item->url) ? $item->url : '';
+		$atts = [];
+		$atts['title'] = ! empty( $item->attr_title ) ? $item->attr_title : '';
+		$atts['target'] = ! empty( $item->target ) ? $item->target : '';
+		$atts['rel'] = ! empty( $item->xfn ) ? $item->xfn : '';
+		$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 
 		$submenu_indicator = '';
 
 		// New
-		if ( $depth === 0 ) {
+		if ( 0 === $depth ) {
 			$atts['class'] = 'zy-menu-nav-link';
 		}
-		if ( $depth === 0 && ( in_array( 'menu-item-has-children', $classes ) || ( $is_megamenu_item == true ) ) ) {
+		if ( 0 === $depth && ( in_array( 'menu-item-has-children', $classes ) || ( true === $is_megamenu_item ) ) ) {
 			$atts['class'] .= ' zy-menu-dropdown-toggle';
 		}
-		if ( ! empty( $args->sub_indicator ) && ( in_array( 'menu-item-has-children', $classes ) || ( $is_megamenu_item == true ) || ( $is_megamenu_item == true && $item_meta['mobile_submenu_content_type'] == 'builder_content' ) ) ) {
+		if ( ! empty( $args->sub_indicator ) && ( in_array( 'menu-item-has-children', $classes ) || ( true === $is_megamenu_item ) || ( true === $is_megamenu_item && 'builder_content' === $item_meta['mobile_submenu_content_type'] ) ) ) {
 			$submenu_indicator .= '<span class="submenu-indicator">' . $args->sub_indicator . '</span>';
 		}
 		if ( $depth > 0 ) {
-			$manual_class = array_values( $classes )[0] . ' ' . 'dropdown-item';
+			$manual_class  = array_values( $classes )[0] . ' dropdown-item';
 			$atts['class'] = $manual_class;
 		}
 		if ( in_array( 'current-menu-item', $item->classes ) ) {
@@ -280,7 +280,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 
 		if ( $this->is_megamenu( $args->menu ) == 1 ) {
 			// add badge text
-			if ( $item_meta['menu_badge_text'] != '' ) {
+			if ( '' !== $item_meta['menu_badge_text'] ) {
 				$badge_styles = [];
 				if ( $item_meta['menu_badge_background'] ) {
 					$badge_styles['background'] = $item_meta['menu_badge_background'];
@@ -288,7 +288,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 				if ( $item_meta['menu_badge_color'] ) {
 					$badge_styles['color'] = $item_meta['menu_badge_color'];
 				}
-				if ( $item_meta['menu_badge_radius'] != '' ) {
+				if ( '' !== $item_meta['menu_badge_radius'] ) {
 					$rad = explode( ',', $item_meta['menu_badge_radius'] );
 					if ( $rad[0] ) {
 						$badge_styles['border-top-left-radius'] = $rad[0] . 'px';
@@ -309,7 +309,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 					array_keys( $badge_styles ),
 					$badge_styles
 				) );
-				
+
 				$item_output .= '<span data-css="' . esc_attr( $badge_style ) . '" class="zy-menu-badge">' . $item_meta['menu_badge_text'];
 				if ( '1' === $item_meta['menu_badge_enable_arrow'] ) {
 					$badge_carret_style = ! empty( $badge_styles['background'] ) ? 'border-top-color:' . $badge_styles['background'] : '';
@@ -319,7 +319,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 			}
 
 			// add menu icon & style
-			if ( $item_meta['menu_icon'] != '' ) {
+			if ( '' !== $item_meta['menu_icon'] ) {
 
 				$fa_icon_atts = [ 'aria-hidden' => 'true' ];
 				$fa_font_size = '';
@@ -334,6 +334,8 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 					$icon_styles['font-size'] = absint( $item_meta['menu_icon_size'] ) . 'px';
 					$fa_font_size = 'data-css=font-size:' . absint( $item_meta['menu_icon_size'] ) . 'px';
 				}
+
+				$this->enqueue_menu_icon_font( $item_meta['menu_icon'] );
 
 				// If font-awesome icon found
 				if ( preg_match( '/\b(fas|far|fab|fal|fat)\b\s+fa-[\w-]+/', $item_meta['menu_icon'], $match ) ) {
@@ -364,7 +366,7 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 
 		$title = $item->title;
 
-		if( isset( $item_meta['menu_item_text_hide'] ) && $item_meta['menu_item_text_hide'] ) {
+		if ( isset( $item_meta['menu_item_text_hide'] ) && $item_meta['menu_item_text_hide'] ) {
 			$title = '';
 		}
 
@@ -408,77 +410,23 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 	 * @param int    $depth  Depth of page. Not Used.
 	 * @param array  $args   An array of arguments. @see wp_nav_menu()
 	 */
-	public function end_el(&$output, $item, $depth = 0, $args = array()) {
-		if ($depth === 0) {
+	public function end_el( &$output, $item, $depth = 0, $args = [] ) {
+		if ( 0 === $depth ) {
 			$args = (object) $args;
 			if ( $this->is_megamenu( $args->menu ) == 1 ) {
 				$item_meta = $this->get_item_meta( $item->ID );
 
-				if ( $item_meta['menu_enable'] == 1 && class_exists( 'Elementor\Plugin' ) ) {
-					$builder_post_title = 'zyreladdons-mm-content-' . $item->ID;
-
-					$query = new \WP_Query(
-						[
-							'post_type'              => 'zyreladdons_mm',
-							'title'                  => $builder_post_title,
-							'post_status'            => 'all',
-							'posts_per_page'         => 1,
-							'no_found_rows'          => true,
-							'ignore_sticky_posts'    => true,
-							'update_post_term_cache' => false,
-							'update_post_meta_cache' => false,
-							'orderby'                => 'post_date ID',
-							'order'                  => 'ASC',
-						]
-					);
-
-					if ( ! empty( $query->post ) ) {
-						$builder_post = $query->post;
-					} else {
-						$builder_post = null;
-					}
+				if ( 1 == $item_meta['menu_enable'] && class_exists( 'Elementor\Plugin' ) ) {
+					$builder_post = $this->get_builder_post( $item->ID );
 
 					$output .= '<ul class="sub-menu zy-megamenu-panel">';
 
-					if ( $builder_post != null ) {
+					if ( null !== $builder_post ) {
 						// Elementor Instance
 						$elementor = \Elementor\Plugin::instance();
 
-						// Check if using elementor
-						$data = $this->query_elementor( $elementor, $builder_post->ID );
-
-						// List all Used Widgets
-						$widgetUsed = [];
-						$templates = [];
-						if ( ! empty( $data ) && is_array( $data ) ) {
-							array_walk_recursive( $data, function ( $v, $k ) use ( &$widgetUsed, &$templates ) {
-								if ( $k == 'template_id' ) {
-									$templates[] = $v;
-								}
-								if ( $k == 'widgetType' ) {
-									$widgetUsed[] = $v;
-								}
-							} );
-						}
-
-						if ( $templates ) {
-							foreach ( $templates as $template ) {
-								$tplData = $this->query_elementor( $elementor, $template );
-								if ( ! empty( $tplData ) && is_array( $tplData ) ) {
-									array_walk_recursive( $tplData, function ( $v, $k ) use ( &$widgetUsed, &$templates ) {
-										if ( $k == 'template_id' ) {
-											$templates[] = $v;
-										}
-										if ( $k == 'widgetType' ) {
-											$widgetUsed[] = $v;
-										}
-									} );
-								}
-							}
-						}
-
 						// Check For MegaMenu & Avoid Recursion
-						if ( in_array( 'zy-nav-menu', $widgetUsed ) ) {
+						if ( $this->builder_contains_blocked_nav( $elementor, $builder_post->ID ) ) {
 							$output .= '<div class="elementor-alert elementor-alert-danger">' . esc_html__( 'Invalid Data: You can\'t use Happy Mega Menu inside a Happy Mega Menu.', 'zyre-elementor-addons' ) . '</div>';
 						} else {
 							$output .= $elementor->frontend->get_builder_content_for_display( $builder_post->ID );
@@ -492,6 +440,154 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 			}
 			$output .= "</li>\n";
 		}
+	}
+
+	/**
+	 * Load Font Awesome when a menu item icon uses it.
+	 *
+	 * Elementor icon controls enqueue their own font. Menu-item icons are stored
+	 * as class names, so the stylesheet has to be requested here.
+	 *
+	 * @param string $icon_class Icon classes saved on the menu item.
+	 * @return void
+	 */
+	private function enqueue_menu_icon_font( $icon_class ) {
+		if ( ! is_string( $icon_class ) || '' === $icon_class ) {
+			return;
+		}
+
+		if ( ! preg_match( '/(?:^|\s)fa[\w-]*/', $icon_class ) ) {
+			return;
+		}
+
+		wp_enqueue_style( 'font-awesome' );
+
+		if ( ! preg_match( '/\b(fas|far|fab|fal|fat)\b/', $icon_class, $match ) || ! class_exists( '\Elementor\Plugin' ) ) {
+			return;
+		}
+
+		$map = [
+			'fas' => 'fa-solid',
+			'far' => 'fa-regular',
+			'fab' => 'fa-brands',
+			'fal' => 'fa-light',
+			'fat' => 'fa-thin',
+		];
+
+		$library = $map[ $match[1] ] ?? '';
+
+		if ( $library ) {
+			\Elementor\Plugin::instance()->frontend->enqueue_font( $library );
+		}
+	}
+
+	/**
+	 * Mega menu content post for a navigation item.
+	 *
+	 * Uses the stored post ID when it exists. Older items fall back to the title query.
+	 *
+	 * @param int $item_id Menu item ID.
+	 * @return \WP_Post|null
+	 */
+	private function get_builder_post( $item_id ) {
+		$stored_id = (int) get_post_meta( $item_id, '_zyreladdons_mm_content_id', true );
+
+		if ( $stored_id && 'zyreladdons_mm' === get_post_type( $stored_id ) ) {
+			$stored_post = get_post( $stored_id );
+
+			if ( $stored_post ) {
+				return $stored_post;
+			}
+		}
+
+		$builder_post_title = 'zyreladdons-mm-content-' . $item_id;
+		$query = new \WP_Query(
+			[
+				'post_type'              => 'zyreladdons_mm',
+				'title'                  => $builder_post_title,
+				'post_status'            => 'all',
+				'posts_per_page'         => 1,
+				'no_found_rows'          => true,
+				'ignore_sticky_posts'    => true,
+				'update_post_term_cache' => false,
+				'update_post_meta_cache' => false,
+				'orderby'                => 'post_date ID',
+				'order'                  => 'ASC',
+			]
+		);
+
+		if ( empty( $query->post ) ) {
+			return null;
+		}
+
+		update_post_meta( $item_id, '_zyreladdons_mm_content_id', $query->post->ID );
+
+		return $query->post;
+	}
+
+	/**
+	 * Whether mega menu content contains the blocked navigation widget.
+	 *
+	 * The result is stored on the content post. Missing meta uses the same scan as before.
+	 *
+	 * @param \Elementor\Plugin $elementor Elementor instance.
+	 * @param int               $post_id   Mega menu content post ID.
+	 * @return bool
+	 */
+	private function builder_contains_blocked_nav( $elementor, $post_id ) {
+		$flag = get_post_meta( $post_id, '_zyreladdons_mm_nested_nav', true );
+
+		if ( '1' === $flag || '0' === $flag ) {
+			return '1' === $flag;
+		}
+
+		$widget_used = [];
+		$templates = [];
+		$data = $this->query_elementor( $elementor, $post_id );
+
+		$this->collect_widget_types( $data, $widget_used, $templates );
+
+		if ( $templates ) {
+			foreach ( $templates as $template ) {
+				$template_data = $this->query_elementor( $elementor, $template );
+
+				if ( ! empty( $template_data ) && is_array( $template_data ) ) {
+					$this->collect_widget_types( $template_data, $widget_used, $templates );
+				}
+			}
+		}
+
+		$blocked = in_array( 'zy-nav-menu', $widget_used, true );
+		update_post_meta( $post_id, '_zyreladdons_mm_nested_nav', $blocked ? '1' : '0' );
+
+		return $blocked;
+	}
+
+	/**
+	 * Collect widget types and template IDs from Elementor data.
+	 *
+	 * @param mixed $data        Elementor elements.
+	 * @param array $widget_used Widget type names.
+	 * @param array $templates   Template IDs.
+	 * @return void
+	 */
+	private function collect_widget_types( $data, &$widget_used, &$templates ) {
+		if ( empty( $data ) || ! is_array( $data ) ) {
+			return;
+		}
+
+		array_walk_recursive(
+			$data,
+			function ( $value, $key ) use ( &$widget_used, &$templates ) {
+				if ( 'template_id' === $key ) {
+					$templates[] = $value;
+				}
+
+				if ( 'widgetType' === $key ) {
+					$widget_used[] = $value;
+				}
+			}
+		);
 	}
 
 	private function query_elementor( $elementor, $post_id ) {
