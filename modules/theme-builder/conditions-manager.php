@@ -27,6 +27,149 @@ class Conditions_Manager {
 		add_action( 'wp_ajax_zyreladdons_condition_update', [ $this, 'condition_update' ] );
 		add_action( 'wp_ajax_zyreladdons_condition_template_type', [ $this, 'get_template_type' ] );
 		add_action( 'wp_ajax_zyreladdons_condition_current', [ $this, 'get_current_condition' ] );
+
+		// Silent defaults on Elementor document save — never open the conditions modal from save.
+		add_action( 'elementor/document/after_save', [ $this, 'on_document_after_save' ], 10, 2 );
+	}
+
+	/**
+	 * Default display-condition string for a Theme Builder template type.
+	 *
+	 * Empty condition lists are not kept for header/footer/archive/single: document save
+	 * and an empty modal Save & Close re-apply these so templates remain usable.
+	 * Existing non-empty conditions are never overwritten. loop-template is excluded.
+	 *
+	 * @param string $template_type Template type from zyreladdons_library_type.
+	 * @return string|null Condition string (e.g. include/general) or null when N/A.
+	 */
+	public static function get_default_condition( $template_type ) {
+		$defaults = [
+			'header'  => 'include/general',
+			'footer'  => 'include/general',
+			'archive' => 'include/archive',
+			'single'  => 'include/singular',
+		];
+
+		return isset( $defaults[ $template_type ] ) ? $defaults[ $template_type ] : null;
+	}
+
+	/**
+	 * Whether saved display conditions are effectively empty.
+	 *
+	 * @param mixed $conditions Post meta value.
+	 * @return bool
+	 */
+	private function conditions_are_empty( $conditions ) {
+		if ( empty( $conditions ) || ! is_array( $conditions ) ) {
+			return true;
+		}
+
+		$filtered = array_filter(
+			$conditions,
+			static function ( $value ) {
+				return is_string( $value ) && '' !== trim( $value );
+			}
+		);
+
+		return empty( $filtered );
+	}
+
+	/**
+	 * Apply type defaults when a Theme Builder document is saved with no conditions.
+	 *
+	 * @param \Elementor\Core\Base\Document $document Document instance.
+	 * @param array                          $data     Saved data (unused).
+	 */
+	public function on_document_after_save( $document, $data ) {
+		unset( $data );
+
+		if ( ! is_object( $document ) || ! method_exists( $document, 'get_main_id' ) ) {
+			return;
+		}
+
+		$this->maybe_apply_default_conditions( (int) $document->get_main_id() );
+	}
+
+	/**
+	 * Persist default conditions when meta is empty. Fails soft on conflicts.
+	 *
+	 * @param int $template_id Template post ID.
+	 * @return bool True when defaults were written.
+	 */
+	public function maybe_apply_default_conditions( $template_id ) {
+		$template_id = absint( $template_id );
+
+		if ( ! $template_id || Module::POST_TYPE !== get_post_type( $template_id ) ) {
+			return false;
+		}
+
+		if ( ! current_user_can( 'edit_post', $template_id ) ) {
+			return false;
+		}
+
+		if ( wp_is_post_revision( $template_id ) || wp_is_post_autosave( $template_id ) ) {
+			return false;
+		}
+
+		$template_type = get_post_meta( $template_id, 'zyreladdons_library_type', true );
+		$default       = self::get_default_condition( $template_type );
+
+		if ( ! $default ) {
+			return false;
+		}
+
+		$existing = get_post_meta( $template_id, 'zyreladdons_display_cond', true );
+
+		if ( ! $this->conditions_are_empty( $existing ) ) {
+			return false;
+		}
+
+		$request_conditions = [ $default ];
+
+		if ( $this->would_duplicate_conditions( $template_type, $request_conditions, $existing ) ) {
+			// Conflict with another template of the same type — leave empty rather than force a bad state.
+			return false;
+		}
+
+		update_post_meta( $template_id, 'zyreladdons_display_cond', array_unique( $request_conditions ) );
+		$this->cache->regenerate();
+
+		return true;
+	}
+
+	/**
+	 * Duplicate/conflict check shared by AJAX update and silent defaults.
+	 *
+	 * @param string      $template_type       Template type.
+	 * @param array       $request_conditions  Incoming conditions.
+	 * @param array|mixed $existing_conditions Current meta (may be empty).
+	 * @return bool True when a conflicting condition exists.
+	 */
+	private function would_duplicate_conditions( $template_type, $request_conditions, $existing_conditions ) {
+		$merged_conditions = ! empty( $existing_conditions ) && is_array( $existing_conditions )
+			? array_diff( $request_conditions, $existing_conditions )
+			: $request_conditions;
+
+		$all_existing_conditions = $this->get_all_conditions();
+
+		if ( isset( $all_existing_conditions[ $template_type ] ) && ! empty( $existing_conditions ) && is_array( $existing_conditions ) ) {
+			$current_template_conditions = array_map(
+				static function ( $value ) {
+					return substr( strstr( $value, '/' ), strlen( '/' ) );
+				},
+				$existing_conditions
+			);
+
+			$all_existing_conditions[ $template_type ] = array_filter(
+				$all_existing_conditions[ $template_type ],
+				static function ( $value ) use ( $current_template_conditions ) {
+					$normalized = substr( strstr( $value, '/' ), strlen( '/' ) );
+					return ! in_array( $normalized, $current_template_conditions, true );
+				}
+			);
+		}
+
+		return $this->check_template_conditions( $template_type, $request_conditions, $merged_conditions, $all_existing_conditions );
 	}
 
 	protected function parse_condition( $condition ) {
@@ -626,33 +769,19 @@ class Conditions_Manager {
 
 			$request_conditions = isset( $_POST['conds'] ) ? zyreladdons_sanitize_array_recursively( wp_unslash( $_POST['conds'] ) ) : [];
 
-			$exits_conditions = get_post_meta( $template_id, 'zyreladdons_display_cond', true );
-			$merged_conditions = ! empty( $exits_conditions ) ? array_diff( $request_conditions, $exits_conditions ) : $request_conditions;
-
 			if ( $template_id ) {
-
-				$all_extits_condition = $this->get_all_conditions();
 				$template_type = get_post_meta( $template_id, 'zyreladdons_library_type', true );
 
-				// Exclude current template's previously saved conditions from duplicate check.
-				if ( isset( $all_extits_condition[ $template_type ] ) && ! empty( $exits_conditions ) && is_array( $exits_conditions ) ) {
-					$current_template_conditions = array_map(
-						function ( $value ) {
-							return substr( strstr( $value, '/' ), strlen( '/' ) );
-						},
-						$exits_conditions
-					);
-
-					$all_extits_condition[ $template_type ] = array_filter(
-						$all_extits_condition[ $template_type ],
-						function ( $value ) use ( $current_template_conditions ) {
-							$normalized = substr( strstr( $value, '/' ), strlen( '/' ) );
-							return ! in_array( $normalized, $current_template_conditions, true );
-						}
-					);
+				// Empty lists are not persisted — re-apply type defaults (see get_default_condition()).
+				if ( $this->conditions_are_empty( $request_conditions ) ) {
+					$default = self::get_default_condition( $template_type );
+					if ( $default ) {
+						$request_conditions = [ $default ];
+					}
 				}
 
-				$duplicate = $this->check_template_conditions( $template_type, $request_conditions, $merged_conditions, $all_extits_condition );
+				$exits_conditions = get_post_meta( $template_id, 'zyreladdons_display_cond', true );
+				$duplicate        = $this->would_duplicate_conditions( $template_type, $request_conditions, $exits_conditions );
 
 				if ( ! $duplicate ) {
 					$cond = update_post_meta( $template_id, 'zyreladdons_display_cond', array_unique( $request_conditions ) );
@@ -698,7 +827,15 @@ class Conditions_Manager {
 			$template_id = isset( $_GET['template_id'] ) ? absint( $_GET['template_id'] ) : null;
 			if ( $template_id ) {
 				$cond = get_post_meta( $template_id, 'zyreladdons_display_cond', true );
-				if ( $cond ) {
+
+				// Prefill modal UI with type defaults when nothing is saved yet.
+				if ( $this->conditions_are_empty( $cond ) ) {
+					$template_type = get_post_meta( $template_id, 'zyreladdons_library_type', true );
+					$default       = self::get_default_condition( $template_type );
+					$cond          = $default ? [ $default ] : [];
+				}
+
+				if ( ! empty( $cond ) ) {
 					ob_start();
 					$this->cond_to_html( $cond );
 					$html = ob_get_contents();

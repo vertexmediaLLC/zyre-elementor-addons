@@ -508,7 +508,9 @@ class Module {
 		global $pagenow;
 
 		// use $query parameter instead of global $post_type
-		if ( 'edit.php' === $pagenow && self::POST_TYPE === $query->query['post_type'] ) {
+		$post_type = ( isset( $query->query['post_type'] ) ) ? $query->query['post_type'] : '';
+
+		if ( 'edit.php' === $pagenow && self::POST_TYPE === $post_type ) {
 
 			if ( isset( $_GET['zyreladdons_library_type'] ) ) {
 				$library_type = sanitize_text_field( wp_unslash( $_GET['zyreladdons_library_type'] ) );

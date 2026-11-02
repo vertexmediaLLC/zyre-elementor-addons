@@ -128,7 +128,8 @@ function _checkIfArray(r) {
     if (
       window.elementorV2 &&
       window.elementorV2.editorAppBar &&
-      window.elementorV2.editorAppBar.documentOptionsMenu
+      window.elementorV2.editorAppBar.documentOptionsMenu &&
+      "loop-template" != zyreTemplateInfo.templateType
     ) {
       var documentOptionsMenu =
         window.elementorV2.editorAppBar.documentOptionsMenu;
@@ -163,7 +164,12 @@ function _checkIfArray(r) {
       //oldConditionCache
       var conditionContainer = $(".zyre-template-condition-wrap");
       if (conditionContainer.html() == "") {
-        conditionContainer.append(oldConditionCache);
+        if (oldConditionCache) {
+          conditionContainer.append(oldConditionCache);
+        } else {
+          // Fallback when meta is still empty and AJAX cache missed — match PHP defaults.
+          prefillDefaultConditionRow(conditionContainer);
+        }
         conditionContainer.find("select").trigger("change");
         // elementor.trigger("zyre:templateConditionChange");
       }
@@ -207,6 +213,36 @@ function _checkIfArray(r) {
     var randomid = Math.random().toString(36).replace("0.", "");
     dom = dom.replace(/{{([^{}]+)}}/g, randomid);
     return dom;
+  }
+
+  /**
+   * Default condition strings — must match Conditions_Manager::get_default_condition().
+   * Empty lists are not kept; defaults are re-applied so templates remain usable.
+   */
+  function getDefaultConditionName() {
+    var type =
+      templateType ||
+      (typeof zyreTemplateInfo !== "undefined"
+        ? zyreTemplateInfo.templateType
+        : "");
+    if ("archive" === type) {
+      return "archive";
+    }
+    if ("single" === type) {
+      return "singular";
+    }
+    // header / footer → Entire Site
+    return "general";
+  }
+
+  function prefillDefaultConditionRow(conditionContainer) {
+    var uniqify = generateUniqeDom(conditionTemplate.innerHTML);
+    conditionContainer.append(uniqify);
+    var nameSelect = conditionContainer
+      .find(".zyre-template-condition-item")
+      .last()
+      .find(".zyre-tce-name select");
+    nameSelect.val(getDefaultConditionName());
   }
 
   function handleSelectChange(event) {
@@ -497,6 +533,9 @@ function _checkIfArray(r) {
           if (response.success) {
             MicroModal.close("modal-new-template-condition");
             $(".zyre-template-notice").removeClass("error").text("");
+            // Keep modal cache in sync (e.g. empty save re-applied defaults server-side).
+            fetchTemplateConditions(postId);
+            $(".zyre-template-condition-wrap").empty();
           } else {
             // show notice
             if (
@@ -525,12 +564,17 @@ function _checkIfArray(r) {
     });
   }
 
+  // Do not auto-open the conditions modal on save/publish.
+  // PHP applies type defaults silently via elementor/document/after_save when meta is empty.
   elementor.saver.on("after:save", function (data) {
     if (
       data.status != "inherit" &&
       "loop-template" != zyreTemplateInfo.templateType
     ) {
-      elementor.trigger("zyre:templateCondition");
+      postId = elementor.config.document.id;
+      // Refresh modal row cache so Template Conditions reflects defaults without opening.
+      fetchTemplateConditions(postId);
+      $(".zyre-template-condition-wrap").empty();
     }
   });
 })(jQuery);
