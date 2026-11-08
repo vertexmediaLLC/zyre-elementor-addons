@@ -1,5 +1,5 @@
 === Zyre Elementor Addons ===
-Contributors: vertexmediallc, trainershujon
+Contributors: vertexmediallc, trainershujon, abraj366
 Tags: elementor, elementor addons, elementor widgets, theme builder, mega menu
 Requires at least: 5.0
 Tested up to: 7.1
