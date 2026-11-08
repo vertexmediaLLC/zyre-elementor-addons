@@ -241,7 +241,10 @@ class Zyre_Walker_Nav extends \Walker_Nav_Menu {
 			$manual_class  = array_values( $classes )[0] . ' dropdown-item';
 			$atts['class'] = $manual_class;
 		}
-		if ( in_array( 'current-menu-item', $item->classes ) ) {
+		if ( in_array( 'current-menu-item', $classes, true ) ) {
+			if ( ! isset( $atts['class'] ) ) {
+				$atts['class'] = '';
+			}
 			$atts['class'] .= ' active';
 		}
 
