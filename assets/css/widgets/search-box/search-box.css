@@ -43,6 +43,7 @@ body.rtl .zyre-addon-search-box .zyre-search-form-select-wrapper::after {
 .zyre-addon-search-box .zyre-search-button,
 .zyre-addon-search-box .zyre-search-toggle {
 	box-shadow: none;
+	height: 100%;
 }
 
 .zyre-addon-search-box .zyre-search-form-select {

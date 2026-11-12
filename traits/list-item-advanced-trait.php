@@ -367,6 +367,22 @@ trait List_Item_Advanced_Trait {
 
 		if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
 			$this->add_control(
+				$prefix . 'extra_text_position',
+				[
+					'label'       => esc_html__( 'Extra Text Position', 'zyre-elementor-addons' ),
+					'type'        => Controls_Manager::SELECT,
+					'default'     => 'after_title',
+					'options'     => [
+						'before_media' => esc_html__( 'Before Media', 'zyre-elementor-addons' ),
+						'after_media'  => esc_html__( 'After Media', 'zyre-elementor-addons' ),
+						'before_title' => esc_html__( 'Before Title', 'zyre-elementor-addons' ),
+						'after_title'  => esc_html__( 'After Title', 'zyre-elementor-addons' ),
+					],
+					'render_type' => 'template',
+				]
+			);
+
+			$this->add_control(
 				$prefix . 'items_icon',
 				[
 					'label'   => esc_html__( 'Items Icon', 'zyre-elementor-addons' ),
@@ -813,6 +829,19 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
+		if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
+			$this->add_control(
+				'description_bg_color_hover',
+				[
+					'label'     => esc_html__( 'Description BG Color', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$class_base}list-item:hover .zyre-{$class_base}list-item-text" => 'background-color: {{VALUE}};',
+					],
+				]
+			);
+		}
+
 		$this->add_control(
 			'description_color_hover',
 			[
@@ -826,6 +855,17 @@ trait List_Item_Advanced_Trait {
 		);
 
 		if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
+			$this->add_control(
+				'extra_bg_color_hover',
+				[
+					'label'     => esc_html__( 'Extra Text BG Color', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$class_base}list-item:hover .zyre-{$class_base}list-item-extra" => 'background-color: {{VALUE}};',
+					],
+				]
+			);
+
 			$this->add_control(
 				'extra_color_hover',
 				[
@@ -1059,6 +1099,33 @@ trait List_Item_Advanced_Trait {
 				],
 			]
 		);
+
+		if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
+			$this->add_responsive_control(
+				'item_height_hover',
+				[
+					'label'      => esc_html__( 'Hover Height', 'zyre-elementor-addons' ),
+					'type'       => Controls_Manager::SLIDER,
+					'size_units' => [ '%', 'px', 'vw' ],
+					'default'    => [
+						'unit' => 'px',
+					],
+					'range'      => [
+						'%'  => [
+							'min' => 1,
+							'max' => 100,
+						],
+						'px' => [
+							'min' => 50,
+							'max' => 1000,
+						],
+					],
+					'selectors'  => [
+						"{{WRAPPER}} .zyre-{$class_base}list-item:hover" => 'height: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+		}
 	}
 
 	/**
@@ -1385,6 +1452,7 @@ trait List_Item_Advanced_Trait {
 		$widget_base_class = ! empty( $args['widget_base'] ) ? $args['widget_base'] . '-' : '';
 		$font_size = 'item_text' === $args['id_prefix'] ? 14 : 18;
 		$color = 'item_text' === $args['id_prefix'] ? '#8C919B' : '#000000';
+		$is_group_description = 'item_text' === $args['id_prefix'] && 'group' === $args['widget_base'];
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
@@ -1417,17 +1485,95 @@ trait List_Item_Advanced_Trait {
 			]
 		);
 
-		$this->add_control(
-			$prefix . 'underline_on_hover',
-			[
-				'label'        => esc_html__( 'Enable Underline on Hover?', 'zyre-elementor-addons' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'selectors' => [
-					"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}"       => 'text-decoration-line: none',
-					"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}:hover" => 'text-decoration-line: underline',
-				],
-			]
-		);
+		if ( 'item_extra' === $args['id_prefix'] ) {
+			$this->add_control(
+				$prefix . 'background_color',
+				[
+					'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'background-color: {{VALUE}};',
+					],
+				]
+			);
+
+			$this->add_responsive_control(
+				$prefix . 'border_radius',
+				[
+					'label'      => esc_html__( 'Border Radius', 'zyre-elementor-addons' ),
+					'type'       => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%', 'em' ],
+					'selectors'  => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+		}
+
+		if ( $is_group_description ) {
+			$this->add_control(
+				$prefix . 'background_color',
+				[
+					'label'     => esc_html__( 'Background Color', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'background-color: {{VALUE}};',
+					],
+				]
+			);
+
+			$this->add_responsive_control(
+				$prefix . 'border_radius',
+				[
+					'label'      => esc_html__( 'Border Radius', 'zyre-elementor-addons' ),
+					'type'       => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%', 'em' ],
+					'selectors'  => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+		}
+
+		if ( 'item_extra' !== $args['id_prefix'] && ! $is_group_description ) {
+			$this->add_control(
+				$prefix . 'underline_on_hover',
+				[
+					'label'     => esc_html__( 'Enable Underline on Hover?', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}"       => 'text-decoration-line: none',
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}:hover" => 'text-decoration-line: underline',
+					],
+				]
+			);
+		}
+
+		if ( 'item_extra' === $args['id_prefix'] ) {
+			$this->add_responsive_control(
+				$prefix . 'padding',
+				[
+					'label'     => esc_html__( 'Padding', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::DIMENSIONS,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+		}
+
+		if ( $is_group_description ) {
+			$this->add_responsive_control(
+				$prefix . 'padding',
+				[
+					'label'     => esc_html__( 'Padding', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::DIMENSIONS,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+		}
 
 		$this->add_responsive_control(
 			$prefix . 'margin',
@@ -1439,6 +1585,26 @@ trait List_Item_Advanced_Trait {
 				],
 			]
 		);
+
+		if ( $is_group_description ) {
+			$this->add_responsive_control(
+				$prefix . 'vertical_offset',
+				[
+					'label'      => esc_html__( 'Vertical Offset', 'zyre-elementor-addons' ),
+					'type'       => Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range'      => [
+						'px' => [
+							'min' => -1000,
+							'max' => 1000,
+						],
+					],
+					'selectors'  => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'transform: translateY({{SIZE}}{{UNIT}});',
+					],
+				]
+			);
+		}
 
 		$this->add_responsive_control(
 			$prefix . 'width',
@@ -1465,6 +1631,63 @@ trait List_Item_Advanced_Trait {
 				],
 			]
 		);
+
+		if ( 'item_extra' === $args['id_prefix'] ) {
+			$this->add_responsive_control(
+				$prefix . 'text_align',
+				[
+					'label'   => esc_html__( 'Text Align', 'zyre-elementor-addons' ),
+					'type'    => Controls_Manager::CHOOSE,
+					'options' => [
+						'left'    => [
+							'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-left',
+						],
+						'center'  => [
+							'title' => esc_html__( 'Center', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-center',
+						],
+						'right'   => [
+							'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-right',
+						],
+						'justify' => [
+							'title' => esc_html__( 'Justify', 'zyre-elementor-addons' ),
+							'icon'  => 'eicon-text-align-justify',
+						],
+					],
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}" => 'text-align: {{VALUE}};',
+					],
+				]
+			);
+
+			$this->add_control(
+				$prefix . 'underline_on_hover',
+				[
+					'label'     => esc_html__( 'Enable Underline on Hover?', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}"       => 'text-decoration-line: none',
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}:hover" => 'text-decoration-line: underline',
+					],
+				]
+			);
+		}
+
+		if ( $is_group_description ) {
+			$this->add_control(
+				$prefix . 'underline_on_hover',
+				[
+					'label'     => esc_html__( 'Enable Underline on Hover?', 'zyre-elementor-addons' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'selectors' => [
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}"       => 'text-decoration-line: none',
+						"{{WRAPPER}} .zyre-{$widget_base_class}list-item .zyre-{$widget_base_class}list-{$class_base}:hover" => 'text-decoration-line: underline',
+					],
+				]
+			);
+		}
 	}
 
 	/**
@@ -1659,7 +1882,7 @@ trait List_Item_Advanced_Trait {
 					'type' => Controls_Manager::SLIDER,
 					'range' => [
 						'px' => [
-							'max' => 1,
+							'max' => 2,
 							'min' => 0,
 							'step' => 0.01,
 						],
@@ -2910,6 +3133,17 @@ trait List_Item_Advanced_Trait {
 
 		$caption_display = ! empty( $settings[ $prefix . 'caption_display' ] ) ? sanitize_key( $settings[ $prefix . 'caption_display' ] ) : '';
 
+		$group_extra_position = 'after_title';
+		if ( 'group' === $id_base ) {
+			$group_extra_positions = [ 'before_media', 'after_media', 'before_title', 'after_title' ];
+			if ( ! empty( $settings[ $prefix . 'extra_text_position' ] ) ) {
+				$group_extra_position = sanitize_key( $settings[ $prefix . 'extra_text_position' ] );
+			}
+			if ( ! in_array( $group_extra_position, $group_extra_positions, true ) ) {
+				$group_extra_position = 'after_title';
+			}
+		}
+
 		// Add HTML class
 		$instance->add_render_attribute( 'items', 'class', "zyre-{$class_base}list-items" );
 		$instance->add_render_attribute( 'item', 'class', "zyre-{$class_base}list-item" );
@@ -2943,6 +3177,27 @@ trait List_Item_Advanced_Trait {
 				$instance->add_inline_editing_attributes( $repeater_desc_setting_key );
 				$migration_allowed = Icons_Manager::is_migration_allowed();
 
+				$print_group_extra = null;
+				if ( 'group' === $id_base ) {
+					$repeater_extra_setting_key = '';
+					if ( ! empty( $item['item_extra'] ) ) {
+						$repeater_extra_setting_key = $instance->get_repeater_setting_key( 'item_extra', $prefix . 'list', $index );
+						$instance->add_render_attribute( $repeater_extra_setting_key, 'class', "zyre-{$class_base}list-item-extra" );
+						$instance->add_inline_editing_attributes( $repeater_extra_setting_key );
+					}
+
+					$print_group_extra = static function ( $slot ) use ( $group_extra_position, $instance, $repeater_extra_setting_key, $item ) {
+						if ( $group_extra_position !== $slot || '' === $repeater_extra_setting_key ) {
+							return;
+						}
+						?>
+						<p <?php $instance->print_render_attribute_string( $repeater_extra_setting_key ); ?>>
+							<?php echo esc_html( $item['item_extra'] ); ?>
+						</p>
+						<?php
+					};
+				}
+
 				?>
 				<li <?php $instance->print_render_attribute_string( 'item' ); ?>>
 					<?php
@@ -2953,6 +3208,10 @@ trait List_Item_Advanced_Trait {
 						?>
 						<a <?php $instance->print_render_attribute_string( 'item_link' ); ?> <?php $this->print_render_attribute_string( $link_key ); ?>>
 						<?php
+					}
+
+					if ( $print_group_extra ) {
+						$print_group_extra( 'before_media' );
 					}
 
 					// add old default
@@ -3003,30 +3262,35 @@ trait List_Item_Advanced_Trait {
 						<span <?php $instance->print_render_attribute_string( 'number' ); ?>><?php echo esc_html( $item['item_number'] ); ?></span>
 					<?php endif; ?>
 
+					<?php
+					if ( $print_group_extra ) {
+						$print_group_extra( 'after_media' );
+					}
+					?>
+
 					<div <?php $instance->print_render_attribute_string( 'item_content' ); ?>>
+						<?php
+						if ( $print_group_extra ) {
+							$print_group_extra( 'before_title' );
+						}
+						?>
 						<?php if ( ! empty( $item['item_title'] ) ) : ?>
 							<<?php Utils::print_validated_html_tag( $item['title_html_tag'] ); ?> <?php $instance->print_render_attribute_string( $repeater_title_setting_key ); ?>>
 								<?php echo esc_html( $item['item_title'] ); ?>
 							</<?php Utils::print_validated_html_tag( $item['title_html_tag'] ); ?>>
 						<?php endif; ?>
 
+						<?php
+						if ( $print_group_extra ) {
+							$print_group_extra( 'after_title' );
+						}
+						?>
+
 						<?php if ( ! empty( $item['item_description'] ) ) : ?>
 							<p <?php $instance->print_render_attribute_string( $repeater_desc_setting_key ); ?>>
 								<?php echo esc_html( $item['item_description'] ); ?>
 							</p>
 						<?php endif; ?>
-
-						<?php
-						if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) {
-							$repeater_extra_setting_key = $instance->get_repeater_setting_key( 'item_extra', $prefix . 'list', $index );
-							$instance->add_render_attribute( $repeater_extra_setting_key, 'class', "zyre-{$class_base}list-item-extra" );
-							$instance->add_inline_editing_attributes( $repeater_extra_setting_key );
-							if ( ! empty( $item['item_extra'] ) ) { ?>
-								<p <?php $instance->print_render_attribute_string( $repeater_extra_setting_key ); ?>>
-									<?php echo esc_html( $item['item_extra'] ); ?>
-								</p>
-							<?php }
-						} ?>
 					</div>
 
 					<?php if ( ! empty( $args['id_prefix'] ) && 'group' === $args['id_prefix'] ) :

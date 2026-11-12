@@ -395,6 +395,50 @@ trait Social_Trait {
 
 		$args = wp_parse_args( $args, $default_args );
 
+		$extra_icon_condition = [
+			'social_extra_icon[value]!' => '',
+		];
+
+		$this->add_control(
+			'social_extra_icon',
+			[
+				'label'       => esc_html__( 'Extra Icon', 'zyre-elementor-addons' ),
+				'type'        => Controls_Manager::ICONS,
+				'skin'        => 'inline',
+				'label_block' => false,
+				'separator'   => 'before',
+			]
+		);
+
+		$this->add_control(
+			'social_icon_position',
+			[
+				'label'        => esc_html__( 'Icon Position', 'zyre-elementor-addons' ),
+				'type'         => Controls_Manager::CHOOSE,
+				'default'      => is_rtl() ? 'right' : 'left',
+				'toggle'       => false,
+				'options'      => [
+					'left'  => [
+						'title' => esc_html__( 'Left', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-h-align-left',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'zyre-elementor-addons' ),
+						'icon'  => 'eicon-h-align-right',
+					],
+				],
+				'prefix_class' => 'zyre-social-icon-position-',
+				'condition'    => $extra_icon_condition,
+				'selectors'    => [
+					// Flex order follows the writing mode. Swap it in RTL so Left and Right stay physical.
+					'{{WRAPPER}}.zyre-social-icon-position-left .zyre-social-extra-icon' => 'order: -1;',
+					'{{WRAPPER}}.zyre-social-icon-position-right .zyre-social-extra-icon' => 'order: 1;',
+					'[dir=rtl] {{WRAPPER}}.zyre-social-icon-position-left .zyre-social-extra-icon' => 'order: 1;',
+					'[dir=rtl] {{WRAPPER}}.zyre-social-icon-position-right .zyre-social-extra-icon' => 'order: -1;',
+				],
+			]
+		);
+
 		$this->add_control(
 			'social_icon_on_hover',
 			[
@@ -402,9 +446,10 @@ trait Social_Trait {
 				'type'           => Controls_Manager::SWITCHER,
 				'prefix_class'   => 'zyre-icon-on-hover--',
 				'style_transfer' => true,
+				'condition'      => $extra_icon_condition,
 				'selectors'      => [
-					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-social-icon-holder'                         => 'opacity: 0;transition: opacity var(--zy-transition-duration)',
-					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-social-icon:hover .zyre-social-icon-holder' => 'opacity: 1',
+					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-social-extra-icon'                         => 'opacity: 0;transition: opacity var(--zy-transition-duration)',
+					'{{WRAPPER}}.zyre-icon-on-hover--yes .zyre-social-icon:hover .zyre-social-extra-icon' => 'opacity: 1',
 				],
 			]
 		);
@@ -465,6 +510,7 @@ trait Social_Trait {
 		);
 
 		$left_right = is_rtl() ? 'right' : 'left';
+
 		$this->add_control(
 			'social_icon_separator',
 			[
@@ -709,11 +755,12 @@ trait Social_Trait {
 		);
 
 		$left_right = is_rtl() ? 'right' : 'left';
+
 		$this->add_control(
 			'social_icon_separator_width',
 			[
-				'label'          => esc_html__( 'Separator Width', 'zyre-elementor-addons' ),
-				'type'           => Controls_Manager::SLIDER,
+				'label'      => esc_html__( 'Separator Width', 'zyre-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range'      => [
 					'px' => [
@@ -721,8 +768,8 @@ trait Social_Trait {
 						'max' => 100,
 					],
 				],
-				'condition'      => [ 'social_icon_separator' => 'yes' ],
-				'selectors'      => [
+				'condition'  => [ 'social_icon_separator' => 'yes' ],
+				'selectors'  => [
 					'{{WRAPPER}} .zyre-social-icon-wrapper > .zyre-social-icon .zyre-social-icon-label' => "border-{$left_right}-width: {{SIZE}}{{UNIT}};",
 				],
 			]
@@ -900,7 +947,14 @@ trait Social_Trait {
 
 		$args = wp_parse_args( $args, $default_args );
 
-		$settings = $this->get_settings_for_display();
+		$settings   = $this->get_settings_for_display();
+		$extra_icon = [];
+
+		if ( isset( $settings['social_extra_icon'] ) && is_array( $settings['social_extra_icon'] ) ) {
+			$extra_icon = $settings['social_extra_icon'];
+		}
+
+		$render_extra_icon = 'zyre-social-icon' === $instance->get_name() && ! empty( $extra_icon['value'] );
 		$fallback_defaults = [
 			'fa fa-facebook',
 			'fa fa-twitter',
@@ -958,6 +1012,9 @@ trait Social_Trait {
 
 				<a <?php $instance->print_render_attribute_string( $link_key ); ?>>
 					<span class="elementor-screen-only"><?php echo esc_html( ucwords( $social ) ); ?></span>
+					<?php if ( $render_extra_icon ) { ?>
+						<span class="zyre-social-extra-icon zy-inline-flex zy-align-center" aria-hidden="true"><?php Icons_Manager::render_icon( $extra_icon ); ?></span>
+					<?php } ?>
 					<?php
 					if ( $is_new || $migrated ) { ?>
 						<span class="zyre-social-icon-holder zy-inline-flex zy-align-center"><?php Icons_Manager::render_icon( $item['social_icon'] ); ?></span>
