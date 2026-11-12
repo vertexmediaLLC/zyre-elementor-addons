@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-21T05:41:57+00:00\n"
+"POT-Creation-Date: 2026-11-12T04:29:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: zyre-elementor-addons\n"
@@ -181,8 +181,8 @@ msgstr ""
 #: base/widget-base.php:422
 #: modules/mega-menu/templates/popup.php:109
 #: traits/button-trait.php:532
-#: traits/list-item-advanced-trait.php:1510
-#: traits/list-item-advanced-trait.php:2392
+#: traits/list-item-advanced-trait.php:1733
+#: traits/list-item-advanced-trait.php:2615
 #: traits/social-trait.php:310
 #: widgets/advance-accordion/advance-accordion.php:414
 #: widgets/advance-toggle/advance-toggle.php:509
@@ -190,6 +190,7 @@ msgstr ""
 #: widgets/infobox/infobox.php:510
 #: widgets/post-meta/post-meta.php:359
 #: widgets/site-title/site-title.php:331
+#: widgets/social-icon/social-icon.php:116
 #: widgets/social-share/social-share.php:501
 #: widgets/toggle/toggle.php:418
 msgid "Icon Size"
@@ -258,16 +259,16 @@ msgstr ""
 #: traits/button-trait.php:328
 #: traits/button-trait.php:591
 #: traits/list-item-advanced-trait.php:359
-#: traits/list-item-advanced-trait.php:752
-#: traits/list-item-advanced-trait.php:1166
-#: traits/list-item-advanced-trait.php:1585
-#: traits/list-item-advanced-trait.php:1965
-#: traits/list-item-advanced-trait.php:2083
-#: traits/list-item-advanced-trait.php:2529
+#: traits/list-item-advanced-trait.php:768
+#: traits/list-item-advanced-trait.php:1233
+#: traits/list-item-advanced-trait.php:1808
+#: traits/list-item-advanced-trait.php:2188
+#: traits/list-item-advanced-trait.php:2306
+#: traits/list-item-advanced-trait.php:2752
 #: traits/list-item-trait.php:190
 #: traits/list-item-trait.php:302
 #: traits/social-trait.php:182
-#: traits/social-trait.php:504
+#: traits/social-trait.php:550
 #: widgets/advance-accordion/advance-accordion.php:310
 #: widgets/advance-accordion/advance-accordion.php:429
 #: widgets/advance-heading/advance-heading.php:289
@@ -351,6 +352,7 @@ msgstr ""
 #: widgets/search-box/search-box.php:707
 #: widgets/site-title/site-title.php:354
 #: widgets/site-title/site-title.php:441
+#: widgets/social-icon/social-icon.php:135
 #: widgets/social-share/social-share.php:371
 #: widgets/social-share/social-share.php:715
 #: widgets/subscription-form/subscription-form.php:443
@@ -378,14 +380,14 @@ msgstr ""
 #: traits/button-trait.php:395
 #: traits/button-trait.php:612
 #: traits/button-trait.php:644
-#: traits/list-item-advanced-trait.php:760
-#: traits/list-item-advanced-trait.php:797
-#: traits/list-item-advanced-trait.php:1174
-#: traits/list-item-advanced-trait.php:1225
-#: traits/list-item-advanced-trait.php:1593
-#: traits/list-item-advanced-trait.php:1719
-#: traits/list-item-advanced-trait.php:2537
-#: traits/list-item-advanced-trait.php:2630
+#: traits/list-item-advanced-trait.php:776
+#: traits/list-item-advanced-trait.php:813
+#: traits/list-item-advanced-trait.php:1241
+#: traits/list-item-advanced-trait.php:1292
+#: traits/list-item-advanced-trait.php:1816
+#: traits/list-item-advanced-trait.php:1942
+#: traits/list-item-advanced-trait.php:2760
+#: traits/list-item-advanced-trait.php:2853
 msgid "Background"
 msgstr ""
 
@@ -426,14 +428,16 @@ msgid "Inherit"
 msgstr ""
 
 #: base/widget-base.php:541
-#: traits/list-item-advanced-trait.php:1972
-#: traits/list-item-advanced-trait.php:2001
-#: traits/list-item-advanced-trait.php:2101
-#: traits/list-item-advanced-trait.php:2175
+#: traits/list-item-advanced-trait.php:1492
+#: traits/list-item-advanced-trait.php:1517
+#: traits/list-item-advanced-trait.php:2195
+#: traits/list-item-advanced-trait.php:2224
+#: traits/list-item-advanced-trait.php:2324
+#: traits/list-item-advanced-trait.php:2398
 #: traits/social-trait.php:204
 #: traits/social-trait.php:268
-#: traits/social-trait.php:524
-#: traits/social-trait.php:581
+#: traits/social-trait.php:570
+#: traits/social-trait.php:627
 #: widgets/advance-tab/advance-tab.php:848
 #: widgets/advance-tab/advance-tab.php:896
 #: widgets/advance-tab/advance-tab.php:944
@@ -463,17 +467,17 @@ msgid "Background Color"
 msgstr ""
 
 #: base/widget-base.php:571
-#: traits/list-item-advanced-trait.php:595
-#: traits/list-item-advanced-trait.php:2090
-#: traits/list-item-advanced-trait.php:2164
+#: traits/list-item-advanced-trait.php:611
+#: traits/list-item-advanced-trait.php:2313
+#: traits/list-item-advanced-trait.php:2387
 #: traits/list-item-trait.php:197
 #: traits/list-item-trait.php:222
 #: traits/list-item-trait.php:309
 #: traits/list-item-trait.php:333
 #: traits/social-trait.php:189
 #: traits/social-trait.php:253
-#: traits/social-trait.php:511
-#: traits/social-trait.php:568
+#: traits/social-trait.php:557
+#: traits/social-trait.php:614
 #: widgets/advance-heading/advance-heading.php:296
 #: widgets/advance-heading/advance-heading.php:317
 #: widgets/advance-tab/advance-tab.php:1039
@@ -524,10 +528,10 @@ msgstr ""
 #: base/widget-base.php:599
 #: modules/mega-menu/templates/popup.php:105
 #: traits/button-trait.php:598
-#: traits/list-item-advanced-trait.php:1618
-#: traits/list-item-advanced-trait.php:1746
-#: traits/list-item-advanced-trait.php:2572
-#: traits/list-item-advanced-trait.php:2668
+#: traits/list-item-advanced-trait.php:1841
+#: traits/list-item-advanced-trait.php:1969
+#: traits/list-item-advanced-trait.php:2795
+#: traits/list-item-advanced-trait.php:2891
 #: widgets/business-hour/business-hour.php:210
 #: widgets/call-to-action/call-to-action.php:1250
 #: widgets/call-to-action/call-to-action.php:1388
@@ -539,6 +543,8 @@ msgstr ""
 #: widgets/pdf-view/pdf-view.php:709
 #: widgets/pdf-view/pdf-view.php:752
 #: widgets/post-meta/post-meta.php:418
+#: widgets/social-icon/social-icon.php:142
+#: widgets/social-icon/social-icon.php:163
 msgid "Icon Color"
 msgstr ""
 
@@ -551,8 +557,8 @@ msgstr ""
 #: traits/button-trait.php:654
 #: traits/social-trait.php:217
 #: traits/social-trait.php:281
-#: traits/social-trait.php:535
-#: traits/social-trait.php:592
+#: traits/social-trait.php:581
+#: traits/social-trait.php:638
 #: widgets/post-comments/post-comments.php:1918
 #: widgets/post-comments/post-comments.php:2220
 #: widgets/post-comments/post-comments.php:2342
@@ -569,13 +575,15 @@ msgstr ""
 #: base/widget-base.php:686
 #: traits/button-trait.php:442
 #: traits/button-trait.php:681
-#: traits/list-item-advanced-trait.php:877
-#: traits/list-item-advanced-trait.php:1258
-#: traits/list-item-advanced-trait.php:1851
-#: traits/list-item-advanced-trait.php:2024
-#: traits/list-item-advanced-trait.php:2232
-#: traits/list-item-advanced-trait.php:2708
-#: traits/social-trait.php:742
+#: traits/list-item-advanced-trait.php:917
+#: traits/list-item-advanced-trait.php:1325
+#: traits/list-item-advanced-trait.php:1503
+#: traits/list-item-advanced-trait.php:1528
+#: traits/list-item-advanced-trait.php:2074
+#: traits/list-item-advanced-trait.php:2247
+#: traits/list-item-advanced-trait.php:2455
+#: traits/list-item-advanced-trait.php:2931
+#: traits/social-trait.php:789
 #: widgets/featured-banner/featured-banner.php:880
 #: widgets/flipbox/flipbox.php:156
 #: widgets/mega-menu/mega-menu.php:409
@@ -595,10 +603,10 @@ msgid "Box Shadow"
 msgstr ""
 
 #: base/widget-base.php:719
-#: traits/list-item-advanced-trait.php:1640
-#: traits/list-item-advanced-trait.php:1770
-#: traits/list-item-advanced-trait.php:2112
-#: traits/list-item-advanced-trait.php:2186
+#: traits/list-item-advanced-trait.php:1863
+#: traits/list-item-advanced-trait.php:1993
+#: traits/list-item-advanced-trait.php:2335
+#: traits/list-item-advanced-trait.php:2409
 #: widgets/advance-tab/advance-tab.php:867
 #: widgets/advance-tab/advance-tab.php:915
 #: widgets/advance-tab/advance-tab.php:963
@@ -610,10 +618,10 @@ msgstr ""
 
 #: base/widget-base.php:750
 #: traits/button-trait.php:466
-#: traits/list-item-advanced-trait.php:1084
-#: traits/list-item-advanced-trait.php:1435
-#: traits/list-item-advanced-trait.php:2287
-#: traits/list-item-advanced-trait.php:2513
+#: traits/list-item-advanced-trait.php:1151
+#: traits/list-item-advanced-trait.php:1581
+#: traits/list-item-advanced-trait.php:2510
+#: traits/list-item-advanced-trait.php:2736
 #: widgets/advance-heading/advance-heading.php:332
 #: widgets/animated-text/animated-text.php:1047
 #: widgets/post-comments/post-comments.php:848
@@ -622,20 +630,23 @@ msgstr ""
 #: widgets/post-comments/post-comments.php:1754
 #: widgets/post-comments/post-comments.php:2956
 #: widgets/post-thumbnail/post-thumbnail.php:313
+#: widgets/social-icon/social-icon.php:200
 #: widgets/testimonial/testimonial.php:600
 msgid "Margin"
 msgstr ""
 
 #: base/widget-base.php:769
 #: traits/button-trait.php:454
-#: traits/list-item-advanced-trait.php:915
-#: traits/list-item-advanced-trait.php:1096
-#: traits/list-item-advanced-trait.php:1865
-#: traits/list-item-advanced-trait.php:2037
-#: traits/list-item-advanced-trait.php:2275
-#: traits/social-trait.php:762
-#: traits/social-trait.php:838
-#: traits/social-trait.php:871
+#: traits/list-item-advanced-trait.php:955
+#: traits/list-item-advanced-trait.php:1163
+#: traits/list-item-advanced-trait.php:1556
+#: traits/list-item-advanced-trait.php:1569
+#: traits/list-item-advanced-trait.php:2088
+#: traits/list-item-advanced-trait.php:2260
+#: traits/list-item-advanced-trait.php:2498
+#: traits/social-trait.php:809
+#: traits/social-trait.php:885
+#: traits/social-trait.php:918
 #: widgets/post-comments/post-comments.php:1626
 #: widgets/post-comments/post-comments.php:1672
 #: widgets/post-comments/post-comments.php:1705
@@ -677,12 +688,12 @@ msgstr ""
 
 #: base/widget-base.php:822
 #: traits/button-trait.php:209
-#: traits/list-item-advanced-trait.php:636
-#: traits/list-item-advanced-trait.php:1016
-#: traits/list-item-advanced-trait.php:1446
-#: traits/list-item-advanced-trait.php:1527
-#: traits/list-item-advanced-trait.php:2245
-#: traits/list-item-advanced-trait.php:2409
+#: traits/list-item-advanced-trait.php:652
+#: traits/list-item-advanced-trait.php:1056
+#: traits/list-item-advanced-trait.php:1612
+#: traits/list-item-advanced-trait.php:1750
+#: traits/list-item-advanced-trait.php:2468
+#: traits/list-item-advanced-trait.php:2632
 #: widgets/advance-tab/advance-tab.php:1159
 #: widgets/animated-text/animated-text.php:584
 #: widgets/animated-text/animated-text.php:1124
@@ -704,11 +715,11 @@ msgstr ""
 
 #: base/widget-base.php:855
 #: traits/button-trait.php:231
-#: traits/list-item-advanced-trait.php:661
-#: traits/list-item-advanced-trait.php:1041
-#: traits/list-item-advanced-trait.php:1554
-#: traits/list-item-advanced-trait.php:2260
-#: traits/list-item-advanced-trait.php:2435
+#: traits/list-item-advanced-trait.php:677
+#: traits/list-item-advanced-trait.php:1081
+#: traits/list-item-advanced-trait.php:1777
+#: traits/list-item-advanced-trait.php:2483
+#: traits/list-item-advanced-trait.php:2658
 #: widgets/advance-tab/advance-tab.php:1174
 #: widgets/animated-text/animated-text.php:610
 #: widgets/call-to-action/call-to-action.php:741
@@ -723,7 +734,7 @@ msgstr ""
 
 #: base/widget-base.php:888
 #: traits/list-item-trait.php:239
-#: traits/social-trait.php:813
+#: traits/social-trait.php:860
 #: widgets/advance-tab/advance-tab.php:1189
 #: widgets/alert/alert.php:226
 #: widgets/divider/divider.php:396
@@ -778,14 +789,14 @@ msgid "Row Gap"
 msgstr ""
 
 #: base/widget-base.php:1026
-#: traits/list-item-advanced-trait.php:421
-#: traits/list-item-advanced-trait.php:927
-#: traits/list-item-advanced-trait.php:957
-#: traits/list-item-advanced-trait.php:986
-#: traits/list-item-advanced-trait.php:1108
-#: traits/list-item-advanced-trait.php:2317
+#: traits/list-item-advanced-trait.php:437
+#: traits/list-item-advanced-trait.php:967
+#: traits/list-item-advanced-trait.php:997
+#: traits/list-item-advanced-trait.php:1026
+#: traits/list-item-advanced-trait.php:1175
+#: traits/list-item-advanced-trait.php:2540
 #: traits/list-item-trait.php:116
-#: traits/social-trait.php:438
+#: traits/social-trait.php:483
 #: widgets/advance-heading/advance-heading.php:172
 #: widgets/advance-tab/advance-tab.php:821
 #: widgets/advance-tab/advance-tab.php:1011
@@ -837,16 +848,18 @@ msgstr ""
 #: base/widget-base.php:1226
 #: base/widget-base.php:1306
 #: traits/button-trait.php:482
-#: traits/list-item-advanced-trait.php:426
-#: traits/list-item-advanced-trait.php:932
-#: traits/list-item-advanced-trait.php:962
-#: traits/list-item-advanced-trait.php:991
-#: traits/list-item-advanced-trait.php:1112
-#: traits/list-item-advanced-trait.php:1882
-#: traits/list-item-advanced-trait.php:2321
-#: traits/list-item-advanced-trait.php:2737
+#: traits/list-item-advanced-trait.php:442
+#: traits/list-item-advanced-trait.php:972
+#: traits/list-item-advanced-trait.php:1002
+#: traits/list-item-advanced-trait.php:1031
+#: traits/list-item-advanced-trait.php:1179
+#: traits/list-item-advanced-trait.php:1643
+#: traits/list-item-advanced-trait.php:2105
+#: traits/list-item-advanced-trait.php:2544
+#: traits/list-item-advanced-trait.php:2960
 #: traits/list-item-trait.php:120
-#: traits/social-trait.php:442
+#: traits/social-trait.php:422
+#: traits/social-trait.php:487
 #: traits/swiper-trait.php:454
 #: widgets/advance-accordion/advance-accordion.php:166
 #: widgets/advance-heading/advance-heading.php:177
@@ -977,22 +990,23 @@ msgstr ""
 #: base/widget-base.php:1273
 #: traits/button-trait.php:263
 #: traits/button-trait.php:486
-#: traits/list-item-advanced-trait.php:430
-#: traits/list-item-advanced-trait.php:936
-#: traits/list-item-advanced-trait.php:966
-#: traits/list-item-advanced-trait.php:995
-#: traits/list-item-advanced-trait.php:1116
-#: traits/list-item-advanced-trait.php:1145
-#: traits/list-item-advanced-trait.php:1318
-#: traits/list-item-advanced-trait.php:1886
-#: traits/list-item-advanced-trait.php:1911
-#: traits/list-item-advanced-trait.php:2325
-#: traits/list-item-advanced-trait.php:2354
-#: traits/list-item-advanced-trait.php:2741
-#: traits/list-item-advanced-trait.php:2766
+#: traits/list-item-advanced-trait.php:446
+#: traits/list-item-advanced-trait.php:976
+#: traits/list-item-advanced-trait.php:1006
+#: traits/list-item-advanced-trait.php:1035
+#: traits/list-item-advanced-trait.php:1183
+#: traits/list-item-advanced-trait.php:1212
+#: traits/list-item-advanced-trait.php:1385
+#: traits/list-item-advanced-trait.php:1647
+#: traits/list-item-advanced-trait.php:2109
+#: traits/list-item-advanced-trait.php:2134
+#: traits/list-item-advanced-trait.php:2548
+#: traits/list-item-advanced-trait.php:2577
+#: traits/list-item-advanced-trait.php:2964
+#: traits/list-item-advanced-trait.php:2989
 #: traits/list-item-trait.php:124
-#: traits/social-trait.php:446
-#: traits/social-trait.php:783
+#: traits/social-trait.php:491
+#: traits/social-trait.php:830
 #: widgets/advance-heading/advance-heading.php:181
 #: widgets/advance-heading/advance-heading.php:386
 #: widgets/advance-tab/advance-tab.php:416
@@ -1096,16 +1110,18 @@ msgstr ""
 #: base/widget-base.php:1234
 #: base/widget-base.php:1310
 #: traits/button-trait.php:490
-#: traits/list-item-advanced-trait.php:434
-#: traits/list-item-advanced-trait.php:940
-#: traits/list-item-advanced-trait.php:970
-#: traits/list-item-advanced-trait.php:999
-#: traits/list-item-advanced-trait.php:1120
-#: traits/list-item-advanced-trait.php:1890
-#: traits/list-item-advanced-trait.php:2329
-#: traits/list-item-advanced-trait.php:2745
+#: traits/list-item-advanced-trait.php:450
+#: traits/list-item-advanced-trait.php:980
+#: traits/list-item-advanced-trait.php:1010
+#: traits/list-item-advanced-trait.php:1039
+#: traits/list-item-advanced-trait.php:1187
+#: traits/list-item-advanced-trait.php:1651
+#: traits/list-item-advanced-trait.php:2113
+#: traits/list-item-advanced-trait.php:2552
+#: traits/list-item-advanced-trait.php:2968
 #: traits/list-item-trait.php:128
-#: traits/social-trait.php:450
+#: traits/social-trait.php:426
+#: traits/social-trait.php:495
 #: traits/swiper-trait.php:455
 #: widgets/advance-accordion/advance-accordion.php:167
 #: widgets/advance-heading/advance-heading.php:185
@@ -1227,8 +1243,9 @@ msgid "Right"
 msgstr ""
 
 #: base/widget-base.php:1043
-#: traits/list-item-advanced-trait.php:1124
-#: traits/list-item-advanced-trait.php:2333
+#: traits/list-item-advanced-trait.php:1191
+#: traits/list-item-advanced-trait.php:1655
+#: traits/list-item-advanced-trait.php:2556
 #: widgets/archive-description/archive-description.php:149
 #: widgets/author-box/author-box.php:472
 #: widgets/mega-menu/mega-menu.php:286
@@ -1250,10 +1267,10 @@ msgstr ""
 #: base/widget-base.php:1083
 #: base/widget-base.php:1127
 #: traits/button-trait.php:271
-#: traits/list-item-advanced-trait.php:1326
-#: traits/list-item-advanced-trait.php:1350
+#: traits/list-item-advanced-trait.php:1393
+#: traits/list-item-advanced-trait.php:1417
 #: traits/list-item-trait.php:161
-#: traits/social-trait.php:618
+#: traits/social-trait.php:664
 #: traits/swiper-trait.php:344
 #: widgets/advance-tab/advance-tab.php:309
 #: widgets/advance-tab/advance-tab.php:426
@@ -1295,7 +1312,7 @@ msgstr ""
 #: base/widget-base.php:1087
 #: base/widget-base.php:1131
 #: traits/button-trait.php:275
-#: traits/list-item-advanced-trait.php:1330
+#: traits/list-item-advanced-trait.php:1397
 #: widgets/business-hour/business-hour.php:912
 #: widgets/pdf-view/pdf-view.php:454
 #: widgets/post-comments/post-comments.php:818
@@ -1308,7 +1325,7 @@ msgstr ""
 #: base/widget-base.php:1091
 #: base/widget-base.php:1135
 #: traits/button-trait.php:279
-#: traits/list-item-advanced-trait.php:1334
+#: traits/list-item-advanced-trait.php:1401
 #: widgets/business-hour/business-hour.php:916
 #: widgets/pdf-view/pdf-view.php:458
 #: widgets/post-comments/post-comments.php:822
@@ -1331,10 +1348,10 @@ msgstr ""
 #: base/widget-base.php:1194
 #: base/widget-base.php:1269
 #: base/widget-base.php:1314
-#: traits/list-item-advanced-trait.php:1141
-#: traits/list-item-advanced-trait.php:1907
-#: traits/list-item-advanced-trait.php:2350
-#: traits/list-item-advanced-trait.php:2762
+#: traits/list-item-advanced-trait.php:1208
+#: traits/list-item-advanced-trait.php:2130
+#: traits/list-item-advanced-trait.php:2573
+#: traits/list-item-advanced-trait.php:2985
 #: widgets/advance-tab/advance-tab.php:174
 #: widgets/animated-text/animated-text.php:1360
 #: widgets/archive-posts/archive-posts.php:209
@@ -1372,10 +1389,10 @@ msgstr ""
 #: base/widget-base.php:1202
 #: base/widget-base.php:1277
 #: base/widget-base.php:1318
-#: traits/list-item-advanced-trait.php:1149
-#: traits/list-item-advanced-trait.php:1915
-#: traits/list-item-advanced-trait.php:2358
-#: traits/list-item-advanced-trait.php:2770
+#: traits/list-item-advanced-trait.php:1216
+#: traits/list-item-advanced-trait.php:2138
+#: traits/list-item-advanced-trait.php:2581
+#: traits/list-item-advanced-trait.php:2993
 #: widgets/advance-tab/advance-tab.php:178
 #: widgets/animated-text/animated-text.php:1364
 #: widgets/author-box/author-box.php:94
@@ -1456,14 +1473,15 @@ msgstr ""
 #: widgets/animated-text/animated-text.php:264
 #: widgets/call-to-action/call-to-action.php:2096
 #: widgets/infobox/infobox.php:639
+#: widgets/social-icon/social-icon.php:178
 msgid "Rotate"
 msgstr ""
 
 #: base/widget-base.php:1374
-#: traits/list-item-advanced-trait.php:1658
-#: traits/list-item-advanced-trait.php:1789
-#: traits/list-item-advanced-trait.php:2133
-#: traits/list-item-advanced-trait.php:2207
+#: traits/list-item-advanced-trait.php:1881
+#: traits/list-item-advanced-trait.php:2012
+#: traits/list-item-advanced-trait.php:2356
+#: traits/list-item-advanced-trait.php:2430
 msgid "Scale"
 msgstr ""
 
@@ -1551,14 +1569,14 @@ msgid "Scale Down"
 msgstr ""
 
 #: base/widget-base.php:1469
-#: traits/list-item-advanced-trait.php:1271
-#: traits/list-item-advanced-trait.php:1929
+#: traits/list-item-advanced-trait.php:1338
+#: traits/list-item-advanced-trait.php:2152
 #: widgets/image-heading/image-heading.php:607
 msgid "Z-Index"
 msgstr ""
 
 #: base/widget-base.php:1490
-#: traits/list-item-advanced-trait.php:697
+#: traits/list-item-advanced-trait.php:713
 #: widgets/advance-tab/advance-tab.php:1207
 #: widgets/animated-text/animated-text.php:1465
 #: widgets/call-to-action/call-to-action.php:1956
@@ -1571,6 +1589,7 @@ msgid "Horizontal Offset"
 msgstr ""
 
 #: base/widget-base.php:1521
+#: traits/list-item-advanced-trait.php:1593
 #: widgets/advance-tab/advance-tab.php:1223
 #: widgets/animated-text/animated-text.php:1489
 #: widgets/call-to-action/call-to-action.php:1985
@@ -1590,7 +1609,7 @@ msgid "Display"
 msgstr ""
 
 #: base/widget-base.php:1554
-#: traits/list-item-advanced-trait.php:1290
+#: traits/list-item-advanced-trait.php:1357
 #: traits/list-item-trait.php:46
 #: widgets/advance-heading/advance-heading.php:134
 #: widgets/advance-heading/advance-heading.php:511
@@ -1619,7 +1638,7 @@ msgid "Inline Block"
 msgstr ""
 
 #: base/widget-base.php:1556
-#: traits/list-item-advanced-trait.php:1294
+#: traits/list-item-advanced-trait.php:1361
 #: traits/list-item-trait.php:50
 #: widgets/advance-heading/advance-heading.php:515
 #: widgets/advance-tab/advance-tab.php:270
@@ -1663,7 +1682,7 @@ msgstr ""
 
 #: base/widget-base.php:1595
 #: classes/widgets-manager.php:1032
-#: traits/list-item-advanced-trait.php:522
+#: traits/list-item-advanced-trait.php:538
 #: widgets/divider/divider.php:15
 #: widgets/divider/divider.php:73
 #: widgets/divider/divider.php:162
@@ -1676,7 +1695,7 @@ msgid "Divider"
 msgstr ""
 
 #: base/widget-base.php:1596
-#: traits/list-item-advanced-trait.php:525
+#: traits/list-item-advanced-trait.php:541
 #: widgets/archive-posts/archive-posts.php:355
 #: widgets/archive-posts/archive-posts.php:403
 #: widgets/archive-posts/archive-posts.php:450
@@ -1701,7 +1720,7 @@ msgid "On"
 msgstr ""
 
 #: base/widget-base.php:1597
-#: traits/list-item-advanced-trait.php:524
+#: traits/list-item-advanced-trait.php:540
 #: widgets/archive-posts/archive-posts.php:356
 #: widgets/archive-posts/archive-posts.php:404
 #: widgets/archive-posts/archive-posts.php:451
@@ -1880,25 +1899,25 @@ msgid "No saved templates found!"
 msgstr ""
 
 #: classes/select2-handler.php:12
-#: modules/theme-builder/conditions-manager.php:339
-#: modules/theme-builder/conditions-manager.php:620
-#: modules/theme-builder/conditions-manager.php:624
+#: modules/theme-builder/conditions-manager.php:482
+#: modules/theme-builder/conditions-manager.php:763
+#: modules/theme-builder/conditions-manager.php:767
 msgid "Unauthorized request"
 msgstr ""
 
 #: classes/select2-handler.php:18
 #: modules/mega-menu/module.php:186
-#: modules/theme-builder/conditions-manager.php:345
+#: modules/theme-builder/conditions-manager.php:488
 msgid "Invalid request"
 msgstr ""
 
 #: classes/select2-handler.php:29
-#: modules/theme-builder/conditions-manager.php:359
+#: modules/theme-builder/conditions-manager.php:502
 msgid "Invalid object type"
 msgstr ""
 
 #: classes/select2-handler.php:125
-#: modules/theme-builder/conditions-manager.php:444
+#: modules/theme-builder/conditions-manager.php:587
 msgid "Invalid taxonomy"
 msgstr ""
 
@@ -2028,7 +2047,7 @@ msgstr ""
 #: modules/mega-menu/templates/popup.php:139
 #: traits/button-trait.php:335
 #: traits/button-trait.php:382
-#: traits/list-item-advanced-trait.php:1411
+#: traits/list-item-advanced-trait.php:1479
 #: widgets/advance-tab/advance-tab.php:639
 #: widgets/advance-tab/advance-tab.php:674
 #: widgets/advance-tab/advance-tab.php:735
@@ -2441,7 +2460,7 @@ msgid "Breaking"
 msgstr ""
 
 #: classes/widgets-manager.php:1041
-#: traits/list-item-advanced-trait.php:578
+#: traits/list-item-advanced-trait.php:594
 #: widgets/post-meta/post-meta.php:683
 #: widgets/post-navigation/post-navigation.php:556
 msgid "Dotted"
@@ -2745,7 +2764,7 @@ msgstr ""
 
 #: modules/mega-menu/cpt.php:34
 #: modules/theme-builder/module.php:447
-#: modules/theme-builder/module.php:542
+#: modules/theme-builder/module.php:544
 msgid "Add New"
 msgstr ""
 
@@ -2944,7 +2963,7 @@ msgstr ""
 #: widgets/site-tagline/site-tagline.php:290
 #: widgets/site-title/site-title.php:118
 #: widgets/site-title/site-title.php:320
-#: widgets/social-icon/social-icon.php:78
+#: widgets/social-icon/social-icon.php:92
 #: widgets/social-share/social-share.php:578
 #: widgets/social-share/social-share.php:977
 #: widgets/toggle/toggle.php:219
@@ -2992,50 +3011,50 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: modules/mega-menu/walker.php:430
+#: modules/mega-menu/walker.php:433
 msgid "Invalid Data: You can't use Happy Mega Menu inside a Happy Mega Menu."
 msgstr ""
 
-#: modules/mega-menu/walker.php:435
+#: modules/mega-menu/walker.php:438
 msgid "No content found"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:251
-#: modules/theme-builder/conditions-manager.php:252
+#: modules/theme-builder/conditions-manager.php:394
+#: modules/theme-builder/conditions-manager.php:395
 msgid "Entire Site"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:255
+#: modules/theme-builder/conditions-manager.php:398
 #: widgets/archive-title/archive-title.php:823
 msgid "Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:256
-#: modules/theme-builder/conditions-manager.php:271
-#: modules/theme-builder/conditions-manager.php:272
+#: modules/theme-builder/conditions-manager.php:399
+#: modules/theme-builder/conditions-manager.php:414
+#: modules/theme-builder/conditions-manager.php:415
 msgid "All Archives"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:259
+#: modules/theme-builder/conditions-manager.php:402
 msgid "Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:260
-#: modules/theme-builder/conditions-manager.php:427
-#: modules/theme-builder/conditions-manager.php:428
+#: modules/theme-builder/conditions-manager.php:403
+#: modules/theme-builder/conditions-manager.php:570
+#: modules/theme-builder/conditions-manager.php:571
 msgid "All Singular"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:431
-#: modules/theme-builder/conditions-manager.php:432
+#: modules/theme-builder/conditions-manager.php:574
+#: modules/theme-builder/conditions-manager.php:575
 msgid "Front Page"
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:668
+#: modules/theme-builder/conditions-manager.php:797
 msgid "Unable to save, as conflicting include and exclude conditions were detected. Please adjust the conditions accordingly."
 msgstr ""
 
-#: modules/theme-builder/conditions-manager.php:834
+#: modules/theme-builder/conditions-manager.php:971
 #: modules/theme-builder/templates/template-conditions.php:77
 msgid "Remove this item"
 msgstr ""
@@ -3043,7 +3062,7 @@ msgstr ""
 #: modules/theme-builder/module.php:319
 #: modules/theme-builder/module.php:320
 #: modules/theme-builder/module.php:468
-#: modules/theme-builder/module.php:539
+#: modules/theme-builder/module.php:541
 msgid "Theme Builder"
 msgstr ""
 
@@ -3132,30 +3151,30 @@ msgstr ""
 msgid "Build your website header, footer, single page/post template and more."
 msgstr ""
 
-#: modules/theme-builder/module.php:551
+#: modules/theme-builder/module.php:553
 #: widgets/business-hour/business-hour.php:458
 msgid "Header"
 msgstr ""
 
-#: modules/theme-builder/module.php:552
+#: modules/theme-builder/module.php:554
 msgid "Footer"
 msgstr ""
 
-#: modules/theme-builder/module.php:553
+#: modules/theme-builder/module.php:555
 #: widgets/animated-text/animated-text.php:68
 msgid "Single"
 msgstr ""
 
-#: modules/theme-builder/module.php:554
+#: modules/theme-builder/module.php:556
 msgid "Archive"
 msgstr ""
 
-#: modules/theme-builder/module.php:571
+#: modules/theme-builder/module.php:573
 #: widgets/image-grid/image-grid.php:300
 msgid "All"
 msgstr ""
 
-#: modules/theme-builder/module.php:621
+#: modules/theme-builder/module.php:623
 #: traits/list-item-advanced-trait.php:100
 #: widgets/advance-tab/advance-tab.php:71
 #: widgets/alert/alert.php:44
@@ -3163,11 +3182,11 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: modules/theme-builder/module.php:622
+#: modules/theme-builder/module.php:624
 msgid "Conditions"
 msgstr ""
 
-#: modules/theme-builder/module.php:640
+#: modules/theme-builder/module.php:642
 #: templates/admin/dashboard-home.php:508
 #: widgets/advance-accordion/advance-accordion.php:355
 #: widgets/advance-accordion/advance-accordion.php:502
@@ -3198,52 +3217,52 @@ msgid "Active"
 msgstr ""
 
 #. translators: 1: included conditions, 2: excluded conditions
-#: modules/theme-builder/module.php:677
+#: modules/theme-builder/module.php:679
 #, php-format
 msgid "<b>Include : </b> %1$s<br/><b>Exclude : </b> %2$s"
 msgstr ""
 
-#: modules/theme-builder/module.php:687
+#: modules/theme-builder/module.php:689
 msgid "Not Applicable"
 msgstr ""
 
-#: modules/theme-builder/module.php:755
+#: modules/theme-builder/module.php:757
 #: zyre-elementor-addons.php:123
 #: zyre-elementor-addons.php:136
 #: zyre-elementor-addons.php:158
 msgid "Elementor"
 msgstr ""
 
-#: modules/theme-builder/module.php:801
+#: modules/theme-builder/module.php:803
 msgid "Header Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:805
+#: modules/theme-builder/module.php:807
 msgid "Footer Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:809
+#: modules/theme-builder/module.php:811
 #: widgets/animated-text/animated-text.php:490
 msgid "Single Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:813
+#: modules/theme-builder/module.php:815
 msgid "Archive Settings"
 msgstr ""
 
-#: modules/theme-builder/module.php:817
+#: modules/theme-builder/module.php:819
 msgid "Loop Template"
 msgstr ""
 
-#: modules/theme-builder/module.php:845
+#: modules/theme-builder/module.php:847
 msgid "Invalid post type."
 msgstr ""
 
-#: modules/theme-builder/module.php:849
+#: modules/theme-builder/module.php:851
 msgid "Permission denied."
 msgstr ""
 
-#: modules/theme-builder/module.php:1022
+#: modules/theme-builder/module.php:1024
 msgid "Zyre Theme Builder"
 msgstr ""
 
@@ -3526,7 +3545,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: templates/admin/dashboard-home.php:423
-#: traits/list-item-advanced-trait.php:573
+#: traits/list-item-advanced-trait.php:589
 #: widgets/post-meta/post-meta.php:678
 #: widgets/post-navigation/post-navigation.php:551
 msgid "Style"
@@ -3653,6 +3672,7 @@ msgid "Link"
 msgstr ""
 
 #: traits/button-trait.php:100
+#: traits/social-trait.php:416
 #: widgets/advance-accordion/advance-accordion.php:163
 #: widgets/advance-tab/advance-tab.php:161
 #: widgets/advance-toggle/advance-toggle.php:164
@@ -3720,7 +3740,7 @@ msgid "Custom Class"
 msgstr ""
 
 #: traits/button-trait.php:162
-#: traits/list-item-advanced-trait.php:450
+#: traits/list-item-advanced-trait.php:466
 #: widgets/advance-heading/advance-heading.php:205
 #: widgets/divider/divider.php:144
 #: widgets/drop-cap/drop-cap.php:68
@@ -3739,7 +3759,7 @@ msgid "onClick Event"
 msgstr ""
 
 #: traits/button-trait.php:253
-#: traits/list-item-advanced-trait.php:1308
+#: traits/list-item-advanced-trait.php:1375
 #: widgets/business-hour/business-hour.php:891
 #: widgets/call-to-action/call-to-action.php:1637
 #: widgets/dual-button/dual-button.php:282
@@ -3752,8 +3772,8 @@ msgid "Justify Content"
 msgstr ""
 
 #: traits/button-trait.php:259
-#: traits/list-item-advanced-trait.php:1314
-#: traits/social-trait.php:779
+#: traits/list-item-advanced-trait.php:1381
+#: traits/social-trait.php:826
 #: widgets/author-box/author-box.php:1043
 #: widgets/business-hour/business-hour.php:820
 #: widgets/business-hour/business-hour.php:896
@@ -3766,8 +3786,8 @@ msgid "Start"
 msgstr ""
 
 #: traits/button-trait.php:267
-#: traits/list-item-advanced-trait.php:1322
-#: traits/social-trait.php:787
+#: traits/list-item-advanced-trait.php:1389
+#: traits/social-trait.php:834
 #: widgets/author-box/author-box.php:1047
 #: widgets/business-hour/business-hour.php:828
 #: widgets/business-hour/business-hour.php:904
@@ -3781,16 +3801,16 @@ msgstr ""
 
 #: traits/button-trait.php:375
 #: traits/button-trait.php:624
-#: traits/list-item-advanced-trait.php:789
-#: traits/list-item-advanced-trait.php:1203
-#: traits/list-item-advanced-trait.php:1697
-#: traits/list-item-advanced-trait.php:1994
-#: traits/list-item-advanced-trait.php:2157
-#: traits/list-item-advanced-trait.php:2608
+#: traits/list-item-advanced-trait.php:805
+#: traits/list-item-advanced-trait.php:1270
+#: traits/list-item-advanced-trait.php:1920
+#: traits/list-item-advanced-trait.php:2217
+#: traits/list-item-advanced-trait.php:2380
+#: traits/list-item-advanced-trait.php:2831
 #: traits/list-item-trait.php:215
 #: traits/list-item-trait.php:326
 #: traits/social-trait.php:246
-#: traits/social-trait.php:561
+#: traits/social-trait.php:607
 #: widgets/advance-accordion/advance-accordion.php:331
 #: widgets/advance-accordion/advance-accordion.php:462
 #: widgets/advance-heading/advance-heading.php:310
@@ -3865,6 +3885,7 @@ msgstr ""
 #: widgets/search-box/search-box.php:734
 #: widgets/site-title/site-title.php:376
 #: widgets/site-title/site-title.php:481
+#: widgets/social-icon/social-icon.php:156
 #: widgets/social-share/social-share.php:437
 #: widgets/social-share/social-share.php:765
 #: widgets/subscription-form/subscription-form.php:464
@@ -4091,16 +4112,38 @@ msgid "Caption Display"
 msgstr ""
 
 #: traits/list-item-advanced-trait.php:372
+msgid "Extra Text Position"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:376
+msgid "Before Media"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:377
+msgid "After Media"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:378
+#: widgets/site-title/site-title.php:272
+msgid "Before Title"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:379
+#: widgets/site-title/site-title.php:303
+msgid "After Title"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:388
 #: widgets/list-group/list-group.php:180
 msgid "Items Icon"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:384
+#: traits/list-item-advanced-trait.php:400
 msgid "Show Icon on Item Hover?"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:386
-#: traits/list-item-advanced-trait.php:536
+#: traits/list-item-advanced-trait.php:402
+#: traits/list-item-advanced-trait.php:552
 #: traits/social-trait.php:135
 #: traits/social-trait.php:162
 #: traits/swiper-trait.php:409
@@ -4143,8 +4186,8 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:387
-#: traits/list-item-advanced-trait.php:537
+#: traits/list-item-advanced-trait.php:403
+#: traits/list-item-advanced-trait.php:553
 #: traits/social-trait.php:136
 #: traits/social-trait.php:163
 #: traits/swiper-trait.php:410
@@ -4187,8 +4230,8 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:397
-#: traits/social-trait.php:415
+#: traits/list-item-advanced-trait.php:413
+#: traits/social-trait.php:460
 #: widgets/archive-posts/archive-posts.php:71
 #: widgets/business-hour/business-hour.php:648
 #: widgets/image-grid/image-grid.php:194
@@ -4198,46 +4241,46 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:400
+#: traits/list-item-advanced-trait.php:416
 #: widgets/business-hour/business-hour.php:651
 msgid "1 Column"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:401
+#: traits/list-item-advanced-trait.php:417
 #: widgets/business-hour/business-hour.php:652
 #: widgets/logo-grid/logo-grid.php:192
 msgid "2 Columns"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:402
+#: traits/list-item-advanced-trait.php:418
 #: widgets/business-hour/business-hour.php:653
 #: widgets/logo-grid/logo-grid.php:193
 msgid "3 Columns"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:403
+#: traits/list-item-advanced-trait.php:419
 #: widgets/business-hour/business-hour.php:654
 #: widgets/logo-grid/logo-grid.php:194
 msgid "4 Columns"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:404
+#: traits/list-item-advanced-trait.php:420
 #: widgets/business-hour/business-hour.php:655
 #: widgets/logo-grid/logo-grid.php:195
 msgid "5 Columns"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:405
+#: traits/list-item-advanced-trait.php:421
 #: widgets/business-hour/business-hour.php:656
 #: widgets/logo-grid/logo-grid.php:196
 msgid "6 Columns"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:422
+#: traits/list-item-advanced-trait.php:438
 msgid "Works when List Item > Width is set in the Style tab."
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:448
+#: traits/list-item-advanced-trait.php:464
 #: widgets/advance-heading/advance-heading.php:203
 #: widgets/divider/divider.php:142
 #: widgets/drop-cap/drop-cap.php:66
@@ -4251,27 +4294,27 @@ msgstr ""
 msgid "Class"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:476
+#: traits/list-item-advanced-trait.php:492
 msgid "Horizontal Space"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:494
+#: traits/list-item-advanced-trait.php:510
 msgid "Vertical Space"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:514
+#: traits/list-item-advanced-trait.php:530
 msgid "Divider Style"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:534
+#: traits/list-item-advanced-trait.php:550
 msgid "Exclude from Last Item?"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:554
+#: traits/list-item-advanced-trait.php:570
 msgid "Apply To"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:557
+#: traits/list-item-advanced-trait.php:573
 #: widgets/advance-accordion/advance-accordion.php:281
 #: widgets/advance-toggle/advance-toggle.php:283
 #: widgets/business-hour/business-hour.php:693
@@ -4280,7 +4323,7 @@ msgstr ""
 msgid "Item"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:558
+#: traits/list-item-advanced-trait.php:574
 #: widgets/advance-tab/advance-tab.php:1364
 #: widgets/call-to-action/call-to-action.php:59
 #: widgets/call-to-action/call-to-action.php:1129
@@ -4300,32 +4343,32 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:576
+#: traits/list-item-advanced-trait.php:592
 #: widgets/post-meta/post-meta.php:681
 #: widgets/post-navigation/post-navigation.php:554
 msgid "Solid"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:577
+#: traits/list-item-advanced-trait.php:593
 #: widgets/post-meta/post-meta.php:682
 #: widgets/post-navigation/post-navigation.php:555
 msgid "Double"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:579
+#: traits/list-item-advanced-trait.php:595
 #: widgets/post-meta/post-meta.php:684
 #: widgets/post-navigation/post-navigation.php:557
 msgid "Dashed"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:611
+#: traits/list-item-advanced-trait.php:627
 #: widgets/news-ticker/news-ticker.php:544
 #: widgets/post-meta/post-meta.php:700
 #: widgets/post-navigation/post-navigation.php:569
 msgid "Weight"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:807
+#: traits/list-item-advanced-trait.php:823
 #: widgets/call-to-action/call-to-action.php:1311
 #: widgets/call-to-action/call-to-action.php:1449
 #: widgets/featured-banner/featured-banner.php:1322
@@ -4336,7 +4379,11 @@ msgstr ""
 msgid "Title Color"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:819
+#: traits/list-item-advanced-trait.php:836
+msgid "Description BG Color"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:848
 #: widgets/call-to-action/call-to-action.php:1339
 #: widgets/call-to-action/call-to-action.php:1477
 #: widgets/featured-banner/featured-banner.php:1350
@@ -4364,18 +4411,22 @@ msgstr ""
 msgid "Description Color"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:832
+#: traits/list-item-advanced-trait.php:861
+msgid "Extra Text BG Color"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:872
 #: widgets/post-meta/post-meta.php:304
 msgid "Extra Text Color"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:845
+#: traits/list-item-advanced-trait.php:885
 #: widgets/news-ticker/news-ticker.php:550
 msgid "Divider Color"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:890
-#: traits/list-item-advanced-trait.php:1285
+#: traits/list-item-advanced-trait.php:930
+#: traits/list-item-advanced-trait.php:1352
 #: traits/list-item-trait.php:41
 #: widgets/advance-heading/advance-heading.php:121
 #: widgets/advance-tab/advance-tab.php:261
@@ -4387,139 +4438,151 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:893
+#: traits/list-item-advanced-trait.php:933
 msgid "Content Right"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:894
+#: traits/list-item-advanced-trait.php:934
 msgid "Content Left"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:895
+#: traits/list-item-advanced-trait.php:935
 msgid "Content Top"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:896
+#: traits/list-item-advanced-trait.php:936
 msgid "Content Bottom"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1137
-#: traits/list-item-advanced-trait.php:1903
-#: traits/list-item-advanced-trait.php:2346
-#: traits/list-item-advanced-trait.php:2758
+#: traits/list-item-advanced-trait.php:1107
+msgid "Hover Height"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1204
+#: traits/list-item-advanced-trait.php:2126
+#: traits/list-item-advanced-trait.php:2569
+#: traits/list-item-advanced-trait.php:2981
 #: widgets/iconbox/iconbox.php:399
 #: widgets/iconbox/iconbox.php:649
 #: widgets/infobox/infobox.php:205
 msgid "Vertical Alignment"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1210
-#: traits/list-item-advanced-trait.php:1704
-#: traits/list-item-advanced-trait.php:2615
+#: traits/list-item-advanced-trait.php:1277
+#: traits/list-item-advanced-trait.php:1927
+#: traits/list-item-advanced-trait.php:2838
 msgid "When hover over the Item."
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1211
-#: traits/list-item-advanced-trait.php:1705
-#: traits/list-item-advanced-trait.php:2616
+#: traits/list-item-advanced-trait.php:1278
+#: traits/list-item-advanced-trait.php:1928
+#: traits/list-item-advanced-trait.php:2839
 msgid "Activate the styles when hover over the item."
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1213
-#: traits/list-item-advanced-trait.php:1707
-#: traits/list-item-advanced-trait.php:2618
+#: traits/list-item-advanced-trait.php:1280
+#: traits/list-item-advanced-trait.php:1930
+#: traits/list-item-advanced-trait.php:2841
 #: widgets/iconbox/iconbox.php:511
 msgid "ON"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1214
-#: traits/list-item-advanced-trait.php:1708
-#: traits/list-item-advanced-trait.php:2619
+#: traits/list-item-advanced-trait.php:1281
+#: traits/list-item-advanced-trait.php:1931
+#: traits/list-item-advanced-trait.php:2842
 #: widgets/iconbox/iconbox.php:512
 msgid "OFF"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1423
+#: traits/list-item-advanced-trait.php:1542
+#: traits/list-item-advanced-trait.php:1668
+#: traits/list-item-advanced-trait.php:1682
 msgid "Enable Underline on Hover?"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1492
+#: traits/list-item-advanced-trait.php:1639
+#: widgets/advance-tab/advance-tab.php:580
+#: widgets/advance-tab/advance-tab.php:601
+msgid "Text Align"
+msgstr ""
+
+#: traits/list-item-advanced-trait.php:1715
 msgid "Number Typography"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1605
-#: traits/list-item-advanced-trait.php:1733
+#: traits/list-item-advanced-trait.php:1828
+#: traits/list-item-advanced-trait.php:1956
 #: widgets/testimonial/testimonial.php:802
 msgid "Number Color"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1808
+#: traits/list-item-advanced-trait.php:2031
 msgid "Transition Duration (s)"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:1878
-#: traits/list-item-advanced-trait.php:2733
+#: traits/list-item-advanced-trait.php:2101
+#: traits/list-item-advanced-trait.php:2956
 #: widgets/iconbox/iconbox.php:440
 #: widgets/team-member/team-member.php:523
 #: widgets/testimonial/testimonial.php:508
 msgid "Horizontal Alignment"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2302
+#: traits/list-item-advanced-trait.php:2525
 msgid "Overlay Position"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2461
+#: traits/list-item-advanced-trait.php:2684
 #: widgets/call-to-action/call-to-action.php:1926
 #: widgets/dual-button/dual-button.php:474
 #: widgets/featured-banner/featured-banner.php:1930
 msgid "Wrapper Width"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2487
+#: traits/list-item-advanced-trait.php:2710
 msgid "Wrapper Height"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2564
-#: traits/list-item-advanced-trait.php:2660
+#: traits/list-item-advanced-trait.php:2787
+#: traits/list-item-advanced-trait.php:2883
 msgid "Icon:"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2586
-#: traits/list-item-advanced-trait.php:2683
+#: traits/list-item-advanced-trait.php:2809
+#: traits/list-item-advanced-trait.php:2906
 #: widgets/advance-accordion/advance-accordion.php:449
 #: widgets/advance-accordion/advance-accordion.php:485
 #: widgets/advance-accordion/advance-accordion.php:525
 msgid "Icon Background"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2597
-#: traits/list-item-advanced-trait.php:2695
+#: traits/list-item-advanced-trait.php:2820
+#: traits/list-item-advanced-trait.php:2918
 #: widgets/iconbox/iconbox.php:557
 msgid "Icon Border"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2721
+#: traits/list-item-advanced-trait.php:2944
 msgid "Icon Border Radius"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2804
+#: traits/list-item-advanced-trait.php:3027
 msgid "Grid Settings"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2817
+#: traits/list-item-advanced-trait.php:3040
 msgid "Row Start"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2832
+#: traits/list-item-advanced-trait.php:3055
 msgid "Row End"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2847
+#: traits/list-item-advanced-trait.php:3070
 msgid "Column Start"
 msgstr ""
 
-#: traits/list-item-advanced-trait.php:2862
+#: traits/list-item-advanced-trait.php:3085
 msgid "Column End"
 msgstr ""
 
@@ -4555,7 +4618,7 @@ msgid "Enable Name"
 msgstr ""
 
 #: traits/social-trait.php:146
-#: widgets/social-icon/social-icon.php:91
+#: widgets/social-icon/social-icon.php:229
 #: widgets/team-member/team-member.php:737
 msgid "Social Name"
 msgstr ""
@@ -4568,8 +4631,8 @@ msgstr ""
 
 #: traits/social-trait.php:230
 #: traits/social-trait.php:294
-#: traits/social-trait.php:546
-#: traits/social-trait.php:603
+#: traits/social-trait.php:592
+#: traits/social-trait.php:649
 #: widgets/archive-posts/archive-posts.php:1209
 #: widgets/social-share/social-share.php:419
 #: widgets/social-share/social-share.php:485
@@ -4584,12 +4647,17 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
-#: traits/social-trait.php:401
+#: traits/social-trait.php:405
+#: widgets/social-icon/social-icon.php:105
+msgid "Extra Icon"
+msgstr ""
+
+#: traits/social-trait.php:445
 #: widgets/social-share/social-share.php:663
 msgid "Show Icon on Hover?"
 msgstr ""
 
-#: traits/social-trait.php:419
+#: traits/social-trait.php:464
 #: widgets/call-to-action/call-to-action.php:181
 #: widgets/featured-banner/featured-banner.php:183
 #: widgets/news-ticker/news-ticker.php:111
@@ -4599,42 +4667,42 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: traits/social-trait.php:471
+#: traits/social-trait.php:517
 msgid "Enable Separator"
 msgstr ""
 
-#: traits/social-trait.php:472
+#: traits/social-trait.php:518
 msgid "Separator Between Icon & Social Name"
 msgstr ""
 
-#: traits/social-trait.php:644
+#: traits/social-trait.php:690
 #: widgets/social-share/social-share.php:842
 msgid "Rows Gap"
 msgstr ""
 
-#: traits/social-trait.php:656
+#: traits/social-trait.php:702
 #: widgets/logo-grid/logo-grid.php:388
 #: widgets/social-share/social-share.php:854
 msgid "Item Width"
 msgstr ""
 
-#: traits/social-trait.php:685
+#: traits/social-trait.php:731
 #: widgets/logo-grid/logo-grid.php:401
 #: widgets/social-share/social-share.php:883
 msgid "Item Height"
 msgstr ""
 
-#: traits/social-trait.php:715
+#: traits/social-trait.php:762
 #: widgets/social-share/social-share.php:913
 msgid "Separator Width"
 msgstr ""
 
-#: traits/social-trait.php:774
+#: traits/social-trait.php:821
 #: widgets/social-share/social-share.php:947
 msgid "Items Alignment"
 msgstr ""
 
-#: traits/social-trait.php:830
+#: traits/social-trait.php:877
 #: widgets/logo-grid/logo-grid.php:491
 #: widgets/social-share/social-share.php:1005
 msgid "Hover Animation"
@@ -5343,11 +5411,6 @@ msgstr ""
 
 #: widgets/advance-tab/advance-tab.php:570
 msgid "Align Titles"
-msgstr ""
-
-#: widgets/advance-tab/advance-tab.php:580
-#: widgets/advance-tab/advance-tab.php:601
-msgid "Text Align"
 msgstr ""
 
 #: widgets/advance-tab/advance-tab.php:615
@@ -10333,14 +10396,6 @@ msgstr ""
 
 #: widgets/site-title/site-title.php:84
 msgid "After Title Text"
-msgstr ""
-
-#: widgets/site-title/site-title.php:272
-msgid "Before Title"
-msgstr ""
-
-#: widgets/site-title/site-title.php:303
-msgid "After Title"
 msgstr ""
 
 #: widgets/skill-bar/skill-bar.php:14
