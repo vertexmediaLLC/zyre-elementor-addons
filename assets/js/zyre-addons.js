@@ -1060,6 +1060,39 @@ function haObserveTarget(target, callback) {
           $el.css('display', 'inline-flex').hide().fadeIn();
         }
       });
+
+      // Collapsible panels only. One namespaced listener per document so
+      // element_ready re-runs do not stack handlers. The toggle handler owns
+      // clicks on the toggle (including its icon/svg).
+      if (!$scope.find('.zyre-search-form.collapsible').length) {
+        return;
+      }
+
+      var searchDoc = ($scope[0] && $scope[0].ownerDocument) || document;
+
+      $(searchDoc)
+        .off('click.zyreSearchBox')
+        .on('click.zyreSearchBox', function (e) {
+          var target = e.target;
+
+          $(searchDoc)
+            .find('.zyre-search-form.collapsible .zyre-search-form-search:visible')
+            .each(function () {
+              var panel = this;
+
+              if (panel.contains(target)) {
+                return;
+              }
+
+              var toggle = $(panel).closest('.zyre-search-form').find('.zyre-search-toggle')[0];
+
+              if (toggle && toggle.contains(target)) {
+                return;
+              }
+
+              $(panel).fadeOut();
+            });
+        });
     };
 
     // Function Handlers
