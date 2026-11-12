@@ -1,3 +1,8 @@
+= 2.1.9 - 2026-11-12 =
+
+- Disabled auto open of the template conditions modal.
+- Updated Social Icon, Search Box, and List Group widgets.
+
 = 2.1.8 - 2026-10-21 =
 
 - Increased performance.
